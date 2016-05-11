@@ -1,0 +1,27 @@
+{
+  "apps": [
+    {
+      "name": "Dotabuff Crawler",
+      "cwd": "./",
+      "version": "0.0.1",
+      "private": true,
+      "script": "crawl.js",
+      "watch": [
+        "crawl.js"
+      ],
+      "dependencies": {},
+      "log_date_format": "MM-DD HH:mm",
+      "merge_logs": true,
+      "error_file": "../log/err-dotacrawler.log",
+      "out_file": "../log/log-dotacrawler.log",
+      "pid_file": "../log/pid-dotacrawler.pid",
+      "env": {
+        "TZ": "Asia/Hong_Kong"
+      }
+    }
+  ],
+  "dependencies": {
+    "atob": "^2.0.3",
+    "superagent": "^1.8.3"
+  }
+}
