@@ -27,7 +27,6 @@ def proc_league(myurl, proc_match=None):
     :return:
     """
     this_url = const.URL_DOTAMAX_PREFIX + myurl
-
     print 'processing:', this_url
     code, html = getHtml(this_url)
     status = code // 100

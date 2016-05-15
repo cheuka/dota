@@ -1,4 +1,5 @@
 from utility import *
+import os
 
 
 def test_file():
@@ -13,4 +14,11 @@ def test_failing_url():
     print 'code:', code, '\nhtml:', html
 
 
-test_failing_url()
+def test_file_exists():
+    print os.path.exists('saved_data')
+
+
+test_file_exists()
+
+
+# test_failing_url()
