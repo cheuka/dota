@@ -5,12 +5,15 @@ from lxml import etree
 
 def getHtml(url):
     """
+    This is the basic html get function
     :param url:
     :return:
     """
     page = urllib.urlopen(url)
+    code = page.getcode()
+    # print 'code:', code
     html = page.read()
-    return html
+    return code, html
 
 
 def get_from_etree(mytree, attrib):
@@ -22,3 +25,17 @@ def get_from_etree(mytree, attrib):
     """
     contents = mytree.xpath("//" + attrib)
     return contents
+
+
+def print_and_write(content='', fp=None):
+    """
+    This is the print and write
+    :param content:
+    :param fp:
+    :return:
+    """
+    if content != '':
+        print content
+        if fp:
+            if isinstance(fp, file) and fp.mode == 'a+':
+                fp.write(content + '\n')

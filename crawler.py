@@ -29,7 +29,11 @@ def proc_league(myurl, proc_match=None):
     this_url = const.URL_DOTAMAX_PREFIX + myurl
 
     print 'processing:', this_url
-    html = getHtml(this_url)
+    code, html = getHtml(this_url)
+    status = code // 100
+    if not (status == 2 or status == 3):
+        print 'Bad sublink, going to the next url...'
+        return
     html = html.replace('\n', ' ')
     html = html.replace('\t', ' ')
     html_tree = etree.HTML(html.decode('utf-8'))
@@ -49,7 +53,7 @@ def proc_league(myurl, proc_match=None):
     match_set = set(match_list)
     print 'You found', len(match_set), 'matches in this league'
     for i in match_set:
-        print const.URL_DOTAMAX_PREFIX + i
+        # print const.URL_DOTAMAX_PREFIX + i
         if proc_match:
             proc_match(const.URL_DOTAMAX_PREFIX + i)
 
@@ -78,8 +82,12 @@ def main():
     """
     Driver function
     """
-    html = getHtml(const.URL_DOTAMAX_TOUR)
-    get_entry(html, proc_league)
+    code, html = getHtml(const.URL_DOTAMAX_TOUR)
+    status = code // 100
+    if status == 2 or status == 3:
+        get_entry(html, proc_league)
+    else:
+        print 'bad url link, program terminating...'
 
 # start from here as the main driver
 main()
