@@ -1,3 +1,4 @@
 node_modules/
 local_test/
+local_test/*
 saved_data/
