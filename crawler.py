@@ -1,45 +1,33 @@
 #-*-coding:utf8-*-
 
-
 """
 This is a sample crawler done by lordstone
-
-
 """
-import string
-import urllib
+
 import re
 import time
-from lxml import etree
-
-
 import const
+from utility import *
 
 
-def getHtml(url):
-    page = urllib.urlopen(url)
-    html = page.read()
-    return html
-
-
-def get_from_etree(mytree, attrib):
+def proc_match(match_id):
     """
-    This is the function to get content from etree
-    :param mytree:
-    :param attrib:
+    match level proc
+    :param match_id:
     :return:
     """
-    contents = mytree.xpath("//" + attrib)
-    return contents
+    pass
 
 
-def proc_league(myurl):
+
+def proc_league(myurl, proc_match=None):
     """
-    process each url
+    league level proc
     :param myurl:
     :return:
     """
     this_url = const.URL_DOTAMAX_PREFIX + myurl
+
     print 'processing:', this_url
     html = getHtml(this_url)
     html = html.replace('\n', ' ')
@@ -55,6 +43,15 @@ def proc_league(myurl):
         title_string = title_string.replace('\n', ' ')
         title_string = title_string.strip()
         print 'league name:', title_string
+    match_regex = r'/match/detail/[0-9]{9,11}'
+    match_re = re.compile(match_regex)
+    match_list = re.findall(match_re, html)
+    match_set = set(match_list)
+    print 'You found', len(match_set), 'matches in this league'
+    for i in match_set:
+        print const.URL_DOTAMAX_PREFIX + i
+        if proc_match:
+            proc_match(const.URL_DOTAMAX_PREFIX + i)
 
 
 def get_entry(content='', myfunc=None):
@@ -63,15 +60,16 @@ def get_entry(content='', myfunc=None):
     :param content:
     :return:
     """
-    reg = r'/match/tour_league_overview/\?league_id=[0-9]{1,6}'
+    reg = r'\?league_id=[0-9]{1,6}'
     league_re = re.compile(reg)
     league_list = re.findall(league_re, content)
+    league_set = set(league_list)
     x = 0
-    for league_url in league_list:
+    for league_id in league_set:
         # print league_url
         # urllib.urlretrieve(league_url, '%s.html' % x)
         if myfunc:
-            myfunc(league_url)
+            myfunc('/match/tour_matches/'+league_id)
         x += 1
     print 'You have found', x, 'leagues pages in this directory'
 
