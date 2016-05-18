@@ -112,12 +112,13 @@ def proc_match_list(myfunc=None):
         print 'Error, please rerun the script to generate match lists'
         return
     rootdir = const.FN_DATADIR+const.FN_LEAGUE_DIR
-
     if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR):
         # print 'Results already exists. Delete it before we can start moving. Exiting...'
         #return
         os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR)
+
     mydatestamp = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
+    os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/'+mydatestamp)
     counter = 0
     for parent, dirs, files in os.walk(rootdir):
         for dirname in dirs:
@@ -136,10 +137,22 @@ def proc_match_list(myfunc=None):
 
 
 def proc_match(myurl, datestamp):
+    """
+    Now is getting vision
+    :param myurl:
+    :param datestamp:
+    :return:
+    """
     print 'Processing ', myurl, 'at', datestamp
     # myurl = const.URL_DOTAMAX_PREFIX+'/match/detail/vision/'+myurl+'/'
     myurl = 'http://www.dotabuff.com/matches/'+myurl+'/vision'
-    html = get_html(myurl)
+    # print 'url:', myurl
+    code, html = get_html(myurl)
+    # print code, html
+    selector = etree.HTML(html)
+    all_events = selector.xpath('//div[@class="event"]')
+    print all_events
+    exit()
 
 
 def main():

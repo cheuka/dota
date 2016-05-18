@@ -3,18 +3,22 @@ import urllib2
 from lxml import etree
 import re
 import socket
+import const
 
 
 socket.setdefaulttimeout(20.0)
 
 
-def get_html(url):
+def get_html(url, header=True):
     """
     This is the basic html get function
     :param url:
     :return:
     """
-    url2 = urllib2.Request(url)
+    if header:
+        url2 = urllib2.Request(url, None, const.URL_HEADER)
+    else:
+        url2 = urllib2.Request(url)
     try:
         page = urllib2.urlopen(url2)
         code = page.getcode()
@@ -22,8 +26,8 @@ def get_html(url):
         html = page.read()
         return code, html
     except urllib2.HTTPError, e:
-        print e.code
-        print e.reason
+        print 'HTML Get Error Code:', e.code, ',Reason:', e.reason
+        return e.code, e.reason
 
 
 def get_from_etree(mytree, attrib):
