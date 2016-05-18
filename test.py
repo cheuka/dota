@@ -11,7 +11,7 @@ def test_file():
 
 def test_failing_url():
     myurl = 'http://www.dotamax.com/match/tour_matches/?league_id=4554&skill=&ladder=&p=8'
-    code, html = getHtml(myurl)
+    code, html = get_html(myurl)
     print 'code:', code, '\nhtml:', html
 
 
@@ -27,7 +27,7 @@ def test_url_regex():
 # test_url_regex()
 # test_file_exists()
 
-code, page = getHtml(const.URL_DOTAMAX_PREFIX)
+code, page = get_html(const.URL_DOTAMAX_PREFIX)
 print code
 print page
 # test_failing_url()

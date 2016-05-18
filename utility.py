@@ -8,7 +8,7 @@ import socket
 socket.setdefaulttimeout(20.0)
 
 
-def getHtml(url):
+def get_html(url):
     """
     This is the basic html get function
     :param url:
@@ -60,3 +60,16 @@ def clear_illegal_chars(content):
     rstr = r"[\/\\\:\*\?\"\<\>\|]"  # '/\:*?"<>|'
     new_title = re.sub(rstr, "", content)
     return new_title
+
+
+def get_list_from_file(filename):
+    fp = open(filename, 'r')
+    file_text = fp.read()
+    file_text = file_text.replace('\t', ' ')
+    mylist = file_text.split('\n')
+    for listitem in mylist:
+        if listitem.strip() == '':
+            mylist.remove(listitem)
+            continue
+    fp.close()
+    return mylist

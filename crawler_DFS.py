@@ -28,7 +28,7 @@ def proc_league(myurl, proc_match=None):
     """
     this_url = const.URL_DOTAMAX_PREFIX + myurl
     print 'processing:', this_url
-    code, html = getHtml(this_url)
+    code, html = get_html(this_url)
     status = code // 100
     if not (status == 2 or status == 3):
         print 'Bad sublink, going to the next url...'
@@ -81,7 +81,7 @@ def main():
     """
     Driver function
     """
-    code, html = getHtml(const.URL_DOTAMAX_TOUR)
+    code, html = get_html(const.URL_DOTAMAX_TOUR)
     status = code // 100
     if status == 2 or status == 3:
         get_entry(html, proc_league)
