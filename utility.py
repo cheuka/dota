@@ -4,6 +4,8 @@ from lxml import etree
 import re
 import socket
 import const
+import requests
+import HTMLParser
 
 
 socket.setdefaulttimeout(20.0)
@@ -39,6 +41,10 @@ def get_from_etree(mytree, attrib):
     """
     contents = mytree.xpath("//" + attrib)
     return contents
+
+
+def get_from_parser():
+    pass
 
 
 def print_and_write(content='', fp=None):

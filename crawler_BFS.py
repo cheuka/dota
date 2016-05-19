@@ -4,6 +4,7 @@ from utility import *
 import os
 import re
 import time
+import HTMLParser
 
 
 import sys
@@ -150,8 +151,36 @@ def proc_match(myurl, datestamp):
     code, html = get_html(myurl)
     # print code, html
     selector = etree.HTML(html)
-    all_events = selector.xpath('//div[@class="event"]')
-    print all_events
+    match_log = selector.xpath('//div[@class="match-log"]/*')
+    log_list = []
+    for event in match_log:
+        if len(event):
+            event_dict = dict()
+            for item in event[0]:
+                if 'class' in item.attrib:
+                    if item.attrib['class'] == 'time':
+                        if item.text:
+                            event_dict['time'] = item.text
+                    elif item.attrib['class'] == 'extra':
+                        if item.text:
+                            event_dict['extra'] = item.text
+                    elif item.attrib['class'] == 'event':
+                        for anchor in item:
+                            if anchor.tail or anchor.text:
+                                event_dict['action'] = anchor.text + anchor.tail
+                            for img in anchor:
+                                if img.tail:
+                                    if 'host' not in event_dict:
+                                        event_dict['host'] = img.text + img.tail
+                                    else:
+                                        event_dict['object'] = img.text + img.tail
+            if len(event_dict):
+                test_string = ''
+                for k, v in event_dict.items():
+                    test_string += k + ':' + v + '.'
+                print test_string
+                log_list.append(event_dict)
+    # for i in log_list:
     exit()
 
 
