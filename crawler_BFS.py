@@ -19,7 +19,9 @@ sys.setdefaultencoding('utf-8')
 
 # if you have not found all match lists, mark it as False
 FORCE_FIND_MATCH_LIST = False
-FORCE_CACHE = False  # careful, it will pop out a lot of html cache files, only for debug mode
+FORCE_CACHE = True  # careful, it will pop out a lot of html cache files, only for debug mode
+FORCE_CACHE_AUTOCLEAN = True  # with autoclean, the cached html will be cleaned after the whole has been processed
+
 
 def get_entries(content, proc_league=None):
     reg = r'\?league_id=[0-9]{1,6}'
@@ -166,12 +168,48 @@ def proc_match(match_id):
         myurl = 'http://www.dotabuff.com/matches/' + match_id + '/vision'
         code, html = get_html(myurl)
     soup = BeautifulSoup(html, 'lxml')  # need to include lxml to avoid warning from bs4
+
+    # getting heros and players
+
+    heros_dict = dict()  # the dict to store radiant and dire
+
+    faction_radiants = soup.find_all('tr', {'class': 'faction-radiant'})
+    faction_dires = soup.find_all('tr', {'class': 'faction-dire'})
+    heros_dict['radiant'] = []
+    heros_dict['dire'] = []
+
+    for hero in faction_radiants:
+        # player name:
+        hero_dict = dict()
+        player_td = hero.find('td', {'class': 'r-tab-player-name'})
+        hero_dict['player_name'] = player_td.span.text
+        # hero:
+        hero_td = hero.find('td', {'class': 'r-tab-icon'})
+        hero_dict['hero_name'] = hero_td.div.a.attrs['href']
+        # way:
+        hero_dict['way'] = player_td.div.text
+        heros_dict['radiant'].append(hero_dict)
+
+    for hero in faction_dires:
+        # player name:
+        hero_dict = dict()
+        player_td = hero.find('td', {'class': 'r-tab-player-name'})
+        hero_dict['player_name'] = player_td.span.text
+        # hero:
+        hero_td = hero.find('td', {'class': 'r-tab-icon'})
+        hero_dict['hero_name'] = hero_td.div.a.attrs['href']
+        # way:
+        hero_dict['way'] = player_td.div.text
+        heros_dict['dire'].append(hero_dict)
+
+    # the details
     match_log = soup.find_all('div', {'class': 'match-log'})
     match_visions = soup.find_all('div', {'class': 'vision-icon'})
     if len(match_log) == 0 or len(match_visions) == 0:
         print 'Error in this HTML format for dotabuff'
         return
     all_events = match_log[0].find_all('div', {'class': 'event'}, False)
+
     # print all_events
     visions_dict = {}  # store the vision by tooltip id
     visions_missing_tooltip = []  # store the visions that does not have a tooltipid
@@ -191,6 +229,8 @@ def proc_match(match_id):
     for event in all_events:
         event_text = event.text
         event_dict = dict()
+        if not event.div or not event.div.div:
+            continue
         event_dict['time'] = str(event.div.find('span', {'class': 'time'}).text)
         # print event.div.find('span', {'class': 'extras'})
         anchors = event.div.div.find_all('a')
@@ -200,12 +240,18 @@ def proc_match(match_id):
         for item in anchors:
             if counter == 0:
                 event_dict['host'] = str(item.text.strip())
+                if 'attrs' in item and 'class' in item.attrs:
+                    if 'color-faction-dire' in item.attrs['class']:
+                        event_dict['host_fraction'] = 'dire'
+                    elif 'color-faction-radiant' in item.attrs['class']:
+                        event_dict['host_fraction'] = 'radiant'
             elif counter == 1:
                 event_dict['item'] = str(item.text.strip())
             else:
-                to_append = str(item.img.attrs['alt'].strip())
-                if len(to_append):
-                    event_targets.append(to_append)
+                if item.img and 'alt' in item.img.attrs:
+                    to_append = str(item.img.attrs['alt'].strip())
+                    if len(to_append):
+                        event_targets.append(to_append)
             counter += 1
             event_dict['action'] = str(re.sub(item.text.strip(), '', event_dict['action']).strip())
         if len(event_targets):
@@ -220,14 +266,21 @@ def proc_match(match_id):
                 list_str = str(v)
             sample_string += (str(k) + ':' + str(list_str) + ';')
         # print sample_string
-        event_list.append([event_text, event_dict])
+        event_list.append(event_dict)
     # write the result into file as json
-    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/events/res_'+match_id+'.txt', 'w')
-    json.dump(event_list, fp)
+    if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/events'):
+        os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/events')
+    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/events/res_'+match_id+'.txt', 'w+')
+    json.dump({'heros': heros_dict, 'events:': event_list}, fp)
     fp.close()
-    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/visions/res_'+match_id+'.txt', 'w')
+    if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/visions'):
+        os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/visions')
+    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/visions/res_'+match_id+'.txt', 'w+')
     json.dump(visions_missing_tooltip, fp)
     fp.close()
+    if FORCE_CACHE_AUTOCLEAN and FORCE_CACHE:
+        if os.path.exists(const.FN_DATADIR+const.FN_CACHED_HTML+match_id):
+            os.remove(const.FN_DATADIR+const.FN_CACHED_HTML+match_id)
     """
     selector = etree.HTML(html)
     match_log = selector.xpath('//div[@class="match-log"]/*')
