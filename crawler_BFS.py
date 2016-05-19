@@ -1,10 +1,15 @@
 #-*-coding:utf8-*-
+"""
+Used beautifulsoup4
+"""
+
+import json
 import const
 from utility import *
 import os
 import re
 import time
-import HTMLParser
+from bs4 import BeautifulSoup
 
 
 import sys
@@ -14,7 +19,7 @@ sys.setdefaultencoding('utf-8')
 
 # if you have not found all match lists, mark it as False
 FORCE_FIND_MATCH_LIST = False
-
+FORCE_CACHE = True  # careful, it will pop out a lot of html cache files, only for debug mode
 
 def get_entries(content, proc_league=None):
     reg = r'\?league_id=[0-9]{1,6}'
@@ -137,19 +142,91 @@ def proc_match_list(myfunc=None):
     print 'Finished process of', counter, 'matches'
 
 
-def proc_match(myurl, datestamp):
+def proc_match(match_id, datestamp):
     """
     Now is getting vision
-    :param myurl:
+    :param match_id:
     :param datestamp:
     :return:
     """
-    print 'Processing ', myurl, 'at', datestamp
-    # myurl = const.URL_DOTAMAX_PREFIX+'/match/detail/vision/'+myurl+'/'
-    myurl = 'http://www.dotabuff.com/matches/'+myurl+'/vision'
-    # print 'url:', myurl
-    code, html = get_html(myurl)
-    # print code, html
+    print 'Processing ', match_id, 'at', datestamp
+    # match_id = const.URL_DOTAMAX_PREFIX+'/match/detail/vision/'+match_id+'/'
+    # print 'url:', match_id
+    if FORCE_CACHE:
+        if not os.path.exists(const.FN_DATADIR+const.FN_CACHED_HTML+match_id):
+            myurl = 'http://www.dotabuff.com/matches/' + match_id + '/vision'
+            code, html = get_html(myurl)
+            fp = open(const.FN_DATADIR+const.FN_CACHED_HTML+match_id, 'w')
+            fp.write(html)
+            fp.close()
+        else:
+            fp = open(const.FN_DATADIR+const.FN_CACHED_HTML+match_id, 'r')
+            html = fp.read()
+            fp.close()
+    else:
+        myurl = 'http://www.dotabuff.com/matches/' + match_id + '/vision'
+        code, html = get_html(myurl)
+    soup = BeautifulSoup(html, 'lxml')  # need to include lxml to avoid warning from bs4
+    match_log = soup.find_all('div', {'class': 'match-log'})
+    match_visions = soup.find_all('div', {'class': 'vision-icon'})
+    if len(match_log) == 0 or len(match_visions) == 0:
+        print 'Error in this HTML format for dotabuff'
+        return
+    all_events = match_log[0].find_all('div', {'class': 'event'}, False)
+    # print all_events
+    visions_dict = {}  # store the vision by tooltip id
+    visions_missing_tooltip = []  # store the visions that does not have a tooltipid
+    for vision in match_visions:
+        vision_dict = dict()
+        vision_dict['pos_style'] = vision.attrs['style']
+        vision_dict['data_slider_min'] = vision.attrs['data-slider-min']
+        vision_dict['data_slider_max'] = vision.attrs['data-slider-max']
+        if 'data-hasqtip' in vision.attrs:
+            tooltipid = vision.attrs['data-hasqtip']
+            visions_dict[tooltipid] = vision_dict
+            # print 'found tooltiped vision'
+        else:
+            visions_missing_tooltip.append(vision_dict)
+            # print 'found missing vision'
+    event_list = []
+    for event in all_events:
+        event_text = event.text
+        event_dict = dict()
+        event_dict['time'] = str(event.div.find('span', {'class': 'time'}).text)
+        # print event.div.find('span', {'class': 'extras'})
+        anchors = event.div.div.find_all('a')
+        counter = 0
+        event_targets = []
+        event_dict['action'] = str(event.div.div.text)
+        for item in anchors:
+            if counter == 0:
+                event_dict['host'] = str(item.text.strip())
+            elif counter == 1:
+                event_dict['item'] = str(item.text.strip())
+            else:
+                to_append = str(item.img.attrs['alt'].strip())
+                if len(to_append):
+                    event_targets.append(to_append)
+            counter += 1
+            event_dict['action'] = str(re.sub(item.text.strip(), '', event_dict['action']).strip())
+        if len(event_targets):
+            event_dict['targets'] = event_targets
+        sample_string = ''
+        for k, v in event_dict.items():
+            if isinstance(v, list) or isinstance(v, tuple):
+                list_str = ''
+                for i in v:
+                    list_str += (i + ',')
+            else:
+                list_str = str(v)
+            sample_string += (str(k) + ':' + str(list_str) + ';')
+        # print sample_string
+        event_list.append([event_text, event_dict])
+    # write the result into file as json
+    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/'+datestamp+'/res_'+match_id+'.txt', 'w')
+    json.dump(event_list, fp)
+    fp.close()
+    """
     selector = etree.HTML(html)
     match_log = selector.xpath('//div[@class="match-log"]/*')
     log_list = []
@@ -181,7 +258,9 @@ def proc_match(myurl, datestamp):
                 print test_string
                 log_list.append(event_dict)
     # for i in log_list:
-    exit()
+    """
+    # to debug on one, uncomment the exit()
+    # exit()
 
 
 def main():

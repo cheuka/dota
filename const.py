@@ -9,7 +9,7 @@ FN_LEAGUE_DIR = '/leagues'
 FN_MATCH_LIST = '/match_list.txt'
 FN_RESULT_DIR = '/results'
 FN_RESULT_TXT = '/result.txt'
-
+FN_CACHED_HTML = '/_cached_html_'
 URL_HEADER = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36'}
 
 
