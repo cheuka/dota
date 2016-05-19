@@ -172,7 +172,6 @@ def proc_match(match_id):
     # getting heros and players
 
     heros_dict = dict()  # the dict to store radiant and dire
-
     faction_radiants = soup.find_all('tr', {'class': 'faction-radiant'})
     faction_dires = soup.find_all('tr', {'class': 'faction-dire'})
     heros_dict['radiant'] = []
@@ -182,24 +181,32 @@ def proc_match(match_id):
         # player name:
         hero_dict = dict()
         player_td = hero.find('td', {'class': 'r-tab-player-name'})
-        hero_dict['player_name'] = player_td.span.text
+        player_name = str(player_td.find('a', {'class': 'link-type-player'}).text)
+        hero_dict['player_name'] = player_name
         # hero:
         hero_td = hero.find('td', {'class': 'r-tab-icon'})
-        hero_dict['hero_name'] = hero_td.div.a.attrs['href']
+        hero_name = hero_td.div.a.attrs['href']
+        hero_name = hero_name.replace('-', ' ')
+        hero_name = hero_name.replace('/heroes/', '')
+        hero_dict['hero_name'] = hero_name
         # way:
-        hero_dict['way'] = player_td.div.text
+        hero_dict['lane'] = player_td.div.span.acronym.text
         heros_dict['radiant'].append(hero_dict)
 
     for hero in faction_dires:
         # player name:
         hero_dict = dict()
         player_td = hero.find('td', {'class': 'r-tab-player-name'})
-        hero_dict['player_name'] = player_td.span.text
+        player_name = str(player_td.find('a', {'class': 'link-type-player'}).text)
+        hero_dict['player_name'] = player_name
         # hero:
         hero_td = hero.find('td', {'class': 'r-tab-icon'})
-        hero_dict['hero_name'] = hero_td.div.a.attrs['href']
+        hero_name = hero_td.div.a.attrs['href']
+        hero_name = hero_name.replace('-', ' ')
+        hero_name = hero_name.replace('/heroes/', '')
+        hero_dict['hero_name'] = hero_name
         # way:
-        hero_dict['way'] = player_td.div.text
+        hero_dict['lane'] = player_td.div.span.acronym.text
         heros_dict['dire'].append(hero_dict)
 
     # the details
@@ -210,7 +217,7 @@ def proc_match(match_id):
         return
     all_events = match_log[0].find_all('div', {'class': 'event'}, False)
 
-    # print all_events
+    # Getting all vision positions
     visions_dict = {}  # store the vision by tooltip id
     visions_missing_tooltip = []  # store the visions that does not have a tooltipid
     for vision in match_visions:
@@ -225,6 +232,8 @@ def proc_match(match_id):
         else:
             visions_missing_tooltip.append(vision_dict)
             # print 'found missing vision'
+
+    # Getting all events
     event_list = []
     for event in all_events:
         event_text = event.text
@@ -239,14 +248,14 @@ def proc_match(match_id):
         event_dict['action'] = str(event.div.div.text)
         for item in anchors:
             if counter == 0:
-                event_dict['host'] = str(item.text.strip())
+                event_dict['host'] = str(item.text.strip().lower())
                 if 'attrs' in item and 'class' in item.attrs:
                     if 'color-faction-dire' in item.attrs['class']:
                         event_dict['host_fraction'] = 'dire'
                     elif 'color-faction-radiant' in item.attrs['class']:
                         event_dict['host_fraction'] = 'radiant'
             elif counter == 1:
-                event_dict['item'] = str(item.text.strip())
+                event_dict['item'] = str(item.text.strip().lower())
             else:
                 if item.img and 'alt' in item.img.attrs:
                     to_append = str(item.img.attrs['alt'].strip())
@@ -267,11 +276,19 @@ def proc_match(match_id):
             sample_string += (str(k) + ':' + str(list_str) + ';')
         # print sample_string
         event_list.append(event_dict)
+
+    # check the final result
+    winner = 'radiant'
+    if len(event_list) and 'action' in event_list[-1]:
+        if event_list[-1]['action'].strip() == 'The Dire have won the match':
+            winner = 'dire'
+
+
     # write the result into file as json
     if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/events'):
         os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/events')
     fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/events/res_'+match_id+'.txt', 'w+')
-    json.dump({'heros': heros_dict, 'events:': event_list}, fp)
+    json.dump({'heroes': heros_dict, 'events:': event_list, 'winner': winner}, fp)
     fp.close()
     if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/visions'):
         os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/visions')
@@ -281,39 +298,6 @@ def proc_match(match_id):
     if FORCE_CACHE_AUTOCLEAN and FORCE_CACHE:
         if os.path.exists(const.FN_DATADIR+const.FN_CACHED_HTML+match_id):
             os.remove(const.FN_DATADIR+const.FN_CACHED_HTML+match_id)
-    """
-    selector = etree.HTML(html)
-    match_log = selector.xpath('//div[@class="match-log"]/*')
-    log_list = []
-    for event in match_log:
-        if len(event):
-            event_dict = dict()
-            for item in event[0]:
-                if 'class' in item.attrib:
-                    if item.attrib['class'] == 'time':
-                        if item.text:
-                            event_dict['time'] = item.text
-                    elif item.attrib['class'] == 'extra':
-                        if item.text:
-                            event_dict['extra'] = item.text
-                    elif item.attrib['class'] == 'event':
-                        for anchor in item:
-                            if anchor.tail or anchor.text:
-                                event_dict['action'] = anchor.text + anchor.tail
-                            for img in anchor:
-                                if img.tail:
-                                    if 'host' not in event_dict:
-                                        event_dict['host'] = img.text + img.tail
-                                    else:
-                                        event_dict['object'] = img.text + img.tail
-            if len(event_dict):
-                test_string = ''
-                for k, v in event_dict.items():
-                    test_string += k + ':' + v + '.'
-                print test_string
-                log_list.append(event_dict)
-    # for i in log_list:
-    """
     # to debug on one, uncomment the exit()
     # exit()
 
