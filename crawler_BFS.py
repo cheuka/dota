@@ -233,6 +233,9 @@ def proc_match(match_id):
             visions_missing_tooltip.append(vision_dict)
             # print 'found missing vision'
 
+    # check the final result
+    winner = 'radiant'
+
     # Getting all events
     event_list = []
     for event in all_events:
@@ -263,6 +266,8 @@ def proc_match(match_id):
                         event_targets.append(to_append)
             counter += 1
             event_dict['action'] = str(re.sub(item.text.strip(), '', event_dict['action']).strip())
+            if event_dict['action'] == 'The Dire have won the match':
+                winner = 'dire'
         if len(event_targets):
             event_dict['targets'] = event_targets
         sample_string = ''
@@ -276,12 +281,6 @@ def proc_match(match_id):
             sample_string += (str(k) + ':' + str(list_str) + ';')
         # print sample_string
         event_list.append(event_dict)
-
-    # check the final result
-    winner = 'radiant'
-    if len(event_list) and 'action' in event_list[-1]:
-        if event_list[-1]['action'].strip() == 'The Dire have won the match':
-            winner = 'dire'
 
 
     # write the result into file as json
