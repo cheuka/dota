@@ -19,7 +19,7 @@ sys.setdefaultencoding('utf-8')
 
 # if you have not found all match lists, mark it as False
 FORCE_FIND_MATCH_LIST = False
-FORCE_CACHE = True  # careful, it will pop out a lot of html cache files, only for debug mode
+FORCE_CACHE = False  # careful, it will pop out a lot of html cache files, only for debug mode
 
 def get_entries(content, proc_league=None):
     reg = r'\?league_id=[0-9]{1,6}'
@@ -122,9 +122,8 @@ def proc_match_list(myfunc=None):
         # print 'Results already exists. Delete it before we can start moving. Exiting...'
         #return
         os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR)
-
-    mydatestamp = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
-    os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/'+mydatestamp)
+    # mydatestamp = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
+    # os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/'+mydatestamp)
     counter = 0
     for parent, dirs, files in os.walk(rootdir):
         for dirname in dirs:
@@ -137,19 +136,19 @@ def proc_match_list(myfunc=None):
             if myfunc:
                 for i in match_list:
                     match_id = re.sub(r'\/match\/detail\/', '', i)
-                    myfunc(match_id, mydatestamp)
+                    if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/events/res_'+match_id+'.txt'):
+                        myfunc(match_id)
                     counter += 1
     print 'Finished process of', counter, 'matches'
 
 
-def proc_match(match_id, datestamp):
+def proc_match(match_id):
     """
     Now is getting vision
     :param match_id:
-    :param datestamp:
     :return:
     """
-    print 'Processing ', match_id, 'at', datestamp
+    print 'Processing ', match_id
     # match_id = const.URL_DOTAMAX_PREFIX+'/match/detail/vision/'+match_id+'/'
     # print 'url:', match_id
     if FORCE_CACHE:
@@ -223,8 +222,11 @@ def proc_match(match_id, datestamp):
         # print sample_string
         event_list.append([event_text, event_dict])
     # write the result into file as json
-    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/'+datestamp+'/res_'+match_id+'.txt', 'w')
+    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/events/res_'+match_id+'.txt', 'w')
     json.dump(event_list, fp)
+    fp.close()
+    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/visions/res_'+match_id+'.txt', 'w')
+    json.dump(visions_missing_tooltip, fp)
     fp.close()
     """
     selector = etree.HTML(html)
