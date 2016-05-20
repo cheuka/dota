@@ -11,7 +11,7 @@ import os
 import re
 import time
 from bs4 import BeautifulSoup
-
+# import BeautifulSoup
 
 import sys
 reload(sys)
@@ -214,6 +214,12 @@ def proc_force_cache(myurl, cache_filename):
     return html
 
 
+def proc_remove_cache(cache_filename):
+    if FORCE_CACHE_AUTOCLEAN and FORCE_CACHE:
+        if os.path.exists(cache_filename):
+            os.remove(cache_filename)
+
+
 def match_overview(match_id, filename):
     print 'Processing match', match_id, 'for overview'
     myurl = 'http://www.dotabuff.com/matches/' + match_id
@@ -277,9 +283,7 @@ def match_overview(match_id, filename):
     fp.close()
 
     # process autoclean for cache
-    if FORCE_CACHE_AUTOCLEAN and FORCE_CACHE:
-        if os.path.exists(const.FN_DATADIR+const.FN_CACHED_HTML+match_id):
-            os.remove(const.FN_DATADIR+const.FN_CACHED_HTML+match_id)
+    proc_remove_cache(cache_filename)
     # to debug on one, uncomment the exit()
     # exit()
 
@@ -293,7 +297,7 @@ def match_vision(match_id, filename):
     print 'Processing match', match_id, 'for visions'
     # match_id = const.URL_DOTAMAX_PREFIX+'/match/detail/vision/'+match_id+'/'
     myurl = 'http://www.dotabuff.com/matches/' + match_id + '/vision'
-    cache_filename = const.FN_DATADIR+const.FN_CACHED_HTML+match_id
+    cache_filename = const.FN_DATADIR+const.FN_CACHED_HTML+match_id+'_vision'
     html = proc_force_cache(myurl, cache_filename)
 
     soup = BeautifulSoup(html, 'lxml')  # need to include lxml to avoid warning from bs4
@@ -379,187 +383,60 @@ def match_vision(match_id, filename):
     fp.close()
 
     # process autoclean for cache
-    if FORCE_CACHE_AUTOCLEAN and FORCE_CACHE:
-        if os.path.exists(const.FN_DATADIR+const.FN_CACHED_HTML+match_id):
-            os.remove(const.FN_DATADIR+const.FN_CACHED_HTML+match_id)
+    proc_remove_cache(cache_filename)
     # to debug on one, uncomment the exit()
     # exit()
 
 
-'''
-def proc_match_log(match_id):
+def match_log(match_id, file_name):
     """
     Getting all event log
     :param match_id:
     :return:
     """
     print 'Processing match', match_id, 'for log'
-    if FORCE_CACHE:
-        if not os.path.exists(const.FN_DATADIR+const.FN_CACHED_HTML+'_log_'+match_id):
-            myurl = 'http://www.dotabuff.com/matches/' + match_id + '/log'
-            code, html = get_html(myurl)
-            fp = open(const.FN_DATADIR+const.FN_CACHED_HTML+'_log_'+match_id, 'w')
-            fp.write(html)
-            fp.close()
-        else:
-            fp = open(const.FN_DATADIR+const.FN_CACHED_HTML+'_log_'+match_id, 'r')
-            html = fp.read()
-            fp.close()
-    else:
-        myurl = 'http://www.dotabuff.com/matches/' + match_id + '/log'
-        code, html = get_html(myurl)
-    soup = BeautifulSoup(html, 'lxml')  # need to include lxml to avoid warning from bs4
 
-    match_log = soup.find_all('div', {'class': 'match-log'})
-    if len(match_log) == 0:
+    myurl = 'http://www.dotabuff.com/matches/' + match_id + '/log'
+    cache_filename = const.FN_DATADIR+const.FN_CACHED_HTML+match_id+'_log'
+    html = proc_force_cache(myurl, cache_filename)
+
+    soup = BeautifulSoup(html, 'html.parser')  # need to include lxml to avoid warning from bs4
+    match_log_class = soup.find('div', {'class': 'match-log'})
+    # print match_log_class.prettify()
+    # print str(match_log_class)
+
+    if len(match_log_class) == 0:
         print 'Missing Page on this match or Error in this HTML format for dotabuff'
         return
-    all_events = match_log[0].find_all('div', {'class': 'event'}, False)
-
-    winner = 'radiant'
-
-    # process event log
+    all_events = match_log_class.find_all('div', {'class': 'event'}, False)
+    # all_events_soup = soup.find_all('div', {'class': 'event'})
     event_list = []
 
-    # start processing each event:
     for event in all_events:
-        print 'text:', event.text
-        if (not event.div) or (not event.div.div):
-            print 'missing one...'
-            continue
-        event_dict = dict()
-        event_dict['time'] = str(event.div.find('span', {'class': 'time'}).text)
+        print '=========new event=========='
+        print str(event)
 
-        # distinguish the event types
-        event_type = event.div.div.text
-        if 'killed by' in event_type:
-            event_dict['type'] = 'kill'
-        elif 'killed' in event_type:
-            event_dict['type'] = 'kill roshan'
-        elif 'gets' in event_type:
-            event_dict['type'] = 'get'
-        elif 'got a 2x multi-kill'in event_type:
-            event_dict['type'] = '2x kill'
-        elif 'got a 3x multi-kill'in event_type:
-            event_dict['type'] = '3x kill'
-        elif 'got a 4x multi-kill'in event_type:
-            event_dict['type'] = '4x kill'
-        elif 'bought back' in event_type:
-            event_dict['type'] = 'buyback'
-        elif 'takes' in event_type:
-            event_dict['type'] = 'take'
-        elif 'has spawned' in event_type:
-            event_dict['type'] = 'spawn'
-        elif 'destroyed' in event_type or 'destroys' in event_type:
-            event_dict['type'] = 'destroy'
-        elif 'drops' in event_type or 'dropped' in event_type:
-            event_dict['type'] = 'drop'
-        elif 'activated' in event_type:
-            event_dict['type'] = 'activate'
-        elif 'placed' in event_type:
-            event_dict['type'] = 'placed'
-        elif 'have won the match' in event_type:
-            event_dict['type'] = 'end of game'
-        elif 'bottled' in event_type:
-            event_dict['type'] = 'bottled'
-        elif 'picked up' in event_type:
-            event_dict['type'] = 'pickup'
-        elif 'denies' in event_type or 'denied' in event_type:
-            event_dict['type'] = 'deny'
-        else:
-            event_dict['type'] = 'unknown'
 
-        if 'Top' in event.div.div.text:
-            event_dict['position'] = 'Top'
-        if 'Bottom' in event.div.div.text:
-            event_dict['position'] = 'Bottom'
-        if 'The Dire have won the match' in event.div.div.text:
-            winner = 'dire'
-
-        if not hasattr(event, 'div'):
-            continue
-        if not hasattr(event.div, 'div'):
-            continue
-        anchors = set(event.div.div.find_all('a'))
-        spans = set(event.div.div.find_all('span'))
-        items = anchors | spans
-        counter = 0
-        event_targets = []
-        # print 'string:', str(event.div.div.text)  # for debug
-        for item in items:
-            if 'glyph' in item.attrs['class']:
-                event_dict['glyph'] = True
-            if counter == 0:
-                host_name = 'host'
-                if event_dict['type'] == 'kill':
-                    host_name = 'victim'
-                event_dict[host_name] = str(item.text.strip().lower())
-                if 'attrs' in item and 'class' in item.attrs:
-                    if 'color-faction-dire' in item.attrs['class']:
-                        event_dict['host_fraction'] = 'dire'
-                    elif 'color-faction-radiant' in item.attrs['class']:
-                        event_dict['host_fraction'] = 'radiant'
-                    else:
-                        event_dict['host_fraction'] = 'neutral'
-            elif counter == 1:
-                host_name = 'host'
-                if event_dict['type'] == 'kill':
-                    host_name = 'killer'
-                event_dict[host_name] = str(item.text.strip().lower())
-            else:
-                if hasattr(item, 'attrs') and 'href' in item.attrs and 'abilities' in item.attrs['href']:
-                    event_dict['ability'] = str(item.img.attrs['alt'].strip())
-                elif hasattr(item, 'img') and item.img and 'attrs' in item.img and 'alt' in item.img.attrs:
-                    to_append = str(item.img.attrs['alt'].strip())
-                    if len(to_append):
-                        event_targets.append(to_append)
-            counter += 1
-            # event_dict['action'] = str(re.sub(item.text.strip(), '', event_dict['action']).strip())
-
-        if len(event_targets):
-            target_name = 'targets'
-            if event_dict['type'] == 'kill':
-                target_name = 'assistants'
-            event_dict[target_name] = event_targets
-
-        """ FOR DEBUG ONLY:"""
-        sample_string = ''
-        for k, v in event_dict.items():
-            if isinstance(v, list) or isinstance(v, tuple):
-                list_str = ''
-                for i in v:
-                    list_str += (i + ',')
-            else:
-                list_str = str(v)
-            sample_string += (str(k) + ':' + str(list_str) + ';')
-        print sample_string
-        """ """
-
-        event_list.append(event_dict)
 
     # end of iteration of events
-
+    exit()  # for debug
     # process event log write to json file
-    if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/log_events'):
-        os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/log_events')
-    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/log_events/res_'+match_id+'.json', 'w+')
-    json.dump({'events': event_list, 'winner': winner}, fp, False, True, True, True, None, 4)
+
+    fp = open(file_name, 'w+')
+    # json.dump({'events': event_list}, fp, False, True, True, True, None, 4)
     fp.close()
 
     # exit()  # for debug, one time run
 
     # end of process, cleaning optionally
-    if FORCE_CACHE_AUTOCLEAN and FORCE_CACHE:
-        if os.path.exists(const.FN_DATADIR+const.FN_CACHED_HTML+'_log_'+match_id):
-            os.remove(const.FN_DATADIR+const.FN_CACHED_HTML+'_log_'+match_id)
-'''
+    proc_remove_cache(cache_filename)
 
 
 def main():
     """
     Driver function
     """
-    func_list = [match_overview, match_vision]
+    func_list = [match_overview, match_vision, match_log]
     if not os.path.exists(const.FN_DATADIR+const.FN_LEAGUE_LIST):
         gen_league_list()
     if (not os.listdir(const.FN_DATADIR+const.FN_LEAGUE_DIR)) or FORCE_FIND_MATCH_LIST:
