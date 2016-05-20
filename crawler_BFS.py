@@ -1,4 +1,5 @@
-#-*-coding:utf8-*-
+# -*-coding:utf8-*-
+
 """
 Used beautifulsoup4
 """
@@ -115,14 +116,14 @@ def gen_league_list():
         print 'bad url link, program terminating...'
 
 
-def proc_match_list(myfunc=None):
+def proc_match_list(myfunc1=None, myfunc2=None):
     if not os.path.exists(const.FN_DATADIR+const.FN_LEAGUE_DIR):
         print 'Error, please rerun the script to generate match lists'
         return
     rootdir = const.FN_DATADIR+const.FN_LEAGUE_DIR
     if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR):
         # print 'Results already exists. Delete it before we can start moving. Exiting...'
-        #return
+        # return
         os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR)
     # mydatestamp = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
     # os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/'+mydatestamp)
@@ -135,22 +136,25 @@ def proc_match_list(myfunc=None):
                 print 'Error in finding match list file'
                 return
             match_list = get_list_from_file(const.FN_DATADIR+const.FN_LEAGUE_DIR+'\/'+dirname+const.FN_MATCH_LIST)
-            if myfunc:
-                for i in match_list:
-                    match_id = re.sub(r'\/match\/detail\/', '', i)
-                    if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/events/res_'+match_id+'.txt'):
-                        myfunc(match_id)
-                    counter += 1
+            for i in match_list:
+                match_id = re.sub(r'\/match\/detail\/', '', i)
+                if myfunc1 and not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+ '/vision/res_'+match_id+ '.txt'):
+                    myfunc1(match_id)
+                '''
+                if myfunc2 and not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+ '/log_events/res_'+match_id+ '.txt'):
+                    myfunc2(match_id)
+                '''
+                counter += 1
     print 'Finished process of', counter, 'matches'
 
 
-def proc_match(match_id):
+def proc_match_vision(match_id):
     """
     Now is getting vision
     :param match_id:
     :return:
     """
-    print 'Processing ', match_id
+    print 'Processing match', match_id, 'for visions'
     # match_id = const.URL_DOTAMAX_PREFIX+'/match/detail/vision/'+match_id+'/'
     # print 'url:', match_id
     if FORCE_CACHE:
@@ -211,12 +215,13 @@ def proc_match(match_id):
 
     # the details
     match_log = soup.find_all('div', {'class': 'match-log'})
-    match_visions = soup.find_all('div', {'class': 'vision-icon'})
-    if len(match_log) == 0 or len(match_visions) == 0:
-        print 'Error in this HTML format for dotabuff'
+    # match_visions = soup.find_all('div', {'class': 'vision-icon'})
+    if len(match_log) == 0:  # or len(match_visions) == 0:
+        print 'Missing Page on this match or Error in this HTML format for dotabuff'
         return
     all_events = match_log[0].find_all('div', {'class': 'event'}, False)
 
+    '''
     # Getting all vision positions
     visions_dict = {}  # store the vision by tooltip id
     visions_missing_tooltip = []  # store the visions that does not have a tooltipid
@@ -232,6 +237,7 @@ def proc_match(match_id):
         else:
             visions_missing_tooltip.append(vision_dict)
             # print 'found missing vision'
+    '''
 
     # check the final result
     winner = 'radiant'
@@ -239,13 +245,28 @@ def proc_match(match_id):
     # Getting all events
     event_list = []
     for event in all_events:
-        event_text = event.text
+        # event_text = event.text
         event_dict = dict()
         if not event.div or not event.div.div:
             continue
         event_dict['time'] = str(event.div.find('span', {'class': 'time'}).text)
         # print event.div.find('span', {'class': 'extras'})
         anchors = event.div.div.find_all('a')
+
+        # find position style
+        extras_span = event.find('span', {'class': 'extras'})
+        if extras_span:
+            tooltip_span = extras_span.find('span', {'class': 'tooltip-wrapper'})
+            if tooltip_span:
+                minimap = tooltip_span.find('span', {'class': 'minimap-tooltip'})
+                if minimap and minimap.span:
+                    position_text = str(minimap.span.attrs['style'])
+                    # print 'position_text:', position_text
+                    pos_list = re.findall(r'([0-9]+%)', position_text)
+                    if len(pos_list) == 2:
+                        event_dict['top'] = pos_list[0]
+                        event_dict['left'] = pos_list[1]
+
         counter = 0
         event_targets = []
         event_dict['action'] = str(event.div.div.text)
@@ -270,6 +291,8 @@ def proc_match(match_id):
                 winner = 'dire'
         if len(event_targets):
             event_dict['targets'] = event_targets
+
+        """ FOR DEBUG ONLY:
         sample_string = ''
         for k, v in event_dict.items():
             if isinstance(v, list) or isinstance(v, tuple):
@@ -280,25 +303,199 @@ def proc_match(match_id):
                 list_str = str(v)
             sample_string += (str(k) + ':' + str(list_str) + ';')
         # print sample_string
+        """
+
         event_list.append(event_dict)
 
-
     # write the result into file as json
-    if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/events'):
-        os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/events')
-    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/events/res_'+match_id+'.txt', 'w+')
-    json.dump({'heroes': heros_dict, 'events:': event_list, 'winner': winner}, fp)
+    if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/vision'):
+        os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/vision')
+    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/vision/res_'+match_id+'.txt', 'w+')
+    json.dump({'heroes': heros_dict, 'vision': event_list, 'winner': winner}, fp)
     fp.close()
-    if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/visions'):
-        os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/visions')
-    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/visions/res_'+match_id+'.txt', 'w+')
+
+    '''
+    if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/vision_points'):
+        os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/vision_points')
+    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/vision_points/res_'+match_id+'.txt', 'w+')
     json.dump(visions_missing_tooltip, fp)
     fp.close()
+    '''
+
+    # process autoclean for cache
     if FORCE_CACHE_AUTOCLEAN and FORCE_CACHE:
         if os.path.exists(const.FN_DATADIR+const.FN_CACHED_HTML+match_id):
             os.remove(const.FN_DATADIR+const.FN_CACHED_HTML+match_id)
     # to debug on one, uncomment the exit()
     # exit()
+
+
+def proc_match_log(match_id):
+    """
+    Getting all event log
+    :param match_id:
+    :return:
+    """
+    print 'Processing match', match_id, 'for log'
+    if FORCE_CACHE:
+        if not os.path.exists(const.FN_DATADIR+const.FN_CACHED_HTML+'_log_'+match_id):
+            myurl = 'http://www.dotabuff.com/matches/' + match_id + '/log'
+            code, html = get_html(myurl)
+            fp = open(const.FN_DATADIR+const.FN_CACHED_HTML+'_log_'+match_id, 'w')
+            fp.write(html)
+            fp.close()
+        else:
+            fp = open(const.FN_DATADIR+const.FN_CACHED_HTML+'_log_'+match_id, 'r')
+            html = fp.read()
+            fp.close()
+    else:
+        myurl = 'http://www.dotabuff.com/matches/' + match_id + '/log'
+        code, html = get_html(myurl)
+    soup = BeautifulSoup(html, 'lxml')  # need to include lxml to avoid warning from bs4
+
+    match_log = soup.find_all('div', {'class': 'match-log'})
+    if len(match_log) == 0:
+        print 'Missing Page on this match or Error in this HTML format for dotabuff'
+        return
+    all_events = match_log[0].find_all('div', {'class': 'event'}, False)
+
+    winner = 'radiant'
+
+    # process event log
+    event_list = []
+
+    # start processing each event:
+    for event in all_events:
+        print 'text:', event.text
+        if (not event.div) or (not event.div.div):
+            print 'missing one...'
+            continue
+        event_dict = dict()
+        event_dict['time'] = str(event.div.find('span', {'class': 'time'}).text)
+
+        # distinguish the event types
+        event_type = event.div.div.text
+        if 'killed by' in event_type:
+            event_dict['type'] = 'kill'
+        elif 'killed' in event_type:
+            event_dict['type'] = 'kill roshan'
+        elif 'gets' in event_type:
+            event_dict['type'] = 'get'
+        elif 'got a 2x multi-kill'in event_type:
+            event_dict['type'] = '2x kill'
+        elif 'got a 3x multi-kill'in event_type:
+            event_dict['type'] = '3x kill'
+        elif 'got a 4x multi-kill'in event_type:
+            event_dict['type'] = '4x kill'
+        elif 'bought back' in event_type:
+            event_dict['type'] = 'buyback'
+        elif 'takes' in event_type:
+            event_dict['type'] = 'take'
+        elif 'has spawned' in event_type:
+            event_dict['type'] = 'spawn'
+        elif 'destroyed' in event_type or 'destroys' in event_type:
+            event_dict['type'] = 'destroy'
+        elif 'drops' in event_type or 'dropped' in event_type:
+            event_dict['type'] = 'drop'
+        elif 'activated' in event_type:
+            event_dict['type'] = 'activate'
+        elif 'placed' in event_type:
+            event_dict['type'] = 'placed'
+        elif 'have won the match' in event_type:
+            event_dict['type'] = 'end of game'
+        elif 'bottled' in event_type:
+            event_dict['type'] = 'bottled'
+        elif 'picked up' in event_type:
+            event_dict['type'] = 'pickup'
+        elif 'denies' in event_type or 'denied' in event_type:
+            event_dict['type'] = 'deny'
+        else:
+            event_dict['type'] = 'unknown'
+
+        if 'Top' in event.div.div.text:
+            event_dict['position'] = 'Top'
+        if 'Bottom' in event.div.div.text:
+            event_dict['position'] = 'Bottom'
+        if 'The Dire have won the match' in event.div.div.text:
+            winner = 'dire'
+
+        if not hasattr(event, 'div'):
+            continue
+        if not hasattr(event.div, 'div'):
+            continue
+        anchors = set(event.div.div.find_all('a'))
+        spans = set(event.div.div.find_all('span'))
+        items = anchors | spans
+        counter = 0
+        event_targets = []
+        # print 'string:', str(event.div.div.text)  # for debug
+        for item in items:
+            if 'glyph' in item.attrs['class']:
+                event_dict['glyph'] = True
+            if counter == 0:
+                host_name = 'host'
+                if event_dict['type'] == 'kill':
+                    host_name = 'victim'
+                event_dict[host_name] = str(item.text.strip().lower())
+                if 'attrs' in item and 'class' in item.attrs:
+                    if 'color-faction-dire' in item.attrs['class']:
+                        event_dict['host_fraction'] = 'dire'
+                    elif 'color-faction-radiant' in item.attrs['class']:
+                        event_dict['host_fraction'] = 'radiant'
+                    else:
+                        event_dict['host_fraction'] = 'neutral'
+            elif counter == 1:
+                host_name = 'host'
+                if event_dict['type'] == 'kill':
+                    host_name = 'killer'
+                event_dict[host_name] = str(item.text.strip().lower())
+            else:
+                if hasattr(item, 'attrs') and 'href' in item.attrs and 'abilities' in item.attrs['href']:
+                    event_dict['ability'] = str(item.img.attrs['alt'].strip())
+                elif hasattr(item, 'img') and item.img and 'attrs' in item.img and 'alt' in item.img.attrs:
+                    to_append = str(item.img.attrs['alt'].strip())
+                    if len(to_append):
+                        event_targets.append(to_append)
+            counter += 1
+            # event_dict['action'] = str(re.sub(item.text.strip(), '', event_dict['action']).strip())
+
+        if len(event_targets):
+            target_name = 'targets'
+            if event_dict['type'] == 'kill':
+                target_name = 'assistants'
+            event_dict[target_name] = event_targets
+
+        """ FOR DEBUG ONLY:"""
+        sample_string = ''
+        for k, v in event_dict.items():
+            if isinstance(v, list) or isinstance(v, tuple):
+                list_str = ''
+                for i in v:
+                    list_str += (i + ',')
+            else:
+                list_str = str(v)
+            sample_string += (str(k) + ':' + str(list_str) + ';')
+        print sample_string
+        """ """
+
+        event_list.append(event_dict)
+
+    # end of iteration of events
+
+    # process event log write to json file
+    if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/log_events'):
+        os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/log_events')
+    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/log_events/res_'+match_id+'.txt', 'w+')
+    json.dump({'events': event_list, 'winner': winner}, fp)
+    fp.close()
+
+    # exit()  # for debug, one time run
+
+    # end of process, cleaning optionally
+    if FORCE_CACHE_AUTOCLEAN and FORCE_CACHE:
+        if os.path.exists(const.FN_DATADIR+const.FN_CACHED_HTML+'_log_'+match_id):
+            os.remove(const.FN_DATADIR+const.FN_CACHED_HTML+'_log_'+match_id)
+
 
 
 def main():
@@ -312,7 +509,7 @@ def main():
         if league_list:
             for league_url in league_list:
                 proc_league(league_url)
-    proc_match_list(proc_match)
+    proc_match_list(proc_match_vision, proc_match_log)
 
 
 
