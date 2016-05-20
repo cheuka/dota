@@ -1,0 +1,2452 @@
+[
+  {
+    "matchid": "2351243324",
+    "status": "won",
+    "duration": 1781,
+    "duration_text": "29:41",
+    "info": [
+      {
+        "teamid": "2783913",
+        "teamname": "No Diggity!",
+        "side": "radiant",
+        "player": [
+          {
+            "playerid": "4281729",
+            "playername": "DiG.syndereN",
+            "hero": "Dazzle"
+          },
+          {
+            "playerid": "89117038",
+            "playername": "DiG.YapzOr",
+            "hero": "Lion"
+          },
+          {
+            "playerid": "86738694",
+            "playername": "DiG.qojqva",
+            "hero": "Tinker"
+          },
+          {
+            "playerid": "100317750",
+            "playername": "DiG.Era",
+            "hero": "Lifestealer"
+          },
+          {
+            "playerid": "169025618",
+            "playername": "DiG.KheZu",
+            "hero": "Beastmaster"
+          }
+        ]
+      },
+      {
+        "teamid": "1375614",
+        "teamname": "Newbee",
+        "side": "dire",
+        "player": [
+          {
+            "playerid": "139876032",
+            "playername": "Newbee.kaka",
+            "hero": "Io"
+          },
+          {
+            "playerid": "89157606",
+            "playername": "Newbee.Mu",
+            "hero": "Batrider"
+          },
+          {
+            "playerid": "88508515",
+            "playername": "Newbee.Hao",
+            "hero": "Juggernaut"
+          },
+          {
+            "playerid": "88553213",
+            "playername": "Newbee.ChuaN",
+            "hero": "Rubick"
+          },
+          {
+            "playerid": "87012746",
+            "playername": "Newbee.kpii",
+            "hero": "Bristleback"
+          }
+        ]
+      }
+    ],
+    "logs": [
+      {
+        "time": -88,
+        "time_text": "-01:28",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Observer Ward"
+      },
+      {
+        "time": -88,
+        "time_text": "-01:28",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Observer Ward"
+      },
+      {
+        "time": -87,
+        "time_text": "-01:27",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Observer Ward"
+      },
+      {
+        "time": -86,
+        "time_text": "-01:26",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Sentry Ward"
+      },
+      {
+        "time": -82,
+        "time_text": "-01:22",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Observer Ward"
+      },
+      {
+        "time": -82,
+        "time_text": "-01:22",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "47",
+          "top": "48"
+        }
+      },
+      {
+        "time": -77,
+        "time_text": "-01:17",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Sentry Ward"
+      },
+      {
+        "time": -77,
+        "time_text": "-01:17",
+        "side": "radiant",
+        "text": "[Lion] Lion: gl hf"
+      },
+      {
+        "time": -75,
+        "time_text": "-01:15",
+        "side": "dire",
+        "text": "[Bristleback] Bristleback: glhf"
+      },
+      {
+        "time": -72,
+        "time_text": "-01:12",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle: gl hf"
+      },
+      {
+        "time": -71,
+        "time_text": "-01:11",
+        "side": "radiant",
+        "text": "[Beastmaster] Beastmaster placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "29",
+          "top": "28"
+        }
+      },
+      {
+        "time": -62,
+        "time_text": "-01:02",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "71",
+          "top": "74"
+        }
+      },
+      {
+        "time": -13,
+        "time_text": "-00:13",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "dire",
+          "left": "71",
+          "top": "55"
+        }
+      },
+      {
+        "time": 0,
+        "time_text": "00:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Top",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 0,
+        "time_text": "00:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Bottom",
+        "map": {
+          "item": "rune-bounty",
+          "side": "radiant",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 2,
+        "time_text": "00:02",
+        "side": "radiant",
+        "text": "[Tinker] Tinker activated the Bottom Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "radiant",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 11,
+        "time_text": "00:11",
+        "side": "dire",
+        "text": "[Batrider] Batrider activated the Top Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 17,
+        "time_text": "00:17",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "72",
+          "top": "49"
+        }
+      },
+      {
+        "time": 49,
+        "time_text": "00:49",
+        "side": "radiant",
+        "text": "[Beastmaster] Beastmaster placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "11",
+          "top": "25"
+        }
+      },
+      {
+        "time": 95,
+        "time_text": "01:35",
+        "side": "dire",
+        "text": "[Io] Io gets Observer Ward"
+      },
+      {
+        "time": 101,
+        "time_text": "01:41",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "dire",
+          "left": "18",
+          "top": "22"
+        }
+      },
+      {
+        "time": 120,
+        "time_text": "02:00",
+        "side": "rune-illusion",
+        "text": "Illusion Rune has spawned Top",
+        "map": {
+          "item": "rune-illusion",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 120,
+        "time_text": "02:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Bottom",
+        "map": {
+          "item": "rune-bounty",
+          "side": "radiant",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 120,
+        "time_text": "02:00",
+        "side": "radiant",
+        "text": "[Lion] Lion activated the Bottom Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "radiant",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 122,
+        "time_text": "02:02",
+        "side": "dire",
+        "text": "[Io] Io bottled the Top Illusion Rune",
+        "map": {
+          "item": "rune-illusion",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 131,
+        "time_text": "02:11",
+        "side": "radiant",
+        "text": "[Lion] Lion placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "72",
+          "top": "56"
+        }
+      },
+      {
+        "time": 220,
+        "time_text": "03:40",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Observer Ward"
+      },
+      {
+        "time": 224,
+        "time_text": "03:44",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Smoke of Deceit"
+      },
+      {
+        "time": 240,
+        "time_text": "04:00",
+        "side": "rune-haste",
+        "text": "Haste Rune has spawned Top",
+        "map": {
+          "item": "rune-haste",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 240,
+        "time_text": "04:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Bottom",
+        "map": {
+          "item": "rune-bounty",
+          "side": "radiant",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 240,
+        "time_text": "04:00",
+        "side": "radiant",
+        "text": "[Lion] Lion activated the Bottom Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "radiant",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 242,
+        "time_text": "04:02",
+        "side": "dire",
+        "text": "[Io] Io activated the Top Illusion Rune from their bottle"
+      },
+      {
+        "time": 254,
+        "time_text": "04:14",
+        "side": "dire",
+        "text": "[Io] Io bottled the Top Haste Rune",
+        "map": {
+          "item": "rune-haste",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 262,
+        "time_text": "04:22",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "28",
+          "top": "47"
+        }
+      },
+      {
+        "time": 264,
+        "time_text": "04:24",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Smoke of Deceit"
+      },
+      {
+        "time": 270,
+        "time_text": "04:30",
+        "side": "dire",
+        "text": "[Io] Io placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "32",
+          "top": "62"
+        }
+      },
+      {
+        "time": 288,
+        "time_text": "04:48",
+        "side": "dire",
+        "text": "[Io] Io activated the Top Haste Rune from their bottle"
+      },
+      {
+        "time": 326,
+        "time_text": "05:26",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Observer Ward"
+      },
+      {
+        "time": 326,
+        "time_text": "05:26",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Observer Ward"
+      },
+      {
+        "time": 360,
+        "time_text": "06:00",
+        "side": "rune-invisibility",
+        "text": "Invisibility Rune has spawned Top",
+        "map": {
+          "item": "rune-invisibility",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 360,
+        "time_text": "06:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Bottom",
+        "map": {
+          "item": "rune-bounty",
+          "side": "radiant",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 364,
+        "time_text": "06:04",
+        "side": "radiant",
+        "text": "[Beastmaster] Beastmaster activated the Bottom Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "radiant",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 370,
+        "time_text": "06:10",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Observer Ward"
+      },
+      {
+        "time": 370,
+        "time_text": "06:10",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "50",
+          "top": "51"
+        }
+      },
+      {
+        "time": 396,
+        "time_text": "06:36",
+        "side": "dire",
+        "text": "[Batrider] Batrider bottled the Top Invisibility Rune",
+        "map": {
+          "item": "rune-invisibility",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 397,
+        "time_text": "06:37",
+        "side": "dire",
+        "text": "[Batrider] Batrider activated the Top Invisibility Rune from their bottle"
+      },
+      {
+        "time": 401,
+        "time_text": "06:41",
+        "side": "dire",
+        "text": "[Rubick] Rubick activated Smoke of Deceit to stealth [Juggernaut] [Rubick]",
+        "map": {
+          "item": "dust-smoke",
+          "side": "dire",
+          "left": "21",
+          "top": "21"
+        }
+      },
+      {
+        "time": 431,
+        "time_text": "07:11",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "42",
+          "top": "76"
+        }
+      },
+      {
+        "time": 460,
+        "time_text": "07:40",
+        "side": "radiant",
+        "text": "[Beastmaster] Beastmaster killed by [Io] Io Autoattack, assisted by [Batrider] [Juggernaut] [Rubick], lost 149, fed 468, 320, dead for 00:23",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "88",
+          "top": "79"
+        }
+      },
+      {
+        "time": 461,
+        "time_text": "07:41",
+        "side": "dire",
+        "text": "[Rubick] Rubick killed by [Dazzle] Dazzle Autoattack, assisted by [Lion] [Beastmaster], lost 149, fed 394, 344, dead for 00:23",
+        "map": {
+          "item": "border",
+          "side": "dire",
+          "left": "88",
+          "top": "78"
+        }
+      },
+      {
+        "time": 478,
+        "time_text": "07:58",
+        "side": "radiant",
+        "text": "[Lion] Lion killed by [Juggernaut] Juggernaut Autoattack, assisted by [Io], lost 149, fed 383, 330, dead for 00:23",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "83",
+          "top": "90"
+        }
+      },
+      {
+        "time": 480,
+        "time_text": "08:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Top",
+        "map": {
+          "item": "rune-bounty",
+          "side": "radiant",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 480,
+        "time_text": "08:00",
+        "side": "radiant",
+        "text": "[Tinker] Tinker bottled the Top Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "radiant",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 480,
+        "time_text": "08:00",
+        "side": "rune-regeneration",
+        "text": "Regeneration Rune has spawned Bottom",
+        "map": {
+          "item": "rune-regeneration",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 480,
+        "time_text": "08:00",
+        "side": "radiant",
+        "text": "[Tinker] Tinker activated the Top Bounty Rune from their bottle"
+      },
+      {
+        "time": 490,
+        "time_text": "08:10",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle killed by [Batrider] Batrider Sticky Napalm, assisted by [Io], lost 119, fed 341, 280, dead for 00:19",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "53",
+          "top": "88"
+        }
+      },
+      {
+        "time": 496,
+        "time_text": "08:16",
+        "side": "radiant",
+        "text": "The Radiant activated the Glyph of Fortification"
+      },
+      {
+        "time": 507,
+        "time_text": "08:27",
+        "side": "radiant",
+        "text": "[Lifestealer] Lifestealer denies the Radiant Tier 1 Bottom Tower",
+        "map": {
+          "item": "generic",
+          "side": "radiant",
+          "left": "80",
+          "top": "88"
+        }
+      },
+      {
+        "time": 510,
+        "time_text": "08:30",
+        "side": "dire",
+        "text": "[Io] Io bottled the Bottom Regeneration Rune",
+        "map": {
+          "item": "rune-regeneration",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 511,
+        "time_text": "08:31",
+        "side": "dire",
+        "text": "[Io] Io activated the Bottom Regeneration Rune from their bottle"
+      },
+      {
+        "time": 512,
+        "time_text": "08:32",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Observer Ward"
+      },
+      {
+        "time": 512,
+        "time_text": "08:32",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Observer Ward"
+      },
+      {
+        "time": 513,
+        "time_text": "08:33",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Sentry Ward"
+      },
+      {
+        "time": 529,
+        "time_text": "08:49",
+        "side": "dire",
+        "text": "[Batrider] Batrider gets Smoke of Deceit"
+      },
+      {
+        "time": 567,
+        "time_text": "09:27",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "25",
+          "top": "19"
+        }
+      },
+      {
+        "time": 571,
+        "time_text": "09:31",
+        "side": "dire",
+        "text": "[Io] Io activated Smoke of Deceit to stealth [Io] [Batrider]",
+        "map": {
+          "item": "dust-smoke",
+          "side": "dire",
+          "left": "43",
+          "top": "31"
+        }
+      },
+      {
+        "time": 583,
+        "time_text": "09:43",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Smoke of Deceit"
+      },
+      {
+        "time": 584,
+        "time_text": "09:44",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle killed by [Io] Io Autoattack, assisted by [Batrider], lost 119, fed 341, 280, dead for 00:19",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "34",
+          "top": "19"
+        }
+      },
+      {
+        "time": 591,
+        "time_text": "09:51",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Observer Ward"
+      },
+      {
+        "time": 600,
+        "time_text": "10:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Bottom",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 617,
+        "time_text": "10:17",
+        "side": "dire",
+        "text": "[Bristleback] Bristleback activated the Bottom Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 621,
+        "time_text": "10:21",
+        "side": "dire",
+        "text": "[Rubick] Rubick activated Smoke of Deceit to stealth [Batrider] [Juggernaut] [Rubick]",
+        "map": {
+          "item": "dust-smoke",
+          "side": "dire",
+          "left": "25",
+          "top": "25"
+        }
+      },
+      {
+        "time": 635,
+        "time_text": "10:35",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "27",
+          "top": "47"
+        }
+      },
+      {
+        "time": 649,
+        "time_text": "10:49",
+        "side": "radiant",
+        "text": "[Tinker] Tinker killed by [Juggernaut] Juggernaut Autoattack, assisted by [Batrider] [Rubick], lost 269, fed 448, 849, dead for 00:38",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "37",
+          "top": "70"
+        }
+      },
+      {
+        "time": 662,
+        "time_text": "11:02",
+        "side": "dire",
+        "text": "[Io] Io killed by [Lion] Lion Finger of Death, assisted by [Dazzle] [Beastmaster], lost 209, fed 520, 632, dead for 00:30",
+        "map": {
+          "item": "border",
+          "side": "dire",
+          "left": "39",
+          "top": "68"
+        }
+      },
+      {
+        "time": 664,
+        "time_text": "11:04",
+        "side": "radiant",
+        "text": "The Radiant lost their Courier"
+      },
+      {
+        "time": 667,
+        "time_text": "11:07",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle killed by [Juggernaut] Juggernaut Omnislash, assisted by [Io] [Bristleback], lost 119, fed 282, 279, dead for 00:19",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "39",
+          "top": "68"
+        }
+      },
+      {
+        "time": 667,
+        "time_text": "11:07",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut got a 2x multi-kill"
+      },
+      {
+        "time": 671,
+        "time_text": "11:11",
+        "side": "radiant",
+        "text": "[Beastmaster] Beastmaster killed by [Bristleback] Bristleback Quill Spray, assisted by [Batrider] [Rubick], lost 209, fed 383, 588, dead for 00:30",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "26",
+          "top": "67"
+        }
+      },
+      {
+        "time": 684,
+        "time_text": "11:24",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Observer Ward"
+      },
+      {
+        "time": 687,
+        "time_text": "11:27",
+        "side": "dire",
+        "text": "[Rubick] Rubick killed by [Lifestealer] Lifestealer Autoattack, lost 209, fed 555, 654, dead for 00:30",
+        "map": {
+          "item": "border",
+          "side": "dire",
+          "left": "33",
+          "top": "53"
+        }
+      },
+      {
+        "time": 720,
+        "time_text": "12:00",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "60",
+          "top": "67"
+        }
+      },
+      {
+        "time": 720,
+        "time_text": "12:00",
+        "side": "rune-double-damage",
+        "text": "Double Damage Rune has spawned Top",
+        "map": {
+          "item": "rune-double-damage",
+          "side": "radiant",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 720,
+        "time_text": "12:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Bottom",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 721,
+        "time_text": "12:01",
+        "side": "dire",
+        "text": "[Io] Io bottled the Bottom Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 722,
+        "time_text": "12:02",
+        "side": "radiant",
+        "text": "[Tinker] Tinker bottled the Top Double Damage Rune",
+        "map": {
+          "item": "rune-double-damage",
+          "side": "radiant",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 737,
+        "time_text": "12:17",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "86",
+          "top": "70"
+        }
+      },
+      {
+        "time": 738,
+        "time_text": "12:18",
+        "side": "dire",
+        "text": "[Io] Io activated the Bottom Bounty Rune from their bottle"
+      },
+      {
+        "time": 739,
+        "time_text": "12:19",
+        "side": "radiant",
+        "text": "[Tinker] Tinker activated the Top Double Damage Rune from their bottle"
+      },
+      {
+        "time": 748,
+        "time_text": "12:28",
+        "side": "radiant",
+        "text": "[Beastmaster] Beastmaster killed by [Io] Io Spirits, assisted by [Batrider], lost 209, fed 383, 588, dead for 00:30",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "27",
+          "top": "47"
+        }
+      },
+      {
+        "time": 759,
+        "time_text": "12:39",
+        "side": "dire",
+        "text": "[Io] Io killed by [Tinker] Tinker Heat-Seeking Missile, assisted by [Lion] [Lifestealer] [Beastmaster], lost 209, fed 594, 692, dead for 00:30",
+        "map": {
+          "item": "border",
+          "side": "dire",
+          "left": "32",
+          "top": "37"
+        }
+      },
+      {
+        "time": 764,
+        "time_text": "12:44",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "18",
+          "top": "36"
+        }
+      },
+      {
+        "time": 768,
+        "time_text": "12:48",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "18",
+          "top": "36"
+        }
+      },
+      {
+        "time": 773,
+        "time_text": "12:53",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle destroyed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "27",
+          "top": "47"
+        }
+      },
+      {
+        "time": 779,
+        "time_text": "12:59",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Observer Ward"
+      },
+      {
+        "time": 804,
+        "time_text": "13:24",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "24",
+          "top": "50"
+        }
+      },
+      {
+        "time": 818,
+        "time_text": "13:38",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Observer Ward"
+      },
+      {
+        "time": 840,
+        "time_text": "14:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Top",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 840,
+        "time_text": "14:00",
+        "side": "rune-invisibility",
+        "text": "Invisibility Rune has spawned Bottom",
+        "map": {
+          "item": "rune-invisibility",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 844,
+        "time_text": "14:04",
+        "side": "dire",
+        "text": "[Batrider] Batrider activated the Top Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 844,
+        "time_text": "14:04",
+        "side": "radiant",
+        "text": "The Radiant regained their Courier"
+      },
+      {
+        "time": 852,
+        "time_text": "14:12",
+        "side": "radiant",
+        "text": "[Lion] Lion activated Smoke of Deceit to stealth [Lion] [Lifestealer]",
+        "map": {
+          "item": "dust-smoke",
+          "side": "radiant",
+          "left": "29",
+          "top": "56"
+        }
+      },
+      {
+        "time": 863,
+        "time_text": "14:23",
+        "side": "dire",
+        "text": "[Io] Io bottled the Bottom Invisibility Rune",
+        "map": {
+          "item": "rune-invisibility",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 884,
+        "time_text": "14:44",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "42",
+          "top": "52"
+        }
+      },
+      {
+        "time": 890,
+        "time_text": "14:50",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Sentry Ward"
+      },
+      {
+        "time": 896,
+        "time_text": "14:56",
+        "side": "radiant",
+        "text": "The Radiant activated the Glyph of Fortification"
+      },
+      {
+        "time": 908,
+        "time_text": "15:08",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut destroys the Radiant Tier 1 Middle Tower",
+        "map": {
+          "item": "generic",
+          "side": "radiant",
+          "left": "41",
+          "top": "58"
+        }
+      },
+      {
+        "time": 911,
+        "time_text": "15:11",
+        "side": "dire",
+        "text": "The Dire activated the Glyph of Fortification"
+      },
+      {
+        "time": 917,
+        "time_text": "15:17",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Smoke of Deceit"
+      },
+      {
+        "time": 933,
+        "time_text": "15:33",
+        "side": "radiant",
+        "text": "[Lifestealer] Lifestealer destroys the Dire Tier 1 Top Tower",
+        "map": {
+          "item": "generic",
+          "side": "dire",
+          "left": "20",
+          "top": "11"
+        }
+      },
+      {
+        "time": 954,
+        "time_text": "15:54",
+        "side": "dire",
+        "text": "The Dire killed Roshan"
+      },
+      {
+        "time": 955,
+        "time_text": "15:55",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut picked up Aegis of the Immortal"
+      },
+      {
+        "time": 960,
+        "time_text": "16:00",
+        "side": "rune-arcane",
+        "text": "Arcane Rune has spawned Top",
+        "map": {
+          "item": "rune-arcane",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 960,
+        "time_text": "16:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Bottom",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 960,
+        "time_text": "16:00",
+        "side": "dire",
+        "text": "[Io] Io activated the Bottom Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 963,
+        "time_text": "16:03",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "45",
+          "top": "23"
+        }
+      },
+      {
+        "time": 966,
+        "time_text": "16:06",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Observer Ward"
+      },
+      {
+        "time": 970,
+        "time_text": "16:10",
+        "side": "dire",
+        "text": "[Rubick] Rubick activated Smoke of Deceit to stealth [Batrider] [Rubick]",
+        "map": {
+          "item": "dust-smoke",
+          "side": "dire",
+          "left": "62",
+          "top": "49"
+        }
+      },
+      {
+        "time": 983,
+        "time_text": "16:23",
+        "side": "dire",
+        "text": "[Io] Io activated the Bottom Invisibility Rune from their bottle"
+      },
+      {
+        "time": 992,
+        "time_text": "16:32",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle killed by [Juggernaut] Juggernaut Autoattack, assisted by [Batrider] [Rubick], lost 179, fed 322, 459, dead for 00:26",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "41",
+          "top": "15"
+        }
+      },
+      {
+        "time": 1004,
+        "time_text": "16:44",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Observer Ward"
+      },
+      {
+        "time": 1004,
+        "time_text": "16:44",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "dire",
+          "left": "39",
+          "top": "23"
+        }
+      },
+      {
+        "time": 1005,
+        "time_text": "16:45",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Observer Ward"
+      },
+      {
+        "time": 1007,
+        "time_text": "16:47",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Smoke of Deceit"
+      },
+      {
+        "time": 1016,
+        "time_text": "16:56",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "dire",
+          "left": "24",
+          "top": "21"
+        }
+      },
+      {
+        "time": 1018,
+        "time_text": "16:58",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Sentry Ward"
+      },
+      {
+        "time": 1030,
+        "time_text": "17:10",
+        "side": "radiant",
+        "text": "The Radiant activated the Glyph of Fortification"
+      },
+      {
+        "time": 1051,
+        "time_text": "17:31",
+        "side": "dire",
+        "text": "[Rubick] Rubick destroys the Radiant Tier 1 Top Tower",
+        "map": {
+          "item": "generic",
+          "side": "radiant",
+          "left": "12",
+          "top": "38"
+        }
+      },
+      {
+        "time": 1064,
+        "time_text": "17:44",
+        "side": "dire",
+        "text": "[Rubick] Rubick activated the Top Arcane Rune",
+        "map": {
+          "item": "rune-arcane",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 1072,
+        "time_text": "17:52",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "27",
+          "top": "47"
+        }
+      },
+      {
+        "time": 1080,
+        "time_text": "18:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Top",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 1080,
+        "time_text": "18:00",
+        "side": "rune-haste",
+        "text": "Haste Rune has spawned Bottom",
+        "map": {
+          "item": "rune-haste",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 1103,
+        "time_text": "18:23",
+        "side": "dire",
+        "text": "[Batrider] Batrider activated the Top Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 1111,
+        "time_text": "18:31",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Observer Ward"
+      },
+      {
+        "time": 1114,
+        "time_text": "18:34",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Observer Ward"
+      },
+      {
+        "time": 1115,
+        "time_text": "18:35",
+        "side": "dire",
+        "text": "[Io] Io bottled the Bottom Haste Rune",
+        "map": {
+          "item": "rune-haste",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 1142,
+        "time_text": "19:02",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut destroys the Radiant Tier 2 Top Tower",
+        "map": {
+          "item": "generic",
+          "side": "radiant",
+          "left": "12",
+          "top": "55"
+        }
+      },
+      {
+        "time": 1143,
+        "time_text": "19:03",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "57",
+          "top": "83"
+        }
+      },
+      {
+        "time": 1153,
+        "time_text": "19:13",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "59",
+          "top": "67"
+        }
+      },
+      {
+        "time": 1163,
+        "time_text": "19:23",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "54",
+          "top": "66"
+        }
+      },
+      {
+        "time": 1200,
+        "time_text": "20:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Top",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 1200,
+        "time_text": "20:00",
+        "side": "rune-regeneration",
+        "text": "Regeneration Rune has spawned Bottom",
+        "map": {
+          "item": "rune-regeneration",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 1203,
+        "time_text": "20:03",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "38",
+          "top": "84"
+        }
+      },
+      {
+        "time": 1208,
+        "time_text": "20:08",
+        "side": "dire",
+        "text": "[Io] Io activated the Bottom Haste Rune from their bottle"
+      },
+      {
+        "time": 1222,
+        "time_text": "20:22",
+        "side": "radiant",
+        "text": "[Lion] Lion gets Smoke of Deceit"
+      },
+      {
+        "time": 1244,
+        "time_text": "20:44",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Sentry Ward"
+      },
+      {
+        "time": 1249,
+        "time_text": "20:49",
+        "side": "radiant",
+        "text": "[Lifestealer] Lifestealer killed by [Rubick] Rubick Autoattack, assisted by [Juggernaut], lost 329, fed 494, 1110, dead for 00:45",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "11",
+          "top": "18"
+        }
+      },
+      {
+        "time": 1265,
+        "time_text": "21:05",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "42",
+          "top": "77"
+        }
+      },
+      {
+        "time": 1275,
+        "time_text": "21:15",
+        "side": "dire",
+        "text": "[Rubick] Rubick activated the Top Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 1279,
+        "time_text": "21:19",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "74",
+          "top": "79"
+        }
+      },
+      {
+        "time": 1304,
+        "time_text": "21:44",
+        "side": "dire",
+        "text": "[Io] Io bottled the Bottom Regeneration Rune",
+        "map": {
+          "item": "rune-regeneration",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 1306,
+        "time_text": "21:46",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Observer Ward"
+      },
+      {
+        "time": 1307,
+        "time_text": "21:47",
+        "side": "dire",
+        "text": "[Io] Io gets Gem of True Sight"
+      },
+      {
+        "time": 1308,
+        "time_text": "21:48",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "42",
+          "top": "86"
+        }
+      },
+      {
+        "time": 1320,
+        "time_text": "22:00",
+        "side": "rune-arcane",
+        "text": "Arcane Rune has spawned Top",
+        "map": {
+          "item": "rune-arcane",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 1322,
+        "time_text": "22:02",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle destroyed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "38",
+          "top": "84"
+        }
+      },
+      {
+        "time": 1323,
+        "time_text": "22:03",
+        "side": "dire",
+        "text": "[Bristleback] Bristleback destroys the Radiant Tier 2 Bottom Tower",
+        "map": {
+          "item": "generic",
+          "side": "radiant",
+          "left": "46",
+          "top": "88"
+        }
+      },
+      {
+        "time": 1348,
+        "time_text": "22:28",
+        "side": "dire",
+        "text": "[Batrider] Batrider takes Gem of True Sight"
+      },
+      {
+        "time": 1365,
+        "time_text": "22:45",
+        "side": "radiant",
+        "text": "[Lion] Lion killed by [Juggernaut] Juggernaut Autoattack, assisted by [Rubick] [Bristleback], lost 299, fed 431, 930, dead for 00:42",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "28",
+          "top": "54"
+        }
+      },
+      {
+        "time": 1370,
+        "time_text": "22:50",
+        "side": "radiant",
+        "text": "[Lifestealer] Lifestealer killed by [Juggernaut] Juggernaut Autoattack, assisted by [Io] [Batrider] [Rubick] [Bristleback], lost 359, fed 517, 1239, dead for 00:49",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "31",
+          "top": "52"
+        }
+      },
+      {
+        "time": 1370,
+        "time_text": "22:50",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut got a 2x multi-kill"
+      },
+      {
+        "time": 1374,
+        "time_text": "22:54",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle killed by [Batrider] Batrider Autoattack, assisted by [Bristleback], lost 209, fed 340, 555, dead for 00:30",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "25",
+          "top": "60"
+        }
+      },
+      {
+        "time": 1390,
+        "time_text": "23:10",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "26",
+          "top": "79"
+        }
+      },
+      {
+        "time": 1390,
+        "time_text": "23:10",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut destroys the Radiant Tier 2 Middle Tower",
+        "map": {
+          "item": "generic",
+          "side": "radiant",
+          "left": "27",
+          "top": "67"
+        }
+      },
+      {
+        "time": 1396,
+        "time_text": "23:16",
+        "side": "dire",
+        "text": "[Io] Io activated the Bottom Regeneration Rune from their bottle"
+      },
+      {
+        "time": 1403,
+        "time_text": "23:23",
+        "side": "radiant",
+        "text": "The Radiant activated the Glyph of Fortification"
+      },
+      {
+        "time": 1416,
+        "time_text": "23:36",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "26",
+          "top": "73"
+        }
+      },
+      {
+        "time": 1424,
+        "time_text": "23:44",
+        "side": "dire",
+        "text": "[Batrider] Batrider destroyed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "42",
+          "top": "77"
+        }
+      },
+      {
+        "time": 1434,
+        "time_text": "23:54",
+        "side": "dire",
+        "text": "[Io] Io bottled the Top Arcane Rune",
+        "map": {
+          "item": "rune-arcane",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 1435,
+        "time_text": "23:55",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Observer Ward"
+      },
+      {
+        "time": 1440,
+        "time_text": "24:00",
+        "side": "rune-regeneration",
+        "text": "Regeneration Rune has spawned Top",
+        "map": {
+          "item": "rune-regeneration",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 1440,
+        "time_text": "24:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Bottom",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 1441,
+        "time_text": "24:01",
+        "side": "dire",
+        "text": "[Io] Io bottled the Top Regeneration Rune",
+        "map": {
+          "item": "rune-regeneration",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 1441,
+        "time_text": "24:01",
+        "side": "dire",
+        "text": "[Io] Io activated the Top Arcane Rune from their bottle"
+      },
+      {
+        "time": 1442,
+        "time_text": "24:02",
+        "side": "dire",
+        "text": "[Rubick] Rubick activated the Bottom Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 1448,
+        "time_text": "24:08",
+        "side": "dire",
+        "text": "[Bristleback] Bristleback destroyed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "59",
+          "top": "67"
+        }
+      },
+      {
+        "time": 1470,
+        "time_text": "24:30",
+        "side": "radiant",
+        "text": "[Lion] Lion activated Smoke of Deceit to stealth [Dazzle] [Lion]",
+        "map": {
+          "item": "dust-smoke",
+          "side": "radiant",
+          "left": "19",
+          "top": "41"
+        }
+      },
+      {
+        "time": 1470,
+        "time_text": "24:30",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle activated Smoke of Deceit to stealth [Beastmaster]",
+        "map": {
+          "item": "dust-smoke",
+          "side": "radiant",
+          "left": "21",
+          "top": "42"
+        }
+      },
+      {
+        "time": 1491,
+        "time_text": "24:51",
+        "side": "dire",
+        "text": "[Batrider] Batrider destroyed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "74",
+          "top": "79"
+        }
+      },
+      {
+        "time": 1492,
+        "time_text": "24:52",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Observer Ward"
+      },
+      {
+        "time": 1492,
+        "time_text": "24:52",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Observer Ward"
+      },
+      {
+        "time": 1494,
+        "time_text": "24:54",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Sentry Ward"
+      },
+      {
+        "time": 1494,
+        "time_text": "24:54",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Sentry Ward"
+      },
+      {
+        "time": 1494,
+        "time_text": "24:54",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "59",
+          "top": "81"
+        }
+      },
+      {
+        "time": 1518,
+        "time_text": "25:18",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "47",
+          "top": "35"
+        }
+      },
+      {
+        "time": 1520,
+        "time_text": "25:20",
+        "side": "radiant",
+        "text": "[Tinker] Tinker killed by [Juggernaut] Juggernaut Autoattack, lost 389, fed 511, 1240, dead for 00:02",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "22",
+          "top": "83"
+        }
+      },
+      {
+        "time": 1522,
+        "time_text": "25:22",
+        "side": "radiant",
+        "text": "[Tinker] Tinker bought back for 728 after 00:02"
+      },
+      {
+        "time": 1531,
+        "time_text": "25:31",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "24",
+          "top": "82"
+        }
+      },
+      {
+        "time": 1535,
+        "time_text": "25:35",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle destroyed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "26",
+          "top": "79"
+        }
+      },
+      {
+        "time": 1537,
+        "time_text": "25:37",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut destroyed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "42",
+          "top": "86"
+        }
+      },
+      {
+        "time": 1547,
+        "time_text": "25:47",
+        "side": "radiant",
+        "text": "[Lion] Lion gets Smoke of Deceit"
+      },
+      {
+        "time": 1560,
+        "time_text": "26:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Top",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 1560,
+        "time_text": "26:00",
+        "side": "rune-arcane",
+        "text": "Arcane Rune has spawned Bottom",
+        "map": {
+          "item": "rune-arcane",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 1561,
+        "time_text": "26:01",
+        "side": "dire",
+        "text": "[Io] Io activated the Top Regeneration Rune from their bottle"
+      },
+      {
+        "time": 1563,
+        "time_text": "26:03",
+        "side": "dire",
+        "text": "[Rubick] Rubick activated the Bottom Arcane Rune",
+        "map": {
+          "item": "rune-arcane",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 1570,
+        "time_text": "26:10",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Smoke of Deceit"
+      },
+      {
+        "time": 1570,
+        "time_text": "26:10",
+        "side": "dire",
+        "text": "[Rubick] Rubick gets Observer Ward"
+      },
+      {
+        "time": 1586,
+        "time_text": "26:26",
+        "side": "dire",
+        "text": "[Io] Io bottled the Top Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "36",
+          "top": "38"
+        }
+      },
+      {
+        "time": 1588,
+        "time_text": "26:28",
+        "side": "dire",
+        "text": "[Rubick] Rubick destroyed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "47",
+          "top": "35"
+        }
+      },
+      {
+        "time": 1600,
+        "time_text": "26:40",
+        "side": "dire",
+        "text": "[Rubick] Rubick activated Smoke of Deceit to stealth [Batrider] [Rubick] [Bristleback]",
+        "map": {
+          "item": "dust-smoke",
+          "side": "dire",
+          "left": "47",
+          "top": "47"
+        }
+      },
+      {
+        "time": 1600,
+        "time_text": "26:40",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "66",
+          "top": "67"
+        }
+      },
+      {
+        "time": 1605,
+        "time_text": "26:45",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "69",
+          "top": "74"
+        }
+      },
+      {
+        "time": 1626,
+        "time_text": "27:06",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle killed by [Rubick] Rubick Shadow Wave, assisted by [Juggernaut] [Bristleback], lost 269, fed 364, 832, dead for 00:38",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "85",
+          "top": "76"
+        }
+      },
+      {
+        "time": 1629,
+        "time_text": "27:09",
+        "side": "dire",
+        "text": "[Io] Io activated the Top Bounty Rune from their bottle"
+      },
+      {
+        "time": 1637,
+        "time_text": "27:17",
+        "side": "radiant",
+        "text": "[Lion] Lion killed by [Rubick] Rubick Shadow Wave, assisted by [Batrider] [Juggernaut], lost 329, fed 425, 1088, dead for 00:45",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "65",
+          "top": "70"
+        }
+      },
+      {
+        "time": 1637,
+        "time_text": "27:17",
+        "side": "dire",
+        "text": "[Rubick] Rubick got a 2x multi-kill"
+      },
+      {
+        "time": 1639,
+        "time_text": "27:19",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut destroyed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "66",
+          "top": "67"
+        }
+      },
+      {
+        "time": 1646,
+        "time_text": "27:26",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle gets Observer Ward"
+      },
+      {
+        "time": 1670,
+        "time_text": "27:50",
+        "side": "radiant",
+        "text": "[Beastmaster] Beastmaster gets Gem of True Sight"
+      },
+      {
+        "time": 1675,
+        "time_text": "27:55",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut picked up Aegis of the Immortal"
+      },
+      {
+        "time": 1675,
+        "time_text": "27:55",
+        "side": "dire",
+        "text": "The Dire killed Roshan"
+      },
+      {
+        "time": 1680,
+        "time_text": "28:00",
+        "side": "rune-bounty",
+        "text": "Bounty Rune has spawned Bottom",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 1689,
+        "time_text": "28:09",
+        "side": "dire",
+        "text": "[Io] Io bottled the Bottom Bounty Rune",
+        "map": {
+          "item": "rune-bounty",
+          "side": "dire",
+          "left": "64",
+          "top": "61"
+        }
+      },
+      {
+        "time": 1691,
+        "time_text": "28:11",
+        "side": "dire",
+        "text": "[Io] Io activated the Bottom Bounty Rune from their bottle"
+      },
+      {
+        "time": 1693,
+        "time_text": "28:13",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "28",
+          "top": "48"
+        }
+      },
+      {
+        "time": 1698,
+        "time_text": "28:18",
+        "side": "dire",
+        "text": "[Batrider] Batrider destroyed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "69",
+          "top": "74"
+        }
+      },
+      {
+        "time": 1709,
+        "time_text": "28:29",
+        "side": "radiant",
+        "text": "The Radiant activated the Glyph of Fortification"
+      },
+      {
+        "time": 1712,
+        "time_text": "28:32",
+        "side": "radiant",
+        "text": "[Beastmaster] Beastmaster drops Gem of True Sight"
+      },
+      {
+        "time": 1717,
+        "time_text": "28:37",
+        "side": "dire",
+        "text": "[Rubick] Rubick destroyed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "radiant",
+          "left": "26",
+          "top": "73"
+        }
+      },
+      {
+        "time": 1718,
+        "time_text": "28:38",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut destroys the Radiant Tier 3 Middle Tower",
+        "map": {
+          "item": "generic",
+          "side": "radiant",
+          "left": "21",
+          "top": "75"
+        }
+      },
+      {
+        "time": 1720,
+        "time_text": "28:40",
+        "side": "radiant",
+        "text": "[Beastmaster] Beastmaster drops Gem of True Sight"
+      },
+      {
+        "time": 1720,
+        "time_text": "28:40",
+        "side": "dire",
+        "text": "[Rubick] Rubick placed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "26",
+          "top": "80"
+        }
+      },
+      {
+        "time": 1723,
+        "time_text": "28:43",
+        "side": "dire",
+        "text": "[Batrider] Batrider destroyed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "24",
+          "top": "82"
+        }
+      },
+      {
+        "time": 1726,
+        "time_text": "28:46",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle placed a Sentry Ward",
+        "map": {
+          "item": "sentry-ward",
+          "side": "radiant",
+          "left": "22",
+          "top": "81"
+        }
+      },
+      {
+        "time": 1728,
+        "time_text": "28:48",
+        "side": "radiant",
+        "text": "[Beastmaster] Beastmaster destroyed a Observer Ward",
+        "map": {
+          "item": "observer-ward",
+          "side": "dire",
+          "left": "26",
+          "top": "80"
+        }
+      },
+      {
+        "time": 1731,
+        "time_text": "28:51",
+        "side": "radiant",
+        "text": "[Beastmaster] Beastmaster drops Gem of True Sight"
+      },
+      {
+        "time": 1737,
+        "time_text": "28:57",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut destroys the Radiant Melee Middle Barracks"
+      },
+      {
+        "time": 1745,
+        "time_text": "29:05",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut destroys the Radiant Ranged Middle Barracks"
+      },
+      {
+        "time": 1761,
+        "time_text": "29:21",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut destroys the Radiant Tier 3 Bottom Tower",
+        "map": {
+          "item": "generic",
+          "side": "radiant",
+          "left": "25",
+          "top": "88"
+        }
+      },
+      {
+        "time": 1764,
+        "time_text": "29:24",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle killed by [Io] Io Spirits, assisted by [Juggernaut], lost 269, fed 385, 805",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "22",
+          "top": "86"
+        }
+      },
+      {
+        "time": 1767,
+        "time_text": "29:27",
+        "side": "radiant",
+        "text": "[Beastmaster] Beastmaster killed by [Juggernaut] Juggernaut Autoattack, assisted by [Io], lost 329, fed 901, 2143",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "19",
+          "top": "87"
+        }
+      },
+      {
+        "time": 1767,
+        "time_text": "29:27",
+        "side": "radiant",
+        "text": "[Lion] Lion killed by [Rubick] Rubick Autoattack, assisted by [Batrider] [Bristleback], lost 329",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "25",
+          "top": "86"
+        }
+      },
+      {
+        "time": 1769,
+        "time_text": "29:29",
+        "side": "radiant",
+        "text": "[Tinker] Tinker killed by [Juggernaut] Juggernaut Autoattack, lost 419, fed 656, 1500",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "17",
+          "top": "89"
+        }
+      },
+      {
+        "time": 1769,
+        "time_text": "29:29",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut got a 2x multi-kill"
+      },
+      {
+        "time": 1771,
+        "time_text": "29:31",
+        "side": "radiant",
+        "text": "[Dazzle] Dazzle: gg"
+      },
+      {
+        "time": 1772,
+        "time_text": "29:32",
+        "side": "radiant",
+        "text": "[Lion] Lion: gg"
+      },
+      {
+        "time": 1773,
+        "time_text": "29:33",
+        "side": "radiant",
+        "text": "[Lifestealer] Lifestealer killed by [Juggernaut] Juggernaut Autoattack, assisted by [Batrider] [Rubick] [Bristleback], lost 419, fed 587, 1430",
+        "map": {
+          "item": "border",
+          "side": "radiant",
+          "left": "19",
+          "top": "87"
+        }
+      },
+      {
+        "time": 1773,
+        "time_text": "29:33",
+        "side": "dire",
+        "text": "[Juggernaut] Juggernaut got a 3x multi-kill"
+      },
+      {
+        "time": 1774,
+        "time_text": "29:34",
+        "side": "radiant",
+        "text": "[Tinker] Tinker disconnected"
+      },
+      {
+        "time": 1781,
+        "time_text": "29:41",
+        "side": null,
+        "text": "The Dire have won the match"
+      },
+      {
+        "time": 1781,
+        "time_text": "29:41",
+        "side": "dire",
+        "text": "[Rubick] Rubick disconnected"
+      },
+      {
+        "time": 1781,
+        "time_text": "29:41",
+        "side": "dire",
+        "text": "[Io] Io disconnected"
+      },
+      {
+        "time": 1781,
+        "time_text": "29:41",
+        "side": "dire",
+        "text": "[Batrider] Batrider disconnected"
+      },
+      {
+        "time": 1781,
+        "time_text": "29:41",
+        "side": "radiant",
+        "text": "[Lion] Lion disconnected"
+      },
+      {
+        "time": 1781,
+        "time_text": "29:41",
+        "side": "radiant",
+        "text": "[Lifestealer] Lifestealer disconnected"
+      },
+      {
+        "time": 1781,
+        "time_text": "29:41",
+        "side": "dire",
+        "text": "[Bristleback] Bristleback disconnected"
+      }
+    ]
+  }
+]
