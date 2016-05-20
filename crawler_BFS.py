@@ -200,7 +200,7 @@ def proc_hero_info(hero):
 
 def proc_force_cache(myurl, cache_filename):
     if FORCE_CACHE:
-        if not os.path.exists():
+        if not os.path.exists(cache_filename):
             code, html = get_html(myurl)
             fp = open(cache_filename, 'w')
             fp.write(html)
@@ -234,8 +234,10 @@ def match_overview(match_id, filename):
     faction_dict['dire'] = dict()
     faction_dict['radiant'] = dict()
 
-    radiants = soup.find_all('section', {'class': 'radiant'})[0]
-    dires = soup.find_all('section', {'class': 'dire'})[0]
+    team_results = soup.find_all('div', {'class': 'team-results'})[0]
+
+    radiants = team_results.find_all('section', {'class': 'radiant'}, False)[0]
+    dires = team_results.find_all('section', {'class': 'dire'}, False)[0]
 
     faction_dict['dire']['team_id'] = str(dires.header.a.attrs['href'])
     faction_dict['dire']['team_name'] = str(dires.header.text)
@@ -263,6 +265,11 @@ def match_overview(match_id, filename):
 
         # append finally
         faction_dict['dire']['heroes'].append(hero_dict)
+
+    # ban pick
+    r_only = team_results.find_all('div', {'class': 'r-only'}, False)[0]
+
+
 
     # write the result into file as json
     fp = open(filename, 'w+')
@@ -379,6 +386,7 @@ def match_vision(match_id, filename):
     # exit()
 
 
+'''
 def proc_match_log(match_id):
     """
     Getting all event log
@@ -544,6 +552,7 @@ def proc_match_log(match_id):
     if FORCE_CACHE_AUTOCLEAN and FORCE_CACHE:
         if os.path.exists(const.FN_DATADIR+const.FN_CACHED_HTML+'_log_'+match_id):
             os.remove(const.FN_DATADIR+const.FN_CACHED_HTML+'_log_'+match_id)
+'''
 
 
 def main():
