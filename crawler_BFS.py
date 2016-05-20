@@ -116,7 +116,7 @@ def gen_league_list():
         print 'bad url link, program terminating...'
 
 
-def proc_match_list(myfunc1=None, myfunc2=None):
+def proc_match_list(func_list=None):
     if not os.path.exists(const.FN_DATADIR+const.FN_LEAGUE_DIR):
         print 'Error, please rerun the script to generate match lists'
         return
@@ -138,80 +138,158 @@ def proc_match_list(myfunc1=None, myfunc2=None):
             match_list = get_list_from_file(const.FN_DATADIR+const.FN_LEAGUE_DIR+'\/'+dirname+const.FN_MATCH_LIST)
             for i in match_list:
                 match_id = re.sub(r'\/match\/detail\/', '', i)
-                if myfunc1 and not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+ '/vision/res_'+match_id+ '.txt'):
-                    myfunc1(match_id)
-                '''
-                if myfunc2 and not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+ '/log_events/res_'+match_id+ '.txt'):
-                    myfunc2(match_id)
-                '''
+                if func_list:
+                    for func in func_list:
+                        if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/res_' +
+                                              match_id):
+                            os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/res_' + match_id)
+                        filename = (const.FN_DATADIR+const.FN_RESULT_DIR+'/res_' +
+                                    match_id + '/' + func.__name__ + '.json')
+                        if func and not os.path.exists(filename):
+                            try:
+                                func(match_id, filename)
+                            except IndexError:
+                                print 'Error in dotabuff page, skipping...'
+                                continue
                 counter += 1
     print 'Finished process of', counter, 'matches'
 
 
-def proc_match_vision(match_id):
+def proc_hero_info(hero):
     """
-    Now is getting vision
+    Process the hero info for match_overview
+    :param hero:
+    :return:
+    """
+    hero_dict = dict()
+    player_td = hero.find('td', {'class': 'cell-match-player-name'})
+    player_info_anchor = player_td.find_all('a', {'class': 'link-type-player'})[0]
+    hero_dict['player_name'] = str(player_info_anchor.text)
+    hero_dict['player_id'] = str(player_info_anchor.attrs['href'])
+
+    # hero:
+    hero_div = hero.find_all('div', {'class': 'image-container-hero'})[0]
+    hero_dict['hero_name'] = hero_div.a.attrs['href']
+
+    # lane:
+    hero_dict['lane'] = player_td.div.span.acronym.text
+
+    # hero_info:
+    hero_group_1 = hero.find_all('td', {'class': 'r-group-1'})
+    hero_group_2 = hero.find_all('td', {'class': 'r-group-2'})
+    hero_group_3 = hero.find_all('td', {'class': 'r-group-3'})
+
+    hero_dict['level'] = str(hero_group_1[0].text)
+    hero_dict['kills'] = str(hero_group_1[1].text)
+    hero_dict['deaths'] = str(hero_group_1[2].text)
+    hero_dict['assists'] = str(hero_group_1[3].text)
+    hero_dict['kda'] = str(hero_group_1[4].text)
+
+    hero_dict['gold'] = str(hero_group_2[0].text)
+    hero_dict['lh'] = str(hero_group_2[1].text)
+    hero_dict['dn'] = str(hero_group_2[2].text)
+    hero_dict['xpm'] = str(hero_group_2[3].text)
+    hero_dict['gpm'] = str(hero_group_2[4].text)
+
+    hero_dict['hd'] = str(hero_group_3[0].text)
+    hero_dict['hh'] = str(hero_group_3[1].text)
+    hero_dict['td'] = str(hero_group_3[2].text)
+
+    return hero_dict
+
+
+def proc_force_cache(myurl, cache_filename):
+    if FORCE_CACHE:
+        if not os.path.exists():
+            code, html = get_html(myurl)
+            fp = open(cache_filename, 'w')
+            fp.write(html)
+            fp.close()
+        else:
+            fp = open(cache_filename, 'r')
+            html = fp.read()
+            fp.close()
+    else:
+        code, html = get_html(myurl)
+    return html
+
+
+def match_overview(match_id, filename):
+    print 'Processing match', match_id, 'for overview'
+    myurl = 'http://www.dotabuff.com/matches/' + match_id
+    cache_filename = const.FN_DATADIR+const.FN_CACHED_HTML+match_id
+    html = proc_force_cache(myurl, cache_filename)
+    soup = BeautifulSoup(html, 'lxml')  # need to include lxml to avoid warning from bs4
+
+    # getting match result
+    result_text = str(soup.find_all('div', {'class': 'match-result'})[0].text)
+
+    if result_text.strip() == 'Radiant Victory':
+        winner = 'radiant'
+    else:
+        winner = 'dire'
+
+    # getting factions
+    faction_dict = dict()
+    faction_dict['dire'] = dict()
+    faction_dict['radiant'] = dict()
+
+    radiants = soup.find_all('section', {'class': 'radiant'})[0]
+    dires = soup.find_all('section', {'class': 'dire'})[0]
+
+    faction_dict['dire']['team_id'] = str(dires.header.a.attrs['href'])
+    faction_dict['dire']['team_name'] = str(dires.header.text)
+    faction_dict['radiant']['team_id'] = str(radiants.header.a.attrs['href'])
+    faction_dict['radiant']['team_name'] = str(radiants.header.text)
+    # getting heros and players
+
+    faction_dict['dire']['heroes'] = []
+    faction_dict['radiant']['heroes'] = []
+
+    radiant_heroes = radiants.find_all('tr', {'class': 'faction-radiant'})
+    dire_heroes = dires.find_all('tr', {'class': 'faction-dire'})
+
+    # process heros from both sides
+    for hero in radiant_heroes:
+        # player name:
+        hero_dict = proc_hero_info(hero)
+
+        # append finally
+        faction_dict['radiant']['heroes'].append(hero_dict)
+
+    for hero in dire_heroes:
+        # player name:
+        hero_dict = proc_hero_info(hero)
+
+        # append finally
+        faction_dict['dire']['heroes'].append(hero_dict)
+
+    # write the result into file as json
+    fp = open(filename, 'w+')
+    json.dump({'factions': faction_dict, 'winner': winner}, fp, False, True, True, True, None, 4)
+    fp.close()
+
+    # process autoclean for cache
+    if FORCE_CACHE_AUTOCLEAN and FORCE_CACHE:
+        if os.path.exists(const.FN_DATADIR+const.FN_CACHED_HTML+match_id):
+            os.remove(const.FN_DATADIR+const.FN_CACHED_HTML+match_id)
+    # to debug on one, uncomment the exit()
+    # exit()
+
+
+def match_vision(match_id, filename):
+    """
     :param match_id:
+    :param filename:
     :return:
     """
     print 'Processing match', match_id, 'for visions'
     # match_id = const.URL_DOTAMAX_PREFIX+'/match/detail/vision/'+match_id+'/'
-    # print 'url:', match_id
-    if FORCE_CACHE:
-        if not os.path.exists(const.FN_DATADIR+const.FN_CACHED_HTML+match_id):
-            myurl = 'http://www.dotabuff.com/matches/' + match_id + '/vision'
-            code, html = get_html(myurl)
-            fp = open(const.FN_DATADIR+const.FN_CACHED_HTML+match_id, 'w')
-            fp.write(html)
-            fp.close()
-        else:
-            fp = open(const.FN_DATADIR+const.FN_CACHED_HTML+match_id, 'r')
-            html = fp.read()
-            fp.close()
-    else:
-        myurl = 'http://www.dotabuff.com/matches/' + match_id + '/vision'
-        code, html = get_html(myurl)
+    myurl = 'http://www.dotabuff.com/matches/' + match_id + '/vision'
+    cache_filename = const.FN_DATADIR+const.FN_CACHED_HTML+match_id
+    html = proc_force_cache(myurl, cache_filename)
+
     soup = BeautifulSoup(html, 'lxml')  # need to include lxml to avoid warning from bs4
-
-    # getting heros and players
-
-    heros_dict = dict()  # the dict to store radiant and dire
-    faction_radiants = soup.find_all('tr', {'class': 'faction-radiant'})
-    faction_dires = soup.find_all('tr', {'class': 'faction-dire'})
-    heros_dict['radiant'] = []
-    heros_dict['dire'] = []
-
-    for hero in faction_radiants:
-        # player name:
-        hero_dict = dict()
-        player_td = hero.find('td', {'class': 'r-tab-player-name'})
-        player_name = str(player_td.find('a', {'class': 'link-type-player'}).text)
-        hero_dict['player_name'] = player_name
-        # hero:
-        hero_td = hero.find('td', {'class': 'r-tab-icon'})
-        hero_name = hero_td.div.a.attrs['href']
-        hero_name = hero_name.replace('-', ' ')
-        hero_name = hero_name.replace('/heroes/', '')
-        hero_dict['hero_name'] = hero_name
-        # way:
-        hero_dict['lane'] = player_td.div.span.acronym.text
-        heros_dict['radiant'].append(hero_dict)
-
-    for hero in faction_dires:
-        # player name:
-        hero_dict = dict()
-        player_td = hero.find('td', {'class': 'r-tab-player-name'})
-        player_name = str(player_td.find('a', {'class': 'link-type-player'}).text)
-        hero_dict['player_name'] = player_name
-        # hero:
-        hero_td = hero.find('td', {'class': 'r-tab-icon'})
-        hero_name = hero_td.div.a.attrs['href']
-        hero_name = hero_name.replace('-', ' ')
-        hero_name = hero_name.replace('/heroes/', '')
-        hero_dict['hero_name'] = hero_name
-        # way:
-        hero_dict['lane'] = player_td.div.span.acronym.text
-        heros_dict['dire'].append(hero_dict)
 
     # the details
     match_log = soup.find_all('div', {'class': 'match-log'})
@@ -220,27 +298,6 @@ def proc_match_vision(match_id):
         print 'Missing Page on this match or Error in this HTML format for dotabuff'
         return
     all_events = match_log[0].find_all('div', {'class': 'event'}, False)
-
-    '''
-    # Getting all vision positions
-    visions_dict = {}  # store the vision by tooltip id
-    visions_missing_tooltip = []  # store the visions that does not have a tooltipid
-    for vision in match_visions:
-        vision_dict = dict()
-        vision_dict['pos_style'] = vision.attrs['style']
-        vision_dict['data_slider_min'] = vision.attrs['data-slider-min']
-        vision_dict['data_slider_max'] = vision.attrs['data-slider-max']
-        if 'data-hasqtip' in vision.attrs:
-            tooltipid = vision.attrs['data-hasqtip']
-            visions_dict[tooltipid] = vision_dict
-            # print 'found tooltiped vision'
-        else:
-            visions_missing_tooltip.append(vision_dict)
-            # print 'found missing vision'
-    '''
-
-    # check the final result
-    winner = 'radiant'
 
     # Getting all events
     event_list = []
@@ -287,8 +344,6 @@ def proc_match_vision(match_id):
                         event_targets.append(to_append)
             counter += 1
             event_dict['action'] = str(re.sub(item.text.strip(), '', event_dict['action']).strip())
-            if event_dict['action'] == 'The Dire have won the match':
-                winner = 'dire'
         if len(event_targets):
             event_dict['targets'] = event_targets
 
@@ -308,19 +363,13 @@ def proc_match_vision(match_id):
         event_list.append(event_dict)
 
     # write the result into file as json
-    if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/vision'):
-        os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/vision')
-    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/vision/res_'+match_id+'.txt', 'w+')
-    json.dump({'heroes': heros_dict, 'vision': event_list, 'winner': winner}, fp)
-    fp.close()
-
     '''
-    if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/vision_points'):
-        os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/vision_points')
-    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/vision_points/res_'+match_id+'.txt', 'w+')
-    json.dump(visions_missing_tooltip, fp)
-    fp.close()
+    if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/match_vision'):
+        os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/match_vision')
     '''
+    fp = open(filename, 'w+')
+    json.dump({'match_vision': event_list}, fp, False, True, True, True, None, 4)
+    fp.close()
 
     # process autoclean for cache
     if FORCE_CACHE_AUTOCLEAN and FORCE_CACHE:
@@ -485,8 +534,8 @@ def proc_match_log(match_id):
     # process event log write to json file
     if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/log_events'):
         os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/log_events')
-    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/log_events/res_'+match_id+'.txt', 'w+')
-    json.dump({'events': event_list, 'winner': winner}, fp)
+    fp = open(const.FN_DATADIR+const.FN_RESULT_DIR+'/log_events/res_'+match_id+'.json', 'w+')
+    json.dump({'events': event_list, 'winner': winner}, fp, False, True, True, True, None, 4)
     fp.close()
 
     # exit()  # for debug, one time run
@@ -497,11 +546,11 @@ def proc_match_log(match_id):
             os.remove(const.FN_DATADIR+const.FN_CACHED_HTML+'_log_'+match_id)
 
 
-
 def main():
     """
     Driver function
     """
+    func_list = [match_overview, match_vision]
     if not os.path.exists(const.FN_DATADIR+const.FN_LEAGUE_LIST):
         gen_league_list()
     if (not os.listdir(const.FN_DATADIR+const.FN_LEAGUE_DIR)) or FORCE_FIND_MATCH_LIST:
@@ -509,7 +558,7 @@ def main():
         if league_list:
             for league_url in league_list:
                 proc_league(league_url)
-    proc_match_list(proc_match_vision, proc_match_log)
+    proc_match_list(func_list)
 
 
 
