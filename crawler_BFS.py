@@ -424,7 +424,7 @@ def match_log(match_id, file_name):
     soup = BeautifulSoup(html, 'html.parser')  # need to include lxml to avoid warning from bs4
     match_log_class = soup.find('div', {'class': 'match-log'})
 
-    if len(match_log_class) == 0:
+    if not match_log_class or len(match_log_class) == 0:
         print 'Missing Page on this match or Error in this HTML format for dotabuff'
         return
     all_events = match_log_class.find_all('div', {'class': 'event'}, False)
@@ -448,7 +448,7 @@ def match_log(match_id, file_name):
                 event_dict['top'] = pos_list[0]
                 event_dict['left'] = pos_list[1]
 
-        print event.text
+        # print event.text
         kw_action_set, kw_target_set, kw_supplement_set, kw_position_set = proc_get_keyword(event.text)
 
         # print kw_set
@@ -497,11 +497,10 @@ def match_log(match_id, file_name):
             if len(gold_spans) == 2:
                 event_dict['gold-lost'] = str(gold_spans[0].text)
                 event_dict['gold-fed'] = str(gold_spans[1].text)
-            print str(kw_supplement_set)
+            # print str(kw_supplement_set)
             if 'autoattack' not in kw_supplement_set and len(other_targets):
                 event_dict['skill'] = str(other_targets[0])
                 del other_targets[0]
-
 
         if ':' in kw_action_set:
             if len(kw_action_set) == 1:
@@ -538,7 +537,7 @@ def match_log(match_id, file_name):
 
         # append it to event_list
         event_list.append(event_dict)
-        print str(event_dict)  # for debug
+        # print str(event_dict)  # for debug
     # end of iteration of events
 
     # exit()  # for debug
@@ -556,7 +555,7 @@ def main():
     """
     Driver function
     """
-    func_list = [match_overview, match_vision, match_log]
+    func_list = [match_overview, match_log]
     if not os.path.exists(const.FN_DATADIR+const.FN_LEAGUE_LIST):
         gen_league_list()
     if (not os.listdir(const.FN_DATADIR+const.FN_LEAGUE_DIR)) or FORCE_FIND_MATCH_LIST:
