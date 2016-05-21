@@ -1,0 +1,2204 @@
+{
+    "events": [
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "-01:24"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "-01:24"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "-01:21"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "observer ward", 
+            "time": "-01:10", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "29%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "observer ward", 
+            "time": "-00:50", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "57%"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "observer ward", 
+            "time": "-00:05", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "24%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "anti-mage", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "392", 
+            "top": "71%", 
+            "other-objects": [
+                "tusk", 
+                "dazzle"
+            ], 
+            "whom": "ursa", 
+            "time": "00:05", 
+            "action": "killed by", 
+            "skill": "earthshock", 
+            "subject": "ancient apparition", 
+            "gold-lost": "29", 
+            "left": "63%"
+        }, 
+        {
+            "gold-fed": "262", 
+            "top": "64%", 
+            "other-objects": [
+                "tusk", 
+                "winter-wyvern", 
+                "dazzle"
+            ], 
+            "whom": "ursa", 
+            "supplement": "autoattack", 
+            "time": "00:12", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "29", 
+            "left": "66%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "ursa", 
+            "time": "00:12"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "00:37", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "46%"
+        }, 
+        {
+            "top": "17%", 
+            "whom": "sentry ward", 
+            "time": "00:54", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "22%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "02:00", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "02:01", 
+            "action": "bottled", 
+            "subject": "ursa", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "02:18"
+        }, 
+        {
+            "top": "70%", 
+            "whom": "sentry ward", 
+            "time": "02:24", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "78%"
+        }, 
+        {
+            "gold-fed": "315", 
+            "top": "83%", 
+            "other-objects": "winter-wyvern", 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "02:53", 
+            "action": "killed by", 
+            "subject": "ancient apparition", 
+            "gold-lost": "59", 
+            "left": "81%"
+        }, 
+        {
+            "gold-fed": "456", 
+            "top": "83%", 
+            "other-objects": "winter-wyvern", 
+            "whom": "tusk", 
+            "time": "03:02", 
+            "action": "killed by", 
+            "skill": "ice shards", 
+            "subject": "alchemist", 
+            "gold-lost": "119", 
+            "left": "86%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "tusk", 
+            "time": "03:02"
+        }, 
+        {
+            "gold-fed": "456", 
+            "top": "86%", 
+            "other-objects": "alchemist", 
+            "whom": "ancient apparition", 
+            "time": "03:45", 
+            "action": "killed by", 
+            "skill": "cold feet", 
+            "subject": "tusk", 
+            "gold-lost": "119", 
+            "left": "66%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "ursa", 
+            "time": "03:56"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "04:03", 
+            "action": "bottled", 
+            "subject": "ursa", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "04:04", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ursa", 
+            "time": "04:11"
+        }, 
+        {
+            "gold-fed": "482", 
+            "top": "43%", 
+            "other-objects": "night-stalker", 
+            "whom": "invoker", 
+            "supplement": "autoattack", 
+            "time": "04:18", 
+            "action": "killed by", 
+            "subject": "ursa", 
+            "gold-lost": "149", 
+            "left": "45%"
+        }, 
+        {
+            "gold-fed": "381", 
+            "top": "91%", 
+            "whom": "winter wyvern", 
+            "supplement": "autoattack", 
+            "time": "04:24", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "119", 
+            "left": "64%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "04:45"
+        }, 
+        {
+            "top": "77%", 
+            "whom": "observer ward", 
+            "time": "05:02", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "70%"
+        }, 
+        {
+            "gold-fed": "294", 
+            "top": "76%", 
+            "other-objects": "winter-wyvern", 
+            "whom": "tusk", 
+            "time": "05:23", 
+            "action": "killed by", 
+            "skill": "snowball", 
+            "subject": "ancient apparition", 
+            "gold-lost": "119", 
+            "left": "84%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "alchemist", 
+            "time": "05:24"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "05:32"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "05:35"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "05:44"
+        }, 
+        {
+            "top": "78%", 
+            "whom": "sentry ward", 
+            "time": "05:55", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "73%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "winter wyvern", 
+            "time": "05:59"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "77%", 
+            "whom": "observer ward", 
+            "time": "06:01", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "70%"
+        }, 
+        {
+            "top": "69%", 
+            "whom": "sentry ward", 
+            "time": "06:10", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "83%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "06:10", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "70%", 
+            "whom": "sentry ward", 
+            "time": "06:14", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "78%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "06:14", 
+            "action": "activate", 
+            "subject": "invoker", 
+            "left": "38%"
+        }, 
+        {
+            "top": "81%", 
+            "whom": "observer ward", 
+            "time": "06:21", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "70%"
+        }, 
+        {
+            "top": "26%", 
+            "whom": "observer ward", 
+            "time": "06:26", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "28%"
+        }, 
+        {
+            "top": "85%", 
+            "whom": "sentry ward", 
+            "time": "06:29", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "72%"
+        }, 
+        {
+            "top": "81%", 
+            "whom": "observer ward", 
+            "time": "06:34", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "70%"
+        }, 
+        {
+            "gold-fed": "498", 
+            "top": "52%", 
+            "other-objects": "night-stalker", 
+            "whom": "invoker", 
+            "supplement": "autoattack", 
+            "time": "06:36", 
+            "action": "killed by", 
+            "subject": "ursa", 
+            "gold-lost": "179", 
+            "left": "48%"
+        }, 
+        {
+            "gold-fed": "510", 
+            "top": "14%", 
+            "other-objects": "night-stalker", 
+            "whom": "dark seer", 
+            "time": "07:10", 
+            "action": "killed by", 
+            "skill": "ion shell", 
+            "subject": "anti-mage", 
+            "gold-lost": "179", 
+            "left": "13%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "07:30"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "07:33"
+        }, 
+        {
+            "top": "49%", 
+            "whom": "observer ward", 
+            "time": "07:52", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "37%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "08:00", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "67%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "08:02", 
+            "action": "bottled", 
+            "subject": "ursa", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "08:05", 
+            "action": "bottled", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "tusk", 
+            "time": "08:05"
+        }, 
+        {
+            "top": "73%", 
+            "other-objects": [
+                "tusk", 
+                "winter-wyvern"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "08:17", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "62%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "08:19", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "34%"
+        }, 
+        {
+            "gold-fed": "403", 
+            "top": "41%", 
+            "other-objects": "winter-wyvern", 
+            "whom": "tusk", 
+            "time": "08:37", 
+            "action": "killed by", 
+            "skill": "ice shards", 
+            "subject": "ancient apparition", 
+            "gold-lost": "149", 
+            "left": "64%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "ancient apparition", 
+            "time": "09:29"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "night stalker", 
+            "time": "09:30"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "09:32", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "335", 
+            "top": "60%", 
+            "whom": "ursa", 
+            "supplement": "autoattack", 
+            "time": "09:40", 
+            "action": "killed by", 
+            "subject": "ancient apparition", 
+            "gold-lost": "149", 
+            "left": "65%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "ursa", 
+            "time": "09:41"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "10:05", 
+            "action": "bottled", 
+            "subject": "ursa", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "10:07", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "10:34"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "10:35"
+        }, 
+        {
+            "gold-fed": "387", 
+            "top": "17%", 
+            "other-objects": [
+                "anti-mage", 
+                "tusk"
+            ], 
+            "whom": "dazzle", 
+            "time": "10:45", 
+            "action": "killed by", 
+            "skill": "shadow wave", 
+            "subject": "night stalker", 
+            "gold-lost": "179", 
+            "left": "26%"
+        }, 
+        {
+            "gold-fed": "327", 
+            "top": "21%", 
+            "other-objects": [
+                "invoker", 
+                "night-stalker"
+            ], 
+            "whom": "dark seer", 
+            "time": "10:58", 
+            "action": "killed by", 
+            "skill": "ion shell", 
+            "subject": "dazzle", 
+            "gold-lost": "179", 
+            "left": "15%"
+        }, 
+        {
+            "gold-fed": "480", 
+            "top": "12%", 
+            "other-objects": [
+                "anti-mage", 
+                "tusk"
+            ], 
+            "whom": "winter wyvern", 
+            "supplement": "autoattack", 
+            "time": "11:00", 
+            "action": "killed by", 
+            "subject": "invoker", 
+            "gold-lost": "239", 
+            "left": "29%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "sentry ward", 
+            "time": "11:11", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "23%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "11:15"
+        }, 
+        {
+            "gold-fed": "403", 
+            "top": "54%", 
+            "other-objects": "dazzle", 
+            "whom": "ursa", 
+            "supplement": "autoattack", 
+            "time": "11:18", 
+            "action": "killed by", 
+            "subject": "dark seer", 
+            "gold-lost": "239", 
+            "left": "32%"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "sentry ward", 
+            "time": "11:22", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "52%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ursa", 
+            "time": "11:23"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "11:45"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "11:47"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "12:01", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "alchemist", 
+            "time": "12:02"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "12:05", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "536", 
+            "top": "66%", 
+            "other-objects": "tusk", 
+            "whom": "ursa", 
+            "supplement": "autoattack", 
+            "time": "12:12", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "269", 
+            "left": "73%"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "observer ward", 
+            "time": "12:27", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "80%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "observer ward", 
+            "time": "12:34", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "13%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "12:46"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "13:05", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "16%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "observer ward", 
+            "time": "13:10", 
+            "action": "destroy", 
+            "subject": "anti-mage", 
+            "left": "13%"
+        }, 
+        {
+            "top": "19%", 
+            "other-objects": [
+                "invoker", 
+                "night-stalker", 
+                "dark-seer"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "13:17", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "42%"
+        }, 
+        {
+            "gold-fed": "327", 
+            "top": "85%", 
+            "whom": "tusk", 
+            "time": "13:19", 
+            "action": "killed by", 
+            "skill": "ice shards", 
+            "subject": "ancient apparition", 
+            "gold-lost": "179", 
+            "left": "89%"
+        }, 
+        {
+            "gold-fed": "480", 
+            "top": "14%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "dazzle"
+            ], 
+            "whom": "anti-mage", 
+            "supplement": "autoattack", 
+            "time": "13:51", 
+            "action": "killed by", 
+            "subject": "dark seer", 
+            "gold-lost": "269", 
+            "left": "40%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "13:55"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "14:01", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "14:02", 
+            "action": "bottled", 
+            "subject": "ursa", 
+            "left": "38%"
+        }, 
+        {
+            "top": "59%", 
+            "whom": "sentry ward", 
+            "time": "14:13", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "85%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ursa", 
+            "time": "14:13"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "sentry ward", 
+            "time": "14:21", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "73%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "14:28"
+        }, 
+        {
+            "gold-fed": "555", 
+            "top": "89%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "invoker"
+            ], 
+            "whom": "night stalker", 
+            "time": "14:43", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "tusk", 
+            "gold-lost": "269", 
+            "left": "63%"
+        }, 
+        {
+            "top": "87%", 
+            "whom": "dire tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "15:12", 
+            "action": "destroy", 
+            "subject": "invoker", 
+            "left": "60%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "15:14"
+        }, 
+        {
+            "gold-fed": "426", 
+            "top": "96%", 
+            "other-objects": "invoker", 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "15:21", 
+            "action": "killed by", 
+            "subject": "winter wyvern", 
+            "gold-lost": "239", 
+            "left": "50%"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "radiant tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "15:24", 
+            "action": "destroy", 
+            "subject": "ursa", 
+            "left": "58%"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "observer ward", 
+            "time": "15:41", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "44%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "observer ward", 
+            "time": "15:46", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "52%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "16:00"
+        }, 
+        {
+            "gold-fed": "667", 
+            "top": "30%", 
+            "other-objects": [
+                "alchemist", 
+                "night-stalker"
+            ], 
+            "whom": "dark seer", 
+            "time": "16:09", 
+            "action": "killed by", 
+            "skill": "ion shell", 
+            "subject": "ursa", 
+            "gold-lost": "329", 
+            "left": "86%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "ancient apparition", 
+            "time": "16:28"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "16:30", 
+            "action": "activate", 
+            "subject": "ancient apparition", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "16:32"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "16:37", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "alchemist", 
+            "time": "16:37"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "16:52", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "67%"
+        }, 
+        {
+            "top": "29%", 
+            "other-objects": [
+                "invoker", 
+                "night-stalker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "16:55", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "57%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "17:03"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "17:03"
+        }, 
+        {
+            "top": "14%", 
+            "other-objects": [
+                "night-stalker", 
+                "dark-seer"
+            ], 
+            "whom": "invoker", 
+            "time": "17:19", 
+            "action": "speak", 
+            "subject": "anti-mage", 
+            "left": "21%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "17:31"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "17:46", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "11%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "top": "43%", 
+            "whom": "sentry ward", 
+            "time": "18:11", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "21%"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "observer ward", 
+            "time": "18:14", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "25%"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "observer ward", 
+            "time": "18:21", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "25%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "18:28", 
+            "action": "bottled", 
+            "subject": "ursa", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ursa", 
+            "time": "18:29"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "tusk", 
+            "time": "18:44"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "sentry ward", 
+            "time": "18:47", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "57%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "ancient apparition", 
+            "time": "18:54"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "19:25", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "19:30", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "88%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "alchemist", 
+            "time": "19:50"
+        }, 
+        {
+            "gold-fed": "568", 
+            "top": "82%", 
+            "other-objects": [
+                "invoker", 
+                "alchemist", 
+                "night-stalker", 
+                "dark-seer"
+            ], 
+            "whom": "ancient apparition", 
+            "time": "19:52", 
+            "action": "killed by", 
+            "skill": "chilling touch", 
+            "subject": "ursa", 
+            "gold-lost": "329", 
+            "left": "89%"
+        }, 
+        {
+            "gold-fed": "467", 
+            "top": "86%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "alchemist", 
+                "dark-seer"
+            ], 
+            "whom": "invoker", 
+            "supplement": "autoattack", 
+            "time": "19:56", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "299", 
+            "left": "83%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "20:10"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "winter wyvern", 
+            "time": "20:12"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "dazzle", 
+            "time": "20:24"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "20:28", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "alchemist", 
+            "time": "20:30"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "20:41"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "dire tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "20:51", 
+            "action": "speak", 
+            "subject": "winter wyvern", 
+            "left": "48%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "21:00", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "alchemist", 
+            "time": "21:09"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "21:10"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "observer ward", 
+            "time": "21:10", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "59%"
+        }, 
+        {
+            "top": "75%", 
+            "whom": "observer ward", 
+            "time": "21:42", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "70%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "22:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "22:01", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "alchemist", 
+            "time": "22:01"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "dust of appearance", 
+            "time": "22:05", 
+            "action": "activate", 
+            "subject": "dazzle", 
+            "left": "55%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "ursa", 
+            "time": "22:06"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "22:06"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "22:09", 
+            "action": "bottled", 
+            "subject": "ursa", 
+            "left": "61%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "22:17", 
+            "action": "speak", 
+            "subject": "ursa", 
+            "left": "48%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "ursa", 
+            "time": "22:17"
+        }, 
+        {
+            "top": "30%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "night-stalker", 
+                "dark-seer"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "22:33", 
+            "action": "activate", 
+            "subject": "ancient apparition", 
+            "left": "59%"
+        }, 
+        {
+            "top": "52%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "invoker", 
+                "night-stalker", 
+                "dark-seer"
+            ], 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "22:56", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "24%"
+        }, 
+        {
+            "gold-fed": "492", 
+            "top": "54%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "invoker", 
+                "night-stalker", 
+                "dark-seer"
+            ], 
+            "whom": "alchemist", 
+            "time": "23:02", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "tusk", 
+            "gold-lost": "329", 
+            "left": "26%"
+        }, 
+        {
+            "top": "52%", 
+            "other-objects": [
+                "invoker", 
+                "alchemist", 
+                "dark-seer"
+            ], 
+            "whom": "night stalker", 
+            "time": "23:10", 
+            "action": "killed by", 
+            "skill": "void", 
+            "subject": "ursa", 
+            "left": "29%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "ursa", 
+            "time": "23:10"
+        }, 
+        {
+            "gold-fed": "605", 
+            "top": "55%", 
+            "other-objects": [
+                "invoker", 
+                "dark-seer"
+            ], 
+            "whom": "alchemist", 
+            "supplement": "autoattack", 
+            "time": "23:11", 
+            "action": "killed by", 
+            "subject": "anti-mage", 
+            "gold-lost": "389", 
+            "left": "26%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "alchemist", 
+            "time": "23:11"
+        }, 
+        {
+            "gold-fed": "600", 
+            "top": "52%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "invoker", 
+                "night-stalker", 
+                "dark-seer"
+            ], 
+            "whom": "alchemist", 
+            "supplement": "autoattack", 
+            "time": "23:17", 
+            "action": "killed by", 
+            "subject": "ursa", 
+            "gold-lost": "359", 
+            "left": "32%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "alchemist", 
+            "time": "23:17"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "23:39"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "dire tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "23:45", 
+            "action": "destroy", 
+            "subject": "dark seer", 
+            "left": "37%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "23:59"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "23:59"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "24:01", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "24:03", 
+            "action": "activate", 
+            "subject": "invoker", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "winter wyvern", 
+            "time": "24:17"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "observer ward", 
+            "time": "25:05", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "73%"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "sentry ward", 
+            "time": "25:09", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "81%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "ancient apparition", 
+            "time": "25:17"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "ancient apparition", 
+            "time": "25:17"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "25:42", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "88%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "25:58"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "25:58"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "25:59", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "top": "44%", 
+            "whom": "sentry ward", 
+            "time": "26:06", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "19%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "dazzle", 
+            "time": "26:14"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "alchemist", 
+            "time": "26:17"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "sentry ward", 
+            "time": "26:21", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "81%"
+        }, 
+        {
+            "gold-fed": "657", 
+            "top": "14%", 
+            "whom": "alchemist", 
+            "time": "26:22", 
+            "action": "killed by", 
+            "skill": "radiance", 
+            "subject": "ursa", 
+            "gold-lost": "389", 
+            "left": "14%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "26:32"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "26:33", 
+            "action": "activate", 
+            "subject": "invoker", 
+            "left": "61%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "ancient apparition", 
+            "time": "26:47"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "dire tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "27:03", 
+            "action": "destroy", 
+            "subject": "invoker", 
+            "left": "11%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "27:07"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "night stalker", 
+            "time": "27:25"
+        }, 
+        {
+            "top": "44%", 
+            "whom": "sentry ward", 
+            "time": "27:31", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "19%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "sentry ward", 
+            "time": "27:35", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "20%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "28:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "28:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "28:03", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "28:03", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "alchemist", 
+            "time": "28:03"
+        }, 
+        {
+            "top": "46%", 
+            "whom": "observer ward", 
+            "time": "28:22", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "30%"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "sentry ward", 
+            "time": "28:23", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "31%"
+        }, 
+        {
+            "top": "34%", 
+            "whom": "observer ward", 
+            "time": "28:24", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "2%"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "sentry ward", 
+            "time": "28:31", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "31%"
+        }, 
+        {
+            "gold-fed": "417", 
+            "top": "45%", 
+            "other-objects": [
+                "alchemist", 
+                "night-stalker"
+            ], 
+            "whom": "dark seer", 
+            "time": "28:44", 
+            "action": "killed by", 
+            "skill": "ion shell", 
+            "subject": "winter wyvern", 
+            "gold-lost": "269", 
+            "left": "31%"
+        }, 
+        {
+            "gold-fed": "448", 
+            "top": "59%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "alchemist"
+            ], 
+            "whom": "dark seer", 
+            "time": "28:50", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "dazzle", 
+            "gold-lost": "299", 
+            "left": "23%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "dazzle", 
+            "time": "28:50"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "dark seer", 
+            "time": "28:50"
+        }, 
+        {
+            "gold-fed": "492", 
+            "top": "66%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "invoker", 
+                "alchemist"
+            ], 
+            "whom": "dark seer", 
+            "supplement": "autoattack", 
+            "time": "28:54", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "329", 
+            "left": "25%"
+        }, 
+        {
+            "gold-fed": "1584", 
+            "top": "62%", 
+            "other-objects": [
+                "tusk", 
+                "dazzle", 
+                "ursa"
+            ], 
+            "whom": "anti-mage", 
+            "supplement": "autoattack", 
+            "time": "28:54", 
+            "action": "killed by", 
+            "subject": "invoker", 
+            "gold-lost": "449", 
+            "left": "18%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "dark seer", 
+            "time": "28:54"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "ancient apparition", 
+            "time": "28:54"
+        }, 
+        {
+            "gold-fed": "602", 
+            "top": "69%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "invoker", 
+                "night-stalker", 
+                "dark-seer"
+            ], 
+            "whom": "alchemist", 
+            "time": "28:59", 
+            "action": "killed by", 
+            "skill": "unstable concoction throw", 
+            "subject": "ursa", 
+            "gold-lost": "419", 
+            "left": "15%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "29:20", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "22%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "29:21"
+        }, 
+        {
+            "gold-fed": "451", 
+            "top": "82%", 
+            "other-objects": [
+                "alchemist", 
+                "dark-seer"
+            ], 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "29:30", 
+            "action": "killed by", 
+            "subject": "winter wyvern", 
+            "gold-lost": "269", 
+            "left": "24%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "30:00"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire melee middle barracks", 
+            "subject": "alchemist", 
+            "supplement": "melee", 
+            "time": "30:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "30:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "30:11"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "dazzle", 
+            "time": "30:15"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "30:17", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "87%", 
+            "other-objects": [
+                "tusk", 
+                "winter-wyvern", 
+                "dazzle", 
+                "ursa"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "30:24", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "25%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "30:36", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "30:49"
+        }, 
+        {
+            "top": "67%", 
+            "other-objects": [
+                "invoker", 
+                "dark-seer"
+            ], 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "30:51", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "74%"
+        }, 
+        {
+            "gold-fed": "803", 
+            "top": "68%", 
+            "other-objects": [
+                "invoker", 
+                "dark-seer"
+            ], 
+            "whom": "alchemist", 
+            "supplement": "autoattack", 
+            "time": "31:10", 
+            "action": "killed by", 
+            "subject": "anti-mage", 
+            "gold-lost": "509", 
+            "left": "81%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "31:10", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "75%"
+        }, 
+        {
+            "gold-fed": "656", 
+            "top": "53%", 
+            "other-objects": [
+                "invoker", 
+                "alchemist", 
+                "night-stalker"
+            ], 
+            "whom": "dark seer", 
+            "supplement": "autoattack", 
+            "time": "31:12", 
+            "action": "killed by", 
+            "subject": "ursa", 
+            "gold-lost": "419", 
+            "left": "85%"
+        }, 
+        {
+            "gold-fed": "1114", 
+            "top": "48%", 
+            "other-objects": "ursa", 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "31:15", 
+            "action": "killed by", 
+            "subject": "invoker", 
+            "gold-lost": "479", 
+            "left": "86%"
+        }, 
+        {
+            "gold-fed": "619", 
+            "top": "51%", 
+            "other-objects": [
+                "alchemist", 
+                "night-stalker"
+            ], 
+            "whom": "dark seer", 
+            "supplement": "autoattack", 
+            "time": "31:18", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "389", 
+            "left": "83%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "dark seer", 
+            "time": "31:18"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "observer ward", 
+            "time": "31:25", 
+            "action": "destroy", 
+            "subject": "dark seer", 
+            "left": "73%"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "dire tier 3 top tower", 
+            "supplement": "tier", 
+            "time": "31:48", 
+            "action": "destroy", 
+            "subject": "alchemist", 
+            "left": "13%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "31:49", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "75%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "anti-mage", 
+            "time": "31:51"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire ranged middle barracks", 
+            "subject": "dark seer", 
+            "supplement": "ranged", 
+            "time": "31:58"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "32:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "32:00", 
+            "action": "activate", 
+            "subject": "ancient apparition", 
+            "left": "61%"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "tusk", 
+            "time": "32:01"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "dazzle", 
+            "time": "32:01"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "anti-mage", 
+            "time": "32:01"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "dark seer", 
+            "time": "32:01"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "invoker", 
+            "time": "32:01"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "alchemist", 
+            "time": "32:01"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "ursa", 
+            "time": "32:01"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "winter wyvern", 
+            "time": "32:01"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the radiant", 
+            "time": "32:03"
+        }
+    ]
+}

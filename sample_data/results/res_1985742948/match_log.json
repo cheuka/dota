@@ -1,0 +1,1501 @@
+{
+    "events": [
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "bane", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "zeus", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "-01:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "-01:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "-01:24"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "-01:13"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "sentry ward", 
+            "time": "-00:39", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "79%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "-00:36", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "80%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "-00:09", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "24%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "zeus", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "observer ward", 
+            "time": "00:23", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "66%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "00:46"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "sentry ward", 
+            "time": "00:50", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "21%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "gyrocopter", 
+            "time": "01:17"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "ember spirit", 
+            "time": "01:17"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "dazzle", 
+            "time": "01:17"
+        }, 
+        {
+            "top": "9%", 
+            "whom": "observer ward", 
+            "time": "01:23", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "24%"
+        }, 
+        {
+            "top": "14%", 
+            "whom": "sentry ward", 
+            "time": "01:31", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "28%"
+        }, 
+        {
+            "top": "10%", 
+            "whom": "sentry ward", 
+            "time": "01:39", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "23%"
+        }, 
+        {
+            "top": "9%", 
+            "whom": "observer ward", 
+            "time": "01:40", 
+            "action": "destroy", 
+            "subject": "undying", 
+            "left": "24%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "02:00", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "02:04", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "420", 
+            "top": "13%", 
+            "other-objects": [
+                "dazzle", 
+                "gyrocopter"
+            ], 
+            "whom": "lion", 
+            "supplement": "autoattack", 
+            "time": "02:44", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "59", 
+            "left": "28%"
+        }, 
+        {
+            "gold-fed": "295", 
+            "top": "86%", 
+            "whom": "ursa", 
+            "supplement": "autoattack", 
+            "time": "03:18", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "89", 
+            "left": "65%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "observer ward", 
+            "time": "03:39", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "28%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lion", 
+            "time": "03:55"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "04:00", 
+            "action": "bottled", 
+            "subject": "zeus", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "04:00", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "zeus", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "ember spirit", 
+            "time": "04:21"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "05:08", 
+            "action": "place", 
+            "subject": "lion", 
+            "left": "32%"
+        }, 
+        {
+            "top": "78%", 
+            "whom": "sentry ward", 
+            "time": "05:27", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "75%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "05:37"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "05:37"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lion", 
+            "time": "05:50"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "tusk", 
+            "time": "05:55"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "06:00", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "61%"
+        }, 
+        {
+            "top": "53%", 
+            "whom": "observer ward", 
+            "time": "06:08", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "57%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "06:10", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "top": "67%", 
+            "whom": "observer ward", 
+            "time": "06:18", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "67%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "lion", 
+            "time": "06:37"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ember spirit", 
+            "time": "07:04"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "undying", 
+            "time": "07:30"
+        }, 
+        {
+            "top": "53%", 
+            "other-objects": [
+                "tusk", 
+                "lion"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "08:00", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "68%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "08:00", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ember spirit", 
+            "time": "08:00"
+        }, 
+        {
+            "gold-fed": "269", 
+            "top": "47%", 
+            "other-objects": [
+                "undying", 
+                "ember-spirit"
+            ], 
+            "whom": "bane", 
+            "time": "08:25", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "lion", 
+            "gold-lost": "89", 
+            "left": "65%"
+        }, 
+        {
+            "gold-fed": "279", 
+            "top": "50%", 
+            "other-objects": "undying", 
+            "whom": "ember spirit", 
+            "time": "08:27", 
+            "action": "killed by", 
+            "skill": "flame guard", 
+            "subject": "dazzle", 
+            "gold-lost": "119", 
+            "left": "65%"
+        }, 
+        {
+            "gold-fed": "409", 
+            "top": "49%", 
+            "other-objects": "undying", 
+            "whom": "ursa", 
+            "supplement": "autoattack", 
+            "time": "08:30", 
+            "action": "killed by", 
+            "subject": "zeus", 
+            "gold-lost": "209", 
+            "left": "58%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "08:48"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "dazzle", 
+            "time": "08:49"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "08:53", 
+            "action": "activate", 
+            "subject": "ursa", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "08:58"
+        }, 
+        {
+            "top": "78%", 
+            "whom": "observer ward", 
+            "time": "09:36", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "80%"
+        }, 
+        {
+            "top": "42%", 
+            "other-objects": [
+                "undying", 
+                "ember-spirit"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "09:50", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "67%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "10:00", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "gold-fed": "452", 
+            "top": "65%", 
+            "other-objects": "undying", 
+            "whom": "ember spirit", 
+            "time": "10:10", 
+            "action": "killed by", 
+            "skill": "flame guard", 
+            "subject": "tusk", 
+            "gold-lost": "179", 
+            "left": "71%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "queen of pain", 
+            "time": "10:10"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "10:15", 
+            "action": "bottled", 
+            "subject": "zeus", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "448", 
+            "top": "72%", 
+            "other-objects": [
+                "undying", 
+                "ember-spirit"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "10:21", 
+            "action": "killed by", 
+            "subject": "zeus", 
+            "gold-lost": "209", 
+            "left": "66%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "10:55"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "10:57"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "undying", 
+            "time": "11:04"
+        }, 
+        {
+            "top": "88%", 
+            "other-objects": [
+                "lion", 
+                "dazzle", 
+                "gyrocopter"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "11:08", 
+            "action": "activate", 
+            "subject": "dazzle", 
+            "left": "51%"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "sentry ward", 
+            "time": "11:22", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "53%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "zeus", 
+            "time": "11:41"
+        }, 
+        {
+            "top": "40%", 
+            "other-objects": [
+                "undying", 
+                "bane"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "11:54", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "61%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "12:02"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "12:07", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "sentry ward", 
+            "time": "12:08", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "80%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "12:08"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "observer ward", 
+            "time": "12:11", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "66%"
+        }, 
+        {
+            "gold-fed": "707", 
+            "top": "86%", 
+            "other-objects": [
+                "tusk", 
+                "dazzle", 
+                "gyrocopter"
+            ], 
+            "whom": "zeus", 
+            "time": "12:20", 
+            "action": "killed by", 
+            "skill": "lightning bolt", 
+            "subject": "ursa", 
+            "gold-lost": "269", 
+            "left": "91%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "12:32", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "35%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "12:34"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "12:42", 
+            "action": "bottled", 
+            "subject": "zeus", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "12:45"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "observer ward", 
+            "time": "12:50", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "12%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "12:56"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "13:03"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "13:14", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "11%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "observer ward", 
+            "time": "13:20", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "66%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "zeus", 
+            "time": "13:31"
+        }, 
+        {
+            "gold-fed": "422", 
+            "top": "54%", 
+            "other-objects": [
+                "zeus", 
+                "lion", 
+                "gyrocopter"
+            ], 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "13:42", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "179", 
+            "left": "68%"
+        }, 
+        {
+            "gold-fed": "327", 
+            "top": "48%", 
+            "other-objects": [
+                "undying", 
+                "ember-spirit"
+            ], 
+            "whom": "queen of pain", 
+            "time": "13:43", 
+            "action": "killed by", 
+            "skill": "sonic wave", 
+            "subject": "dazzle", 
+            "gold-lost": "149", 
+            "left": "65%"
+        }, 
+        {
+            "gold-fed": "536", 
+            "top": "49%", 
+            "other-objects": [
+                "undying", 
+                "queen-of-pain", 
+                "bane"
+            ], 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "13:43", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "269", 
+            "left": "65%"
+        }, 
+        {
+            "gold-fed": "423", 
+            "top": "62%", 
+            "other-objects": [
+                "undying", 
+                "queen-of-pain", 
+                "bane", 
+                "ursa"
+            ], 
+            "whom": "ember spirit", 
+            "time": "13:49", 
+            "action": "killed by", 
+            "skill": "activate fire remnant", 
+            "subject": "lion", 
+            "gold-lost": "179", 
+            "left": "62%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "ember spirit", 
+            "time": "13:49"
+        }, 
+        {
+            "gold-fed": "595", 
+            "top": "48%", 
+            "other-objects": [
+                "lion", 
+                "dazzle"
+            ], 
+            "whom": "zeus", 
+            "time": "13:50", 
+            "action": "killed by", 
+            "skill": "lightning bolt", 
+            "subject": "ursa", 
+            "gold-lost": "269", 
+            "left": "85%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "14:02", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ember spirit", 
+            "time": "14:04"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "14:08"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "14:09"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "14:34", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "sentry ward", 
+            "time": "14:38", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "86%"
+        }, 
+        {
+            "top": "53%", 
+            "whom": "observer ward", 
+            "time": "15:03", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "57%"
+        }, 
+        {
+            "top": "40%", 
+            "whom": "observer ward", 
+            "time": "15:09", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "46%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "ember spirit", 
+            "time": "15:29"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "radiant tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "15:31", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "58%"
+        }, 
+        {
+            "gold-fed": "599", 
+            "top": "39%", 
+            "other-objects": "tusk", 
+            "whom": "zeus", 
+            "time": "15:36", 
+            "action": "killed by", 
+            "skill": "thundergod's wrath", 
+            "subject": "queen of pain", 
+            "gold-lost": "269", 
+            "left": "51%"
+        }, 
+        {
+            "gold-fed": "423", 
+            "top": "53%", 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "15:38", 
+            "action": "killed by", 
+            "subject": "lion", 
+            "gold-lost": "179", 
+            "left": "49%"
+        }, 
+        {
+            "gold-fed": "536", 
+            "top": "55%", 
+            "other-objects": [
+                "undying", 
+                "queen-of-pain", 
+                "bane", 
+                "ursa"
+            ], 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "15:43", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "269", 
+            "left": "48%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "ember spirit", 
+            "time": "15:43"
+        }, 
+        {
+            "gold-fed": "396", 
+            "top": "54%", 
+            "other-objects": [
+                "undying", 
+                "queen-of-pain", 
+                "ursa"
+            ], 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "15:45", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "179", 
+            "left": "44%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "ember spirit", 
+            "time": "15:45"
+        }, 
+        {
+            "gold-fed": "453", 
+            "top": "43%", 
+            "other-objects": [
+                "undying", 
+                "ursa"
+            ], 
+            "whom": "bane", 
+            "time": "15:51", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "tusk", 
+            "gold-lost": "239", 
+            "left": "44%"
+        }, 
+        {
+            "top": "43%", 
+            "whom": "sentry ward", 
+            "time": "15:59", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "46%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "40%", 
+            "whom": "observer ward", 
+            "time": "16:03", 
+            "action": "destroy", 
+            "subject": "undying", 
+            "left": "46%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "16:11"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "16:33", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "ember spirit", 
+            "time": "16:35"
+        }, 
+        {
+            "gold-fed": "324", 
+            "top": "36%", 
+            "other-objects": [
+                "undying", 
+                "ember-spirit"
+            ], 
+            "whom": "queen of pain", 
+            "time": "16:40", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "dazzle", 
+            "gold-lost": "179", 
+            "left": "44%"
+        }, 
+        {
+            "gold-fed": "590", 
+            "top": "33%", 
+            "other-objects": [
+                "tusk", 
+                "lion", 
+                "dazzle"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "16:40", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "239", 
+            "left": "49%"
+        }, 
+        {
+            "gold-fed": "399", 
+            "top": "35%", 
+            "other-objects": [
+                "undying", 
+                "queen-of-pain", 
+                "ember-spirit"
+            ], 
+            "whom": "bane", 
+            "time": "16:42", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "lion", 
+            "gold-lost": "209", 
+            "left": "43%"
+        }, 
+        {
+            "gold-fed": "403", 
+            "top": "46%", 
+            "other-objects": [
+                "undying", 
+                "queen-of-pain", 
+                "bane", 
+                "ember-spirit"
+            ], 
+            "whom": "ursa", 
+            "supplement": "autoattack", 
+            "time": "16:57", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "239", 
+            "left": "42%"
+        }, 
+        {
+            "gold-fed": "582", 
+            "top": "39%", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "17:03", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "269", 
+            "left": "45%"
+        }, 
+        {
+            "gold-fed": "642", 
+            "top": "38%", 
+            "other-objects": [
+                "undying", 
+                "queen-of-pain", 
+                "bane"
+            ], 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "17:03", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "329", 
+            "left": "45%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "17:10"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "17:14"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "17:16", 
+            "action": "destroy", 
+            "subject": "ursa", 
+            "left": "48%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "17:26", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ember spirit", 
+            "time": "17:27"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "18:08", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "18:44"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "ursa", 
+            "time": "18:46"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "roshan", 
+            "subject": "the radiant", 
+            "time": "18:46"
+        }, 
+        {
+            "top": "87%", 
+            "whom": "dire tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "18:55", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "60%"
+        }, 
+        {
+            "gold-fed": "547", 
+            "top": "90%", 
+            "other-objects": [
+                "undying", 
+                "ember-spirit", 
+                "ursa"
+            ], 
+            "whom": "queen of pain", 
+            "time": "19:13", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "gyrocopter", 
+            "gold-lost": "329", 
+            "left": "41%"
+        }, 
+        {
+            "gold-fed": "479", 
+            "top": "87%", 
+            "other-objects": [
+                "undying", 
+                "queen-of-pain", 
+                "bane", 
+                "ember-spirit"
+            ], 
+            "whom": "ursa", 
+            "supplement": "autoattack", 
+            "time": "19:14", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "269", 
+            "left": "45%"
+        }, 
+        {
+            "gold-fed": "420", 
+            "top": "91%", 
+            "other-objects": [
+                "undying", 
+                "bane"
+            ], 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "19:19", 
+            "action": "killed by", 
+            "subject": "lion", 
+            "gold-lost": "239", 
+            "left": "40%"
+        }, 
+        {
+            "gold-fed": "327", 
+            "top": "89%", 
+            "other-objects": [
+                "undying", 
+                "ember-spirit"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "19:30", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "179", 
+            "left": "21%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "19:30"
+        }, 
+        {
+            "gold-fed": "764", 
+            "top": "95%", 
+            "other-objects": "dazzle", 
+            "whom": "zeus", 
+            "time": "19:36", 
+            "action": "killed by", 
+            "skill": "thundergod's wrath", 
+            "subject": "queen of pain", 
+            "gold-lost": "329", 
+            "left": "37%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "19:42"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "19:50"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "dire tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "19:53", 
+            "action": "destroy", 
+            "subject": "ursa", 
+            "left": "48%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "20:08", 
+            "action": "activate", 
+            "subject": "ursa", 
+            "left": "61%"
+        }, 
+        {
+            "top": "76%", 
+            "whom": "observer ward", 
+            "time": "20:14", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "36%"
+        }, 
+        {
+            "gold-fed": "440", 
+            "top": "57%", 
+            "other-objects": [
+                "undying", 
+                "queen-of-pain", 
+                "ursa"
+            ], 
+            "whom": "bane", 
+            "time": "20:57", 
+            "action": "killed by", 
+            "skill": "fiend's grip", 
+            "subject": "tusk", 
+            "gold-lost": "269", 
+            "left": "34%"
+        }, 
+        {
+            "gold-fed": "350", 
+            "top": "64%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "bane", 
+                "ursa"
+            ], 
+            "whom": "undying", 
+            "time": "21:01", 
+            "action": "killed by", 
+            "skill": "soul rip", 
+            "subject": "dazzle", 
+            "gold-lost": "179", 
+            "left": "36%"
+        }, 
+        {
+            "gold-fed": "392", 
+            "top": "68%", 
+            "other-objects": [
+                "undying", 
+                "queen-of-pain"
+            ], 
+            "whom": "ursa", 
+            "supplement": "autoattack", 
+            "time": "21:04", 
+            "action": "killed by", 
+            "subject": "lion", 
+            "gold-lost": "239", 
+            "left": "32%"
+        }, 
+        {
+            "gold-fed": "686", 
+            "top": "41%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "ember-spirit"
+            ], 
+            "whom": "undying", 
+            "time": "21:20", 
+            "action": "killed by", 
+            "skill": "soul rip", 
+            "subject": "zeus", 
+            "gold-lost": "329", 
+            "left": "8%"
+        }, 
+        {
+            "top": "68%", 
+            "other-objects": "ursa", 
+            "whom": "bane", 
+            "time": "21:22", 
+            "action": "speak", 
+            "subject": "gyrocopter", 
+            "left": "38%"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the radiant", 
+            "time": "21:23"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "queen of pain", 
+            "time": "21:24"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "zeus", 
+            "time": "21:24"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "ember spirit", 
+            "time": "21:24"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "dazzle", 
+            "time": "21:24"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "tusk", 
+            "time": "21:24"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "bane", 
+            "time": "21:24"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "gyrocopter", 
+            "time": "21:24"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "lion", 
+            "time": "21:24"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "ursa", 
+            "time": "21:24"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "undying", 
+            "time": "21:24"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "ursa", 
+            "time": "21:24"
+        }
+    ]
+}

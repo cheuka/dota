@@ -1,0 +1,2217 @@
+{
+    "events": [
+        {
+            "action": "speak", 
+            "subject": "night stalker", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "night stalker", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "night stalker", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "chaos knight", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "chaos knight", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "night stalker", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "-01:26"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "-01:06", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "77%"
+        }, 
+        {
+            "top": "40%", 
+            "whom": "observer ward", 
+            "time": "-01:04", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "46%"
+        }, 
+        {
+            "top": "86%", 
+            "whom": "observer ward", 
+            "time": "-00:57", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "82%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "-00:38"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "chaos knight", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "sentry ward", 
+            "time": "00:12", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "22%"
+        }, 
+        {
+            "top": "49%", 
+            "whom": "observer ward", 
+            "time": "00:19", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "45%"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "observer ward", 
+            "time": "00:25", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "66%"
+        }, 
+        {
+            "top": "51%", 
+            "whom": "sentry ward", 
+            "time": "00:34", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "53%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "sentry ward", 
+            "time": "00:34", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "23%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "02:06", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "02:16", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "506", 
+            "top": "86%", 
+            "other-objects": "undying", 
+            "whom": "queen of pain", 
+            "time": "02:55", 
+            "action": "killed by", 
+            "skill": "shadow strike", 
+            "subject": "tusk", 
+            "gold-lost": "59", 
+            "left": "85%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "03:43"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "04:00", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "04:01", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "04:13"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "04:15"
+        }, 
+        {
+            "top": "51%", 
+            "whom": "observer ward", 
+            "time": "05:35", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "56%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "06:12", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "06:18", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "06:18"
+        }, 
+        {
+            "gold-fed": "380", 
+            "top": "11%", 
+            "other-objects": "spirit-breaker", 
+            "whom": "queen of pain", 
+            "time": "06:26", 
+            "action": "killed by", 
+            "skill": "sonic wave", 
+            "subject": "night stalker", 
+            "gold-lost": "89", 
+            "left": "13%"
+        }, 
+        {
+            "top": "44%", 
+            "whom": "observer ward", 
+            "time": "06:37", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "42%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "06:46"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "shadow fiend", 
+            "time": "06:54"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "08:00"
+        }, 
+        {
+            "gold-fed": "384", 
+            "top": "87%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "gyrocopter"
+            ], 
+            "whom": "tusk", 
+            "time": "08:01", 
+            "action": "killed by", 
+            "skill": "ice shards", 
+            "subject": "chaos knight", 
+            "gold-lost": "179", 
+            "left": "64%"
+        }, 
+        {
+            "gold-fed": "321", 
+            "top": "87%", 
+            "other-objects": [
+                "chaos-knight", 
+                "queen-of-pain", 
+                "spirit-breaker"
+            ], 
+            "whom": "undying", 
+            "time": "08:02", 
+            "action": "killed by", 
+            "skill": "decay", 
+            "subject": "night stalker", 
+            "gold-lost": "119", 
+            "left": "66%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "08:12"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "08:12"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "08:22", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "shadow fiend", 
+            "time": "08:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "08:30"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "disruptor", 
+            "time": "08:31"
+        }, 
+        {
+            "top": "24%", 
+            "whom": "observer ward", 
+            "time": "08:35", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "20%"
+        }, 
+        {
+            "gold-fed": "346", 
+            "top": "84%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "tusk"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "08:36", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "149", 
+            "left": "73%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "08:55", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "09:05"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "undying", 
+            "time": "09:21"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "undying", 
+            "time": "09:21"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "queen of pain", 
+            "time": "09:21"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "lina", 
+            "time": "09:21"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "spirit breaker", 
+            "time": "09:21"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "spirit breaker", 
+            "time": "09:21"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "queen of pain", 
+            "time": "09:21"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "lina", 
+            "time": "09:21"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "night stalker", 
+            "time": "09:21"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "spirit breaker", 
+            "time": "09:21"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "night stalker", 
+            "time": "09:21"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "tusk", 
+            "time": "09:21"
+        }, 
+        {
+            "gold-fed": "412", 
+            "top": "10%", 
+            "other-objects": "spirit-breaker", 
+            "whom": "lina", 
+            "time": "09:42", 
+            "action": "killed by", 
+            "skill": "dragon slave", 
+            "subject": "night stalker", 
+            "gold-lost": "149", 
+            "left": "34%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "observer ward", 
+            "time": "09:51", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "31%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "10:00", 
+            "action": "bottled", 
+            "subject": "chaos knight", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "10:05", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "disruptor", 
+            "time": "10:09"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "undying", 
+            "time": "10:11"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "undying", 
+            "time": "10:11"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "chaos knight", 
+            "time": "10:33"
+        }, 
+        {
+            "top": "32%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "disruptor"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "10:42", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "64%"
+        }, 
+        {
+            "top": "88%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "lina", 
+                "undying"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "10:43", 
+            "action": "activate", 
+            "subject": "lina", 
+            "left": "46%"
+        }, 
+        {
+            "top": "13%", 
+            "whom": "sentry ward", 
+            "time": "10:58", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "28%"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "observer ward", 
+            "time": "11:10", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "79%"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "observer ward", 
+            "time": "11:14", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "21%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "11:24"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "11:33"
+        }, 
+        {
+            "gold-fed": "327", 
+            "top": "86%", 
+            "other-objects": "gyrocopter", 
+            "whom": "disruptor", 
+            "supplement": "autoattack", 
+            "time": "11:42", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "149", 
+            "left": "86%"
+        }, 
+        {
+            "gold-fed": "434", 
+            "top": "76%", 
+            "other-objects": [
+                "chaos-knight", 
+                "spirit-breaker"
+            ], 
+            "whom": "lina", 
+            "time": "11:43", 
+            "action": "killed by", 
+            "skill": "laguna blade", 
+            "subject": "tusk", 
+            "gold-lost": "209", 
+            "left": "89%"
+        }, 
+        {
+            "gold-fed": "505", 
+            "top": "86%", 
+            "other-objects": [
+                "night-stalker", 
+                "disruptor"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "11:45", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "queen of pain", 
+            "gold-lost": "239", 
+            "left": "85%"
+        }, 
+        {
+            "gold-fed": "524", 
+            "top": "79%", 
+            "other-objects": [
+                "chaos-knight", 
+                "lina"
+            ], 
+            "whom": "spirit breaker", 
+            "time": "11:50", 
+            "action": "killed by", 
+            "skill": "urn of shadows", 
+            "subject": "shadow fiend", 
+            "gold-lost": "269", 
+            "left": "86%"
+        }, 
+        {
+            "gold-fed": "373", 
+            "top": "80%", 
+            "other-objects": [
+                "chaos-knight", 
+                "queen-of-pain", 
+                "spirit-breaker"
+            ], 
+            "whom": "lina", 
+            "supplement": "autoattack", 
+            "time": "11:52", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "179", 
+            "left": "88%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "lina", 
+            "time": "11:52"
+        }, 
+        {
+            "top": "76%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "tusk", 
+                "gyrocopter", 
+                "disruptor"
+            ], 
+            "whom": "night-stalker", 
+            "time": "11:55", 
+            "action": "speak", 
+            "subject": "chaos knight", 
+            "left": "85%"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "sentry ward", 
+            "time": "11:59", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "86%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "12:07", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "506", 
+            "top": "42%", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "12:17", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "209", 
+            "left": "86%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "12:35"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "12:39"
+        }, 
+        {
+            "gold-fed": "453", 
+            "top": "56%", 
+            "other-objects": [
+                "night-stalker", 
+                "tusk"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "12:45", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "239", 
+            "left": "50%"
+        }, 
+        {
+            "gold-fed": "478", 
+            "top": "60%", 
+            "other-objects": "tusk", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "12:51", 
+            "action": "killed by", 
+            "subject": "chaos knight", 
+            "gold-lost": "239", 
+            "left": "49%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "12:51"
+        }, 
+        {
+            "gold-fed": "424", 
+            "top": "55%", 
+            "other-objects": "chaos-knight", 
+            "whom": "lina", 
+            "time": "12:56", 
+            "action": "killed by", 
+            "skill": "dragon slave", 
+            "subject": "night stalker", 
+            "gold-lost": "209", 
+            "left": "46%"
+        }, 
+        {
+            "gold-fed": "426", 
+            "top": "59%", 
+            "other-objects": "night-stalker", 
+            "whom": "gyrocopter", 
+            "time": "12:57", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "lina", 
+            "gold-lost": "239", 
+            "left": "43%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "12:57"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "13:02"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "13:03", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "38%"
+        }, 
+        {
+            "top": "49%", 
+            "whom": "observer ward", 
+            "time": "13:08", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "38%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "13:18", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "48%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "13:35"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "lina", 
+            "time": "13:43"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "14:08", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "38%"
+        }, 
+        {
+            "top": "85%", 
+            "whom": "sentry ward", 
+            "time": "14:12", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "70%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "14:12"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "radiant tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "14:18", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "88%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "smoke of deceit", 
+            "time": "14:22", 
+            "action": "activate", 
+            "subject": "lina", 
+            "left": "77%"
+        }, 
+        {
+            "top": "77%", 
+            "whom": "sentry ward", 
+            "time": "14:24", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "74%"
+        }, 
+        {
+            "top": "67%", 
+            "other-objects": "disruptor", 
+            "whom": "night-stalker", 
+            "time": "14:49", 
+            "action": "speak", 
+            "subject": "lina", 
+            "left": "75%"
+        }, 
+        {
+            "gold-fed": "510", 
+            "top": "59%", 
+            "other-objects": "queen-of-pain", 
+            "whom": "spirit breaker", 
+            "time": "14:51", 
+            "action": "killed by", 
+            "skill": "urn of shadows", 
+            "subject": "disruptor", 
+            "gold-lost": "239", 
+            "left": "78%"
+        }, 
+        {
+            "gold-fed": "531", 
+            "top": "76%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "spirit-breaker"
+            ], 
+            "whom": "undying", 
+            "time": "14:55", 
+            "action": "killed by", 
+            "skill": "decay", 
+            "subject": "night stalker", 
+            "gold-lost": "209", 
+            "left": "74%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "lina", 
+            "time": "15:03"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "15:12"
+        }, 
+        {
+            "gold-fed": "867", 
+            "top": "52%", 
+            "other-objects": [
+                "chaos-knight", 
+                "spirit-breaker", 
+                "undying"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "15:20", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "299", 
+            "left": "87%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "disruptor", 
+            "time": "15:30"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "15:42", 
+            "action": "bottled", 
+            "subject": "chaos knight", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "chaos knight", 
+            "time": "15:42"
+        }, 
+        {
+            "top": "44%", 
+            "other-objects": [
+                "night-stalker", 
+                "shadow-fiend", 
+                "tusk", 
+                "disruptor"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "15:49", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "90%"
+        }, 
+        {
+            "top": "54%", 
+            "whom": "sentry ward", 
+            "time": "15:57", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "36%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "39%", 
+            "whom": "sentry ward", 
+            "time": "16:07", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "19%"
+        }, 
+        {
+            "gold-fed": "505", 
+            "top": "48%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "tusk"
+            ], 
+            "whom": "disruptor", 
+            "time": "16:26", 
+            "action": "killed by", 
+            "skill": "static storm", 
+            "subject": "chaos knight", 
+            "gold-lost": "269", 
+            "left": "23%"
+        }, 
+        {
+            "gold-fed": "399", 
+            "top": "53%", 
+            "other-objects": [
+                "night-stalker", 
+                "shadow-fiend"
+            ], 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "16:30", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "209", 
+            "left": "18%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "observer ward", 
+            "time": "16:40", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "8%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "16:43", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "16:44"
+        }, 
+        {
+            "top": "59%", 
+            "whom": "observer ward", 
+            "time": "16:45", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "12%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "disruptor", 
+            "time": "16:48"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "16:49"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "dire tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "16:54", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "37%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "17:05", 
+            "action": "activate", 
+            "subject": "gyrocopter", 
+            "left": "61%"
+        }, 
+        {
+            "top": "16%", 
+            "whom": "observer ward", 
+            "time": "17:10", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "21%"
+        }, 
+        {
+            "gold-fed": "735", 
+            "top": "19%", 
+            "other-objects": "spirit-breaker", 
+            "whom": "lina", 
+            "time": "17:50", 
+            "action": "killed by", 
+            "skill": "dragon slave", 
+            "subject": "tusk", 
+            "gold-lost": "299", 
+            "left": "25%"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "sentry ward", 
+            "time": "17:50", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "80%"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "observer ward", 
+            "time": "17:53", 
+            "action": "destroy", 
+            "subject": "disruptor", 
+            "left": "79%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "18:00", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "18:01"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "18:21", 
+            "action": "bottled", 
+            "subject": "chaos knight", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "18:26"
+        }, 
+        {
+            "top": "85%", 
+            "other-objects": [
+                "chaos-knight", 
+                "queen-of-pain"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "18:29", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "60%"
+        }, 
+        {
+            "top": "75%", 
+            "whom": "observer ward", 
+            "time": "18:39", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "70%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "chaos knight", 
+            "time": "18:43"
+        }, 
+        {
+            "gold-fed": "783", 
+            "top": "71%", 
+            "other-objects": "chaos-knight", 
+            "whom": "queen of pain", 
+            "time": "18:48", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "shadow fiend", 
+            "gold-lost": "329", 
+            "left": "73%"
+        }, 
+        {
+            "gold-fed": "642", 
+            "top": "64%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "tusk", 
+                "disruptor"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "19:04", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "329", 
+            "left": "70%"
+        }, 
+        {
+            "gold-fed": "686", 
+            "top": "64%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "spirit-breaker", 
+                "lina"
+            ], 
+            "whom": "undying", 
+            "supplement": "autoattack", 
+            "time": "19:11", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "329", 
+            "left": "72%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "19:15", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "75%"
+        }, 
+        {
+            "gold-fed": "545", 
+            "top": "83%", 
+            "other-objects": "queen-of-pain", 
+            "whom": "chaos knight", 
+            "supplement": "autoattack", 
+            "time": "19:18", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "239", 
+            "left": "71%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "19:40"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "19:56"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "20:01", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "61%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "sentry ward", 
+            "time": "20:12", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "71%"
+        }, 
+        {
+            "gold-fed": "538", 
+            "top": "66%", 
+            "other-objects": [
+                "night-stalker", 
+                "shadow-fiend", 
+                "tusk"
+            ], 
+            "whom": "disruptor", 
+            "time": "20:21", 
+            "action": "killed by", 
+            "skill": "static storm", 
+            "subject": "spirit breaker", 
+            "gold-lost": "329", 
+            "left": "74%"
+        }, 
+        {
+            "gold-fed": "395", 
+            "top": "67%", 
+            "other-objects": [
+                "night-stalker", 
+                "shadow-fiend", 
+                "tusk", 
+                "disruptor"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "20:23", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "239", 
+            "left": "74%"
+        }, 
+        {
+            "gold-fed": "441", 
+            "top": "64%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "undying"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "20:23", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "269", 
+            "left": "77%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "20:25", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "75%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "20:44", 
+            "action": "bottled", 
+            "subject": "chaos knight", 
+            "left": "38%"
+        }, 
+        {
+            "top": "13%", 
+            "whom": "observer ward", 
+            "time": "20:56", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "44%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "chaos knight", 
+            "time": "20:56"
+        }, 
+        {
+            "gold-fed": "904", 
+            "top": "12%", 
+            "other-objects": "lina", 
+            "whom": "chaos knight", 
+            "supplement": "autoattack", 
+            "time": "21:05", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "389", 
+            "left": "36%"
+        }, 
+        {
+            "top": "10%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "lina"
+            ], 
+            "whom": "chaos-knight", 
+            "time": "21:17", 
+            "action": "speak", 
+            "subject": "night stalker", 
+            "left": "39%"
+        }, 
+        {
+            "gold-fed": "536", 
+            "top": "18%", 
+            "other-objects": [
+                "night-stalker", 
+                "disruptor"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "21:17", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "329", 
+            "left": "39%"
+        }, 
+        {
+            "gold-fed": "523", 
+            "top": "7%", 
+            "other-objects": "tusk", 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "21:30", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "359", 
+            "left": "24%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "21:30"
+        }, 
+        {
+            "gold-fed": "636", 
+            "top": "11%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "spirit-breaker"
+            ], 
+            "whom": "chaos knight", 
+            "supplement": "autoattack", 
+            "time": "21:36", 
+            "action": "killed by", 
+            "subject": "shadow fiend", 
+            "gold-lost": "419", 
+            "left": "30%"
+        }, 
+        {
+            "gold-fed": "577", 
+            "top": "13%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "disruptor"
+            ], 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "21:39", 
+            "action": "killed by", 
+            "subject": "chaos knight", 
+            "gold-lost": "389", 
+            "left": "28%"
+        }, 
+        {
+            "top": "17%", 
+            "other-objects": [
+                "tusk", 
+                "disruptor"
+            ], 
+            "whom": "shadow-fiend", 
+            "time": "21:43", 
+            "action": "speak", 
+            "subject": "spirit breaker", 
+            "left": "32%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "21:53", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "33%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "22:00"
+        }, 
+        {
+            "gold-fed": "438", 
+            "top": "39%", 
+            "other-objects": "tusk", 
+            "whom": "disruptor", 
+            "time": "22:02", 
+            "action": "killed by", 
+            "skill": "urn of shadows", 
+            "subject": "undying", 
+            "gold-lost": "239", 
+            "left": "30%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "22:10", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "disruptor", 
+            "time": "22:14"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "22:33"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "lina", 
+            "time": "22:34"
+        }, 
+        {
+            "top": "22%", 
+            "whom": "sentry ward", 
+            "time": "22:50", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "22%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "23:21"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "disruptor", 
+            "time": "23:21"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "observer ward", 
+            "time": "23:22", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "81%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "23:27"
+        }, 
+        {
+            "gold-fed": "421", 
+            "top": "61%", 
+            "other-objects": "tusk", 
+            "whom": "shadow fiend", 
+            "time": "23:30", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "undying", 
+            "gold-lost": "269", 
+            "left": "11%"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "dire tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "23:43", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "11%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "23:52", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "61%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "24:02", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "63%", 
+            "other-objects": [
+                "night-stalker", 
+                "tusk", 
+                "gyrocopter", 
+                "disruptor"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "24:18", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "74%"
+        }, 
+        {
+            "top": "73%", 
+            "other-objects": [
+                "chaos-knight", 
+                "queen-of-pain", 
+                "spirit-breaker", 
+                "lina", 
+                "undying"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "24:22", 
+            "action": "activate", 
+            "subject": "lina", 
+            "left": "29%"
+        }, 
+        {
+            "gold-fed": "464", 
+            "top": "71%", 
+            "other-objects": [
+                "tusk", 
+                "disruptor"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "24:33", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "spirit breaker", 
+            "gold-lost": "329", 
+            "left": "46%"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "observer ward", 
+            "time": "24:33", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "43%"
+        }, 
+        {
+            "gold-fed": "574", 
+            "top": "74%", 
+            "other-objects": [
+                "tusk", 
+                "disruptor"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "24:34", 
+            "action": "killed by", 
+            "skill": "call down", 
+            "subject": "chaos knight", 
+            "gold-lost": "389", 
+            "left": "46%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "24:34"
+        }, 
+        {
+            "gold-fed": "640", 
+            "top": "72%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "undying"
+            ], 
+            "whom": "lina", 
+            "supplement": "autoattack", 
+            "time": "24:35", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "269", 
+            "left": "47%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "chaos knight", 
+            "time": "24:35"
+        }, 
+        {
+            "gold-fed": "784", 
+            "top": "47%", 
+            "other-objects": "chaos-knight", 
+            "whom": "undying", 
+            "time": "25:02", 
+            "action": "killed by", 
+            "skill": "decay", 
+            "subject": "tusk", 
+            "gold-lost": "389", 
+            "left": "52%"
+        }, 
+        {
+            "gold-fed": "424", 
+            "top": "47%", 
+            "other-objects": [
+                "gyrocopter", 
+                "disruptor"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "25:04", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "undying", 
+            "gold-lost": "269", 
+            "left": "49%"
+        }, 
+        {
+            "gold-fed": "656", 
+            "top": "46%", 
+            "other-objects": [
+                "tusk", 
+                "gyrocopter", 
+                "disruptor"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "25:06", 
+            "action": "killed by", 
+            "subject": "chaos knight", 
+            "gold-lost": "419", 
+            "left": "49%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "25:06"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "25:08", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "25:08"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "roshan", 
+            "subject": "the radiant", 
+            "time": "25:43"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "25:44"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "25:53"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "26:00", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "26:01"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "26:24"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "26:36", 
+            "action": "speak", 
+            "subject": "tusk", 
+            "left": "38%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "26:40", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "27:16"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "27:50"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "sentry ward", 
+            "time": "27:57", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "21%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "lina", 
+            "time": "27:58"
+        }, 
+        {
+            "top": "70%", 
+            "whom": "observer ward", 
+            "time": "28:06", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "20%"
+        }, 
+        {
+            "top": "77%", 
+            "whom": "observer ward", 
+            "time": "28:22", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "28%"
+        }, 
+        {
+            "top": "76%", 
+            "whom": "dire tier 3 middle tower", 
+            "supplement": "tier", 
+            "time": "28:23", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "26%"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "sentry ward", 
+            "time": "28:24", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "30%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "queen of pain", 
+            "time": "28:37"
+        }, 
+        {
+            "gold-fed": "531", 
+            "top": "74%", 
+            "other-objects": [
+                "night-stalker", 
+                "tusk", 
+                "gyrocopter", 
+                "disruptor"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "28:39", 
+            "action": "killed by", 
+            "skill": "requiem of souls", 
+            "subject": "spirit breaker", 
+            "gold-lost": "359", 
+            "left": "26%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "spirit breaker", 
+            "time": "28:40"
+        }, 
+        {
+            "gold-fed": "619", 
+            "top": "75%", 
+            "other-objects": "gyrocopter", 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "28:46", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "389", 
+            "left": "25%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "28:46"
+        }, 
+        {
+            "gold-fed": "664", 
+            "top": "69%", 
+            "other-objects": [
+                "night-stalker", 
+                "shadow-fiend", 
+                "gyrocopter"
+            ], 
+            "whom": "disruptor", 
+            "supplement": "autoattack", 
+            "time": "28:47", 
+            "action": "killed by", 
+            "subject": "chaos knight", 
+            "gold-lost": "419", 
+            "left": "30%"
+        }, 
+        {
+            "gold-fed": "634", 
+            "top": "75%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "tusk", 
+                "gyrocopter", 
+                "disruptor"
+            ], 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "28:50", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "419", 
+            "left": "33%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "queen of pain", 
+            "time": "28:52"
+        }, 
+        {
+            "top": "75%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "lina"
+            ], 
+            "whom": "undying", 
+            "supplement": "autoattack", 
+            "time": "28:55", 
+            "action": "killed by", 
+            "subject": "shadow fiend", 
+            "left": "25%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "28:55"
+        }, 
+        {
+            "gold-fed": "460", 
+            "top": "74%", 
+            "other-objects": [
+                "night-stalker", 
+                "shadow-fiend", 
+                "disruptor"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "28:57", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "359", 
+            "left": "31%"
+        }, 
+        {
+            "gold-fed": "476", 
+            "top": "74%", 
+            "other-objects": [
+                "night-stalker", 
+                "shadow-fiend"
+            ], 
+            "whom": "tusk", 
+            "time": "29:00", 
+            "action": "killed by", 
+            "skill": "ice shards", 
+            "subject": "undying", 
+            "gold-lost": "299", 
+            "left": "22%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire ranged middle barracks", 
+            "subject": "gyrocopter", 
+            "supplement": "ranged", 
+            "time": "29:08"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire melee middle barracks", 
+            "subject": "shadow fiend", 
+            "supplement": "melee", 
+            "time": "29:14"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "dire tier 3 top tower", 
+            "supplement": "tier", 
+            "time": "29:28", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "13%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire melee top barracks", 
+            "subject": "shadow fiend", 
+            "supplement": "melee", 
+            "time": "29:40"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "chaos knight", 
+            "time": "29:41"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire ranged top barracks", 
+            "subject": "night stalker", 
+            "supplement": "ranged", 
+            "time": "29:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "tusk", 
+            "time": "29:51"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "lina", 
+            "time": "29:51"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "chaos knight", 
+            "time": "29:51"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "undying", 
+            "time": "29:51"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "disruptor", 
+            "time": "29:51"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "spirit breaker", 
+            "time": "29:51"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "night stalker", 
+            "time": "29:51"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "shadow fiend", 
+            "time": "29:51"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "gyrocopter", 
+            "time": "29:51"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "queen of pain", 
+            "time": "29:51"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the radiant", 
+            "time": "29:52"
+        }
+    ]
+}

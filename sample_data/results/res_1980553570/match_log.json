@@ -1,0 +1,3872 @@
+{
+    "events": [
+        {
+            "action": "speak", 
+            "time": "-01:30"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "tiny", 
+            "time": "-01:19"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "-00:40", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "67%"
+        }, 
+        {
+            "top": "69%", 
+            "whom": "sentry ward", 
+            "time": "-00:39", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "77%"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "observer ward", 
+            "time": "-00:32", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "80%"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "sentry ward", 
+            "time": "-00:12", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "72%"
+        }, 
+        {
+            "top": "33%", 
+            "whom": "observer ward", 
+            "time": "-00:04", 
+            "action": "place", 
+            "subject": "slardar", 
+            "left": "18%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:02", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "sentry ward", 
+            "time": "00:03", 
+            "action": "place", 
+            "subject": "tiny", 
+            "left": "74%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:15", 
+            "action": "activate", 
+            "subject": "viper", 
+            "left": "38%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "observer ward", 
+            "time": "00:36", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "47%"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "sentry ward", 
+            "time": "01:00", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "72%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "02:00", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "alchemist", 
+            "time": "02:01"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "02:10", 
+            "action": "activate", 
+            "subject": "viper", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "tiny", 
+            "time": "02:19"
+        }, 
+        {
+            "top": "76%", 
+            "whom": "queen-of-pain", 
+            "time": "03:13", 
+            "action": "speak", 
+            "subject": "undying", 
+            "left": "61%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "04:01", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "04:01", 
+            "action": "activate", 
+            "subject": "viper", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "alchemist", 
+            "time": "04:13"
+        }, 
+        {
+            "gold-fed": "561", 
+            "top": "37%", 
+            "other-objects": "spirit-breaker", 
+            "whom": "alchemist", 
+            "supplement": "autoattack", 
+            "time": "04:27", 
+            "action": "killed by", 
+            "subject": "viper", 
+            "gold-lost": "149", 
+            "left": "58%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "04:35"
+        }, 
+        {
+            "gold-fed": "455", 
+            "top": "14%", 
+            "other-objects": "tiny", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "04:41", 
+            "action": "killed by", 
+            "subject": "beastmaster", 
+            "gold-lost": "149", 
+            "left": "21%"
+        }, 
+        {
+            "gold-fed": "453", 
+            "top": "45%", 
+            "other-objects": "alchemist", 
+            "whom": "spirit breaker", 
+            "supplement": "autoattack", 
+            "time": "05:30", 
+            "action": "killed by", 
+            "subject": "viper", 
+            "gold-lost": "149", 
+            "left": "54%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tiny", 
+            "time": "05:32"
+        }, 
+        {
+            "top": "13%", 
+            "whom": "observer ward", 
+            "time": "05:42", 
+            "action": "place", 
+            "subject": "beastmaster", 
+            "left": "26%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "05:47"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "06:01", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "15%", 
+            "whom": "sentry ward", 
+            "time": "06:02", 
+            "action": "place", 
+            "subject": "tiny", 
+            "left": "26%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "alchemist", 
+            "time": "06:02"
+        }, 
+        {
+            "top": "13%", 
+            "whom": "observer ward", 
+            "time": "06:06", 
+            "action": "destroy", 
+            "subject": "tiny", 
+            "left": "26%"
+        }, 
+        {
+            "top": "51%", 
+            "whom": "observer ward", 
+            "time": "06:08", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "58%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "06:08", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "61%"
+        }, 
+        {
+            "top": "94%", 
+            "whom": "observer ward", 
+            "time": "07:14", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "69%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "tiny", 
+            "time": "07:23"
+        }, 
+        {
+            "gold-fed": "505", 
+            "top": "12%", 
+            "other-objects": "ancient-apparition", 
+            "whom": "beastmaster", 
+            "time": "07:42", 
+            "action": "killed by", 
+            "skill": "orb of venom", 
+            "subject": "slardar", 
+            "gold-lost": "209", 
+            "left": "30%"
+        }, 
+        {
+            "gold-fed": "377", 
+            "top": "85%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "tiny"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "07:48", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "149", 
+            "left": "69%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tiny", 
+            "time": "07:56"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "08:00", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "68%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "tiny"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "08:05", 
+            "action": "activate", 
+            "subject": "tiny", 
+            "left": "73%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "queen of pain", 
+            "time": "08:07"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "08:11"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "08:14", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "alchemist", 
+            "time": "08:15"
+        }, 
+        {
+            "gold-fed": "474", 
+            "top": "27%", 
+            "other-objects": "queen-of-pain", 
+            "whom": "tiny", 
+            "time": "08:36", 
+            "action": "killed by", 
+            "skill": "avalanche", 
+            "subject": "alchemist", 
+            "gold-lost": "209", 
+            "left": "21%"
+        }, 
+        {
+            "gold-fed": "302", 
+            "top": "27%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "tiny"
+            ], 
+            "whom": "slardar", 
+            "time": "08:41", 
+            "action": "killed by", 
+            "skill": "slithereen crush", 
+            "subject": "ancient apparition", 
+            "gold-lost": "119", 
+            "left": "14%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "winter wyvern", 
+            "time": "09:17"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "09:22"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "09:42"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "09:42"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "observer ward", 
+            "time": "09:43", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "375", 
+            "top": "88%", 
+            "other-objects": "slardar", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "09:46", 
+            "action": "killed by", 
+            "subject": "ancient apparition", 
+            "gold-lost": "149", 
+            "left": "65%"
+        }, 
+        {
+            "gold-fed": "423", 
+            "top": "93%", 
+            "other-objects": "slardar", 
+            "whom": "queen of pain", 
+            "time": "09:57", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "undying", 
+            "gold-lost": "179", 
+            "left": "49%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "09:57"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "10:05"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "10:09", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "401", 
+            "top": "91%", 
+            "other-objects": "slardar", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "10:11", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "149", 
+            "left": "54%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "10:11"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "alchemist", 
+            "time": "10:21"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "sentry ward", 
+            "time": "10:22", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "45%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "spirit breaker", 
+            "time": "10:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "10:31"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "10:31", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "10:31"
+        }, 
+        {
+            "top": "51%", 
+            "whom": "sentry ward", 
+            "time": "10:44", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "35%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "10:52", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "32%"
+        }, 
+        {
+            "top": "44%", 
+            "whom": "sentry ward", 
+            "time": "11:13", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "20%"
+        }, 
+        {
+            "gold-fed": "401", 
+            "top": "15%", 
+            "other-objects": "slardar", 
+            "whom": "tiny", 
+            "time": "11:16", 
+            "action": "killed by", 
+            "skill": "toss", 
+            "subject": "spirit breaker", 
+            "gold-lost": "149", 
+            "left": "16%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "11:18"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "11:37", 
+            "action": "place", 
+            "subject": "tiny", 
+            "left": "32%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "12:01", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "12:06"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "12:09", 
+            "action": "destroy", 
+            "subject": "viper", 
+            "left": "48%"
+        }, 
+        {
+            "gold-fed": "533", 
+            "top": "62%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "slardar", 
+                "tiny"
+            ], 
+            "whom": "viper", 
+            "supplement": "autoattack", 
+            "time": "12:19", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "269", 
+            "left": "52%"
+        }, 
+        {
+            "gold-fed": "318", 
+            "top": "63%", 
+            "other-objects": [
+                "slardar", 
+                "tiny"
+            ], 
+            "whom": "queen of pain", 
+            "time": "12:20", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "spirit breaker", 
+            "gold-lost": "149", 
+            "left": "53%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "12:23", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "56%"
+        }, 
+        {
+            "gold-fed": "350", 
+            "top": "5%", 
+            "whom": "tiny", 
+            "supplement": "autoattack", 
+            "time": "12:45", 
+            "action": "killed by", 
+            "subject": "ancient apparition", 
+            "gold-lost": "179", 
+            "left": "19%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "12:45", 
+            "action": "activate", 
+            "subject": "viper", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "13:32"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "tiny", 
+            "time": "13:50"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "sentry ward", 
+            "time": "13:57", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "32%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "14:04"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "spirit breaker", 
+            "time": "14:04"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "14:05", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "32%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "14:07", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "14:13"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "14:14"
+        }, 
+        {
+            "top": "23%", 
+            "whom": "observer ward", 
+            "time": "14:17", 
+            "action": "place", 
+            "subject": "tiny", 
+            "left": "21%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "winter wyvern", 
+            "time": "14:38"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "sentry ward", 
+            "time": "14:39", 
+            "action": "place", 
+            "subject": "tiny", 
+            "left": "35%"
+        }, 
+        {
+            "top": "87%", 
+            "whom": "dire tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "14:42", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "60%"
+        }, 
+        {
+            "gold-fed": "478", 
+            "top": "47%", 
+            "other-objects": "slardar", 
+            "whom": "tiny", 
+            "time": "14:43", 
+            "action": "killed by", 
+            "skill": "toss", 
+            "subject": "beastmaster", 
+            "gold-lost": "239", 
+            "left": "33%"
+        }, 
+        {
+            "gold-fed": "453", 
+            "top": "53%", 
+            "other-objects": [
+                "slardar", 
+                "tiny"
+            ], 
+            "whom": "viper", 
+            "supplement": "autoattack", 
+            "time": "14:55", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "239", 
+            "left": "41%"
+        }, 
+        {
+            "gold-fed": "346", 
+            "top": "61%", 
+            "other-objects": [
+                "viper", 
+                "winter-wyvern", 
+                "tiny"
+            ], 
+            "whom": "queen of pain", 
+            "time": "15:06", 
+            "action": "killed by", 
+            "skill": "sonic wave", 
+            "subject": "ancient apparition", 
+            "gold-lost": "209", 
+            "left": "47%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "beastmaster", 
+            "time": "15:06"
+        }, 
+        {
+            "gold-fed": "865", 
+            "top": "57%", 
+            "other-objects": [
+                "undying", 
+                "ancient-apparition", 
+                "spirit-breaker"
+            ], 
+            "whom": "alchemist", 
+            "time": "15:07", 
+            "action": "killed by", 
+            "skill": "radiance", 
+            "subject": "tiny", 
+            "gold-lost": "239", 
+            "left": "50%"
+        }, 
+        {
+            "gold-fed": "959", 
+            "top": "57%", 
+            "other-objects": [
+                "undying", 
+                "ancient-apparition", 
+                "spirit-breaker"
+            ], 
+            "whom": "alchemist", 
+            "time": "15:09", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "viper", 
+            "gold-lost": "299", 
+            "left": "44%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "alchemist", 
+            "time": "15:09"
+        }, 
+        {
+            "gold-fed": "476", 
+            "top": "59%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "viper", 
+                "tiny"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "15:10", 
+            "action": "killed by", 
+            "skill": "splinter blast", 
+            "subject": "spirit breaker", 
+            "gold-lost": "209", 
+            "left": "46%"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "15:11", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "44%"
+        }, 
+        {
+            "gold-fed": "449", 
+            "top": "62%", 
+            "other-objects": [
+                "beastmaster", 
+                "spirit-breaker"
+            ], 
+            "whom": "alchemist", 
+            "time": "15:13", 
+            "action": "killed by", 
+            "skill": "radiance", 
+            "subject": "winter wyvern", 
+            "gold-lost": "239", 
+            "left": "49%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "alchemist", 
+            "time": "15:13"
+        }, 
+        {
+            "gold-fed": "687", 
+            "top": "57%", 
+            "other-objects": "alchemist", 
+            "whom": "beastmaster", 
+            "supplement": "autoattack", 
+            "time": "15:17", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "299", 
+            "left": "46%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "15:23", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "courier", 
+            "time": "15:42"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "spirit breaker", 
+            "time": "15:50"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "53%", 
+            "whom": "sentry ward", 
+            "time": "16:05", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "22%"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "sentry ward", 
+            "time": "16:10", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "41%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "sentry ward", 
+            "time": "16:10", 
+            "action": "place", 
+            "subject": "tiny", 
+            "left": "33%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "16:14", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "16:16", 
+            "action": "destroy", 
+            "subject": "spirit breaker", 
+            "left": "44%"
+        }, 
+        {
+            "top": "32%", 
+            "whom": "observer ward", 
+            "time": "16:16", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "17%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "16:17", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "32%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "sentry ward", 
+            "time": "16:18", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "32%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "16:30", 
+            "action": "destroy", 
+            "subject": "viper", 
+            "left": "11%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "queen of pain", 
+            "time": "16:35"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "16:37", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "alchemist", 
+            "time": "16:38"
+        }, 
+        {
+            "top": "52%", 
+            "other-objects": [
+                "undying", 
+                "spirit-breaker", 
+                "alchemist"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "17:12", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "24%"
+        }, 
+        {
+            "gold-fed": "623", 
+            "top": "33%", 
+            "other-objects": "beastmaster", 
+            "whom": "ancient apparition", 
+            "supplement": "autoattack", 
+            "time": "17:18", 
+            "action": "killed by", 
+            "subject": "winter wyvern", 
+            "gold-lost": "269", 
+            "left": "17%"
+        }, 
+        {
+            "gold-fed": "938", 
+            "top": "49%", 
+            "other-objects": [
+                "undying", 
+                "spirit-breaker", 
+                "alchemist"
+            ], 
+            "whom": "ancient apparition", 
+            "time": "17:32", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "queen of pain", 
+            "gold-lost": "299", 
+            "left": "51%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "ancient apparition", 
+            "time": "17:32"
+        }, 
+        {
+            "top": "49%", 
+            "whom": "observer ward", 
+            "time": "17:45", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "41%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "17:46"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "18:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "18:00", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "18:04"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "tiny", 
+            "time": "18:16"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "18:41", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "courier", 
+            "time": "18:43"
+        }, 
+        {
+            "top": "51%", 
+            "other-objects": [
+                "viper", 
+                "slardar", 
+                "winter-wyvern", 
+                "tiny"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "18:50", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "66%"
+        }, 
+        {
+            "gold-fed": "424", 
+            "top": "62%", 
+            "other-objects": [
+                "viper", 
+                "winter-wyvern"
+            ], 
+            "whom": "tiny", 
+            "time": "19:15", 
+            "action": "killed by", 
+            "skill": "toss", 
+            "subject": "undying", 
+            "gold-lost": "269", 
+            "left": "24%"
+        }, 
+        {
+            "gold-fed": "846", 
+            "top": "59%", 
+            "other-objects": [
+                "undying", 
+                "ancient-apparition", 
+                "beastmaster", 
+                "spirit-breaker"
+            ], 
+            "whom": "alchemist", 
+            "time": "19:18", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "viper", 
+            "gold-lost": "329", 
+            "left": "22%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "19:20", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "20%"
+        }, 
+        {
+            "gold-fed": "381", 
+            "top": "63%", 
+            "other-objects": [
+                "viper", 
+                "slardar", 
+                "tiny"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "19:23", 
+            "action": "killed by", 
+            "skill": "splinter blast", 
+            "subject": "spirit breaker", 
+            "gold-lost": "239", 
+            "left": "21%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "19:23"
+        }, 
+        {
+            "gold-fed": "725", 
+            "top": "63%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "viper"
+            ], 
+            "whom": "tiny", 
+            "time": "19:36", 
+            "action": "killed by", 
+            "skill": "toss", 
+            "subject": "alchemist", 
+            "gold-lost": "389", 
+            "left": "22%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "19:53"
+        }, 
+        {
+            "gold-fed": "493", 
+            "top": "71%", 
+            "other-objects": [
+                "beastmaster", 
+                "alchemist"
+            ], 
+            "whom": "ancient apparition", 
+            "time": "19:58", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "winter wyvern", 
+            "gold-lost": "299", 
+            "left": "48%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "20:01", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "queen of pain", 
+            "time": "20:03"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "20:05"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "20:15"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "20:19", 
+            "action": "activate", 
+            "subject": "tiny", 
+            "left": "38%"
+        }, 
+        {
+            "top": "67%", 
+            "whom": "observer ward", 
+            "time": "20:23", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "67%"
+        }, 
+        {
+            "top": "51%", 
+            "whom": "sentry ward", 
+            "time": "20:28", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "35%"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "sentry ward", 
+            "time": "20:34", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "22%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "20:39", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "20%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "20:41"
+        }, 
+        {
+            "gold-fed": "607", 
+            "top": "89%", 
+            "other-objects": "slardar", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "20:49", 
+            "action": "killed by", 
+            "subject": "beastmaster", 
+            "gold-lost": "329", 
+            "left": "55%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "ancient apparition", 
+            "time": "21:05"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "sentry ward", 
+            "time": "21:08", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "57%"
+        }, 
+        {
+            "top": "78%", 
+            "whom": "observer ward", 
+            "time": "21:09", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "57%"
+        }, 
+        {
+            "top": "76%", 
+            "whom": "sentry ward", 
+            "time": "21:14", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "49%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "roshan", 
+            "subject": "the radiant", 
+            "time": "21:22"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "spirit breaker", 
+            "time": "21:24"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "aegis of the immortal", 
+            "subject": "spirit breaker", 
+            "time": "21:24"
+        }, 
+        {
+            "top": "75%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "slardar"
+            ], 
+            "whom": "viper", 
+            "supplement": "autoattack", 
+            "time": "21:27", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "spirit breaker", 
+            "time": "21:27"
+        }, 
+        {
+            "gold-fed": "395", 
+            "top": "75%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "slardar", 
+                "tiny"
+            ], 
+            "whom": "viper", 
+            "supplement": "autoattack", 
+            "time": "21:35", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "239", 
+            "left": "60%"
+        }, 
+        {
+            "gold-fed": "424", 
+            "top": "74%", 
+            "other-objects": "slardar", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "21:51", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "269", 
+            "left": "28%"
+        }, 
+        {
+            "gold-fed": "827", 
+            "top": "69%", 
+            "other-objects": "ancient-apparition", 
+            "whom": "alchemist", 
+            "time": "21:54", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "slardar", 
+            "gold-lost": "389", 
+            "left": "30%"
+        }, 
+        {
+            "gold-fed": "595", 
+            "top": "69%", 
+            "other-objects": "queen-of-pain", 
+            "whom": "tiny", 
+            "supplement": "autoattack", 
+            "time": "21:58", 
+            "action": "killed by", 
+            "subject": "ancient apparition", 
+            "gold-lost": "329", 
+            "left": "25%"
+        }, 
+        {
+            "gold-fed": "693", 
+            "top": "73%", 
+            "other-objects": [
+                "viper", 
+                "tiny"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "21:58", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "419", 
+            "left": "26%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "21:58"
+        }, 
+        {
+            "gold-fed": "836", 
+            "top": "67%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "alchemist"
+            ], 
+            "whom": "beastmaster", 
+            "time": "21:59", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "queen of pain", 
+            "gold-lost": "389", 
+            "left": "26%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "top": "72%", 
+            "other-objects": "alchemist", 
+            "whom": "beastmaster", 
+            "time": "22:02", 
+            "action": "speak", 
+            "subject": "viper", 
+            "left": "29%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tiny", 
+            "time": "22:31"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "22:34", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "22:35"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "22:50"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "sentry ward", 
+            "time": "23:17", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "47%"
+        }, 
+        {
+            "gold-fed": "763", 
+            "top": "38%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "spirit-breaker"
+            ], 
+            "whom": "alchemist", 
+            "time": "23:35", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "queen of pain", 
+            "gold-lost": "419", 
+            "left": "53%"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "radiant tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "23:44", 
+            "action": "destroy", 
+            "subject": "alchemist", 
+            "left": "58%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "observer ward", 
+            "time": "24:04", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "58%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "24:15", 
+            "action": "activate", 
+            "subject": "tiny", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "24:17", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "observer ward", 
+            "time": "24:29", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "52%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "24:39"
+        }, 
+        {
+            "top": "30%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "viper", 
+                "slardar", 
+                "winter-wyvern", 
+                "tiny"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "24:43", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "60%"
+        }, 
+        {
+            "top": "68%", 
+            "whom": "sentry ward", 
+            "time": "25:00", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "29%"
+        }, 
+        {
+            "top": "69%", 
+            "whom": "observer ward", 
+            "time": "25:07", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "26%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "alchemist", 
+            "time": "25:16"
+        }, 
+        {
+            "top": "69%", 
+            "whom": "observer ward", 
+            "time": "25:19", 
+            "action": "destroy", 
+            "subject": "alchemist", 
+            "left": "26%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tiny", 
+            "time": "25:35"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "tiny", 
+            "time": "25:41"
+        }, 
+        {
+            "top": "70%", 
+            "other-objects": [
+                "undying", 
+                "ancient-apparition", 
+                "beastmaster", 
+                "spirit-breaker", 
+                "alchemist"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "25:42", 
+            "action": "activate", 
+            "subject": "ancient apparition", 
+            "left": "40%"
+        }, 
+        {
+            "top": "38%", 
+            "whom": "sentry ward", 
+            "time": "26:00", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "18%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "26:00"
+        }, 
+        {
+            "gold-fed": "421", 
+            "top": "14%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "slardar", 
+                "winter-wyvern", 
+                "tiny"
+            ], 
+            "whom": "viper", 
+            "supplement": "autoattack", 
+            "time": "26:12", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "269", 
+            "left": "18%"
+        }, 
+        {
+            "gold-fed": "770", 
+            "top": "20%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "viper", 
+                "winter-wyvern"
+            ], 
+            "whom": "tiny", 
+            "supplement": "autoattack", 
+            "time": "26:18", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "479", 
+            "left": "14%"
+        }, 
+        {
+            "gold-fed": "504", 
+            "top": "22%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "viper", 
+                "tiny"
+            ], 
+            "whom": "slardar", 
+            "time": "26:20", 
+            "action": "killed by", 
+            "skill": "slithereen crush", 
+            "subject": "undying", 
+            "gold-lost": "329", 
+            "left": "13%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "26:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "spirit breaker", 
+            "time": "26:53"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "26:53"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "26:54"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "dire tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "26:58", 
+            "action": "destroy", 
+            "subject": "viper", 
+            "left": "11%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "sentry ward", 
+            "time": "27:06", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "13%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "27:34", 
+            "action": "activate", 
+            "subject": "viper", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "winter wyvern", 
+            "time": "27:37"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "28:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "28:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "28:05", 
+            "action": "activate", 
+            "subject": "tiny", 
+            "left": "38%"
+        }, 
+        {
+            "top": "70%", 
+            "whom": "observer ward", 
+            "time": "28:31", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "51%"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "sentry ward", 
+            "time": "28:32", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "46%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "courier", 
+            "time": "28:38"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "viper", 
+            "time": "28:38"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "slardar", 
+            "time": "28:38"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "tiny", 
+            "time": "28:38"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "winter wyvern", 
+            "time": "28:38"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "queen of pain", 
+            "time": "28:38"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "tiny", 
+            "time": "28:38"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "winter wyvern", 
+            "time": "28:38"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "queen of pain", 
+            "time": "28:38"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "slardar", 
+            "time": "28:38"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "viper", 
+            "time": "28:38"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "winter wyvern", 
+            "time": "28:38"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "ancient apparition", 
+            "time": "28:38"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "ancient apparition", 
+            "time": "28:38"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tiny", 
+            "time": "28:42"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "28:43", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "queen of pain", 
+            "time": "28:51"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "29:14"
+        }, 
+        {
+            "top": "87%", 
+            "whom": "observer ward", 
+            "time": "29:39", 
+            "action": "place", 
+            "subject": "tiny", 
+            "left": "54%"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "dire tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "29:53", 
+            "action": "destroy", 
+            "subject": "viper", 
+            "left": "48%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "29:56"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "30:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "30:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "30:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "30:00", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "30:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "queen of pain", 
+            "time": "30:09"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "observer ward", 
+            "time": "30:22", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "58%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "observer ward", 
+            "time": "30:35", 
+            "action": "destroy", 
+            "subject": "slardar", 
+            "left": "52%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "tiny", 
+            "time": "30:37"
+        }, 
+        {
+            "gold-fed": "602", 
+            "top": "90%", 
+            "other-objects": [
+                "viper", 
+                "slardar", 
+                "winter-wyvern"
+            ], 
+            "whom": "tiny", 
+            "time": "31:12", 
+            "action": "killed by", 
+            "skill": "toss", 
+            "subject": "beastmaster", 
+            "gold-lost": "419", 
+            "left": "71%"
+        }, 
+        {
+            "gold-fed": "504", 
+            "top": "82%", 
+            "other-objects": [
+                "slardar", 
+                "winter-wyvern", 
+                "tiny"
+            ], 
+            "whom": "viper", 
+            "supplement": "autoattack", 
+            "time": "31:19", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "329", 
+            "left": "59%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "viper", 
+            "time": "31:44"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "roshan", 
+            "subject": "the radiant", 
+            "time": "31:44"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "31:54", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "31:58", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "31:58", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "31:58"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "32:00"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "dire tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "32:15", 
+            "action": "destroy", 
+            "subject": "viper", 
+            "left": "37%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "32:40"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "32:41"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "ancient apparition", 
+            "time": "32:41"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "32:42"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "sentry ward", 
+            "time": "33:00", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "57%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "33:02"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "observer ward", 
+            "time": "33:38", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "45%"
+        }, 
+        {
+            "top": "70%", 
+            "whom": "observer ward", 
+            "time": "33:42", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "51%"
+        }, 
+        {
+            "top": "83%", 
+            "whom": "observer ward", 
+            "time": "33:48", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "43%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "33:57", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "33:58"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "34:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "34:26", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "sentry ward", 
+            "time": "34:55", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "20%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "spirit breaker", 
+            "time": "35:16"
+        }, 
+        {
+            "top": "79%", 
+            "other-objects": [
+                "undying", 
+                "ancient-apparition", 
+                "beastmaster", 
+                "spirit-breaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "35:21", 
+            "action": "activate", 
+            "subject": "ancient apparition", 
+            "left": "24%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "sentry ward", 
+            "time": "35:27", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "30%"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "sentry ward", 
+            "time": "35:35", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "33%"
+        }, 
+        {
+            "gold-fed": "872", 
+            "top": "70%", 
+            "other-objects": [
+                "undying", 
+                "ancient-apparition", 
+                "beastmaster", 
+                "spirit-breaker"
+            ], 
+            "whom": "alchemist", 
+            "time": "35:37", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "winter wyvern", 
+            "gold-lost": "449", 
+            "left": "35%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "winter wyvern", 
+            "time": "35:37"
+        }, 
+        {
+            "gold-fed": "1373", 
+            "top": "71%", 
+            "other-objects": [
+                "undying", 
+                "ancient-apparition", 
+                "beastmaster", 
+                "spirit-breaker"
+            ], 
+            "whom": "alchemist", 
+            "time": "35:38", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "queen of pain", 
+            "gold-lost": "539", 
+            "left": "35%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "alchemist", 
+            "time": "35:38"
+        }, 
+        {
+            "top": "70%", 
+            "other-objects": [
+                "viper", 
+                "tiny"
+            ], 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "35:41", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "36%"
+        }, 
+        {
+            "gold-fed": "1281", 
+            "top": "72%", 
+            "other-objects": [
+                "undying", 
+                "ancient-apparition", 
+                "beastmaster"
+            ], 
+            "whom": "alchemist", 
+            "time": "35:42", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "tiny", 
+            "gold-lost": "509", 
+            "left": "44%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "alchemist", 
+            "time": "35:42"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "ancient apparition", 
+            "time": "35:42"
+        }, 
+        {
+            "top": "72%", 
+            "other-objects": [
+                "undying", 
+                "spirit-breaker", 
+                "alchemist"
+            ], 
+            "whom": "ancient apparition", 
+            "time": "35:48", 
+            "action": "killed by", 
+            "skill": "cold feet", 
+            "subject": "viper", 
+            "left": "44%"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "observer ward", 
+            "time": "35:48", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "45%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "viper", 
+            "time": "35:48"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "36:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "36:00"
+        }, 
+        {
+            "top": "87%", 
+            "whom": "observer ward", 
+            "time": "36:17", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "54%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "36:19", 
+            "action": "activate", 
+            "subject": "beastmaster", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "36:25", 
+            "action": "activate", 
+            "subject": "viper", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "36:27"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "ancient apparition", 
+            "time": "36:44"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "observer ward", 
+            "time": "37:08", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "83%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "37:15"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "observer ward", 
+            "time": "37:17", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "65%"
+        }, 
+        {
+            "top": "57%", 
+            "whom": "observer ward", 
+            "time": "37:27", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "54%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "37:41"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "37:41"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "37:45"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "observer ward", 
+            "time": "37:45", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "36%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "38:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "38:00"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "sentry ward", 
+            "time": "38:02", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "20%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "38:07", 
+            "action": "activate", 
+            "subject": "tiny", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "38:12", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "38:13"
+        }, 
+        {
+            "gold-fed": "1131", 
+            "top": "20%", 
+            "other-objects": "beastmaster", 
+            "whom": "spirit breaker", 
+            "time": "38:30", 
+            "action": "killed by", 
+            "skill": "urn of shadows", 
+            "subject": "queen of pain", 
+            "gold-lost": "539", 
+            "left": "32%"
+        }, 
+        {
+            "gold-fed": "559", 
+            "top": "19%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "slardar"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "38:32", 
+            "action": "killed by", 
+            "skill": "winter's curse", 
+            "subject": "spirit breaker", 
+            "gold-lost": "359", 
+            "left": "31%"
+        }, 
+        {
+            "gold-fed": "716", 
+            "top": "18%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "slardar", 
+                "winter-wyvern"
+            ], 
+            "whom": "viper", 
+            "supplement": "autoattack", 
+            "time": "38:37", 
+            "action": "killed by", 
+            "subject": "beastmaster", 
+            "gold-lost": "479", 
+            "left": "31%"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "sentry ward", 
+            "time": "38:44", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "27%"
+        }, 
+        {
+            "top": "34%", 
+            "whom": "observer ward", 
+            "time": "38:58", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "3%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "sentry ward", 
+            "time": "38:59", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "5%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "ancient apparition", 
+            "time": "39:54"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "beastmaster", 
+            "time": "39:54"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "39:59"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "40:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "40:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "40:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "40:01", 
+            "action": "activate", 
+            "subject": "viper", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "40:10", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "tiny", 
+            "time": "40:33"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "radiant tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "41:44", 
+            "action": "destroy", 
+            "subject": "spirit breaker", 
+            "left": "88%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "viper", 
+            "time": "41:54"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "roshan", 
+            "subject": "the radiant", 
+            "time": "41:54"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "41:58", 
+            "action": "activate", 
+            "subject": "tiny", 
+            "left": "61%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "42:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "42:07"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "sentry ward", 
+            "time": "42:19", 
+            "action": "destroy", 
+            "subject": "beastmaster", 
+            "left": "5%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "tiny", 
+            "time": "42:21"
+        }, 
+        {
+            "top": "34%", 
+            "whom": "observer ward", 
+            "time": "42:29", 
+            "action": "destroy", 
+            "subject": "beastmaster", 
+            "left": "3%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "42:43", 
+            "action": "activate", 
+            "subject": "viper", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "625", 
+            "top": "12%", 
+            "other-objects": "ancient-apparition", 
+            "whom": "spirit breaker", 
+            "time": "42:45", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "winter wyvern", 
+            "gold-lost": "509", 
+            "left": "49%"
+        }, 
+        {
+            "top": "9%", 
+            "whom": "observer ward", 
+            "time": "42:50", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "51%"
+        }, 
+        {
+            "gold-fed": "545", 
+            "top": "8%", 
+            "other-objects": "queen-of-pain", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "42:51", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "419", 
+            "left": "50%"
+        }, 
+        {
+            "top": "12%", 
+            "other-objects": "alchemist", 
+            "whom": "beastmaster", 
+            "time": "43:12", 
+            "action": "speak", 
+            "subject": "slardar", 
+            "left": "30%"
+        }, 
+        {
+            "gold-fed": "457", 
+            "top": "52%", 
+            "other-objects": "viper", 
+            "whom": "tiny", 
+            "supplement": "autoattack", 
+            "time": "43:30", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "419", 
+            "left": "45%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "44:00"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "observer ward", 
+            "time": "44:11", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "65%"
+        }, 
+        {
+            "gold-fed": "927", 
+            "top": "46%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "winter-wyvern", 
+                "tiny"
+            ], 
+            "whom": "viper", 
+            "time": "44:14", 
+            "action": "killed by", 
+            "skill": "poison attack", 
+            "subject": "alchemist", 
+            "gold-lost": "659", 
+            "left": "58%"
+        }, 
+        {
+            "gold-fed": "591", 
+            "top": "58%", 
+            "other-objects": [
+                "viper", 
+                "winter-wyvern"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "44:22", 
+            "action": "killed by", 
+            "subject": "ancient apparition", 
+            "gold-lost": "389", 
+            "left": "48%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "cheese", 
+            "subject": "queen of pain", 
+            "time": "44:40"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "alchemist", 
+            "time": "44:53"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "slardar", 
+            "time": "44:58"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "45:14"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "45:27", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "45:27"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "46:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "46:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "46:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "47:04", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "47:05"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "observer ward", 
+            "time": "47:30", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "57%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "47:34"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "47:34"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "47:54", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "47:54"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "47:56", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "47:57"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "48:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "48:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "48:14", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "83%", 
+            "whom": "observer ward", 
+            "time": "48:17", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "43%"
+        }, 
+        {
+            "top": "98%", 
+            "whom": "observer ward", 
+            "time": "48:22", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "51%"
+        }, 
+        {
+            "gold-fed": "1751", 
+            "top": "72%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "spirit-breaker", 
+                "alchemist"
+            ], 
+            "whom": "undying", 
+            "time": "48:29", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "viper", 
+            "gold-lost": "629", 
+            "left": "51%"
+        }, 
+        {
+            "gold-fed": "871", 
+            "top": "48%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "spirit-breaker"
+            ], 
+            "whom": "beastmaster", 
+            "time": "49:13", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "winter wyvern", 
+            "gold-lost": "569", 
+            "left": "46%"
+        }, 
+        {
+            "top": "46%", 
+            "whom": "radiant tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "49:31", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "88%"
+        }, 
+        {
+            "top": "27%", 
+            "whom": "radiant tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "49:50", 
+            "action": "destroy", 
+            "subject": "alchemist", 
+            "left": "67%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "observer ward", 
+            "time": "49:59", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "53%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "50:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "50:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "50:08", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "50:12"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "queen of pain", 
+            "time": "50:14"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "50:35", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "658", 
+            "top": "58%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "viper", 
+                "slardar"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "51:07", 
+            "action": "killed by", 
+            "skill": "winter's curse", 
+            "subject": "undying", 
+            "gold-lost": "449", 
+            "left": "65%"
+        }, 
+        {
+            "gold-fed": "628", 
+            "top": "56%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "slardar", 
+                "tiny"
+            ], 
+            "whom": "viper", 
+            "supplement": "autoattack", 
+            "time": "51:12", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "509", 
+            "left": "66%"
+        }, 
+        {
+            "gold-fed": "805", 
+            "top": "64%", 
+            "other-objects": [
+                "viper", 
+                "winter-wyvern"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "51:20", 
+            "action": "killed by", 
+            "subject": "beastmaster", 
+            "gold-lost": "569", 
+            "left": "70%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "beastmaster", 
+            "time": "51:20"
+        }, 
+        {
+            "gold-fed": "603", 
+            "top": "85%", 
+            "other-objects": [
+                "viper", 
+                "tiny"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "51:44", 
+            "action": "killed by", 
+            "subject": "ancient apparition", 
+            "gold-lost": "419", 
+            "left": "36%"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "observer ward", 
+            "time": "51:49", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "36%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "beastmaster", 
+            "time": "52:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "52:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "52:00"
+        }, 
+        {
+            "top": "82%", 
+            "whom": "observer ward", 
+            "time": "52:16", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "29%"
+        }, 
+        {
+            "gold-fed": "658", 
+            "top": "89%", 
+            "other-objects": [
+                "viper", 
+                "slardar", 
+                "tiny"
+            ], 
+            "whom": "winter wyvern", 
+            "supplement": "autoattack", 
+            "time": "52:19", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "449", 
+            "left": "28%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "52:19"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "undying", 
+            "time": "52:23"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "beastmaster", 
+            "time": "52:24"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "dire tier 3 bottom tower", 
+            "supplement": "tier", 
+            "time": "52:28", 
+            "action": "destroy", 
+            "subject": "viper", 
+            "left": "30%"
+        }, 
+        {
+            "gold-fed": "1265", 
+            "top": "83%", 
+            "other-objects": [
+                "undying", 
+                "ancient-apparition", 
+                "spirit-breaker", 
+                "alchemist"
+            ], 
+            "whom": "beastmaster", 
+            "time": "52:59", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "tiny", 
+            "gold-lost": "689", 
+            "left": "62%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "53:02", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "53:05"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "53:05"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "53:06"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "53:33"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "tiny", 
+            "time": "53:39"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "53:40", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "59%"
+        }, 
+        {
+            "top": "53%", 
+            "whom": "observer ward", 
+            "time": "53:41", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "58%"
+        }, 
+        {
+            "gold-fed": "620", 
+            "top": "68%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "viper"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "53:47", 
+            "action": "killed by", 
+            "skill": "winter's curse", 
+            "subject": "ancient apparition", 
+            "gold-lost": "419", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "437", 
+            "top": "67%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "viper"
+            ], 
+            "whom": "tiny", 
+            "time": "53:51", 
+            "action": "killed by", 
+            "skill": "avalanche", 
+            "subject": "spirit breaker", 
+            "gold-lost": "539", 
+            "left": "61%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "spirit breaker", 
+            "time": "53:52"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "53:55", 
+            "action": "activate", 
+            "subject": "beastmaster", 
+            "left": "61%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "54:00"
+        }, 
+        {
+            "gold-fed": "926", 
+            "top": "66%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "viper", 
+                "winter-wyvern", 
+                "tiny"
+            ], 
+            "whom": "slardar", 
+            "time": "54:06", 
+            "action": "killed by", 
+            "skill": "slithereen crush", 
+            "subject": "alchemist", 
+            "gold-lost": "689", 
+            "left": "59%"
+        }, 
+        {
+            "gold-fed": "642", 
+            "top": "65%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "winter-wyvern"
+            ], 
+            "whom": "viper", 
+            "supplement": "autoattack", 
+            "time": "54:14", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "539", 
+            "left": "55%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "slardar", 
+            "time": "54:15"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "roshan", 
+            "subject": "the radiant", 
+            "time": "54:18"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "slardar", 
+            "time": "54:20"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "queen of pain", 
+            "time": "54:24"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "cheese", 
+            "subject": "viper", 
+            "time": "54:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "alchemist", 
+            "time": "54:26"
+        }, 
+        {
+            "gold-fed": "1158", 
+            "top": "67%", 
+            "other-objects": [
+                "undying", 
+                "alchemist"
+            ], 
+            "whom": "ancient apparition", 
+            "time": "55:00", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "viper", 
+            "gold-lost": "719", 
+            "left": "39%"
+        }, 
+        {
+            "top": "83%", 
+            "whom": "observer ward", 
+            "time": "55:07", 
+            "action": "destroy", 
+            "subject": "alchemist", 
+            "left": "43%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "55:12", 
+            "action": "destroy", 
+            "subject": "slardar", 
+            "left": "59%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "55:12", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "observer ward", 
+            "time": "55:22", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "58%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "55:45"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "undying", 
+            "time": "55:58"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "56:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "56:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "56:03", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "56:07", 
+            "action": "bottled", 
+            "subject": "winter wyvern", 
+            "left": "38%"
+        }, 
+        {
+            "top": "94%", 
+            "whom": "dust of appearance", 
+            "time": "56:17", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "74%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "winter wyvern", 
+            "time": "56:19"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "observer ward", 
+            "time": "56:30", 
+            "action": "destroy", 
+            "subject": "beastmaster", 
+            "left": "36%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "tiny", 
+            "time": "57:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tiny", 
+            "time": "57:30"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "observer ward", 
+            "time": "58:11", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "33%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "58:13"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "sentry ward", 
+            "time": "58:21", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "32%"
+        }, 
+        {
+            "top": "93%", 
+            "whom": "observer ward", 
+            "time": "58:29", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "31%"
+        }, 
+        {
+            "gold-fed": "658", 
+            "top": "86%", 
+            "other-objects": "queen-of-pain", 
+            "whom": "viper", 
+            "supplement": "autoattack", 
+            "time": "58:34", 
+            "action": "killed by", 
+            "subject": "ancient apparition", 
+            "gold-lost": "449", 
+            "left": "27%"
+        }, 
+        {
+            "gold-fed": "644", 
+            "top": "88%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "viper", 
+                "slardar"
+            ], 
+            "whom": "winter wyvern", 
+            "supplement": "autoattack", 
+            "time": "58:48", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "479", 
+            "left": "21%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "undying", 
+            "time": "58:48"
+        }, 
+        {
+            "gold-fed": "863", 
+            "top": "92%", 
+            "other-objects": [
+                "viper", 
+                "slardar", 
+                "tiny"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "58:50", 
+            "action": "killed by", 
+            "subject": "beastmaster", 
+            "gold-lost": "629", 
+            "left": "15%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "beastmaster", 
+            "time": "58:50"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "winter wyvern", 
+            "time": "58:51"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "observer ward", 
+            "time": "59:12", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "33%"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "sentry ward", 
+            "time": "59:12", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "32%"
+        }, 
+        {
+            "gold-fed": "1041", 
+            "top": "81%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "slardar", 
+                "tiny"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "59:33", 
+            "action": "killed by", 
+            "skill": "splinter blast", 
+            "subject": "alchemist", 
+            "gold-lost": "719", 
+            "left": "26%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "undying", 
+            "time": "59:34"
+        }, 
+        {
+            "gold-fed": "654", 
+            "top": "84%", 
+            "other-objects": [
+                "viper", 
+                "slardar", 
+                "tiny"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "59:35", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "539", 
+            "left": "27%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "tiny", 
+            "time": "59:40"
+        }, 
+        {
+            "top": "76%", 
+            "whom": "dire tier 3 middle tower", 
+            "supplement": "tier", 
+            "time": "59:41", 
+            "action": "destroy", 
+            "subject": "viper", 
+            "left": "26%"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "undying", 
+            "time": "59:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "ancient apparition", 
+            "time": "59:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "tiny", 
+            "time": "59:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "alchemist", 
+            "time": "59:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "spirit breaker", 
+            "time": "59:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "queen of pain", 
+            "time": "59:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "slardar", 
+            "time": "59:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "beastmaster", 
+            "time": "59:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "viper", 
+            "time": "59:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "winter wyvern", 
+            "time": "59:45"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the radiant", 
+            "time": "59:50"
+        }
+    ]
+}

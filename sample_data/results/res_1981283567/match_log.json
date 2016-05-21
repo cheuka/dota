@@ -1,0 +1,2993 @@
+{
+    "events": [
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "earthshaker", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "abaddon", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "earthshaker", 
+            "time": "-01:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "-01:21"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "-01:21"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "-01:21"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "observer ward", 
+            "time": "-01:11", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "79%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "observer ward", 
+            "time": "-00:49", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "34%"
+        }, 
+        {
+            "top": "25%", 
+            "whom": "observer ward", 
+            "time": "-00:32", 
+            "action": "place", 
+            "subject": "slardar", 
+            "left": "18%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "406", 
+            "top": "34%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "slardar"
+            ], 
+            "whom": "tiny", 
+            "supplement": "autoattack", 
+            "time": "00:06", 
+            "action": "killed by", 
+            "subject": "shadow fiend", 
+            "gold-lost": "29", 
+            "left": "35%"
+        }, 
+        {
+            "gold-fed": "244", 
+            "top": "35%", 
+            "other-objects": "winter-wyvern", 
+            "whom": "bane", 
+            "supplement": "autoattack", 
+            "time": "00:09", 
+            "action": "killed by", 
+            "subject": "razor", 
+            "gold-lost": "29", 
+            "left": "30%"
+        }, 
+        {
+            "gold-fed": "211", 
+            "top": "34%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "slardar"
+            ], 
+            "whom": "tiny", 
+            "supplement": "autoattack", 
+            "time": "00:12", 
+            "action": "killed by", 
+            "subject": "abaddon", 
+            "gold-lost": "29", 
+            "left": "34%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "tiny", 
+            "time": "00:12"
+        }, 
+        {
+            "gold-fed": "356", 
+            "top": "33%", 
+            "other-objects": [
+                "abaddon", 
+                "razor", 
+                "shadow-fiend"
+            ], 
+            "whom": "earthshaker", 
+            "time": "00:19", 
+            "action": "killed by", 
+            "skill": "fissure", 
+            "subject": "tiny", 
+            "gold-lost": "29", 
+            "left": "31%"
+        }, 
+        {
+            "gold-fed": "284", 
+            "top": "40%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "tiny"
+            ], 
+            "whom": "bane", 
+            "supplement": "autoattack", 
+            "time": "00:23", 
+            "action": "killed by", 
+            "subject": "earthshaker", 
+            "gold-lost": "29", 
+            "left": "28%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "bane", 
+            "time": "00:23"
+        }, 
+        {
+            "gold-fed": "323", 
+            "top": "48%", 
+            "whom": "razor", 
+            "time": "00:45", 
+            "action": "killed by", 
+            "skill": "plasma field", 
+            "subject": "bane", 
+            "gold-lost": "29", 
+            "left": "27%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "sentry ward", 
+            "time": "01:21", 
+            "action": "place", 
+            "subject": "earthshaker", 
+            "left": "24%"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "observer ward", 
+            "time": "01:41", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "57%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "02:00", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "02:00", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "38%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "02:11", 
+            "action": "place", 
+            "subject": "earthshaker", 
+            "left": "21%"
+        }, 
+        {
+            "top": "25%", 
+            "whom": "observer ward", 
+            "time": "02:12", 
+            "action": "destroy", 
+            "subject": "earthshaker", 
+            "left": "18%"
+        }, 
+        {
+            "top": "16%", 
+            "whom": "sentry ward", 
+            "time": "02:17", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "26%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "sentry ward", 
+            "time": "02:23", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "24%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "03:48"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "04:00", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "04:02", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "04:03"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "tiny", 
+            "time": "04:09"
+        }, 
+        {
+            "gold-fed": "349", 
+            "top": "21%", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "04:34", 
+            "action": "killed by", 
+            "subject": "razor", 
+            "gold-lost": "119", 
+            "left": "15%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "earthshaker", 
+            "time": "04:53"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "04:54"
+        }, 
+        {
+            "top": "44%", 
+            "whom": "observer ward", 
+            "time": "05:35", 
+            "action": "place", 
+            "subject": "earthshaker", 
+            "left": "42%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "06:07", 
+            "action": "bottled", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "06:07", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "tusk", 
+            "time": "06:12"
+        }, 
+        {
+            "gold-fed": "269", 
+            "top": "46%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "queen-of-pain", 
+                "bane"
+            ], 
+            "whom": "tiny", 
+            "supplement": "autoattack", 
+            "time": "06:18", 
+            "action": "killed by", 
+            "subject": "abaddon", 
+            "gold-lost": "89", 
+            "left": "40%"
+        }, 
+        {
+            "gold-fed": "671", 
+            "top": "49%", 
+            "other-objects": [
+                "abaddon", 
+                "earthshaker"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "06:18", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "179", 
+            "left": "41%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "observer ward", 
+            "time": "06:19", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "37%"
+        }, 
+        {
+            "gold-fed": "384", 
+            "top": "40%", 
+            "other-objects": [
+                "abaddon", 
+                "tusk"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "06:24", 
+            "action": "killed by", 
+            "skill": "requiem of souls", 
+            "subject": "winter wyvern", 
+            "gold-lost": "89", 
+            "left": "41%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "06:24"
+        }, 
+        {
+            "gold-fed": "345", 
+            "top": "44%", 
+            "other-objects": [
+                "abaddon", 
+                "tusk", 
+                "earthshaker"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "06:28", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "bane", 
+            "gold-lost": "89", 
+            "left": "40%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "06:28"
+        }, 
+        {
+            "gold-fed": "466", 
+            "top": "47%", 
+            "other-objects": [
+                "tiny", 
+                "bane"
+            ], 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "06:33", 
+            "action": "killed by", 
+            "subject": "shadow fiend", 
+            "gold-lost": "179", 
+            "left": "34%"
+        }, 
+        {
+            "gold-fed": "388", 
+            "top": "28%", 
+            "whom": "tusk", 
+            "time": "06:42", 
+            "action": "killed by", 
+            "skill": "snowball", 
+            "subject": "tiny", 
+            "gold-lost": "149", 
+            "left": "41%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "abaddon", 
+            "time": "07:17"
+        }, 
+        {
+            "top": "36%", 
+            "other-objects": [
+                "bane", 
+                "slardar"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "07:19", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "60%"
+        }, 
+        {
+            "gold-fed": "277", 
+            "top": "44%", 
+            "other-objects": "bane", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "08:00", 
+            "action": "killed by", 
+            "subject": "abaddon", 
+            "gold-lost": "89", 
+            "left": "20%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "08:00", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "08:09", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "tiny", 
+            "time": "08:09"
+        }, 
+        {
+            "top": "38%", 
+            "whom": "sentry ward", 
+            "time": "08:18", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "45%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "08:39"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "winter wyvern", 
+            "time": "08:46"
+        }, 
+        {
+            "gold-fed": "498", 
+            "top": "15%", 
+            "other-objects": [
+                "tusk", 
+                "earthshaker"
+            ], 
+            "whom": "razor", 
+            "supplement": "autoattack", 
+            "time": "09:44", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "239", 
+            "left": "18%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "10:00", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "17%", 
+            "whom": "observer ward", 
+            "time": "10:14", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "28%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "10:26", 
+            "action": "bottled", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "top": "51%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "tiny", 
+                "slardar"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "10:31", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "65%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "earthshaker", 
+            "time": "10:38"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "earthshaker", 
+            "time": "10:41"
+        }, 
+        {
+            "gold-fed": "536", 
+            "top": "49%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "slardar"
+            ], 
+            "whom": "tiny", 
+            "time": "10:43", 
+            "action": "killed by", 
+            "skill": "toss", 
+            "subject": "shadow fiend", 
+            "gold-lost": "269", 
+            "left": "46%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "tusk", 
+            "time": "11:05"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "winter wyvern", 
+            "time": "11:39"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "12:02", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "12:03"
+        }, 
+        {
+            "top": "27%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "queen-of-pain", 
+                "slardar"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "12:07", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "41%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "12:10", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "546", 
+            "top": "5%", 
+            "other-objects": [
+                "tusk", 
+                "earthshaker"
+            ], 
+            "whom": "razor", 
+            "time": "12:23", 
+            "action": "killed by", 
+            "skill": "eye of the storm", 
+            "subject": "queen of pain", 
+            "gold-lost": "239", 
+            "left": "22%"
+        }, 
+        {
+            "gold-fed": "531", 
+            "top": "5%", 
+            "other-objects": "slardar", 
+            "whom": "winter wyvern", 
+            "time": "12:29", 
+            "action": "killed by", 
+            "skill": "splinter blast", 
+            "subject": "razor", 
+            "gold-lost": "239", 
+            "left": "21%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "tiny", 
+            "time": "12:31"
+        }, 
+        {
+            "gold-fed": "565", 
+            "top": "4%", 
+            "other-objects": [
+                "razor", 
+                "earthshaker"
+            ], 
+            "whom": "tusk", 
+            "time": "12:33", 
+            "action": "killed by", 
+            "skill": "ice shards", 
+            "subject": "slardar", 
+            "gold-lost": "269", 
+            "left": "24%"
+        }, 
+        {
+            "gold-fed": "399", 
+            "top": "8%", 
+            "other-objects": [
+                "razor", 
+                "earthshaker"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "12:37", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "winter wyvern", 
+            "gold-lost": "239", 
+            "left": "26%"
+        }, 
+        {
+            "top": "10%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "earthshaker"
+            ], 
+            "whom": "tusk", 
+            "time": "12:40", 
+            "action": "speak", 
+            "subject": "bane", 
+            "left": "31%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "observer ward", 
+            "time": "12:41", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "51%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "12:54"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "13:00"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "13:13", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "87%", 
+            "whom": "dire tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "13:14", 
+            "action": "speak", 
+            "subject": "razor", 
+            "left": "60%"
+        }, 
+        {
+            "gold-fed": "453", 
+            "top": "12%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "earthshaker"
+            ], 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "13:15", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "239", 
+            "left": "40%"
+        }, 
+        {
+            "gold-fed": "796", 
+            "top": "12%", 
+            "other-objects": "winter-wyvern", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "13:21", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "329", 
+            "left": "40%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "13:54", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "33%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "13:59"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "14:04", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "14:04", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "tiny", 
+            "time": "14:06"
+        }, 
+        {
+            "top": "19%", 
+            "whom": "sentry ward", 
+            "time": "14:17", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "52%"
+        }, 
+        {
+            "gold-fed": "560", 
+            "top": "87%", 
+            "other-objects": [
+                "tiny", 
+                "bane"
+            ], 
+            "whom": "queen of pain", 
+            "time": "14:20", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "razor", 
+            "gold-lost": "269", 
+            "left": "71%"
+        }, 
+        {
+            "top": "17%", 
+            "whom": "sentry ward", 
+            "time": "14:20", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "43%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "observer ward", 
+            "time": "15:24", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "57%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "16:11", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "16:12"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "16:15", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "observer ward", 
+            "time": "16:16", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "75%"
+        }, 
+        {
+            "gold-fed": "392", 
+            "top": "76%", 
+            "other-objects": [
+                "razor", 
+                "earthshaker"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "16:31", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "winter wyvern", 
+            "gold-lost": "269", 
+            "left": "87%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "16:33"
+        }, 
+        {
+            "gold-fed": "367", 
+            "top": "66%", 
+            "other-objects": [
+                "abaddon", 
+                "tusk"
+            ], 
+            "whom": "razor", 
+            "time": "16:42", 
+            "action": "killed by", 
+            "skill": "plasma field", 
+            "subject": "bane", 
+            "gold-lost": "209", 
+            "left": "72%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "16:50"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "16:51"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "16:51", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "48%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "16:52"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "16:55"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "tiny", 
+            "time": "17:00"
+        }, 
+        {
+            "gold-fed": "467", 
+            "top": "25%", 
+            "other-objects": [
+                "abaddon", 
+                "tusk", 
+                "earthshaker"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "17:17", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "queen of pain", 
+            "gold-lost": "299", 
+            "left": "14%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "17:22"
+        }, 
+        {
+            "gold-fed": "661", 
+            "top": "33%", 
+            "other-objects": "slardar", 
+            "whom": "tiny", 
+            "time": "17:38", 
+            "action": "killed by", 
+            "skill": "toss", 
+            "subject": "tusk", 
+            "gold-lost": "329", 
+            "left": "33%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "abaddon", 
+            "time": "17:44"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "abaddon", 
+            "time": "17:47"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "18:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "18:00", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "18:04", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "18:04"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "tiny", 
+            "time": "18:07"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "abaddon", 
+            "time": "18:43"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "19:02", 
+            "action": "destroy", 
+            "subject": "tiny", 
+            "left": "11%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "19:04"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "earthshaker", 
+            "time": "19:20"
+        }, 
+        {
+            "top": "68%", 
+            "other-objects": [
+                "abaddon", 
+                "tusk", 
+                "earthshaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "19:32", 
+            "action": "activate", 
+            "subject": "earthshaker", 
+            "left": "40%"
+        }, 
+        {
+            "top": "29%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "bane", 
+                "slardar"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "19:40", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "57%"
+        }, 
+        {
+            "gold-fed": "566", 
+            "top": "59%", 
+            "other-objects": "earthshaker", 
+            "whom": "tusk", 
+            "time": "19:49", 
+            "action": "killed by", 
+            "skill": "ice shards", 
+            "subject": "queen of pain", 
+            "gold-lost": "329", 
+            "left": "75%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "19:54", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "35%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "20:00", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "20%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "20:00", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "gold-fed": "594", 
+            "top": "63%", 
+            "other-objects": [
+                "bane", 
+                "slardar"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "20:09", 
+            "action": "killed by", 
+            "skill": "winter's curse", 
+            "subject": "razor", 
+            "gold-lost": "329", 
+            "left": "10%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "20:15", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "20:15"
+        }, 
+        {
+            "top": "67%", 
+            "whom": "observer ward", 
+            "time": "20:25", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "66%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "tiny", 
+            "time": "20:33"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "20:34", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "55%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "20:51"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "20:51"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "earthshaker", 
+            "time": "20:53"
+        }, 
+        {
+            "gold-fed": "571", 
+            "top": "22%", 
+            "other-objects": "earthshaker", 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "21:41", 
+            "action": "killed by", 
+            "subject": "slardar", 
+            "gold-lost": "329", 
+            "left": "26%"
+        }, 
+        {
+            "top": "25%", 
+            "whom": "observer ward", 
+            "time": "21:48", 
+            "action": "place", 
+            "subject": "earthshaker", 
+            "left": "13%"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "observer ward", 
+            "time": "21:50", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "3%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "22:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "22:00", 
+            "action": "bottled", 
+            "subject": "tusk", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "22:05", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "tiny", 
+            "time": "22:07"
+        }, 
+        {
+            "gold-fed": "464", 
+            "top": "30%", 
+            "other-objects": [
+                "abaddon", 
+                "earthshaker"
+            ], 
+            "whom": "tusk", 
+            "time": "22:28", 
+            "action": "killed by", 
+            "skill": "ice shards", 
+            "subject": "winter wyvern", 
+            "gold-lost": "329", 
+            "left": "7%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "tusk", 
+            "time": "22:30"
+        }, 
+        {
+            "top": "33%", 
+            "other-objects": [
+                "abaddon", 
+                "tusk", 
+                "earthshaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "22:31", 
+            "action": "activate", 
+            "subject": "earthshaker", 
+            "left": "12%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "22:53"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "22:53"
+        }, 
+        {
+            "gold-fed": "492", 
+            "top": "55%", 
+            "other-objects": [
+                "tusk", 
+                "shadow-fiend", 
+                "earthshaker"
+            ], 
+            "whom": "abaddon", 
+            "time": "22:58", 
+            "action": "killed by", 
+            "skill": "mist coil", 
+            "subject": "slardar", 
+            "gold-lost": "329", 
+            "left": "72%"
+        }, 
+        {
+            "gold-fed": "676", 
+            "top": "22%", 
+            "other-objects": "bane", 
+            "whom": "tiny", 
+            "time": "23:12", 
+            "action": "killed by", 
+            "skill": "avalanche", 
+            "subject": "razor", 
+            "gold-lost": "359", 
+            "left": "46%"
+        }, 
+        {
+            "top": "39%", 
+            "whom": "sentry ward", 
+            "time": "23:31", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "77%"
+        }, 
+        {
+            "gold-fed": "626", 
+            "top": "97%", 
+            "other-objects": [
+                "abaddon", 
+                "earthshaker"
+            ], 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "23:39", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "389", 
+            "left": "69%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "24:01", 
+            "action": "bottled", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "tusk", 
+            "time": "24:03"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "24:05", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "earthshaker", 
+            "time": "24:10"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "earthshaker", 
+            "time": "24:11"
+        }, 
+        {
+            "top": "27%", 
+            "other-objects": [
+                "abaddon", 
+                "tusk", 
+                "razor", 
+                "earthshaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "24:51", 
+            "action": "activate", 
+            "subject": "earthshaker", 
+            "left": "17%"
+        }, 
+        {
+            "top": "32%", 
+            "whom": "observer ward", 
+            "time": "25:07", 
+            "action": "place", 
+            "subject": "earthshaker", 
+            "left": "54%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "25:44"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "dire tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "26:04", 
+            "action": "speak", 
+            "subject": "earthshaker", 
+            "left": "48%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "tiny", 
+            "time": "26:04"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "26:06", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "sentry ward", 
+            "time": "26:11", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "58%"
+        }, 
+        {
+            "top": "32%", 
+            "whom": "observer ward", 
+            "time": "26:16", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "54%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "earthshaker", 
+            "time": "26:23"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "observer ward", 
+            "time": "26:43", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "44%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "26:55", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "winter wyvern", 
+            "time": "27:33"
+        }, 
+        {
+            "gold-fed": "740", 
+            "top": "87%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "slardar"
+            ], 
+            "whom": "bane", 
+            "time": "27:44", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "tusk", 
+            "gold-lost": "419", 
+            "left": "73%"
+        }, 
+        {
+            "gold-fed": "503", 
+            "top": "91%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "slardar"
+            ], 
+            "whom": "bane", 
+            "time": "27:49", 
+            "action": "killed by", 
+            "skill": "fiend's grip", 
+            "subject": "earthshaker", 
+            "gold-lost": "329", 
+            "left": "77%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "bane", 
+            "time": "27:49"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "dire tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "27:58", 
+            "action": "destroy", 
+            "subject": "tiny", 
+            "left": "37%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "28:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "28:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "28:23", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "top": "57%", 
+            "whom": "observer ward", 
+            "time": "28:26", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "31%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "abaddon", 
+            "time": "28:35"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "28:36", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "tiny", 
+            "time": "28:36"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "28:57"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "28:57"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "observer ward", 
+            "time": "29:12", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "56%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "observer ward", 
+            "time": "29:28", 
+            "action": "place", 
+            "subject": "earthshaker", 
+            "left": "74%"
+        }, 
+        {
+            "gold-fed": "723", 
+            "top": "80%", 
+            "other-objects": [
+                "tusk", 
+                "razor"
+            ], 
+            "whom": "earthshaker", 
+            "supplement": "autoattack", 
+            "time": "29:46", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "329", 
+            "left": "72%"
+        }, 
+        {
+            "top": "59%", 
+            "whom": "observer ward", 
+            "time": "29:47", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "11%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "30:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "30:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "30:03", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "tiny", 
+            "time": "30:03"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "30:03"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "dire tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "30:04", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "11%"
+        }, 
+        {
+            "gold-fed": "449", 
+            "top": "75%", 
+            "whom": "tiny", 
+            "supplement": "autoattack", 
+            "time": "30:19", 
+            "action": "killed by", 
+            "subject": "earthshaker", 
+            "gold-lost": "359", 
+            "left": "34%"
+        }, 
+        {
+            "gold-fed": "686", 
+            "top": "66%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "slardar"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "30:30", 
+            "action": "killed by", 
+            "skill": "winter's curse", 
+            "subject": "razor", 
+            "gold-lost": "449", 
+            "left": "24%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "earthshaker", 
+            "time": "30:35"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "earthshaker", 
+            "time": "30:35"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "30:45", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "earthshaker", 
+            "time": "30:46"
+        }, 
+        {
+            "top": "74%", 
+            "whom": "sentry ward", 
+            "time": "30:54", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "35%"
+        }, 
+        {
+            "top": "78%", 
+            "whom": "observer ward", 
+            "time": "31:00", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "57%"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "sentry ward", 
+            "time": "31:03", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "46%"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "observer ward", 
+            "time": "31:05", 
+            "action": "destroy", 
+            "subject": "abaddon", 
+            "left": "44%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "observer ward", 
+            "time": "31:08", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "74%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "sentry ward", 
+            "time": "31:12", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "57%"
+        }, 
+        {
+            "top": "78%", 
+            "whom": "observer ward", 
+            "time": "31:17", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "57%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "31:36"
+        }, 
+        {
+            "top": "57%", 
+            "whom": "sentry ward", 
+            "time": "31:41", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "12%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "31:43"
+        }, 
+        {
+            "top": "59%", 
+            "whom": "observer ward", 
+            "time": "31:43", 
+            "action": "destroy", 
+            "subject": "abaddon", 
+            "left": "11%"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "observer ward", 
+            "time": "31:54", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "56%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "queen of pain", 
+            "time": "31:59"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "32:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "32:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "32:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "32:01", 
+            "action": "activate", 
+            "subject": "tiny", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "1531", 
+            "top": "62%", 
+            "other-objects": [
+                "abaddon", 
+                "tusk", 
+                "earthshaker"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "32:24", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "tiny", 
+            "gold-lost": "599", 
+            "left": "76%"
+        }, 
+        {
+            "gold-fed": "889", 
+            "top": "55%", 
+            "other-objects": [
+                "tusk", 
+                "shadow-fiend", 
+                "earthshaker"
+            ], 
+            "whom": "razor", 
+            "supplement": "autoattack", 
+            "time": "32:33", 
+            "action": "killed by", 
+            "subject": "slardar", 
+            "gold-lost": "449", 
+            "left": "89%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "32:49", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "38%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "32:57"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "32:57"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "abaddon", 
+            "time": "33:18"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "33:59", 
+            "action": "activate", 
+            "subject": "razor", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "34:00"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "34:22", 
+            "action": "destroy", 
+            "subject": "razor", 
+            "left": "55%"
+        }, 
+        {
+            "gold-fed": "482", 
+            "top": "43%", 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "34:35", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "359", 
+            "left": "55%"
+        }, 
+        {
+            "gold-fed": "733", 
+            "top": "58%", 
+            "other-objects": [
+                "tusk", 
+                "razor", 
+                "shadow-fiend"
+            ], 
+            "whom": "abaddon", 
+            "time": "34:42", 
+            "action": "killed by", 
+            "skill": "mist coil", 
+            "subject": "slardar", 
+            "gold-lost": "449", 
+            "left": "41%"
+        }, 
+        {
+            "top": "59%", 
+            "other-objects": [
+                "abaddon", 
+                "tusk", 
+                "razor", 
+                "earthshaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "34:45", 
+            "action": "activate", 
+            "subject": "earthshaker", 
+            "left": "48%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "34:47", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "48%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "34:50", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "528", 
+            "top": "91%", 
+            "whom": "tiny", 
+            "supplement": "autoattack", 
+            "time": "35:13", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "449", 
+            "left": "41%"
+        }, 
+        {
+            "gold-fed": "457", 
+            "top": "88%", 
+            "whom": "tiny", 
+            "supplement": "autoattack", 
+            "time": "35:14", 
+            "action": "killed by", 
+            "subject": "earthshaker", 
+            "gold-lost": "419", 
+            "left": "41%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "tiny", 
+            "time": "35:14"
+        }, 
+        {
+            "top": "27%", 
+            "whom": "radiant tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "35:15", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "67%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "35:20"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "dire tier 3 bottom tower", 
+            "supplement": "tier", 
+            "time": "35:29", 
+            "action": "destroy", 
+            "subject": "tiny", 
+            "left": "30%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "earthshaker", 
+            "time": "35:30"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire melee bottom barracks", 
+            "subject": "tiny", 
+            "supplement": "melee", 
+            "time": "35:36"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "35:41"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "36:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "36:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "36:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "36:06", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "earthshaker", 
+            "time": "36:07"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "earthshaker", 
+            "time": "36:08"
+        }, 
+        {
+            "top": "68%", 
+            "whom": "observer ward", 
+            "time": "36:09", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "51%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "36:12", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "36:13"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "36:45", 
+            "action": "place", 
+            "subject": "earthshaker", 
+            "left": "56%"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "observer ward", 
+            "time": "37:00", 
+            "action": "place", 
+            "subject": "earthshaker", 
+            "left": "32%"
+        }, 
+        {
+            "gold-fed": "678", 
+            "top": "46%", 
+            "other-objects": [
+                "abaddon", 
+                "razor", 
+                "earthshaker"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "37:41", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "389", 
+            "left": "14%"
+        }, 
+        {
+            "gold-fed": "1280", 
+            "top": "43%", 
+            "other-objects": [
+                "abaddon", 
+                "tusk", 
+                "razor", 
+                "earthshaker"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "37:44", 
+            "action": "killed by", 
+            "subject": "tiny", 
+            "gold-lost": "659", 
+            "left": "10%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "37:44"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "37:58", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "38:00"
+        }, 
+        {
+            "gold-fed": "474", 
+            "top": "56%", 
+            "other-objects": "tiny", 
+            "whom": "queen of pain", 
+            "time": "38:01", 
+            "action": "killed by", 
+            "skill": "sonic wave", 
+            "subject": "earthshaker", 
+            "gold-lost": "449", 
+            "left": "25%"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "38:06", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "56%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "38:14", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "earthshaker", 
+            "time": "38:18"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "39:01"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "39:43", 
+            "action": "place", 
+            "subject": "earthshaker", 
+            "left": "74%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "40:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "40:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "40:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "40:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "40:05", 
+            "action": "activate", 
+            "subject": "tiny", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "earthshaker", 
+            "time": "40:14"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "40:54"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "41:03", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "68%", 
+            "whom": "observer ward", 
+            "time": "41:24", 
+            "action": "destroy", 
+            "subject": "abaddon", 
+            "left": "51%"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "observer ward", 
+            "time": "41:34", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "32%"
+        }, 
+        {
+            "top": "57%", 
+            "whom": "observer ward", 
+            "time": "41:46", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "31%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "tusk", 
+            "time": "41:57"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "41:57"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "41:59", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "41:59", 
+            "action": "activate", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "43:02"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "44:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "44:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "44:26", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "44:28"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "44:47", 
+            "action": "activate", 
+            "subject": "tiny", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "45:34"
+        }, 
+        {
+            "top": "21%", 
+            "whom": "radiant tier 3 middle tower", 
+            "supplement": "tier", 
+            "time": "45:45", 
+            "action": "destroy", 
+            "subject": "razor", 
+            "left": "75%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "cheese", 
+            "subject": "razor", 
+            "time": "45:46"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "45:50"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "dire tier 3 top tower", 
+            "supplement": "tier", 
+            "time": "45:56", 
+            "action": "destroy", 
+            "subject": "tiny", 
+            "left": "13%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "46:00"
+        }, 
+        {
+            "gold-fed": "928", 
+            "top": "28%", 
+            "other-objects": [
+                "abaddon", 
+                "tusk", 
+                "razor"
+            ], 
+            "whom": "earthshaker", 
+            "time": "46:12", 
+            "action": "killed by", 
+            "skill": "echo slam", 
+            "subject": "slardar", 
+            "gold-lost": "509", 
+            "left": "60%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "slardar", 
+            "time": "46:13"
+        }, 
+        {
+            "top": "27%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "tiny"
+            ], 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "46:15", 
+            "action": "activate", 
+            "subject": "earthshaker", 
+            "left": "60%"
+        }, 
+        {
+            "gold-fed": "810", 
+            "top": "30%", 
+            "other-objects": "tiny", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "46:18", 
+            "action": "killed by", 
+            "subject": "razor", 
+            "gold-lost": "569", 
+            "left": "57%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "razor", 
+            "time": "46:19"
+        }, 
+        {
+            "gold-fed": "1144", 
+            "top": "32%", 
+            "other-objects": [
+                "abaddon", 
+                "tusk", 
+                "razor", 
+                "earthshaker"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "46:30", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "659", 
+            "left": "67%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "queen of pain", 
+            "time": "46:35"
+        }, 
+        {
+            "top": "25%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "bane"
+            ], 
+            "whom": "winter-wyvern", 
+            "time": "46:50", 
+            "action": "speak", 
+            "subject": "tusk", 
+            "left": "71%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "tusk", 
+            "time": "46:50"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant melee middle barracks", 
+            "subject": "shadow fiend", 
+            "supplement": "melee", 
+            "time": "47:12"
+        }, 
+        {
+            "top": "25%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "queen-of-pain", 
+                "tiny", 
+                "bane"
+            ], 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "47:17", 
+            "action": "activate", 
+            "subject": "earthshaker", 
+            "left": "79%"
+        }, 
+        {
+            "gold-fed": "921", 
+            "top": "18%", 
+            "other-objects": [
+                "tusk", 
+                "razor", 
+                "earthshaker"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "47:19", 
+            "action": "killed by", 
+            "subject": "tiny", 
+            "gold-lost": "749", 
+            "left": "80%"
+        }, 
+        {
+            "gold-fed": "485", 
+            "top": "18%", 
+            "other-objects": [
+                "razor", 
+                "earthshaker"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "47:21", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "419", 
+            "left": "82%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "47:21"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant ranged middle barracks", 
+            "subject": "shadow fiend", 
+            "supplement": "ranged", 
+            "time": "47:26"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "tiny", 
+            "time": "47:36"
+        }, 
+        {
+            "gold-fed": "239", 
+            "top": "28%", 
+            "whom": "queen of pain", 
+            "time": "47:52", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "earthshaker", 
+            "gold-lost": "509", 
+            "left": "57%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "47:57", 
+            "action": "activate", 
+            "subject": "razor", 
+            "left": "38%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "48:27", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "34%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "earthshaker", 
+            "time": "48:40"
+        }, 
+        {
+            "top": "51%", 
+            "whom": "observer ward", 
+            "time": "48:41", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "57%"
+        }, 
+        {
+            "top": "87%", 
+            "other-objects": [
+                "abaddon", 
+                "tusk", 
+                "razor", 
+                "earthshaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "49:19", 
+            "action": "activate", 
+            "subject": "earthshaker", 
+            "left": "47%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "49:44"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "50:00"
+        }, 
+        {
+            "gold-fed": "1016", 
+            "top": "49%", 
+            "other-objects": [
+                "abaddon", 
+                "razor", 
+                "shadow-fiend", 
+                "earthshaker"
+            ], 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "50:05", 
+            "action": "killed by", 
+            "subject": "tiny", 
+            "gold-lost": "749", 
+            "left": "39%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "50:06", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "38%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant tier 4 middle tower", 
+            "subject": "razor", 
+            "supplement": "tier", 
+            "time": "50:37"
+        }, 
+        {
+            "gold-fed": "739", 
+            "top": "14%", 
+            "other-objects": [
+                "abaddon", 
+                "razor"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "50:51", 
+            "action": "killed by", 
+            "subject": "slardar", 
+            "gold-lost": "539", 
+            "left": "85%"
+        }, 
+        {
+            "gold-fed": "698", 
+            "top": "17%", 
+            "other-objects": "winter-wyvern", 
+            "whom": "queen of pain", 
+            "time": "50:56", 
+            "action": "killed by", 
+            "skill": "shadow strike", 
+            "subject": "tusk", 
+            "gold-lost": "569", 
+            "left": "72%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant tier 4 middle tower", 
+            "subject": "shadow fiend", 
+            "supplement": "tier", 
+            "time": "51:01"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "51:04"
+        }, 
+        {
+            "gold-fed": "610", 
+            "top": "18%", 
+            "whom": "queen of pain", 
+            "time": "51:15", 
+            "action": "killed by", 
+            "skill": "sonic wave", 
+            "subject": "earthshaker", 
+            "gold-lost": "509", 
+            "left": "81%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "abaddon", 
+            "time": "51:23"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "earthshaker", 
+            "time": "51:23"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "razor", 
+            "time": "51:23"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "queen of pain", 
+            "time": "51:23"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "tiny", 
+            "time": "51:23"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "earthshaker", 
+            "time": "51:23"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "slardar", 
+            "time": "51:23"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "bane", 
+            "time": "51:23"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "abaddon", 
+            "time": "51:23"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "winter wyvern", 
+            "time": "51:23"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "tusk", 
+            "time": "51:23"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "shadow fiend", 
+            "time": "51:23"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the dire", 
+            "time": "51:28"
+        }
+    ]
+}

@@ -1,0 +1,2589 @@
+{
+    "events": [
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "crystal maiden", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "crystal maiden", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "crystal maiden", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "disruptor", 
+            "time": "-01:25"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "observer ward", 
+            "time": "-00:43", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "66%"
+        }, 
+        {
+            "top": "30%", 
+            "whom": "observer ward", 
+            "time": "-00:37", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "22%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:01", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "observer ward", 
+            "time": "00:07", 
+            "action": "place", 
+            "subject": "crystal maiden", 
+            "left": "44%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "queen of pain", 
+            "time": "00:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "bristleback", 
+            "time": "00:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "queen of pain", 
+            "time": "00:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "tusk", 
+            "time": "00:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "queen of pain", 
+            "time": "00:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "night stalker", 
+            "time": "00:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "queen of pain", 
+            "time": "00:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "tusk", 
+            "time": "00:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "gyrocopter", 
+            "time": "00:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "tusk", 
+            "time": "00:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "gyrocopter", 
+            "time": "00:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "slardar", 
+            "time": "00:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "tusk", 
+            "time": "00:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "tusk", 
+            "time": "00:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "tusk", 
+            "time": "00:24"
+        }, 
+        {
+            "top": "17%", 
+            "whom": "sentry ward", 
+            "time": "00:27", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "28%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "01:02", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "21%"
+        }, 
+        {
+            "top": "30%", 
+            "whom": "observer ward", 
+            "time": "01:09", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "22%"
+        }, 
+        {
+            "top": "11%", 
+            "whom": "observer ward", 
+            "time": "01:31", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "24%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "02:00", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "02:00", 
+            "action": "activate", 
+            "subject": "crystal maiden", 
+            "left": "38%"
+        }, 
+        {
+            "top": "77%", 
+            "whom": "sentry ward", 
+            "time": "02:30", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "73%"
+        }, 
+        {
+            "top": "22%", 
+            "whom": "sentry ward", 
+            "time": "03:03", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "28%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "03:21", 
+            "action": "destroy", 
+            "subject": "tusk", 
+            "left": "21%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "04:00", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "04:02", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "04:02"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "04:11"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "alchemist", 
+            "time": "04:15"
+        }, 
+        {
+            "gold-fed": "589", 
+            "top": "47%", 
+            "whom": "queen of pain", 
+            "time": "04:29", 
+            "action": "killed by", 
+            "skill": "sonic wave", 
+            "subject": "alchemist", 
+            "gold-lost": "149", 
+            "left": "50%"
+        }, 
+        {
+            "gold-fed": "430", 
+            "top": "12%", 
+            "other-objects": "dark-seer", 
+            "whom": "tusk", 
+            "time": "04:31", 
+            "action": "killed by", 
+            "skill": "ice shards", 
+            "subject": "bristleback", 
+            "gold-lost": "119", 
+            "left": "18%"
+        }, 
+        {
+            "top": "10%", 
+            "other-objects": [
+                "night-stalker", 
+                "bristleback"
+            ], 
+            "whom": "crystal-maiden", 
+            "time": "04:34", 
+            "action": "speak", 
+            "subject": "tusk", 
+            "left": "19%"
+        }, 
+        {
+            "gold-fed": "313", 
+            "top": "10%", 
+            "other-objects": "tusk", 
+            "whom": "dark seer", 
+            "supplement": "autoattack", 
+            "time": "04:35", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "89", 
+            "left": "20%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "04:40"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "04:44"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "crystal maiden", 
+            "time": "05:21"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "crystal maiden", 
+            "time": "05:22"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "observer ward", 
+            "time": "05:24", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "37%"
+        }, 
+        {
+            "gold-fed": "277", 
+            "top": "58%", 
+            "other-objects": [
+                "disruptor", 
+                "alchemist"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "05:41", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "89", 
+            "left": "75%"
+        }, 
+        {
+            "gold-fed": "379", 
+            "top": "58%", 
+            "other-objects": [
+                "disruptor", 
+                "alchemist", 
+                "tusk"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "05:45", 
+            "action": "killed by", 
+            "subject": "slardar", 
+            "gold-lost": "119", 
+            "left": "65%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "05:45"
+        }, 
+        {
+            "gold-fed": "322", 
+            "top": "60%", 
+            "other-objects": "slardar", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "05:46", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "89", 
+            "left": "78%"
+        }, 
+        {
+            "gold-fed": "405", 
+            "top": "64%", 
+            "other-objects": [
+                "slardar", 
+                "night-stalker"
+            ], 
+            "whom": "queen of pain", 
+            "time": "05:47", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "alchemist", 
+            "gold-lost": "149", 
+            "left": "77%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "05:47"
+        }, 
+        {
+            "gold-fed": "505", 
+            "top": "68%", 
+            "other-objects": [
+                "disruptor", 
+                "alchemist", 
+                "tusk"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "05:51", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "239", 
+            "left": "80%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "05:51"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "05:52", 
+            "action": "place", 
+            "subject": "crystal maiden", 
+            "left": "67%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "06:00", 
+            "action": "activate", 
+            "subject": "crystal maiden", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "353", 
+            "top": "68%", 
+            "other-objects": "tusk", 
+            "whom": "gyrocopter", 
+            "time": "06:03", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "crystal maiden", 
+            "gold-lost": "119", 
+            "left": "61%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "gyrocopter", 
+            "time": "06:03"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "06:09", 
+            "action": "activate", 
+            "subject": "dark seer", 
+            "left": "38%"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "observer ward", 
+            "time": "06:39", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "66%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "tusk", 
+            "time": "06:59"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "sentry ward", 
+            "time": "07:08", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "67%"
+        }, 
+        {
+            "top": "60%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "slardar", 
+                "night-stalker", 
+                "queen-of-pain"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "07:12", 
+            "action": "activate", 
+            "subject": "crystal maiden", 
+            "left": "51%"
+        }, 
+        {
+            "gold-fed": "740", 
+            "top": "63%", 
+            "other-objects": [
+                "slardar", 
+                "night-stalker", 
+                "queen-of-pain"
+            ], 
+            "whom": "crystal maiden", 
+            "supplement": "autoattack", 
+            "time": "07:21", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "209", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "309", 
+            "top": "49%", 
+            "other-objects": "night-stalker", 
+            "whom": "queen of pain", 
+            "time": "07:30", 
+            "action": "killed by", 
+            "skill": "sonic wave", 
+            "subject": "disruptor", 
+            "gold-lost": "89", 
+            "left": "66%"
+        }, 
+        {
+            "gold-fed": "403", 
+            "top": "52%", 
+            "other-objects": "slardar", 
+            "whom": "queen of pain", 
+            "time": "07:37", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "dark seer", 
+            "gold-lost": "179", 
+            "left": "66%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "07:37"
+        }, 
+        {
+            "gold-fed": "329", 
+            "top": "54%", 
+            "other-objects": [
+                "slardar", 
+                "night-stalker", 
+                "queen-of-pain"
+            ], 
+            "whom": "crystal maiden", 
+            "supplement": "autoattack", 
+            "time": "07:39", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "149", 
+            "left": "65%"
+        }, 
+        {
+            "top": "40%", 
+            "whom": "observer ward", 
+            "time": "07:48", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "77%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "07:49"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "crystal maiden", 
+            "time": "07:58"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "crystal maiden", 
+            "time": "07:59"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "08:04", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "08:34", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "82%", 
+            "whom": "observer ward", 
+            "time": "08:41", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "70%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "08:59"
+        }, 
+        {
+            "gold-fed": "531", 
+            "top": "14%", 
+            "other-objects": "tusk", 
+            "whom": "dark seer", 
+            "time": "09:11", 
+            "action": "killed by", 
+            "skill": "ion shell", 
+            "subject": "bristleback", 
+            "gold-lost": "239", 
+            "left": "12%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "09:28"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "radiant tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "09:33", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "58%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "10:02", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "10:03"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "10:07", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "alchemist", 
+            "time": "10:25"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "10:29"
+        }, 
+        {
+            "top": "14%", 
+            "whom": "sentry ward", 
+            "time": "10:34", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "45%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "10:46", 
+            "action": "speak", 
+            "subject": "tusk", 
+            "left": "38%"
+        }, 
+        {
+            "top": "34%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "night-stalker", 
+                "queen-of-pain"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "10:47", 
+            "action": "activate", 
+            "subject": "crystal maiden", 
+            "left": "26%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "tusk", 
+            "time": "10:53"
+        }, 
+        {
+            "gold-fed": "478", 
+            "top": "36%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "night-stalker"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "11:06", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "239", 
+            "left": "62%"
+        }, 
+        {
+            "gold-fed": "366", 
+            "top": "45%", 
+            "other-objects": [
+                "disruptor", 
+                "alchemist", 
+                "tusk"
+            ], 
+            "whom": "dark seer", 
+            "time": "11:19", 
+            "action": "killed by", 
+            "skill": "vacuum", 
+            "subject": "night stalker", 
+            "gold-lost": "149", 
+            "left": "52%"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "radiant tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "11:57", 
+            "action": "speak", 
+            "subject": "alchemist", 
+            "left": "88%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "crystal maiden", 
+            "time": "11:59"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "crystal maiden", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "12:01", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "12:08", 
+            "action": "activate", 
+            "subject": "gyrocopter", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "12:28"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "observer ward", 
+            "time": "12:29", 
+            "action": "place", 
+            "subject": "crystal maiden", 
+            "left": "66%"
+        }, 
+        {
+            "top": "65%", 
+            "other-objects": [
+                "disruptor", 
+                "dark-seer", 
+                "alchemist", 
+                "tusk"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "12:46", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "76%"
+        }, 
+        {
+            "top": "60%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "slardar", 
+                "night-stalker", 
+                "bristleback", 
+                "queen-of-pain"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "13:05", 
+            "action": "activate", 
+            "subject": "crystal maiden", 
+            "left": "49%"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "observer ward", 
+            "time": "13:06", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "56%"
+        }, 
+        {
+            "gold-fed": "393", 
+            "top": "81%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "night-stalker", 
+                "queen-of-pain"
+            ], 
+            "whom": "bristleback", 
+            "time": "13:42", 
+            "action": "killed by", 
+            "skill": "quill spray", 
+            "subject": "tusk", 
+            "gold-lost": "209", 
+            "left": "75%"
+        }, 
+        {
+            "gold-fed": "505", 
+            "top": "81%", 
+            "other-objects": [
+                "bristleback", 
+                "queen-of-pain"
+            ], 
+            "whom": "slardar", 
+            "time": "13:42", 
+            "action": "killed by", 
+            "skill": "slithereen crush", 
+            "subject": "gyrocopter", 
+            "gold-lost": "269", 
+            "left": "75%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "14:00", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "14:01"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "14:09"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "tusk", 
+            "time": "14:10"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "tusk", 
+            "time": "14:10"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "tusk", 
+            "time": "14:10"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "14:10", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "14:18"
+        }, 
+        {
+            "top": "58%", 
+            "whom": "sentry ward", 
+            "time": "14:19", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "84%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "bristleback", 
+            "time": "14:20"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "sentry ward", 
+            "time": "14:30", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "75%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "sentry ward", 
+            "time": "14:35", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "69%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "14:40"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "alchemist", 
+            "time": "14:50"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "observer ward", 
+            "time": "14:54", 
+            "action": "destroy", 
+            "subject": "tusk", 
+            "left": "66%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "14:56", 
+            "action": "speak", 
+            "subject": "queen of pain", 
+            "left": "11%"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "sentry ward", 
+            "time": "15:04", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "58%"
+        }, 
+        {
+            "top": "17%", 
+            "whom": "observer ward", 
+            "time": "15:06", 
+            "action": "place", 
+            "subject": "crystal maiden", 
+            "left": "28%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "15:07"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "observer ward", 
+            "time": "15:09", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "44%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "sentry ward", 
+            "time": "15:19", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "67%"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "sentry ward", 
+            "time": "15:23", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "74%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "crystal maiden", 
+            "time": "15:27"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "observer ward", 
+            "time": "15:57", 
+            "action": "place", 
+            "subject": "crystal maiden", 
+            "left": "72%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "gold-fed": "582", 
+            "top": "96%", 
+            "other-objects": "night-stalker", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "16:10", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "299", 
+            "left": "64%"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "observer ward", 
+            "time": "16:12", 
+            "action": "destroy", 
+            "subject": "disruptor", 
+            "left": "72%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "16:21", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "16:29", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "569", 
+            "top": "17%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "slardar"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "17:04", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "299", 
+            "left": "20%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "17:57"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "gold-fed": "392", 
+            "top": "23%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "slardar"
+            ], 
+            "whom": "bristleback", 
+            "supplement": "autoattack", 
+            "time": "18:03", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "239", 
+            "left": "69%"
+        }, 
+        {
+            "top": "27%", 
+            "whom": "radiant tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "18:09", 
+            "action": "destroy", 
+            "subject": "bristleback", 
+            "left": "67%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "18:29", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "18:34", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "queen of pain", 
+            "time": "18:48"
+        }, 
+        {
+            "gold-fed": "566", 
+            "top": "5%", 
+            "other-objects": [
+                "night-stalker", 
+                "queen-of-pain"
+            ], 
+            "whom": "crystal maiden", 
+            "time": "18:52", 
+            "action": "killed by", 
+            "skill": "crystal nova", 
+            "subject": "gyrocopter", 
+            "gold-lost": "329", 
+            "left": "44%"
+        }, 
+        {
+            "gold-fed": "370", 
+            "top": "5%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "night-stalker"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "18:58", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "239", 
+            "left": "43%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "gyrocopter", 
+            "time": "18:59"
+        }, 
+        {
+            "gold-fed": "691", 
+            "top": "4%", 
+            "other-objects": [
+                "disruptor", 
+                "gyrocopter", 
+                "alchemist", 
+                "tusk"
+            ], 
+            "whom": "dark seer", 
+            "supplement": "autoattack", 
+            "time": "19:00", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "269", 
+            "left": "43%"
+        }, 
+        {
+            "gold-fed": "1480", 
+            "top": "8%", 
+            "other-objects": [
+                "disruptor", 
+                "dark-seer"
+            ], 
+            "whom": "alchemist", 
+            "time": "19:05", 
+            "action": "killed by", 
+            "skill": "acid spray", 
+            "subject": "queen of pain", 
+            "gold-lost": "389", 
+            "left": "46%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "crystal maiden", 
+            "time": "19:23"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "crystal maiden", 
+            "time": "19:23"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "crystal maiden", 
+            "time": "19:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "19:33"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "19:33"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "observer ward", 
+            "time": "20:03", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "67%"
+        }, 
+        {
+            "top": "78%", 
+            "whom": "observer ward", 
+            "time": "20:15", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "73%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "20:29", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "alchemist", 
+            "time": "20:30"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "20:39", 
+            "action": "activate", 
+            "subject": "bristleback", 
+            "left": "38%"
+        }, 
+        {
+            "top": "14%", 
+            "whom": "observer ward", 
+            "time": "20:42", 
+            "action": "place", 
+            "subject": "crystal maiden", 
+            "left": "46%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "21:09", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "55%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "21:12"
+        }, 
+        {
+            "gold-fed": "821", 
+            "top": "91%", 
+            "other-objects": [
+                "gyrocopter", 
+                "tusk"
+            ], 
+            "whom": "disruptor", 
+            "time": "21:22", 
+            "action": "killed by", 
+            "skill": "thunder strike", 
+            "subject": "slardar", 
+            "gold-lost": "329", 
+            "left": "72%"
+        }, 
+        {
+            "gold-fed": "624", 
+            "top": "89%", 
+            "other-objects": [
+                "gyrocopter", 
+                "alchemist"
+            ], 
+            "whom": "disruptor", 
+            "supplement": "autoattack", 
+            "time": "21:27", 
+            "action": "killed by", 
+            "subject": "crystal maiden", 
+            "gold-lost": "269", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "492", 
+            "top": "91%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "slardar"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "21:27", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "389", 
+            "left": "68%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "disruptor", 
+            "time": "21:27"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "22:02", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "alchemist", 
+            "time": "22:03"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "22:07", 
+            "action": "activate", 
+            "subject": "bristleback", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "crystal maiden", 
+            "time": "22:08"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "tusk", 
+            "time": "22:19"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "disruptor", 
+            "time": "22:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "22:30"
+        }, 
+        {
+            "top": "73%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "slardar", 
+                "bristleback", 
+                "queen-of-pain"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "22:37", 
+            "action": "activate", 
+            "subject": "crystal maiden", 
+            "left": "43%"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "observer ward", 
+            "time": "22:52", 
+            "action": "place", 
+            "subject": "crystal maiden", 
+            "left": "65%"
+        }, 
+        {
+            "gold-fed": "417", 
+            "top": "45%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "slardar"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "22:58", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "269", 
+            "left": "62%"
+        }, 
+        {
+            "top": "45%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "slardar", 
+                "bristleback", 
+                "queen-of-pain"
+            ], 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "22:59", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "66%"
+        }, 
+        {
+            "gold-fed": "605", 
+            "top": "44%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "bristleback"
+            ], 
+            "whom": "queen of pain", 
+            "time": "23:03", 
+            "action": "killed by", 
+            "skill": "orchid malevolence", 
+            "subject": "alchemist", 
+            "gold-lost": "389", 
+            "left": "65%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "23:03"
+        }, 
+        {
+            "gold-fed": "399", 
+            "top": "41%", 
+            "other-objects": "crystal-maiden", 
+            "whom": "bristleback", 
+            "supplement": "autoattack", 
+            "time": "23:04", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "239", 
+            "left": "68%"
+        }, 
+        {
+            "gold-fed": "493", 
+            "top": "45%", 
+            "other-objects": "tusk", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "23:05", 
+            "action": "killed by", 
+            "subject": "crystal maiden", 
+            "gold-lost": "299", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "544", 
+            "top": "43%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "bristleback"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "23:06", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "389", 
+            "left": "65%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "23:06"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "23:26"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "alchemist", 
+            "time": "23:39"
+        }, 
+        {
+            "top": "21%", 
+            "whom": "radiant tier 3 middle tower", 
+            "supplement": "tier", 
+            "time": "23:41", 
+            "action": "destroy", 
+            "subject": "bristleback", 
+            "left": "75%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "crystal maiden", 
+            "time": "23:46"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "24:00", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "24:01", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "24:28", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "52%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "bristleback", 
+            "time": "24:42"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "24:42"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "tusk", 
+            "time": "25:03"
+        }, 
+        {
+            "top": "21%", 
+            "whom": "sentry ward", 
+            "time": "25:09", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "75%"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "sentry ward", 
+            "time": "25:18", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "68%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "25:24"
+        }, 
+        {
+            "top": "46%", 
+            "whom": "radiant tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "25:30", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "88%"
+        }, 
+        {
+            "top": "12%", 
+            "other-objects": [
+                "disruptor", 
+                "dark-seer", 
+                "alchemist"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "25:53", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "88%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "25:59"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "26:16", 
+            "action": "place", 
+            "subject": "crystal maiden", 
+            "left": "60%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "26:21", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "34%", 
+            "other-objects": "crystal-maiden", 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "26:26", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "52%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "queen of pain", 
+            "time": "26:27"
+        }, 
+        {
+            "gold-fed": "681", 
+            "top": "42%", 
+            "other-objects": [
+                "disruptor", 
+                "gyrocopter", 
+                "alchemist"
+            ], 
+            "whom": "dark seer", 
+            "time": "26:33", 
+            "action": "killed by", 
+            "skill": "ion shell", 
+            "subject": "crystal maiden", 
+            "gold-lost": "329", 
+            "left": "51%"
+        }, 
+        {
+            "top": "42%", 
+            "other-objects": [
+                "disruptor", 
+                "dark-seer", 
+                "alchemist"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "26:33", 
+            "action": "killed by", 
+            "subject": "bristleback", 
+            "left": "51%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "bristleback", 
+            "time": "26:33"
+        }, 
+        {
+            "gold-fed": "1321", 
+            "top": "33%", 
+            "other-objects": [
+                "dark-seer", 
+                "tusk"
+            ], 
+            "whom": "disruptor", 
+            "time": "26:38", 
+            "action": "killed by", 
+            "skill": "thunder strike", 
+            "subject": "queen of pain", 
+            "gold-lost": "479", 
+            "left": "50%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "26:55", 
+            "action": "activate", 
+            "subject": "bristleback", 
+            "left": "61%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "26:56", 
+            "action": "destroy", 
+            "subject": "dark seer", 
+            "left": "48%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "27:30"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "tusk", 
+            "time": "27:31"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "tusk", 
+            "time": "27:33"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "tusk", 
+            "time": "27:34"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "crystal maiden", 
+            "time": "27:41"
+        }, 
+        {
+            "top": "39%", 
+            "whom": "observer ward", 
+            "time": "27:52", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "77%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "27:59", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "28:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "28:00", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "28:00"
+        }, 
+        {
+            "gold-fed": "714", 
+            "top": "37%", 
+            "other-objects": [
+                "disruptor", 
+                "gyrocopter", 
+                "tusk"
+            ], 
+            "whom": "alchemist", 
+            "supplement": "autoattack", 
+            "time": "28:30", 
+            "action": "killed by", 
+            "subject": "slardar", 
+            "gold-lost": "389", 
+            "left": "71%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "28:58", 
+            "action": "destroy", 
+            "subject": "dark seer", 
+            "left": "60%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "29:59", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "30:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "30:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "30:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "30:03", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "24%", 
+            "other-objects": [
+                "disruptor", 
+                "gyrocopter", 
+                "dark-seer", 
+                "tusk"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "30:43", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "74%"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "observer ward", 
+            "time": "30:50", 
+            "action": "place", 
+            "subject": "crystal maiden", 
+            "left": "59%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "night stalker", 
+            "time": "31:43"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "31:58", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "alchemist", 
+            "time": "32:03"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "32:05"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "32:05"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "crystal maiden", 
+            "time": "32:05"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "crystal maiden", 
+            "time": "32:06"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "tusk", 
+            "time": "32:06"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "crystal maiden", 
+            "time": "32:08"
+        }, 
+        {
+            "top": "58%", 
+            "whom": "observer ward", 
+            "time": "32:29", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "60%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "observer ward", 
+            "time": "32:39", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "58%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "observer ward", 
+            "time": "32:52", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "58%"
+        }, 
+        {
+            "gold-fed": "675", 
+            "top": "33%", 
+            "other-objects": [
+                "slardar", 
+                "night-stalker"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "33:19", 
+            "action": "killed by", 
+            "subject": "dark seer", 
+            "gold-lost": "449", 
+            "left": "84%"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "observer ward", 
+            "time": "33:28", 
+            "action": "place", 
+            "subject": "crystal maiden", 
+            "left": "84%"
+        }, 
+        {
+            "top": "21%", 
+            "whom": "observer ward", 
+            "time": "33:56", 
+            "action": "place", 
+            "subject": "crystal maiden", 
+            "left": "72%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "33:58"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "33:58"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "34:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "34:00"
+        }, 
+        {
+            "top": "19%", 
+            "whom": "sentry ward", 
+            "time": "34:14", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "77%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant melee middle barracks", 
+            "subject": "bristleback", 
+            "supplement": "melee", 
+            "time": "34:16"
+        }, 
+        {
+            "gold-fed": "1020", 
+            "top": "27%", 
+            "other-objects": [
+                "disruptor", 
+                "gyrocopter", 
+                "alchemist", 
+                "tusk"
+            ], 
+            "whom": "dark seer", 
+            "time": "34:28", 
+            "action": "killed by", 
+            "skill": "ion shell", 
+            "subject": "queen of pain", 
+            "gold-lost": "539", 
+            "left": "73%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "34:35", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "crystal maiden", 
+            "time": "34:46"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "queen of pain", 
+            "time": "35:26"
+        }, 
+        {
+            "gold-fed": "751", 
+            "top": "74%", 
+            "other-objects": [
+                "slardar", 
+                "bristleback"
+            ], 
+            "whom": "crystal maiden", 
+            "time": "35:29", 
+            "action": "killed by", 
+            "skill": "freezing field", 
+            "subject": "alchemist", 
+            "gold-lost": "539", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "503", 
+            "top": "72%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "slardar", 
+                "bristleback"
+            ], 
+            "whom": "queen of pain", 
+            "time": "35:34", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "dark seer", 
+            "gold-lost": "449", 
+            "left": "62%"
+        }, 
+        {
+            "gold-fed": "459", 
+            "top": "74%", 
+            "other-objects": [
+                "slardar", 
+                "queen-of-pain"
+            ], 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "35:38", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "359", 
+            "left": "65%"
+        }, 
+        {
+            "gold-fed": "596", 
+            "top": "62%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "slardar", 
+                "queen-of-pain"
+            ], 
+            "whom": "bristleback", 
+            "supplement": "autoattack", 
+            "time": "35:39", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "479", 
+            "left": "64%"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "observer ward", 
+            "time": "35:49", 
+            "action": "destroy", 
+            "subject": "tusk", 
+            "left": "84%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "queen of pain", 
+            "time": "35:51"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "35:51"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "35:57", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "36:09"
+        }, 
+        {
+            "top": "58%", 
+            "whom": "observer ward", 
+            "time": "36:15", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "60%"
+        }, 
+        {
+            "top": "25%", 
+            "whom": "radiant tier 3 bottom tower", 
+            "supplement": "tier", 
+            "time": "36:25", 
+            "action": "destroy", 
+            "subject": "bristleback", 
+            "left": "88%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant melee bottom barracks", 
+            "subject": "queen of pain", 
+            "supplement": "melee", 
+            "time": "36:38"
+        }, 
+        {
+            "gold-fed": "698", 
+            "top": "19%", 
+            "other-objects": [
+                "crystal-maiden", 
+                "slardar", 
+                "bristleback"
+            ], 
+            "whom": "queen of pain", 
+            "time": "36:53", 
+            "action": "killed by", 
+            "skill": "shiva's guard", 
+            "subject": "dark seer", 
+            "gold-lost": "449", 
+            "left": "78%"
+        }, 
+        {
+            "gold-fed": "776", 
+            "top": "21%", 
+            "other-objects": [
+                "disruptor", 
+                "dark-seer", 
+                "tusk"
+            ], 
+            "whom": "alchemist", 
+            "time": "36:57", 
+            "action": "killed by", 
+            "skill": "acid spray", 
+            "subject": "crystal maiden", 
+            "gold-lost": "419", 
+            "left": "77%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "queen of pain", 
+            "time": "36:58"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "cheese", 
+            "subject": "bristleback", 
+            "time": "37:00"
+        }, 
+        {
+            "gold-fed": "471", 
+            "top": "20%", 
+            "other-objects": "night-stalker", 
+            "whom": "queen of pain", 
+            "time": "37:02", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "tusk", 
+            "gold-lost": "329", 
+            "left": "85%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "tusk", 
+            "time": "37:02"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "37:02"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "queen of pain", 
+            "time": "37:04"
+        }, 
+        {
+            "gold-fed": "559", 
+            "top": "7%", 
+            "other-objects": "bristleback", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "37:09", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "359", 
+            "left": "79%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "37:09"
+        }, 
+        {
+            "gold-fed": "751", 
+            "top": "8%", 
+            "other-objects": [
+                "slardar", 
+                "night-stalker", 
+                "queen-of-pain"
+            ], 
+            "whom": "bristleback", 
+            "supplement": "autoattack", 
+            "time": "37:15", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "539", 
+            "left": "83%"
+        }, 
+        {
+            "top": "11%", 
+            "other-objects": "bristleback", 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "37:17", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "88%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "tusk", 
+            "time": "37:17"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "bristleback", 
+            "time": "37:19"
+        }, 
+        {
+            "top": "19%", 
+            "whom": "sentry ward", 
+            "time": "37:20", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "77%"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "gyrocopter", 
+            "time": "37:27"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "tusk", 
+            "time": "37:27"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "slardar", 
+            "time": "37:27"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "crystal maiden", 
+            "time": "37:27"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "queen of pain", 
+            "time": "37:27"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "night stalker", 
+            "time": "37:27"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "bristleback", 
+            "time": "37:27"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "dark seer", 
+            "time": "37:27"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "disruptor", 
+            "time": "37:27"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "alchemist", 
+            "time": "37:27"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the dire", 
+            "time": "37:30"
+        }
+    ]
+}

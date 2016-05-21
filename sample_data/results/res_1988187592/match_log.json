@@ -1,0 +1,1534 @@
+{
+    "events": [
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "skywrath mage", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "-01:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "-01:25"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "-01:13", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "47%"
+        }, 
+        {
+            "top": "32%", 
+            "whom": "observer ward", 
+            "time": "-00:37", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "19%"
+        }, 
+        {
+            "gold-fed": "375", 
+            "top": "29%", 
+            "other-objects": [
+                "night-stalker", 
+                "ember-spirit", 
+                "winter-wyvern"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "-00:11", 
+            "action": "killed by", 
+            "subject": "skywrath mage", 
+            "gold-lost": "29", 
+            "left": "31%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "00:16", 
+            "action": "place", 
+            "subject": "doom", 
+            "left": "67%"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "observer ward", 
+            "time": "00:25", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "54%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "00:36", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "21%"
+        }, 
+        {
+            "top": "32%", 
+            "whom": "observer ward", 
+            "time": "00:42", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "19%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "02:05", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "02:07", 
+            "action": "activate", 
+            "subject": "skywrath mage", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "313", 
+            "top": "83%", 
+            "whom": "doom", 
+            "supplement": "autoattack", 
+            "time": "02:19", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "89", 
+            "left": "87%"
+        }, 
+        {
+            "gold-fed": "361", 
+            "top": "23%", 
+            "other-objects": [
+                "dazzle", 
+                "skywrath-mage"
+            ], 
+            "whom": "phantom lancer", 
+            "time": "02:56", 
+            "action": "killed by", 
+            "skill": "spirit lance", 
+            "subject": "night stalker", 
+            "gold-lost": "89", 
+            "left": "13%"
+        }, 
+        {
+            "gold-fed": "261", 
+            "top": "30%", 
+            "whom": "gyrocopter", 
+            "time": "03:00", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "dazzle", 
+            "gold-lost": "59", 
+            "left": "25%"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "sentry ward", 
+            "time": "03:41", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "24%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "skywrath mage", 
+            "time": "03:44"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "04:01", 
+            "action": "activate", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "04:06", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "04:11"
+        }, 
+        {
+            "top": "85%", 
+            "whom": "observer ward", 
+            "time": "04:34", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "69%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "queen of pain", 
+            "time": "04:49"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "sentry ward", 
+            "time": "04:53", 
+            "action": "place", 
+            "subject": "doom", 
+            "left": "60%"
+        }, 
+        {
+            "gold-fed": "387", 
+            "top": "40%", 
+            "whom": "doom", 
+            "supplement": "autoattack", 
+            "time": "04:55", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "149", 
+            "left": "62%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "05:27"
+        }, 
+        {
+            "gold-fed": "278", 
+            "top": "17%", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "05:48", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "89", 
+            "left": "37%"
+        }, 
+        {
+            "top": "19%", 
+            "other-objects": "skywrath-mage", 
+            "whom": "dazzle", 
+            "time": "05:51", 
+            "action": "speak", 
+            "subject": "gyrocopter", 
+            "left": "42%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "06:00", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "06:00", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "ember spirit", 
+            "time": "06:02"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "06:44"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "winter wyvern", 
+            "time": "06:48"
+        }, 
+        {
+            "top": "18%", 
+            "whom": "observer ward", 
+            "time": "06:51", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "28%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "sentry ward", 
+            "time": "07:01", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "34%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "07:25", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "48%"
+        }, 
+        {
+            "gold-fed": "397", 
+            "top": "11%", 
+            "other-objects": [
+                "night-stalker", 
+                "doom"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "07:28", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "spirit breaker", 
+            "gold-lost": "179", 
+            "left": "17%"
+        }, 
+        {
+            "gold-fed": "302", 
+            "top": "13%", 
+            "other-objects": "gyrocopter", 
+            "whom": "doom", 
+            "supplement": "autoattack", 
+            "time": "07:29", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "119", 
+            "left": "22%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "skywrath mage", 
+            "time": "07:40"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "08:00", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ember spirit", 
+            "time": "08:12"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "08:33", 
+            "action": "bottled", 
+            "subject": "phantom lancer", 
+            "left": "61%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "08:55", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "33%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "09:27", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "67%"
+        }, 
+        {
+            "top": "54%", 
+            "other-objects": [
+                "ember-spirit", 
+                "winter-wyvern", 
+                "doom"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "09:30", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "32%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "spirit breaker", 
+            "time": "09:35"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "phantom lancer", 
+            "time": "09:51"
+        }, 
+        {
+            "gold-fed": "346", 
+            "top": "7%", 
+            "other-objects": "ember-spirit", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "09:53", 
+            "action": "killed by", 
+            "subject": "skywrath mage", 
+            "gold-lost": "149", 
+            "left": "40%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "09:57", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "10:01", 
+            "action": "bottled", 
+            "subject": "phantom lancer", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "10:01", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "30%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "spirit-breaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "10:14", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "59%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "10:20"
+        }, 
+        {
+            "gold-fed": "513", 
+            "top": "90%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "queen-of-pain"
+            ], 
+            "whom": "spirit breaker", 
+            "supplement": "autoattack", 
+            "time": "10:38", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "149", 
+            "left": "63%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "phantom lancer", 
+            "time": "10:38"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "10:45"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "10:50"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "night stalker", 
+            "time": "11:03"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "skywrath mage", 
+            "time": "11:18"
+        }, 
+        {
+            "top": "84%", 
+            "whom": "sentry ward", 
+            "time": "11:29", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "70%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "11:39"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "11:40"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "11:44", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "74%"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "radiant tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "11:48", 
+            "action": "destroy", 
+            "subject": "doom", 
+            "left": "88%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "12:01", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "373", 
+            "top": "35%", 
+            "other-objects": [
+                "night-stalker", 
+                "ember-spirit", 
+                "doom"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "12:10", 
+            "action": "killed by", 
+            "skill": "winter's curse", 
+            "subject": "skywrath mage", 
+            "gold-lost": "179", 
+            "left": "36%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "12:11"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "12:31"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "observer ward", 
+            "time": "12:33", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "70%"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "radiant tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "12:42", 
+            "action": "destroy", 
+            "subject": "doom", 
+            "left": "58%"
+        }, 
+        {
+            "gold-fed": "575", 
+            "top": "35%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "spirit-breaker"
+            ], 
+            "whom": "skywrath mage", 
+            "time": "12:46", 
+            "action": "killed by", 
+            "skill": "mystic flare", 
+            "subject": "night stalker", 
+            "gold-lost": "179", 
+            "left": "63%"
+        }, 
+        {
+            "gold-fed": "311", 
+            "top": "26%", 
+            "other-objects": "doom", 
+            "whom": "ember spirit", 
+            "time": "12:50", 
+            "action": "killed by", 
+            "skill": "flame guard", 
+            "subject": "dazzle", 
+            "gold-lost": "149", 
+            "left": "59%"
+        }, 
+        {
+            "gold-fed": "994", 
+            "top": "34%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "spirit-breaker"
+            ], 
+            "whom": "skywrath mage", 
+            "time": "12:56", 
+            "action": "killed by", 
+            "skill": "arcane bolt", 
+            "subject": "doom", 
+            "gold-lost": "269", 
+            "left": "70%"
+        }, 
+        {
+            "gold-fed": "478", 
+            "top": "34%", 
+            "other-objects": "ember-spirit", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "12:56", 
+            "action": "killed by", 
+            "subject": "phantom lancer", 
+            "gold-lost": "239", 
+            "left": "64%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "skywrath mage", 
+            "time": "12:56"
+        }, 
+        {
+            "gold-fed": "446", 
+            "top": "27%", 
+            "other-objects": [
+                "doom", 
+                "gyrocopter"
+            ], 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "12:59", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "209", 
+            "left": "71%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "ember spirit", 
+            "time": "12:59"
+        }, 
+        {
+            "gold-fed": "536", 
+            "top": "30%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "doom", 
+                "gyrocopter"
+            ], 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "13:01", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "269", 
+            "left": "72%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "ember spirit", 
+            "time": "13:01"
+        }, 
+        {
+            "gold-fed": "397", 
+            "top": "27%", 
+            "other-objects": [
+                "ember-spirit", 
+                "winter-wyvern", 
+                "doom"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "13:06", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "skywrath mage", 
+            "gold-lost": "179", 
+            "left": "66%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "13:06"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "13:28", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "13:41"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "dazzle", 
+            "time": "13:45"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "ember spirit", 
+            "time": "13:53"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "14:00", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "top": "59%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "dazzle", 
+                "skywrath-mage"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "14:18", 
+            "action": "activate", 
+            "subject": "dazzle", 
+            "left": "89%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ember spirit", 
+            "time": "14:31"
+        }, 
+        {
+            "gold-fed": "399", 
+            "top": "76%", 
+            "other-objects": [
+                "ember-spirit", 
+                "doom"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "14:34", 
+            "action": "killed by", 
+            "skill": "winter's curse", 
+            "subject": "skywrath mage", 
+            "gold-lost": "209", 
+            "left": "74%"
+        }, 
+        {
+            "gold-fed": "350", 
+            "top": "76%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "doom"
+            ], 
+            "whom": "ember spirit", 
+            "time": "14:36", 
+            "action": "killed by", 
+            "skill": "searing chains", 
+            "subject": "dazzle", 
+            "gold-lost": "179", 
+            "left": "76%"
+        }, 
+        {
+            "gold-fed": "419", 
+            "top": "78%", 
+            "other-objects": [
+                "ember-spirit", 
+                "winter-wyvern"
+            ], 
+            "whom": "doom", 
+            "time": "14:39", 
+            "action": "killed by", 
+            "skill": "scorched earth", 
+            "subject": "spirit breaker", 
+            "gold-lost": "209", 
+            "left": "76%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "14:54"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "15:03", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "15:16", 
+            "action": "speak", 
+            "subject": "ember spirit", 
+            "left": "48%"
+        }, 
+        {
+            "gold-fed": "393", 
+            "top": "35%", 
+            "other-objects": [
+                "ember-spirit", 
+                "winter-wyvern", 
+                "doom"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "15:45", 
+            "action": "killed by", 
+            "subject": "skywrath mage", 
+            "gold-lost": "209", 
+            "left": "91%"
+        }, 
+        {
+            "gold-fed": "350", 
+            "top": "29%", 
+            "other-objects": [
+                "night-stalker", 
+                "ember-spirit", 
+                "doom"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "15:48", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "179", 
+            "left": "86%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "15:48"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "queen of pain", 
+            "time": "15:49"
+        }, 
+        {
+            "gold-fed": "393", 
+            "top": "43%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "gyrocopter"
+            ], 
+            "whom": "doom", 
+            "supplement": "autoattack", 
+            "time": "15:51", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "209", 
+            "left": "88%"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "sentry ward", 
+            "time": "15:53", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "90%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "16:01"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "observer ward", 
+            "time": "16:08", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "89%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "16:09", 
+            "action": "destroy", 
+            "subject": "phantom lancer", 
+            "left": "11%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "16:17"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "16:19"
+        }, 
+        {
+            "gold-fed": "493", 
+            "top": "44%", 
+            "other-objects": [
+                "night-stalker", 
+                "winter-wyvern"
+            ], 
+            "whom": "ember spirit", 
+            "time": "16:26", 
+            "action": "killed by", 
+            "skill": "flame guard", 
+            "subject": "queen of pain", 
+            "gold-lost": "299", 
+            "left": "92%"
+        }, 
+        {
+            "top": "32%", 
+            "whom": "sentry ward", 
+            "time": "16:39", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "86%"
+        }, 
+        {
+            "top": "27%", 
+            "whom": "observer ward", 
+            "time": "16:40", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "84%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "dazzle", 
+            "time": "16:55"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "queen of pain", 
+            "time": "17:01"
+        }, 
+        {
+            "gold-fed": "324", 
+            "top": "21%", 
+            "other-objects": [
+                "ember-spirit", 
+                "winter-wyvern", 
+                "doom"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "17:02", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "179", 
+            "left": "90%"
+        }, 
+        {
+            "gold-fed": "367", 
+            "top": "22%", 
+            "other-objects": [
+                "ember-spirit", 
+                "gyrocopter"
+            ], 
+            "whom": "doom", 
+            "time": "17:09", 
+            "action": "killed by", 
+            "skill": "scorched earth", 
+            "subject": "spirit breaker", 
+            "gold-lost": "209", 
+            "left": "91%"
+        }, 
+        {
+            "gold-fed": "503", 
+            "top": "32%", 
+            "other-objects": "dazzle", 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "17:12", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "239", 
+            "left": "89%"
+        }, 
+        {
+            "gold-fed": "547", 
+            "top": "33%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "doom", 
+                "gyrocopter"
+            ], 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "17:15", 
+            "action": "killed by", 
+            "subject": "phantom lancer", 
+            "gold-lost": "329", 
+            "left": "85%"
+        }, 
+        {
+            "top": "25%", 
+            "whom": "radiant tier 3 bottom tower", 
+            "supplement": "tier", 
+            "time": "17:17", 
+            "action": "destroy", 
+            "subject": "ember spirit", 
+            "left": "88%"
+        }, 
+        {
+            "gold-fed": "849", 
+            "top": "29%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "queen-of-pain", 
+                "spirit-breaker", 
+                "dazzle"
+            ], 
+            "whom": "skywrath mage", 
+            "time": "17:18", 
+            "action": "killed by", 
+            "skill": "arcane bolt", 
+            "subject": "doom", 
+            "gold-lost": "329", 
+            "left": "85%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "17:31"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "17:33"
+        }, 
+        {
+            "top": "43%", 
+            "whom": "sentry ward", 
+            "time": "17:49", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "87%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "observer ward", 
+            "time": "17:52", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "89%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "18:00"
+        }, 
+        {
+            "top": "39%", 
+            "whom": "sentry ward", 
+            "time": "18:04", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "68%"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "observer ward", 
+            "time": "18:08", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "70%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "18:10", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "observer ward", 
+            "time": "18:16", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "59%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "18:29"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "18:41", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "18:41"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "ember spirit", 
+            "time": "19:23"
+        }, 
+        {
+            "top": "27%", 
+            "whom": "sentry ward", 
+            "time": "19:24", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "85%"
+        }, 
+        {
+            "top": "27%", 
+            "whom": "observer ward", 
+            "time": "19:30", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "84%"
+        }, 
+        {
+            "gold-fed": "600", 
+            "top": "18%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "doom", 
+                "gyrocopter"
+            ], 
+            "whom": "ember spirit", 
+            "time": "19:42", 
+            "action": "killed by", 
+            "skill": "searing chains", 
+            "subject": "phantom lancer", 
+            "gold-lost": "329", 
+            "left": "88%"
+        }, 
+        {
+            "gold-fed": "393", 
+            "top": "19%", 
+            "other-objects": [
+                "ember-spirit", 
+                "winter-wyvern", 
+                "gyrocopter"
+            ], 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "19:42", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "209", 
+            "left": "92%"
+        }, 
+        {
+            "gold-fed": "343", 
+            "top": "16%", 
+            "other-objects": "ember-spirit", 
+            "whom": "gyrocopter", 
+            "time": "19:43", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "dazzle", 
+            "gold-lost": "179", 
+            "left": "88%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "phantom lancer", 
+            "time": "19:43"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "spirit breaker", 
+            "time": "19:43"
+        }, 
+        {
+            "top": "22%", 
+            "whom": "observer ward", 
+            "time": "19:46", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "91%"
+        }, 
+        {
+            "gold-fed": "779", 
+            "top": "34%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "skywrath-mage"
+            ], 
+            "whom": "spirit breaker", 
+            "supplement": "autoattack", 
+            "time": "19:55", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "359", 
+            "left": "85%"
+        }, 
+        {
+            "gold-fed": "426", 
+            "top": "40%", 
+            "other-objects": [
+                "night-stalker", 
+                "winter-wyvern", 
+                "doom", 
+                "gyrocopter"
+            ], 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "20:00", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "239", 
+            "left": "88%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "ember spirit", 
+            "time": "20:00"
+        }, 
+        {
+            "gold-fed": "599", 
+            "top": "35%", 
+            "other-objects": [
+                "ember-spirit", 
+                "doom"
+            ], 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "20:02", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "329", 
+            "left": "81%"
+        }, 
+        {
+            "gold-fed": "518", 
+            "top": "37%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "doom"
+            ], 
+            "whom": "ember spirit", 
+            "time": "20:09", 
+            "action": "killed by", 
+            "skill": "activate fire remnant", 
+            "subject": "phantom lancer", 
+            "gold-lost": "329", 
+            "left": "87%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "ember spirit", 
+            "time": "20:09"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "skywrath mage", 
+            "time": "20:10"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "phantom lancer", 
+            "time": "20:10"
+        }, 
+        {
+            "gold-fed": "480", 
+            "top": "22%", 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "20:19", 
+            "action": "killed by", 
+            "subject": "skywrath mage", 
+            "gold-lost": "269", 
+            "left": "73%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "ember spirit", 
+            "time": "20:19"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the dire", 
+            "time": "20:20"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "night stalker", 
+            "time": "20:20"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "spirit breaker", 
+            "time": "20:20"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "phantom lancer", 
+            "time": "20:20"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "winter wyvern", 
+            "time": "20:20"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "doom", 
+            "time": "20:20"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "dazzle", 
+            "time": "20:20"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "ember spirit", 
+            "time": "20:20"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "gyrocopter", 
+            "time": "20:20"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "queen of pain", 
+            "time": "20:20"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "skywrath mage", 
+            "time": "20:20"
+        }
+    ]
+}

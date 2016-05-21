@@ -1,0 +1,1808 @@
+{
+    "events": [
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "-01:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "-01:24"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "-01:24"
+        }, 
+        {
+            "top": "81%", 
+            "whom": "observer ward", 
+            "time": "-01:10", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "70%"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "sentry ward", 
+            "time": "-00:31", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "82%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "observer ward", 
+            "time": "-00:24", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "77%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "invoker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "24%", 
+            "whom": "observer ward", 
+            "time": "00:08", 
+            "action": "place", 
+            "subject": "clockwerk", 
+            "left": "27%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "00:25", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "46%"
+        }, 
+        {
+            "top": "69%", 
+            "whom": "sentry ward", 
+            "time": "00:44", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "75%"
+        }, 
+        {
+            "top": "75%", 
+            "whom": "sentry ward", 
+            "time": "00:51", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "82%"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "sentry ward", 
+            "time": "00:57", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "82%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "observer ward", 
+            "time": "01:37", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "77%"
+        }, 
+        {
+            "top": "19%", 
+            "whom": "sentry ward", 
+            "time": "01:56", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "24%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "02:00", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "02:22", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "528", 
+            "top": "43%", 
+            "other-objects": [
+                "undying", 
+                "spirit-breaker"
+            ], 
+            "whom": "invoker", 
+            "supplement": "autoattack", 
+            "time": "02:47", 
+            "action": "killed by", 
+            "subject": "shadow fiend", 
+            "gold-lost": "119", 
+            "left": "58%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "04:04", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "04:15", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "77%", 
+            "other-objects": "gyrocopter", 
+            "whom": "dazzle", 
+            "time": "04:17", 
+            "action": "speak", 
+            "subject": "spirit breaker", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "04:26"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "shadow fiend", 
+            "time": "04:45"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "05:01"
+        }, 
+        {
+            "gold-fed": "428", 
+            "top": "11%", 
+            "other-objects": "undying", 
+            "whom": "anti-mage", 
+            "time": "05:27", 
+            "action": "killed by", 
+            "skill": "mana void", 
+            "subject": "clockwerk", 
+            "gold-lost": "149", 
+            "left": "43%"
+        }, 
+        {
+            "top": "49%", 
+            "whom": "observer ward", 
+            "time": "05:31", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "56%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "05:35"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "05:36"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "06:05", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "495", 
+            "top": "87%", 
+            "other-objects": "dazzle", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "06:16", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "149", 
+            "left": "60%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "06:30"
+        }, 
+        {
+            "gold-fed": "397", 
+            "top": "17%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "anti-mage"
+            ], 
+            "whom": "undying", 
+            "supplement": "autoattack", 
+            "time": "06:31", 
+            "action": "killed by", 
+            "subject": "clockwerk", 
+            "gold-lost": "179", 
+            "left": "26%"
+        }, 
+        {
+            "top": "18%", 
+            "whom": "observer ward", 
+            "time": "06:34", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "28%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "night stalker", 
+            "time": "06:53"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "observer ward", 
+            "time": "07:04", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "57%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "07:11", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "61%"
+        }, 
+        {
+            "top": "26%", 
+            "whom": "observer ward", 
+            "time": "07:31", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "19%"
+        }, 
+        {
+            "gold-fed": "397", 
+            "top": "35%", 
+            "other-objects": [
+                "undying", 
+                "spirit-breaker"
+            ], 
+            "whom": "invoker", 
+            "time": "07:48", 
+            "action": "killed by", 
+            "skill": "tornado", 
+            "subject": "clockwerk", 
+            "gold-lost": "179", 
+            "left": "60%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "07:58"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "08:12", 
+            "action": "activate", 
+            "subject": "invoker", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "08:12", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "08:14"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "08:32"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "lina", 
+            "time": "08:38"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "08:59"
+        }, 
+        {
+            "top": "46%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "lina"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "09:03", 
+            "action": "activate", 
+            "subject": "lina", 
+            "left": "23%"
+        }, 
+        {
+            "gold-fed": "441", 
+            "top": "9%", 
+            "other-objects": [
+                "undying", 
+                "spirit-breaker", 
+                "anti-mage"
+            ], 
+            "whom": "lina", 
+            "time": "09:20", 
+            "action": "killed by", 
+            "skill": "laguna blade", 
+            "subject": "gyrocopter", 
+            "gold-lost": "209", 
+            "left": "25%"
+        }, 
+        {
+            "gold-fed": "279", 
+            "top": "9%", 
+            "other-objects": [
+                "invoker", 
+                "undying"
+            ], 
+            "whom": "lina", 
+            "time": "09:28", 
+            "action": "killed by", 
+            "skill": "dragon slave", 
+            "subject": "night stalker", 
+            "gold-lost": "119", 
+            "left": "37%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "lina", 
+            "time": "09:28"
+        }, 
+        {
+            "gold-fed": "369", 
+            "top": "35%", 
+            "whom": "shadow fiend", 
+            "time": "09:48", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "undying", 
+            "gold-lost": "149", 
+            "left": "29%"
+        }, 
+        {
+            "gold-fed": "585", 
+            "top": "24%", 
+            "other-objects": "clockwerk", 
+            "whom": "dazzle", 
+            "supplement": "autoattack", 
+            "time": "09:48", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "209", 
+            "left": "31%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "10:00"
+        }, 
+        {
+            "gold-fed": "693", 
+            "top": "26%", 
+            "other-objects": [
+                "dazzle", 
+                "clockwerk"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "10:03", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "invoker", 
+            "gold-lost": "269", 
+            "left": "33%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "10:03"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "10:09", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "10:34", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "48%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "10:35"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "10:36"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "10:39"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "10:47", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "10:51", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "11%"
+        }, 
+        {
+            "gold-fed": "633", 
+            "top": "74%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "lina"
+            ], 
+            "whom": "invoker", 
+            "supplement": "autoattack", 
+            "time": "11:01", 
+            "action": "killed by", 
+            "subject": "shadow fiend", 
+            "gold-lost": "269", 
+            "left": "74%"
+        }, 
+        {
+            "top": "44%", 
+            "whom": "observer ward", 
+            "time": "11:14", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "42%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "11:18", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "34%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "11:22"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "11:22"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "clockwerk", 
+            "time": "11:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "lina", 
+            "time": "11:49"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "sentry ward", 
+            "time": "11:51", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "20%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "lina", 
+            "time": "11:57"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "12:04", 
+            "action": "bottled", 
+            "subject": "clockwerk", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "night stalker", 
+            "time": "12:10"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "12:11", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "33%", 
+            "whom": "sentry ward", 
+            "time": "12:25", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "35%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "12:30", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "67%"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "observer ward", 
+            "time": "12:39", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "25%"
+        }, 
+        {
+            "top": "57%", 
+            "whom": "observer ward", 
+            "time": "12:46", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "20%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "shadow fiend", 
+            "time": "12:47"
+        }, 
+        {
+            "gold-fed": "324", 
+            "top": "53%", 
+            "other-objects": [
+                "dazzle", 
+                "gyrocopter"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "13:15", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "179", 
+            "left": "16%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "clockwerk", 
+            "time": "13:15"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "13:40"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "13:50"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "dire tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "14:02", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "11%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "14:03"
+        }, 
+        {
+            "top": "71%", 
+            "other-objects": [
+                "invoker", 
+                "undying", 
+                "spirit-breaker", 
+                "lina"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "14:09", 
+            "action": "activate", 
+            "subject": "lina", 
+            "left": "16%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "14:14", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "54%", 
+            "whom": "observer ward", 
+            "time": "14:31", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "66%"
+        }, 
+        {
+            "top": "31%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "night-stalker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "14:34", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "492", 
+            "top": "50%", 
+            "other-objects": [
+                "undying", 
+                "spirit-breaker", 
+                "lina"
+            ], 
+            "whom": "invoker", 
+            "time": "14:35", 
+            "action": "killed by", 
+            "skill": "emp", 
+            "subject": "clockwerk", 
+            "gold-lost": "239", 
+            "left": "65%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "14:41", 
+            "action": "activate", 
+            "subject": "invoker", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "shadow fiend", 
+            "time": "14:55"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "15:16", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "66%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "lina", 
+            "time": "15:29"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "16:00"
+        }, 
+        {
+            "gold-fed": "369", 
+            "top": "91%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "dazzle", 
+                "clockwerk"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "16:06", 
+            "action": "killed by", 
+            "skill": "call down", 
+            "subject": "undying", 
+            "gold-lost": "209", 
+            "left": "41%"
+        }, 
+        {
+            "gold-fed": "367", 
+            "top": "92%", 
+            "other-objects": [
+                "clockwerk", 
+                "gyrocopter"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "16:10", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "209", 
+            "left": "39%"
+        }, 
+        {
+            "gold-fed": "579", 
+            "top": "90%", 
+            "other-objects": [
+                "undying", 
+                "anti-mage", 
+                "lina"
+            ], 
+            "whom": "invoker", 
+            "time": "16:17", 
+            "action": "killed by", 
+            "skill": "emp", 
+            "subject": "dazzle", 
+            "gold-lost": "209", 
+            "left": "45%"
+        }, 
+        {
+            "gold-fed": "453", 
+            "top": "96%", 
+            "other-objects": [
+                "night-stalker", 
+                "clockwerk"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "16:19", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "239", 
+            "left": "38%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "16:19"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "lina", 
+            "time": "16:21"
+        }, 
+        {
+            "top": "93%", 
+            "other-objects": [
+                "invoker", 
+                "anti-mage"
+            ], 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "16:23", 
+            "action": "activate", 
+            "subject": "clockwerk", 
+            "left": "40%"
+        }, 
+        {
+            "gold-fed": "607", 
+            "top": "93%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "clockwerk", 
+                "gyrocopter"
+            ], 
+            "whom": "night stalker", 
+            "time": "16:25", 
+            "action": "killed by", 
+            "skill": "void", 
+            "subject": "invoker", 
+            "gold-lost": "329", 
+            "left": "36%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "16:38"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "16:47", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "16:50"
+        }, 
+        {
+            "top": "89%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "lina"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "16:52", 
+            "action": "activate", 
+            "subject": "lina", 
+            "left": "24%"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "sentry ward", 
+            "time": "16:56", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "53%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "observer ward", 
+            "time": "17:00", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "57%"
+        }, 
+        {
+            "gold-fed": "514", 
+            "top": "81%", 
+            "other-objects": [
+                "undying", 
+                "spirit-breaker", 
+                "lina"
+            ], 
+            "whom": "invoker", 
+            "supplement": "autoattack", 
+            "time": "17:20", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "209", 
+            "left": "55%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "sentry ward", 
+            "time": "17:32", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "57%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "observer ward", 
+            "time": "17:36", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "57%"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "sentry ward", 
+            "time": "17:40", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "53%"
+        }, 
+        {
+            "top": "86%", 
+            "whom": "observer ward", 
+            "time": "17:41", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "55%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "17:47"
+        }, 
+        {
+            "gold-fed": "417", 
+            "top": "89%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "gyrocopter"
+            ], 
+            "whom": "clockwerk", 
+            "time": "17:54", 
+            "action": "killed by", 
+            "skill": "rocket flare", 
+            "subject": "lina", 
+            "gold-lost": "269", 
+            "left": "44%"
+        }, 
+        {
+            "top": "88%", 
+            "other-objects": [
+                "invoker", 
+                "undying"
+            ], 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "17:56", 
+            "action": "activate", 
+            "subject": "clockwerk", 
+            "left": "41%"
+        }, 
+        {
+            "gold-fed": "842", 
+            "top": "85%", 
+            "other-objects": [
+                "undying", 
+                "lina"
+            ], 
+            "whom": "invoker", 
+            "time": "17:57", 
+            "action": "killed by", 
+            "skill": "urn of shadows", 
+            "subject": "gyrocopter", 
+            "gold-lost": "329", 
+            "left": "53%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "gold-fed": "453", 
+            "top": "87%", 
+            "other-objects": [
+                "dazzle", 
+                "gyrocopter"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "18:02", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "239", 
+            "left": "50%"
+        }, 
+        {
+            "gold-fed": "570", 
+            "top": "81%", 
+            "other-objects": "invoker", 
+            "whom": "undying", 
+            "time": "18:15", 
+            "action": "killed by", 
+            "skill": "decay", 
+            "subject": "clockwerk", 
+            "gold-lost": "269", 
+            "left": "50%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "18:36", 
+            "action": "activate", 
+            "subject": "anti-mage", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "19:06", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "453", 
+            "top": "90%", 
+            "other-objects": [
+                "dazzle", 
+                "night-stalker", 
+                "clockwerk"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "19:19", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "239", 
+            "left": "54%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "19:29"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "dire tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "20:00", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "48%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "20:06"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "20:07", 
+            "action": "bottled", 
+            "subject": "clockwerk", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "20:13"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "20:28", 
+            "action": "activate", 
+            "subject": "clockwerk", 
+            "left": "38%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "20:41", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "20%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "21:06"
+        }, 
+        {
+            "gold-fed": "441", 
+            "top": "67%", 
+            "other-objects": "clockwerk", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "21:21", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "299", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "633", 
+            "top": "62%", 
+            "other-objects": [
+                "dazzle", 
+                "night-stalker", 
+                "gyrocopter"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "21:23", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "invoker", 
+            "gold-lost": "389", 
+            "left": "33%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "invoker", 
+            "time": "21:40"
+        }, 
+        {
+            "top": "75%", 
+            "whom": "sentry ward", 
+            "time": "21:44", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "33%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "22:00"
+        }, 
+        {
+            "top": "76%", 
+            "whom": "dire tier 3 middle tower", 
+            "supplement": "tier", 
+            "time": "22:07", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "26%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "clockwerk", 
+            "time": "22:07"
+        }, 
+        {
+            "top": "75%", 
+            "whom": "sentry ward", 
+            "time": "22:21", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "28%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "lina", 
+            "time": "22:25"
+        }, 
+        {
+            "top": "75%", 
+            "whom": "sentry ward", 
+            "time": "22:30", 
+            "action": "destroy", 
+            "subject": "invoker", 
+            "left": "33%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "22:31"
+        }, 
+        {
+            "gold-fed": "395", 
+            "top": "75%", 
+            "other-objects": [
+                "night-stalker", 
+                "gyrocopter"
+            ], 
+            "whom": "clockwerk", 
+            "time": "22:50", 
+            "action": "killed by", 
+            "skill": "rocket flare", 
+            "subject": "undying", 
+            "gold-lost": "239", 
+            "left": "25%"
+        }, 
+        {
+            "top": "76%", 
+            "whom": "sentry ward", 
+            "time": "22:57", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "32%"
+        }, 
+        {
+            "top": "75%", 
+            "whom": "sentry ward", 
+            "time": "23:00", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "28%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire melee middle barracks", 
+            "subject": "shadow fiend", 
+            "supplement": "melee", 
+            "time": "23:08"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "23:31"
+        }, 
+        {
+            "top": "91%", 
+            "other-objects": [
+                "invoker", 
+                "undying", 
+                "spirit-breaker", 
+                "lina"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "23:34", 
+            "action": "activate", 
+            "subject": "lina", 
+            "left": "11%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "23:34", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "23:35", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "23:57", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "67%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "23:57", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "67%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "24:01", 
+            "action": "activate", 
+            "subject": "invoker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "24:06", 
+            "action": "bottled", 
+            "subject": "clockwerk", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "clockwerk", 
+            "time": "24:07"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "24:20"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "anti-mage", 
+            "time": "24:22"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "24:22"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "24:44"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "sentry ward", 
+            "time": "25:19", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "49%"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "observer ward", 
+            "time": "25:21", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "45%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "25:25", 
+            "action": "destroy", 
+            "subject": "anti-mage", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "25:42"
+        }, 
+        {
+            "gold-fed": "504", 
+            "top": "91%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "dazzle", 
+                "clockwerk"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "25:46", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "lina", 
+            "gold-lost": "329", 
+            "left": "31%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "lina", 
+            "time": "25:47"
+        }, 
+        {
+            "gold-fed": "508", 
+            "top": "94%", 
+            "other-objects": "gyrocopter", 
+            "whom": "clockwerk", 
+            "supplement": "autoattack", 
+            "time": "25:51", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "299", 
+            "left": "29%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "spirit breaker", 
+            "time": "25:54"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "25:55", 
+            "action": "destroy", 
+            "subject": "anti-mage", 
+            "left": "55%"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "dire tier 3 bottom tower", 
+            "supplement": "tier", 
+            "time": "25:56", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "30%"
+        }, 
+        {
+            "gold-fed": "536", 
+            "top": "86%", 
+            "other-objects": [
+                "night-stalker", 
+                "gyrocopter"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "25:57", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "invoker", 
+            "gold-lost": "419", 
+            "left": "21%"
+        }, 
+        {
+            "top": "86%", 
+            "other-objects": [
+                "night-stalker", 
+                "gyrocopter"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "26:03", 
+            "action": "killed by", 
+            "subject": "anti-mage", 
+            "left": "31%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "anti-mage", 
+            "time": "26:03"
+        }, 
+        {
+            "gold-fed": "770", 
+            "top": "83%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "night-stalker", 
+                "gyrocopter"
+            ], 
+            "whom": "clockwerk", 
+            "supplement": "autoattack", 
+            "time": "26:14", 
+            "action": "killed by", 
+            "subject": "anti-mage", 
+            "gold-lost": "479", 
+            "left": "29%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire melee bottom barracks", 
+            "subject": "night stalker", 
+            "supplement": "melee", 
+            "time": "26:27"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire ranged bottom barracks", 
+            "subject": "gyrocopter", 
+            "supplement": "ranged", 
+            "time": "26:29"
+        }, 
+        {
+            "gold-fed": "538", 
+            "top": "72%", 
+            "other-objects": [
+                "dazzle", 
+                "night-stalker", 
+                "gyrocopter"
+            ], 
+            "whom": "clockwerk", 
+            "supplement": "autoattack", 
+            "time": "26:38", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "329", 
+            "left": "20%"
+        }, 
+        {
+            "gold-fed": "472", 
+            "top": "79%", 
+            "other-objects": [
+                "clockwerk", 
+                "gyrocopter"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "26:44", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "329", 
+            "left": "14%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "lina", 
+            "time": "26:47"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the radiant", 
+            "time": "26:57"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "dire tier 3 top tower", 
+            "supplement": "tier", 
+            "time": "26:57", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "13%"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "gyrocopter", 
+            "time": "26:57"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "clockwerk", 
+            "time": "26:57"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "dazzle", 
+            "time": "26:57"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "spirit breaker", 
+            "time": "26:57"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "anti-mage", 
+            "time": "26:57"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "shadow fiend", 
+            "time": "26:57"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "night stalker", 
+            "time": "26:57"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "invoker", 
+            "time": "26:57"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "undying", 
+            "time": "26:57"
+        }
+    ]
+}

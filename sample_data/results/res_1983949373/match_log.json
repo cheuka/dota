@@ -1,0 +1,2849 @@
+{
+    "events": [
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "tusk", 
+            "time": "-01:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "-01:24"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "-01:24"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "observer ward", 
+            "time": "-00:52", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "50%"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "observer ward", 
+            "time": "-00:21", 
+            "action": "place", 
+            "subject": "slardar", 
+            "left": "67%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "invoker", 
+            "left": "38%"
+        }, 
+        {
+            "top": "22%", 
+            "whom": "observer ward", 
+            "time": "00:16", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "21%"
+        }, 
+        {
+            "top": "33%", 
+            "whom": "sentry ward", 
+            "time": "00:21", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "18%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "00:35", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "21%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "night stalker", 
+            "time": "01:37"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "sentry ward", 
+            "time": "02:03", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "22%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "02:03", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "38%"
+        }, 
+        {
+            "top": "33%", 
+            "whom": "sentry ward", 
+            "time": "02:05", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "18%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "02:05", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "61%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "02:11", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "27%"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "observer ward", 
+            "time": "02:13", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "28%"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "sentry ward", 
+            "time": "02:18", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "26%"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "observer ward", 
+            "time": "02:20", 
+            "action": "destroy", 
+            "subject": "tusk", 
+            "left": "28%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "02:22", 
+            "action": "destroy", 
+            "subject": "tusk", 
+            "left": "21%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "04:01", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "04:18", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "427", 
+            "top": "20%", 
+            "other-objects": "clockwerk", 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "04:42", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "89", 
+            "left": "19%"
+        }, 
+        {
+            "gold-fed": "253", 
+            "top": "19%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "clockwerk"
+            ], 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "04:51", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "59", 
+            "left": "20%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "night stalker", 
+            "time": "04:51"
+        }, 
+        {
+            "gold-fed": "359", 
+            "top": "16%", 
+            "other-objects": [
+                "night-stalker", 
+                "clockwerk"
+            ], 
+            "whom": "winter wyvern", 
+            "supplement": "autoattack", 
+            "time": "04:56", 
+            "action": "killed by", 
+            "subject": "wraith king", 
+            "gold-lost": "119", 
+            "left": "26%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "ember spirit", 
+            "time": "04:56"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "05:21"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "05:21"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "05:29"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "05:29"
+        }, 
+        {
+            "top": "77%", 
+            "whom": "observer ward", 
+            "time": "05:57", 
+            "action": "place", 
+            "subject": "gyrocopter", 
+            "left": "73%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "06:00", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ember spirit", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "06:01", 
+            "action": "activate", 
+            "subject": "invoker", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "428", 
+            "top": "85%", 
+            "other-objects": "night-stalker", 
+            "whom": "gyrocopter", 
+            "time": "06:15", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "slardar", 
+            "gold-lost": "149", 
+            "left": "85%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "06:16"
+        }, 
+        {
+            "top": "18%", 
+            "whom": "observer ward", 
+            "time": "06:31", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "28%"
+        }, 
+        {
+            "gold-fed": "302", 
+            "top": "11%", 
+            "other-objects": [
+                "gyrocopter", 
+                "clockwerk"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "06:41", 
+            "action": "killed by", 
+            "skill": "splinter blast", 
+            "subject": "lina", 
+            "gold-lost": "119", 
+            "left": "29%"
+        }, 
+        {
+            "gold-fed": "360", 
+            "top": "7%", 
+            "other-objects": [
+                "tusk", 
+                "lina", 
+                "wraith-king"
+            ], 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "06:52", 
+            "action": "killed by", 
+            "subject": "clockwerk", 
+            "gold-lost": "149", 
+            "left": "23%"
+        }, 
+        {
+            "gold-fed": "537", 
+            "top": "4%", 
+            "other-objects": "tusk", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "07:06", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "179", 
+            "left": "23%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "slardar", 
+            "time": "07:06"
+        }, 
+        {
+            "gold-fed": "536", 
+            "top": "45%", 
+            "other-objects": "night-stalker", 
+            "whom": "ember spirit", 
+            "time": "07:12", 
+            "action": "killed by", 
+            "skill": "flame guard", 
+            "subject": "invoker", 
+            "gold-lost": "209", 
+            "left": "54%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "07:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "07:30"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "07:34"
+        }, 
+        {
+            "top": "17%", 
+            "whom": "observer ward", 
+            "time": "07:34", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "22%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "winter wyvern", 
+            "time": "07:36"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "tusk", 
+            "time": "07:36"
+        }, 
+        {
+            "gold-fed": "455", 
+            "top": "84%", 
+            "other-objects": "clockwerk", 
+            "whom": "night stalker", 
+            "time": "07:48", 
+            "action": "killed by", 
+            "skill": "void", 
+            "subject": "wraith king", 
+            "gold-lost": "149", 
+            "left": "84%"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "wraith-king", 
+            "time": "07:52", 
+            "action": "speak", 
+            "subject": "clockwerk", 
+            "left": "79%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "08:00", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "ember spirit", 
+            "time": "08:01"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "08:05", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "08:09", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "63%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "clockwerk", 
+            "time": "08:14"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "night stalker", 
+            "time": "08:23"
+        }, 
+        {
+            "top": "83%", 
+            "whom": "observer ward", 
+            "time": "08:23", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "70%"
+        }, 
+        {
+            "top": "68%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "clockwerk"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "08:34", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "30%"
+        }, 
+        {
+            "top": "52%", 
+            "other-objects": "invoker", 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "08:48", 
+            "action": "activate", 
+            "subject": "clockwerk", 
+            "left": "49%"
+        }, 
+        {
+            "gold-fed": "505", 
+            "top": "52%", 
+            "other-objects": [
+                "ember-spirit", 
+                "clockwerk"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "08:51", 
+            "action": "killed by", 
+            "skill": "splinter blast", 
+            "subject": "invoker", 
+            "gold-lost": "239", 
+            "left": "49%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "lina", 
+            "time": "08:57"
+        }, 
+        {
+            "top": "39%", 
+            "whom": "observer ward", 
+            "time": "09:16", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "50%"
+        }, 
+        {
+            "top": "16%", 
+            "whom": "sentry ward", 
+            "time": "09:28", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "27%"
+        }, 
+        {
+            "top": "15%", 
+            "whom": "sentry ward", 
+            "time": "09:38", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "28%"
+        }, 
+        {
+            "top": "18%", 
+            "whom": "observer ward", 
+            "time": "09:42", 
+            "action": "destroy", 
+            "subject": "lina", 
+            "left": "28%"
+        }, 
+        {
+            "top": "16%", 
+            "whom": "sentry ward", 
+            "time": "09:43", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "27%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "tusk", 
+            "time": "09:59"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "10:03", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "10:08", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "ember spirit", 
+            "time": "10:09"
+        }, 
+        {
+            "gold-fed": "327", 
+            "top": "9%", 
+            "other-objects": "ember-spirit", 
+            "whom": "winter wyvern", 
+            "supplement": "autoattack", 
+            "time": "10:17", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "149", 
+            "left": "35%"
+        }, 
+        {
+            "top": "81%", 
+            "whom": "sentry ward", 
+            "time": "10:17", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "74%"
+        }, 
+        {
+            "top": "77%", 
+            "whom": "observer ward", 
+            "time": "10:20", 
+            "action": "destroy", 
+            "subject": "tusk", 
+            "left": "73%"
+        }, 
+        {
+            "top": "78%", 
+            "other-objects": [
+                "tusk", 
+                "slardar"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "10:24", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "73%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "10:43"
+        }, 
+        {
+            "top": "11%", 
+            "other-objects": "gyrocopter", 
+            "whom": "ember spirit", 
+            "time": "10:56", 
+            "action": "killed by", 
+            "skill": "searing chains", 
+            "subject": "wraith king", 
+            "left": "31%"
+        }, 
+        {
+            "gold-fed": "731", 
+            "top": "10%", 
+            "other-objects": [
+                "wraith-king", 
+                "invoker", 
+                "slardar"
+            ], 
+            "whom": "lina", 
+            "time": "11:02", 
+            "action": "killed by", 
+            "skill": "dragon slave", 
+            "subject": "gyrocopter", 
+            "gold-lost": "239", 
+            "left": "27%"
+        }, 
+        {
+            "gold-fed": "506", 
+            "top": "15%", 
+            "other-objects": [
+                "tusk", 
+                "wraith-king"
+            ], 
+            "whom": "lina", 
+            "time": "11:04", 
+            "action": "killed by", 
+            "skill": "light strike array", 
+            "subject": "winter wyvern", 
+            "gold-lost": "149", 
+            "left": "24%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "lina", 
+            "time": "11:04"
+        }, 
+        {
+            "gold-fed": "538", 
+            "top": "37%", 
+            "other-objects": [
+                "tusk", 
+                "invoker", 
+                "slardar"
+            ], 
+            "whom": "lina", 
+            "time": "11:20", 
+            "action": "killed by", 
+            "skill": "dragon slave", 
+            "subject": "night stalker", 
+            "gold-lost": "209", 
+            "left": "10%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "lina", 
+            "time": "11:20"
+        }, 
+        {
+            "top": "14%", 
+            "whom": "sentry ward", 
+            "time": "11:32", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "26%"
+        }, 
+        {
+            "top": "15%", 
+            "whom": "sentry ward", 
+            "time": "11:35", 
+            "action": "destroy", 
+            "subject": "slardar", 
+            "left": "28%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "12:00"
+        }, 
+        {
+            "gold-fed": "433", 
+            "top": "7%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "gyrocopter"
+            ], 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "12:03", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "179", 
+            "left": "20%"
+        }, 
+        {
+            "gold-fed": "409", 
+            "top": "9%", 
+            "other-objects": [
+                "ember-spirit", 
+                "gyrocopter", 
+                "clockwerk"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "12:09", 
+            "action": "killed by", 
+            "skill": "splinter blast", 
+            "subject": "wraith king", 
+            "gold-lost": "209", 
+            "left": "30%"
+        }, 
+        {
+            "gold-fed": "490", 
+            "top": "9%", 
+            "other-objects": [
+                "ember-spirit", 
+                "clockwerk"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "12:10", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "invoker", 
+            "gold-lost": "269", 
+            "left": "29%"
+        }, 
+        {
+            "gold-fed": "324", 
+            "top": "9%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "ember-spirit", 
+                "clockwerk"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "12:10", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "tusk", 
+            "gold-lost": "179", 
+            "left": "28%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "12:10"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "12:25"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "12:25", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "38%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "12:44", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "ember spirit", 
+            "time": "12:45"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "12:50"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "winter wyvern", 
+            "time": "12:51"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "13:23"
+        }, 
+        {
+            "gold-fed": "625", 
+            "top": "91%", 
+            "other-objects": "tusk", 
+            "whom": "lina", 
+            "time": "13:27", 
+            "action": "killed by", 
+            "skill": "laguna blade", 
+            "subject": "night stalker", 
+            "gold-lost": "209", 
+            "left": "69%"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "radiant tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "13:29", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "58%"
+        }, 
+        {
+            "gold-fed": "347", 
+            "top": "26%", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "13:46", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "179", 
+            "left": "66%"
+        }, 
+        {
+            "gold-fed": "449", 
+            "top": "90%", 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "13:54", 
+            "action": "killed by", 
+            "subject": "winter wyvern", 
+            "gold-lost": "209", 
+            "left": "56%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "14:00", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ember spirit", 
+            "time": "14:00"
+        }, 
+        {
+            "gold-fed": "438", 
+            "top": "85%", 
+            "other-objects": "night-stalker", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "14:06", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "239", 
+            "left": "68%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "lina", 
+            "time": "14:13"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "14:23"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "night stalker", 
+            "time": "14:23"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "14:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "14:30"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "night stalker", 
+            "time": "14:30"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "14:39"
+        }, 
+        {
+            "top": "45%", 
+            "other-objects": [
+                "lina", 
+                "invoker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "14:54", 
+            "action": "activate", 
+            "subject": "lina", 
+            "left": "63%"
+        }, 
+        {
+            "top": "85%", 
+            "whom": "sentry ward", 
+            "time": "15:01", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "71%"
+        }, 
+        {
+            "top": "83%", 
+            "whom": "observer ward", 
+            "time": "15:06", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "70%"
+        }, 
+        {
+            "gold-fed": "346", 
+            "top": "75%", 
+            "other-objects": "night-stalker", 
+            "whom": "winter wyvern", 
+            "time": "15:25", 
+            "action": "killed by", 
+            "skill": "splinter blast", 
+            "subject": "lina", 
+            "gold-lost": "209", 
+            "left": "87%"
+        }, 
+        {
+            "top": "78%", 
+            "other-objects": [
+                "lina", 
+                "wraith-king", 
+                "invoker"
+            ], 
+            "whom": "tusk", 
+            "time": "15:26", 
+            "action": "speak", 
+            "subject": "night stalker", 
+            "left": "86%"
+        }, 
+        {
+            "top": "78%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "night-stalker", 
+                "clockwerk"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "15:30", 
+            "action": "killed by", 
+            "skill": "call down", 
+            "subject": "wraith king", 
+            "left": "88%"
+        }, 
+        {
+            "gold-fed": "662", 
+            "top": "81%", 
+            "other-objects": [
+                "tusk", 
+                "invoker"
+            ], 
+            "whom": "wraith king", 
+            "supplement": "autoattack", 
+            "time": "15:35", 
+            "action": "killed by", 
+            "subject": "clockwerk", 
+            "gold-lost": "239", 
+            "left": "89%"
+        }, 
+        {
+            "gold-fed": "426", 
+            "top": "78%", 
+            "other-objects": [
+                "ember-spirit", 
+                "gyrocopter", 
+                "clockwerk"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "15:36", 
+            "action": "killed by", 
+            "skill": "splinter blast", 
+            "subject": "tusk", 
+            "gold-lost": "239", 
+            "left": "91%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "winter wyvern", 
+            "time": "15:36"
+        }, 
+        {
+            "gold-fed": "480", 
+            "top": "77%", 
+            "other-objects": [
+                "ember-spirit", 
+                "gyrocopter"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "15:44", 
+            "action": "killed by", 
+            "skill": "splinter blast", 
+            "subject": "slardar", 
+            "gold-lost": "269", 
+            "left": "86%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "winter wyvern", 
+            "time": "15:44"
+        }, 
+        {
+            "gold-fed": "1122", 
+            "top": "77%", 
+            "other-objects": [
+                "invoker", 
+                "slardar"
+            ], 
+            "whom": "wraith king", 
+            "supplement": "autoattack", 
+            "time": "15:45", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "329", 
+            "left": "86%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "wraith king", 
+            "time": "15:45"
+        }, 
+        {
+            "gold-fed": "845", 
+            "top": "72%", 
+            "other-objects": [
+                "tusk", 
+                "wraith-king", 
+                "slardar"
+            ], 
+            "whom": "invoker", 
+            "time": "15:48", 
+            "action": "killed by", 
+            "skill": "urn of shadows", 
+            "subject": "ember spirit", 
+            "gold-lost": "329", 
+            "left": "84%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "70%", 
+            "whom": "sentry ward", 
+            "time": "16:24", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "86%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "16:34", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "74%"
+        }, 
+        {
+            "top": "85%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "gyrocopter", 
+                "clockwerk"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "16:35", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "60%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "16:38"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "lina", 
+            "time": "16:40"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "16:52", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "83%"
+        }, 
+        {
+            "top": "40%", 
+            "whom": "observer ward", 
+            "time": "17:02", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "76%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "17:03", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "38%"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "radiant tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "17:07", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "88%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "17:20"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "17:28", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "29%", 
+            "other-objects": [
+                "lina", 
+                "invoker", 
+                "slardar"
+            ], 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "17:33", 
+            "action": "activate", 
+            "subject": "clockwerk", 
+            "left": "13%"
+        }, 
+        {
+            "gold-fed": "654", 
+            "top": "29%", 
+            "other-objects": [
+                "lina", 
+                "invoker", 
+                "slardar"
+            ], 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "17:34", 
+            "action": "killed by", 
+            "subject": "winter wyvern", 
+            "gold-lost": "239", 
+            "left": "9%"
+        }, 
+        {
+            "gold-fed": "417", 
+            "top": "28%", 
+            "other-objects": "clockwerk", 
+            "whom": "night stalker", 
+            "time": "17:36", 
+            "action": "killed by", 
+            "skill": "void", 
+            "subject": "lina", 
+            "gold-lost": "209", 
+            "left": "13%"
+        }, 
+        {
+            "gold-fed": "426", 
+            "top": "42%", 
+            "other-objects": "night-stalker", 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "17:45", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "239", 
+            "left": "9%"
+        }, 
+        {
+            "gold-fed": "593", 
+            "top": "36%", 
+            "other-objects": "slardar", 
+            "whom": "invoker", 
+            "supplement": "autoattack", 
+            "time": "17:47", 
+            "action": "killed by", 
+            "subject": "clockwerk", 
+            "gold-lost": "269", 
+            "left": "9%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "17:52", 
+            "action": "destroy", 
+            "subject": "wraith king", 
+            "left": "11%"
+        }, 
+        {
+            "gold-fed": "566", 
+            "top": "28%", 
+            "other-objects": "gyrocopter", 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "17:58", 
+            "action": "killed by", 
+            "subject": "wraith king", 
+            "gold-lost": "329", 
+            "left": "11%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "18:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "18:15", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "18:24"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "winter wyvern", 
+            "time": "18:27"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "18:46", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "46%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "lina", 
+            "time": "19:23"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "19:37", 
+            "action": "activate", 
+            "subject": "clockwerk", 
+            "left": "61%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "20:00"
+        }, 
+        {
+            "gold-fed": "604", 
+            "top": "51%", 
+            "other-objects": [
+                "tusk", 
+                "slardar"
+            ], 
+            "whom": "wraith king", 
+            "time": "20:05", 
+            "action": "killed by", 
+            "skill": "wraithfire blast", 
+            "subject": "winter wyvern", 
+            "gold-lost": "239", 
+            "left": "50%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "20:20", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "728", 
+            "top": "22%", 
+            "other-objects": "tusk", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "20:34", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "329", 
+            "left": "33%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "20:43"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "observer ward", 
+            "time": "20:46", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "50%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "sentry ward", 
+            "time": "20:58", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "65%"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "sentry ward", 
+            "time": "21:08", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "73%"
+        }, 
+        {
+            "top": "58%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "night-stalker", 
+                "gyrocopter", 
+                "clockwerk"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "21:37", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "47%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "21:38", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "slardar", 
+            "time": "21:39"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "ember spirit", 
+            "time": "21:39"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "21:44"
+        }, 
+        {
+            "top": "38%", 
+            "other-objects": [
+                "tusk", 
+                "lina", 
+                "slardar"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "21:55", 
+            "action": "activate", 
+            "subject": "lina", 
+            "left": "89%"
+        }, 
+        {
+            "top": "58%", 
+            "other-objects": [
+                "night-stalker", 
+                "gyrocopter"
+            ], 
+            "whom": "ember spirit", 
+            "time": "21:58", 
+            "action": "killed by", 
+            "skill": "searing chains", 
+            "subject": "wraith king", 
+            "left": "86%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "22:00"
+        }, 
+        {
+            "gold-fed": "1512", 
+            "top": "61%", 
+            "other-objects": [
+                "wraith-king", 
+                "slardar"
+            ], 
+            "whom": "invoker", 
+            "time": "22:04", 
+            "action": "killed by", 
+            "skill": "emp", 
+            "subject": "gyrocopter", 
+            "gold-lost": "389", 
+            "left": "84%"
+        }, 
+        {
+            "top": "60%", 
+            "other-objects": [
+                "wraith-king", 
+                "invoker"
+            ], 
+            "whom": "tusk", 
+            "time": "22:04", 
+            "action": "killed by", 
+            "skill": "ice shards", 
+            "subject": "ember spirit", 
+            "left": "85%"
+        }, 
+        {
+            "top": "57%", 
+            "whom": "sentry ward", 
+            "time": "22:06", 
+            "action": "place", 
+            "subject": "clockwerk", 
+            "left": "86%"
+        }, 
+        {
+            "gold-fed": "438", 
+            "top": "59%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "gyrocopter"
+            ], 
+            "whom": "clockwerk", 
+            "time": "22:09", 
+            "action": "killed by", 
+            "skill": "rocket flare", 
+            "subject": "lina", 
+            "gold-lost": "239", 
+            "left": "88%"
+        }, 
+        {
+            "top": "59%", 
+            "whom": "observer ward", 
+            "time": "22:09", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "89%"
+        }, 
+        {
+            "gold-fed": "483", 
+            "top": "62%", 
+            "other-objects": [
+                "tusk", 
+                "lina", 
+                "wraith-king"
+            ], 
+            "whom": "invoker", 
+            "supplement": "autoattack", 
+            "time": "22:15", 
+            "action": "killed by", 
+            "subject": "clockwerk", 
+            "gold-lost": "299", 
+            "left": "89%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "invoker", 
+            "time": "22:15"
+        }, 
+        {
+            "gold-fed": "504", 
+            "top": "61%", 
+            "other-objects": [
+                "tusk", 
+                "lina", 
+                "wraith-king", 
+                "slardar"
+            ], 
+            "whom": "invoker", 
+            "supplement": "autoattack", 
+            "time": "22:18", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "329", 
+            "left": "83%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "invoker", 
+            "time": "22:18"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "22:31"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "22:31", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "tusk", 
+            "time": "22:33"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "invoker", 
+            "time": "22:51"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "roshan", 
+            "subject": "the radiant", 
+            "time": "22:51"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "22:57", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "67%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "23:24", 
+            "action": "activate", 
+            "subject": "invoker", 
+            "left": "38%"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "observer ward", 
+            "time": "23:25", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "56%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "lina", 
+            "time": "23:36"
+        }, 
+        {
+            "top": "31%", 
+            "other-objects": [
+                "tusk", 
+                "lina", 
+                "invoker", 
+                "slardar"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "23:38", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "66%"
+        }, 
+        {
+            "top": "59%", 
+            "whom": "observer ward", 
+            "time": "23:58", 
+            "action": "destroy", 
+            "subject": "ember spirit", 
+            "left": "89%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "24:01", 
+            "action": "activate", 
+            "subject": "invoker", 
+            "left": "38%"
+        }, 
+        {
+            "top": "43%", 
+            "whom": "observer ward", 
+            "time": "24:13", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "18%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "24:17", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "57%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "25:02", 
+            "action": "activate", 
+            "subject": "gyrocopter", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "25:58"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "26:01"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "26:10", 
+            "action": "destroy", 
+            "subject": "invoker", 
+            "left": "48%"
+        }, 
+        {
+            "top": "46%", 
+            "whom": "radiant tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "26:15", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "88%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "26:16", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "27:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "27:01"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "27:01"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "27:03"
+        }, 
+        {
+            "top": "70%", 
+            "whom": "sentry ward", 
+            "time": "27:19", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "31%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "27:34", 
+            "action": "activate", 
+            "subject": "wraith king", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "28:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "28:00"
+        }, 
+        {
+            "top": "49%", 
+            "whom": "observer ward", 
+            "time": "28:06", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "50%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "28:10", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "ember spirit", 
+            "time": "28:17"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "28:23", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "38%"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "observer ward", 
+            "time": "28:25", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "36%"
+        }, 
+        {
+            "gold-fed": "392", 
+            "top": "12%", 
+            "other-objects": "winter-wyvern", 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "28:47", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "269", 
+            "left": "34%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "29:10"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "29:11"
+        }, 
+        {
+            "top": "87%", 
+            "other-objects": [
+                "night-stalker", 
+                "gyrocopter"
+            ], 
+            "whom": "ember spirit", 
+            "time": "29:31", 
+            "action": "killed by", 
+            "skill": "searing chains", 
+            "subject": "wraith king", 
+            "left": "69%"
+        }, 
+        {
+            "gold-fed": "907", 
+            "top": "80%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "night-stalker", 
+                "clockwerk"
+            ], 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "29:49", 
+            "action": "killed by", 
+            "subject": "invoker", 
+            "gold-lost": "479", 
+            "left": "71%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "29:49", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "74%"
+        }, 
+        {
+            "gold-fed": "698", 
+            "top": "76%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "night-stalker", 
+                "clockwerk"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "30:00", 
+            "action": "killed by", 
+            "subject": "wraith king", 
+            "gold-lost": "449", 
+            "left": "87%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "30:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "30:00"
+        }, 
+        {
+            "gold-fed": "504", 
+            "top": "74%", 
+            "other-objects": "gyrocopter", 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "30:03", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "329", 
+            "left": "88%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "ember spirit", 
+            "time": "30:03"
+        }, 
+        {
+            "gold-fed": "392", 
+            "top": "58%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "ember-spirit", 
+                "clockwerk"
+            ], 
+            "whom": "night stalker", 
+            "time": "30:11", 
+            "action": "killed by", 
+            "skill": "void", 
+            "subject": "lina", 
+            "gold-lost": "269", 
+            "left": "89%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "30:28", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ember spirit", 
+            "time": "30:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "30:32"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "30:57", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "observer ward", 
+            "time": "31:08", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "59%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "winter wyvern", 
+            "time": "31:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "winter wyvern", 
+            "time": "31:31"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "31:32"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "lina", 
+            "time": "31:41"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "32:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "32:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "32:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "32:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "ember spirit", 
+            "time": "32:04"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "sentry ward", 
+            "time": "32:09", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "46%"
+        }, 
+        {
+            "top": "55%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "gyrocopter", 
+                "clockwerk"
+            ], 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "32:10", 
+            "action": "activate", 
+            "subject": "lina", 
+            "left": "46%"
+        }, 
+        {
+            "gold-fed": "510", 
+            "top": "48%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "clockwerk"
+            ], 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "32:12", 
+            "action": "killed by", 
+            "subject": "slardar", 
+            "gold-lost": "419", 
+            "left": "46%"
+        }, 
+        {
+            "gold-fed": "665", 
+            "top": "57%", 
+            "other-objects": [
+                "tusk", 
+                "lina"
+            ], 
+            "whom": "wraith king", 
+            "supplement": "autoattack", 
+            "time": "32:12", 
+            "action": "killed by", 
+            "subject": "winter wyvern", 
+            "gold-lost": "329", 
+            "left": "44%"
+        }, 
+        {
+            "gold-fed": "744", 
+            "top": "58%", 
+            "other-objects": [
+                "lina", 
+                "wraith-king"
+            ], 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "32:13", 
+            "action": "killed by", 
+            "subject": "clockwerk", 
+            "gold-lost": "359", 
+            "left": "43%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "winter wyvern", 
+            "time": "32:14"
+        }, 
+        {
+            "gold-fed": "481", 
+            "top": "46%", 
+            "other-objects": [
+                "ember-spirit", 
+                "gyrocopter"
+            ], 
+            "whom": "night stalker", 
+            "time": "32:15", 
+            "action": "killed by", 
+            "skill": "urn of shadows", 
+            "subject": "lina", 
+            "gold-lost": "299", 
+            "left": "50%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "night stalker", 
+            "time": "32:15"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "slardar", 
+            "time": "32:15"
+        }, 
+        {
+            "top": "57%", 
+            "other-objects": "clockwerk", 
+            "whom": "gyrocopter", 
+            "time": "32:16", 
+            "action": "speak", 
+            "subject": "wraith king", 
+            "left": "44%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "courier", 
+            "subject": "the radiant", 
+            "time": "32:16"
+        }, 
+        {
+            "gold-fed": "638", 
+            "top": "49%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "ember-spirit"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "32:34", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "wraith king", 
+            "gold-lost": "509", 
+            "left": "33%"
+        }, 
+        {
+            "gold-fed": "302", 
+            "top": "45%", 
+            "other-objects": [
+                "ember-spirit", 
+                "gyrocopter"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "32:38", 
+            "action": "killed by", 
+            "skill": "winter's curse", 
+            "subject": "tusk", 
+            "gold-lost": "359", 
+            "left": "34%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "32:38", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "583", 
+            "top": "39%", 
+            "other-objects": [
+                "ember-spirit", 
+                "gyrocopter"
+            ], 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "32:44", 
+            "action": "killed by", 
+            "subject": "invoker", 
+            "gold-lost": "479", 
+            "left": "47%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lina", 
+            "time": "32:52"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "winter wyvern", 
+            "time": "32:55"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "sentry ward", 
+            "time": "33:12", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "46%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "33:13", 
+            "action": "activate", 
+            "subject": "clockwerk", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "33:24"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "33:42", 
+            "action": "destroy", 
+            "subject": "ember spirit", 
+            "left": "55%"
+        }, 
+        {
+            "top": "27%", 
+            "whom": "radiant tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "33:42", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "67%"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "observer ward", 
+            "time": "33:49", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "33:58", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "ember spirit", 
+            "time": "33:58"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "33:58", 
+            "action": "activate", 
+            "subject": "gyrocopter", 
+            "left": "61%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "34:00"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "night stalker", 
+            "time": "34:11"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "winter wyvern", 
+            "time": "34:12"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "34:19", 
+            "action": "place", 
+            "subject": "lina", 
+            "left": "59%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "lina", 
+            "time": "34:42"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "34:44", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "59%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "35:09"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "tusk", 
+            "time": "35:10"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "35:10"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "gyrocopter", 
+            "time": "35:11"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "courier", 
+            "subject": "the radiant", 
+            "time": "35:15"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "sentry ward", 
+            "time": "35:24", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "73%"
+        }, 
+        {
+            "top": "15%", 
+            "whom": "sentry ward", 
+            "time": "35:33", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "59%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "35:57", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "top": "27%", 
+            "whom": "observer ward", 
+            "time": "36:00", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "36%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "36:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "ember spirit", 
+            "time": "36:06"
+        }, 
+        {
+            "gold-fed": "759", 
+            "top": "10%", 
+            "other-objects": "night-stalker", 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "36:08", 
+            "action": "killed by", 
+            "subject": "invoker", 
+            "gold-lost": "509", 
+            "left": "18%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "36:14", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "38%"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "observer ward", 
+            "time": "36:18", 
+            "action": "destroy", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "501", 
+            "top": "49%", 
+            "other-objects": "gyrocopter", 
+            "whom": "clockwerk", 
+            "time": "36:33", 
+            "action": "killed by", 
+            "skill": "power cogs", 
+            "subject": "lina", 
+            "gold-lost": "329", 
+            "left": "70%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "lina", 
+            "time": "36:33"
+        }, 
+        {
+            "top": "21%", 
+            "other-objects": [
+                "ember-spirit", 
+                "night-stalker"
+            ], 
+            "whom": "winter wyvern", 
+            "supplement": "autoattack", 
+            "time": "36:43", 
+            "action": "killed by", 
+            "subject": "wraith king", 
+            "left": "73%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "clockwerk", 
+            "time": "36:43"
+        }, 
+        {
+            "gold-fed": "580", 
+            "top": "6%", 
+            "other-objects": "ember-spirit", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "36:58", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "389", 
+            "left": "72%"
+        }, 
+        {
+            "top": "21%", 
+            "whom": "radiant tier 3 middle tower", 
+            "supplement": "tier", 
+            "time": "37:16", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "75%"
+        }, 
+        {
+            "gold-fed": "820", 
+            "top": "19%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "ember-spirit", 
+                "clockwerk"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "37:25", 
+            "action": "killed by", 
+            "skill": "call down", 
+            "subject": "wraith king", 
+            "gold-lost": "539", 
+            "left": "77%"
+        }, 
+        {
+            "top": "22%", 
+            "other-objects": [
+                "wraith-king", 
+                "invoker", 
+                "slardar"
+            ], 
+            "whom": "lina", 
+            "time": "37:30", 
+            "action": "killed by", 
+            "skill": "laguna blade", 
+            "subject": "gyrocopter", 
+            "left": "75%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "gyrocopter", 
+            "time": "37:30"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant melee middle barracks", 
+            "subject": "gyrocopter", 
+            "supplement": "melee", 
+            "time": "37:40"
+        }, 
+        {
+            "gold-fed": "471", 
+            "top": "17%", 
+            "other-objects": "ember-spirit", 
+            "whom": "night stalker", 
+            "time": "37:52", 
+            "action": "killed by", 
+            "skill": "void", 
+            "subject": "lina", 
+            "gold-lost": "329", 
+            "left": "83%"
+        }, 
+        {
+            "top": "9%", 
+            "whom": "radiant tier 3 top tower", 
+            "supplement": "tier", 
+            "time": "38:10", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "70%"
+        }, 
+        {
+            "gold-fed": "759", 
+            "top": "10%", 
+            "other-objects": [
+                "ember-spirit", 
+                "night-stalker", 
+                "gyrocopter", 
+                "clockwerk"
+            ], 
+            "whom": "winter wyvern", 
+            "time": "38:15", 
+            "action": "killed by", 
+            "skill": "winter's curse", 
+            "subject": "invoker", 
+            "gold-lost": "509", 
+            "left": "77%"
+        }, 
+        {
+            "gold-fed": "595", 
+            "top": "8%", 
+            "other-objects": [
+                "winter-wyvern", 
+                "ember-spirit", 
+                "night-stalker", 
+                "clockwerk"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "38:18", 
+            "action": "killed by", 
+            "subject": "slardar", 
+            "gold-lost": "449", 
+            "left": "85%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "slardar", 
+            "time": "38:24"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "gyrocopter", 
+            "time": "38:26"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant melee top barracks", 
+            "subject": "gyrocopter", 
+            "supplement": "melee", 
+            "time": "38:28"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "night stalker", 
+            "time": "38:29"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "clockwerk", 
+            "time": "38:29"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant ranged top barracks", 
+            "subject": "night stalker", 
+            "supplement": "ranged", 
+            "time": "38:33"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "night stalker", 
+            "time": "38:34"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "lina", 
+            "time": "38:34"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "winter wyvern", 
+            "time": "38:34"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "invoker", 
+            "time": "38:34"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "ember spirit", 
+            "time": "38:34"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "gyrocopter", 
+            "time": "38:34"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "slardar", 
+            "time": "38:34"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "wraith king", 
+            "time": "38:34"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "tusk", 
+            "time": "38:34"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the dire", 
+            "time": "38:38"
+        }
+    ]
+}

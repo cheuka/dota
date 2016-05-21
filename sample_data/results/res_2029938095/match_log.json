@@ -1,0 +1,2086 @@
+{
+    "events": [
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "witch doctor", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "oracle", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "witch doctor", 
+            "time": "-01:23"
+        }, 
+        {
+            "top": "90%", 
+            "whom": "observer ward", 
+            "time": "-01:13", 
+            "action": "place", 
+            "subject": "oracle", 
+            "left": "71%"
+        }, 
+        {
+            "top": "91%", 
+            "whom": "sentry ward", 
+            "time": "-00:39", 
+            "action": "place", 
+            "subject": "dark seer", 
+            "left": "71%"
+        }, 
+        {
+            "top": "90%", 
+            "whom": "observer ward", 
+            "time": "-00:38", 
+            "action": "destroy", 
+            "subject": "dark seer", 
+            "left": "71%"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "observer ward", 
+            "time": "-00:33", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "50%"
+        }, 
+        {
+            "top": "9%", 
+            "whom": "observer ward", 
+            "time": "-00:27", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "22%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "beastmaster", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "windranger", 
+            "left": "38%"
+        }, 
+        {
+            "top": "15%", 
+            "whom": "sentry ward", 
+            "time": "00:38", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "26%"
+        }, 
+        {
+            "gold-fed": "406", 
+            "top": "9%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "slardar"
+            ], 
+            "whom": "spirit breaker", 
+            "supplement": "autoattack", 
+            "time": "00:47", 
+            "action": "killed by", 
+            "subject": "nature's prophet", 
+            "gold-lost": "29", 
+            "left": "31%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "02:01", 
+            "action": "activate", 
+            "subject": "witch doctor", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "02:02", 
+            "action": "activate", 
+            "subject": "oracle", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "03:02"
+        }, 
+        {
+            "gold-fed": "389", 
+            "top": "43%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "windranger"
+            ], 
+            "whom": "dark seer", 
+            "time": "03:51", 
+            "action": "killed by", 
+            "skill": "ion shell", 
+            "subject": "beastmaster", 
+            "gold-lost": "149", 
+            "left": "58%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "04:03", 
+            "action": "activate", 
+            "subject": "witch doctor", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "04:04", 
+            "action": "activate", 
+            "subject": "oracle", 
+            "left": "61%"
+        }, 
+        {
+            "top": "39%", 
+            "whom": "observer ward", 
+            "time": "04:17", 
+            "action": "place", 
+            "subject": "dark seer", 
+            "left": "50%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "witch doctor", 
+            "time": "04:21"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "sentry ward", 
+            "time": "04:22", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "49%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "witch doctor", 
+            "time": "04:24"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "observer ward", 
+            "time": "04:31", 
+            "action": "destroy", 
+            "subject": "spirit breaker", 
+            "left": "50%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "04:39"
+        }, 
+        {
+            "top": "51%", 
+            "whom": "observer ward", 
+            "time": "04:49", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "57%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "observer ward", 
+            "time": "04:52", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "57%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "05:38"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "spirit breaker", 
+            "time": "05:39"
+        }, 
+        {
+            "top": "85%", 
+            "other-objects": [
+                "slardar", 
+                "spirit-breaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "05:57", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "46%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "06:00", 
+            "action": "bottled", 
+            "subject": "beastmaster", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "06:01", 
+            "action": "activate", 
+            "subject": "gyrocopter", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "509", 
+            "top": "86%", 
+            "other-objects": [
+                "slardar", 
+                "dark-seer"
+            ], 
+            "whom": "spirit breaker", 
+            "supplement": "autoattack", 
+            "time": "06:12", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "179", 
+            "left": "69%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "witch doctor", 
+            "time": "06:19"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "observer ward", 
+            "time": "06:21", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "74%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "beastmaster", 
+            "time": "06:47"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "sentry ward", 
+            "time": "06:52", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "47%"
+        }, 
+        {
+            "top": "39%", 
+            "whom": "observer ward", 
+            "time": "06:57", 
+            "action": "destroy", 
+            "subject": "witch doctor", 
+            "left": "50%"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "sentry ward", 
+            "time": "07:02", 
+            "action": "destroy", 
+            "subject": "beastmaster", 
+            "left": "49%"
+        }, 
+        {
+            "top": "40%", 
+            "other-objects": [
+                "gyrocopter", 
+                "witch-doctor"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "07:40", 
+            "action": "activate", 
+            "subject": "witch doctor", 
+            "left": "71%"
+        }, 
+        {
+            "gold-fed": "404", 
+            "top": "74%", 
+            "other-objects": [
+                "witch-doctor", 
+                "oracle"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "08:00", 
+            "action": "killed by", 
+            "skill": "call down", 
+            "subject": "dark seer", 
+            "gold-lost": "179", 
+            "left": "87%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "08:00", 
+            "action": "bottled", 
+            "subject": "windranger", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "windranger", 
+            "time": "08:01"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "08:07", 
+            "action": "bottled", 
+            "subject": "beastmaster", 
+            "left": "38%"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "sentry ward", 
+            "time": "08:20", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "60%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "beastmaster", 
+            "time": "08:33"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "witch doctor", 
+            "time": "08:38"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "witch doctor", 
+            "time": "08:39"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "witch doctor", 
+            "time": "09:23"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "witch doctor", 
+            "time": "09:23"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "ancient apparition", 
+            "time": "09:42"
+        }, 
+        {
+            "top": "42%", 
+            "other-objects": [
+                "witch-doctor", 
+                "beastmaster"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "09:46", 
+            "action": "activate", 
+            "subject": "witch doctor", 
+            "left": "61%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "10:02", 
+            "action": "bottled", 
+            "subject": "beastmaster", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "10:30", 
+            "action": "bottled", 
+            "subject": "windranger", 
+            "left": "38%"
+        }, 
+        {
+            "top": "88%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "slardar", 
+                "dark-seer", 
+                "spirit-breaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "10:31", 
+            "action": "activate", 
+            "subject": "ancient apparition", 
+            "left": "47%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "windranger", 
+            "time": "10:38"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "10:54", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "74%"
+        }, 
+        {
+            "gold-fed": "478", 
+            "top": "48%", 
+            "other-objects": [
+                "slardar", 
+                "dark-seer", 
+                "windranger"
+            ], 
+            "whom": "ancient apparition", 
+            "supplement": "autoattack", 
+            "time": "10:58", 
+            "action": "killed by", 
+            "subject": "beastmaster", 
+            "gold-lost": "239", 
+            "left": "50%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "11:14"
+        }, 
+        {
+            "gold-fed": "353", 
+            "top": "9%", 
+            "other-objects": "spirit-breaker", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "11:19", 
+            "action": "killed by", 
+            "subject": "witch doctor", 
+            "gold-lost": "119", 
+            "left": "34%"
+        }, 
+        {
+            "gold-fed": "455", 
+            "top": "14%", 
+            "other-objects": [
+                "gyrocopter", 
+                "natures-prophet"
+            ], 
+            "whom": "oracle", 
+            "time": "11:34", 
+            "action": "killed by", 
+            "skill": "purifying flames", 
+            "subject": "spirit breaker", 
+            "gold-lost": "149", 
+            "left": "26%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "11:45"
+        }, 
+        {
+            "top": "13%", 
+            "whom": "sentry ward", 
+            "time": "11:46", 
+            "action": "place", 
+            "subject": "oracle", 
+            "left": "27%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "11:52"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "beastmaster", 
+            "time": "11:58"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "34%", 
+            "whom": "observer ward", 
+            "time": "12:03", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "18%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "12:05", 
+            "action": "bottled", 
+            "subject": "windranger", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "12:06", 
+            "action": "bottled", 
+            "subject": "beastmaster", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "windranger", 
+            "time": "12:39"
+        }, 
+        {
+            "gold-fed": "708", 
+            "top": "23%", 
+            "other-objects": [
+                "gyrocopter", 
+                "natures-prophet", 
+                "oracle"
+            ], 
+            "whom": "beastmaster", 
+            "time": "12:42", 
+            "action": "killed by", 
+            "skill": "wild axes", 
+            "subject": "slardar", 
+            "gold-lost": "299", 
+            "left": "7%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "12:46", 
+            "action": "destroy", 
+            "subject": "oracle", 
+            "left": "11%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "12:52", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "32%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "beastmaster", 
+            "time": "12:53"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "oracle", 
+            "time": "13:06"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "13:09"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "13:12", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "35%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "ancient apparition", 
+            "time": "13:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "witch doctor", 
+            "time": "13:32"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "13:37"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "sentry ward", 
+            "time": "13:56", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "36%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "14:00", 
+            "action": "bottled", 
+            "subject": "windranger", 
+            "left": "61%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "14:01", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "35%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "14:02", 
+            "action": "bottled", 
+            "subject": "beastmaster", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "beastmaster", 
+            "time": "14:02"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "observer ward", 
+            "time": "14:08", 
+            "action": "place", 
+            "subject": "oracle", 
+            "left": "22%"
+        }, 
+        {
+            "top": "65%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "dark-seer", 
+                "spirit-breaker", 
+                "windranger"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "14:19", 
+            "action": "activate", 
+            "subject": "ancient apparition", 
+            "left": "39%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "sentry ward", 
+            "time": "14:26", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "53%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "windranger", 
+            "time": "14:33"
+        }, 
+        {
+            "gold-fed": "367", 
+            "top": "42%", 
+            "other-objects": "ancient-apparition", 
+            "whom": "windranger", 
+            "time": "14:35", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "oracle", 
+            "gold-lost": "209", 
+            "left": "22%"
+        }, 
+        {
+            "gold-fed": "505", 
+            "top": "41%", 
+            "other-objects": [
+                "dark-seer", 
+                "spirit-breaker"
+            ], 
+            "whom": "slardar", 
+            "time": "14:37", 
+            "action": "killed by", 
+            "skill": "slithereen crush", 
+            "subject": "beastmaster", 
+            "gold-lost": "269", 
+            "left": "27%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "oracle", 
+            "time": "14:53"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "15:05"
+        }, 
+        {
+            "gold-fed": "421", 
+            "top": "78%", 
+            "other-objects": "dark-seer", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "15:08", 
+            "action": "killed by", 
+            "subject": "nature's prophet", 
+            "gold-lost": "269", 
+            "left": "91%"
+        }, 
+        {
+            "top": "40%", 
+            "other-objects": [
+                "witch-doctor", 
+                "beastmaster", 
+                "oracle"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "15:48", 
+            "action": "activate", 
+            "subject": "oracle", 
+            "left": "61%"
+        }, 
+        {
+            "top": "43%", 
+            "whom": "sentry ward", 
+            "time": "15:55", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "20%"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "observer ward", 
+            "time": "15:59", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "22%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "16:00", 
+            "action": "bottled", 
+            "subject": "beastmaster", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "16:02", 
+            "action": "bottled", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "slardar", 
+            "time": "16:03"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "beastmaster", 
+            "time": "16:18"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "16:44"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "oracle", 
+            "time": "16:50"
+        }, 
+        {
+            "top": "54%", 
+            "whom": "observer ward", 
+            "time": "16:58", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "58%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "sentry ward", 
+            "time": "17:19", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "71%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "17:22", 
+            "action": "destroy", 
+            "subject": "nature's prophet", 
+            "left": "74%"
+        }, 
+        {
+            "gold-fed": "794", 
+            "top": "45%", 
+            "other-objects": [
+                "natures-prophet", 
+                "beastmaster"
+            ], 
+            "whom": "oracle", 
+            "time": "17:30", 
+            "action": "killed by", 
+            "skill": "purifying flames", 
+            "subject": "slardar", 
+            "gold-lost": "329", 
+            "left": "49%"
+        }, 
+        {
+            "gold-fed": "607", 
+            "top": "39%", 
+            "other-objects": [
+                "slardar", 
+                "windranger"
+            ], 
+            "whom": "ancient apparition", 
+            "time": "17:31", 
+            "action": "killed by", 
+            "skill": "false promise", 
+            "subject": "beastmaster", 
+            "gold-lost": "329", 
+            "left": "44%"
+        }, 
+        {
+            "gold-fed": "806", 
+            "top": "50%", 
+            "other-objects": [
+                "witch-doctor", 
+                "beastmaster", 
+                "oracle"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "17:42", 
+            "action": "killed by", 
+            "subject": "windranger", 
+            "gold-lost": "329", 
+            "left": "42%"
+        }, 
+        {
+            "gold-fed": "553", 
+            "top": "46%", 
+            "other-objects": [
+                "natures-prophet", 
+                "witch-doctor"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "17:42", 
+            "action": "killed by", 
+            "subject": "dark seer", 
+            "gold-lost": "299", 
+            "left": "49%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "17:42"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "17:52"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "18:06"
+        }, 
+        {
+            "gold-fed": "699", 
+            "top": "60%", 
+            "other-objects": [
+                "slardar", 
+                "spirit-breaker"
+            ], 
+            "whom": "ancient apparition", 
+            "time": "18:23", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "gyrocopter", 
+            "gold-lost": "329", 
+            "left": "39%"
+        }, 
+        {
+            "gold-fed": "426", 
+            "top": "58%", 
+            "other-objects": [
+                "natures-prophet", 
+                "oracle"
+            ], 
+            "whom": "witch doctor", 
+            "supplement": "autoattack", 
+            "time": "18:25", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "239", 
+            "left": "39%"
+        }, 
+        {
+            "gold-fed": "597", 
+            "top": "62%", 
+            "other-objects": [
+                "gyrocopter", 
+                "natures-prophet", 
+                "beastmaster", 
+                "oracle"
+            ], 
+            "whom": "witch doctor", 
+            "supplement": "autoattack", 
+            "time": "18:28", 
+            "action": "killed by", 
+            "subject": "slardar", 
+            "gold-lost": "359", 
+            "left": "37%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "witch doctor", 
+            "time": "18:28"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "dire tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "18:30", 
+            "action": "destroy", 
+            "subject": "nature's prophet", 
+            "left": "37%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "oracle", 
+            "time": "18:47"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "oracle", 
+            "time": "18:49"
+        }, 
+        {
+            "top": "59%", 
+            "whom": "sentry ward", 
+            "time": "19:14", 
+            "action": "place", 
+            "subject": "oracle", 
+            "left": "81%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "19:35", 
+            "action": "bottled", 
+            "subject": "beastmaster", 
+            "left": "38%"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "observer ward", 
+            "time": "19:37", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "59%"
+        }, 
+        {
+            "top": "74%", 
+            "whom": "observer ward", 
+            "time": "19:54", 
+            "action": "place", 
+            "subject": "oracle", 
+            "left": "64%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "beastmaster", 
+            "time": "20:05"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "ancient apparition", 
+            "time": "20:24"
+        }, 
+        {
+            "top": "74%", 
+            "other-objects": [
+                "gyrocopter", 
+                "witch-doctor", 
+                "beastmaster", 
+                "oracle"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "20:46", 
+            "action": "activate", 
+            "subject": "oracle", 
+            "left": "79%"
+        }, 
+        {
+            "top": "67%", 
+            "whom": "sentry ward", 
+            "time": "21:03", 
+            "action": "place", 
+            "subject": "oracle", 
+            "left": "56%"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "observer ward", 
+            "time": "21:10", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "48%"
+        }, 
+        {
+            "gold-fed": "576", 
+            "top": "63%", 
+            "other-objects": [
+                "gyrocopter", 
+                "natures-prophet", 
+                "beastmaster", 
+                "oracle"
+            ], 
+            "whom": "witch doctor", 
+            "supplement": "autoattack", 
+            "time": "21:11", 
+            "action": "killed by", 
+            "subject": "windranger", 
+            "gold-lost": "359", 
+            "left": "48%"
+        }, 
+        {
+            "top": "68%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "slardar", 
+                "dark-seer", 
+                "spirit-breaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "21:26", 
+            "action": "activate", 
+            "subject": "ancient apparition", 
+            "left": "34%"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "observer ward", 
+            "time": "21:28", 
+            "action": "destroy", 
+            "subject": "nature's prophet", 
+            "left": "59%"
+        }, 
+        {
+            "gold-fed": "492", 
+            "top": "65%", 
+            "other-objects": [
+                "gyrocopter", 
+                "natures-prophet", 
+                "witch-doctor", 
+                "oracle"
+            ], 
+            "whom": "beastmaster", 
+            "supplement": "autoattack", 
+            "time": "21:47", 
+            "action": "killed by", 
+            "subject": "dark seer", 
+            "gold-lost": "329", 
+            "left": "62%"
+        }, 
+        {
+            "gold-fed": "544", 
+            "top": "64%", 
+            "other-objects": [
+                "gyrocopter", 
+                "natures-prophet", 
+                "witch-doctor", 
+                "beastmaster"
+            ], 
+            "whom": "oracle", 
+            "time": "21:49", 
+            "action": "killed by", 
+            "skill": "purifying flames", 
+            "subject": "slardar", 
+            "gold-lost": "389", 
+            "left": "59%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "slardar", 
+            "time": "21:53"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "22:03", 
+            "action": "bottled", 
+            "subject": "beastmaster", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "beastmaster", 
+            "time": "22:13"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "22:14"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "22:14"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "sentry ward", 
+            "time": "22:33", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "57%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "observer ward", 
+            "time": "22:36", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "57%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "22:37", 
+            "action": "bottled", 
+            "subject": "windranger", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "883", 
+            "top": "6%", 
+            "other-objects": [
+                "slardar", 
+                "spirit-breaker", 
+                "windranger"
+            ], 
+            "whom": "ancient apparition", 
+            "time": "22:51", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "nature's prophet", 
+            "gold-lost": "389", 
+            "left": "23%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "windranger", 
+            "time": "22:53"
+        }, 
+        {
+            "gold-fed": "619", 
+            "top": "9%", 
+            "other-objects": [
+                "natures-prophet", 
+                "witch-doctor"
+            ], 
+            "whom": "beastmaster", 
+            "time": "22:55", 
+            "action": "killed by", 
+            "skill": "wild axes", 
+            "subject": "slardar", 
+            "gold-lost": "389", 
+            "left": "22%"
+        }, 
+        {
+            "gold-fed": "698", 
+            "top": "10%", 
+            "other-objects": "ancient-apparition", 
+            "whom": "windranger", 
+            "supplement": "autoattack", 
+            "time": "22:58", 
+            "action": "killed by", 
+            "subject": "witch doctor", 
+            "gold-lost": "299", 
+            "left": "27%"
+        }, 
+        {
+            "gold-fed": "579", 
+            "top": "41%", 
+            "other-objects": "gyrocopter", 
+            "whom": "oracle", 
+            "time": "23:19", 
+            "action": "killed by", 
+            "skill": "purifying flames", 
+            "subject": "ancient apparition", 
+            "gold-lost": "269", 
+            "left": "23%"
+        }, 
+        {
+            "gold-fed": "514", 
+            "top": "57%", 
+            "other-objects": [
+                "beastmaster", 
+                "oracle"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "23:34", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "spirit breaker", 
+            "gold-lost": "299", 
+            "left": "34%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "witch doctor", 
+            "time": "23:37"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "witch doctor", 
+            "time": "23:37"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "witch doctor", 
+            "time": "23:42"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "23:55"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "23:56"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "arcane rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "24:06", 
+            "action": "activate", 
+            "subject": "oracle", 
+            "left": "61%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "24:12", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "67%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "24:14", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "67%"
+        }, 
+        {
+            "top": "68%", 
+            "whom": "sentry ward", 
+            "time": "24:30", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "56%"
+        }, 
+        {
+            "top": "67%", 
+            "whom": "sentry ward", 
+            "time": "24:34", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "56%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "arcane rune", 
+            "time": "24:49", 
+            "action": "bottled", 
+            "subject": "slardar", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "arcane rune", 
+            "subject": "slardar", 
+            "time": "25:01"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "sentry ward", 
+            "time": "25:15", 
+            "action": "destroy", 
+            "subject": "beastmaster", 
+            "left": "57%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "observer ward", 
+            "time": "25:16", 
+            "action": "destroy", 
+            "subject": "beastmaster", 
+            "left": "57%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "roshan", 
+            "subject": "the radiant", 
+            "time": "25:33"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "gyrocopter", 
+            "time": "25:36"
+        }, 
+        {
+            "gold-fed": "633", 
+            "top": "86%", 
+            "other-objects": [
+                "gyrocopter", 
+                "natures-prophet", 
+                "beastmaster", 
+                "oracle"
+            ], 
+            "whom": "witch doctor", 
+            "supplement": "autoattack", 
+            "time": "25:51", 
+            "action": "killed by", 
+            "subject": "dark seer", 
+            "gold-lost": "389", 
+            "left": "47%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "26:01"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "26:12", 
+            "action": "bottled", 
+            "subject": "windranger", 
+            "left": "38%"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "observer ward", 
+            "time": "26:16", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "35%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "windranger", 
+            "time": "26:22"
+        }, 
+        {
+            "top": "83%", 
+            "whom": "sentry ward", 
+            "time": "26:29", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "43%"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "dire tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "26:44", 
+            "action": "destroy", 
+            "subject": "nature's prophet", 
+            "left": "48%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "oracle", 
+            "time": "26:51"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "26:56"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "27:42", 
+            "action": "bottled", 
+            "subject": "beastmaster", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "beastmaster", 
+            "time": "27:42"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "27:43"
+        }, 
+        {
+            "top": "83%", 
+            "whom": "sentry ward", 
+            "time": "27:53", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "35%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "witch doctor", 
+            "time": "28:25"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "observer ward", 
+            "time": "28:28", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "22%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "witch doctor", 
+            "time": "28:29"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "28:54"
+        }, 
+        {
+            "top": "69%", 
+            "whom": "sentry ward", 
+            "time": "29:11", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "34%"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "observer ward", 
+            "time": "29:12", 
+            "action": "destroy", 
+            "subject": "dark seer", 
+            "left": "35%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "29:23", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "20%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "30:00"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "dire tier 3 top tower", 
+            "supplement": "tier", 
+            "time": "30:02", 
+            "action": "destroy", 
+            "subject": "nature's prophet", 
+            "left": "13%"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "sentry ward", 
+            "time": "30:04", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "18%"
+        }, 
+        {
+            "top": "70%", 
+            "whom": "observer ward", 
+            "time": "30:09", 
+            "action": "place", 
+            "subject": "witch doctor", 
+            "left": "8%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire melee top barracks", 
+            "subject": "nature's prophet", 
+            "supplement": "melee", 
+            "time": "30:18"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "spirit breaker", 
+            "time": "30:39"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "30:48", 
+            "action": "activate", 
+            "subject": "oracle", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "ancient apparition", 
+            "time": "30:52"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "30:54"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "31:13", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "20%"
+        }, 
+        {
+            "gold-fed": "529", 
+            "top": "39%", 
+            "other-objects": "natures-prophet", 
+            "whom": "beastmaster", 
+            "time": "31:53", 
+            "action": "killed by", 
+            "skill": "wild axes", 
+            "subject": "spirit breaker", 
+            "gold-lost": "359", 
+            "left": "10%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "32:00"
+        }, 
+        {
+            "gold-fed": "472", 
+            "top": "71%", 
+            "other-objects": [
+                "natures-prophet", 
+                "witch-doctor", 
+                "oracle"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "32:07", 
+            "action": "killed by", 
+            "skill": "call down", 
+            "subject": "ancient apparition", 
+            "gold-lost": "329", 
+            "left": "10%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire ranged top barracks", 
+            "subject": "gyrocopter", 
+            "supplement": "ranged", 
+            "time": "32:12"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "32:21"
+        }, 
+        {
+            "top": "76%", 
+            "whom": "dire tier 3 middle tower", 
+            "supplement": "tier", 
+            "time": "32:28", 
+            "action": "destroy", 
+            "subject": "nature's prophet", 
+            "left": "26%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "32:58", 
+            "action": "bottled", 
+            "subject": "beastmaster", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "33:02"
+        }, 
+        {
+            "top": "76%", 
+            "whom": "sentry ward", 
+            "time": "33:14", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "26%"
+        }, 
+        {
+            "top": "78%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "slardar", 
+                "dark-seer", 
+                "spirit-breaker", 
+                "windranger"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "33:19", 
+            "action": "activate", 
+            "subject": "ancient apparition", 
+            "left": "24%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "observer ward", 
+            "time": "33:36", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "57%"
+        }, 
+        {
+            "gold-fed": "1055", 
+            "top": "87%", 
+            "other-objects": "dark-seer", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "33:48", 
+            "action": "killed by", 
+            "subject": "oracle", 
+            "gold-lost": "419", 
+            "left": "70%"
+        }, 
+        {
+            "gold-fed": "512", 
+            "top": "87%", 
+            "other-objects": [
+                "natures-prophet", 
+                "beastmaster"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "33:50", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "389", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "595", 
+            "top": "90%", 
+            "other-objects": [
+                "gyrocopter", 
+                "witch-doctor"
+            ], 
+            "whom": "nature's prophet", 
+            "supplement": "autoattack", 
+            "time": "33:50", 
+            "action": "killed by", 
+            "subject": "dark seer", 
+            "gold-lost": "449", 
+            "left": "70%"
+        }, 
+        {
+            "gold-fed": "1288", 
+            "top": "89%", 
+            "other-objects": [
+                "dark-seer", 
+                "spirit-breaker"
+            ], 
+            "whom": "windranger", 
+            "time": "33:52", 
+            "action": "killed by", 
+            "skill": "false promise", 
+            "subject": "beastmaster", 
+            "gold-lost": "479", 
+            "left": "69%"
+        }, 
+        {
+            "gold-fed": "784", 
+            "top": "78%", 
+            "other-objects": [
+                "gyrocopter", 
+                "witch-doctor"
+            ], 
+            "whom": "nature's prophet", 
+            "time": "33:55", 
+            "action": "killed by", 
+            "skill": "maelstrom", 
+            "subject": "slardar", 
+            "gold-lost": "539", 
+            "left": "74%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "nature's prophet", 
+            "time": "33:55"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "dark seer", 
+            "time": "33:59"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "witch doctor", 
+            "time": "34:01"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire ranged middle barracks", 
+            "subject": "nature's prophet", 
+            "supplement": "ranged", 
+            "time": "34:08"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "gyrocopter", 
+            "time": "34:09"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "dark seer", 
+            "time": "34:09"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "nature's prophet", 
+            "time": "34:09"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "spirit breaker", 
+            "time": "34:09"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "windranger", 
+            "time": "34:09"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "witch doctor", 
+            "time": "34:09"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "ancient apparition", 
+            "time": "34:09"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "oracle", 
+            "time": "34:09"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "slardar", 
+            "time": "34:09"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "beastmaster", 
+            "time": "34:09"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the radiant", 
+            "time": "34:11"
+        }
+    ]
+}

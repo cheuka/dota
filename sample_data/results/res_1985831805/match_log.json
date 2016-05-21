@@ -1,0 +1,2402 @@
+{
+    "events": [
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "skywrath mage", 
+            "time": "-01:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "skywrath mage", 
+            "time": "-01:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "tusk", 
+            "time": "-01:15"
+        }, 
+        {
+            "top": "22%", 
+            "whom": "observer ward", 
+            "time": "-01:15", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "23%"
+        }, 
+        {
+            "top": "83%", 
+            "whom": "observer ward", 
+            "time": "-00:33", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "70%"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "observer ward", 
+            "time": "-00:24", 
+            "action": "place", 
+            "subject": "nyx assassin", 
+            "left": "59%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "375", 
+            "top": "68%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "queen-of-pain", 
+                "alchemist"
+            ], 
+            "whom": "phoenix", 
+            "supplement": "autoattack", 
+            "time": "00:02", 
+            "action": "killed by", 
+            "subject": "nyx assassin", 
+            "gold-lost": "29", 
+            "left": "61%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "sentry ward", 
+            "time": "00:34", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "52%"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "observer ward", 
+            "time": "00:37", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "55%"
+        }, 
+        {
+            "top": "88%", 
+            "whom": "sentry ward", 
+            "time": "01:12", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "70%"
+        }, 
+        {
+            "gold-fed": "425", 
+            "top": "8%", 
+            "other-objects": "gyrocopter", 
+            "whom": "bane", 
+            "time": "01:13", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "phoenix", 
+            "gold-lost": "29", 
+            "left": "35%"
+        }, 
+        {
+            "top": "83%", 
+            "whom": "observer ward", 
+            "time": "01:19", 
+            "action": "destroy", 
+            "subject": "tusk", 
+            "left": "70%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "02:00", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "02:00", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "356", 
+            "top": "64%", 
+            "other-objects": "skywrath-mage", 
+            "whom": "spirit breaker", 
+            "time": "02:02", 
+            "action": "killed by", 
+            "skill": "orb of venom", 
+            "subject": "nyx assassin", 
+            "gold-lost": "59", 
+            "left": "66%"
+        }, 
+        {
+            "gold-fed": "342", 
+            "top": "9%", 
+            "other-objects": "bane", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "02:07", 
+            "action": "killed by", 
+            "subject": "phoenix", 
+            "gold-lost": "59", 
+            "left": "33%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "skywrath mage", 
+            "time": "02:36"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "02:45"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "02:45"
+        }, 
+        {
+            "gold-fed": "325", 
+            "top": "46%", 
+            "other-objects": "tusk", 
+            "whom": "templar assassin", 
+            "supplement": "autoattack", 
+            "time": "03:23", 
+            "action": "killed by", 
+            "subject": "skywrath mage", 
+            "gold-lost": "59", 
+            "left": "43%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "04:00", 
+            "action": "bottled", 
+            "subject": "templar assassin", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "04:03", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "tusk", 
+            "time": "04:07"
+        }, 
+        {
+            "top": "39%", 
+            "whom": "sentry ward", 
+            "time": "04:11", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "47%"
+        }, 
+        {
+            "top": "33%", 
+            "whom": "observer ward", 
+            "time": "04:17", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "skywrath mage", 
+            "time": "04:36"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "04:50"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "04:51"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "05:17"
+        }, 
+        {
+            "top": "38%", 
+            "whom": "sentry ward", 
+            "time": "05:28", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "50%"
+        }, 
+        {
+            "top": "39%", 
+            "whom": "sentry ward", 
+            "time": "05:30", 
+            "action": "destroy", 
+            "subject": "skywrath mage", 
+            "left": "47%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "05:41", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "67%"
+        }, 
+        {
+            "top": "44%", 
+            "whom": "observer ward", 
+            "time": "05:45", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "41%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "templar assassin", 
+            "time": "05:58"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "06:02", 
+            "action": "bottled", 
+            "subject": "templar assassin", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "06:04", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "templar assassin", 
+            "time": "06:18"
+        }, 
+        {
+            "top": "84%", 
+            "other-objects": [
+                "tusk", 
+                "gyrocopter"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "06:49", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "49%"
+        }, 
+        {
+            "top": "53%", 
+            "whom": "observer ward", 
+            "time": "07:16", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "67%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "08:01", 
+            "action": "bottled", 
+            "subject": "templar assassin", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "379", 
+            "top": "43%", 
+            "other-objects": "tusk", 
+            "whom": "gyrocopter", 
+            "time": "08:04", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "spirit breaker", 
+            "gold-lost": "119", 
+            "left": "62%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "templar assassin", 
+            "time": "08:05"
+        }, 
+        {
+            "gold-fed": "416", 
+            "top": "45%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "skywrath-mage", 
+                "queen-of-pain"
+            ], 
+            "whom": "alchemist", 
+            "supplement": "autoattack", 
+            "time": "08:13", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "119", 
+            "left": "76%"
+        }, 
+        {
+            "gold-fed": "405", 
+            "top": "46%", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "08:15", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "209", 
+            "left": "62%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "08:15"
+        }, 
+        {
+            "gold-fed": "632", 
+            "top": "46%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "skywrath-mage", 
+                "queen-of-pain", 
+                "alchemist"
+            ], 
+            "whom": "phoenix", 
+            "time": "08:20", 
+            "action": "killed by", 
+            "skill": "launch fire spirit", 
+            "subject": "gyrocopter", 
+            "gold-lost": "209", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "627", 
+            "top": "43%", 
+            "other-objects": "gyrocopter", 
+            "whom": "templar assassin", 
+            "time": "08:20", 
+            "action": "killed by", 
+            "skill": "psi blades", 
+            "subject": "skywrath mage", 
+            "gold-lost": "89", 
+            "left": "68%"
+        }, 
+        {
+            "top": "45%", 
+            "other-objects": "gyrocopter", 
+            "whom": "templar assassin", 
+            "supplement": "autoattack", 
+            "time": "08:20", 
+            "action": "killed by", 
+            "subject": "phoenix", 
+            "left": "66%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "templar assassin", 
+            "time": "08:20"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "08:33"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "skywrath mage", 
+            "time": "08:36"
+        }, 
+        {
+            "top": "18%", 
+            "whom": "observer ward", 
+            "time": "08:53", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "28%"
+        }, 
+        {
+            "top": "87%", 
+            "other-objects": [
+                "gyrocopter", 
+                "bane"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "08:56", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "54%"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "sentry ward", 
+            "time": "08:58", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "66%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "sentry ward", 
+            "time": "09:08", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "67%"
+        }, 
+        {
+            "top": "53%", 
+            "whom": "observer ward", 
+            "time": "09:12", 
+            "action": "destroy", 
+            "subject": "skywrath mage", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "321", 
+            "top": "41%", 
+            "other-objects": "nyx-assassin", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "09:48", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "119", 
+            "left": "63%"
+        }, 
+        {
+            "gold-fed": "644", 
+            "top": "41%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "alchemist"
+            ], 
+            "whom": "phoenix", 
+            "time": "09:49", 
+            "action": "killed by", 
+            "skill": "launch fire spirit", 
+            "subject": "gyrocopter", 
+            "gold-lost": "239", 
+            "left": "64%"
+        }, 
+        {
+            "gold-fed": "452", 
+            "top": "40%", 
+            "whom": "nyx assassin", 
+            "supplement": "autoattack", 
+            "time": "09:50", 
+            "action": "killed by", 
+            "subject": "phoenix", 
+            "gold-lost": "179", 
+            "left": "66%"
+        }, 
+        {
+            "gold-fed": "505", 
+            "top": "41%", 
+            "other-objects": "gyrocopter", 
+            "whom": "bane", 
+            "time": "09:51", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "queen of pain", 
+            "gold-lost": "209", 
+            "left": "65%"
+        }, 
+        {
+            "gold-fed": "579", 
+            "top": "39%", 
+            "other-objects": [
+                "phoenix", 
+                "skywrath-mage", 
+                "alchemist"
+            ], 
+            "whom": "queen of pain", 
+            "time": "09:52", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "nyx assassin", 
+            "gold-lost": "209", 
+            "left": "68%"
+        }, 
+        {
+            "gold-fed": "568", 
+            "top": "42%", 
+            "other-objects": [
+                "phoenix", 
+                "queen-of-pain", 
+                "alchemist"
+            ], 
+            "whom": "skywrath mage", 
+            "time": "09:53", 
+            "action": "killed by", 
+            "skill": "arcane bolt", 
+            "subject": "bane", 
+            "gold-lost": "209", 
+            "left": "67%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "10:01", 
+            "action": "bottled", 
+            "subject": "templar assassin", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "10:03"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "templar assassin", 
+            "time": "10:04"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "skywrath mage", 
+            "time": "10:05"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "10:06"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "skywrath mage", 
+            "time": "10:10"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "skywrath mage", 
+            "time": "10:18"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "10:20", 
+            "action": "bottled", 
+            "subject": "templar assassin", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "10:30"
+        }, 
+        {
+            "top": "86%", 
+            "whom": "sentry ward", 
+            "time": "10:39", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "71%"
+        }, 
+        {
+            "top": "34%", 
+            "whom": "sentry ward", 
+            "time": "10:48", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "64%"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "observer ward", 
+            "time": "10:49", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "86%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "10:51"
+        }, 
+        {
+            "top": "33%", 
+            "whom": "observer ward", 
+            "time": "10:55", 
+            "action": "destroy", 
+            "subject": "skywrath mage", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "448", 
+            "top": "74%", 
+            "other-objects": "nyx-assassin", 
+            "whom": "bane", 
+            "time": "11:07", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "queen of pain", 
+            "gold-lost": "209", 
+            "left": "91%"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "radiant tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "11:23", 
+            "action": "destroy", 
+            "subject": "templar assassin", 
+            "left": "88%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "templar assassin", 
+            "time": "11:41"
+        }, 
+        {
+            "top": "34%", 
+            "whom": "sentry ward", 
+            "time": "11:58", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "74%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "39%", 
+            "whom": "observer ward", 
+            "time": "12:04", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "77%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "12:05", 
+            "action": "bottled", 
+            "subject": "templar assassin", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "templar assassin", 
+            "time": "12:12"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "skywrath mage", 
+            "time": "12:34"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "skywrath mage", 
+            "time": "12:34"
+        }, 
+        {
+            "top": "18%", 
+            "whom": "sentry ward", 
+            "time": "12:53", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "23%"
+        }, 
+        {
+            "top": "58%", 
+            "whom": "sentry ward", 
+            "time": "13:11", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "77%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "13:13"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "13:18", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "68%"
+        }, 
+        {
+            "top": "75%", 
+            "whom": "observer ward", 
+            "time": "13:29", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "70%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "13:32", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "skywrath mage", 
+            "time": "13:37"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "13:37"
+        }, 
+        {
+            "top": "9%", 
+            "other-objects": [
+                "tusk", 
+                "gyrocopter", 
+                "bane"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "13:42", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "31%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "13:43", 
+            "action": "bottled", 
+            "subject": "templar assassin", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "observer ward", 
+            "time": "14:04", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "56%"
+        }, 
+        {
+            "gold-fed": "364", 
+            "top": "40%", 
+            "other-objects": [
+                "tusk", 
+                "gyrocopter", 
+                "bane"
+            ], 
+            "whom": "templar assassin", 
+            "time": "14:10", 
+            "action": "killed by", 
+            "skill": "meld", 
+            "subject": "spirit breaker", 
+            "gold-lost": "179", 
+            "left": "64%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "spirit breaker", 
+            "time": "14:11"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "templar assassin", 
+            "time": "14:11"
+        }, 
+        {
+            "gold-fed": "634", 
+            "top": "36%", 
+            "other-objects": [
+                "phoenix", 
+                "queen-of-pain"
+            ], 
+            "whom": "alchemist", 
+            "time": "14:13", 
+            "action": "killed by", 
+            "skill": "acid spray", 
+            "subject": "bane", 
+            "gold-lost": "239", 
+            "left": "63%"
+        }, 
+        {
+            "gold-fed": "637", 
+            "top": "40%", 
+            "other-objects": [
+                "phoenix", 
+                "skywrath-mage", 
+                "alchemist"
+            ], 
+            "whom": "queen of pain", 
+            "time": "14:13", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "nyx assassin", 
+            "gold-lost": "239", 
+            "left": "62%"
+        }, 
+        {
+            "gold-fed": "599", 
+            "top": "42%", 
+            "other-objects": [
+                "tusk", 
+                "gyrocopter"
+            ], 
+            "whom": "templar assassin", 
+            "supplement": "autoattack", 
+            "time": "14:17", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "329", 
+            "left": "66%"
+        }, 
+        {
+            "top": "42%", 
+            "other-objects": [
+                "templar-assassin", 
+                "tusk", 
+                "gyrocopter"
+            ], 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "14:17", 
+            "action": "activate", 
+            "subject": "skywrath mage", 
+            "left": "66%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "templar assassin", 
+            "time": "14:17"
+        }, 
+        {
+            "gold-fed": "811", 
+            "top": "45%", 
+            "other-objects": [
+                "phoenix", 
+                "skywrath-mage", 
+                "alchemist"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "14:19", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "269", 
+            "left": "68%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "14:19"
+        }, 
+        {
+            "gold-fed": "1104", 
+            "top": "47%", 
+            "other-objects": [
+                "skywrath-mage", 
+                "queen-of-pain", 
+                "alchemist"
+            ], 
+            "whom": "phoenix", 
+            "time": "14:22", 
+            "action": "killed by", 
+            "skill": "launch fire spirit", 
+            "subject": "templar assassin", 
+            "gold-lost": "389", 
+            "left": "65%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "14:31"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "14:50", 
+            "action": "activate", 
+            "subject": "phoenix", 
+            "left": "61%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "observer ward", 
+            "time": "15:15", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "57%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "15:43", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "582", 
+            "top": "10%", 
+            "other-objects": "nyx-assassin", 
+            "whom": "gyrocopter", 
+            "time": "15:57", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "queen of pain", 
+            "gold-lost": "299", 
+            "left": "24%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "16:04", 
+            "action": "bottled", 
+            "subject": "templar assassin", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "templar assassin", 
+            "time": "16:11"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "16:16", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "skywrath mage", 
+            "time": "16:43"
+        }, 
+        {
+            "top": "74%", 
+            "whom": "observer ward", 
+            "time": "17:20", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "64%"
+        }, 
+        {
+            "gold-fed": "467", 
+            "top": "71%", 
+            "other-objects": "tusk", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "17:35", 
+            "action": "killed by", 
+            "subject": "phoenix", 
+            "gold-lost": "299", 
+            "left": "65%"
+        }, 
+        {
+            "gold-fed": "576", 
+            "top": "71%", 
+            "other-objects": [
+                "phoenix", 
+                "queen-of-pain", 
+                "alchemist"
+            ], 
+            "whom": "skywrath mage", 
+            "time": "17:36", 
+            "action": "killed by", 
+            "skill": "concussive shot", 
+            "subject": "nyx assassin", 
+            "gold-lost": "299", 
+            "left": "63%"
+        }, 
+        {
+            "gold-fed": "430", 
+            "top": "75%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "phoenix", 
+                "alchemist"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "17:38", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "239", 
+            "left": "64%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "nyx assassin", 
+            "time": "17:38"
+        }, 
+        {
+            "gold-fed": "566", 
+            "top": "70%", 
+            "other-objects": "templar-assassin", 
+            "whom": "gyrocopter", 
+            "time": "17:40", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "queen of pain", 
+            "gold-lost": "329", 
+            "left": "66%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "17:40"
+        }, 
+        {
+            "gold-fed": "424", 
+            "top": "69%", 
+            "other-objects": [
+                "templar-assassin", 
+                "bane"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "17:41", 
+            "action": "killed by", 
+            "subject": "skywrath mage", 
+            "gold-lost": "269", 
+            "left": "63%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "17:41"
+        }, 
+        {
+            "gold-fed": "630", 
+            "top": "32%", 
+            "other-objects": [
+                "templar-assassin", 
+                "bane"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "17:59", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "359", 
+            "left": "63%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "radiant tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "18:06", 
+            "action": "destroy", 
+            "subject": "templar assassin", 
+            "left": "58%"
+        }, 
+        {
+            "gold-fed": "364", 
+            "top": "60%", 
+            "other-objects": "nyx-assassin", 
+            "whom": "bane", 
+            "time": "18:18", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "spirit breaker", 
+            "gold-lost": "239", 
+            "left": "80%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "18:22"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "18:22"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "skywrath mage", 
+            "time": "18:28"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "18:29", 
+            "action": "bottled", 
+            "subject": "templar assassin", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "templar assassin", 
+            "time": "18:30"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "templar assassin", 
+            "time": "18:40"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "18:40"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "18:44", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "68%"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "sentry ward", 
+            "time": "18:50", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "78%"
+        }, 
+        {
+            "top": "40%", 
+            "whom": "observer ward", 
+            "time": "19:03", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "77%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "19:03", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "571", 
+            "top": "43%", 
+            "other-objects": "nyx-assassin", 
+            "whom": "templar assassin", 
+            "supplement": "autoattack", 
+            "time": "19:06", 
+            "action": "killed by", 
+            "subject": "phoenix", 
+            "gold-lost": "329", 
+            "left": "51%"
+        }, 
+        {
+            "top": "39%", 
+            "whom": "sentry ward", 
+            "time": "19:21", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "77%"
+        }, 
+        {
+            "top": "40%", 
+            "whom": "observer ward", 
+            "time": "19:24", 
+            "action": "destroy", 
+            "subject": "skywrath mage", 
+            "left": "77%"
+        }, 
+        {
+            "gold-fed": "576", 
+            "top": "10%", 
+            "other-objects": [
+                "tusk", 
+                "bane", 
+                "nyx-assassin"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "19:52", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "359", 
+            "left": "19%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "20:02", 
+            "action": "bottled", 
+            "subject": "templar assassin", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "templar assassin", 
+            "time": "20:03"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "sentry ward", 
+            "time": "20:22", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "63%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "skywrath mage", 
+            "time": "20:26"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "queen of pain", 
+            "time": "20:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "skywrath mage", 
+            "time": "20:27"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "20:30"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "20:46", 
+            "action": "destroy", 
+            "subject": "templar assassin", 
+            "left": "55%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "bane", 
+            "time": "20:47"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "21:20"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "21:34", 
+            "action": "bottled", 
+            "subject": "templar assassin", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "templar assassin", 
+            "time": "21:34"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "sentry ward", 
+            "time": "22:02", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "51%"
+        }, 
+        {
+            "top": "49%", 
+            "whom": "observer ward", 
+            "time": "22:08", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "45%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "22:08", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "22:12", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "bane", 
+            "time": "22:18"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "sentry ward", 
+            "time": "22:29", 
+            "action": "destroy", 
+            "subject": "bane", 
+            "left": "51%"
+        }, 
+        {
+            "top": "49%", 
+            "whom": "observer ward", 
+            "time": "22:29", 
+            "action": "destroy", 
+            "subject": "tusk", 
+            "left": "45%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "skywrath mage", 
+            "time": "22:31"
+        }, 
+        {
+            "gold-fed": "695", 
+            "top": "12%", 
+            "other-objects": "nyx-assassin", 
+            "whom": "templar assassin", 
+            "supplement": "autoattack", 
+            "time": "22:44", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "389", 
+            "left": "27%"
+        }, 
+        {
+            "gold-fed": "469", 
+            "top": "9%", 
+            "other-objects": "nyx-assassin", 
+            "whom": "templar assassin", 
+            "supplement": "autoattack", 
+            "time": "22:47", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "239", 
+            "left": "32%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "templar assassin", 
+            "time": "22:47"
+        }, 
+        {
+            "gold-fed": "424", 
+            "top": "14%", 
+            "other-objects": "tusk", 
+            "whom": "templar assassin", 
+            "supplement": "autoattack", 
+            "time": "22:50", 
+            "action": "killed by", 
+            "subject": "skywrath mage", 
+            "gold-lost": "269", 
+            "left": "18%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "templar assassin", 
+            "time": "22:50"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "22:54"
+        }, 
+        {
+            "gold-fed": "559", 
+            "top": "19%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "alchemist"
+            ], 
+            "whom": "phoenix", 
+            "time": "22:55", 
+            "action": "killed by", 
+            "skill": "launch fire spirit", 
+            "subject": "nyx assassin", 
+            "gold-lost": "359", 
+            "left": "25%"
+        }, 
+        {
+            "gold-fed": "632", 
+            "top": "34%", 
+            "other-objects": [
+                "tusk", 
+                "bane"
+            ], 
+            "whom": "templar assassin", 
+            "supplement": "autoattack", 
+            "time": "23:02", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "359", 
+            "left": "18%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "templar assassin", 
+            "time": "23:02"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "skywrath mage", 
+            "time": "23:18"
+        }, 
+        {
+            "top": "10%", 
+            "whom": "observer ward", 
+            "time": "23:32", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "59%"
+        }, 
+        {
+            "top": "27%", 
+            "whom": "radiant tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "23:40", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "67%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "sentry ward", 
+            "time": "23:41", 
+            "action": "destroy", 
+            "subject": "bane", 
+            "left": "63%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "24:05", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "24:08", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "top": "25%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "phoenix", 
+                "skywrath-mage", 
+                "queen-of-pain"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "24:15", 
+            "action": "activate", 
+            "subject": "skywrath mage", 
+            "left": "70%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "sentry ward", 
+            "time": "24:20", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "62%"
+        }, 
+        {
+            "gold-fed": "1741", 
+            "top": "39%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "phoenix", 
+                "queen-of-pain"
+            ], 
+            "whom": "skywrath mage", 
+            "time": "24:33", 
+            "action": "killed by", 
+            "skill": "arcane bolt", 
+            "subject": "gyrocopter", 
+            "gold-lost": "449", 
+            "left": "41%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "observer ward", 
+            "time": "24:43", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "36%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "sentry ward", 
+            "time": "24:50", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "52%"
+        }, 
+        {
+            "top": "14%", 
+            "whom": "sentry ward", 
+            "time": "25:05", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "23%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "25:06"
+        }, 
+        {
+            "gold-fed": "481", 
+            "top": "9%", 
+            "other-objects": "nyx-assassin", 
+            "whom": "templar assassin", 
+            "time": "25:24", 
+            "action": "killed by", 
+            "skill": "meld", 
+            "subject": "skywrath mage", 
+            "gold-lost": "299", 
+            "left": "64%"
+        }, 
+        {
+            "gold-fed": "398", 
+            "top": "9%", 
+            "whom": "templar assassin", 
+            "supplement": "autoattack", 
+            "time": "25:35", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "269", 
+            "left": "58%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "templar assassin", 
+            "time": "25:35"
+        }, 
+        {
+            "top": "30%", 
+            "whom": "observer ward", 
+            "time": "25:53", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "56%"
+        }, 
+        {
+            "top": "14%", 
+            "whom": "sentry ward", 
+            "time": "25:56", 
+            "action": "destroy", 
+            "subject": "bane", 
+            "left": "23%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "skywrath mage", 
+            "time": "25:57"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "26:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "26:01", 
+            "action": "activate", 
+            "subject": "templar assassin", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "26:17"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "skywrath mage", 
+            "time": "26:24"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "26:36", 
+            "action": "activate", 
+            "subject": "templar assassin", 
+            "left": "61%"
+        }, 
+        {
+            "top": "52%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "phoenix", 
+                "skywrath-mage", 
+                "alchemist"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "27:29", 
+            "action": "activate", 
+            "subject": "skywrath mage", 
+            "left": "90%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "27:35", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "1021", 
+            "top": "56%", 
+            "other-objects": [
+                "skywrath-mage", 
+                "queen-of-pain", 
+                "alchemist"
+            ], 
+            "whom": "spirit breaker", 
+            "supplement": "autoattack", 
+            "time": "27:38", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "419", 
+            "left": "66%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "bane", 
+            "time": "27:38"
+        }, 
+        {
+            "gold-fed": "398", 
+            "top": "56%", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "27:43", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "269", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "501", 
+            "top": "56%", 
+            "other-objects": "gyrocopter", 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "27:47", 
+            "action": "killed by", 
+            "subject": "skywrath mage", 
+            "gold-lost": "329", 
+            "left": "73%"
+        }, 
+        {
+            "gold-fed": "917", 
+            "top": "52%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "alchemist"
+            ], 
+            "whom": "phoenix", 
+            "time": "27:53", 
+            "action": "killed by", 
+            "skill": "icarus dive", 
+            "subject": "tusk", 
+            "gold-lost": "359", 
+            "left": "73%"
+        }, 
+        {
+            "gold-fed": "536", 
+            "top": "51%", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "27:53", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "419", 
+            "left": "75%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "27:53"
+        }, 
+        {
+            "gold-fed": "914", 
+            "top": "50%", 
+            "other-objects": [
+                "spirit-breaker", 
+                "skywrath-mage", 
+                "queen-of-pain", 
+                "alchemist"
+            ], 
+            "whom": "phoenix", 
+            "time": "27:54", 
+            "action": "killed by", 
+            "skill": "supernova", 
+            "subject": "gyrocopter", 
+            "gold-lost": "509", 
+            "left": "73%"
+        }, 
+        {
+            "top": "9%", 
+            "whom": "radiant tier 3 top tower", 
+            "supplement": "tier", 
+            "time": "27:54", 
+            "action": "destroy", 
+            "subject": "templar assassin", 
+            "left": "70%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "phoenix", 
+            "time": "27:54"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "27:56"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "courier", 
+            "subject": "the radiant", 
+            "time": "27:56"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "28:00"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "phoenix", 
+            "time": "28:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "28:00"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "28:05", 
+            "action": "destroy", 
+            "subject": "phoenix", 
+            "left": "67%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "spirit breaker", 
+            "time": "28:05"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant melee top barracks", 
+            "subject": "templar assassin", 
+            "supplement": "melee", 
+            "time": "28:10"
+        }, 
+        {
+            "gold-fed": "459", 
+            "top": "8%", 
+            "other-objects": "nyx-assassin", 
+            "whom": "templar assassin", 
+            "supplement": "autoattack", 
+            "time": "28:17", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "269", 
+            "left": "70%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant ranged top barracks", 
+            "subject": "templar assassin", 
+            "supplement": "ranged", 
+            "time": "28:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "tusk", 
+            "time": "28:32"
+        }, 
+        {
+            "top": "10%", 
+            "whom": "observer ward", 
+            "time": "28:41", 
+            "action": "destroy", 
+            "subject": "alchemist", 
+            "left": "59%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "skywrath mage", 
+            "time": "28:42"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "skywrath mage", 
+            "time": "28:42"
+        }, 
+        {
+            "gold-fed": "793", 
+            "top": "21%", 
+            "other-objects": "templar-assassin", 
+            "whom": "nyx assassin", 
+            "time": "28:55", 
+            "action": "killed by", 
+            "skill": "mana burn", 
+            "subject": "phoenix", 
+            "gold-lost": "479", 
+            "left": "43%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "phoenix", 
+            "time": "28:55"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "nyx assassin", 
+            "time": "28:56"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "29:02", 
+            "action": "activate", 
+            "subject": "nyx assassin", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "29:06", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "61%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "29:12", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "74%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "29:13", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "52%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "templar assassin", 
+            "time": "29:35"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "29:35"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "29:59", 
+            "action": "destroy", 
+            "subject": "nyx assassin", 
+            "left": "52%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "nyx assassin", 
+            "time": "30:09"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "bane", 
+            "time": "30:09"
+        }, 
+        {
+            "top": "21%", 
+            "whom": "radiant tier 3 middle tower", 
+            "supplement": "tier", 
+            "time": "30:16", 
+            "action": "destroy", 
+            "subject": "templar assassin", 
+            "left": "75%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "observer ward", 
+            "time": "30:20", 
+            "action": "place", 
+            "subject": "skywrath mage", 
+            "left": "77%"
+        }, 
+        {
+            "gold-fed": "503", 
+            "top": "26%", 
+            "other-objects": [
+                "bane", 
+                "nyx-assassin"
+            ], 
+            "whom": "tusk", 
+            "time": "30:24", 
+            "action": "killed by", 
+            "skill": "snowball", 
+            "subject": "skywrath mage", 
+            "gold-lost": "329", 
+            "left": "84%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant ranged middle barracks", 
+            "subject": "templar assassin", 
+            "supplement": "ranged", 
+            "time": "30:31"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "observer ward", 
+            "time": "30:33", 
+            "action": "destroy", 
+            "subject": "bane", 
+            "left": "77%"
+        }, 
+        {
+            "gold-fed": "770", 
+            "top": "17%", 
+            "other-objects": [
+                "gyrocopter", 
+                "nyx-assassin"
+            ], 
+            "whom": "templar assassin", 
+            "supplement": "autoattack", 
+            "time": "30:43", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "479", 
+            "left": "75%"
+        }, 
+        {
+            "gold-fed": "570", 
+            "top": "14%", 
+            "other-objects": [
+                "tusk", 
+                "nyx-assassin"
+            ], 
+            "whom": "templar assassin", 
+            "supplement": "autoattack", 
+            "time": "30:45", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "419", 
+            "left": "78%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "templar assassin", 
+            "time": "30:45"
+        }, 
+        {
+            "gold-fed": "727", 
+            "top": "22%", 
+            "other-objects": [
+                "gyrocopter", 
+                "nyx-assassin"
+            ], 
+            "whom": "bane", 
+            "time": "30:47", 
+            "action": "killed by", 
+            "skill": "fiend's grip", 
+            "subject": "phoenix", 
+            "gold-lost": "479", 
+            "left": "73%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "phoenix", 
+            "time": "30:48"
+        }, 
+        {
+            "gold-fed": "481", 
+            "top": "11%", 
+            "whom": "templar assassin", 
+            "supplement": "autoattack", 
+            "time": "30:52", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "299", 
+            "left": "81%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "templar assassin", 
+            "time": "30:52"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "courier", 
+            "subject": "the radiant", 
+            "time": "30:55"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "skywrath mage", 
+            "time": "30:58"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "alchemist", 
+            "time": "30:58"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "templar assassin", 
+            "time": "30:58"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "queen of pain", 
+            "time": "30:58"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "gyrocopter", 
+            "time": "30:58"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "bane", 
+            "time": "30:58"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "nyx assassin", 
+            "time": "30:58"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "tusk", 
+            "time": "30:58"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "spirit breaker", 
+            "time": "30:58"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "phoenix", 
+            "time": "30:58"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the dire", 
+            "time": "31:00"
+        }
+    ]
+}

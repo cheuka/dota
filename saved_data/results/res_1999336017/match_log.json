@@ -1,0 +1,1738 @@
+{
+    "events": [
+        {
+            "action": "speak", 
+            "subject": "tusk", 
+            "time": "-01:29"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "juggernaut", 
+            "time": "-01:29"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "tidehunter", 
+            "time": "-01:29"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "juggernaut", 
+            "time": "-01:29"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "visage", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "vengeful spirit", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "-01:27"
+        }, 
+        {
+            "top": "8%", 
+            "whom": "observer ward", 
+            "time": "-01:00", 
+            "action": "place", 
+            "subject": "visage", 
+            "left": "25%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "observer ward", 
+            "time": "-00:44", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "46%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "-00:29", 
+            "action": "place", 
+            "subject": "tusk", 
+            "left": "46%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "-00:08", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "57%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "tiny", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "01:16"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "02:01", 
+            "action": "activate", 
+            "subject": "tidehunter", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "02:03", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "38%"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "sentry ward", 
+            "time": "02:55", 
+            "action": "place", 
+            "subject": "shadow fiend", 
+            "left": "53%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "03:34"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "04:00", 
+            "action": "activate", 
+            "subject": "tidehunter", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "04:02"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "04:02", 
+            "action": "activate", 
+            "subject": "visage", 
+            "left": "38%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "04:08", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "59%"
+        }, 
+        {
+            "gold-fed": "427", 
+            "top": "64%", 
+            "other-objects": "vengeful-spirit", 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "04:16", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "89", 
+            "left": "56%"
+        }, 
+        {
+            "gold-fed": "247", 
+            "top": "60%", 
+            "other-objects": "tusk", 
+            "whom": "vengeful spirit", 
+            "supplement": "autoattack", 
+            "time": "04:25", 
+            "action": "killed by", 
+            "subject": "tidehunter", 
+            "gold-lost": "59", 
+            "left": "53%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "visage", 
+            "time": "04:35"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "05:13"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "observer ward", 
+            "time": "05:36", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "visage", 
+            "time": "05:38"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "sentry ward", 
+            "time": "05:49", 
+            "action": "place", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "05:51", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "46%"
+        }, 
+        {
+            "top": "91%", 
+            "whom": "observer ward", 
+            "time": "05:53", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "67%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "44%", 
+            "whom": "observer ward", 
+            "time": "06:03", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "41%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "06:06", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "333", 
+            "top": "39%", 
+            "other-objects": [
+                "wraith-king", 
+                "shadow-fiend"
+            ], 
+            "whom": "visage", 
+            "time": "06:18", 
+            "action": "killed by", 
+            "skill": "soul assumption", 
+            "subject": "bane", 
+            "gold-lost": "119", 
+            "left": "47%"
+        }, 
+        {
+            "gold-fed": "328", 
+            "top": "47%", 
+            "other-objects": [
+                "tidehunter", 
+                "dazzle", 
+                "shadow-fiend"
+            ], 
+            "whom": "visage", 
+            "time": "06:25", 
+            "action": "killed by", 
+            "skill": "soul assumption", 
+            "subject": "tusk", 
+            "gold-lost": "119", 
+            "left": "50%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "visage", 
+            "time": "06:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "06:43"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "07:42"
+        }, 
+        {
+            "top": "79%", 
+            "other-objects": [
+                "vengeful-spirit", 
+                "bane"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "07:49", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "77%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "07:50"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "07:51"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "08:05", 
+            "action": "activate", 
+            "subject": "vengeful spirit", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "08:09", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "tiny", 
+            "time": "08:09"
+        }, 
+        {
+            "gold-fed": "332", 
+            "top": "60%", 
+            "other-objects": "vengeful-spirit", 
+            "whom": "bane", 
+            "supplement": "autoattack", 
+            "time": "08:20", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "89", 
+            "left": "46%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "08:36"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "sentry ward", 
+            "time": "08:55", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "45%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "sentry ward", 
+            "time": "09:00", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "57%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "vengeful spirit", 
+            "time": "09:14"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "vengeful spirit", 
+            "time": "09:17"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "sentry ward", 
+            "time": "09:17", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "57%"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "observer ward", 
+            "time": "09:28", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "57%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "dazzle", 
+            "time": "09:39"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "sentry ward", 
+            "time": "09:45", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "57%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "09:49", 
+            "action": "destroy", 
+            "subject": "vengeful spirit", 
+            "left": "59%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "10:00", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "10:03", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "10:04"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "tiny", 
+            "time": "10:05"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "10:56"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "11:40"
+        }, 
+        {
+            "gold-fed": "609", 
+            "top": "27%", 
+            "other-objects": [
+                "wraith-king", 
+                "dazzle", 
+                "visage"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "11:49", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "juggernaut", 
+            "gold-lost": "269", 
+            "left": "17%"
+        }, 
+        {
+            "top": "30%", 
+            "other-objects": [
+                "tiny", 
+                "vengeful-spirit", 
+                "bane"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "11:51", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "67%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "12:14", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "19%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "12:15"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "observer ward", 
+            "time": "12:19", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "40%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "12:23", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "12:35", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "12:40", 
+            "action": "activate", 
+            "subject": "vengeful spirit", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "13:09"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "radiant tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "13:17", 
+            "action": "destroy", 
+            "subject": "wraith king", 
+            "left": "58%"
+        }, 
+        {
+            "top": "67%", 
+            "whom": "sentry ward", 
+            "time": "13:35", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "67%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "13:41"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "13:41"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "13:44"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "13%", 
+            "whom": "sentry ward", 
+            "time": "14:04", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "28%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "14:09"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "14:10"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "14:13", 
+            "action": "activate", 
+            "subject": "wraith king", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "14:21"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "14:26", 
+            "action": "destroy", 
+            "subject": "tusk", 
+            "left": "11%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "14:28", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "75%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "vengeful spirit", 
+            "time": "14:29"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "14:33"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "shadow fiend", 
+            "time": "14:35"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "14:39", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "15:04"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "15:05"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "15:09", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "20%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "tiny", 
+            "time": "15:10"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "dire tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "15:23", 
+            "action": "destroy", 
+            "subject": "bane", 
+            "left": "11%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "15:45", 
+            "action": "destroy", 
+            "subject": "tiny", 
+            "left": "48%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "16:00", 
+            "action": "activate", 
+            "subject": "juggernaut", 
+            "left": "38%"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "neutral creep", 
+            "time": "16:06", 
+            "action": "speak", 
+            "subject": "tidehunter", 
+            "left": "53%"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "sentry ward", 
+            "time": "16:22", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "62%"
+        }, 
+        {
+            "top": "37%", 
+            "other-objects": [
+                "tiny", 
+                "vengeful-spirit", 
+                "tusk", 
+                "bane"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "16:30", 
+            "action": "activate", 
+            "subject": "vengeful spirit", 
+            "left": "63%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "16:31"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "tiny", 
+            "time": "16:45", 
+            "action": "killed by", 
+            "skill": "toss", 
+            "subject": "shadow fiend", 
+            "left": "57%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "16:45"
+        }, 
+        {
+            "gold-fed": "600", 
+            "top": "66%", 
+            "other-objects": [
+                "vengeful-spirit", 
+                "tusk", 
+                "bane"
+            ], 
+            "whom": "tiny", 
+            "time": "16:54", 
+            "action": "killed by", 
+            "skill": "toss", 
+            "subject": "shadow fiend", 
+            "gold-lost": "329", 
+            "left": "56%"
+        }, 
+        {
+            "top": "65%", 
+            "other-objects": [
+                "tiny", 
+                "vengeful-spirit", 
+                "tusk", 
+                "bane"
+            ], 
+            "whom": "juggernaut", 
+            "supplement": "autoattack", 
+            "time": "17:01", 
+            "action": "killed by", 
+            "subject": "wraith king", 
+            "left": "57%"
+        }, 
+        {
+            "gold-fed": "518", 
+            "top": "65%", 
+            "other-objects": [
+                "juggernaut", 
+                "tiny", 
+                "vengeful-spirit", 
+                "tusk"
+            ], 
+            "whom": "bane", 
+            "time": "17:11", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "wraith king", 
+            "gold-lost": "329", 
+            "left": "61%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "17:11", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "tiny", 
+            "time": "17:12"
+        }, 
+        {
+            "gold-fed": "448", 
+            "top": "68%", 
+            "other-objects": [
+                "tiny", 
+                "vengeful-spirit", 
+                "tusk"
+            ], 
+            "whom": "juggernaut", 
+            "supplement": "autoattack", 
+            "time": "17:14", 
+            "action": "killed by", 
+            "subject": "tidehunter", 
+            "gold-lost": "239", 
+            "left": "64%"
+        }, 
+        {
+            "top": "90%", 
+            "other-objects": [
+                "vengeful-spirit", 
+                "tusk", 
+                "bane"
+            ], 
+            "whom": "tiny", 
+            "time": "17:55", 
+            "action": "speak", 
+            "subject": "shadow fiend", 
+            "left": "46%"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "dire tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "17:58", 
+            "action": "destroy", 
+            "subject": "vengeful spirit", 
+            "left": "48%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "18:00"
+        }, 
+        {
+            "gold-fed": "369", 
+            "top": "91%", 
+            "other-objects": [
+                "tiny", 
+                "vengeful-spirit", 
+                "tusk"
+            ], 
+            "whom": "bane", 
+            "time": "18:02", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "dazzle", 
+            "gold-lost": "209", 
+            "left": "43%"
+        }, 
+        {
+            "gold-fed": "420", 
+            "top": "87%", 
+            "other-objects": [
+                "juggernaut", 
+                "vengeful-spirit", 
+                "bane"
+            ], 
+            "whom": "tiny", 
+            "time": "18:06", 
+            "action": "killed by", 
+            "skill": "toss", 
+            "subject": "visage", 
+            "gold-lost": "239", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "448", 
+            "top": "87%", 
+            "other-objects": [
+                "juggernaut", 
+                "tiny", 
+                "vengeful-spirit", 
+                "bane"
+            ], 
+            "whom": "tusk", 
+            "time": "18:12", 
+            "action": "killed by", 
+            "skill": "snowball", 
+            "subject": "tidehunter", 
+            "gold-lost": "239", 
+            "left": "33%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "18:20"
+        }, 
+        {
+            "gold-fed": "568", 
+            "top": "88%", 
+            "other-objects": [
+                "tiny", 
+                "vengeful-spirit", 
+                "tusk", 
+                "bane"
+            ], 
+            "whom": "juggernaut", 
+            "supplement": "autoattack", 
+            "time": "18:39", 
+            "action": "killed by", 
+            "subject": "wraith king", 
+            "gold-lost": "329", 
+            "left": "27%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire melee bottom barracks", 
+            "subject": "bane", 
+            "supplement": "melee", 
+            "time": "18:46"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire ranged bottom barracks", 
+            "subject": "vengeful spirit", 
+            "supplement": "ranged", 
+            "time": "18:48"
+        }, 
+        {
+            "gold-fed": "753", 
+            "top": "65%", 
+            "other-objects": [
+                "tidehunter", 
+                "visage"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "19:12", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "239", 
+            "left": "54%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "vengeful spirit", 
+            "time": "19:20"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "19:33", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "38%"
+        }, 
+        {
+            "top": "71%", 
+            "other-objects": [
+                "wraith-king", 
+                "tidehunter", 
+                "dazzle", 
+                "shadow-fiend", 
+                "visage"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "19:42", 
+            "action": "activate", 
+            "subject": "dazzle", 
+            "left": "41%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "19:47"
+        }, 
+        {
+            "top": "43%", 
+            "other-objects": [
+                "tidehunter", 
+                "dazzle", 
+                "shadow-fiend"
+            ], 
+            "whom": "wraith-king", 
+            "time": "19:55", 
+            "action": "speak", 
+            "subject": "tiny", 
+            "left": "55%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "40%", 
+            "whom": "observer ward", 
+            "time": "20:12", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "77%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "20:29", 
+            "action": "activate", 
+            "subject": "tidehunter", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "399", 
+            "top": "47%", 
+            "other-objects": [
+                "tusk", 
+                "bane"
+            ], 
+            "whom": "vengeful spirit", 
+            "supplement": "autoattack", 
+            "time": "20:33", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "239", 
+            "left": "52%"
+        }, 
+        {
+            "top": "69%", 
+            "whom": "observer ward", 
+            "time": "20:59", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "27%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "21:05"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "tiny", 
+            "time": "21:10"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "dire tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "21:15", 
+            "action": "destroy", 
+            "subject": "tiny", 
+            "left": "37%"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "sentry ward", 
+            "time": "21:20", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "47%"
+        }, 
+        {
+            "top": "83%", 
+            "whom": "observer ward", 
+            "time": "21:30", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "43%"
+        }, 
+        {
+            "top": "74%", 
+            "whom": "sentry ward", 
+            "time": "21:50", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "36%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "22:00"
+        }, 
+        {
+            "gold-fed": "605", 
+            "top": "66%", 
+            "other-objects": [
+                "vengeful-spirit", 
+                "tusk", 
+                "bane"
+            ], 
+            "whom": "tiny", 
+            "time": "22:07", 
+            "action": "killed by", 
+            "skill": "toss", 
+            "subject": "shadow fiend", 
+            "gold-lost": "389", 
+            "left": "39%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "visage", 
+            "time": "22:21"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "22:37", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "61%"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "sentry ward", 
+            "time": "22:57", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "20%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "23:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "23:00", 
+            "action": "activate", 
+            "subject": "juggernaut", 
+            "left": "38%"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "sentry ward", 
+            "time": "23:32", 
+            "action": "destroy", 
+            "subject": "tidehunter", 
+            "left": "47%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "23:37"
+        }, 
+        {
+            "top": "83%", 
+            "whom": "observer ward", 
+            "time": "23:38", 
+            "action": "destroy", 
+            "subject": "visage", 
+            "left": "43%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "bane", 
+            "time": "23:43"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "23:48", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "56%"
+        }, 
+        {
+            "top": "69%", 
+            "whom": "observer ward", 
+            "time": "23:53", 
+            "action": "destroy", 
+            "subject": "visage", 
+            "left": "27%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "tiny", 
+            "time": "23:58"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "24:05", 
+            "action": "activate", 
+            "subject": "vengeful spirit", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "24:07", 
+            "action": "bottled", 
+            "subject": "tiny", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "dazzle", 
+            "time": "24:12"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "24:14"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "tiny", 
+            "time": "24:30"
+        }, 
+        {
+            "top": "76%", 
+            "other-objects": [
+                "wraith-king", 
+                "tidehunter", 
+                "dazzle", 
+                "shadow-fiend", 
+                "visage"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "24:36", 
+            "action": "activate", 
+            "subject": "dazzle", 
+            "left": "47%"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "observer ward", 
+            "time": "24:58", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "66%"
+        }, 
+        {
+            "gold-fed": "538", 
+            "top": "53%", 
+            "other-objects": [
+                "juggernaut", 
+                "vengeful-spirit", 
+                "tusk", 
+                "bane"
+            ], 
+            "whom": "tiny", 
+            "time": "25:04", 
+            "action": "killed by", 
+            "skill": "grow", 
+            "subject": "tidehunter", 
+            "gold-lost": "329", 
+            "left": "66%"
+        }, 
+        {
+            "gold-fed": "449", 
+            "top": "56%", 
+            "other-objects": [
+                "tiny", 
+                "vengeful-spirit", 
+                "tusk"
+            ], 
+            "whom": "juggernaut", 
+            "supplement": "autoattack", 
+            "time": "25:08", 
+            "action": "killed by", 
+            "subject": "visage", 
+            "gold-lost": "269", 
+            "left": "65%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "visage", 
+            "time": "25:08"
+        }, 
+        {
+            "top": "54%", 
+            "other-objects": [
+                "juggernaut", 
+                "tiny", 
+                "tusk", 
+                "bane"
+            ], 
+            "whom": "vengeful spirit", 
+            "supplement": "autoattack", 
+            "time": "25:09", 
+            "action": "killed by", 
+            "subject": "wraith king", 
+            "left": "66%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "juggernaut", 
+            "time": "25:09"
+        }, 
+        {
+            "gold-fed": "702", 
+            "top": "56%", 
+            "other-objects": [
+                "tiny", 
+                "vengeful-spirit", 
+                "tusk"
+            ], 
+            "whom": "juggernaut", 
+            "supplement": "autoattack", 
+            "time": "25:15", 
+            "action": "killed by", 
+            "subject": "shadow fiend", 
+            "gold-lost": "419", 
+            "left": "69%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "juggernaut", 
+            "time": "25:15"
+        }, 
+        {
+            "gold-fed": "1575", 
+            "top": "55%", 
+            "other-objects": [
+                "wraith-king", 
+                "tidehunter", 
+                "dazzle", 
+                "shadow-fiend"
+            ], 
+            "whom": "visage", 
+            "supplement": "autoattack", 
+            "time": "25:17", 
+            "action": "killed by", 
+            "subject": "tiny", 
+            "gold-lost": "389", 
+            "left": "69%"
+        }, 
+        {
+            "gold-fed": "574", 
+            "top": "56%", 
+            "other-objects": [
+                "tiny", 
+                "vengeful-spirit", 
+                "tusk", 
+                "bane"
+            ], 
+            "whom": "juggernaut", 
+            "time": "25:21", 
+            "action": "killed by", 
+            "skill": "blade fury", 
+            "subject": "wraith king", 
+            "gold-lost": "389", 
+            "left": "69%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "juggernaut", 
+            "time": "25:21"
+        }, 
+        {
+            "gold-fed": "392", 
+            "top": "56%", 
+            "other-objects": [
+                "vengeful-spirit", 
+                "tusk", 
+                "bane"
+            ], 
+            "whom": "juggernaut", 
+            "supplement": "autoattack", 
+            "time": "25:22", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "269", 
+            "left": "70%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "juggernaut", 
+            "time": "25:22"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "25:28", 
+            "action": "destroy", 
+            "subject": "bane", 
+            "left": "56%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "juggernaut", 
+            "time": "25:56"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "roshan", 
+            "subject": "the radiant", 
+            "time": "25:56"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "26:03"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "26:05", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "61%"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "observer ward", 
+            "time": "26:06", 
+            "action": "destroy", 
+            "subject": "juggernaut", 
+            "left": "66%"
+        }, 
+        {
+            "top": "83%", 
+            "whom": "sentry ward", 
+            "time": "26:13", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "30%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "juggernaut", 
+            "time": "26:16"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "vengeful spirit", 
+            "time": "26:17"
+        }, 
+        {
+            "top": "83%", 
+            "whom": "observer ward", 
+            "time": "26:18", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "43%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "vengeful spirit", 
+            "time": "26:37"
+        }, 
+        {
+            "gold-fed": "535", 
+            "top": "89%", 
+            "other-objects": "vengeful-spirit", 
+            "whom": "tusk", 
+            "time": "26:55", 
+            "action": "killed by", 
+            "skill": "ice shards", 
+            "subject": "tidehunter", 
+            "gold-lost": "329", 
+            "left": "46%"
+        }, 
+        {
+            "gold-fed": "723", 
+            "top": "82%", 
+            "other-objects": [
+                "vengeful-spirit", 
+                "bane"
+            ], 
+            "whom": "tusk", 
+            "time": "27:13", 
+            "action": "killed by", 
+            "skill": "ice shards", 
+            "subject": "shadow fiend", 
+            "gold-lost": "419", 
+            "left": "47%"
+        }, 
+        {
+            "gold-fed": "392", 
+            "top": "88%", 
+            "other-objects": "bane", 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "27:21", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "269", 
+            "left": "39%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "tusk", 
+            "time": "27:21"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "tusk", 
+            "time": "27:26"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "vengeful spirit", 
+            "time": "27:26"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "wraith king", 
+            "time": "27:26"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "visage", 
+            "time": "27:26"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "tidehunter", 
+            "time": "27:26"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "bane", 
+            "time": "27:26"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "tiny", 
+            "time": "27:26"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "dazzle", 
+            "time": "27:26"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the radiant", 
+            "time": "27:27"
+        }
+    ]
+}

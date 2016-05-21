@@ -1,0 +1,1790 @@
+{
+    "events": [
+        {
+            "action": "speak", 
+            "subject": "faceless void", 
+            "time": "-01:30"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "bane", 
+            "time": "-01:30"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "bane", 
+            "time": "-01:30"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "pudge", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "vengeful spirit", 
+            "time": "-01:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "vengeful spirit", 
+            "time": "-01:23"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "-01:23"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "faceless void", 
+            "time": "-01:19"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "faceless void", 
+            "time": "-01:19"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "faceless void", 
+            "time": "-01:19"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "earth spirit", 
+            "time": "-01:18"
+        }, 
+        {
+            "top": "10%", 
+            "whom": "observer ward", 
+            "time": "-01:14", 
+            "action": "place", 
+            "subject": "pudge", 
+            "left": "24%"
+        }, 
+        {
+            "top": "91%", 
+            "whom": "observer ward", 
+            "time": "-00:57", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "71%"
+        }, 
+        {
+            "top": "38%", 
+            "whom": "observer ward", 
+            "time": "-00:53", 
+            "action": "place", 
+            "subject": "earthshaker", 
+            "left": "46%"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "observer ward", 
+            "time": "-00:39", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "51%"
+        }, 
+        {
+            "top": "40%", 
+            "whom": "sentry ward", 
+            "time": "-00:37", 
+            "action": "place", 
+            "subject": "pudge", 
+            "left": "36%"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "faceless void", 
+            "time": "-00:23"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "doom", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "dragon knight", 
+            "left": "38%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "sentry ward", 
+            "time": "01:29", 
+            "action": "place", 
+            "subject": "earthshaker", 
+            "left": "24%"
+        }, 
+        {
+            "top": "10%", 
+            "whom": "observer ward", 
+            "time": "01:30", 
+            "action": "destroy", 
+            "subject": "earthshaker", 
+            "left": "24%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "02:01", 
+            "action": "activate", 
+            "subject": "vengeful spirit", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "02:12", 
+            "action": "bottled", 
+            "subject": "dragon knight", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "vengeful spirit", 
+            "time": "02:41"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "earth spirit", 
+            "time": "03:07"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "dragon knight", 
+            "time": "03:23"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "04:01", 
+            "action": "bottled", 
+            "subject": "dragon knight", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "04:16", 
+            "action": "activate", 
+            "subject": "earth spirit", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "dragon knight", 
+            "time": "04:17"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "04:19"
+        }, 
+        {
+            "top": "17%", 
+            "whom": "observer ward", 
+            "time": "04:44", 
+            "action": "place", 
+            "subject": "earthshaker", 
+            "left": "21%"
+        }, 
+        {
+            "top": "46%", 
+            "whom": "sentry ward", 
+            "time": "04:59", 
+            "action": "place", 
+            "subject": "pudge", 
+            "left": "50%"
+        }, 
+        {
+            "top": "17%", 
+            "whom": "observer ward", 
+            "time": "05:25", 
+            "action": "place", 
+            "subject": "pudge", 
+            "left": "28%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "06:02", 
+            "action": "activate", 
+            "subject": "vengeful spirit", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "06:04", 
+            "action": "activate", 
+            "subject": "earthshaker", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "vengeful spirit", 
+            "time": "06:25"
+        }, 
+        {
+            "gold-fed": "472", 
+            "top": "23%", 
+            "other-objects": [
+                "bane", 
+                "gyrocopter"
+            ], 
+            "whom": "dragon knight", 
+            "supplement": "autoattack", 
+            "time": "06:41", 
+            "action": "killed by", 
+            "subject": "earthshaker", 
+            "gold-lost": "119", 
+            "left": "26%"
+        }, 
+        {
+            "top": "44%", 
+            "whom": "sentry ward", 
+            "time": "06:45", 
+            "action": "place", 
+            "subject": "earth spirit", 
+            "left": "44%"
+        }, 
+        {
+            "top": "81%", 
+            "whom": "observer ward", 
+            "time": "07:16", 
+            "action": "place", 
+            "subject": "earth spirit", 
+            "left": "70%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "07:20"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "07:23"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "vengeful spirit", 
+            "time": "07:55"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "arcane rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "08:00", 
+            "action": "activate", 
+            "subject": "earth spirit", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "arcane rune", 
+            "time": "08:03", 
+            "action": "bottled", 
+            "subject": "dragon knight", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "388", 
+            "top": "21%", 
+            "other-objects": "bane", 
+            "whom": "gyrocopter", 
+            "time": "08:21", 
+            "action": "killed by", 
+            "skill": "homing missile", 
+            "subject": "earthshaker", 
+            "gold-lost": "149", 
+            "left": "27%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "vengeful spirit", 
+            "time": "08:44"
+        }, 
+        {
+            "top": "22%", 
+            "other-objects": [
+                "earthshaker", 
+                "vengeful-spirit"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "09:29", 
+            "action": "activate", 
+            "subject": "vengeful spirit", 
+            "left": "42%"
+        }, 
+        {
+            "top": "46%", 
+            "whom": "observer ward", 
+            "time": "09:56", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "33%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "arcane rune", 
+            "subject": "dragon knight", 
+            "time": "10:03"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "10:22", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "10:22", 
+            "action": "activate", 
+            "subject": "earth spirit", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "499", 
+            "top": "60%", 
+            "other-objects": [
+                "earthshaker", 
+                "vengeful-spirit", 
+                "queen-of-pain", 
+                "earth-spirit"
+            ], 
+            "whom": "doom", 
+            "supplement": "autoattack", 
+            "time": "10:46", 
+            "action": "killed by", 
+            "subject": "dragon knight", 
+            "gold-lost": "239", 
+            "left": "45%"
+        }, 
+        {
+            "gold-fed": "341", 
+            "top": "61%", 
+            "whom": "gyrocopter", 
+            "time": "10:49", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "vengeful spirit", 
+            "gold-lost": "149", 
+            "left": "52%"
+        }, 
+        {
+            "gold-fed": "366", 
+            "top": "63%", 
+            "other-objects": [
+                "pudge", 
+                "bane"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "10:52", 
+            "action": "killed by", 
+            "subject": "earthshaker", 
+            "gold-lost": "179", 
+            "left": "45%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "10:52"
+        }, 
+        {
+            "gold-fed": "329", 
+            "top": "55%", 
+            "whom": "gyrocopter", 
+            "time": "11:00", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "earth spirit", 
+            "gold-lost": "149", 
+            "left": "65%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "11:00"
+        }, 
+        {
+            "gold-fed": "490", 
+            "top": "60%", 
+            "other-objects": [
+                "pudge", 
+                "faceless-void", 
+                "gyrocopter"
+            ], 
+            "whom": "bane", 
+            "time": "11:06", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "doom", 
+            "gold-lost": "269", 
+            "left": "64%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "observer ward", 
+            "time": "11:41", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "77%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "gold-fed": "768", 
+            "top": "34%", 
+            "whom": "doom", 
+            "time": "12:01", 
+            "action": "killed by", 
+            "skill": "scorched earth", 
+            "subject": "gyrocopter", 
+            "gold-lost": "269", 
+            "left": "30%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "12:01", 
+            "action": "bottled", 
+            "subject": "dragon knight", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "dragon knight", 
+            "time": "12:02"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "12:05", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "12:26"
+        }, 
+        {
+            "gold-fed": "396", 
+            "top": "26%", 
+            "other-objects": "queen-of-pain", 
+            "whom": "vengeful spirit", 
+            "supplement": "autoattack", 
+            "time": "12:27", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "179", 
+            "left": "19%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "pudge", 
+            "time": "12:29"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "radiant tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "12:34", 
+            "action": "destroy", 
+            "subject": "dragon knight", 
+            "left": "88%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "12:37"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "12:37"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "earth spirit", 
+            "time": "12:42"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "13:03", 
+            "action": "speak", 
+            "subject": "gyrocopter", 
+            "left": "48%"
+        }, 
+        {
+            "top": "61%", 
+            "other-objects": [
+                "bane", 
+                "gyrocopter"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "13:08", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "52%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "sentry ward", 
+            "time": "13:14", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "64%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "observer ward", 
+            "time": "13:16", 
+            "action": "place", 
+            "subject": "pudge", 
+            "left": "77%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "13:19"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "sentry ward", 
+            "time": "13:31", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "56%"
+        }, 
+        {
+            "gold-fed": "324", 
+            "top": "42%", 
+            "other-objects": [
+                "earthshaker", 
+                "vengeful-spirit", 
+                "earth-spirit"
+            ], 
+            "whom": "doom", 
+            "supplement": "autoattack", 
+            "time": "13:42", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "179", 
+            "left": "55%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "13:58", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "11%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "arcane rune", 
+            "time": "14:00"
+        }, 
+        {
+            "gold-fed": "377", 
+            "top": "45%", 
+            "other-objects": "dragon-knight", 
+            "whom": "faceless void", 
+            "supplement": "autoattack", 
+            "time": "14:01", 
+            "action": "killed by", 
+            "subject": "earth spirit", 
+            "gold-lost": "179", 
+            "left": "53%"
+        }, 
+        {
+            "gold-fed": "589", 
+            "top": "43%", 
+            "other-objects": [
+                "faceless-void", 
+                "dragon-knight"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "14:07", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "doom", 
+            "gold-lost": "299", 
+            "left": "57%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "14:13"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "14:15"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "vengeful spirit", 
+            "time": "14:24"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "vengeful spirit", 
+            "time": "14:25"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "14:32", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "earth spirit", 
+            "time": "14:38"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "arcane rune", 
+            "time": "14:38", 
+            "action": "bottled", 
+            "subject": "dragon knight", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "14:44"
+        }, 
+        {
+            "top": "39%", 
+            "whom": "sentry ward", 
+            "time": "15:01", 
+            "action": "place", 
+            "subject": "earth spirit", 
+            "left": "61%"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "observer ward", 
+            "time": "15:01", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "51%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "sentry ward", 
+            "time": "15:09", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "59%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "sentry ward", 
+            "time": "15:14", 
+            "action": "destroy", 
+            "subject": "vengeful spirit", 
+            "left": "64%"
+        }, 
+        {
+            "top": "49%", 
+            "whom": "observer ward", 
+            "time": "15:17", 
+            "action": "place", 
+            "subject": "earth spirit", 
+            "left": "58%"
+        }, 
+        {
+            "top": "43%", 
+            "whom": "sentry ward", 
+            "time": "15:37", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "21%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "15:45"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "33%", 
+            "other-objects": [
+                "earthshaker", 
+                "vengeful-spirit", 
+                "doom", 
+                "earth-spirit"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "16:02", 
+            "action": "activate", 
+            "subject": "earth spirit", 
+            "left": "55%"
+        }, 
+        {
+            "top": "70%", 
+            "other-objects": [
+                "bane", 
+                "faceless-void", 
+                "dragon-knight", 
+                "gyrocopter"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "16:03", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "33%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "arcane rune", 
+            "subject": "dragon knight", 
+            "time": "16:08"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "16:16", 
+            "action": "bottled", 
+            "subject": "dragon knight", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "325", 
+            "top": "61%", 
+            "other-objects": [
+                "earthshaker", 
+                "vengeful-spirit"
+            ], 
+            "whom": "doom", 
+            "time": "16:25", 
+            "action": "killed by", 
+            "skill": "scorched earth", 
+            "subject": "bane", 
+            "gold-lost": "179", 
+            "left": "73%"
+        }, 
+        {
+            "gold-fed": "480", 
+            "top": "38%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "earth-spirit"
+            ], 
+            "whom": "earthshaker", 
+            "time": "16:41", 
+            "action": "killed by", 
+            "skill": "fissure", 
+            "subject": "faceless void", 
+            "gold-lost": "269", 
+            "left": "55%"
+        }, 
+        {
+            "top": "68%", 
+            "whom": "observer ward", 
+            "time": "17:02", 
+            "action": "place", 
+            "subject": "earth spirit", 
+            "left": "51%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "vengeful spirit", 
+            "time": "17:08"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "vengeful spirit", 
+            "time": "17:08"
+        }, 
+        {
+            "top": "67%", 
+            "whom": "sentry ward", 
+            "time": "17:14", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "54%"
+        }, 
+        {
+            "top": "68%", 
+            "whom": "observer ward", 
+            "time": "17:17", 
+            "action": "destroy", 
+            "subject": "bane", 
+            "left": "51%"
+        }, 
+        {
+            "top": "57%", 
+            "whom": "sentry ward", 
+            "time": "17:30", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "80%"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "observer ward", 
+            "time": "17:33", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "58%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "sentry ward", 
+            "time": "17:39", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "77%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "observer ward", 
+            "time": "17:42", 
+            "action": "destroy", 
+            "subject": "vengeful spirit", 
+            "left": "77%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "dragon knight", 
+            "time": "17:55"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "17:59", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "arcane rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "arcane rune", 
+            "time": "18:01", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "18:09", 
+            "action": "activate", 
+            "subject": "doom", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "18:14"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "18:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "18:26"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "19:05", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "74%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "vengeful spirit", 
+            "time": "19:14"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "vengeful spirit", 
+            "time": "19:18"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "observer ward", 
+            "time": "19:39", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "57%"
+        }, 
+        {
+            "top": "65%", 
+            "other-objects": [
+                "earthshaker", 
+                "vengeful-spirit", 
+                "doom", 
+                "queen-of-pain", 
+                "earth-spirit"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "19:48", 
+            "action": "activate", 
+            "subject": "vengeful spirit", 
+            "left": "77%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "sentry ward", 
+            "time": "20:02", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "55%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "20:10", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "20:14", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "70%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "vengeful spirit", 
+            "time": "20:23"
+        }, 
+        {
+            "top": "82%", 
+            "other-objects": [
+                "pudge", 
+                "bane", 
+                "dragon-knight", 
+                "gyrocopter"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "20:26", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "59%"
+        }, 
+        {
+            "gold-fed": "518", 
+            "top": "56%", 
+            "other-objects": [
+                "pudge", 
+                "dragon-knight", 
+                "gyrocopter"
+            ], 
+            "whom": "bane", 
+            "time": "20:49", 
+            "action": "killed by", 
+            "skill": "fiend's grip", 
+            "subject": "doom", 
+            "gold-lost": "329", 
+            "left": "73%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "20:51", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "20:53"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "21:23", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "64%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "gyrocopter", 
+            "time": "21:35"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "21:35"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "22:10"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "22:18"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "22:25", 
+            "action": "activate", 
+            "subject": "vengeful spirit", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "22:31", 
+            "action": "bottled", 
+            "subject": "dragon knight", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "712", 
+            "top": "87%", 
+            "other-objects": "doom", 
+            "whom": "queen of pain", 
+            "time": "22:32", 
+            "action": "killed by", 
+            "skill": "orchid malevolence", 
+            "subject": "faceless void", 
+            "gold-lost": "329", 
+            "left": "54%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "22:40"
+        }, 
+        {
+            "top": "87%", 
+            "whom": "dire tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "22:57", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "60%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "22:57", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "dragon knight", 
+            "time": "23:04"
+        }, 
+        {
+            "top": "21%", 
+            "whom": "observer ward", 
+            "time": "23:07", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "53%"
+        }, 
+        {
+            "top": "23%", 
+            "whom": "sentry ward", 
+            "time": "23:10", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "48%"
+        }, 
+        {
+            "gold-fed": "398", 
+            "top": "9%", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "23:37", 
+            "action": "killed by", 
+            "subject": "vengeful spirit", 
+            "gold-lost": "269", 
+            "left": "53%"
+        }, 
+        {
+            "gold-fed": "416", 
+            "top": "14%", 
+            "whom": "queen of pain", 
+            "time": "23:39", 
+            "action": "killed by", 
+            "skill": "shadow strike", 
+            "subject": "bane", 
+            "gold-lost": "239", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "664", 
+            "top": "19%", 
+            "other-objects": [
+                "faceless-void", 
+                "dragon-knight"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "23:45", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "449", 
+            "left": "42%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "23:45"
+        }, 
+        {
+            "gold-fed": "566", 
+            "top": "24%", 
+            "other-objects": [
+                "pudge", 
+                "faceless-void", 
+                "gyrocopter"
+            ], 
+            "whom": "dragon knight", 
+            "supplement": "autoattack", 
+            "time": "23:53", 
+            "action": "killed by", 
+            "subject": "doom", 
+            "gold-lost": "329", 
+            "left": "42%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "23:59"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "24:00", 
+            "action": "bottled", 
+            "subject": "dragon knight", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "earth spirit", 
+            "time": "24:05"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "vengeful spirit", 
+            "time": "24:16"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "24:18"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "dragon knight", 
+            "time": "24:35"
+        }, 
+        {
+            "top": "24%", 
+            "whom": "sentry ward", 
+            "time": "24:40", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "51%"
+        }, 
+        {
+            "top": "23%", 
+            "whom": "sentry ward", 
+            "time": "24:45", 
+            "action": "destroy", 
+            "subject": "vengeful spirit", 
+            "left": "48%"
+        }, 
+        {
+            "top": "21%", 
+            "whom": "observer ward", 
+            "time": "25:02", 
+            "action": "destroy", 
+            "subject": "vengeful spirit", 
+            "left": "53%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "25:07", 
+            "action": "bottled", 
+            "subject": "dragon knight", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "dragon knight", 
+            "time": "25:08"
+        }, 
+        {
+            "gold-fed": "548", 
+            "top": "17%", 
+            "other-objects": "pudge", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "25:13", 
+            "action": "killed by", 
+            "subject": "earthshaker", 
+            "gold-lost": "299", 
+            "left": "24%"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "sentry ward", 
+            "time": "25:33", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "59%"
+        }, 
+        {
+            "gold-fed": "370", 
+            "top": "42%", 
+            "whom": "dragon knight", 
+            "time": "25:40", 
+            "action": "killed by", 
+            "skill": "elder dragon form", 
+            "subject": "earth spirit", 
+            "gold-lost": "239", 
+            "left": "55%"
+        }, 
+        {
+            "gold-fed": "547", 
+            "top": "45%", 
+            "other-objects": [
+                "bane", 
+                "dragon-knight", 
+                "gyrocopter"
+            ], 
+            "whom": "faceless void", 
+            "supplement": "autoattack", 
+            "time": "25:45", 
+            "action": "killed by", 
+            "subject": "doom", 
+            "gold-lost": "359", 
+            "left": "54%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "vengeful spirit", 
+            "time": "25:48"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "vengeful spirit", 
+            "time": "25:48"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "top": "21%", 
+            "whom": "sentry ward", 
+            "time": "26:03", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "52%"
+        }, 
+        {
+            "top": "24%", 
+            "whom": "sentry ward", 
+            "time": "26:09", 
+            "action": "destroy", 
+            "subject": "bane", 
+            "left": "51%"
+        }, 
+        {
+            "top": "23%", 
+            "whom": "observer ward", 
+            "time": "26:13", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "62%"
+        }, 
+        {
+            "top": "27%", 
+            "whom": "radiant tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "26:13", 
+            "action": "destroy", 
+            "subject": "dragon knight", 
+            "left": "67%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "26:32", 
+            "action": "bottled", 
+            "subject": "dragon knight", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "26:33"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "dragon knight", 
+            "time": "26:33"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "26:50", 
+            "action": "activate", 
+            "subject": "pudge", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "earth spirit", 
+            "time": "26:59"
+        }, 
+        {
+            "gold-fed": "535", 
+            "top": "89%", 
+            "other-objects": [
+                "pudge", 
+                "dragon-knight"
+            ], 
+            "whom": "bane", 
+            "supplement": "autoattack", 
+            "time": "27:22", 
+            "action": "killed by", 
+            "subject": "earthshaker", 
+            "gold-lost": "329", 
+            "left": "66%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "27:39", 
+            "action": "place", 
+            "subject": "vengeful spirit", 
+            "left": "34%"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "observer ward", 
+            "time": "27:58", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "75%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "28:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "28:02", 
+            "action": "activate", 
+            "subject": "gyrocopter", 
+            "left": "61%"
+        }, 
+        {
+            "top": "27%", 
+            "other-objects": [
+                "earthshaker", 
+                "vengeful-spirit", 
+                "doom", 
+                "queen-of-pain", 
+                "earth-spirit"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "28:24", 
+            "action": "activate", 
+            "subject": "earthshaker", 
+            "left": "85%"
+        }, 
+        {
+            "top": "46%", 
+            "whom": "radiant tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "28:31", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "88%"
+        }, 
+        {
+            "gold-fed": "476", 
+            "top": "42%", 
+            "other-objects": "dragon-knight", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "28:38", 
+            "action": "killed by", 
+            "subject": "vengeful spirit", 
+            "gold-lost": "299", 
+            "left": "88%"
+        }, 
+        {
+            "gold-fed": "633", 
+            "top": "41%", 
+            "other-objects": [
+                "bane", 
+                "faceless-void", 
+                "dragon-knight"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "28:43", 
+            "action": "killed by", 
+            "subject": "doom", 
+            "gold-lost": "389", 
+            "left": "88%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "28:43"
+        }, 
+        {
+            "gold-fed": "492", 
+            "top": "33%", 
+            "other-objects": "faceless-void", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "28:45", 
+            "action": "killed by", 
+            "subject": "earthshaker", 
+            "gold-lost": "329", 
+            "left": "90%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "28:45"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "earthshaker", 
+            "time": "28:47"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "vengeful spirit", 
+            "time": "28:54"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "earth spirit", 
+            "time": "28:54"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "earthshaker", 
+            "time": "28:54"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "queen of pain", 
+            "time": "28:54"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "doom", 
+            "time": "28:54"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the dire", 
+            "time": "28:56"
+        }
+    ]
+}

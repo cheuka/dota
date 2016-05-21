@@ -1,0 +1,1097 @@
+{
+    "events": [
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lion", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "lion", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lich", 
+            "time": "-01:23"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "lich", 
+            "time": "-01:23"
+        }, 
+        {
+            "top": "33%", 
+            "whom": "observer ward", 
+            "time": "-01:08", 
+            "action": "place", 
+            "subject": "lich", 
+            "left": "18%"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "observer ward", 
+            "time": "-01:08", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "81%"
+        }, 
+        {
+            "top": "70%", 
+            "whom": "sentry ward", 
+            "time": "-00:58", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "72%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "lich", 
+            "time": "-00:45"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "shadow fiend", 
+            "time": "-00:45"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "dark seer", 
+            "time": "-00:45"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "lina", 
+            "time": "-00:45"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "-00:32", 
+            "action": "place", 
+            "subject": "lion", 
+            "left": "33%"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "-00:26", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "67%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "dark seer", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "lina", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "461", 
+            "top": "53%", 
+            "other-objects": [
+                "juggernaut", 
+                "lina"
+            ], 
+            "whom": "rubick", 
+            "supplement": "autoattack", 
+            "time": "00:24", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "29", 
+            "left": "71%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "00:32", 
+            "action": "place", 
+            "subject": "lion", 
+            "left": "21%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "02:02", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "02:17", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "shadow fiend", 
+            "time": "02:18"
+        }, 
+        {
+            "gold-fed": "350", 
+            "top": "37%", 
+            "whom": "shadow fiend", 
+            "time": "02:29", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "lina", 
+            "gold-lost": "89", 
+            "left": "55%"
+        }, 
+        {
+            "gold-fed": "348", 
+            "top": "93%", 
+            "whom": "juggernaut", 
+            "supplement": "autoattack", 
+            "time": "02:58", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "59", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "lion", 
+            "time": "03:21"
+        }, 
+        {
+            "gold-fed": "332", 
+            "top": "9%", 
+            "other-objects": "vengeful-spirit", 
+            "whom": "lion", 
+            "supplement": "autoattack", 
+            "time": "03:43", 
+            "action": "killed by", 
+            "subject": "lich", 
+            "gold-lost": "89", 
+            "left": "26%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lich", 
+            "time": "03:55"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "gold-fed": "455", 
+            "top": "39%", 
+            "other-objects": "spirit-breaker", 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "04:03", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "149", 
+            "left": "57%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "04:15", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "sentry ward", 
+            "time": "04:17", 
+            "action": "place", 
+            "subject": "lion", 
+            "left": "18%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "04:19", 
+            "action": "bottled", 
+            "subject": "dark seer", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "dark seer", 
+            "time": "04:20"
+        }, 
+        {
+            "top": "33%", 
+            "whom": "observer ward", 
+            "time": "04:22", 
+            "action": "destroy", 
+            "subject": "lion", 
+            "left": "18%"
+        }, 
+        {
+            "top": "46%", 
+            "whom": "observer ward", 
+            "time": "04:25", 
+            "action": "place", 
+            "subject": "lich", 
+            "left": "41%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "shadow fiend", 
+            "time": "04:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lion", 
+            "time": "05:10"
+        }, 
+        {
+            "top": "14%", 
+            "whom": "sentry ward", 
+            "time": "05:26", 
+            "action": "place", 
+            "subject": "lich", 
+            "left": "26%"
+        }, 
+        {
+            "gold-fed": "379", 
+            "top": "58%", 
+            "other-objects": "dark-seer", 
+            "whom": "spirit breaker", 
+            "supplement": "autoattack", 
+            "time": "05:27", 
+            "action": "killed by", 
+            "subject": "rubick", 
+            "gold-lost": "119", 
+            "left": "89%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "05:39"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "observer ward", 
+            "time": "05:57", 
+            "action": "place", 
+            "subject": "shadow fiend", 
+            "left": "48%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "06:00", 
+            "action": "bottled", 
+            "subject": "dark seer", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "06:00", 
+            "action": "bottled", 
+            "subject": "lina", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "dark seer", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "spirit breaker", 
+            "time": "06:20"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "lich", 
+            "time": "06:36"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "lion", 
+            "time": "06:48"
+        }, 
+        {
+            "top": "40%", 
+            "other-objects": [
+                "juggernaut", 
+                "rubick"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "07:00", 
+            "action": "activate", 
+            "subject": "rubick", 
+            "left": "66%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "lina", 
+            "time": "07:22"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "spirit breaker", 
+            "time": "07:23"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lion", 
+            "time": "07:42"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "08:00", 
+            "action": "activate", 
+            "subject": "juggernaut", 
+            "left": "61%"
+        }, 
+        {
+            "top": "80%", 
+            "other-objects": [
+                "dark-seer", 
+                "spirit-breaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "08:02", 
+            "action": "activate", 
+            "subject": "dark seer", 
+            "left": "52%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "08:02", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "shadow fiend", 
+            "time": "08:22"
+        }, 
+        {
+            "gold-fed": "448", 
+            "top": "42%", 
+            "other-objects": [
+                "dark-seer", 
+                "spirit-breaker"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "08:25", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "209", 
+            "left": "55%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "sentry ward", 
+            "time": "08:29", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "52%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "08:41"
+        }, 
+        {
+            "top": "17%", 
+            "whom": "sentry ward", 
+            "time": "08:44", 
+            "action": "place", 
+            "subject": "lion", 
+            "left": "22%"
+        }, 
+        {
+            "top": "8%", 
+            "whom": "observer ward", 
+            "time": "08:56", 
+            "action": "place", 
+            "subject": "lion", 
+            "left": "24%"
+        }, 
+        {
+            "gold-fed": "507", 
+            "top": "47%", 
+            "other-objects": "rubick", 
+            "whom": "juggernaut", 
+            "supplement": "autoattack", 
+            "time": "09:02", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "149", 
+            "left": "48%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "10:00", 
+            "action": "activate", 
+            "subject": "juggernaut", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "10:09", 
+            "action": "bottled", 
+            "subject": "lina", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "lina", 
+            "time": "10:10"
+        }, 
+        {
+            "top": "67%", 
+            "other-objects": [
+                "dark-seer", 
+                "spirit-breaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "10:15", 
+            "action": "activate", 
+            "subject": "spirit breaker", 
+            "left": "29%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "lion", 
+            "time": "10:39"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "lion", 
+            "time": "10:39"
+        }, 
+        {
+            "top": "13%", 
+            "whom": "observer ward", 
+            "time": "10:44", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "47%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "rubick", 
+            "time": "10:49"
+        }, 
+        {
+            "gold-fed": "301", 
+            "top": "5%", 
+            "other-objects": [
+                "vengeful-spirit", 
+                "lion", 
+                "spirit-breaker"
+            ], 
+            "whom": "dark seer", 
+            "time": "10:57", 
+            "action": "killed by", 
+            "skill": "ion shell", 
+            "subject": "lich", 
+            "gold-lost": "149", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "431", 
+            "top": "11%", 
+            "other-objects": [
+                "vengeful-spirit", 
+                "lion"
+            ], 
+            "whom": "dark seer", 
+            "time": "11:00", 
+            "action": "killed by", 
+            "skill": "ion shell", 
+            "subject": "juggernaut", 
+            "gold-lost": "209", 
+            "left": "37%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "dark seer", 
+            "time": "11:00"
+        }, 
+        {
+            "gold-fed": "856", 
+            "top": "10%", 
+            "other-objects": [
+                "rubick", 
+                "slardar"
+            ], 
+            "whom": "lina", 
+            "supplement": "autoattack", 
+            "time": "11:05", 
+            "action": "killed by", 
+            "subject": "dark seer", 
+            "gold-lost": "239", 
+            "left": "36%"
+        }, 
+        {
+            "gold-fed": "424", 
+            "top": "8%", 
+            "other-objects": [
+                "dark-seer", 
+                "shadow-fiend", 
+                "spirit-breaker"
+            ], 
+            "whom": "vengeful spirit", 
+            "time": "11:08", 
+            "action": "killed by", 
+            "skill": "magic missile", 
+            "subject": "slardar", 
+            "gold-lost": "209", 
+            "left": "40%"
+        }, 
+        {
+            "gold-fed": "549", 
+            "top": "13%", 
+            "other-objects": [
+                "rubick", 
+                "slardar"
+            ], 
+            "whom": "lina", 
+            "supplement": "autoattack", 
+            "time": "11:09", 
+            "action": "killed by", 
+            "subject": "spirit breaker", 
+            "gold-lost": "179", 
+            "left": "35%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "lina", 
+            "time": "11:09"
+        }, 
+        {
+            "gold-fed": "536", 
+            "top": "17%", 
+            "other-objects": [
+                "dark-seer", 
+                "lion", 
+                "shadow-fiend", 
+                "spirit-breaker"
+            ], 
+            "whom": "vengeful spirit", 
+            "supplement": "autoattack", 
+            "time": "11:12", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "269", 
+            "left": "40%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "vengeful spirit", 
+            "time": "11:12"
+        }, 
+        {
+            "gold-fed": "373", 
+            "top": "17%", 
+            "other-objects": [
+                "vengeful-spirit", 
+                "lion"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "11:16", 
+            "action": "killed by", 
+            "subject": "rubick", 
+            "gold-lost": "179", 
+            "left": "38%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "11:31", 
+            "action": "destroy", 
+            "subject": "vengeful spirit", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "11:47"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "11:48"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "11:48"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "lion", 
+            "time": "11:53"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "12:00", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "sentry ward", 
+            "time": "12:03", 
+            "action": "place", 
+            "subject": "spirit breaker", 
+            "left": "67%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "12:03", 
+            "action": "bottled", 
+            "subject": "dark seer", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "dark seer", 
+            "time": "12:04"
+        }, 
+        {
+            "top": "16%", 
+            "other-objects": [
+                "juggernaut", 
+                "rubick", 
+                "slardar"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "12:05", 
+            "action": "activate", 
+            "subject": "rubick", 
+            "left": "60%"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "observer ward", 
+            "time": "12:07", 
+            "action": "place", 
+            "subject": "lion", 
+            "left": "57%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "12:15", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "47%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "shadow fiend", 
+            "time": "12:25"
+        }, 
+        {
+            "top": "58%", 
+            "whom": "observer ward", 
+            "time": "12:27", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "38%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "12:36"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "12:37"
+        }, 
+        {
+            "top": "53%", 
+            "whom": "observer ward", 
+            "time": "12:41", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "58%"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "sentry ward", 
+            "time": "13:02", 
+            "action": "place", 
+            "subject": "lion", 
+            "left": "57%"
+        }, 
+        {
+            "top": "53%", 
+            "whom": "observer ward", 
+            "time": "13:04", 
+            "action": "destroy", 
+            "subject": "lion", 
+            "left": "58%"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "sentry ward", 
+            "time": "13:37", 
+            "action": "place", 
+            "subject": "lion", 
+            "left": "15%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "lich", 
+            "time": "13:40"
+        }, 
+        {
+            "top": "46%", 
+            "whom": "radiant tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "13:43", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "88%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "spirit breaker", 
+            "time": "14:18"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "14:19", 
+            "action": "bottled", 
+            "subject": "dark seer", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "spirit breaker", 
+            "time": "14:22"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "14:25", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "14:26"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "dark seer", 
+            "time": "14:34"
+        }, 
+        {
+            "top": "30%", 
+            "whom": "sentry ward", 
+            "time": "14:35", 
+            "action": "place", 
+            "subject": "lich", 
+            "left": "60%"
+        }, 
+        {
+            "top": "29%", 
+            "other-objects": [
+                "lich", 
+                "juggernaut", 
+                "rubick", 
+                "slardar"
+            ], 
+            "whom": "lina", 
+            "time": "14:41", 
+            "action": "killed by", 
+            "skill": "light strike array", 
+            "subject": "shadow fiend", 
+            "left": "60%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "14:41"
+        }, 
+        {
+            "gold-fed": "438", 
+            "top": "39%", 
+            "other-objects": [
+                "vengeful-spirit", 
+                "dark-seer", 
+                "spirit-breaker"
+            ], 
+            "whom": "lion", 
+            "time": "14:51", 
+            "action": "killed by", 
+            "skill": "earth spike", 
+            "subject": "juggernaut", 
+            "gold-lost": "239", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "569", 
+            "top": "46%", 
+            "other-objects": [
+                "dark-seer", 
+                "lion"
+            ], 
+            "whom": "spirit breaker", 
+            "time": "15:04", 
+            "action": "killed by", 
+            "skill": "greater bash", 
+            "subject": "lina", 
+            "gold-lost": "299", 
+            "left": "57%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "lion", 
+            "time": "15:08"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the dire", 
+            "time": "15:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "dark seer", 
+            "time": "15:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "spirit breaker", 
+            "time": "15:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "lich", 
+            "time": "15:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "juggernaut", 
+            "time": "15:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "lina", 
+            "time": "15:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "vengeful spirit", 
+            "time": "15:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "slardar", 
+            "time": "15:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "lion", 
+            "time": "15:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "rubick", 
+            "time": "15:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "shadow fiend", 
+            "time": "15:15"
+        }
+    ]
+}

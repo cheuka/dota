@@ -1,0 +1,2332 @@
+{
+    "events": [
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "disruptor", 
+            "time": "-01:23"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "-01:20"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "rubick", 
+            "time": "-01:20"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "-01:17"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "-01:17"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "observer ward", 
+            "time": "-01:10", 
+            "action": "place", 
+            "subject": "clockwerk", 
+            "left": "79%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "-01:05"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "observer ward", 
+            "time": "-00:53", 
+            "action": "place", 
+            "subject": "clockwerk", 
+            "left": "58%"
+        }, 
+        {
+            "top": "82%", 
+            "whom": "observer ward", 
+            "time": "-00:23", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "70%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "wraith king", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "394", 
+            "top": "67%", 
+            "other-objects": [
+                "clockwerk", 
+                "undying"
+            ], 
+            "whom": "disruptor", 
+            "supplement": "autoattack", 
+            "time": "00:02", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "29", 
+            "left": "65%"
+        }, 
+        {
+            "gold-fed": "220", 
+            "top": "69%", 
+            "other-objects": [
+                "night-stalker", 
+                "alchemist", 
+                "gyrocopter", 
+                "bane"
+            ], 
+            "whom": "rubick", 
+            "supplement": "autoattack", 
+            "time": "00:09", 
+            "action": "killed by", 
+            "subject": "clockwerk", 
+            "gold-lost": "29", 
+            "left": "61%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "sentry ward", 
+            "time": "01:04", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "51%"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "sentry ward", 
+            "time": "01:13", 
+            "action": "place", 
+            "subject": "queen of pain", 
+            "left": "52%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "sentry ward", 
+            "time": "01:14", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "51%"
+        }, 
+        {
+            "gold-fed": "356", 
+            "top": "12%", 
+            "other-objects": "disruptor", 
+            "whom": "wraith king", 
+            "time": "01:40", 
+            "action": "killed by", 
+            "skill": "wraithfire blast", 
+            "subject": "night stalker", 
+            "gold-lost": "59", 
+            "left": "34%"
+        }, 
+        {
+            "gold-fed": "311", 
+            "top": "38%", 
+            "other-objects": "undying", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "01:55", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "59", 
+            "left": "57%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "02:00", 
+            "action": "activate", 
+            "subject": "rubick", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "02:05", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "379", 
+            "top": "42%", 
+            "other-objects": "undying", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "02:27", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "59", 
+            "left": "59%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "03:18"
+        }, 
+        {
+            "gold-fed": "359", 
+            "top": "88%", 
+            "other-objects": "rubick", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "03:41", 
+            "action": "killed by", 
+            "subject": "clockwerk", 
+            "gold-lost": "89", 
+            "left": "68%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "observer ward", 
+            "time": "03:53", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "36%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "04:00", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "sentry ward", 
+            "time": "04:10", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "34%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "04:10", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "34%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "04:12"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "04:12", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "alchemist", 
+            "time": "04:13"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "04:35"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "queen of pain", 
+            "time": "04:45"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "observer ward", 
+            "time": "05:18", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "57%"
+        }, 
+        {
+            "gold-fed": "349", 
+            "top": "39%", 
+            "whom": "queen of pain", 
+            "time": "05:52", 
+            "action": "killed by", 
+            "skill": "sonic wave", 
+            "subject": "alchemist", 
+            "gold-lost": "119", 
+            "left": "56%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "06:00", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "06:00", 
+            "action": "activate", 
+            "subject": "rubick", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "disruptor", 
+            "time": "06:10"
+        }, 
+        {
+            "gold-fed": "367", 
+            "top": "89%", 
+            "other-objects": [
+                "night-stalker", 
+                "rubick"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "06:40", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "clockwerk", 
+            "gold-lost": "119", 
+            "left": "67%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "06:44", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "36%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "observer ward", 
+            "time": "06:50", 
+            "action": "destroy", 
+            "subject": "disruptor", 
+            "left": "36%"
+        }, 
+        {
+            "gold-fed": "455", 
+            "top": "48%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "clockwerk"
+            ], 
+            "whom": "disruptor", 
+            "supplement": "autoattack", 
+            "time": "07:13", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "149", 
+            "left": "53%"
+        }, 
+        {
+            "gold-fed": "365", 
+            "top": "47%", 
+            "other-objects": [
+                "night-stalker", 
+                "alchemist", 
+                "bane"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "07:13", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "clockwerk", 
+            "gold-lost": "119", 
+            "left": "49%"
+        }, 
+        {
+            "gold-fed": "345", 
+            "top": "48%", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "07:15", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "119", 
+            "left": "46%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "07:15"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "observer ward", 
+            "time": "07:21", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "56%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "07:33"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "07:35"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "08:03", 
+            "action": "activate", 
+            "subject": "gyrocopter", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "551", 
+            "top": "35%", 
+            "other-objects": [
+                "clockwerk", 
+                "undying", 
+                "disruptor"
+            ], 
+            "whom": "queen of pain", 
+            "time": "08:11", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "gyrocopter", 
+            "gold-lost": "209", 
+            "left": "35%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "08:22"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "08:22"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "sentry ward", 
+            "time": "08:30", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "67%"
+        }, 
+        {
+            "top": "39%", 
+            "whom": "sentry ward", 
+            "time": "08:37", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "47%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "08:37", 
+            "action": "activate", 
+            "subject": "rubick", 
+            "left": "61%"
+        }, 
+        {
+            "top": "33%", 
+            "whom": "observer ward", 
+            "time": "08:46", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "60%"
+        }, 
+        {
+            "top": "54%", 
+            "other-objects": [
+                "rubick", 
+                "bane"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "08:53", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "80%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "undying", 
+            "time": "09:01"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "observer ward", 
+            "time": "09:16", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "37%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "rubick", 
+            "time": "09:37"
+        }, 
+        {
+            "top": "70%", 
+            "other-objects": [
+                "clockwerk", 
+                "undying"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "09:54", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "49%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "10:00", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "10:08", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "10:08"
+        }, 
+        {
+            "top": "12%", 
+            "other-objects": "night-stalker", 
+            "whom": "gyrocopter", 
+            "time": "10:19", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "wraith king", 
+            "left": "28%"
+        }, 
+        {
+            "gold-fed": "359", 
+            "top": "11%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "clockwerk"
+            ], 
+            "whom": "disruptor", 
+            "supplement": "autoattack", 
+            "time": "10:27", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "149", 
+            "left": "26%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "alchemist", 
+            "time": "10:30"
+        }, 
+        {
+            "top": "32%", 
+            "whom": "sentry ward", 
+            "time": "10:56", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "59%"
+        }, 
+        {
+            "top": "33%", 
+            "whom": "observer ward", 
+            "time": "11:03", 
+            "action": "destroy", 
+            "subject": "alchemist", 
+            "left": "60%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "11:37"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "disruptor", 
+            "time": "11:38"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "11:48"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "rubick", 
+            "time": "11:50"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "12:00", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "alchemist", 
+            "time": "12:01"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "12:06", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "queen of pain", 
+            "time": "12:10"
+        }, 
+        {
+            "top": "78%", 
+            "whom": "sentry ward", 
+            "time": "12:15", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "73%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "12:17"
+        }, 
+        {
+            "top": "65%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "clockwerk", 
+                "undying", 
+                "disruptor"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "12:17", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "40%"
+        }, 
+        {
+            "gold-fed": "438", 
+            "top": "72%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "clockwerk", 
+                "disruptor"
+            ], 
+            "whom": "undying", 
+            "time": "12:36", 
+            "action": "killed by", 
+            "skill": "soul rip", 
+            "subject": "alchemist", 
+            "gold-lost": "239", 
+            "left": "74%"
+        }, 
+        {
+            "gold-fed": "743", 
+            "top": "72%", 
+            "other-objects": "alchemist", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "12:36", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "269", 
+            "left": "75%"
+        }, 
+        {
+            "gold-fed": "347", 
+            "top": "70%", 
+            "other-objects": [
+                "alchemist", 
+                "rubick"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "12:38", 
+            "action": "killed by", 
+            "skill": "call down", 
+            "subject": "clockwerk", 
+            "gold-lost": "179", 
+            "left": "74%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "12:38"
+        }, 
+        {
+            "gold-fed": "344", 
+            "top": "68%", 
+            "other-objects": "gyrocopter", 
+            "whom": "bane", 
+            "time": "12:40", 
+            "action": "killed by", 
+            "skill": "fiend's grip", 
+            "subject": "disruptor", 
+            "gold-lost": "179", 
+            "left": "74%"
+        }, 
+        {
+            "gold-fed": "362", 
+            "top": "67%", 
+            "other-objects": [
+                "night-stalker", 
+                "alchemist"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "12:42", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "undying", 
+            "gold-lost": "179", 
+            "left": "71%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "12:42"
+        }, 
+        {
+            "gold-fed": "547", 
+            "top": "90%", 
+            "other-objects": [
+                "night-stalker", 
+                "gyrocopter", 
+                "rubick"
+            ], 
+            "whom": "bane", 
+            "time": "12:59", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "wraith king", 
+            "gold-lost": "329", 
+            "left": "53%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "13:20"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "13:30"
+        }, 
+        {
+            "top": "87%", 
+            "other-objects": [
+                "night-stalker", 
+                "gyrocopter", 
+                "rubick", 
+                "bane"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "13:32", 
+            "action": "activate", 
+            "subject": "rubick", 
+            "left": "71%"
+        }, 
+        {
+            "top": "69%", 
+            "whom": "observer ward", 
+            "time": "13:45", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "51%"
+        }, 
+        {
+            "gold-fed": "346", 
+            "top": "69%", 
+            "other-objects": [
+                "night-stalker", 
+                "bane"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "13:49", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "209", 
+            "left": "52%"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "observer ward", 
+            "time": "13:57", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "43%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "14:04"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "14:08"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "14:10", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "48%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "14:30", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "alchemist", 
+            "time": "14:31"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "disruptor", 
+            "time": "14:36"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "observer ward", 
+            "time": "14:40", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "14%"
+        }, 
+        {
+            "gold-fed": "568", 
+            "top": "27%", 
+            "other-objects": [
+                "clockwerk", 
+                "undying", 
+                "disruptor"
+            ], 
+            "whom": "wraith king", 
+            "time": "14:47", 
+            "action": "killed by", 
+            "skill": "wraithfire blast", 
+            "subject": "bane", 
+            "gold-lost": "239", 
+            "left": "18%"
+        }, 
+        {
+            "gold-fed": "490", 
+            "top": "27%", 
+            "other-objects": [
+                "clockwerk", 
+                "undying", 
+                "disruptor"
+            ], 
+            "whom": "queen of pain", 
+            "time": "14:50", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "rubick", 
+            "gold-lost": "239", 
+            "left": "23%"
+        }, 
+        {
+            "gold-fed": "566", 
+            "top": "27%", 
+            "other-objects": [
+                "night-stalker", 
+                "alchemist"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "14:53", 
+            "action": "killed by", 
+            "skill": "call down", 
+            "subject": "queen of pain", 
+            "gold-lost": "329", 
+            "left": "20%"
+        }, 
+        {
+            "gold-fed": "424", 
+            "top": "27%", 
+            "other-objects": [
+                "night-stalker", 
+                "alchemist", 
+                "rubick"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "14:54", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "undying", 
+            "gold-lost": "209", 
+            "left": "21%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "14:54"
+        }, 
+        {
+            "gold-fed": "1133", 
+            "top": "25%", 
+            "other-objects": [
+                "undying", 
+                "disruptor"
+            ], 
+            "whom": "wraith king", 
+            "time": "14:55", 
+            "action": "killed by", 
+            "skill": "blade mail", 
+            "subject": "gyrocopter", 
+            "gold-lost": "329", 
+            "left": "20%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "wraith king", 
+            "time": "14:55"
+        }, 
+        {
+            "top": "25%", 
+            "other-objects": [
+                "alchemist", 
+                "gyrocopter", 
+                "rubick", 
+                "bane"
+            ], 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "14:56", 
+            "action": "killed by", 
+            "subject": "wraith king", 
+            "left": "21%"
+        }, 
+        {
+            "gold-fed": "438", 
+            "top": "30%", 
+            "other-objects": [
+                "gyrocopter", 
+                "rubick"
+            ], 
+            "whom": "night stalker", 
+            "time": "15:04", 
+            "action": "killed by", 
+            "skill": "urn of shadows", 
+            "subject": "disruptor", 
+            "gold-lost": "239", 
+            "left": "16%"
+        }, 
+        {
+            "gold-fed": "643", 
+            "top": "24%", 
+            "other-objects": [
+                "clockwerk", 
+                "undying", 
+                "disruptor"
+            ], 
+            "whom": "wraith king", 
+            "time": "15:09", 
+            "action": "killed by", 
+            "skill": "blade mail", 
+            "subject": "night stalker", 
+            "gold-lost": "239", 
+            "left": "23%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "wraith king", 
+            "time": "15:09"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "night stalker", 
+            "time": "15:15"
+        }, 
+        {
+            "gold-fed": "648", 
+            "top": "21%", 
+            "other-objects": [
+                "clockwerk", 
+                "undying"
+            ], 
+            "whom": "wraith king", 
+            "supplement": "autoattack", 
+            "time": "15:16", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "269", 
+            "left": "24%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "wraith king", 
+            "time": "15:16"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "disruptor", 
+            "time": "15:29"
+        }, 
+        {
+            "top": "57%", 
+            "whom": "observer ward", 
+            "time": "15:53", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "54%"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "sentry ward", 
+            "time": "15:59", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "43%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "69%", 
+            "whom": "observer ward", 
+            "time": "16:03", 
+            "action": "destroy", 
+            "subject": "disruptor", 
+            "left": "51%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "16:15", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "50%", 
+            "other-objects": [
+                "clockwerk", 
+                "undying", 
+                "disruptor"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "16:16", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "30%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "16:16"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "queen of pain", 
+            "time": "16:29"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "16:31", 
+            "action": "activate", 
+            "subject": "gyrocopter", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "360", 
+            "top": "12%", 
+            "other-objects": [
+                "alchemist", 
+                "rubick"
+            ], 
+            "whom": "night stalker", 
+            "time": "16:44", 
+            "action": "killed by", 
+            "skill": "urn of shadows", 
+            "subject": "disruptor", 
+            "gold-lost": "239", 
+            "left": "17%"
+        }, 
+        {
+            "gold-fed": "448", 
+            "top": "13%", 
+            "other-objects": [
+                "alchemist", 
+                "gyrocopter"
+            ], 
+            "whom": "bane", 
+            "time": "16:45", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "clockwerk", 
+            "gold-lost": "239", 
+            "left": "24%"
+        }, 
+        {
+            "gold-fed": "525", 
+            "top": "13%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "wraith-king", 
+                "clockwerk", 
+                "undying"
+            ], 
+            "whom": "disruptor", 
+            "time": "16:45", 
+            "action": "killed by", 
+            "skill": "static storm", 
+            "subject": "night stalker", 
+            "gold-lost": "269", 
+            "left": "24%"
+        }, 
+        {
+            "gold-fed": "606", 
+            "top": "12%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "clockwerk", 
+                "disruptor"
+            ], 
+            "whom": "undying", 
+            "time": "16:46", 
+            "action": "killed by", 
+            "skill": "decay", 
+            "subject": "alchemist", 
+            "gold-lost": "299", 
+            "left": "25%"
+        }, 
+        {
+            "gold-fed": "815", 
+            "top": "24%", 
+            "other-objects": [
+                "alchemist", 
+                "gyrocopter", 
+                "rubick"
+            ], 
+            "whom": "bane", 
+            "time": "17:01", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "wraith king", 
+            "gold-lost": "389", 
+            "left": "21%"
+        }, 
+        {
+            "gold-fed": "388", 
+            "top": "17%", 
+            "other-objects": [
+                "clockwerk", 
+                "undying", 
+                "disruptor"
+            ], 
+            "whom": "queen of pain", 
+            "time": "17:01", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "rubick", 
+            "gold-lost": "239", 
+            "left": "26%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "bane", 
+            "time": "17:01"
+        }, 
+        {
+            "gold-fed": "561", 
+            "top": "41%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "wraith-king"
+            ], 
+            "whom": "undying", 
+            "time": "17:10", 
+            "action": "killed by", 
+            "skill": "decay", 
+            "subject": "gyrocopter", 
+            "gold-lost": "389", 
+            "left": "20%"
+        }, 
+        {
+            "gold-fed": "421", 
+            "top": "39%", 
+            "other-objects": "gyrocopter", 
+            "whom": "bane", 
+            "time": "17:16", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "undying", 
+            "gold-lost": "269", 
+            "left": "18%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "bane", 
+            "time": "17:16"
+        }, 
+        {
+            "gold-fed": "489", 
+            "top": "30%", 
+            "other-objects": [
+                "wraith-king", 
+                "undying"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "17:20", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "269", 
+            "left": "19%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "17:23"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "17:42"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "rubick", 
+            "time": "17:44"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "17:44", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "70%"
+        }, 
+        {
+            "top": "77%", 
+            "whom": "observer ward", 
+            "time": "17:53", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "79%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "18:00"
+        }, 
+        {
+            "gold-fed": "392", 
+            "top": "78%", 
+            "other-objects": [
+                "alchemist", 
+                "gyrocopter", 
+                "bane"
+            ], 
+            "whom": "rubick", 
+            "time": "18:24", 
+            "action": "killed by", 
+            "skill": "fade bolt", 
+            "subject": "clockwerk", 
+            "gold-lost": "239", 
+            "left": "79%"
+        }, 
+        {
+            "top": "83%", 
+            "other-objects": [
+                "gyrocopter", 
+                "rubick", 
+                "bane"
+            ], 
+            "whom": "alchemist", 
+            "time": "18:26", 
+            "action": "killed by", 
+            "skill": "unstable concoction throw", 
+            "subject": "wraith king", 
+            "left": "79%"
+        }, 
+        {
+            "gold-fed": "662", 
+            "top": "84%", 
+            "other-objects": [
+                "wraith-king", 
+                "undying", 
+                "disruptor"
+            ], 
+            "whom": "queen of pain", 
+            "time": "18:31", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "gyrocopter", 
+            "gold-lost": "389", 
+            "left": "83%"
+        }, 
+        {
+            "gold-fed": "566", 
+            "top": "77%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "wraith-king"
+            ], 
+            "whom": "undying", 
+            "supplement": "autoattack", 
+            "time": "18:40", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "329", 
+            "left": "86%"
+        }, 
+        {
+            "gold-fed": "438", 
+            "top": "70%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "undying"
+            ], 
+            "whom": "wraith king", 
+            "supplement": "autoattack", 
+            "time": "18:45", 
+            "action": "killed by", 
+            "subject": "rubick", 
+            "gold-lost": "239", 
+            "left": "86%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "18:52", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "11%"
+        }, 
+        {
+            "gold-fed": "441", 
+            "top": "70%", 
+            "other-objects": [
+                "wraith-king", 
+                "undying"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "18:53", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "299", 
+            "left": "74%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "19:00", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "19:15"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "19:31"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "19:41"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "disruptor", 
+            "time": "19:42"
+        }, 
+        {
+            "top": "43%", 
+            "whom": "sentry ward", 
+            "time": "19:50", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "21%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "19:56", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "34%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "20:07", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "top": "59%", 
+            "whom": "observer ward", 
+            "time": "20:08", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "62%"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "sentry ward", 
+            "time": "20:11", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "35%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "alchemist", 
+            "time": "20:37"
+        }, 
+        {
+            "top": "43%", 
+            "other-objects": [
+                "alchemist", 
+                "gyrocopter", 
+                "rubick", 
+                "bane"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "20:38", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "66%"
+        }, 
+        {
+            "gold-fed": "395", 
+            "top": "63%", 
+            "other-objects": [
+                "undying", 
+                "disruptor"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "21:06", 
+            "action": "killed by", 
+            "subject": "rubick", 
+            "gold-lost": "239", 
+            "left": "51%"
+        }, 
+        {
+            "gold-fed": "668", 
+            "top": "61%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "wraith-king", 
+                "clockwerk"
+            ], 
+            "whom": "disruptor", 
+            "time": "21:06", 
+            "action": "killed by", 
+            "skill": "static storm", 
+            "subject": "gyrocopter", 
+            "gold-lost": "389", 
+            "left": "47%"
+        }, 
+        {
+            "gold-fed": "518", 
+            "top": "62%", 
+            "other-objects": [
+                "clockwerk", 
+                "undying", 
+                "disruptor"
+            ], 
+            "whom": "queen of pain", 
+            "time": "21:15", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "alchemist", 
+            "gold-lost": "329", 
+            "left": "46%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "21:15"
+        }, 
+        {
+            "gold-fed": "415", 
+            "top": "49%", 
+            "other-objects": [
+                "clockwerk", 
+                "undying"
+            ], 
+            "whom": "wraith king", 
+            "supplement": "autoattack", 
+            "time": "21:18", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "299", 
+            "left": "51%"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "radiant tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "21:32", 
+            "action": "destroy", 
+            "subject": "undying", 
+            "left": "58%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "21:42"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "22:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "22:04", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "rubick", 
+            "time": "22:12"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "22:25", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "38%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "queen of pain", 
+            "time": "22:26"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "22:26"
+        }, 
+        {
+            "gold-fed": "634", 
+            "top": "77%", 
+            "other-objects": [
+                "wraith-king", 
+                "clockwerk", 
+                "disruptor"
+            ], 
+            "whom": "undying", 
+            "time": "22:42", 
+            "action": "killed by", 
+            "skill": "soul rip", 
+            "subject": "gyrocopter", 
+            "gold-lost": "419", 
+            "left": "75%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "22:54"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "observer ward", 
+            "time": "22:59", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "80%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "23:29"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "sentry ward", 
+            "time": "23:30", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "81%"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "observer ward", 
+            "time": "23:32", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "80%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "23:46"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "observer ward", 
+            "time": "23:56", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "52%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "23:58"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "24:08", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "24:09", 
+            "action": "activate", 
+            "subject": "gyrocopter", 
+            "left": "61%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "24:49", 
+            "action": "destroy", 
+            "subject": "wraith king", 
+            "left": "55%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "25:01", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "observer ward", 
+            "time": "25:04", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "71%"
+        }, 
+        {
+            "top": "27%", 
+            "whom": "radiant tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "25:38", 
+            "action": "destroy", 
+            "subject": "wraith king", 
+            "left": "67%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "25:54"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "26:00"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "sentry ward", 
+            "time": "26:11", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "72%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "26:18", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "46%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "26:29", 
+            "action": "activate", 
+            "subject": "wraith king", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "574", 
+            "top": "44%", 
+            "other-objects": [
+                "clockwerk", 
+                "undying", 
+                "disruptor"
+            ], 
+            "whom": "wraith king", 
+            "supplement": "autoattack", 
+            "time": "26:40", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "389", 
+            "left": "49%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "26:41", 
+            "action": "activate", 
+            "subject": "gyrocopter", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "26:52"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "27:05"
+        }, 
+        {
+            "top": "15%", 
+            "whom": "sentry ward", 
+            "time": "27:10", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "71%"
+        }, 
+        {
+            "gold-fed": "421", 
+            "top": "20%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "wraith-king", 
+                "clockwerk"
+            ], 
+            "whom": "undying", 
+            "time": "27:21", 
+            "action": "killed by", 
+            "skill": "soul rip", 
+            "subject": "rubick", 
+            "gold-lost": "269", 
+            "left": "82%"
+        }, 
+        {
+            "top": "20%", 
+            "other-objects": [
+                "night-stalker", 
+                "bane"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "27:28", 
+            "action": "killed by", 
+            "subject": "wraith king", 
+            "left": "74%"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "observer ward", 
+            "time": "27:44", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "70%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "28:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "28:00"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "observer ward", 
+            "time": "28:13", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "70%"
+        }, 
+        {
+            "top": "46%", 
+            "whom": "radiant tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "28:23", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "88%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "28:37", 
+            "action": "activate", 
+            "subject": "gyrocopter", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "693", 
+            "top": "31%", 
+            "other-objects": "clockwerk", 
+            "whom": "queen of pain", 
+            "time": "28:51", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "gyrocopter", 
+            "gold-lost": "479", 
+            "left": "21%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "undying", 
+            "time": "28:58"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "night stalker", 
+            "time": "29:08"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "night stalker", 
+            "time": "29:27"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "29:36"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "night stalker", 
+            "time": "29:42"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "29:54", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "30:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "30:00", 
+            "action": "activate", 
+            "subject": "wraith king", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "534", 
+            "top": "13%", 
+            "other-objects": "alchemist", 
+            "whom": "gyrocopter", 
+            "time": "30:32", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "disruptor", 
+            "gold-lost": "329", 
+            "left": "44%"
+        }, 
+        {
+            "top": "13%", 
+            "other-objects": [
+                "alchemist", 
+                "gyrocopter", 
+                "bane"
+            ], 
+            "whom": "rubick", 
+            "time": "30:38", 
+            "action": "killed by", 
+            "skill": "fade bolt", 
+            "subject": "wraith king", 
+            "left": "58%"
+        }, 
+        {
+            "gold-fed": "788", 
+            "top": "17%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "wraith-king", 
+                "clockwerk"
+            ], 
+            "whom": "undying", 
+            "time": "30:40", 
+            "action": "killed by", 
+            "skill": "decay", 
+            "subject": "gyrocopter", 
+            "gold-lost": "509", 
+            "left": "54%"
+        }, 
+        {
+            "gold-fed": "449", 
+            "top": "11%", 
+            "other-objects": [
+                "clockwerk", 
+                "undying", 
+                "disruptor"
+            ], 
+            "whom": "wraith king", 
+            "time": "30:48", 
+            "action": "killed by", 
+            "skill": "radiance", 
+            "subject": "rubick", 
+            "gold-lost": "299", 
+            "left": "69%"
+        }, 
+        {
+            "gold-fed": "536", 
+            "top": "10%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "clockwerk"
+            ], 
+            "whom": "wraith king", 
+            "supplement": "autoattack", 
+            "time": "30:54", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "329", 
+            "left": "70%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "wraith king", 
+            "time": "30:54"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "bane", 
+            "time": "30:55"
+        }, 
+        {
+            "gold-fed": "619", 
+            "top": "15%", 
+            "other-objects": [
+                "wraith-king", 
+                "clockwerk"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "30:59", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "389", 
+            "left": "74%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "night stalker", 
+            "time": "30:59"
+        }, 
+        {
+            "gold-fed": "602", 
+            "top": "7%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "wraith-king", 
+                "undying"
+            ], 
+            "whom": "clockwerk", 
+            "time": "31:02", 
+            "action": "killed by", 
+            "skill": "battery assault", 
+            "subject": "alchemist", 
+            "gold-lost": "419", 
+            "left": "68%"
+        }, 
+        {
+            "top": "13%", 
+            "whom": "sentry ward", 
+            "time": "31:02", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "76%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "bane", 
+            "time": "31:04"
+        }, 
+        {
+            "gold-fed": "503", 
+            "top": "10%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "wraith-king"
+            ], 
+            "whom": "undying", 
+            "time": "31:10", 
+            "action": "killed by", 
+            "skill": "decay", 
+            "subject": "bane", 
+            "gold-lost": "329", 
+            "left": "82%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "bane", 
+            "time": "31:10"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "wraith king", 
+            "time": "31:14"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "wraith king", 
+            "time": "31:22"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "clockwerk", 
+            "time": "31:22"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "bane", 
+            "time": "31:22"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "alchemist", 
+            "time": "31:22"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "disruptor", 
+            "time": "31:22"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "undying", 
+            "time": "31:22"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "rubick", 
+            "time": "31:22"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "night stalker", 
+            "time": "31:22"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the dire", 
+            "time": "31:23"
+        }
+    ]
+}

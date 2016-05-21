@@ -1,0 +1,2315 @@
+{
+    "events": [
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "-01:25"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "night stalker", 
+            "time": "-01:13"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "night stalker", 
+            "time": "-01:13"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "night stalker", 
+            "time": "-01:13"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "shadow fiend", 
+            "time": "-01:13"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "-01:02", 
+            "action": "place", 
+            "subject": "slardar", 
+            "left": "33%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "sentry ward", 
+            "time": "-00:38", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "78%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "17%", 
+            "whom": "observer ward", 
+            "time": "00:47", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "28%"
+        }, 
+        {
+            "top": "43%", 
+            "whom": "shadow-fiend", 
+            "time": "00:48", 
+            "action": "speak", 
+            "subject": "alchemist", 
+            "left": "74%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:56", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "observer ward", 
+            "time": "01:10", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "75%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "02:05", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "shadow fiend", 
+            "time": "02:25"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "shadow fiend", 
+            "time": "02:25"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "shadow fiend", 
+            "time": "02:25"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "undying", 
+            "time": "02:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "02:27"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "02:28", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "02:32"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "02:33"
+        }, 
+        {
+            "top": "68%", 
+            "whom": "sentry ward", 
+            "time": "02:57", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "83%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "sentry ward", 
+            "time": "03:04", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "74%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "03:07", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "62%"
+        }, 
+        {
+            "top": "82%", 
+            "whom": "observer ward", 
+            "time": "03:25", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "70%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "04:01", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "04:01", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "500", 
+            "top": "84%", 
+            "other-objects": [
+                "undying", 
+                "bane"
+            ], 
+            "whom": "invoker", 
+            "supplement": "autoattack", 
+            "time": "04:22", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "59", 
+            "left": "60%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "shadow fiend", 
+            "time": "04:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "04:40"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "05:11"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "observer ward", 
+            "time": "05:17", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "76%"
+        }, 
+        {
+            "top": "46%", 
+            "whom": "sentry ward", 
+            "time": "05:26", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "78%"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "observer ward", 
+            "time": "05:27", 
+            "action": "destroy", 
+            "subject": "undying", 
+            "left": "75%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "05:28"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "observer ward", 
+            "time": "05:58", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "57%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "06:00", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "06:07", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "sentry ward", 
+            "time": "06:09", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "56%"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "observer ward", 
+            "time": "06:16", 
+            "action": "destroy", 
+            "subject": "undying", 
+            "left": "57%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "shadow fiend", 
+            "time": "07:09"
+        }, 
+        {
+            "gold-fed": "420", 
+            "top": "76%", 
+            "other-objects": "bane", 
+            "whom": "invoker", 
+            "supplement": "autoattack", 
+            "time": "07:10", 
+            "action": "killed by", 
+            "subject": "dark seer", 
+            "gold-lost": "179", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "07:17"
+        }, 
+        {
+            "gold-fed": "368", 
+            "top": "43%", 
+            "whom": "shadow fiend", 
+            "time": "07:26", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "alchemist", 
+            "gold-lost": "149", 
+            "left": "51%"
+        }, 
+        {
+            "gold-fed": "312", 
+            "top": "8%", 
+            "other-objects": [
+                "night-stalker", 
+                "phantom-lancer"
+            ], 
+            "whom": "ancient apparition", 
+            "time": "07:33", 
+            "action": "killed by", 
+            "skill": "cold feet", 
+            "subject": "slardar", 
+            "gold-lost": "89", 
+            "left": "27%"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "sentry ward", 
+            "time": "07:44", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "78%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "observer ward", 
+            "time": "07:51", 
+            "action": "destroy", 
+            "subject": "bane", 
+            "left": "76%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "08:08", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "08:40"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "undying", 
+            "time": "08:43"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "08:49"
+        }, 
+        {
+            "top": "41%", 
+            "other-objects": [
+                "undying", 
+                "invoker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "09:28", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "65%"
+        }, 
+        {
+            "gold-fed": "897", 
+            "top": "43%", 
+            "other-objects": [
+                "undying", 
+                "invoker"
+            ], 
+            "whom": "slardar", 
+            "time": "09:50", 
+            "action": "killed by", 
+            "skill": "slithereen crush", 
+            "subject": "shadow fiend", 
+            "gold-lost": "269", 
+            "left": "27%"
+        }, 
+        {
+            "top": "49%", 
+            "whom": "observer ward", 
+            "time": "09:52", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "10:00", 
+            "action": "activate", 
+            "subject": "dark seer", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "10:08", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "38%", 
+            "whom": "observer ward", 
+            "time": "10:15", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "22%"
+        }, 
+        {
+            "top": "75%", 
+            "whom": "sentry ward", 
+            "time": "10:25", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "88%"
+        }, 
+        {
+            "gold-fed": "349", 
+            "top": "11%", 
+            "other-objects": "ancient-apparition", 
+            "whom": "phantom lancer", 
+            "time": "10:42", 
+            "action": "killed by", 
+            "skill": "spirit lance", 
+            "subject": "slardar", 
+            "gold-lost": "149", 
+            "left": "16%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "night stalker", 
+            "time": "10:45"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "10:53"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "10:59"
+        }, 
+        {
+            "gold-fed": "638", 
+            "top": "89%", 
+            "other-objects": "slardar", 
+            "whom": "bane", 
+            "supplement": "autoattack", 
+            "time": "11:41", 
+            "action": "killed by", 
+            "subject": "dark seer", 
+            "gold-lost": "209", 
+            "left": "73%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "12:00", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "12:12"
+        }, 
+        {
+            "top": "61%", 
+            "other-objects": [
+                "night-stalker", 
+                "shadow-fiend", 
+                "phantom-lancer"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "12:12", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "48%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "12:13"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "12:14"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "12:17", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "12:19"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "12:28", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "72%"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "radiant tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "13:02", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "88%"
+        }, 
+        {
+            "top": "59%", 
+            "whom": "observer ward", 
+            "time": "13:09", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "37%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "13:12"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "13:23", 
+            "action": "destroy", 
+            "subject": "alchemist", 
+            "left": "11%"
+        }, 
+        {
+            "gold-fed": "350", 
+            "top": "49%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "night-stalker"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "13:29", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "bane", 
+            "gold-lost": "179", 
+            "left": "33%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "sentry ward", 
+            "time": "13:30", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "35%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "13:35"
+        }, 
+        {
+            "top": "59%", 
+            "whom": "observer ward", 
+            "time": "13:36", 
+            "action": "destroy", 
+            "subject": "ancient apparition", 
+            "left": "37%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "13:40"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "13:41"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "13:48"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "radiant tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "14:02", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "58%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "14:14", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "observer ward", 
+            "time": "14:17", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "67%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "undying", 
+            "time": "14:29"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "sentry ward", 
+            "time": "14:34", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "62%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "14:45"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "14:45"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "14:54", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "observer ward", 
+            "time": "14:56", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "58%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "15:26"
+        }, 
+        {
+            "top": "46%", 
+            "whom": "radiant tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "15:40", 
+            "action": "destroy", 
+            "subject": "phantom lancer", 
+            "left": "88%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "15:44"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "16:00", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "16:04", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "54%", 
+            "whom": "sentry ward", 
+            "time": "16:29", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "82%"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "16:33", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "80%"
+        }, 
+        {
+            "top": "19%", 
+            "other-objects": [
+                "slardar", 
+                "bane"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "16:44", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "82%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "16:55"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "17:18"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "17:19"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "17:20"
+        }, 
+        {
+            "top": "31%", 
+            "whom": "sentry ward", 
+            "time": "17:30", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "72%"
+        }, 
+        {
+            "top": "27%", 
+            "whom": "radiant tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "17:41", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "67%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "night stalker", 
+            "time": "17:45"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "undying", 
+            "time": "17:59"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "18:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "18:00", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "18:00", 
+            "action": "activate", 
+            "subject": "phantom lancer", 
+            "left": "38%"
+        }, 
+        {
+            "top": "24%", 
+            "whom": "sentry ward", 
+            "time": "18:03", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "63%"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "sentry ward", 
+            "time": "18:10", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "24%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "observer ward", 
+            "time": "18:29", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "28%"
+        }, 
+        {
+            "top": "12%", 
+            "other-objects": [
+                "slardar", 
+                "undying", 
+                "bane", 
+                "invoker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "18:38", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "73%"
+        }, 
+        {
+            "top": "10%", 
+            "other-objects": [
+                "slardar", 
+                "undying", 
+                "bane"
+            ], 
+            "whom": "invoker", 
+            "time": "18:57", 
+            "action": "killed by", 
+            "skill": "emp", 
+            "subject": "shadow fiend", 
+            "left": "33%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "18:57"
+        }, 
+        {
+            "gold-fed": "600", 
+            "top": "10%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "night-stalker", 
+                "phantom-lancer"
+            ], 
+            "whom": "dark seer", 
+            "time": "19:12", 
+            "action": "killed by", 
+            "skill": "ion shell", 
+            "subject": "alchemist", 
+            "gold-lost": "329", 
+            "left": "40%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "shadow fiend", 
+            "time": "19:22"
+        }, 
+        {
+            "gold-fed": "682", 
+            "top": "22%", 
+            "other-objects": [
+                "alchemist", 
+                "invoker"
+            ], 
+            "whom": "bane", 
+            "time": "19:28", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "phantom lancer", 
+            "gold-lost": "329", 
+            "left": "45%"
+        }, 
+        {
+            "gold-fed": "469", 
+            "top": "9%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "dark-seer"
+            ], 
+            "whom": "night stalker", 
+            "time": "19:29", 
+            "action": "killed by", 
+            "skill": "void", 
+            "subject": "undying", 
+            "gold-lost": "239", 
+            "left": "54%"
+        }, 
+        {
+            "gold-fed": "624", 
+            "top": "11%", 
+            "other-objects": [
+                "undying", 
+                "invoker"
+            ], 
+            "whom": "slardar", 
+            "time": "19:33", 
+            "action": "killed by", 
+            "skill": "slithereen crush", 
+            "subject": "dark seer", 
+            "gold-lost": "329", 
+            "left": "49%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "19:43", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "19:57"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "20:03", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "20:08"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "20:19"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "20:21"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "20:34", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "67%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "20:41", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "68%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "20:42", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "1289", 
+            "top": "68%", 
+            "other-objects": [
+                "slardar", 
+                "undying"
+            ], 
+            "whom": "invoker", 
+            "time": "20:49", 
+            "action": "killed by", 
+            "skill": "orchid malevolence", 
+            "subject": "shadow fiend", 
+            "gold-lost": "389", 
+            "left": "57%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "sentry ward", 
+            "time": "20:55", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "64%"
+        }, 
+        {
+            "gold-fed": "667", 
+            "top": "71%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "night-stalker", 
+                "shadow-fiend"
+            ], 
+            "whom": "dark seer", 
+            "time": "20:56", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "invoker", 
+            "gold-lost": "329", 
+            "left": "62%"
+        }, 
+        {
+            "gold-fed": "399", 
+            "top": "61%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "dark-seer"
+            ], 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "21:01", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "239", 
+            "left": "64%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "21:03", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "68%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "ancient apparition", 
+            "time": "21:29"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "21:38"
+        }, 
+        {
+            "top": "39%", 
+            "whom": "sentry ward", 
+            "time": "21:57", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "77%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "22:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "22:04", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "662", 
+            "top": "31%", 
+            "other-objects": [
+                "night-stalker", 
+                "shadow-fiend"
+            ], 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "22:10", 
+            "action": "killed by", 
+            "subject": "alchemist", 
+            "gold-lost": "389", 
+            "left": "39%"
+        }, 
+        {
+            "gold-fed": "626", 
+            "top": "64%", 
+            "whom": "invoker", 
+            "time": "22:10", 
+            "action": "killed by", 
+            "skill": "orchid malevolence", 
+            "subject": "dark seer", 
+            "gold-lost": "329", 
+            "left": "74%"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "sentry ward", 
+            "time": "22:26", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "66%"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "sentry ward", 
+            "time": "22:34", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "84%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "shadow fiend", 
+            "time": "22:42"
+        }, 
+        {
+            "top": "49%", 
+            "whom": "observer ward", 
+            "time": "22:54", 
+            "action": "place", 
+            "subject": "ancient apparition", 
+            "left": "56%"
+        }, 
+        {
+            "top": "88%", 
+            "whom": "observer ward", 
+            "time": "23:08", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "72%"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "sentry ward", 
+            "time": "23:16", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "66%"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "sentry ward", 
+            "time": "23:16", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "67%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "23:20", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "23:23", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "547", 
+            "top": "91%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "night-stalker", 
+                "phantom-lancer"
+            ], 
+            "whom": "dark seer", 
+            "time": "23:29", 
+            "action": "killed by", 
+            "skill": "ion shell", 
+            "subject": "invoker", 
+            "gold-lost": "359", 
+            "left": "75%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "23:31"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "23:32"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "23:39", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "76%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "23:59", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "36%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "24:00", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "24:09", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "24:35"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "24:56"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "24:57"
+        }, 
+        {
+            "top": "29%", 
+            "whom": "sentry ward", 
+            "time": "25:05", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "57%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "25:09", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "47%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "observer ward", 
+            "time": "25:20", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "88%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "25:34"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "night stalker", 
+            "time": "25:47"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "25:54"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "25:59", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "26:26"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "26:43", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "55%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "26:50"
+        }, 
+        {
+            "top": "11%", 
+            "whom": "sentry ward", 
+            "time": "26:51", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "60%"
+        }, 
+        {
+            "top": "10%", 
+            "whom": "observer ward", 
+            "time": "26:52", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "60%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "27:59", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "30%", 
+            "whom": "observer ward", 
+            "time": "28:00", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "66%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "28:00"
+        }, 
+        {
+            "gold-fed": "726", 
+            "top": "19%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "night-stalker"
+            ], 
+            "whom": "dark seer", 
+            "time": "28:06", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "alchemist", 
+            "gold-lost": "449", 
+            "left": "27%"
+        }, 
+        {
+            "gold-fed": "574", 
+            "top": "9%", 
+            "other-objects": [
+                "night-stalker", 
+                "phantom-lancer"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "28:18", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "invoker", 
+            "gold-lost": "389", 
+            "left": "50%"
+        }, 
+        {
+            "top": "9%", 
+            "whom": "radiant tier 3 top tower", 
+            "supplement": "tier", 
+            "time": "28:45", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "70%"
+        }, 
+        {
+            "top": "8%", 
+            "whom": "sentry ward", 
+            "time": "28:46", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "72%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "28:47"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant melee top barracks", 
+            "subject": "shadow fiend", 
+            "supplement": "melee", 
+            "time": "28:56"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant ranged top barracks", 
+            "subject": "shadow fiend", 
+            "supplement": "ranged", 
+            "time": "29:01"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "29:10"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "29:59"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "29:59", 
+            "action": "activate", 
+            "subject": "phantom lancer", 
+            "left": "61%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "30:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "30:50"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "30:50"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "31:04", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "40%", 
+            "whom": "observer ward", 
+            "time": "31:05", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "77%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "ancient apparition", 
+            "time": "31:09"
+        }, 
+        {
+            "top": "10%", 
+            "whom": "sentry ward", 
+            "time": "31:25", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "57%"
+        }, 
+        {
+            "top": "10%", 
+            "whom": "observer ward", 
+            "time": "31:27", 
+            "action": "destroy", 
+            "subject": "bane", 
+            "left": "60%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "night stalker", 
+            "time": "31:34"
+        }, 
+        {
+            "top": "30%", 
+            "whom": "observer ward", 
+            "time": "31:53", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "66%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "ancient apparition", 
+            "time": "31:58"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "32:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "32:00"
+        }, 
+        {
+            "top": "25%", 
+            "whom": "observer ward", 
+            "time": "32:01", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "79%"
+        }, 
+        {
+            "top": "26%", 
+            "whom": "sentry ward", 
+            "time": "32:06", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "80%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "32:12"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "32:23", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "32:44"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "33:13", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "night stalker", 
+            "time": "33:52"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "night stalker", 
+            "time": "33:55"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "night stalker", 
+            "time": "33:55"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "34:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "34:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "34:05", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "shadow fiend", 
+            "time": "34:06"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "34:08", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "22%", 
+            "other-objects": [
+                "slardar", 
+                "undying", 
+                "bane", 
+                "invoker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "34:12", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "80%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "shadow fiend", 
+            "time": "34:38"
+        }, 
+        {
+            "gold-fed": "416", 
+            "top": "66%", 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "34:40", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "299", 
+            "left": "62%"
+        }, 
+        {
+            "gold-fed": "803", 
+            "top": "58%", 
+            "other-objects": [
+                "ancient-apparition", 
+                "shadow-fiend", 
+                "dark-seer", 
+                "phantom-lancer"
+            ], 
+            "whom": "night stalker", 
+            "time": "34:53", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "alchemist", 
+            "gold-lost": "509", 
+            "left": "52%"
+        }, 
+        {
+            "gold-fed": "248", 
+            "top": "59%", 
+            "other-objects": [
+                "alchemist", 
+                "invoker"
+            ], 
+            "whom": "undying", 
+            "supplement": "autoattack", 
+            "time": "34:53", 
+            "action": "killed by", 
+            "subject": "night stalker", 
+            "gold-lost": "419", 
+            "left": "52%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "night stalker", 
+            "time": "34:53"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "ancient apparition", 
+            "time": "34:58"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "35:19"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "35:20"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "35:44"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "35:53"
+        }, 
+        {
+            "top": "21%", 
+            "whom": "radiant tier 3 middle tower", 
+            "supplement": "tier", 
+            "time": "35:59", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "75%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "slardar", 
+            "time": "36:02"
+        }, 
+        {
+            "top": "9%", 
+            "other-objects": [
+                "alchemist", 
+                "slardar", 
+                "bane", 
+                "invoker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "36:06", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "89%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant melee middle barracks", 
+            "subject": "shadow fiend", 
+            "supplement": "melee", 
+            "time": "36:07"
+        }, 
+        {
+            "top": "22%", 
+            "whom": "observer ward", 
+            "time": "36:10", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "75%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant ranged middle barracks", 
+            "subject": "phantom lancer", 
+            "supplement": "ranged", 
+            "time": "36:10"
+        }, 
+        {
+            "gold-fed": "2168", 
+            "top": "20%", 
+            "other-objects": [
+                "alchemist", 
+                "slardar", 
+                "undying", 
+                "invoker"
+            ], 
+            "whom": "bane", 
+            "time": "36:15", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "phantom lancer", 
+            "gold-lost": "539", 
+            "left": "76%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "phantom lancer", 
+            "time": "36:18"
+        }, 
+        {
+            "top": "25%", 
+            "whom": "observer ward", 
+            "time": "36:20", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "79%"
+        }, 
+        {
+            "gold-fed": "553", 
+            "top": "25%", 
+            "other-objects": "ancient-apparition", 
+            "whom": "shadow fiend", 
+            "time": "36:30", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "invoker", 
+            "gold-lost": "419", 
+            "left": "72%"
+        }, 
+        {
+            "gold-fed": "849", 
+            "top": "31%", 
+            "other-objects": [
+                "alchemist", 
+                "slardar", 
+                "invoker"
+            ], 
+            "whom": "undying", 
+            "time": "36:31", 
+            "action": "killed by", 
+            "skill": "soul rip", 
+            "subject": "dark seer", 
+            "gold-lost": "449", 
+            "left": "70%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "invoker", 
+            "time": "36:31"
+        }, 
+        {
+            "gold-fed": "289", 
+            "top": "23%", 
+            "other-objects": "ancient-apparition", 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "36:33", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "329", 
+            "left": "75%"
+        }, 
+        {
+            "gold-fed": "555", 
+            "top": "25%", 
+            "other-objects": "shadow-fiend", 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "36:36", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "389", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "425", 
+            "top": "11%", 
+            "other-objects": [
+                "night-stalker", 
+                "shadow-fiend"
+            ], 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "36:46", 
+            "action": "killed by", 
+            "subject": "invoker", 
+            "gold-lost": "419", 
+            "left": "81%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "phantom lancer", 
+            "time": "36:46"
+        }, 
+        {
+            "gold-fed": "390", 
+            "top": "7%", 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "36:53", 
+            "action": "killed by", 
+            "subject": "slardar", 
+            "gold-lost": "389", 
+            "left": "92%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "phantom lancer", 
+            "time": "36:53"
+        }, 
+        {
+            "top": "25%", 
+            "whom": "radiant tier 3 bottom tower", 
+            "supplement": "tier", 
+            "time": "36:58", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "88%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "undying", 
+            "time": "36:59"
+        }, 
+        {
+            "gold-fed": "608", 
+            "top": "19%", 
+            "other-objects": "alchemist", 
+            "whom": "undying", 
+            "time": "37:04", 
+            "action": "killed by", 
+            "skill": "soul rip", 
+            "subject": "night stalker", 
+            "gold-lost": "449", 
+            "left": "92%"
+        }, 
+        {
+            "gold-fed": "713", 
+            "top": "22%", 
+            "other-objects": [
+                "night-stalker", 
+                "shadow-fiend", 
+                "phantom-lancer"
+            ], 
+            "whom": "ancient apparition", 
+            "time": "37:05", 
+            "action": "killed by", 
+            "skill": "ice blast", 
+            "subject": "alchemist", 
+            "gold-lost": "539", 
+            "left": "91%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant melee bottom barracks", 
+            "subject": "shadow fiend", 
+            "supplement": "melee", 
+            "time": "37:12"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "night stalker", 
+            "time": "37:14"
+        }, 
+        {
+            "top": "92%", 
+            "other-objects": "night-stalker", 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "37:16", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "11%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "the dire", 
+            "time": "37:17"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "cheese", 
+            "subject": "ancient apparition", 
+            "time": "37:18"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "bane", 
+            "time": "37:23"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "radiant tier 4 middle tower", 
+            "subject": "phantom lancer", 
+            "supplement": "tier", 
+            "time": "37:31"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "invoker", 
+            "time": "37:33"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "phantom lancer", 
+            "time": "37:33"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "bane", 
+            "time": "37:33"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "dark seer", 
+            "time": "37:33"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "undying", 
+            "time": "37:33"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "slardar", 
+            "time": "37:33"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "ancient apparition", 
+            "time": "37:33"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "shadow fiend", 
+            "time": "37:33"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "night stalker", 
+            "time": "37:33"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "alchemist", 
+            "time": "37:33"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the dire", 
+            "time": "37:35"
+        }
+    ]
+}

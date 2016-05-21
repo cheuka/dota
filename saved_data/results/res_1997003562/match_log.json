@@ -1,0 +1,1952 @@
+{
+    "events": [
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "silencer", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "silencer", 
+            "time": "-01:26"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "-00:50", 
+            "action": "place", 
+            "subject": "nyx assassin", 
+            "left": "33%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "-00:35", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "33%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "-00:23", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "81%"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "observer ward", 
+            "time": "-00:17", 
+            "action": "place", 
+            "subject": "silencer", 
+            "left": "80%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "nyx assassin", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "02:11", 
+            "action": "activate", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "02:32", 
+            "action": "activate", 
+            "subject": "visage", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "555", 
+            "top": "11%", 
+            "other-objects": "nyx-assassin", 
+            "whom": "visage", 
+            "time": "03:21", 
+            "action": "killed by", 
+            "skill": "soul assumption", 
+            "subject": "earthshaker", 
+            "gold-lost": "119", 
+            "left": "16%"
+        }, 
+        {
+            "gold-fed": "287", 
+            "top": "86%", 
+            "other-objects": [
+                "silencer", 
+                "razor"
+            ], 
+            "whom": "undying", 
+            "time": "03:41", 
+            "action": "killed by", 
+            "skill": "soul rip", 
+            "subject": "dazzle", 
+            "gold-lost": "59", 
+            "left": "59%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "04:03", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "04:05", 
+            "action": "activate", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "visage", 
+            "time": "04:14"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "silencer", 
+            "time": "04:26"
+        }, 
+        {
+            "gold-fed": "405", 
+            "top": "9%", 
+            "other-objects": "nyx-assassin", 
+            "whom": "visage", 
+            "time": "04:39", 
+            "action": "killed by", 
+            "skill": "soul assumption", 
+            "subject": "earthshaker", 
+            "gold-lost": "119", 
+            "left": "33%"
+        }, 
+        {
+            "gold-fed": "352", 
+            "top": "12%", 
+            "other-objects": "earthshaker", 
+            "whom": "undying", 
+            "time": "04:41", 
+            "action": "killed by", 
+            "skill": "soul rip", 
+            "subject": "visage", 
+            "gold-lost": "119", 
+            "left": "24%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "04:58"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "visage", 
+            "time": "05:03"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "silencer", 
+            "time": "05:29"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "observer ward", 
+            "time": "05:34", 
+            "action": "place", 
+            "subject": "visage", 
+            "left": "50%"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "observer ward", 
+            "time": "05:46", 
+            "action": "place", 
+            "subject": "ember spirit", 
+            "left": "54%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "sentry ward", 
+            "time": "05:47", 
+            "action": "place", 
+            "subject": "ember spirit", 
+            "left": "53%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "06:02", 
+            "action": "activate", 
+            "subject": "dazzle", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "06:04", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "06:04"
+        }, 
+        {
+            "top": "57%", 
+            "whom": "observer ward", 
+            "time": "06:27", 
+            "action": "place", 
+            "subject": "visage", 
+            "left": "54%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "06:30", 
+            "action": "place", 
+            "subject": "silencer", 
+            "left": "66%"
+        }, 
+        {
+            "gold-fed": "481", 
+            "top": "48%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "nyx-assassin"
+            ], 
+            "whom": "visage", 
+            "time": "06:43", 
+            "action": "killed by", 
+            "skill": "soul assumption", 
+            "subject": "ember spirit", 
+            "gold-lost": "179", 
+            "left": "49%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "nyx assassin", 
+            "time": "07:13"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "silencer", 
+            "time": "07:34"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "visage", 
+            "time": "08:01"
+        }, 
+        {
+            "top": "82%", 
+            "whom": "sentry ward", 
+            "time": "08:01", 
+            "action": "place", 
+            "subject": "silencer", 
+            "left": "80%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "visage", 
+            "time": "08:02"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "08:04", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "sentry ward", 
+            "time": "08:12", 
+            "action": "place", 
+            "subject": "silencer", 
+            "left": "80%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "08:13"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "sentry ward", 
+            "time": "08:31", 
+            "action": "place", 
+            "subject": "visage", 
+            "left": "53%"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "observer ward", 
+            "time": "08:33", 
+            "action": "destroy", 
+            "subject": "visage", 
+            "left": "54%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "sentry ward", 
+            "time": "08:37", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "53%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "08:46", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "shadow fiend", 
+            "time": "09:13"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "09:14", 
+            "action": "destroy", 
+            "subject": "phantom lancer", 
+            "left": "38%"
+        }, 
+        {
+            "top": "17%", 
+            "whom": "observer ward", 
+            "time": "09:24", 
+            "action": "place", 
+            "subject": "visage", 
+            "left": "45%"
+        }, 
+        {
+            "gold-fed": "321", 
+            "top": "41%", 
+            "other-objects": "shadow-fiend", 
+            "whom": "nyx assassin", 
+            "supplement": "autoattack", 
+            "time": "09:45", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "119", 
+            "left": "62%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "09:56"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "10:17", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "10:18"
+        }, 
+        {
+            "top": "53%", 
+            "whom": "observer ward", 
+            "time": "10:22", 
+            "action": "place", 
+            "subject": "silencer", 
+            "left": "57%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "10:30", 
+            "action": "destroy", 
+            "subject": "phantom lancer", 
+            "left": "55%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "11:02"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "silencer", 
+            "time": "11:06"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "11:17", 
+            "action": "activate", 
+            "subject": "nyx assassin", 
+            "left": "61%"
+        }, 
+        {
+            "top": "39%", 
+            "other-objects": [
+                "silencer", 
+                "ember-spirit", 
+                "undying", 
+                "earthshaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "11:30", 
+            "action": "activate", 
+            "subject": "silencer", 
+            "left": "67%"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "sentry ward", 
+            "time": "11:44", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "55%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "11:53"
+        }, 
+        {
+            "top": "90%", 
+            "whom": "sentry ward", 
+            "time": "11:59", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "69%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "12:00"
+        }, 
+        {
+            "gold-fed": "494", 
+            "top": "91%", 
+            "other-objects": [
+                "ember-spirit", 
+                "undying", 
+                "earthshaker"
+            ], 
+            "whom": "silencer", 
+            "time": "12:05", 
+            "action": "killed by", 
+            "skill": "arcane curse", 
+            "subject": "visage", 
+            "gold-lost": "179", 
+            "left": "56%"
+        }, 
+        {
+            "top": "61%", 
+            "whom": "observer ward", 
+            "time": "12:17", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "74%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "12:19", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "shadow fiend", 
+            "time": "12:37"
+        }, 
+        {
+            "gold-fed": "779", 
+            "top": "96%", 
+            "other-objects": [
+                "silencer", 
+                "razor", 
+                "undying", 
+                "earthshaker"
+            ], 
+            "whom": "ember spirit", 
+            "time": "12:38", 
+            "action": "killed by", 
+            "skill": "flame guard", 
+            "subject": "nyx assassin", 
+            "gold-lost": "239", 
+            "left": "78%"
+        }, 
+        {
+            "top": "90%", 
+            "whom": "sentry ward", 
+            "time": "12:48", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "65%"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "radiant tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "13:00", 
+            "action": "destroy", 
+            "subject": "phantom lancer", 
+            "left": "58%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "13:23"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "silencer", 
+            "time": "13:24"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "silencer", 
+            "time": "13:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "silencer", 
+            "time": "13:26"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "13:48", 
+            "action": "activate", 
+            "subject": "phantom lancer", 
+            "left": "38%"
+        }, 
+        {
+            "top": "40%", 
+            "whom": "observer ward", 
+            "time": "13:51", 
+            "action": "place", 
+            "subject": "silencer", 
+            "left": "47%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "14:00", 
+            "action": "activate", 
+            "subject": "phantom lancer", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "14:02", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "14:02"
+        }, 
+        {
+            "gold-fed": "399", 
+            "top": "31%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "nyx-assassin"
+            ], 
+            "whom": "visage", 
+            "time": "14:31", 
+            "action": "killed by", 
+            "skill": "soul assumption", 
+            "subject": "earthshaker", 
+            "gold-lost": "209", 
+            "left": "62%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "15:11"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "sentry ward", 
+            "time": "15:15", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "49%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "15:18"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "radiant tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "15:40", 
+            "action": "destroy", 
+            "subject": "phantom lancer", 
+            "left": "88%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "silencer", 
+            "time": "15:42"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "16:00", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ember spirit", 
+            "time": "16:04"
+        }, 
+        {
+            "top": "44%", 
+            "other-objects": [
+                "silencer", 
+                "ember-spirit", 
+                "razor", 
+                "undying", 
+                "earthshaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "16:07", 
+            "action": "activate", 
+            "subject": "silencer", 
+            "left": "48%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "16:23", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "ember spirit", 
+            "time": "16:34"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "sentry ward", 
+            "time": "16:36", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "45%"
+        }, 
+        {
+            "top": "63%", 
+            "other-objects": "shadow-fiend", 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "16:44", 
+            "action": "activate", 
+            "subject": "silencer", 
+            "left": "49%"
+        }, 
+        {
+            "gold-fed": "1295", 
+            "top": "49%", 
+            "other-objects": [
+                "ember-spirit", 
+                "razor", 
+                "undying"
+            ], 
+            "whom": "earthshaker", 
+            "time": "16:49", 
+            "action": "killed by", 
+            "skill": "echo slam", 
+            "subject": "phantom lancer", 
+            "gold-lost": "329", 
+            "left": "40%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "visage", 
+            "time": "17:20"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "17:22"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "17:24"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "sentry ward", 
+            "time": "17:43", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "42%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "17:45"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "sentry ward", 
+            "time": "17:46", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "45%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "18:00"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "observer ward", 
+            "time": "18:01", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "66%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "18:07", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "70%"
+        }, 
+        {
+            "top": "34%", 
+            "whom": "sentry ward", 
+            "time": "18:08", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "62%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "18:10", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "shadow fiend", 
+            "time": "18:12"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "18:27"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "18:27"
+        }, 
+        {
+            "top": "51%", 
+            "whom": "observer ward", 
+            "time": "18:46", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "82%"
+        }, 
+        {
+            "top": "13%", 
+            "whom": "observer ward", 
+            "time": "18:53", 
+            "action": "place", 
+            "subject": "silencer", 
+            "left": "34%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "19:05", 
+            "action": "activate", 
+            "subject": "silencer", 
+            "left": "38%"
+        }, 
+        {
+            "top": "44%", 
+            "other-objects": "nyx-assassin", 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "19:47", 
+            "action": "activate", 
+            "subject": "silencer", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "772", 
+            "top": "62%", 
+            "other-objects": [
+                "silencer", 
+                "ember-spirit", 
+                "razor", 
+                "earthshaker"
+            ], 
+            "whom": "undying", 
+            "time": "19:55", 
+            "action": "killed by", 
+            "skill": "soul rip", 
+            "subject": "nyx assassin", 
+            "gold-lost": "269", 
+            "left": "61%"
+        }, 
+        {
+            "top": "58%", 
+            "whom": "sentry ward", 
+            "time": "20:00", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "71%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "63%", 
+            "other-objects": [
+                "undying", 
+                "earthshaker"
+            ], 
+            "whom": "razor", 
+            "time": "20:03", 
+            "action": "killed by", 
+            "skill": "eye of the storm", 
+            "subject": "shadow fiend", 
+            "left": "69%"
+        }, 
+        {
+            "gold-fed": "453", 
+            "top": "59%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "shadow-fiend"
+            ], 
+            "whom": "visage", 
+            "supplement": "autoattack", 
+            "time": "20:03", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "239", 
+            "left": "72%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "20:03"
+        }, 
+        {
+            "gold-fed": "855", 
+            "top": "63%", 
+            "other-objects": [
+                "silencer", 
+                "ember-spirit", 
+                "undying"
+            ], 
+            "whom": "razor", 
+            "supplement": "autoattack", 
+            "time": "20:08", 
+            "action": "killed by", 
+            "subject": "visage", 
+            "gold-lost": "269", 
+            "left": "74%"
+        }, 
+        {
+            "gold-fed": "360", 
+            "top": "51%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "dazzle"
+            ], 
+            "whom": "phantom lancer", 
+            "time": "20:09", 
+            "action": "killed by", 
+            "skill": "spirit lance", 
+            "subject": "silencer", 
+            "gold-lost": "239", 
+            "left": "74%"
+        }, 
+        {
+            "gold-fed": "653", 
+            "top": "60%", 
+            "other-objects": [
+                "silencer", 
+                "ember-spirit", 
+                "undying"
+            ], 
+            "whom": "razor", 
+            "supplement": "autoattack", 
+            "time": "20:11", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "269", 
+            "left": "77%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "razor", 
+            "time": "20:11"
+        }, 
+        {
+            "gold-fed": "642", 
+            "top": "58%", 
+            "other-objects": "shadow-fiend", 
+            "whom": "phantom lancer", 
+            "time": "20:17", 
+            "action": "killed by", 
+            "skill": "spirit lance", 
+            "subject": "razor", 
+            "gold-lost": "329", 
+            "left": "83%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "phantom lancer", 
+            "time": "20:17"
+        }, 
+        {
+            "top": "46%", 
+            "whom": "radiant tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "20:44", 
+            "action": "destroy", 
+            "subject": "visage", 
+            "left": "88%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "20:46"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "20:54"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "silencer", 
+            "time": "21:18"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "21:19", 
+            "action": "activate", 
+            "subject": "phantom lancer", 
+            "left": "61%"
+        }, 
+        {
+            "top": "13%", 
+            "whom": "observer ward", 
+            "time": "21:24", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "47%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "21:35", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "sentry ward", 
+            "time": "21:37", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "68%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "22:08", 
+            "action": "activate", 
+            "subject": "visage", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "22:21", 
+            "action": "activate", 
+            "subject": "phantom lancer", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "silencer", 
+            "time": "22:29"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "silencer", 
+            "time": "22:31"
+        }, 
+        {
+            "top": "25%", 
+            "whom": "observer ward", 
+            "time": "22:43", 
+            "action": "place", 
+            "subject": "silencer", 
+            "left": "63%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "22:54", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "60%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "23:01"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "observer ward", 
+            "time": "23:13", 
+            "action": "place", 
+            "subject": "silencer", 
+            "left": "57%"
+        }, 
+        {
+            "gold-fed": "695", 
+            "top": "10%", 
+            "other-objects": "nyx-assassin", 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "23:16", 
+            "action": "killed by", 
+            "subject": "ember spirit", 
+            "gold-lost": "389", 
+            "left": "48%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "shadow fiend", 
+            "time": "23:35"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "24:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "24:05", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "24:23"
+        }, 
+        {
+            "top": "32%", 
+            "other-objects": [
+                "silencer", 
+                "razor", 
+                "undying", 
+                "earthshaker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "24:24", 
+            "action": "activate", 
+            "subject": "silencer", 
+            "left": "66%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "24:30"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "24:36", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "silencer", 
+            "time": "24:42"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "silencer", 
+            "time": "24:42"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "silencer", 
+            "time": "24:42"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "sentry ward", 
+            "time": "24:42", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "81%"
+        }, 
+        {
+            "top": "60%", 
+            "whom": "sentry ward", 
+            "time": "24:50", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "84%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "shadow fiend", 
+            "time": "24:51"
+        }, 
+        {
+            "gold-fed": "863", 
+            "top": "73%", 
+            "other-objects": [
+                "ember-spirit", 
+                "razor", 
+                "earthshaker"
+            ], 
+            "whom": "undying", 
+            "time": "25:07", 
+            "action": "killed by", 
+            "skill": "soul rip", 
+            "subject": "nyx assassin", 
+            "gold-lost": "329", 
+            "left": "86%"
+        }, 
+        {
+            "gold-fed": "685", 
+            "top": "68%", 
+            "other-objects": [
+                "ember-spirit", 
+                "earthshaker"
+            ], 
+            "whom": "razor", 
+            "supplement": "autoattack", 
+            "time": "25:18", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "299", 
+            "left": "78%"
+        }, 
+        {
+            "top": "87%", 
+            "whom": "dire tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "25:50", 
+            "action": "destroy", 
+            "subject": "earthshaker", 
+            "left": "60%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "25:50"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "26:03", 
+            "action": "activate", 
+            "subject": "phantom lancer", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "26:05"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "26:27"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "26:30", 
+            "action": "place", 
+            "subject": "silencer", 
+            "left": "72%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "visage", 
+            "time": "26:43"
+        }, 
+        {
+            "gold-fed": "664", 
+            "top": "90%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "nyx-assassin", 
+                "visage"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "26:53", 
+            "action": "killed by", 
+            "subject": "ember spirit", 
+            "gold-lost": "449", 
+            "left": "55%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "27:07", 
+            "action": "activate", 
+            "subject": "dazzle", 
+            "left": "61%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "27:10", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "70%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "27:14", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "72%"
+        }, 
+        {
+            "top": "27%", 
+            "whom": "radiant tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "27:23", 
+            "action": "speak", 
+            "subject": "razor", 
+            "left": "67%"
+        }, 
+        {
+            "top": "32%", 
+            "whom": "observer ward", 
+            "time": "27:33", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "77%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "silencer", 
+            "time": "27:35"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "undying", 
+            "time": "27:42"
+        }, 
+        {
+            "top": "68%", 
+            "whom": "observer ward", 
+            "time": "27:53", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "67%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "28:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "28:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "28:05", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "shadow fiend", 
+            "time": "28:08"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "28:20"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "28:21"
+        }, 
+        {
+            "top": "14%", 
+            "whom": "observer ward", 
+            "time": "28:26", 
+            "action": "place", 
+            "subject": "silencer", 
+            "left": "15%"
+        }, 
+        {
+            "top": "46%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "nyx-assassin", 
+                "dazzle", 
+                "visage"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "28:39", 
+            "action": "activate", 
+            "subject": "visage", 
+            "left": "57%"
+        }, 
+        {
+            "top": "38%", 
+            "whom": "sentry ward", 
+            "time": "28:43", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "51%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "28:46", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "28:50"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "visage", 
+            "time": "29:47"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "undying", 
+            "time": "30:24"
+        }, 
+        {
+            "top": "24%", 
+            "whom": "sentry ward", 
+            "time": "30:33", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "81%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "32:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "32:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "32:12", 
+            "action": "bottled", 
+            "subject": "visage", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "32:18"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "32:18"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "silencer", 
+            "time": "32:23"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "32:37", 
+            "action": "activate", 
+            "subject": "visage", 
+            "left": "38%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "sentry ward", 
+            "time": "32:38", 
+            "action": "place", 
+            "subject": "silencer", 
+            "left": "88%"
+        }, 
+        {
+            "top": "33%", 
+            "whom": "sentry ward", 
+            "time": "32:44", 
+            "action": "place", 
+            "subject": "silencer", 
+            "left": "72%"
+        }, 
+        {
+            "top": "32%", 
+            "whom": "observer ward", 
+            "time": "32:47", 
+            "action": "destroy", 
+            "subject": "silencer", 
+            "left": "77%"
+        }, 
+        {
+            "top": "17%", 
+            "whom": "sentry ward", 
+            "time": "32:53", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "71%"
+        }, 
+        {
+            "top": "21%", 
+            "whom": "radiant tier 3 middle tower", 
+            "supplement": "tier", 
+            "time": "33:04", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "75%"
+        }, 
+        {
+            "top": "9%", 
+            "whom": "radiant tier 3 top tower", 
+            "supplement": "tier", 
+            "time": "33:13", 
+            "action": "destroy", 
+            "subject": "phantom lancer", 
+            "left": "70%"
+        }, 
+        {
+            "top": "24%", 
+            "whom": "sentry ward", 
+            "time": "33:17", 
+            "action": "destroy", 
+            "subject": "visage", 
+            "left": "81%"
+        }, 
+        {
+            "top": "21%", 
+            "whom": "observer ward", 
+            "time": "33:19", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "61%"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "observer ward", 
+            "time": "33:56", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "81%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "34:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "visage", 
+            "time": "34:12"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "34:24", 
+            "action": "activate", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "sentry ward", 
+            "time": "34:26", 
+            "action": "destroy", 
+            "subject": "visage", 
+            "left": "88%"
+        }, 
+        {
+            "gold-fed": "602", 
+            "top": "30%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "nyx-assassin", 
+                "visage"
+            ], 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "34:50", 
+            "action": "killed by", 
+            "subject": "razor", 
+            "gold-lost": "419", 
+            "left": "67%"
+        }, 
+        {
+            "top": "27%", 
+            "other-objects": "nyx-assassin", 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "34:52", 
+            "action": "activate", 
+            "subject": "silencer", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "437", 
+            "top": "26%", 
+            "other-objects": "shadow-fiend", 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "34:54", 
+            "action": "killed by", 
+            "subject": "silencer", 
+            "gold-lost": "329", 
+            "left": "68%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "phantom lancer", 
+            "time": "34:54"
+        }, 
+        {
+            "gold-fed": "504", 
+            "top": "29%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "dazzle", 
+                "visage"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "34:58", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "329", 
+            "left": "71%"
+        }, 
+        {
+            "gold-fed": "538", 
+            "top": "24%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "nyx-assassin", 
+                "visage"
+            ], 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "34:59", 
+            "action": "killed by", 
+            "subject": "earthshaker", 
+            "gold-lost": "329", 
+            "left": "67%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "phantom lancer", 
+            "time": "34:59"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "earthshaker", 
+            "time": "35:05"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "phantom lancer", 
+            "time": "35:11"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "nyx assassin", 
+            "time": "35:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "phantom lancer", 
+            "time": "35:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "visage", 
+            "time": "35:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "shadow fiend", 
+            "time": "35:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "razor", 
+            "time": "35:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "silencer", 
+            "time": "35:15"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "dazzle", 
+            "time": "35:15"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the dire", 
+            "time": "35:17"
+        }
+    ]
+}

@@ -1,0 +1,2454 @@
+{
+    "events": [
+        {
+            "action": "speak", 
+            "subject": "beastmaster", 
+            "time": "-01:30"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "winter wyvern", 
+            "time": "-01:30"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "winter wyvern", 
+            "time": "-01:08"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "beastmaster", 
+            "time": "-01:08"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "-01:07", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "46%"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "observer ward", 
+            "time": "-00:52", 
+            "action": "place", 
+            "subject": "beastmaster", 
+            "left": "77%"
+        }, 
+        {
+            "top": "25%", 
+            "whom": "observer ward", 
+            "time": "-00:42", 
+            "action": "place", 
+            "subject": "slardar", 
+            "left": "27%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "observer ward", 
+            "time": "-00:29", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "51%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "-00:25"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "419", 
+            "top": "36%", 
+            "other-objects": [
+                "dazzle", 
+                "slardar"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "00:03", 
+            "action": "killed by", 
+            "subject": "leshrac", 
+            "gold-lost": "29", 
+            "left": "38%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "sentry ward", 
+            "time": "00:28", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "27%"
+        }, 
+        {
+            "gold-fed": "228", 
+            "top": "12%", 
+            "other-objects": [
+                "night-stalker", 
+                "slardar"
+            ], 
+            "whom": "dazzle", 
+            "supplement": "autoattack", 
+            "time": "00:38", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "29", 
+            "left": "16%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "observer ward", 
+            "time": "00:42", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "51%"
+        }, 
+        {
+            "top": "44%", 
+            "whom": "sentry ward", 
+            "time": "00:42", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "51%"
+        }, 
+        {
+            "gold-fed": "256", 
+            "top": "14%", 
+            "other-objects": [
+                "night-stalker", 
+                "slardar"
+            ], 
+            "whom": "dazzle", 
+            "supplement": "autoattack", 
+            "time": "01:03", 
+            "action": "killed by", 
+            "subject": "leshrac", 
+            "gold-lost": "29", 
+            "left": "11%"
+        }, 
+        {
+            "gold-fed": "347", 
+            "top": "45%", 
+            "other-objects": [
+                "night-stalker", 
+                "queen-of-pain"
+            ], 
+            "whom": "dazzle", 
+            "time": "01:57", 
+            "action": "killed by", 
+            "skill": "poison touch", 
+            "subject": "shadow fiend", 
+            "gold-lost": "89", 
+            "left": "54%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "02:03", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "38%"
+        }, 
+        {
+            "top": "22%", 
+            "whom": "sentry ward", 
+            "time": "02:11", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "29%"
+        }, 
+        {
+            "top": "25%", 
+            "whom": "observer ward", 
+            "time": "02:13", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "27%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "02:18", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "347", 
+            "top": "54%", 
+            "other-objects": [
+                "dazzle", 
+                "night-stalker"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "02:28", 
+            "action": "killed by", 
+            "subject": "shadow fiend", 
+            "gold-lost": "89", 
+            "left": "47%"
+        }, 
+        {
+            "top": "69%", 
+            "whom": "sentry ward", 
+            "time": "02:48", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "75%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "03:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "03:01"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "observer ward", 
+            "time": "03:23", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "57%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "night stalker", 
+            "time": "03:29"
+        }, 
+        {
+            "gold-fed": "331", 
+            "top": "57%", 
+            "whom": "queen of pain", 
+            "time": "03:46", 
+            "action": "killed by", 
+            "skill": "shadow strike", 
+            "subject": "shadow fiend", 
+            "gold-lost": "119", 
+            "left": "43%"
+        }, 
+        {
+            "top": "13%", 
+            "other-objects": [
+                "dazzle", 
+                "night-stalker"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "03:50", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "47%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "illusion rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "illusion rune", 
+            "time": "04:00", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "queen of pain", 
+            "time": "04:01"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "04:13", 
+            "action": "activate", 
+            "subject": "beastmaster", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "359", 
+            "top": "18%", 
+            "other-objects": [
+                "dazzle", 
+                "night-stalker"
+            ], 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "04:14", 
+            "action": "killed by", 
+            "subject": "leshrac", 
+            "gold-lost": "119", 
+            "left": "11%"
+        }, 
+        {
+            "gold-fed": "295", 
+            "top": "24%", 
+            "other-objects": "slardar", 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "04:20", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "89", 
+            "left": "8%"
+        }, 
+        {
+            "top": "59%", 
+            "whom": "observer ward", 
+            "time": "04:46", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "25%"
+        }, 
+        {
+            "gold-fed": "632", 
+            "top": "89%", 
+            "other-objects": [
+                "disruptor", 
+                "leshrac", 
+                "winter-wyvern"
+            ], 
+            "whom": "beastmaster", 
+            "supplement": "autoattack", 
+            "time": "04:51", 
+            "action": "killed by", 
+            "subject": "razor", 
+            "gold-lost": "179", 
+            "left": "76%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "05:13"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "05:21"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "beastmaster", 
+            "time": "05:24"
+        }, 
+        {
+            "top": "81%", 
+            "whom": "observer ward", 
+            "time": "05:49", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "70%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "disruptor", 
+            "time": "05:54"
+        }, 
+        {
+            "gold-fed": "349", 
+            "top": "49%", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "06:00", 
+            "action": "killed by", 
+            "subject": "shadow fiend", 
+            "gold-lost": "149", 
+            "left": "49%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "06:00"
+        }, 
+        {
+            "gold-fed": "692", 
+            "top": "46%", 
+            "other-objects": "shadow-fiend", 
+            "whom": "winter wyvern", 
+            "time": "06:03", 
+            "action": "killed by", 
+            "skill": "splinter blast", 
+            "subject": "queen of pain", 
+            "gold-lost": "209", 
+            "left": "49%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "06:05", 
+            "action": "activate", 
+            "subject": "dazzle", 
+            "left": "61%"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "observer ward", 
+            "time": "06:25", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "41%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "06:39", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "38%"
+        }, 
+        {
+            "top": "70%", 
+            "other-objects": [
+                "beastmaster", 
+                "winter-wyvern"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "06:40", 
+            "action": "activate", 
+            "subject": "beastmaster", 
+            "left": "50%"
+        }, 
+        {
+            "top": "51%", 
+            "whom": "sentry ward", 
+            "time": "06:46", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "30%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "disruptor", 
+            "time": "07:10"
+        }, 
+        {
+            "gold-fed": "677", 
+            "top": "86%", 
+            "other-objects": [
+                "beastmaster", 
+                "winter-wyvern"
+            ], 
+            "whom": "leshrac", 
+            "supplement": "autoattack", 
+            "time": "07:17", 
+            "action": "killed by", 
+            "subject": "razor", 
+            "gold-lost": "209", 
+            "left": "79%"
+        }, 
+        {
+            "top": "49%", 
+            "whom": "sentry ward", 
+            "time": "07:44", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "52%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "beastmaster", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "08:03"
+        }, 
+        {
+            "top": "71%", 
+            "other-objects": [
+                "disruptor", 
+                "beastmaster", 
+                "winter-wyvern"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "08:09", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "50%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "08:09", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "08:15", 
+            "action": "activate", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "night stalker", 
+            "time": "08:42"
+        }, 
+        {
+            "top": "17%", 
+            "whom": "observer ward", 
+            "time": "08:49", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "28%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "disruptor", 
+            "time": "09:30"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "09:30"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "observer ward", 
+            "time": "09:38", 
+            "action": "place", 
+            "subject": "night stalker", 
+            "left": "55%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "winter wyvern", 
+            "time": "09:58"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "10:00"
+        }, 
+        {
+            "gold-fed": "424", 
+            "top": "86%", 
+            "other-objects": [
+                "dazzle", 
+                "razor"
+            ], 
+            "whom": "queen of pain", 
+            "time": "10:07", 
+            "action": "killed by", 
+            "skill": "sonic wave", 
+            "subject": "shadow fiend", 
+            "gold-lost": "209", 
+            "left": "73%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "10:21", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "10:21", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "38%"
+        }, 
+        {
+            "top": "33%", 
+            "whom": "sentry ward", 
+            "time": "10:29", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "17%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "queen of pain", 
+            "time": "10:30"
+        }, 
+        {
+            "top": "9%", 
+            "whom": "dazzle", 
+            "time": "10:50", 
+            "action": "speak", 
+            "subject": "beastmaster", 
+            "left": "31%"
+        }, 
+        {
+            "gold-fed": "294", 
+            "top": "24%", 
+            "other-objects": "razor", 
+            "whom": "night stalker", 
+            "time": "10:51", 
+            "action": "killed by", 
+            "skill": "void", 
+            "subject": "disruptor", 
+            "gold-lost": "119", 
+            "left": "42%"
+        }, 
+        {
+            "gold-fed": "589", 
+            "top": "28%", 
+            "other-objects": [
+                "dazzle", 
+                "slardar"
+            ], 
+            "whom": "queen of pain", 
+            "time": "11:09", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "leshrac", 
+            "gold-lost": "269", 
+            "left": "16%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "11:17"
+        }, 
+        {
+            "gold-fed": "531", 
+            "top": "55%", 
+            "other-objects": "night-stalker", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "11:31", 
+            "action": "killed by", 
+            "subject": "shadow fiend", 
+            "gold-lost": "239", 
+            "left": "45%"
+        }, 
+        {
+            "gold-fed": "353", 
+            "top": "60%", 
+            "other-objects": "night-stalker", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "11:35", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "119", 
+            "left": "49%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "11:35"
+        }, 
+        {
+            "top": "60%", 
+            "other-objects": "disruptor", 
+            "whom": "shadow-fiend", 
+            "time": "11:37", 
+            "action": "speak", 
+            "subject": "night stalker", 
+            "left": "49%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "11:41"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "11:59"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "12:05", 
+            "action": "activate", 
+            "subject": "winter wyvern", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "12:06", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "queen of pain", 
+            "time": "12:06"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "sentry ward", 
+            "time": "12:18", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "36%"
+        }, 
+        {
+            "gold-fed": "1341", 
+            "top": "44%", 
+            "other-objects": [
+                "disruptor", 
+                "beastmaster", 
+                "winter-wyvern"
+            ], 
+            "whom": "leshrac", 
+            "time": "12:41", 
+            "action": "killed by", 
+            "skill": "lightning storm", 
+            "subject": "queen of pain", 
+            "gold-lost": "329", 
+            "left": "30%"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "observer ward", 
+            "time": "13:10", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "57%"
+        }, 
+        {
+            "gold-fed": "768", 
+            "top": "17%", 
+            "whom": "leshrac", 
+            "time": "13:11", 
+            "action": "killed by", 
+            "skill": "lightning storm", 
+            "subject": "slardar", 
+            "gold-lost": "239", 
+            "left": "20%"
+        }, 
+        {
+            "top": "87%", 
+            "whom": "dire tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "13:13", 
+            "action": "destroy", 
+            "subject": "razor", 
+            "left": "60%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "leshrac", 
+            "time": "13:38"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "13:44"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "14:00", 
+            "action": "activate", 
+            "subject": "razor", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "14:03", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "38%"
+        }, 
+        {
+            "top": "44%", 
+            "whom": "sentry ward", 
+            "time": "14:09", 
+            "action": "place", 
+            "subject": "leshrac", 
+            "left": "24%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "night stalker", 
+            "time": "14:17"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "14:35"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "14:38"
+        }, 
+        {
+            "gold-fed": "392", 
+            "top": "16%", 
+            "other-objects": "queen-of-pain", 
+            "whom": "slardar", 
+            "time": "14:44", 
+            "action": "killed by", 
+            "skill": "slithereen crush", 
+            "subject": "winter wyvern", 
+            "gold-lost": "239", 
+            "left": "3%"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "radiant tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "14:45", 
+            "action": "destroy", 
+            "subject": "beastmaster", 
+            "left": "58%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "14:47", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "11%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "14:50"
+        }, 
+        {
+            "top": "29%", 
+            "other-objects": [
+                "dazzle", 
+                "night-stalker", 
+                "queen-of-pain", 
+                "slardar"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "15:02", 
+            "action": "activate", 
+            "subject": "dazzle", 
+            "left": "17%"
+        }, 
+        {
+            "top": "43%", 
+            "whom": "observer ward", 
+            "time": "15:08", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "23%"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "sentry ward", 
+            "time": "15:13", 
+            "action": "place", 
+            "subject": "leshrac", 
+            "left": "82%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "15:27"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "observer ward", 
+            "time": "15:28", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "82%"
+        }, 
+        {
+            "gold-fed": "346", 
+            "top": "68%", 
+            "other-objects": [
+                "night-stalker", 
+                "slardar"
+            ], 
+            "whom": "queen of pain", 
+            "time": "15:35", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "disruptor", 
+            "gold-lost": "209", 
+            "left": "79%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "16:00", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "16:00", 
+            "action": "activate", 
+            "subject": "leshrac", 
+            "left": "38%"
+        }, 
+        {
+            "top": "90%", 
+            "whom": "observer ward", 
+            "time": "16:04", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "53%"
+        }, 
+        {
+            "gold-fed": "448", 
+            "top": "88%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "slardar", 
+                "razor"
+            ], 
+            "whom": "night stalker", 
+            "time": "16:41", 
+            "action": "killed by", 
+            "skill": "void", 
+            "subject": "beastmaster", 
+            "gold-lost": "239", 
+            "left": "36%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "16:58"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "disruptor", 
+            "time": "17:06"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "17:16"
+        }, 
+        {
+            "action": "get", 
+            "whom": "gem of true sight", 
+            "subject": "winter wyvern", 
+            "time": "17:24"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "beastmaster", 
+            "time": "17:31"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "17:35"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "18:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "18:03", 
+            "action": "activate", 
+            "subject": "leshrac", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "night stalker", 
+            "time": "18:04"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "18:05", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "68%"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "radiant tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "18:08", 
+            "action": "speak", 
+            "subject": "slardar", 
+            "left": "88%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "18:14", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "73%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "18:18", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "70%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "disruptor", 
+                "beastmaster", 
+                "leshrac", 
+                "winter-wyvern"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "18:30", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "81%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "18:35", 
+            "action": "destroy", 
+            "subject": "razor", 
+            "left": "48%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "queen of pain", 
+            "time": "18:50"
+        }, 
+        {
+            "gold-fed": "375", 
+            "top": "50%", 
+            "other-objects": "slardar", 
+            "whom": "razor", 
+            "time": "18:56", 
+            "action": "killed by", 
+            "skill": "eye of the storm", 
+            "subject": "disruptor", 
+            "gold-lost": "209", 
+            "left": "57%"
+        }, 
+        {
+            "gold-fed": "599", 
+            "top": "48%", 
+            "other-objects": "night-stalker", 
+            "whom": "razor", 
+            "time": "19:01", 
+            "action": "killed by", 
+            "skill": "eye of the storm", 
+            "subject": "leshrac", 
+            "gold-lost": "329", 
+            "left": "60%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "razor", 
+            "time": "19:01"
+        }, 
+        {
+            "gold-fed": "566", 
+            "top": "51%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "razor"
+            ], 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "19:02", 
+            "action": "killed by", 
+            "subject": "shadow fiend", 
+            "gold-lost": "329", 
+            "left": "58%"
+        }, 
+        {
+            "gold-fed": "238", 
+            "top": "49%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "disruptor", 
+                "leshrac"
+            ], 
+            "whom": "beastmaster", 
+            "supplement": "autoattack", 
+            "time": "19:07", 
+            "action": "killed by", 
+            "subject": "razor", 
+            "gold-lost": "389", 
+            "left": "64%"
+        }, 
+        {
+            "gold-fed": "480", 
+            "top": "49%", 
+            "other-objects": [
+                "night-stalker", 
+                "queen-of-pain", 
+                "slardar"
+            ], 
+            "whom": "dazzle", 
+            "time": "19:10", 
+            "action": "killed by", 
+            "skill": "shadow wave", 
+            "subject": "beastmaster", 
+            "gold-lost": "269", 
+            "left": "51%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "beastmaster", 
+            "time": "19:10"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "gem of true sight", 
+            "subject": "night stalker", 
+            "time": "19:17"
+        }, 
+        {
+            "gold-fed": "426", 
+            "top": "59%", 
+            "other-objects": "dazzle", 
+            "whom": "queen of pain", 
+            "time": "19:19", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "winter wyvern", 
+            "gold-lost": "239", 
+            "left": "45%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "disruptor", 
+            "time": "19:29"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "19:30"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "19:35"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "dire tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "19:53", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "37%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "19:56", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "35%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "observer ward", 
+            "time": "20:04", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "57%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "20:04", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "20:10", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "68%"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "observer ward", 
+            "time": "20:16", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "82%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "observer ward", 
+            "time": "20:20", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "73%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "observer ward", 
+            "time": "20:29", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "28%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "20:31"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "20:37"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "20:39", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "597", 
+            "top": "84%", 
+            "other-objects": [
+                "slardar", 
+                "razor"
+            ], 
+            "whom": "night stalker", 
+            "supplement": "autoattack", 
+            "time": "21:11", 
+            "action": "killed by", 
+            "subject": "shadow fiend", 
+            "gold-lost": "359", 
+            "left": "91%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "21:25"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "dire tier 2 bottom tower", 
+            "supplement": "tier", 
+            "time": "21:41", 
+            "action": "destroy", 
+            "subject": "razor", 
+            "left": "48%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "21:42", 
+            "action": "destroy", 
+            "subject": "beastmaster", 
+            "left": "55%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "22:00"
+        }, 
+        {
+            "top": "83%", 
+            "whom": "observer ward", 
+            "time": "22:07", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "43%"
+        }, 
+        {
+            "top": "87%", 
+            "whom": "sentry ward", 
+            "time": "22:26", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "44%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "22:30", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "22:55", 
+            "action": "activate", 
+            "subject": "razor", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "winter wyvern", 
+            "time": "23:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "disruptor", 
+            "time": "23:33"
+        }, 
+        {
+            "top": "81%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "disruptor", 
+                "beastmaster", 
+                "leshrac", 
+                "winter-wyvern"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "23:40", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "25%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "roshan", 
+            "subject": "the radiant", 
+            "time": "23:44"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "razor", 
+            "time": "23:45"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "24:00"
+        }, 
+        {
+            "gold-fed": "995", 
+            "top": "56%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "disruptor", 
+                "winter-wyvern"
+            ], 
+            "whom": "beastmaster", 
+            "time": "24:12", 
+            "action": "killed by", 
+            "skill": "wild axes", 
+            "subject": "dazzle", 
+            "gold-lost": "299", 
+            "left": "45%"
+        }, 
+        {
+            "gold-fed": "973", 
+            "top": "54%", 
+            "other-objects": [
+                "disruptor", 
+                "beastmaster", 
+                "leshrac", 
+                "winter-wyvern"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "24:16", 
+            "action": "killed by", 
+            "skill": "requiem of souls", 
+            "subject": "slardar", 
+            "gold-lost": "329", 
+            "left": "47%"
+        }, 
+        {
+            "gold-fed": "626", 
+            "top": "53%", 
+            "other-objects": "razor", 
+            "whom": "queen of pain", 
+            "time": "24:18", 
+            "action": "killed by", 
+            "skill": "sonic wave", 
+            "subject": "shadow fiend", 
+            "gold-lost": "389", 
+            "left": "48%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "queen of pain", 
+            "time": "24:18"
+        }, 
+        {
+            "gold-fed": "535", 
+            "top": "57%", 
+            "other-objects": [
+                "night-stalker", 
+                "queen-of-pain"
+            ], 
+            "whom": "razor", 
+            "supplement": "autoattack", 
+            "time": "24:22", 
+            "action": "killed by", 
+            "subject": "beastmaster", 
+            "gold-lost": "329", 
+            "left": "43%"
+        }, 
+        {
+            "gold-fed": "723", 
+            "top": "64%", 
+            "other-objects": [
+                "night-stalker", 
+                "queen-of-pain"
+            ], 
+            "whom": "razor", 
+            "supplement": "autoattack", 
+            "time": "24:28", 
+            "action": "killed by", 
+            "subject": "leshrac", 
+            "gold-lost": "420", 
+            "left": "53%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "razor", 
+            "time": "24:28"
+        }, 
+        {
+            "gold-fed": "399", 
+            "top": "75%", 
+            "other-objects": "queen-of-pain", 
+            "whom": "razor", 
+            "supplement": "autoattack", 
+            "time": "24:39", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "239", 
+            "left": "30%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "razor", 
+            "time": "24:39"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "24:49"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "24:55", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "24:57"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "25:08", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "723", 
+            "top": "27%", 
+            "other-objects": "razor", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "25:26", 
+            "action": "killed by", 
+            "subject": "leshrac", 
+            "gold-lost": "420", 
+            "left": "25%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "observer ward", 
+            "time": "25:31", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "28%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "queen of pain", 
+            "time": "25:36"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "dire tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "26:04", 
+            "action": "destroy", 
+            "subject": "razor", 
+            "left": "11%"
+        }, 
+        {
+            "top": "59%", 
+            "whom": "observer ward", 
+            "time": "26:10", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "11%"
+        }, 
+        {
+            "gold-fed": "1846", 
+            "top": "84%", 
+            "other-objects": "beastmaster", 
+            "whom": "leshrac", 
+            "supplement": "autoattack", 
+            "time": "26:33", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "449", 
+            "left": "8%"
+        }, 
+        {
+            "gold-fed": "1034", 
+            "top": "76%", 
+            "other-objects": [
+                "beastmaster", 
+                "leshrac", 
+                "winter-wyvern"
+            ], 
+            "whom": "disruptor", 
+            "time": "26:40", 
+            "action": "killed by", 
+            "skill": "static storm", 
+            "subject": "slardar", 
+            "gold-lost": "359", 
+            "left": "13%"
+        }, 
+        {
+            "gold-fed": "771", 
+            "top": "75%", 
+            "other-objects": [
+                "beastmaster", 
+                "leshrac", 
+                "winter-wyvern"
+            ], 
+            "whom": "disruptor", 
+            "supplement": "autoattack", 
+            "time": "26:44", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "299", 
+            "left": "7%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "disruptor", 
+            "time": "26:44"
+        }, 
+        {
+            "top": "59%", 
+            "whom": "observer ward", 
+            "time": "26:52", 
+            "action": "destroy", 
+            "subject": "beastmaster", 
+            "left": "11%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "26:53", 
+            "action": "activate", 
+            "subject": "razor", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "26:56"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "26:56"
+        }, 
+        {
+            "top": "32%", 
+            "whom": "dire creep", 
+            "time": "27:37", 
+            "action": "speak", 
+            "subject": "razor", 
+            "left": "65%"
+        }, 
+        {
+            "top": "30%", 
+            "whom": "observer ward", 
+            "time": "27:37", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "57%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "razor", 
+            "time": "27:37"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "28:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "28:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "28:00"
+        }, 
+        {
+            "gold-fed": "492", 
+            "top": "48%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "slardar"
+            ], 
+            "whom": "razor", 
+            "supplement": "autoattack", 
+            "time": "28:02", 
+            "action": "killed by", 
+            "subject": "beastmaster", 
+            "gold-lost": "329", 
+            "left": "46%"
+        }, 
+        {
+            "gold-fed": "664", 
+            "top": "55%", 
+            "other-objects": [
+                "dazzle", 
+                "night-stalker"
+            ], 
+            "whom": "razor", 
+            "supplement": "autoattack", 
+            "time": "28:13", 
+            "action": "killed by", 
+            "subject": "leshrac", 
+            "gold-lost": "450", 
+            "left": "52%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "razor", 
+            "time": "28:13"
+        }, 
+        {
+            "gold-fed": "664", 
+            "top": "58%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "slardar"
+            ], 
+            "whom": "razor", 
+            "time": "28:15", 
+            "action": "killed by", 
+            "skill": "eye of the storm", 
+            "subject": "shadow fiend", 
+            "gold-lost": "419", 
+            "left": "52%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "razor", 
+            "time": "28:15"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "28:20", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "queen of pain", 
+            "time": "28:33"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "28:46"
+        }, 
+        {
+            "top": "76%", 
+            "whom": "dire tier 3 middle tower", 
+            "supplement": "tier", 
+            "time": "28:59", 
+            "action": "destroy", 
+            "subject": "razor", 
+            "left": "26%"
+        }, 
+        {
+            "top": "75%", 
+            "whom": "observer ward", 
+            "time": "29:00", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "27%"
+        }, 
+        {
+            "gold-fed": "393", 
+            "top": "79%", 
+            "whom": "razor", 
+            "supplement": "autoattack", 
+            "time": "29:08", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "299", 
+            "left": "27%"
+        }, 
+        {
+            "gold-fed": "726", 
+            "top": "80%", 
+            "other-objects": "slardar", 
+            "whom": "razor", 
+            "supplement": "autoattack", 
+            "time": "29:12", 
+            "action": "killed by", 
+            "subject": "leshrac", 
+            "gold-lost": "450", 
+            "left": "28%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "razor", 
+            "time": "29:12"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "disruptor", 
+            "time": "29:14"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "29:27"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "29:30", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "29:31"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "29:52"
+        }, 
+        {
+            "top": "75%", 
+            "whom": "observer ward", 
+            "time": "29:57", 
+            "action": "destroy", 
+            "subject": "winter wyvern", 
+            "left": "27%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "29:59", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "13%", 
+            "whom": "observer ward", 
+            "time": "30:52", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "27%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "disruptor", 
+            "time": "31:04"
+        }, 
+        {
+            "top": "13%", 
+            "whom": "observer ward", 
+            "time": "31:07", 
+            "action": "destroy", 
+            "subject": "night stalker", 
+            "left": "27%"
+        }, 
+        {
+            "top": "77%", 
+            "whom": "observer ward", 
+            "time": "31:25", 
+            "action": "place", 
+            "subject": "winter wyvern", 
+            "left": "25%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "31:57"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "31:59"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "32:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "32:00"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "observer ward", 
+            "time": "32:12", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "24%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "32:17"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "32:17", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "32:36", 
+            "action": "activate", 
+            "subject": "queen of pain", 
+            "left": "61%"
+        }, 
+        {
+            "top": "18%", 
+            "whom": "observer ward", 
+            "time": "33:13", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "28%"
+        }, 
+        {
+            "top": "81%", 
+            "other-objects": [
+                "shadow-fiend", 
+                "disruptor", 
+                "beastmaster", 
+                "leshrac", 
+                "winter-wyvern"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "33:39", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "27%"
+        }, 
+        {
+            "top": "69%", 
+            "other-objects": [
+                "dazzle", 
+                "night-stalker", 
+                "slardar", 
+                "razor"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "33:43", 
+            "action": "activate", 
+            "subject": "night stalker", 
+            "left": "58%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "night stalker", 
+            "time": "33:46"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "night stalker", 
+            "time": "33:47"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "34:00"
+        }, 
+        {
+            "gold-fed": "727", 
+            "top": "69%", 
+            "other-objects": "queen-of-pain", 
+            "whom": "razor", 
+            "supplement": "autoattack", 
+            "time": "34:03", 
+            "action": "killed by", 
+            "subject": "shadow fiend", 
+            "gold-lost": "479", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "34:05"
+        }, 
+        {
+            "gold-fed": "567", 
+            "top": "68%", 
+            "other-objects": "slardar", 
+            "whom": "razor", 
+            "time": "34:11", 
+            "action": "killed by", 
+            "skill": "eye of the storm", 
+            "subject": "beastmaster", 
+            "gold-lost": "359", 
+            "left": "61%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "razor", 
+            "time": "34:11"
+        }, 
+        {
+            "gold-fed": "408", 
+            "top": "84%", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "34:21", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "329", 
+            "left": "46%"
+        }, 
+        {
+            "top": "72%", 
+            "whom": "bloodstone", 
+            "time": "34:23", 
+            "action": "speak", 
+            "subject": "leshrac", 
+            "left": "31%"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "razor", 
+            "time": "35:00"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "roshan", 
+            "subject": "the radiant", 
+            "time": "35:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "35:04", 
+            "action": "bottled", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "slardar", 
+            "time": "35:04"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "35:14"
+        }, 
+        {
+            "top": "77%", 
+            "whom": "observer ward", 
+            "time": "35:24", 
+            "action": "destroy", 
+            "subject": "razor", 
+            "left": "25%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "35:32"
+        }, 
+        {
+            "gold-fed": "727", 
+            "top": "83%", 
+            "other-objects": [
+                "slardar", 
+                "razor"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "35:46", 
+            "action": "killed by", 
+            "subject": "shadow fiend", 
+            "gold-lost": "479", 
+            "left": "27%"
+        }, 
+        {
+            "gold-fed": "803", 
+            "top": "79%", 
+            "other-objects": [
+                "queen-of-pain", 
+                "razor"
+            ], 
+            "whom": "slardar", 
+            "time": "35:53", 
+            "action": "killed by", 
+            "skill": "slithereen crush", 
+            "subject": "leshrac", 
+            "gold-lost": "510", 
+            "left": "15%"
+        }, 
+        {
+            "top": "79%", 
+            "other-objects": [
+                "disruptor", 
+                "beastmaster", 
+                "leshrac"
+            ], 
+            "whom": "shadow-fiend", 
+            "time": "35:56", 
+            "action": "speak", 
+            "subject": "razor", 
+            "left": "15%"
+        }, 
+        {
+            "gold-fed": "449", 
+            "top": "88%", 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "35:56", 
+            "action": "killed by", 
+            "subject": "winter wyvern", 
+            "gold-lost": "359", 
+            "left": "17%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "35:56"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "razor", 
+            "time": "35:56"
+        }, 
+        {
+            "top": "78%", 
+            "whom": "observer ward", 
+            "time": "36:00", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "27%"
+        }, 
+        {
+            "gold-fed": "596", 
+            "top": "91%", 
+            "other-objects": "queen-of-pain", 
+            "whom": "razor", 
+            "supplement": "autoattack", 
+            "time": "36:04", 
+            "action": "killed by", 
+            "subject": "beastmaster", 
+            "gold-lost": "359", 
+            "left": "12%"
+        }, 
+        {
+            "gold-fed": "471", 
+            "top": "98%", 
+            "other-objects": [
+                "night-stalker", 
+                "razor"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "36:10", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "329", 
+            "left": "9%"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "razor", 
+            "time": "36:10"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "shadow fiend", 
+            "time": "36:10"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "winter wyvern", 
+            "time": "36:10"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "night stalker", 
+            "time": "36:10"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "leshrac", 
+            "time": "36:10"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "disruptor", 
+            "time": "36:10"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "dazzle", 
+            "time": "36:10"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "queen of pain", 
+            "time": "36:10"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the radiant", 
+            "time": "36:13"
+        }
+    ]
+}

@@ -1,0 +1,2844 @@
+{
+    "events": [
+        {
+            "action": "disconnect", 
+            "subject": "lina", 
+            "time": "-01:30"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "lina", 
+            "time": "-01:30"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "rubick", 
+            "time": "-01:30"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "slardar", 
+            "time": "-01:30"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "zeus", 
+            "time": "-01:30"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "zeus", 
+            "time": "-01:30"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "bane", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "rubick", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "rubick", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "zeus", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "slardar", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "phantom lancer", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "dazzle", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "dazzle", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "phantom lancer", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "zeus", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "zeus", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "dazzle", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "rubick", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "-01:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "-01:24"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "-01:24"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "-01:23"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "sentry ward", 
+            "time": "-00:28", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "77%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "-00:21", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "80%"
+        }, 
+        {
+            "top": "33%", 
+            "whom": "sentry ward", 
+            "time": "-00:13", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "18%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "00:00", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "32%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "lina", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "zeus", 
+            "left": "38%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "00:14", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "35%"
+        }, 
+        {
+            "top": "66%", 
+            "whom": "observer ward", 
+            "time": "00:24", 
+            "action": "place", 
+            "subject": "slardar", 
+            "left": "67%"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "00:44", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "21%"
+        }, 
+        {
+            "gold-fed": "411", 
+            "top": "77%", 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "01:27", 
+            "action": "killed by", 
+            "subject": "slardar", 
+            "gold-lost": "29", 
+            "left": "86%"
+        }, 
+        {
+            "gold-fed": "347", 
+            "top": "53%", 
+            "whom": "zeus", 
+            "time": "01:38", 
+            "action": "killed by", 
+            "skill": "lightning bolt", 
+            "subject": "lina", 
+            "gold-lost": "89", 
+            "left": "47%"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "sentry ward", 
+            "time": "01:50", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "35%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "01:56", 
+            "action": "destroy", 
+            "subject": "bane", 
+            "left": "35%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "02:01", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "02:13", 
+            "action": "bottled", 
+            "subject": "zeus", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "245", 
+            "top": "10%", 
+            "other-objects": [
+                "bane", 
+                "dazzle"
+            ], 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "02:33", 
+            "action": "killed by", 
+            "subject": "rubick", 
+            "gold-lost": "29", 
+            "left": "11%"
+        }, 
+        {
+            "gold-fed": "311", 
+            "top": "13%", 
+            "other-objects": "undying", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "02:48", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "59", 
+            "left": "29%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "02:48"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "rubick", 
+            "time": "02:53"
+        }, 
+        {
+            "top": "9%", 
+            "other-objects": [
+                "bane", 
+                "dazzle"
+            ], 
+            "whom": "phantom-lancer", 
+            "time": "02:57", 
+            "action": "speak", 
+            "subject": "undying", 
+            "left": "33%"
+        }, 
+        {
+            "gold-fed": "356", 
+            "top": "11%", 
+            "other-objects": "rubick", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "03:09", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "59", 
+            "left": "31%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "03:21"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "zeus", 
+            "time": "03:49"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "04:00", 
+            "action": "bottled", 
+            "subject": "zeus", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "04:01", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "61%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "sentry ward", 
+            "time": "04:09", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "34%"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "sentry ward", 
+            "time": "04:15", 
+            "action": "destroy", 
+            "subject": "rubick", 
+            "left": "35%"
+        }, 
+        {
+            "gold-fed": "269", 
+            "top": "36%", 
+            "whom": "zeus", 
+            "time": "04:18", 
+            "action": "killed by", 
+            "skill": "lightning bolt", 
+            "subject": "rubick", 
+            "gold-lost": "59", 
+            "left": "29%"
+        }, 
+        {
+            "gold-fed": "431", 
+            "top": "66%", 
+            "other-objects": "bane", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "04:24", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "149", 
+            "left": "57%"
+        }, 
+        {
+            "gold-fed": "371", 
+            "top": "66%", 
+            "whom": "lina", 
+            "supplement": "autoattack", 
+            "time": "04:38", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "89", 
+            "left": "57%"
+        }, 
+        {
+            "gold-fed": "405", 
+            "top": "65%", 
+            "other-objects": [
+                "rubick", 
+                "tusk"
+            ], 
+            "whom": "lina", 
+            "time": "04:38", 
+            "action": "killed by", 
+            "skill": "dragon slave", 
+            "subject": "slardar", 
+            "gold-lost": "119", 
+            "left": "55%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "lina", 
+            "time": "04:38"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "zeus", 
+            "time": "04:51"
+        }, 
+        {
+            "gold-fed": "684", 
+            "top": "69%", 
+            "whom": "zeus", 
+            "time": "04:56", 
+            "action": "killed by", 
+            "skill": "thundergod's wrath", 
+            "subject": "lina", 
+            "gold-lost": "179", 
+            "left": "34%"
+        }, 
+        {
+            "top": "14%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "dazzle"
+            ], 
+            "whom": "zeus", 
+            "time": "04:56", 
+            "action": "killed by", 
+            "skill": "thundergod's wrath", 
+            "subject": "undying", 
+            "left": "15%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "zeus", 
+            "time": "04:56"
+        }, 
+        {
+            "gold-fed": "289", 
+            "top": "9%", 
+            "other-objects": "gyrocopter", 
+            "whom": "undying", 
+            "supplement": "autoattack", 
+            "time": "05:00", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "89", 
+            "left": "22%"
+        }, 
+        {
+            "gold-fed": "368", 
+            "top": "8%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "zeus"
+            ], 
+            "whom": "bane", 
+            "time": "05:14", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "gyrocopter", 
+            "gold-lost": "149", 
+            "left": "19%"
+        }, 
+        {
+            "top": "49%", 
+            "whom": "sentry ward", 
+            "time": "05:19", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "48%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "undying", 
+            "time": "05:22"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "rubick", 
+            "time": "05:35"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "observer ward", 
+            "time": "05:44", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "44%"
+        }, 
+        {
+            "top": "73%", 
+            "other-objects": [
+                "rubick", 
+                "undying"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "05:47", 
+            "action": "activate", 
+            "subject": "rubick", 
+            "left": "29%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "invisibility rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "06:00", 
+            "action": "bottled", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "321", 
+            "top": "42%", 
+            "other-objects": [
+                "rubick", 
+                "undying"
+            ], 
+            "whom": "lina", 
+            "time": "06:07", 
+            "action": "killed by", 
+            "skill": "laguna blade", 
+            "subject": "bane", 
+            "gold-lost": "119", 
+            "left": "42%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "tusk", 
+            "time": "06:09"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "invisibility rune", 
+            "time": "06:11", 
+            "action": "bottled", 
+            "subject": "lina", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "lina", 
+            "time": "06:13"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "06:20"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "sentry ward", 
+            "time": "06:33", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "30%"
+        }, 
+        {
+            "gold-fed": "452", 
+            "top": "94%", 
+            "other-objects": "slardar", 
+            "whom": "zeus", 
+            "time": "06:34", 
+            "action": "killed by", 
+            "skill": "lightning bolt", 
+            "subject": "tusk", 
+            "gold-lost": "179", 
+            "left": "76%"
+        }, 
+        {
+            "top": "10%", 
+            "whom": "sentry ward", 
+            "time": "06:37", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "23%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "observer ward", 
+            "time": "06:39", 
+            "action": "place", 
+            "subject": "undying", 
+            "left": "51%"
+        }, 
+        {
+            "gold-fed": "373", 
+            "top": "87%", 
+            "other-objects": "tusk", 
+            "whom": "lina", 
+            "time": "06:42", 
+            "action": "killed by", 
+            "skill": "dragon slave", 
+            "subject": "slardar", 
+            "gold-lost": "179", 
+            "left": "76%"
+        }, 
+        {
+            "gold-fed": "418", 
+            "top": "9%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "zeus", 
+                "dazzle"
+            ], 
+            "whom": "bane", 
+            "supplement": "autoattack", 
+            "time": "06:43", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "179", 
+            "left": "23%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "07:06"
+        }, 
+        {
+            "gold-fed": "691", 
+            "top": "42%", 
+            "other-objects": [
+                "undying", 
+                "tusk"
+            ], 
+            "whom": "lina", 
+            "supplement": "autoattack", 
+            "time": "07:16", 
+            "action": "killed by", 
+            "subject": "zeus", 
+            "gold-lost": "209", 
+            "left": "64%"
+        }, 
+        {
+            "gold-fed": "294", 
+            "top": "15%", 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "07:17", 
+            "action": "killed by", 
+            "subject": "rubick", 
+            "gold-lost": "119", 
+            "left": "16%"
+        }, 
+        {
+            "gold-fed": "458", 
+            "top": "39%", 
+            "other-objects": [
+                "lina", 
+                "undying"
+            ], 
+            "whom": "tusk", 
+            "time": "07:29", 
+            "action": "killed by", 
+            "skill": "ice shards", 
+            "subject": "slardar", 
+            "gold-lost": "179", 
+            "left": "57%"
+        }, 
+        {
+            "top": "42%", 
+            "other-objects": [
+                "bane", 
+                "dazzle"
+            ], 
+            "whom": "slardar", 
+            "time": "07:40", 
+            "action": "speak", 
+            "subject": "tusk", 
+            "left": "60%"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "observer ward", 
+            "time": "07:45", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "56%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "08:00", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "08:01", 
+            "action": "bottled", 
+            "subject": "phantom lancer", 
+            "left": "38%"
+        }, 
+        {
+            "gold-fed": "484", 
+            "top": "37%", 
+            "other-objects": [
+                "lina", 
+                "gyrocopter"
+            ], 
+            "whom": "rubick", 
+            "time": "08:04", 
+            "action": "killed by", 
+            "skill": "fade bolt", 
+            "subject": "phantom lancer", 
+            "gold-lost": "179", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "08:17"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "08:24"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "rubick", 
+            "time": "08:25"
+        }, 
+        {
+            "gold-fed": "476", 
+            "top": "87%", 
+            "whom": "zeus", 
+            "time": "08:37", 
+            "action": "killed by", 
+            "skill": "arc lightning", 
+            "subject": "tusk", 
+            "gold-lost": "209", 
+            "left": "67%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "08:48"
+        }, 
+        {
+            "top": "53%", 
+            "other-objects": [
+                "gyrocopter", 
+                "rubick"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "09:13", 
+            "action": "activate", 
+            "subject": "rubick", 
+            "left": "34%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "09:25"
+        }, 
+        {
+            "top": "13%", 
+            "other-objects": [
+                "zeus", 
+                "bane"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "09:29", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "50%"
+        }, 
+        {
+            "top": "82%", 
+            "whom": "observer ward", 
+            "time": "09:40", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "82%"
+        }, 
+        {
+            "gold-fed": "420", 
+            "top": "82%", 
+            "other-objects": [
+                "gyrocopter", 
+                "undying", 
+                "tusk"
+            ], 
+            "whom": "rubick", 
+            "supplement": "autoattack", 
+            "time": "09:43", 
+            "action": "killed by", 
+            "subject": "phantom lancer", 
+            "gold-lost": "209", 
+            "left": "84%"
+        }, 
+        {
+            "gold-fed": "550", 
+            "top": "51%", 
+            "other-objects": [
+                "zeus", 
+                "slardar"
+            ], 
+            "whom": "bane", 
+            "time": "09:55", 
+            "action": "killed by", 
+            "skill": "fiend's grip", 
+            "subject": "lina", 
+            "gold-lost": "269", 
+            "left": "49%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "10:01", 
+            "action": "bottled", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "tusk", 
+            "time": "10:10"
+        }, 
+        {
+            "gold-fed": "409", 
+            "top": "77%", 
+            "other-objects": [
+                "gyrocopter", 
+                "undying"
+            ], 
+            "whom": "lina", 
+            "time": "10:44", 
+            "action": "killed by", 
+            "skill": "dragon slave", 
+            "subject": "slardar", 
+            "gold-lost": "209", 
+            "left": "73%"
+        }, 
+        {
+            "gold-fed": "476", 
+            "top": "64%", 
+            "other-objects": "bane", 
+            "whom": "zeus", 
+            "time": "10:46", 
+            "action": "killed by", 
+            "skill": "arc lightning", 
+            "subject": "tusk", 
+            "gold-lost": "209", 
+            "left": "77%"
+        }, 
+        {
+            "gold-fed": "327", 
+            "top": "80%", 
+            "other-objects": "zeus", 
+            "whom": "bane", 
+            "time": "10:57", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "rubick", 
+            "gold-lost": "149", 
+            "left": "74%"
+        }, 
+        {
+            "gold-fed": "490", 
+            "top": "80%", 
+            "other-objects": [
+                "zeus", 
+                "bane"
+            ], 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "11:07", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "269", 
+            "left": "72%"
+        }, 
+        {
+            "gold-fed": "399", 
+            "top": "64%", 
+            "other-objects": [
+                "zeus", 
+                "dazzle"
+            ], 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "11:19", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "209", 
+            "left": "61%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "phantom lancer", 
+            "time": "11:19"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "rubick", 
+            "time": "11:22"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "11:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "11:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "11:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "undying", 
+            "time": "11:34"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "11:37", 
+            "action": "activate", 
+            "subject": "gyrocopter", 
+            "left": "38%"
+        }, 
+        {
+            "top": "41%", 
+            "whom": "radiant tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "11:49", 
+            "action": "speak", 
+            "subject": "slardar", 
+            "left": "58%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "12:02", 
+            "action": "bottled", 
+            "subject": "lina", 
+            "left": "38%"
+        }, 
+        {
+            "top": "72%", 
+            "other-objects": [
+                "gyrocopter", 
+                "rubick", 
+                "undying"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "12:04", 
+            "action": "activate", 
+            "subject": "undying", 
+            "left": "43%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "lina", 
+            "time": "12:04"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "12:06", 
+            "action": "bottled", 
+            "subject": "phantom lancer", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "zeus", 
+            "time": "12:09"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "observer ward", 
+            "time": "12:16", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "80%"
+        }, 
+        {
+            "top": "28%", 
+            "other-objects": [
+                "zeus", 
+                "slardar", 
+                "bane"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "12:23", 
+            "action": "activate", 
+            "subject": "zeus", 
+            "left": "69%"
+        }, 
+        {
+            "top": "58%", 
+            "whom": "observer ward", 
+            "time": "12:43", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "37%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "12:48"
+        }, 
+        {
+            "top": "38%", 
+            "whom": "observer ward", 
+            "time": "12:55", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "12%"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "radiant tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "13:02", 
+            "action": "destroy", 
+            "subject": "gyrocopter", 
+            "left": "88%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "13:42"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "phantom lancer", 
+            "time": "13:43"
+        }, 
+        {
+            "top": "58%", 
+            "whom": "sentry ward", 
+            "time": "13:52", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "86%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "gold-fed": "500", 
+            "top": "49%", 
+            "other-objects": [
+                "lina", 
+                "undying", 
+                "tusk"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "14:04", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "bane", 
+            "gold-lost": "239", 
+            "left": "91%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "14:36"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "14:37"
+        }, 
+        {
+            "gold-fed": "505", 
+            "top": "62%", 
+            "other-objects": [
+                "gyrocopter", 
+                "rubick", 
+                "undying"
+            ], 
+            "whom": "lina", 
+            "supplement": "autoattack", 
+            "time": "14:47", 
+            "action": "killed by", 
+            "subject": "phantom lancer", 
+            "gold-lost": "269", 
+            "left": "89%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "15:01", 
+            "action": "bottled", 
+            "subject": "lina", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "lina", 
+            "time": "15:02"
+        }, 
+        {
+            "top": "55%", 
+            "whom": "sentry ward", 
+            "time": "15:05", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "73%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "15:06"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "15:06"
+        }, 
+        {
+            "top": "53%", 
+            "other-objects": [
+                "zeus", 
+                "bane"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "15:17", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "67%"
+        }, 
+        {
+            "gold-fed": "469", 
+            "top": "48%", 
+            "other-objects": "zeus", 
+            "whom": "bane", 
+            "time": "15:33", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "undying", 
+            "gold-lost": "239", 
+            "left": "42%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "15:41", 
+            "action": "bottled", 
+            "subject": "zeus", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "zeus", 
+            "time": "15:57"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the radiant", 
+            "subject": "glyph of fortification", 
+            "time": "15:57"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "91%", 
+            "whom": "observer ward", 
+            "time": "16:20", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "76%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "16:25", 
+            "action": "bottled", 
+            "subject": "phantom lancer", 
+            "left": "38%"
+        }, 
+        {
+            "top": "12%", 
+            "whom": "radiant tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "16:26", 
+            "action": "speak", 
+            "subject": "zeus", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "phantom lancer", 
+            "time": "16:26"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "16:40", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "34%"
+        }, 
+        {
+            "gold-fed": "480", 
+            "top": "15%", 
+            "other-objects": [
+                "zeus", 
+                "bane"
+            ], 
+            "whom": "phantom lancer", 
+            "time": "16:41", 
+            "action": "killed by", 
+            "skill": "spirit lance", 
+            "subject": "tusk", 
+            "gold-lost": "269", 
+            "left": "17%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "16:47", 
+            "action": "bottled", 
+            "subject": "lina", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "rubick", 
+            "time": "16:49"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "16:56"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "16:56"
+        }, 
+        {
+            "top": "22%", 
+            "whom": "sentry ward", 
+            "time": "17:26", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "21%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "rubick", 
+            "time": "17:53"
+        }, 
+        {
+            "top": "62%", 
+            "whom": "sentry ward", 
+            "time": "17:56", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "81%"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "observer ward", 
+            "time": "17:59", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "80%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "18:00", 
+            "action": "bottled", 
+            "subject": "phantom lancer", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "phantom lancer", 
+            "time": "18:01"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "18:02", 
+            "action": "bottled", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "invisibility rune", 
+            "subject": "tusk", 
+            "time": "18:02"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "lina", 
+            "time": "18:03"
+        }, 
+        {
+            "gold-fed": "710", 
+            "top": "91%", 
+            "other-objects": "gyrocopter", 
+            "whom": "tusk", 
+            "time": "18:29", 
+            "action": "killed by", 
+            "skill": "ice shards", 
+            "subject": "zeus", 
+            "gold-lost": "359", 
+            "left": "85%"
+        }, 
+        {
+            "gold-fed": "566", 
+            "top": "85%", 
+            "other-objects": [
+                "zeus", 
+                "bane"
+            ], 
+            "whom": "dazzle", 
+            "time": "18:29", 
+            "action": "killed by", 
+            "skill": "shadow wave", 
+            "subject": "gyrocopter", 
+            "gold-lost": "329", 
+            "left": "85%"
+        }, 
+        {
+            "gold-fed": "418", 
+            "top": "77%", 
+            "other-objects": [
+                "lina", 
+                "gyrocopter", 
+                "tusk"
+            ], 
+            "whom": "rubick", 
+            "time": "18:34", 
+            "action": "killed by", 
+            "skill": "fade bolt", 
+            "subject": "bane", 
+            "gold-lost": "269", 
+            "left": "89%"
+        }, 
+        {
+            "gold-fed": "427", 
+            "top": "72%", 
+            "other-objects": [
+                "rubick", 
+                "tusk"
+            ], 
+            "whom": "lina", 
+            "supplement": "autoattack", 
+            "time": "18:43", 
+            "action": "killed by", 
+            "subject": "dazzle", 
+            "gold-lost": "269", 
+            "left": "87%"
+        }, 
+        {
+            "gold-fed": "518", 
+            "top": "12%", 
+            "other-objects": [
+                "lina", 
+                "undying", 
+                "tusk"
+            ], 
+            "whom": "rubick", 
+            "time": "19:01", 
+            "action": "killed by", 
+            "skill": "fade bolt", 
+            "subject": "phantom lancer", 
+            "gold-lost": "329", 
+            "left": "31%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "rubick", 
+            "time": "19:37"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "19:48"
+        }, 
+        {
+            "top": "34%", 
+            "whom": "sentry ward", 
+            "time": "19:56", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "36%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "19:58", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "33%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "20:00", 
+            "action": "bottled", 
+            "subject": "tusk", 
+            "left": "61%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "20:02", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "34%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "20:05", 
+            "action": "bottled", 
+            "subject": "zeus", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "zeus", 
+            "time": "20:06"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "20:14", 
+            "action": "speak", 
+            "subject": "gyrocopter", 
+            "left": "48%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "20:15"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "tusk", 
+            "time": "20:15"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "observer ward", 
+            "time": "20:28", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "59%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "20:28"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "20:30", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "64%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "20:40", 
+            "action": "destroy", 
+            "subject": "phantom lancer", 
+            "left": "11%"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "observer ward", 
+            "time": "20:53", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "57%"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "the dire", 
+            "subject": "roshan", 
+            "time": "20:58"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "gyrocopter", 
+            "time": "20:59"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "rubick", 
+            "time": "21:11"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "21:11"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "sentry ward", 
+            "time": "21:35", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "34%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "21:36", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "33%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "21:41", 
+            "action": "destroy", 
+            "subject": "rubick", 
+            "left": "33%"
+        }, 
+        {
+            "top": "34%", 
+            "whom": "sentry ward", 
+            "time": "21:50", 
+            "action": "destroy", 
+            "subject": "rubick", 
+            "left": "36%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "21:57"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "22:00"
+        }, 
+        {
+            "top": "87%", 
+            "whom": "dire tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "22:09", 
+            "action": "destroy", 
+            "subject": "zeus", 
+            "left": "60%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "22:12", 
+            "action": "bottled", 
+            "subject": "tusk", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "tusk", 
+            "time": "22:25"
+        }, 
+        {
+            "top": "9%", 
+            "whom": "observer ward", 
+            "time": "22:38", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "45%"
+        }, 
+        {
+            "gold-fed": "576", 
+            "top": "9%", 
+            "other-objects": [
+                "lina", 
+                "tusk"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "22:52", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "slardar", 
+            "gold-lost": "329", 
+            "left": "50%"
+        }, 
+        {
+            "top": "10%", 
+            "other-objects": "zeus", 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "22:53", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "46%"
+        }, 
+        {
+            "gold-fed": "514", 
+            "top": "87%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "zeus"
+            ], 
+            "whom": "bane", 
+            "supplement": "autoattack", 
+            "time": "22:54", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "299", 
+            "left": "47%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "dazzle", 
+            "time": "22:59"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "23:01"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "23:04"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "23:20", 
+            "action": "bottled", 
+            "subject": "phantom lancer", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "phantom lancer", 
+            "time": "23:20"
+        }, 
+        {
+            "top": "9%", 
+            "whom": "observer ward", 
+            "time": "23:23", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "45%"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "sentry ward", 
+            "time": "23:37", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "36%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "23:39", 
+            "action": "destroy", 
+            "subject": "dazzle", 
+            "left": "33%"
+        }, 
+        {
+            "top": "47%", 
+            "whom": "observer ward", 
+            "time": "23:51", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "23:59", 
+            "action": "bottled", 
+            "subject": "phantom lancer", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "23:59", 
+            "action": "bottled", 
+            "subject": "zeus", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "zeus", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "dazzle", 
+            "time": "24:17"
+        }, 
+        {
+            "top": "56%", 
+            "other-objects": [
+                "lina", 
+                "gyrocopter", 
+                "rubick", 
+                "undying"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "24:17", 
+            "action": "activate", 
+            "subject": "rubick", 
+            "left": "45%"
+        }, 
+        {
+            "gold-fed": "734", 
+            "top": "90%", 
+            "other-objects": "lina", 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "24:36", 
+            "action": "killed by", 
+            "subject": "phantom lancer", 
+            "gold-lost": "389", 
+            "left": "72%"
+        }, 
+        {
+            "top": "53%", 
+            "whom": "observer ward", 
+            "time": "24:56", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "67%"
+        }, 
+        {
+            "top": "42%", 
+            "other-objects": [
+                "zeus", 
+                "bane"
+            ], 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "25:11", 
+            "action": "activate", 
+            "subject": "tusk", 
+            "left": "90%"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "sentry ward", 
+            "time": "25:12", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "87%"
+        }, 
+        {
+            "gold-fed": "456", 
+            "top": "53%", 
+            "other-objects": [
+                "bane", 
+                "dazzle"
+            ], 
+            "whom": "zeus", 
+            "time": "25:18", 
+            "action": "killed by", 
+            "skill": "thundergod's wrath", 
+            "subject": "tusk", 
+            "gold-lost": "329", 
+            "left": "87%"
+        }, 
+        {
+            "gold-fed": "471", 
+            "top": "44%", 
+            "other-objects": [
+                "zeus", 
+                "slardar"
+            ], 
+            "whom": "bane", 
+            "time": "25:19", 
+            "action": "killed by", 
+            "skill": "fiend's grip", 
+            "subject": "rubick", 
+            "gold-lost": "329", 
+            "left": "88%"
+        }, 
+        {
+            "gold-fed": "712", 
+            "top": "34%", 
+            "other-objects": [
+                "lina", 
+                "rubick", 
+                "tusk"
+            ], 
+            "whom": "gyrocopter", 
+            "supplement": "autoattack", 
+            "time": "25:21", 
+            "action": "killed by", 
+            "subject": "zeus", 
+            "gold-lost": "480", 
+            "left": "91%"
+        }, 
+        {
+            "gold-fed": "575", 
+            "top": "36%", 
+            "other-objects": [
+                "lina", 
+                "rubick", 
+                "undying", 
+                "tusk"
+            ], 
+            "whom": "gyrocopter", 
+            "time": "25:28", 
+            "action": "killed by", 
+            "skill": "rocket barrage", 
+            "subject": "bane", 
+            "gold-lost": "329", 
+            "left": "87%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "gyrocopter", 
+            "time": "25:28"
+        }, 
+        {
+            "gold-fed": "656", 
+            "top": "38%", 
+            "other-objects": [
+                "zeus", 
+                "slardar"
+            ], 
+            "whom": "bane", 
+            "supplement": "autoattack", 
+            "time": "25:29", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "419", 
+            "left": "89%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "bane", 
+            "time": "25:29"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "zeus", 
+            "time": "25:34"
+        }, 
+        {
+            "top": "36%", 
+            "other-objects": [
+                "slardar", 
+                "bane", 
+                "dazzle"
+            ], 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "25:38", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "left": "91%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "gyrocopter", 
+            "time": "25:38"
+        }, 
+        {
+            "top": "38%", 
+            "whom": "sentry ward", 
+            "time": "25:48", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "89%"
+        }, 
+        {
+            "gold-fed": "511", 
+            "top": "44%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "slardar", 
+                "dazzle"
+            ], 
+            "whom": "zeus", 
+            "time": "25:52", 
+            "action": "killed by", 
+            "skill": "arc lightning", 
+            "subject": "gyrocopter", 
+            "gold-lost": "449", 
+            "left": "90%"
+        }, 
+        {
+            "gold-fed": "536", 
+            "top": "55%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "zeus", 
+                "dazzle"
+            ], 
+            "whom": "slardar", 
+            "time": "25:59", 
+            "action": "killed by", 
+            "skill": "slithereen crush", 
+            "subject": "undying", 
+            "gold-lost": "329", 
+            "left": "68%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "phantom lancer", 
+            "time": "25:59"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "26:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "26:06"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "rubick", 
+            "time": "26:07"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "26:08", 
+            "action": "bottled", 
+            "subject": "zeus", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "zeus", 
+            "time": "26:21"
+        }, 
+        {
+            "gold-fed": "492", 
+            "top": "71%", 
+            "other-objects": [
+                "zeus", 
+                "slardar", 
+                "dazzle"
+            ], 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "26:38", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "329", 
+            "left": "44%"
+        }, 
+        {
+            "top": "69%", 
+            "whom": "sentry ward", 
+            "time": "27:06", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "50%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "27:07", 
+            "action": "bottled", 
+            "subject": "zeus", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "zeus", 
+            "time": "27:07"
+        }, 
+        {
+            "top": "51%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "zeus", 
+                "slardar", 
+                "bane", 
+                "dazzle"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "27:22", 
+            "action": "activate", 
+            "subject": "dazzle", 
+            "left": "65%"
+        }, 
+        {
+            "top": "75%", 
+            "whom": "sentry ward", 
+            "time": "27:27", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "45%"
+        }, 
+        {
+            "gold-fed": "738", 
+            "top": "69%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "zeus", 
+                "slardar", 
+                "dazzle"
+            ], 
+            "whom": "bane", 
+            "time": "27:37", 
+            "action": "killed by", 
+            "skill": "fiend's grip", 
+            "subject": "gyrocopter", 
+            "gold-lost": "449", 
+            "left": "50%"
+        }, 
+        {
+            "gold-fed": "700", 
+            "top": "66%", 
+            "other-objects": [
+                "lina", 
+                "rubick", 
+                "undying"
+            ], 
+            "whom": "tusk", 
+            "supplement": "autoattack", 
+            "time": "27:47", 
+            "action": "killed by", 
+            "subject": "phantom lancer", 
+            "gold-lost": "419", 
+            "left": "55%"
+        }, 
+        {
+            "gold-fed": "501", 
+            "top": "80%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "zeus", 
+                "slardar", 
+                "dazzle"
+            ], 
+            "whom": "bane", 
+            "time": "27:47", 
+            "action": "killed by", 
+            "skill": "brain sap", 
+            "subject": "rubick", 
+            "gold-lost": "329", 
+            "left": "49%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "bane", 
+            "time": "27:47"
+        }, 
+        {
+            "gold-fed": "464", 
+            "top": "72%", 
+            "other-objects": "zeus", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "27:48", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "329", 
+            "left": "49%"
+        }, 
+        {
+            "gold-fed": "536", 
+            "top": "90%", 
+            "other-objects": "zeus", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "27:53", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "419", 
+            "left": "42%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "slardar", 
+            "time": "27:53"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "28:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "28:00"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "28:31"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "rubick", 
+            "time": "28:32"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "28:34"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "dazzle", 
+            "time": "28:35"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "28:36", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "28:39", 
+            "action": "bottled", 
+            "subject": "dazzle", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "dazzle", 
+            "time": "28:39"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "sentry ward", 
+            "time": "28:55", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "57%"
+        }, 
+        {
+            "top": "67%", 
+            "whom": "observer ward", 
+            "time": "29:11", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "67%"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "sentry ward", 
+            "time": "29:16", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "65%"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "observer ward", 
+            "time": "29:32", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "50%"
+        }, 
+        {
+            "gold-fed": "591", 
+            "top": "57%", 
+            "other-objects": "slardar", 
+            "whom": "bane", 
+            "time": "29:43", 
+            "action": "killed by", 
+            "skill": "fiend's grip", 
+            "subject": "tusk", 
+            "gold-lost": "389", 
+            "left": "51%"
+        }, 
+        {
+            "top": "54%", 
+            "whom": "observer ward", 
+            "time": "29:44", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "51%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "30:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "30:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "observer ward", 
+            "time": "30:05", 
+            "action": "place", 
+            "subject": "dazzle", 
+            "left": "20%"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "dire tier 2 top tower", 
+            "supplement": "tier", 
+            "time": "30:07", 
+            "action": "destroy", 
+            "subject": "slardar", 
+            "left": "11%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "30:16", 
+            "action": "activate", 
+            "subject": "rubick", 
+            "left": "61%"
+        }, 
+        {
+            "top": "50%", 
+            "whom": "observer ward", 
+            "time": "30:51", 
+            "action": "destroy", 
+            "subject": "zeus", 
+            "left": "50%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "31:02", 
+            "action": "bottled", 
+            "subject": "zeus", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "zeus", 
+            "time": "31:04"
+        }, 
+        {
+            "gold-fed": "921", 
+            "top": "50%", 
+            "other-objects": [
+                "gyrocopter", 
+                "rubick", 
+                "undying", 
+                "tusk"
+            ], 
+            "whom": "lina", 
+            "time": "31:18", 
+            "action": "killed by", 
+            "skill": "laguna blade", 
+            "subject": "zeus", 
+            "gold-lost": "540", 
+            "left": "46%"
+        }, 
+        {
+            "gold-fed": "591", 
+            "top": "60%", 
+            "other-objects": [
+                "zeus", 
+                "dazzle"
+            ], 
+            "whom": "slardar", 
+            "time": "31:25", 
+            "action": "killed by", 
+            "skill": "slithereen crush", 
+            "subject": "tusk", 
+            "gold-lost": "389", 
+            "left": "52%"
+        }, 
+        {
+            "gold-fed": "432", 
+            "top": "58%", 
+            "other-objects": "zeus", 
+            "whom": "bane", 
+            "supplement": "autoattack", 
+            "time": "31:36", 
+            "action": "killed by", 
+            "subject": "undying", 
+            "gold-lost": "329", 
+            "left": "46%"
+        }, 
+        {
+            "gold-fed": "716", 
+            "top": "60%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "bane"
+            ], 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "31:39", 
+            "action": "killed by", 
+            "subject": "lina", 
+            "gold-lost": "479", 
+            "left": "46%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "slardar", 
+            "time": "31:39"
+        }, 
+        {
+            "gold-fed": "1124", 
+            "top": "64%", 
+            "other-objects": [
+                "lina", 
+                "gyrocopter", 
+                "undying"
+            ], 
+            "whom": "rubick", 
+            "time": "31:44", 
+            "action": "killed by", 
+            "skill": "fade bolt", 
+            "subject": "bane", 
+            "gold-lost": "449", 
+            "left": "41%"
+        }, 
+        {
+            "gold-fed": "788", 
+            "top": "64%", 
+            "other-objects": [
+                "slardar", 
+                "dazzle"
+            ], 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "31:48", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "509", 
+            "left": "40%"
+        }, 
+        {
+            "gold-fed": "496", 
+            "top": "63%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "dazzle"
+            ], 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "31:50", 
+            "action": "killed by", 
+            "subject": "rubick", 
+            "gold-lost": "359", 
+            "left": "37%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "slardar", 
+            "time": "31:50"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "32:06"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "rubick", 
+            "time": "32:06"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "dire tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "32:09", 
+            "action": "destroy", 
+            "subject": "phantom lancer", 
+            "left": "37%"
+        }, 
+        {
+            "gold-fed": "591", 
+            "top": "80%", 
+            "other-objects": "phantom-lancer", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "32:37", 
+            "action": "killed by", 
+            "subject": "tusk", 
+            "gold-lost": "389", 
+            "left": "23%"
+        }, 
+        {
+            "gold-fed": "536", 
+            "top": "90%", 
+            "other-objects": [
+                "phantom-lancer", 
+                "slardar", 
+                "dazzle"
+            ], 
+            "whom": "zeus", 
+            "time": "32:44", 
+            "action": "killed by", 
+            "skill": "thundergod's wrath", 
+            "subject": "undying", 
+            "gold-lost": "329", 
+            "left": "17%"
+        }, 
+        {
+            "top": "76%", 
+            "whom": "dire tier 3 middle tower", 
+            "supplement": "tier", 
+            "time": "32:47", 
+            "action": "destroy", 
+            "subject": "phantom lancer", 
+            "left": "26%"
+        }, 
+        {
+            "top": "80%", 
+            "whom": "bloodstone", 
+            "time": "33:02", 
+            "action": "speak", 
+            "subject": "zeus", 
+            "left": "15%"
+        }, 
+        {
+            "gold-fed": "722", 
+            "top": "75%", 
+            "other-objects": [
+                "slardar", 
+                "bane"
+            ], 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "33:11", 
+            "action": "killed by", 
+            "subject": "gyrocopter", 
+            "gold-lost": "509", 
+            "left": "22%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "zeus", 
+            "time": "33:22"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire melee middle barracks", 
+            "subject": "dazzle", 
+            "supplement": "melee", 
+            "time": "33:25"
+        }, 
+        {
+            "gold-fed": "522", 
+            "top": "91%", 
+            "other-objects": [
+                "slardar", 
+                "bane"
+            ], 
+            "whom": "phantom lancer", 
+            "supplement": "autoattack", 
+            "time": "33:26", 
+            "action": "killed by", 
+            "subject": "rubick", 
+            "gold-lost": "359", 
+            "left": "15%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "phantom lancer", 
+            "time": "33:26"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "dazzle", 
+            "time": "33:28"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "slardar", 
+            "time": "33:28"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "slardar", 
+            "time": "33:28"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "undying", 
+            "time": "33:28"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "dazzle", 
+            "time": "33:28"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "rubick", 
+            "time": "33:28"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "lina", 
+            "time": "33:28"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "phantom lancer", 
+            "time": "33:28"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "bane", 
+            "time": "33:28"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "gyrocopter", 
+            "time": "33:28"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "zeus", 
+            "time": "33:28"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "tusk", 
+            "time": "33:28"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the radiant", 
+            "time": "33:30"
+        }
+    ]
+}

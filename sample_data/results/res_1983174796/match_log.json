@@ -1,0 +1,1809 @@
+{
+    "events": [
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "disruptor", 
+            "time": "-01:28"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "rubick", 
+            "time": "-01:27"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "-01:26"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "abaddon", 
+            "time": "-01:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "-01:24"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "-01:24"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "slardar", 
+            "time": "-01:01"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "queen of pain", 
+            "time": "-00:59"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "slardar", 
+            "time": "-00:59"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "rubick", 
+            "time": "-00:59"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "disruptor", 
+            "time": "-00:59"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "disruptor", 
+            "time": "-00:59"
+        }, 
+        {
+            "top": "28%", 
+            "whom": "sentry ward", 
+            "time": "-00:36", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "28%"
+        }, 
+        {
+            "top": "81%", 
+            "whom": "observer ward", 
+            "time": "-00:32", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "70%"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "-00:04", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "33%"
+        }, 
+        {
+            "top": "35%", 
+            "whom": "sentry ward", 
+            "time": "-00:01", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "17%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "00:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "00:00", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "top": "21%", 
+            "whom": "sentry ward", 
+            "time": "00:38", 
+            "action": "place", 
+            "subject": "dark seer", 
+            "left": "21%"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "bane", 
+            "time": "00:39"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "bane", 
+            "time": "00:39"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "bane", 
+            "time": "00:39"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "dark seer", 
+            "time": "00:39"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "disruptor", 
+            "time": "00:39"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "slardar", 
+            "time": "00:39"
+        }, 
+        {
+            "gold-fed": "392", 
+            "top": "90%", 
+            "other-objects": [
+                "abaddon", 
+                "ember-spirit"
+            ], 
+            "whom": "disruptor", 
+            "time": "01:02", 
+            "action": "killed by", 
+            "skill": "thunder strike", 
+            "subject": "rubick", 
+            "gold-lost": "29", 
+            "left": "73%"
+        }, 
+        {
+            "top": "10%", 
+            "whom": "observer ward", 
+            "time": "01:47", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "22%"
+        }, 
+        {
+            "top": "69%", 
+            "whom": "observer ward", 
+            "time": "01:55", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "69%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "02:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "invisibility rune", 
+            "time": "02:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "02:00", 
+            "action": "activate", 
+            "subject": "dark seer", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "invisibility rune", 
+            "time": "02:00", 
+            "action": "activate", 
+            "subject": "rubick", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "356", 
+            "top": "59%", 
+            "other-objects": "rubick", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "03:11", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "59", 
+            "left": "74%"
+        }, 
+        {
+            "gold-fed": "317", 
+            "top": "59%", 
+            "other-objects": [
+                "abaddon", 
+                "disruptor"
+            ], 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "03:16", 
+            "action": "killed by", 
+            "subject": "rubick", 
+            "gold-lost": "29", 
+            "left": "80%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "03:29"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "double damage rune", 
+            "time": "04:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "04:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "double damage rune", 
+            "time": "04:05", 
+            "action": "bottled", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "04:05", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "alchemist", 
+            "time": "04:08"
+        }, 
+        {
+            "top": "13%", 
+            "whom": "sentry ward", 
+            "time": "04:35", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "29%"
+        }, 
+        {
+            "gold-fed": "351", 
+            "top": "58%", 
+            "whom": "shadow fiend", 
+            "time": "05:05", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "alchemist", 
+            "gold-lost": "149", 
+            "left": "57%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "05:33"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "05:33"
+        }, 
+        {
+            "gold-fed": "313", 
+            "top": "5%", 
+            "whom": "queen of pain", 
+            "time": "05:40", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "dark seer", 
+            "gold-lost": "89", 
+            "left": "19%"
+        }, 
+        {
+            "gold-fed": "418", 
+            "top": "89%", 
+            "other-objects": [
+                "ember-spirit", 
+                "disruptor"
+            ], 
+            "whom": "abaddon", 
+            "time": "05:52", 
+            "action": "killed by", 
+            "skill": "aphotic shield", 
+            "subject": "slardar", 
+            "gold-lost": "179", 
+            "left": "62%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "haste rune", 
+            "time": "06:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "06:00"
+        }, 
+        {
+            "top": "45%", 
+            "whom": "observer ward", 
+            "time": "06:10", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "42%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "haste rune", 
+            "time": "06:11", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "06:15", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ember spirit", 
+            "time": "06:15"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "observer ward", 
+            "time": "07:31", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "59%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "07:43"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "07:45"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "regeneration rune", 
+            "time": "08:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "bounty rune", 
+            "time": "08:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "regeneration rune", 
+            "time": "08:01", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "bounty rune", 
+            "time": "08:04", 
+            "action": "activate", 
+            "subject": "abaddon", 
+            "left": "61%"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "sentry ward", 
+            "time": "08:08", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "46%"
+        }, 
+        {
+            "gold-fed": "419", 
+            "top": "70%", 
+            "other-objects": "rubick", 
+            "whom": "slardar", 
+            "supplement": "autoattack", 
+            "time": "08:12", 
+            "action": "killed by", 
+            "subject": "abaddon", 
+            "gold-lost": "119", 
+            "left": "66%"
+        }, 
+        {
+            "gold-fed": "312", 
+            "top": "68%", 
+            "other-objects": "abaddon", 
+            "whom": "ember spirit", 
+            "time": "08:14", 
+            "action": "killed by", 
+            "skill": "searing chains", 
+            "subject": "rubick", 
+            "gold-lost": "119", 
+            "left": "62%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "abaddon", 
+            "time": "08:21"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "abaddon", 
+            "time": "08:22"
+        }, 
+        {
+            "gold-fed": "501", 
+            "top": "88%", 
+            "other-objects": "disruptor", 
+            "whom": "ember spirit", 
+            "time": "09:02", 
+            "action": "killed by", 
+            "skill": "flame guard", 
+            "subject": "slardar", 
+            "gold-lost": "239", 
+            "left": "80%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "shadow fiend", 
+            "time": "09:03"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "abaddon", 
+            "time": "09:18"
+        }, 
+        {
+            "top": "44%", 
+            "whom": "observer ward", 
+            "time": "09:27", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "53%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "09:33"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "10:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "10:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "10:00", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "10:03", 
+            "action": "activate", 
+            "subject": "dark seer", 
+            "left": "38%"
+        }, 
+        {
+            "top": "17%", 
+            "whom": "observer ward", 
+            "time": "10:14", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "28%"
+        }, 
+        {
+            "top": "37%", 
+            "other-objects": [
+                "abaddon", 
+                "dark-seer", 
+                "shadow-fiend", 
+                "disruptor"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "10:33", 
+            "action": "activate", 
+            "subject": "abaddon", 
+            "left": "62%"
+        }, 
+        {
+            "gold-fed": "438", 
+            "top": "51%", 
+            "other-objects": [
+                "dark-seer", 
+                "shadow-fiend", 
+                "disruptor"
+            ], 
+            "whom": "abaddon", 
+            "time": "10:52", 
+            "action": "killed by", 
+            "skill": "mist coil", 
+            "subject": "alchemist", 
+            "gold-lost": "239", 
+            "left": "26%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "ember spirit", 
+            "time": "10:55"
+        }, 
+        {
+            "top": "59%", 
+            "whom": "observer ward", 
+            "time": "10:56", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "25%"
+        }, 
+        {
+            "gold-fed": "279", 
+            "top": "43%", 
+            "other-objects": [
+                "dark-seer", 
+                "disruptor"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "11:04", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "bane", 
+            "gold-lost": "119", 
+            "left": "24%"
+        }, 
+        {
+            "gold-fed": "617", 
+            "top": "54%", 
+            "other-objects": [
+                "rubick", 
+                "slardar"
+            ], 
+            "whom": "queen of pain", 
+            "time": "11:09", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "ember spirit", 
+            "gold-lost": "239", 
+            "left": "29%"
+        }, 
+        {
+            "gold-fed": "415", 
+            "top": "57%", 
+            "other-objects": [
+                "abaddon", 
+                "dark-seer", 
+                "ember-spirit", 
+                "disruptor"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "11:18", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "slardar", 
+            "gold-lost": "239", 
+            "left": "36%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "11:18"
+        }, 
+        {
+            "top": "89%", 
+            "other-objects": [
+                "bane", 
+                "queen-of-pain"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "11:34", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "13%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "12:00", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "12:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "shadow fiend", 
+            "time": "12:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "12:09", 
+            "action": "activate", 
+            "subject": "slardar", 
+            "left": "61%"
+        }, 
+        {
+            "top": "52%", 
+            "whom": "sentry ward", 
+            "time": "12:12", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "28%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "12:16"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "disruptor", 
+            "time": "12:16"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "observer ward", 
+            "time": "12:37", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "65%"
+        }, 
+        {
+            "gold-fed": "501", 
+            "top": "67%", 
+            "other-objects": "disruptor", 
+            "whom": "ember spirit", 
+            "time": "13:10", 
+            "action": "killed by", 
+            "skill": "searing chains", 
+            "subject": "slardar", 
+            "gold-lost": "239", 
+            "left": "74%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "13:14"
+        }, 
+        {
+            "gold-fed": "471", 
+            "top": "18%", 
+            "other-objects": [
+                "bane", 
+                "rubick"
+            ], 
+            "whom": "queen of pain", 
+            "time": "13:29", 
+            "action": "killed by", 
+            "skill": "scream of pain", 
+            "subject": "dark seer", 
+            "gold-lost": "239", 
+            "left": "42%"
+        }, 
+        {
+            "gold-fed": "545", 
+            "top": "20%", 
+            "other-objects": "dark-seer", 
+            "whom": "abaddon", 
+            "time": "13:29", 
+            "action": "killed by", 
+            "skill": "mist coil", 
+            "subject": "queen of pain", 
+            "gold-lost": "299", 
+            "left": "43%"
+        }, 
+        {
+            "top": "87%", 
+            "whom": "dire tier 1 bottom tower", 
+            "supplement": "tier", 
+            "time": "13:33", 
+            "action": "destroy", 
+            "subject": "ember spirit", 
+            "left": "60%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "disruptor", 
+            "time": "13:42"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "sentry ward", 
+            "time": "13:57", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "37%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "14:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "14:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "14:00", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "14:00", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "38%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "14:05"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "rubick", 
+            "time": "14:36"
+        }, 
+        {
+            "top": "56%", 
+            "other-objects": [
+                "ember-spirit", 
+                "disruptor"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "14:48", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "74%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "double damage rune", 
+            "subject": "shadow fiend", 
+            "time": "14:52"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "rubick", 
+            "time": "14:54"
+        }, 
+        {
+            "top": "37%", 
+            "whom": "observer ward", 
+            "time": "14:55", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "35%"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "observer ward", 
+            "time": "15:09", 
+            "action": "place", 
+            "subject": "disruptor", 
+            "left": "57%"
+        }, 
+        {
+            "gold-fed": "396", 
+            "top": "67%", 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "15:15", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "179", 
+            "left": "40%"
+        }, 
+        {
+            "gold-fed": "367", 
+            "top": "70%", 
+            "other-objects": [
+                "abaddon", 
+                "ember-spirit"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "15:30", 
+            "action": "killed by", 
+            "subject": "rubick", 
+            "gold-lost": "209", 
+            "left": "51%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "15:30"
+        }, 
+        {
+            "gold-fed": "479", 
+            "top": "71%", 
+            "other-objects": [
+                "dark-seer", 
+                "ember-spirit", 
+                "shadow-fiend", 
+                "disruptor"
+            ], 
+            "whom": "abaddon", 
+            "time": "15:38", 
+            "action": "killed by", 
+            "skill": "aphotic shield", 
+            "subject": "slardar", 
+            "gold-lost": "269", 
+            "left": "48%"
+        }, 
+        {
+            "top": "56%", 
+            "whom": "dire tier 1 middle tower", 
+            "supplement": "tier", 
+            "time": "15:55", 
+            "action": "destroy", 
+            "subject": "abaddon", 
+            "left": "48%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "16:00", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "16:00"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "16:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "16:04", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "shadow fiend", 
+            "time": "16:05"
+        }, 
+        {
+            "gold-fed": "642", 
+            "top": "93%", 
+            "other-objects": "ember-spirit", 
+            "whom": "shadow fiend", 
+            "time": "16:19", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "alchemist", 
+            "gold-lost": "329", 
+            "left": "57%"
+        }, 
+        {
+            "gold-fed": "446", 
+            "top": "90%", 
+            "other-objects": "ember-spirit", 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "16:25", 
+            "action": "killed by", 
+            "subject": "rubick", 
+            "gold-lost": "209", 
+            "left": "49%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "16:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "16:55"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "abaddon", 
+            "time": "16:56"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "abaddon", 
+            "time": "16:59"
+        }, 
+        {
+            "top": "42%", 
+            "whom": "sentry ward", 
+            "time": "17:04", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "21%"
+        }, 
+        {
+            "top": "48%", 
+            "whom": "sentry ward", 
+            "time": "17:31", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "52%"
+        }, 
+        {
+            "top": "30%", 
+            "whom": "observer ward", 
+            "time": "17:34", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "12%"
+        }, 
+        {
+            "top": "20%", 
+            "whom": "dire tier 1 top tower", 
+            "supplement": "tier", 
+            "time": "17:42", 
+            "action": "destroy", 
+            "subject": "dark seer", 
+            "left": "11%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "18:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "double damage rune", 
+            "time": "18:00"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "18:09", 
+            "action": "bottled", 
+            "subject": "ember spirit", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "ember spirit", 
+            "time": "18:09"
+        }, 
+        {
+            "top": "68%", 
+            "other-objects": [
+                "bane", 
+                "rubick", 
+                "queen-of-pain"
+            ], 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "18:11", 
+            "action": "activate", 
+            "subject": "rubick", 
+            "left": "37%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "double damage rune", 
+            "time": "18:12", 
+            "action": "activate", 
+            "subject": "alchemist", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "18:16"
+        }, 
+        {
+            "gold-fed": "627", 
+            "top": "52%", 
+            "other-objects": [
+                "bane", 
+                "rubick"
+            ], 
+            "whom": "queen of pain", 
+            "supplement": "autoattack", 
+            "time": "18:27", 
+            "action": "killed by", 
+            "subject": "disruptor", 
+            "gold-lost": "239", 
+            "left": "21%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "18:43"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "disruptor", 
+            "time": "18:57"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "rubick", 
+            "time": "19:00"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "sentry ward", 
+            "time": "19:29", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "57%"
+        }, 
+        {
+            "top": "55%", 
+            "other-objects": "disruptor", 
+            "whom": "smoke of deceit", 
+            "supplement": "stealth", 
+            "time": "19:33", 
+            "action": "activate", 
+            "subject": "disruptor", 
+            "left": "56%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "sentry ward", 
+            "time": "19:38", 
+            "action": "place", 
+            "subject": "abaddon", 
+            "left": "57%"
+        }, 
+        {
+            "top": "79%", 
+            "whom": "sentry ward", 
+            "time": "19:43", 
+            "action": "destroy", 
+            "subject": "ember spirit", 
+            "left": "57%"
+        }, 
+        {
+            "top": "71%", 
+            "whom": "sentry ward", 
+            "time": "19:47", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "50%"
+        }, 
+        {
+            "gold-fed": "613", 
+            "top": "64%", 
+            "other-objects": "rubick", 
+            "whom": "queen of pain", 
+            "time": "19:50", 
+            "action": "killed by", 
+            "skill": "orchid malevolence", 
+            "subject": "disruptor", 
+            "gold-lost": "239", 
+            "left": "59%"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "sentry ward", 
+            "time": "19:51", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "58%"
+        }, 
+        {
+            "top": "63%", 
+            "whom": "observer ward", 
+            "time": "20:00", 
+            "action": "destroy", 
+            "subject": "queen of pain", 
+            "left": "57%"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "36%", 
+            "left": "38%", 
+            "subject": "bounty rune", 
+            "time": "20:00"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "haste rune", 
+            "time": "20:00"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "haste rune", 
+            "time": "20:08", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "get", 
+            "whom": "dust of appearance", 
+            "subject": "bane", 
+            "time": "20:17"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "20:18"
+        }, 
+        {
+            "top": "36%", 
+            "whom": "bounty rune", 
+            "time": "20:23", 
+            "action": "bottled", 
+            "subject": "queen of pain", 
+            "left": "38%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "bounty rune", 
+            "subject": "queen of pain", 
+            "time": "20:23"
+        }, 
+        {
+            "top": "89%", 
+            "other-objects": [
+                "abaddon", 
+                "shadow-fiend"
+            ], 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "20:44", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "51%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "haste rune", 
+            "subject": "shadow fiend", 
+            "time": "20:44"
+        }, 
+        {
+            "top": "87%", 
+            "whom": "observer ward", 
+            "time": "20:53", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "61%"
+        }, 
+        {
+            "gold-fed": "399", 
+            "top": "88%", 
+            "other-objects": "abaddon", 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "21:00", 
+            "action": "killed by", 
+            "subject": "bane", 
+            "gold-lost": "239", 
+            "left": "62%"
+        }, 
+        {
+            "gold-fed": "597", 
+            "top": "95%", 
+            "whom": "shadow fiend", 
+            "time": "21:03", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "queen of pain", 
+            "gold-lost": "359", 
+            "left": "64%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "21:03"
+        }, 
+        {
+            "gold-fed": "492", 
+            "top": "85%", 
+            "other-objects": [
+                "abaddon", 
+                "dark-seer", 
+                "ember-spirit"
+            ], 
+            "whom": "shadow fiend", 
+            "supplement": "autoattack", 
+            "time": "21:06", 
+            "action": "killed by", 
+            "subject": "slardar", 
+            "gold-lost": "329", 
+            "left": "66%"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "21:06"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "bane", 
+            "time": "21:31"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "regeneration rune", 
+            "time": "22:00"
+        }, 
+        {
+            "action": "pick", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "22:04"
+        }, 
+        {
+            "action": "speak", 
+            "whom": "roshan", 
+            "subject": "the radiant", 
+            "time": "22:04"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "regeneration rune", 
+            "time": "22:07", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "top": "75%", 
+            "whom": "observer ward", 
+            "time": "22:20", 
+            "action": "place", 
+            "subject": "rubick", 
+            "left": "43%"
+        }, 
+        {
+            "top": "65%", 
+            "whom": "dire tier 2 middle tower", 
+            "supplement": "tier", 
+            "time": "22:31", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "37%"
+        }, 
+        {
+            "top": "73%", 
+            "whom": "observer ward", 
+            "time": "22:57", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "26%"
+        }, 
+        {
+            "top": "76%", 
+            "whom": "dire tier 3 middle tower", 
+            "supplement": "tier", 
+            "time": "23:13", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "26%"
+        }, 
+        {
+            "gold-fed": "538", 
+            "top": "76%", 
+            "other-objects": [
+                "abaddon", 
+                "dark-seer", 
+                "ember-spirit"
+            ], 
+            "whom": "disruptor", 
+            "supplement": "autoattack", 
+            "time": "23:15", 
+            "action": "killed by", 
+            "subject": "slardar", 
+            "gold-lost": "329", 
+            "left": "25%"
+        }, 
+        {
+            "gold-fed": "449", 
+            "top": "76%", 
+            "other-objects": [
+                "abaddon", 
+                "dark-seer", 
+                "ember-spirit"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "23:16", 
+            "action": "killed by", 
+            "skill": "requiem of souls", 
+            "subject": "rubick", 
+            "gold-lost": "269", 
+            "left": "25%"
+        }, 
+        {
+            "gold-fed": "1301", 
+            "top": "76%", 
+            "other-objects": [
+                "dark-seer", 
+                "ember-spirit"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "23:16", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "queen of pain", 
+            "gold-lost": "389", 
+            "left": "25%"
+        }, 
+        {
+            "top": "77%", 
+            "other-objects": [
+                "dark-seer", 
+                "ember-spirit"
+            ], 
+            "whom": "shadow fiend", 
+            "time": "23:16", 
+            "action": "killed by", 
+            "skill": "shadowraze", 
+            "subject": "alchemist", 
+            "left": "24%"
+        }, 
+        {
+            "top": "74%", 
+            "other-objects": [
+                "abaddon", 
+                "dark-seer", 
+                "ember-spirit", 
+                "shadow-fiend", 
+                "rubick", 
+                "queen-of-pain", 
+                "slardar"
+            ], 
+            "whom": "dust of appearance", 
+            "supplement": "reveal", 
+            "time": "23:16", 
+            "action": "activate", 
+            "subject": "bane", 
+            "left": "21%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "23:16"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "shadow fiend", 
+            "time": "23:16"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "rubick", 
+            "time": "23:17"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "alchemist", 
+            "time": "23:19"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "the dire", 
+            "subject": "glyph of fortification", 
+            "time": "23:25"
+        }, 
+        {
+            "action": "get", 
+            "whom": "sentry ward", 
+            "subject": "bane", 
+            "time": "23:29"
+        }, 
+        {
+            "top": "78%", 
+            "whom": "sentry ward", 
+            "time": "23:41", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "28%"
+        }, 
+        {
+            "gold-fed": "449", 
+            "top": "78%", 
+            "other-objects": [
+                "abaddon", 
+                "ember-spirit", 
+                "shadow-fiend", 
+                "disruptor"
+            ], 
+            "whom": "dark seer", 
+            "supplement": "autoattack", 
+            "time": "23:46", 
+            "action": "killed by", 
+            "subject": "rubick", 
+            "gold-lost": "269", 
+            "left": "27%"
+        }, 
+        {
+            "gold-fed": "395", 
+            "top": "78%", 
+            "other-objects": [
+                "ember-spirit", 
+                "disruptor"
+            ], 
+            "whom": "dark seer", 
+            "time": "23:47", 
+            "action": "killed by", 
+            "skill": "ion shell", 
+            "subject": "bane", 
+            "gold-lost": "239", 
+            "left": "26%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "dark seer", 
+            "time": "23:47"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire melee middle barracks", 
+            "subject": "shadow fiend", 
+            "supplement": "melee", 
+            "time": "23:55"
+        }, 
+        {
+            "action": "spawn", 
+            "top": "64%", 
+            "left": "61%", 
+            "subject": "illusion rune", 
+            "time": "24:00"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire ranged middle barracks", 
+            "subject": "ember spirit", 
+            "supplement": "ranged", 
+            "time": "24:04"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "regeneration rune", 
+            "subject": "shadow fiend", 
+            "time": "24:07"
+        }, 
+        {
+            "action": "get", 
+            "whom": "smoke of deceit", 
+            "subject": "bane", 
+            "time": "24:24"
+        }, 
+        {
+            "action": "get", 
+            "whom": "observer ward", 
+            "subject": "rubick", 
+            "time": "24:30"
+        }, 
+        {
+            "top": "64%", 
+            "whom": "illusion rune", 
+            "time": "24:33", 
+            "action": "bottled", 
+            "subject": "shadow fiend", 
+            "left": "61%"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "illusion rune", 
+            "subject": "shadow fiend", 
+            "time": "24:42"
+        }, 
+        {
+            "top": "89%", 
+            "whom": "dire tier 3 bottom tower", 
+            "supplement": "tier", 
+            "time": "25:15", 
+            "action": "destroy", 
+            "subject": "shadow fiend", 
+            "left": "30%"
+        }, 
+        {
+            "top": "85%", 
+            "whom": "sentry ward", 
+            "time": "25:17", 
+            "action": "place", 
+            "subject": "bane", 
+            "left": "30%"
+        }, 
+        {
+            "gold-fed": "449", 
+            "top": "93%", 
+            "other-objects": [
+                "dark-seer", 
+                "shadow-fiend", 
+                "disruptor"
+            ], 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "25:29", 
+            "action": "killed by", 
+            "subject": "rubick", 
+            "gold-lost": "269", 
+            "left": "26%"
+        }, 
+        {
+            "gold-fed": "574", 
+            "top": "94%", 
+            "other-objects": [
+                "ember-spirit", 
+                "shadow-fiend", 
+                "disruptor"
+            ], 
+            "whom": "dark seer", 
+            "supplement": "autoattack", 
+            "time": "25:31", 
+            "action": "killed by", 
+            "subject": "queen of pain", 
+            "gold-lost": "389", 
+            "left": "23%"
+        }, 
+        {
+            "gold-fed": "702", 
+            "top": "91%", 
+            "other-objects": [
+                "dark-seer", 
+                "shadow-fiend", 
+                "disruptor"
+            ], 
+            "whom": "ember spirit", 
+            "time": "25:31", 
+            "action": "killed by", 
+            "skill": "activate fire remnant", 
+            "subject": "alchemist", 
+            "gold-lost": "419", 
+            "left": "26%"
+        }, 
+        {
+            "action": "2x multi-kill", 
+            "subject": "ember spirit", 
+            "time": "25:31"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "rubick", 
+            "time": "25:34"
+        }, 
+        {
+            "gold-fed": "492", 
+            "top": "94%", 
+            "other-objects": [
+                "dark-seer", 
+                "shadow-fiend", 
+                "disruptor"
+            ], 
+            "whom": "ember spirit", 
+            "supplement": "autoattack", 
+            "time": "25:35", 
+            "action": "killed by", 
+            "subject": "slardar", 
+            "gold-lost": "329", 
+            "left": "22%"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire melee bottom barracks", 
+            "subject": "shadow fiend", 
+            "supplement": "melee", 
+            "time": "25:35"
+        }, 
+        {
+            "action": "3x multi-kill", 
+            "subject": "ember spirit", 
+            "time": "25:35"
+        }, 
+        {
+            "action": "speak", 
+            "subject": "disruptor", 
+            "time": "25:38"
+        }, 
+        {
+            "action": "destroy", 
+            "whom": "dire ranged bottom barracks", 
+            "subject": "shadow fiend", 
+            "supplement": "ranged", 
+            "time": "25:40"
+        }, 
+        {
+            "action": "won", 
+            "subject": "the radiant", 
+            "time": "25:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "slardar", 
+            "time": "25:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "rubick", 
+            "time": "25:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "ember spirit", 
+            "time": "25:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "abaddon", 
+            "time": "25:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "queen of pain", 
+            "time": "25:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "disruptor", 
+            "time": "25:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "dark seer", 
+            "time": "25:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "shadow fiend", 
+            "time": "25:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "bane", 
+            "time": "25:45"
+        }, 
+        {
+            "action": "disconnect", 
+            "subject": "alchemist", 
+            "time": "25:45"
+        }, 
+        {
+            "action": "activate", 
+            "whom": "aegis of the immortal", 
+            "subject": "shadow fiend", 
+            "time": "25:45"
+        }
+    ]
+}
