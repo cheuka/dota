@@ -448,8 +448,9 @@ def match_log(match_id, file_name):
                 event_dict['top'] = pos_list[0]
                 event_dict['left'] = pos_list[1]
 
-        # print event.text
+        print event.text
         kw_action_set, kw_target_set, kw_supplement_set, kw_position_set = proc_get_keyword(event.text)
+
         # print kw_set
         # get all anchors
         anchors = event.div.div.find_all('a', {'class': 'object'})
@@ -458,10 +459,11 @@ def match_log(match_id, file_name):
         barrack_spans = event.div.div.find_all('span', {'class': 'barracks'})
         radiant_spans = event.div.div.find_all('span', {'class': 'the-radiant'})
         dire_spans = event.div.div.find_all('span', {'class': 'the-dire'})
+        gold_spans = event.div.div.find_all('span', {'class': 'gold'})
         counter = 0
 
-        all_items = set(anchors) | set(obj_spans) | set(tower_spans) | set(barrack_spans)
-        all_sbj_spans = set(obj_spans) | set(radiant_spans) | set(dire_spans)
+        # all_items = set(anchors) | set(obj_spans)
+        all_sbj_spans = set(obj_spans) | set(radiant_spans) | set(dire_spans) | set(tower_spans) | set(barrack_spans)
 
         other_targets = []
         # get objects
@@ -477,24 +479,29 @@ def match_log(match_id, file_name):
             elif counter == 1:
                 event_dict['whom'] = item_text
             else:
-                # if other cases
-                if 'killed by' in kw_action_set:
-                    if 'autoattack' not in kw_supplement_set and counter == 2:
-                        event_dict['skill'] = item_text
-                    else:
-                        other_targets.append(item_text)
-                    golds_text = re.findall(r'[0-9]+g', event.text)
-                    if len(golds_text):
-                        event_dict['gold-lost'] = golds_text[0]
-                        event_dict['gold-fed'] = golds_text[1]
+                other_targets.append(item_text)
             counter += 1
         # end of iteration over all anchors
+
         for item in all_sbj_spans:
             item_text = str(item.text).strip().lower()
             if 'subject' not in event_dict:
                 event_dict['subject'] = item_text
             elif 'whom' not in event_dict:
                 event_dict['whom'] = item_text
+            for word in const.KW_SUPPLEMENT_LIST:
+                if word in item_text:
+                    kw_supplement_set.add(word)
+
+        if 'killed by' in kw_action_set:
+            if len(gold_spans) == 2:
+                event_dict['gold-lost'] = str(gold_spans[0].text)
+                event_dict['gold-fed'] = str(gold_spans[1].text)
+            print str(kw_supplement_set)
+            if 'autoattack' not in kw_supplement_set and len(other_targets):
+                event_dict['skill'] = str(other_targets[0])
+                del other_targets[0]
+
 
         if ':' in kw_action_set:
             if len(kw_action_set) == 1:
@@ -532,10 +539,9 @@ def match_log(match_id, file_name):
         # append it to event_list
         event_list.append(event_dict)
         print str(event_dict)  # for debug
-
-
     # end of iteration of events
-    exit()  # for debug
+
+    # exit()  # for debug
     # process event log write to json file
 
     fp = open(file_name, 'w+')
