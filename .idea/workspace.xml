@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4097670c-d513-4dce-83ca-63237bc150f9" name="Default" comment="finished match_log">
+    <list default="true" id="4097670c-d513-4dce-83ca-63237bc150f9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/const.py" afterPath="$PROJECT_DIR$/const.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler_BFS.py" afterPath="$PROJECT_DIR$/crawler_BFS.py" />
     </list>
     <ignored path="dota.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -557,7 +555,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463831463612</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="finished match_log">
+      <created>1463833322510</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1463833322510</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
