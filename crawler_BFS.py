@@ -220,12 +220,37 @@ def proc_remove_cache(cache_filename):
             os.remove(cache_filename)
 
 
+def proc_get_keyword(event_text):
+    """
+    Find all keywords in event_text
+    :param event_text:
+    :return:
+    """
+    kw_action_set = set()
+    kw_target_set = set()
+    kw_supplement_set = set()
+    kw_position_set = set()
+    for word in const.KW_ACTION_LIST:
+        if str(word) in event_text:
+            kw_action_set.add(str(word))
+    for word in const.KW_TARGET_LIST:
+        if str(word) in event_text:
+            kw_target_set.add(str(word))
+    for word in const.KW_SUPPLEMENT_LIST:
+        if str(word) in event_text:
+            kw_supplement_set.add(str(word))
+    for word in const.KW_POSITION_LIST:
+        if str(word) in event_text:
+            kw_position_set.add(str(word))
+    return kw_action_set, kw_target_set, kw_supplement_set, kw_position_set
+
+
 def match_overview(match_id, filename):
     print 'Processing match', match_id, 'for overview'
     myurl = 'http://www.dotabuff.com/matches/' + match_id
     cache_filename = const.FN_DATADIR+const.FN_CACHED_HTML+match_id
     html = proc_force_cache(myurl, cache_filename)
-    soup = BeautifulSoup(html, 'lxml')  # need to include lxml to avoid warning from bs4
+    soup = BeautifulSoup(html, 'html.parser')  # need to include lxml to avoid warning from bs4
 
     # getting match result
     result_text = str(soup.find_all('div', {'class': 'match-result'})[0].text)
@@ -300,15 +325,15 @@ def match_vision(match_id, filename):
     cache_filename = const.FN_DATADIR+const.FN_CACHED_HTML+match_id+'_vision'
     html = proc_force_cache(myurl, cache_filename)
 
-    soup = BeautifulSoup(html, 'lxml')  # need to include lxml to avoid warning from bs4
+    soup = BeautifulSoup(html, 'html.parser')  # need to include lxml to avoid warning from bs4
 
     # the details
-    match_log = soup.find_all('div', {'class': 'match-log'})
+    match_log_div = soup.find_all('div', {'class': 'match-log'})
     # match_visions = soup.find_all('div', {'class': 'vision-icon'})
-    if len(match_log) == 0:  # or len(match_visions) == 0:
+    if len(match_log_div) == 0:  # or len(match_visions) == 0:
         print 'Missing Page on this match or Error in this HTML format for dotabuff'
         return
-    all_events = match_log[0].find_all('div', {'class': 'event'}, False)
+    all_events = match_log_div[0].find_all('div', {'class': 'event'}, False)
 
     # Getting all events
     event_list = []
@@ -318,7 +343,6 @@ def match_vision(match_id, filename):
         if not event.div or not event.div.div:
             continue
         event_dict['time'] = str(event.div.find('span', {'class': 'time'}).text)
-        # print event.div.find('span', {'class': 'extras'})
         anchors = event.div.div.find_all('a')
 
         # find position style
@@ -374,10 +398,6 @@ def match_vision(match_id, filename):
         event_list.append(event_dict)
 
     # write the result into file as json
-    '''
-    if not os.path.exists(const.FN_DATADIR+const.FN_RESULT_DIR+'/match_vision'):
-        os.mkdir(const.FN_DATADIR+const.FN_RESULT_DIR+'/match_vision')
-    '''
     fp = open(filename, 'w+')
     json.dump({'match_vision': event_list}, fp, False, True, True, True, None, 4)
     fp.close()
@@ -392,6 +412,7 @@ def match_log(match_id, file_name):
     """
     Getting all event log
     :param match_id:
+    :param file_name:
     :return:
     """
     print 'Processing match', match_id, 'for log'
@@ -402,8 +423,6 @@ def match_log(match_id, file_name):
 
     soup = BeautifulSoup(html, 'html.parser')  # need to include lxml to avoid warning from bs4
     match_log_class = soup.find('div', {'class': 'match-log'})
-    # print match_log_class.prettify()
-    # print str(match_log_class)
 
     if len(match_log_class) == 0:
         print 'Missing Page on this match or Error in this HTML format for dotabuff'
@@ -413,9 +432,106 @@ def match_log(match_id, file_name):
     event_list = []
 
     for event in all_events:
-        print '=========new event=========='
-        print str(event)
+        # print '=========new event=========='
+        # print str(event)
+        event_dict = dict()
 
+        # parse time
+        event_dict['time'] = str(event.find('span', {'class': 'time'}).text)
+
+        # parse position
+        event_position = event.find('span', {'class': 'map-item'})
+        if event_position and hasattr(event_position, 'attrs') and 'style' in event_position.attrs:
+            position_text = str(event_position.attrs['style'])
+            pos_list = re.findall(r'([0-9]+%)', position_text)
+            if len(pos_list) == 2:
+                event_dict['top'] = pos_list[0]
+                event_dict['left'] = pos_list[1]
+
+        # print event.text
+        kw_action_set, kw_target_set, kw_supplement_set, kw_position_set = proc_get_keyword(event.text)
+        # print kw_set
+        # get all anchors
+        anchors = event.div.div.find_all('a', {'class': 'object'})
+        obj_spans = event.div.div.find_all('span', {'class': 'object'})
+        tower_spans = event.div.div.find_all('span', {'class': 'tower'})
+        barrack_spans = event.div.div.find_all('span', {'class': 'barracks'})
+        radiant_spans = event.div.div.find_all('span', {'class': 'the-radiant'})
+        dire_spans = event.div.div.find_all('span', {'class': 'the-dire'})
+        counter = 0
+
+        all_items = set(anchors) | set(obj_spans) | set(tower_spans) | set(barrack_spans)
+        all_sbj_spans = set(obj_spans) | set(radiant_spans) | set(dire_spans)
+
+        other_targets = []
+        # get objects
+        for item in anchors:
+            if len(str(item.text).strip()):
+                item_text = str(item.text).strip().lower()
+            else:
+                item_text = str(item.attrs['href']).strip().lower()
+                item_text = re.sub(r'\/heroes\/', '', item_text).strip()
+
+            if counter == 0:
+                event_dict['subject'] = item_text
+            elif counter == 1:
+                event_dict['whom'] = item_text
+            else:
+                # if other cases
+                if 'killed by' in kw_action_set:
+                    if 'autoattack' not in kw_supplement_set and counter == 2:
+                        event_dict['skill'] = item_text
+                    else:
+                        other_targets.append(item_text)
+                    golds_text = re.findall(r'[0-9]+g', event.text)
+                    if len(golds_text):
+                        event_dict['gold-lost'] = golds_text[0]
+                        event_dict['gold-fed'] = golds_text[1]
+            counter += 1
+        # end of iteration over all anchors
+        for item in all_sbj_spans:
+            item_text = str(item.text).strip().lower()
+            if 'subject' not in event_dict:
+                event_dict['subject'] = item_text
+            elif 'whom' not in event_dict:
+                event_dict['whom'] = item_text
+
+        if ':' in kw_action_set:
+            if len(kw_action_set) == 1:
+                kw_action_set = {'speak'}
+            else:
+                kw_action_set.remove(':')
+
+        if len(kw_action_set) == 0:
+            event_dict['action'] = 'unknown'
+        elif len(kw_action_set) == 1:
+            event_dict['action'] = list(kw_action_set)[0]
+        else:
+            event_dict['action'] = list(kw_action_set)
+
+        if len(kw_target_set) == 1:
+            event_dict['target'] = list(kw_target_set)[0]
+        elif len(kw_target_set) > 1:
+            event_dict['target'] = list(kw_target_set)
+
+        if len(kw_supplement_set) == 1:
+            event_dict['supplement'] = list(kw_supplement_set)[0]
+        elif len(kw_supplement_set) > 1:
+            event_dict['supplement'] = list(kw_supplement_set)
+
+        if len(kw_position_set) == 1:
+            event_dict['position'] = list(kw_position_set)[0]
+        elif len(kw_position_set) > 1:
+            event_dict['position'] = list(kw_position_set)
+
+        if len(other_targets) == 1:
+            event_dict['other-objects'] = other_targets[0]
+        elif len(other_targets) > 1:
+            event_dict['other-objects'] = other_targets
+
+        # append it to event_list
+        event_list.append(event_dict)
+        print str(event_dict)  # for debug
 
 
     # end of iteration of events
@@ -423,10 +539,8 @@ def match_log(match_id, file_name):
     # process event log write to json file
 
     fp = open(file_name, 'w+')
-    # json.dump({'events': event_list}, fp, False, True, True, True, None, 4)
+    json.dump({'events': event_list}, fp, False, True, True, True, None, 4)
     fp.close()
-
-    # exit()  # for debug, one time run
 
     # end of process, cleaning optionally
     proc_remove_cache(cache_filename)

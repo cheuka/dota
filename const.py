@@ -14,3 +14,19 @@ URL_HEADER = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KH
 
 
 """http://www.dotabuff.com/matches/2118226357/vision"""
+
+KW_ACTION_LIST = ['get', 'destroy', 'place', 'activate',
+               'spawn', 'killed by', 'kill ',
+               'won', 'bottled', '3x multi-kill',
+               '2x multi-kill', 'disconnect', ' connect', ':',
+               'pick']
+
+
+KW_TARGET_LIST = ['tower', 'barrack', 'glyph of fortification', 'roshan',
+                  'observer ward', 'sentry ward', 'dust of appearance',
+                  'smoke of deceit', 'regeneration rune', 'bounty rune', 'double damage rune',
+                  'arcane rune']
+
+KW_SUPPLEMENT_LIST = ['autoattack', 'stealth', 'reveal', 'tier', 'melee', 'ranged']
+
+KW_POSITION_LIST = ['top', 'bottom', 'middle']
