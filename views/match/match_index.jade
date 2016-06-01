@@ -82,6 +82,18 @@ block match_content
                 tr
                   +picks_bans_row(match.upload.picks_bans, 3)
                 
+
+  if match.upload.picks_bans
+    .row
+      .col-md-12      
+          h3.inline-header Picks/Bans
+          #picks-bans.table-responsive.collapse.in
+            table.table.table-hover
+              tbody
+                tr
+                  +picks_bans_row(match.upload.picks_bans, 2)
+                tr
+                  +picks_bans_row(match.upload.picks_bans, 3)
   +ad("banner2")
   
   .row
