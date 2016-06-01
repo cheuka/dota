@@ -19,8 +19,12 @@ function processUploadProps(entries, meta)
                 container.match_id = dota.matchId_;
                 container.game_mode = dota.gameMode_;
                 container.radiant_win = dota.gameWinner_ === 2;
-                //TODO following needs some extraction/transformation
-                //container.picks_bans = dota.picksBans_; 
+		var bp_arr = [];
+		for (var item in dota.picksBans_)
+		{
+			bp_arr.push({'hero_id': dota.picksBans_[item].heroId_, 'is_pick':dota.picksBans_[item].isPick_, 'team': dota.picksBans_[item].team_});
+		}
+		container.picks_bans = JSON.parse(JSON.stringify(bp_arr)); 
                 //require('fs').writeFileSync('./outputEpilogue.json', JSON.stringify(JSON.parse(e.key)));
             case 'interval':
                 if (!container.player_map[e.player_slot])

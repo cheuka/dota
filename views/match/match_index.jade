@@ -10,7 +10,7 @@ mixin picks_bans_row(picks_bans, team_int)
         if hero
           span.img-text(class=pick.team ? "text-danger" : "text-success")
             img.img-sm(src=hero.img, title=hero.localized_name, style= (is_pick ? "" : "-webkit-filter: grayscale(100%); filter: grayscale(100%);"))
-            div #{(is_pick ? "Pick" : "Ban")} (#{pick.order + 1})
+            div #{(is_pick ? "Pick" : "Ban")} 
         else
           = hero_id
 
@@ -82,6 +82,18 @@ block match_content
                 tr
                   +picks_bans_row(match.picks_bans, 1)
                 
+
+  if match.upload.picks_bans
+    .row
+      .col-md-12      
+          h3.inline-header Picks/Bans
+          #picks-bans.table-responsive.collapse.in
+            table.table.table-hover
+              tbody
+                tr
+                  +picks_bans_row(match.upload.picks_bans, 2)
+                tr
+                  +picks_bans_row(match.upload.picks_bans, 3)
   +ad("banner2")
   
   .row
