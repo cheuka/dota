@@ -4,13 +4,13 @@ mixin picks_bans_row(picks_bans, team_int)
   each pick in picks_bans
     td(style="padding: 3px;")
       if pick.team === team_int
-        - var hero_id = pick.hero_id
-        - var is_pick = pick.is_pick
+        - var hero_id = pick.heroId_
+        - var is_pick = pick.isPick_
         - var hero = constants.heroes[hero_id]
         if hero
-          span.img-text(class=pick.team ? "text-danger" : "text-success")
+          span.img-text(class=pick.team_ ? "text-danger" : "text-success")
             img.img-sm(src=hero.img, title=hero.localized_name, style= (is_pick ? "" : "-webkit-filter: grayscale(100%); filter: grayscale(100%);"))
-            div #{(is_pick ? "Pick" : "Ban")} (#{pick.order + 1})
+            div #{(is_pick ? "Pick" : "Ban")} 
         else
           = hero_id
 
@@ -70,7 +70,7 @@ block match_content
                     - var item = constants.items[constants.item_ids[val]]                             
                     if item
                       img.img-sm.item(src=item.img, title=constants.item_ids[val])
-  if match.picks_bans
+  if match.upload.picks_bans
     .row
       .col-md-12      
           h3.inline-header Picks/Bans
@@ -78,9 +78,9 @@ block match_content
             table.table.table-hover
               tbody
                 tr
-                  +picks_bans_row(match.picks_bans, 0)
+                  +picks_bans_row(match.upload.picks_bans, 2)
                 tr
-                  +picks_bans_row(match.picks_bans, 1)
+                  +picks_bans_row(match.upload.picks_bans, 3)
                 
   +ad("banner2")
   
