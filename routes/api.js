@@ -190,41 +190,9 @@ module.exports = function(db, redis, cassandra)
     });
     api.post('/request_job', multer.single("replay_blob"), function(req, res, next)
     {
-        request.post("https://www.google.com/recaptcha/api/siteverify",
-        {
-            form:
-            {
-                secret: rc_secret,
-                response: req.body.response
-            }
-        }, function(err, resp, body)
-        {
-            if (err)
-            {
-                return next(err);
-            }
-            try
-            {
-                body = JSON.parse(body);
-            }
-            catch (err)
-            {
-                return res.render(
-                {
-                    error: err
-                });
-            }
             var match_id = Number(req.body.match_id);
             var match;
-            if (!body.success && config.ENABLE_RECAPTCHA && !req.file)
-            {
-                console.log('failed recaptcha');
-                return res.json(
-                {
-                    error: "Recaptcha Failed!"
-                });
-            }
-            else if (req.file)
+            if (req.file)
             {
                 console.log(req.file);
                 //var key = req.file.originalname + Date.now();
@@ -269,7 +237,6 @@ module.exports = function(db, redis, cassandra)
                     error: "Invalid input."
                 });
             }
-        });
     });
     api.get('/request_job', function(req, res, cb)
     {
