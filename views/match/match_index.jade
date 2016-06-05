@@ -53,7 +53,13 @@ block match_content
             td.rankable.format= player.total_gold
             td.rankable= player.gold_per_min
             td.rankable= player.xp_per_min
-            td.rankable.format= player.hero_damage
+            if player.damage_inflictor_arr
+                - var totalhd = 0
+                each item in player.damage_inflictor_arr
+                    - totalhd += item.val
+                td.rankable.format= totalhd 
+            else
+                td.rankable.format= player.hero_damage
             td.rankable.format= player.tower_damage
             td.rankable.format= player.hero_healing
             - var item_keys = {"item_0":1, "item_1":1, "item_2":1, "item_3":1, "item_4":1, "item_5":1}
@@ -83,7 +89,7 @@ block match_content
                   +picks_bans_row(match.picks_bans, 1)
                 
 
-  if match.upload.picks_bans
+  if (match.upload)
     .row
       .col-md-12      
           h3.inline-header Picks/Bans
