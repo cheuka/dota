@@ -7,6 +7,7 @@ module.exports = function(db, redis, cassandra)
 {
     matches.get('/:match_id/:info?', function(req, res, cb)
     {
+	if(req.session.user){
         console.time("match page");
         buildMatch(
         {
@@ -27,7 +28,8 @@ module.exports = function(db, redis, cassandra)
             console.timeEnd("match page");
             var info = matchPages[req.params.info] ? req.params.info : "index";
             res.render("match/match_" + info,
-            {
+            {		
+		user: req.session.user,
                 route: info,
                 match: match,
                 tabs: matchPages,
@@ -65,6 +67,10 @@ module.exports = function(db, redis, cassandra)
                 title: "Match " + match.match_id + " - YASP"
             });
         });
+	//lordstone
+	}else{
+		res.send("Please log in to use the service");
+	}
     });
     return matches;
 };

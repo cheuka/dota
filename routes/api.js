@@ -181,18 +181,114 @@ module.exports = function(db, redis, cassandra)
             }
         });
     });
+
+// lordstone: upload_files: copied from /request_job
+// upload files: start
+
+api.post('/upload_files', multer.array("replay_blob", 20), function(req, res, next)
+  {
+            // var match_id = Number(req.body.match_id);
+            var match = [] ;
+            if (req.files.length > 0)
+            {
+                for(var i = 0; i < req.files.length; i ++){
+                	console.log(req.files[i]);
+                	var key = req.files[i].name + Date.now();
+	                // var key = Math.random().toString(16).slice(2);
+  	              //const hash = crypto.createHash('md5');
+    	            //hash.update(req.file.buffer);
+      	          //var key = hash.digest('hex');
+        	        redis.setex(new Buffer('upload_blob:' + key), 60 * 60, req.files[i].buffer);
+          	      match[i] = {
+            	        replay_blob_key: key
+              	  };
+                } //  end for each file in files
+            }
+            else 
+            {
+                res.json(
+                {
+                    error: "Invalid input."
+                });
+            }
+
+            if (match.length > 0)
+            {
+                for(var i = 0; i < match.length; i ++)
+                {
+     	            console.log(match);
+      	          queue.addToQueue(rQueue, match,
+        	        {
+          	          attempts: 1
+            	    }, function(err, job)
+              	  {
+                	    res.json(
+                  	  {
+                    	    error: err,
+                      	  job:
+                        	{
+                          	  jobId: job.jobId,
+                            	data: job.data
+              	          }
+                	    });
+               	  });
+                } // end for each match
+            }
+            else
+            {
+                res.json(
+                {
+                    error: "Invalid input."
+                });
+            }
+  }); //end of api upload files
+// end of post method
+// start of the get method
+
+ api.get('/upload_files', function(req, res, cb)
+    {
+        rQueue.getJob(req.query.id).then(function(job)
+        {
+            if (job)
+            {
+                job.getState().then(function(state)
+                {
+                    return res.json(
+                    {
+                        jobId: job.jobId,
+                        data: job.data,
+                        state: state,
+                        progress: job.progress()
+                    });
+                }).catch(cb);
+            }
+            else
+            {
+                res.json(
+                {
+                    state: "failed"
+                });
+            }
+        }).catch(cb);
+    });
+
+
+
+
+// End of upload_files
+
     api.post('/request_job', multer.single("replay_blob"), function(req, res, next)
     {
             var match_id = Number(req.body.match_id);
             var match;
             if (req.file)
             {
-                console.log(req.file);
-                //var key = req.file.originalname + Date.now();
-                //var key = Math.random().toString(16).slice(2);
-                const hash = crypto.createHash('md5');
-                hash.update(req.file.buffer);
-                var key = hash.digest('hex');
+                //console.log(req.file);
+                //var key = req.file.name + Date.now();
+                var key = Math.random().toString(16).slice(2);
+                //const hash = crypto.createHash('md5');
+                //hash.update(req.file.buffer);
+                //var key = hash.digest('hex');
                 redis.setex(new Buffer('upload_blob:' + key), 60 * 60, req.file.buffer);
                 match = {
                     replay_blob_key: key

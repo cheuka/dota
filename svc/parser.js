@@ -146,13 +146,13 @@ function insertUploadedParse(match, cb)
         {
             return cb(err);
         }
-        redis.setex('match:' + match.replay_blob_key, 60 * 60, JSON.stringify(match));
+        //redis.setex('match:' + match.replay_blob_key, 60 * 60 * 10, JSON.stringify(match));
 	insertMatch(db, redis, match,
 	{
 		type: "parsed",
 		cassandra: cassandra,
 	}, cb);
-   });
+    });
 }
 
 function insertStandardParse(match, cb)

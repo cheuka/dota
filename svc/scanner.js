@@ -3,19 +3,44 @@
  **/
 var utility = require('../util/utility');
 var config = require('../config');
+var constants = require('../constants');
 var buildSets = require('../store/buildSets');
 var db = require('../store/db');
 var cassandra = config.ENABLE_CASSANDRA_MATCH_STORE_WRITE ? require('../store/cassandra') : undefined;
 var redis = require('../store/redis');
+var queue = require('../store/queue');
 var queries = require('../store/queries');
 var insertMatch = queries.insertMatch;
 var getData = utility.getData;
+var addToQueue = queue.addToQueue;
+var mQueue = queue.getQueue('mmr');
 var generateJob = utility.generateJob;
 var async = require('async');
 var trackedPlayers;
 var userPlayers;
-var parallelism = config.SCANNER_PARALLELISM;
-var PAGE_SIZE = 100;
+// Used to create endpoint for monitoring
+var express = require('express');
+var moment = require('moment');
+var app = express();
+var port = config.PORT || config.SCANNER_PORT;
+var startedAt = moment();
+app.route("/").get(function(req, res)
+{
+    redis.get("match_seq_num", function(err, result)
+    {
+        res.json(
+        {
+            started_at: startedAt.format(),
+            started_ago: startedAt.fromNow(),
+            match_seq_num: result || "NOT FOUND"
+        });
+    });
+});
+var server = app.listen(port, function()
+{
+    var host = server.address().address;
+    console.log('[SCANNER] listening at http://%s:%s', host, port);
+});
 buildSets(db, redis, function(err)
 {
     if (err)
@@ -27,19 +52,22 @@ buildSets(db, redis, function(err)
 
 function start()
 {
-    if (config.START_SEQ_NUM)
+    if (config.START_SEQ_NUM === "REDIS")
     {
         redis.get("match_seq_num", function(err, result)
         {
             if (err || !result)
             {
-                console.log('failed to get match_seq_num from redis, waiting to retry');
+                console.log('failed to get match_seq_num from redis, retrying');
                 return setTimeout(start, 10000);
             }
-            //stagger
             result = Number(result);
             scanApi(result);
         });
+    }
+    else if (config.START_SEQ_NUM)
+    {
+        scanApi(config.START_SEQ_NUM);
     }
     else if (config.NODE_ENV !== "production")
     {
@@ -60,58 +88,43 @@ function start()
     {
         throw "failed to initialize sequence number";
     }
+}
 
-    function scanApi(seq_num)
+function scanApi(seq_num)
+{
+    var container = generateJob("api_sequence",
     {
-        queries.getSets(redis, function(err, result)
+        start_at_match_seq_num: seq_num
+    });
+    queries.getSets(redis, function(err, result)
+    {
+        if (err)
+        {
+            console.log("failed to getSets from redis");
+            return scanApi(seq_num);
+        }
+        //set local vars
+        trackedPlayers = result.trackedPlayers;
+        userPlayers = result.userPlayers;
+        getData(
+        {
+            url: container.url,
+            delay: Number(config.SCANNER_DELAY),
+            proxyAffinityRange: 4
+        }, function(err, data)
         {
             if (err)
             {
-                console.log("failed to getSets from redis");
                 return scanApi(seq_num);
             }
-            //set local vars
-            trackedPlayers = result.trackedPlayers;
-            userPlayers = result.userPlayers;
-            var arr = [];
-            var matchBuffer = {};
-            var completePages = {};
-            for (var i = 0; i < parallelism; i++)
-            {
-                arr.push(seq_num + i * PAGE_SIZE);
-            }
+            var resp = data.result && data.result.matches ? data.result.matches : [];
             var next_seq_num = seq_num;
-            //async parallel calls
-            async.each(arr, processPage, finishPageSet);
-
-            function processPage(match_seq_num, cb)
+            if (resp.length)
             {
-                var container = generateJob("api_sequence",
-                {
-                    start_at_match_seq_num: match_seq_num
-                });
-                getData(
-                {
-                    url: container.url,
-                    delay: Number(config.SCANNER_DELAY),
-                    proxyAffinityRange: parallelism,
-                }, function(err, data)
-                {
-                    if (err)
-                    {
-                        return cb(err);
-                    }
-                    var resp = data.result && data.result.matches ? data.result.matches : [];
-                    if (resp.length >= PAGE_SIZE)
-                    {
-                        completePages[arr.indexOf(match_seq_num)] = Math.max(next_seq_num, resp[PAGE_SIZE - 1].match_seq_num + 1);
-                    }
-                    console.log("[API] match_seq_num:%s, matches:%s", match_seq_num, resp.length);
-                    async.each(resp, processMatch, cb);
-                });
+                next_seq_num = resp[resp.length - 1].match_seq_num + 1;
             }
-
-            function processMatch(match, cb)
+            console.log("[API] seq_num:%s, matches:%s", seq_num, resp.length);
+            async.each(resp, function(match, cb)
             {
                 if (config.ENABLE_PRO_PARSING && match.leagueid)
                 {
@@ -134,52 +147,72 @@ function start()
                     //skipped
                     match.parse_status = 3;
                 }
-                //check if match was previously processed
-                redis.get('scanner_insert:' + match.match_id, function(err, result)
+                async.each(match.players, function(p, cb)
+                {
+                    async.parallel(
+                    {
+                        "decideMmr": function(cb)
+                        {
+                            if (match.lobby_type === 7 && p.account_id !== constants.anonymous_account_id && (p.account_id in userPlayers || (config.ENABLE_RANDOM_MMR_UPDATE && match.match_id % 3 === 0)))
+                            {
+                                addToQueue(mQueue,
+                                {
+                                    match_id: match.match_id,
+                                    account_id: p.account_id
+                                },
+                                {
+                                    attempts: 1,
+                                    delay: 180000,
+                                }, cb);
+                            }
+                            else
+                            {
+                                cb();
+                            }
+                        }
+                    }, cb);
+                }, function(err)
                 {
                     if (err)
                     {
-                        return finishMatch(err);
+                        return close(err);
                     }
-                    //don't insert this match if we already processed it recently
-                    //deduplicate matches in this page set
-                    if ((match.parse_status === 0 || match.parse_status === 3) && !result && !matchBuffer[match.match_id])
+                    redis.get('scanner_insert:' + match.match_id, function(err, result)
                     {
-                        matchBuffer[match.match_id] = 1;
-                        insertMatch(db, redis, match,
+                        //don't insert this match if we already processed it recently
+                        if (match.parse_status === 0 || match.parse_status === 3 && !result)
                         {
-                            type: "api",
-                            origin: "scanner",
-                            cassandra: cassandra,
-                            userPlayers: userPlayers,
-                        }, function(err)
-                        {
-                            if (!err)
+                            insertMatch(db, redis, match,
                             {
-                                //mark with long-lived key to indicate complete (persist between restarts)
-                                redis.setex('scanner_insert:' + match.match_id, 3600 * 8, 1);
-                            }
-                            finishMatch(err);
-                        });
-                    }
-                    else
+                                type: "api",
+                                origin: "scanner",
+                                cassandra: cassandra,
+                            }, function(err)
+                            {
+                                if (!err)
+                                {
+                                    redis.setex('scanner_insert:' + match.match_id, 3600 * 6, 1);
+                                }
+                                close(err);
+                            });
+                        }
+                        else
+                        {
+                            close(err);
+                        }
+                    });
+
+                    function close(err)
                     {
-                        finishMatch(err);
+                        if (err)
+                        {
+                            console.error("failed to insert match from scanApi %s", match.match_id);
+                            console.error(err);
+                        }
+                        return cb(err);
                     }
                 });
-
-                function finishMatch(err)
-                {
-                    if (err)
-                    {
-                        console.error("failed to insert match from scanApi %s", match.match_id);
-                        console.error(err);
-                    }
-                    return cb(err);
-                }
-            }
-
-            function finishPageSet(err)
+            }, function(err)
             {
                 if (err)
                 {
@@ -189,22 +222,11 @@ function start()
                 }
                 else
                 {
-                    //find next seq num by last contiguous seq num (completed page)
-                    var next_seq_num = seq_num;
-                    for (var i = 0; i < parallelism; i++)
-                    {
-                        if (!completePages[i])
-                        {
-                            break;
-                        }
-                        next_seq_num = completePages[i];
-                    }
-                    console.log("next_seq_num: %s", next_seq_num);
                     redis.set("match_seq_num", next_seq_num);
                     //completed inserting matches on this page
                     return scanApi(next_seq_num);
                 }
-            }
+            });
         });
-    }
+    });
 }

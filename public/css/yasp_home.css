@@ -13,7 +13,7 @@ h1.home {
     margin-top: 6px;
 }
 #philosophy {
-    background: url("../images/dota-blackwhite-copy.png") white no-repeat right;
+    /* background: url("../images/dota-blackwhite-copy.png") white no-repeat right; */
     padding: 5em 0;
     color: black;
 }
@@ -200,7 +200,7 @@ img.grayscale {
 /* use alt in navbar and header for different color */
 
 .alt {
-    background: url("../images/dotawallpaper.png");
+    /* background: url("../images/dotawallpaper.png"); */
     background-size: cover;
     background-position: center;
 }
@@ -284,4 +284,17 @@ img.grayscale {
 
 .featurette.dark a:hover {
   color: #337ab7;
+}
+
+
+@-webkit-keyframes greenPulse {
+    from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+    50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
+    to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+}
+
+.submit_button {
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
 }

@@ -41,7 +41,10 @@ window.requestSubmit = function submit(response)
     // Set up a handler for when the request finishes.
     xhr.onload = function()
     {
+	if (xhr.readyState === 4 && xhr.status === 200)
+	{
         var msg = JSON.parse(xhr.responseText);
+	console.log(xhr.responseText);
         if (msg.error)
         {
             showError(msg.error);
@@ -53,6 +56,7 @@ window.requestSubmit = function submit(response)
                 poll(msg.job.jobId);
             }, 2000);
         }
+	}
     };
     xhr.onerror = function(){
         submit();
@@ -92,7 +96,7 @@ window.requestSubmit = function submit(response)
             console.log(msg);
             if (msg.state === "completed")
             {
-                window.location.assign("/matches/" + (msg.data.payload.replay_blob_key || msg.data.payload.match_id));
+                window.location.assign("/matches/" + msg.data.payload.match_id);
             }
             else if (msg.error)
             {

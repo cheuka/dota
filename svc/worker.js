@@ -24,6 +24,7 @@ invokeInterval(function doBuildSets(cb)
 {
     buildSets(db, redis, cb);
 }, 60 * 1000);
+
 invokeInterval(function mmStats(cb)
 {
     getMMStats(redis, cb);
@@ -105,6 +106,7 @@ invokeInterval(function cleanQueues(cb)
 {
     queue.cleanup(redis, cb);
 }, 60 * 60 * 1000);
+
 invokeInterval(function notablePlayers(cb)
 {
     var container = utility.generateJob("api_notable",

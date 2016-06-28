@@ -34,6 +34,13 @@ var host = config.ROOT_URL;
 var querystring = require('querystring');
 var util = require('util');
 var rc_public = config.RECAPTCHA_PUBLIC_KEY;
+
+// lordstone:
+// self-defined user-session
+// just for testing
+var cheuka_session = require('../util/cheukaSession');
+var user_db = require('../store/user_db');
+
 //PASSPORT config
 passport.serializeUser(function(user, done)
 {
@@ -80,7 +87,7 @@ app.locals.getAggs = utility.getAggs;
 app.use(compression());
 app.use("/apps/dota2/images/:group_name/:image_name", function(req, res)
 {
-    res.set('Cache-Control', 'max-age=604800, public');
+    res.header('Cache-Control', 'max-age=604800, public');
     request("http://cdn.dota2.com/apps/dota2/images/" + req.params.group_name + "/" + req.params.image_name).pipe(res);
 });
 app.use("/public", express.static(path.join(__dirname, '/../public')));
@@ -168,6 +175,25 @@ app.use(function getMetadata(req, res, cb)
         return cb(err);
     });
 });
+
+app.use(function userAuth(req, res, next)
+{
+	// lordstone: if not logged in, not allowed
+	if(!req.session.user)
+	{
+		if(req.url=='/'|| req.url=='/register')
+		{
+			next();
+		}
+		else
+		{
+        	res.redirect('/');				
+		}
+	}else if(req.session.user){
+		next();
+	}
+});
+
 //START service/admin routes
 app.get('/robots.txt', function(req, res)
 {
@@ -199,33 +225,478 @@ app.route('/return').get(passport.authenticate('steam',
 app.route('/logout').get(function(req, res)
 {
     req.logout();
-    req.session = null;
-    res.redirect('/');
+		if(req.session.user){
+			cheuka_session.logoutUser(user_db, req.session.user, function()
+			{
+    		req.session = null;
+				res.redirect('/');
+			});
+		}else{
+    	res.redirect('/');
+		}
 });
 app.use('/api', api(db, redis, cassandra));
 //END service/admin routes
 //START standard routes.
 //TODO remove these with SPA
+
+// user mgmt: lordstone
+
+app.route('/admin').get(function(req, res, next)
+{
+// lordstone
+	if(req.session.user && req.session.user == 'admin')
+	{
+		cheuka_session.findAll(user_db, function(all_users)
+		{
+			cheuka_session.findAll_inv(user_db, function(all_inv)
+			{
+				res.render('admin',
+				{
+					user: req.session.user,
+					home: false,
+					admin: true,
+					entries: all_users,
+					invitation_entries: all_inv
+				});
+			});
+		});
+	}
+	else{
+		res.json(
+		{
+			error: 'You have no access to this page.'
+		});
+		// res.send('You have no access to this page.');
+		//return res.redirect('/');
+	}
+});
+
+app.route('/admin/new/').get(function(req, res, next)
+{
+	//lordstone: new user
+	if(req.session.user == 'admin')
+	{
+		res.render('admin/usermgmt',
+		{
+			admin: true,
+			user: req.session.user,
+			mode: 'new'
+		});
+	}
+	else{
+		res.redirect('/');
+	}
+});
+
+app.route('/admin/new/').post(function(req, res, next)
+{
+	//lordstone: new user
+	if(req.session.user == 'admin')
+	{
+		var formdata = "";
+		req.on('data', function(data){
+			formdata += data;
+		});
+		req.on('end', function(){
+			//start validating username and password
+			var formitems = querystring.parse(formdata);
+			var user_id = formitems['user_id'];
+			var password = formitems['password'];
+			var invitation_code = formitems['invitation_code'];
+			var new_user = {
+				user_id: user_id,
+				password: password,
+				invitation_code: invitation_code
+			};
+			cheuka_session.newUser(user_db, new_user, function(result)
+			{
+				if(result=='success'){
+					res.redirect('/admin');
+				}else{
+					res.json({error: 'failed tranaction'});
+					//res.redirect('/admin');
+				}
+			});
+		});		
+	}
+	else{
+		res.redirect('/');
+	}
+});
+
+app.route('/admin/edit/:user_id').get(function(req, res, next)
+{
+	//lordstone: edit user
+	if(req.session.user == 'admin')
+	{
+		var user_id = req.params.user_id;
+		cheuka_session.findUser(user_db, user_id, function(msg, results)
+		{
+			if(msg == 'success'){	
+				res.render('admin/usermgmt',
+				{	
+					admin: true,
+					user: req.session.user,
+					user_id: results.user_id,
+					password: results.password,
+					invitation_code: results.invitation_code,
+					mode: 'edit'
+				});
+			}else{
+				res.json({error:"fetching data failed"});
+				// return res.redirect('/admin');
+			}
+		});
+	}
+	else{
+		res.redirect('/');
+	}
+});
+
+app.route('/admin/edit/:user_id').post(function(req, res, next)
+{
+	//lordstone: edit user processing post
+	var formdata = "";
+	var old_user_id = req.params.user_id;
+	req.on('data', function(data){
+		formdata += data;
+	});
+	req.on('end', function(){
+		//start validating username and password
+		var formitems = querystring.parse(formdata);
+		var new_user_id = formitems['user_id'];
+		var password = formitems['password'];
+		var invitation_code = formitems['invitation_code'];
+		if(req.session.user == 'admin')
+		{
+			var old_user_id = req.params.user_id;
+			var new_user = {
+				user_id: new_user_id,
+				password: password,
+				invitation_code: invitation_code
+			};
+			console.log("modify:"+new_user.user_id+":"+new_user.password+":"+new_user.invittion_code);
+			cheuka_session.editUser(user_db, new_user, old_user_id, function(msg)
+			{
+				if(msg!='success'){
+					res.json({error: 'transaction failed'});
+				}else{
+					res.redirect('/admin');
+				}
+			});
+		}
+		else{
+			res.redirect('/');
+		}
+	});
+	//res.send(user_id);
+});
+
+app.route('/admin/delete/:user_id').get(function(req, res, next)
+{
+	//lordstone: delete user
+	var user_id = req.params.user_id;
+	if(req.session.user == 'admin')
+	{
+		cheuka_session.deleteUser(user_db, user_id, function(msg)
+		{
+			if(msg!='success'){
+				res.json({error: 'transaction failed'});
+			}else{
+				res.redirect('/admin');
+			}
+		});
+	}
+	else{
+		res.redirect('/');
+	}		
+}); 
+
+// invitation code
+
+app.route('/admin/new_inv/').get(function(req, res, next)
+{
+	//lordstone: new user
+	if(req.session.user == 'admin')
+	{
+		res.render('admin/usermgmt',
+		{
+			admin: true,
+			user: req.session.user,
+			mode: 'new_inv'
+		});
+	}
+	else{
+		req.redirect('/');
+	}
+});
+
+app.route('/admin/new_inv/').post(function(req, res, next)
+{
+	//lordstone: new user
+	if(req.session.user == 'admin')
+	{
+		var formdata = "";
+		req.on('data', function(data){
+			formdata += data;
+		});
+		req.on('end', function(){
+			//start validating username and password
+			var formitems = querystring.parse(formdata);
+			var inv_code = formitems['invitation_code'];
+			var max_users = formitems['max_users'];
+			var current_users = formitems['current_users'];
+			var new_inv = {
+				invitation_code: inv_code,
+				max_users: max_users,
+				current_users: current_users
+			};
+			cheuka_session.newInv(user_db, new_inv, function(result)
+			{
+				if(result=='success'){
+					res.redirect('/admin');
+				}else{
+					res.json({error: 'failed tranaction'});
+				}
+			});
+		});		
+	}
+	else{
+		res.redirect('/');
+	}
+});
+
+app.route('/admin/edit_inv/:inv_code').get(function(req, res, next)
+{
+	//lordstone: edit user
+	if(req.session.user == 'admin')
+	{
+		var inv_code = req.params.inv_code;
+		cheuka_session.findInv(user_db, inv_code, function(msg, results)
+		{
+			if(msg == 'success'){	
+				res.render('admin/usermgmt',
+				{	
+					admin: true,
+					user: req.session.user,
+					invitation_code: results.invitation_code,
+					max_users: results.max_users,
+					current_users: results.current_users,
+					mode: 'edit_inv'
+				});
+			}else{
+				res.json({error: "fetching data failed"});
+			}
+		});
+	}else{
+		res.redirect('/');
+	}
+});
+
+app.route('/admin/edit_inv/:inv_code').post(function(req, res, next)
+{
+	//lordstone: edit user processing post
+	var formdata = "";
+	req.on('data', function(data){
+		formdata += data;
+	});
+	req.on('end', function(){
+		//start validating username and password
+		var formitems = querystring.parse(formdata);
+		var inv_code = formitems['invitation_code'];
+		var max_users = formitems['max_users'];
+		var current_users = formitems['current_users'];
+		if(req.session.user == 'admin')
+		{
+			var old_inv_code = req.params.inv_code;
+			var new_inv = {
+				invitation_code: inv_code,
+				max_users: max_users,
+				current_users: current_users
+			};
+			cheuka_session.editInv(user_db, new_inv, old_inv_code, function(msg)
+			{
+				if(msg!='success'){
+					res.json({error: 'transaction failed'});
+				}else{
+					res.redirect('/admin');
+				}
+			});
+		}
+		else{
+			res.redirect('/');
+		}
+	});
+});
+
+app.route('/admin/delete_inv/:inv_code').get(function(req, res, next)
+{
+	//lordstone: delete user
+	var inv_code = req.params.inv_code;
+	if(req.session.user == 'admin')
+	{
+		cheuka_session.deleteInv(user_db, inv_code, function(msg)
+		{
+			if(msg!='success'){
+				res.json({error: 'transaction failed'});
+			}else{
+				res.redirect('/admin');
+			}
+		});
+	}else{
+		res.redirect('/');
+	}		
+}); 
+
+
+
+//end of invitation code
+
+app.route('/register').get(function(req, res, next){
+//lordstone: register with invitation code
+	if(req.session.user){
+		res.json({error: "Please logout and retry!"});
+	}else{
+		res.render("user/register");
+	}
+});
+
+app.route('/register').post(function(req, res, next){
+//lordstone: register with invitation code
+	if(req.session.user){
+		res.json({error: "Please logout and retry!"});
+	}else{
+		var formdata = "";
+		var old_user_id = req.params.user_id;
+		req.on('data', function(data){
+			formdata += data;
+		});
+		req.on('end', function(){
+			//start validating username and password
+			var formitems = querystring.parse(formdata);
+			var user_id = formitems['user_id'];
+			var password = formitems['password'];
+			var invitation_code = formitems['invitation_code'];
+			var new_user = {
+				user_id: user_id,
+				password: password,
+				invitation_code: invitation_code
+			};
+			cheuka_session.register(user_db, new_user, function(result)
+			{
+				//console.log('res:' + result);
+				if(result == 'success'){
+					req.session.user = user_id;
+					res.redirect('/');
+				}else{
+					res.json({error: "registration failed:" + result});
+				}
+			});
+		});
+	}
+});
+
+// upload interface
+
+app.route('/upload').get(function(req, res, next)
+{
+// lordstone
+	if(!req.session.user){
+		res.json({error: "Please logout and retry!"});
+		//res.redirect('/');
+	}else{
+		res.render('user/upload',
+		{
+			user: req.session.user,
+			home: false
+		});
+	}
+});
+
+app.route('/center').get(function(req, res, next)
+{
+	if(req.session.user){
+		res.render('user/center',
+		{
+			user: req.session.user,
+			func: 'center'
+		});
+	}else{
+		res.redirect('/');
+	}
+});
+
+
 app.route('/').get(function(req, res, next)
 {
+// modified by lordstone
     if (req.user)
     {
         res.redirect('/players/' + req.user.account_id);
     }
     else
     {
-        res.render('home',
-        {
-            match: example_match,
-            truncate: [2, 6], // if tables should be truncated, pass in an array of which players to display
-            home: true
-        });
+        if(req.session.user){
+		// for  user page
+			res.render('home',
+			{
+				home: true,
+				user: req.session.user,
+				truncate: [2, 6],
+				match: example_match	
+			});	
+		}
+		else
+		{
+			res.render('home',
+       		{
+            	match: example_match,
+        	    truncate: [2, 6], // if tables should be truncated, pass in an array of which players to display
+            	home: true
+        	});
+		}
     }
 });
+
+app.route('/').post(function(req, res, next)
+{
+// lordstone's
+	var formdata = "";
+	req.on('data', function(data){
+		formdata += data;
+	});
+	req.on('end', function(){
+		//start validating username and password
+		var formitems = querystring.parse(formdata);
+		var user_id = formitems['user_id'];
+		var password = formitems['password'];
+		cheuka_session.checkUser(user_db, user_id, password, function(msg, t)
+		{ 
+			if(msg == 'success'){
+				req.session.user = t.user_id;
+				res.redirect('/');
+			}else if(msg == 'logged'){
+				res.json({error: 'User already logged in. Please log out from the previous place'});
+			}else{
+				res.json({error: 'auth failed'});
+				//res.redirect('/');
+			}
+		});
+	});
+});
+
+app.get('/destroyuser', function(req, res)
+{
+	req.session = null;
+	res.redirect('/');
+});
+
 app.get('/request', function(req, res)
 {
     res.render('request',
     {
+	user: req.session.user,
         rc_public: rc_public
     });
 });
@@ -239,6 +710,7 @@ app.route('/status').get(function(req, res, next)
         }
         res.render("status",
         {
+	    user: req.session.user,
             result: result
         });
     });
@@ -253,6 +725,7 @@ app.use('/distributions', function(req, res, cb)
         {
             return cb(err);
         }
+	result['user']= req.session.user;
         res.render('distributions', result);
     });
 });
@@ -272,6 +745,7 @@ app.get('/picks/:n?', function(req, res, cb)
         }
         res.render('picks',
         {
+	    user: req.session.user,
             total: result.total,
             picks: result.entries,
             n: length,
@@ -297,6 +771,7 @@ app.get('/top', function(req, res, cb)
         {
             return cb(err);
         }
+	result['user'] = req.session.user;
         res.render('top', result);
     });
 });
@@ -306,6 +781,7 @@ app.get('/rankings/:hero_id?', function(req, res, cb)
     {
         res.render('heroes',
         {
+	    user: req.session.user,
             path: '/rankings',
             alpha_heroes: utility.getAlphaHeroes()
         });
@@ -321,6 +797,7 @@ app.get('/rankings/:hero_id?', function(req, res, cb)
             {
                 return cb(err);
             }
+	    result['user'] = req.session.user;
             res.render('rankings', result);
         });
     }
@@ -331,6 +808,7 @@ app.get('/benchmarks/:hero_id?', function(req, res, cb)
     {
         return res.render('heroes',
         {
+	    user: req.session.user,
             path: '/benchmarks',
             alpha_heroes: utility.getAlphaHeroes()
         });
@@ -346,6 +824,7 @@ app.get('/benchmarks/:hero_id?', function(req, res, cb)
             {
                 return cb(err);
             }
+	    result['user'] = req.session.user;
             res.render('benchmarks', result);
         });
     }
@@ -362,6 +841,7 @@ app.get('/search', function(req, res, cb)
             }
             return res.render('search',
             {
+		user: req.session.user,
                 query: req.query.q,
                 result: result
             });
@@ -369,13 +849,14 @@ app.get('/search', function(req, res, cb)
     }
     else
     {
-        res.render('search');
+        res.render('search', {user: req.session.user});
     }
 });
 app.get('/april/:year?', function(req, res, cb)
 {
     return res.render('plusplus',
     {
+	user: req.session.user,
         match: example_match,
         truncate: [2, 6]
     });

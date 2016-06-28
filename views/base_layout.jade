@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    - var default_title = "YASP - Open Source Dota 2 Statistics"
+    - var default_title = "Cheuka's DOTA Analyzer"
     title= title || default_title
     meta(name="description", content=default_title)
     meta(property="og:site_name", content=default_title)
@@ -29,6 +29,25 @@ html
     meta(name='theme-color', content='#ffffff')
     block head
     script(src="/public/build/yasp.min.js")
+  //
+    script(src="/public/build/jquery.min.js")
+    script(src="/public/js/yasp.js")
+    script(src="/public/js/buildMap.js")
+    script(src="/public/js/util.js")
+    script(src="/public/js/generateCharts.js")
+    script(src="/public/js/tooltips.js")
+    script(src="/public/js/createCalHeatmap.js")
+    script(src="/public/js/createHistogram.js")
+    script(src="/public/js/queryForm.js")
+    script(src="/public/js/donate.js")
+    script(src="/public/js/requestForm.js")
+    script(src="/public/js/resize.js")
+    script(src="/public/js/ga.js")
+    script(src="/public/js/formatHtml.js")
+    script(src="/public/js/ratingsChart.js")
+    script(src="/public/js/home/animatedNavbar.js")
+    script(src="/public/js/home/polymerFabs.js")
+    script(src="/public/js/home/scroll.js")
 
   body
     include navbar
