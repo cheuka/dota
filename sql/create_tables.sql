@@ -20,6 +20,7 @@ CREATE TABLE matches (
   game_mode integer,
   engine integer,
   picks_bans json[],
+  upload json,
   --radiant_team_name varchar(255),
   --dire_team_name varchar(255),
   --radiant_captain integer,

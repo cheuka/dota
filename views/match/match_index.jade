@@ -8,7 +8,7 @@ mixin picks_bans_row(picks_bans, team_int)
         - var is_pick = pick.is_pick
         - var hero = constants.heroes[hero_id]
         if hero
-          span.img-text(class=pick.team_ ? "text-danger" : "text-success")
+          span.img-text(class=pick.team ? "text-danger" : "text-success")
             img.img-sm(src=hero.img, title=hero.localized_name, style= (is_pick ? "" : "-webkit-filter: grayscale(100%); filter: grayscale(100%);"))
             div #{(is_pick ? "Pick" : "Ban")} 
         else

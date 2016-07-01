@@ -16,6 +16,7 @@ var queries = require('../store/queries');
 var buildMatch = require('../store/buildMatch');
 var buildPlayer = require('../store/buildPlayer');
 var buildStatus = require('../store/buildStatus');
+
 const crypto = require('crypto');
 module.exports = function(db, redis, cassandra)
 {
@@ -81,14 +82,19 @@ module.exports = function(db, redis, cassandra)
     {
         res.json(constants.abilities[req.query.name]);
     });
+
+// modified by lordstone
     api.get('/matches/:match_id/:info?', function(req, res, cb)
     {
+        var user_id = req.session.user;
+        var match_id = req.params.match_id;
         buildMatch(
         {
+	    user: user_id,
             db: db,
             redis: redis,
             cassandra: cassandra,
-            match_id: req.params.match_id
+            match_id: match_id
         }, function(err, match)
         {
             if (err)
@@ -102,6 +108,7 @@ module.exports = function(db, redis, cassandra)
             res.json(match);
         });
     });
+
     api.get('/players/:account_id/:info?/:subkey?', function(req, res, cb)
     {
         buildPlayer(
@@ -187,21 +194,29 @@ module.exports = function(db, redis, cassandra)
 
 api.post('/upload_files', multer.array("replay_blob", 20), function(req, res, next)
   {
+            if(!req.session.user){
+                res.send('Please log in and use this function');
+                return;
+            }
             // var match_id = Number(req.body.match_id);
             var match = [] ;
+            var user_id = req.session.user; // read the user_id
             if (req.files.length > 0)
             {
-                for(var i = 0; i < req.files.length; i ++){
-                	console.log(req.files[i]);
-                	var key = req.files[i].name + Date.now();
-	                // var key = Math.random().toString(16).slice(2);
-  	              //const hash = crypto.createHash('md5');
-    	            //hash.update(req.file.buffer);
-      	          //var key = hash.digest('hex');
-        	        redis.setex(new Buffer('upload_blob:' + key), 60 * 60, req.files[i].buffer);
-          	      match[i] = {
-            	        replay_blob_key: key
-              	  };
+                const hash = crypto.createHash('md5');
+                for(var i = 0; i < req.files.length; i ++)
+                {
+                    console.log('i file:' + req.files[i]);
+                    //var key = req.files[i].name + Date.now();
+	            var key = Math.random().toString(16).slice(2);
+  	            //hash.update(req.files[i].buffer);
+      	            //var key = hash.digest('hex');
+                    console.log('i:' + i + '.key:' + key);
+        	    redis.setex(new Buffer('upload_blob:' + key), 60 * 60, req.files[i].buffer);
+                    match[i] = {
+            	         replay_blob_key: key,
+                         user_id: user_id
+              	    };
                 } //  end for each file in files
             }
             else 
@@ -211,17 +226,27 @@ api.post('/upload_files', multer.array("replay_blob", 20), function(req, res, ne
                     error: "Invalid input."
                 });
             }
-
             if (match.length > 0)
             {
+                var jobs = [];
                 for(var i = 0; i < match.length; i ++)
                 {
-     	            console.log(match);
-      	          queue.addToQueue(rQueue, match,
-        	        {
-          	          attempts: 1
-            	    }, function(err, job)
+     	          console.log('match array:'+ i +':' + match[i]);
+      	          queue.addToQueue(rQueue, match[i],
+        	  {
+          	      attempts: 1
+            	  }, function(err, job)
               	  {
+                      var curJob = {
+                          error: err,
+                          job:
+                          {
+                              jobId: job.jobId,
+                              data: job.data
+                          }
+                      };
+                      jobs[i] = curJob;
+                      /*
                 	    res.json(
                   	  {
                     	    error: err,
@@ -231,8 +256,10 @@ api.post('/upload_files', multer.array("replay_blob", 20), function(req, res, ne
                             	data: job.data
               	          }
                 	    });
+                      */
                	  });
                 } // end for each match
+                res.json(jobs);
             }
             else
             {
@@ -273,31 +300,37 @@ api.post('/upload_files', multer.array("replay_blob", 20), function(req, res, ne
     });
 
 
-
-
 // End of upload_files
 
     api.post('/request_job', multer.single("replay_blob"), function(req, res, next)
     {
+            if(!req.session.user){
+                res.send('Please log in and use this function');
+                return;
+            }
             var match_id = Number(req.body.match_id);
+	    console.log('match_id:' + match_id);
             var match;
+            var user_id = req.session.user; // read the user_id
             if (req.file)
             {
-                //console.log(req.file);
+                //console.log('req.file:' + req.file.);
                 //var key = req.file.name + Date.now();
-                var key = Math.random().toString(16).slice(2);
-                //const hash = crypto.createHash('md5');
-                //hash.update(req.file.buffer);
-                //var key = hash.digest('hex');
+                // var key = Math.random().toString(16).slice(2);
+                const hash = crypto.createHash('md5');
+                hash.update(req.file.buffer);
+                var key = hash.digest('hex');
+                console.log('upload key:'+key);
                 redis.setex(new Buffer('upload_blob:' + key), 60 * 60, req.file.buffer);
                 match = {
-                    replay_blob_key: key
+                    replay_blob_key: key,
+                    user_id: user_id
                 };
             }
             else if (match_id && !Number.isNaN(match_id))
             {
                 match = {
-                    match_id: match_id
+                    match_id: match_id,
                 };
             }
             if (match)

@@ -20,10 +20,13 @@ sqlq.forEach(function(f)
     sql[f.split('.')[0]] = fs.readFileSync('./sql/' + f, 'utf8');
 });
 console.log("[WORKER] starting worker");
+
+/*
 invokeInterval(function doBuildSets(cb)
 {
     buildSets(db, redis, cb);
 }, 60 * 1000);
+*/
 
 invokeInterval(function mmStats(cb)
 {

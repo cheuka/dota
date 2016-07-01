@@ -8,6 +8,8 @@ dotenv.config(
 });
 dotenv.load();
 var defaults = {
+    "CHEUKA_ADMIN": "admin", //cheuka admin username
+    "CHEUKA_ADMIN_PASSWORD": "password", // cheuka admin password
     "STEAM_API_KEY": "", //for API reqs, in worker
     "STEAM_USER": "", //for getting replay salt/profile data, in retriever
     "STEAM_PASS": "", //make sure to wrap in double quotes in .env if it contains special characters

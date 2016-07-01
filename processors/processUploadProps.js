@@ -15,17 +15,15 @@ function processUploadProps(entries, meta)
         switch (e.type)
         {
             case 'epilogue':
-                var dota = JSON.parse(e.key).gameInfo_.dota_;
-                container.match_id = dota.matchId_;
-                container.game_mode = dota.gameMode_;
-                container.radiant_win = dota.gameWinner_ === 2;
-
-		var bp_arr = [];
-		for (var item in dota.picksBans_)
-		{
-			bp_arr.push({'hero_id': dota.picksBans_[item].heroId_, 'is_pick':dota.picksBans_[item].isPick_, 'team': dota.picksBans_[item].team_});
-		}
-		container.picks_bans = JSON.parse(JSON.stringify(bp_arr)); 
+                var dota = JSON.parse(e.key).game_info.dota;
+                container.match_id = dota.match_id;
+                container.game_mode = dota.game_mode;
+                container.radiant_win = dota.game_winner === 2;
+		container.picks_bans = dota.picks_bans; 
+		container.player_info = dota.player_info;
+		container.game_winner = dota.game_winnner;	
+		container.radiant_team_name = dota.radiant_team_tag;
+		container.dire_team_name = dota.dire_team_tag;
                 //require('fs').writeFileSync('./outputEpilogue.json', JSON.stringify(JSON.parse(e.key)));
             case 'interval':
                 if (!container.player_map[e.player_slot])

@@ -1,9 +1,11 @@
 package yasp;
 
 import com.google.gson.Gson;
+import com.googlecode.protobuf.format.*;
 import com.google.protobuf.GeneratedMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import skadistats.clarity.Clarity;
 import skadistats.clarity.decoder.Util;
 import skadistats.clarity.model.Entity;
 import skadistats.clarity.model.FieldPath;
@@ -21,6 +23,7 @@ import skadistats.clarity.model.CombatLogEntry;
 import skadistats.clarity.source.InputStreamSource;
 import skadistats.clarity.wire.common.proto.Demo.CDemoFileInfo;
 import skadistats.clarity.wire.common.proto.Demo.CGameInfo.CDotaGameInfo.CPlayerInfo;
+import skadistats.clarity.wire.common.proto.Demo.CGameInfo.CDotaGameInfo;
 import skadistats.clarity.wire.common.proto.DotaUserMessages.CDOTAUserMsg_ChatEvent;
 import skadistats.clarity.wire.common.proto.DotaUserMessages.CDOTAUserMsg_LocationPing;
 import skadistats.clarity.wire.common.proto.DotaUserMessages.CDOTAUserMsg_SpectatorPlayerUnitOrders;
@@ -147,8 +150,8 @@ public class Main {
         Entry entry = new Entry(time);
         entry.type = "pings";
         entry.slot = message.getPlayerId();
+//        System.err.println(message);
         /*
-        System.err.println(message);
         player_id: 7
         location_ping {
           x: 5871
@@ -209,8 +212,17 @@ public class Main {
         //emit epilogue event to mark finish
         Entry epilogueEntry = new Entry();
         epilogueEntry.type = "epilogue";
-        epilogueEntry.key = new Gson().toJson(message);
+        epilogueEntry.key = JsonFormat.printToString(message);
+//	System.err.println(message.getGameInfo());
         output(epilogueEntry);
+    }
+
+    @OnMessage(CDotaGameInfo.class)
+    public void onGameInfo(Context ctx, CDotaGameInfo message) {
+       Entry gameInfo = new Entry();
+       gameInfo.type = "gameinfo";
+       gameInfo.key = new Gson().toJson(message);
+       output(gameInfo);
     }
     
     @OnCombatLogEntry
@@ -451,7 +463,16 @@ public class Main {
 
     public void run(String[] args) throws Exception {
         long tStart = System.currentTimeMillis();
-        new SimpleRunner(new InputStreamSource(System.in)).runWith(this);
+	InputStreamSource input = new InputStreamSource(System.in);
+        new SimpleRunner(input).runWith(this);
+/*
+	//rxu, try new way to get fileinfo message
+	CDemoFileInfo info = Clarity.infoForSource(input);
+	Entry e = new Entry();
+	e.type = "epilogue";
+	e.key = new Gson().toJson(info);
+	output(e);
+*/
         long tMatch = System.currentTimeMillis() - tStart;
         System.err.format("total time taken: %s\n", (tMatch) / 1000.0);
     }

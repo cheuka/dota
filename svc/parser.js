@@ -146,7 +146,7 @@ function insertUploadedParse(match, cb)
         {
             return cb(err);
         }
-        //redis.setex('match:' + match.replay_blob_key, 60 * 60 * 10, JSON.stringify(match));
+        redis.setex('match:' + match.replay_blob_key, 60 * 60 * 10, JSON.stringify(match));
 	insertMatch(db, redis, match,
 	{
 		type: "parsed",
@@ -238,6 +238,7 @@ function runParse(match, job, cb)
         {
             console.log('received epilogue');
             incomplete = false;
+//	    require('fs').writeFileSync('./epilogue.json',JSON.stringify(JSON.parse(e.key)));	
         }
         entries.push(e);
     });
@@ -273,6 +274,18 @@ function runParse(match, job, cb)
                 var teamfights = processTeamfights(res.tf_data, meta);
                 var upload = processUploadProps(res.uploadProps, meta);
                 var ap = processAllPlayers(res.int_data);
+
+		
+		//rxu, add team and personal info
+		for (var i = 0; i < parsed_data.players.length; ++i)
+		{
+			parsed_data.players[i].account_id = upload.player_info[i].steamid;
+			parsed_data.players[i].personalname = upload.player_info[i].player_name;
+			parsed_data.players[i].team = upload.player_info[i].game_team;
+			parsed_data.players[i].isRadiant = upload.player_info[i].game_team === 2;
+		}
+		
+
                 parsed_data.teamfights = teamfights;
                 parsed_data.radiant_gold_adv = ap.radiant_gold_adv;
                 parsed_data.radiant_xp_adv = ap.radiant_xp_adv;
