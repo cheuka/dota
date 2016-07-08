@@ -97,7 +97,7 @@ window.requestSubmit = function submit(response)
             console.log(msg);
             if (msg.state === "completed")
             {
-                window.location.assign("/matches/" + (msg.data.payload.replay_blob_key || msg.data.payload.match_idi));
+                window.location.assign("/matches/" + (msg.data.payload.replay_blob_key || msg.data.payload.match_id));
             }
             else if (msg.error)
             {
