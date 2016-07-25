@@ -24,6 +24,15 @@ function processUploadProps(entries, meta)
 		container.game_winner = dota.game_winnner;	
 		container.radiant_team_name = dota.radiant_team_tag;
 		container.dire_team_name = dota.dire_team_tag;
+		container.end_time = dota.end_time;
+/*
+		console.log('DEBUG: -----start iterate over dota obj');
+		for(item in dota){
+			console.log('-----item:' + item);
+			console.log('-----JSON:' + JSON.stringify(item));
+		}
+		console.log('DEBUG: ----end iterate over dota obj');
+*/
                 //require('fs').writeFileSync('./outputEpilogue.json', JSON.stringify(JSON.parse(e.key)));
             case 'interval':
                 if (!container.player_map[e.player_slot])
