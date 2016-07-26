@@ -35,15 +35,10 @@ var querystring = require('querystring');
 var util = require('util');
 var rc_public = config.RECAPTCHA_PUBLIC_KEY;
 
-// lordstone:
-// self-defined user-session
+// Yanzi: self-defined user-session
 // just for testing
-var cheuka_session = require('../util/cheukaSession');
-var user_db = require('../store/user_db');
-// cheuka route
-var cheuka_admin = require('../routes/cheuka_admin');
-var cheuka_center = require('../routes/cheuka_center');
-var cheuka_banpick = require('../routes/cheuka_banpick');
+// var user_session = require('../routes/user-session');
+
 //PASSPORT config
 passport.serializeUser(function(user, done)
 {
@@ -178,25 +173,6 @@ app.use(function getMetadata(req, res, cb)
         return cb(err);
     });
 });
-
-app.use(function userAuth(req, res, next)
-{
-	// lordstone: if not logged in, not allowed
-	if(!req.session.user)
-	{
-		if(req.url=='/'|| req.url=='/register')
-		{
-			next();
-		}
-		else
-		{
-        	res.redirect('/');				
-		}
-	}else if(req.session.user){
-		next();
-	}
-});
-
 //START service/admin routes
 app.get('/robots.txt', function(req, res)
 {
@@ -225,149 +201,34 @@ app.route('/return').get(passport.authenticate('steam',
         res.redirect('/players/' + req.user.account_id);
     }
 });
-
-//app.use('/logout', cheuka(db, redis, cassandra));
-
 app.route('/logout').get(function(req, res)
 {
     req.logout();
-		if(req.session.user){
-			cheuka_session.logoutUser(user_db, req.session.user, function()
-			{
-    		req.session = null;
-				res.redirect('/');
-			});
-		}else{
-    	res.redirect('/');
-		}
+    req.session = null;
+    res.redirect('/');
 });
-
 app.use('/api', api(db, redis, cassandra));
 //END service/admin routes
 //START standard routes.
 //TODO remove these with SPA
-
-// user mgmt: lordstone
-
-// self defined for cheuka dota admin
-
-app.use('/admin', cheuka_admin(db, redis, cassandra));
-
-app.use('/center', cheuka_center(db, redis, cassandra));
-
-app.use('/banpick', cheuka_banpick(db, redis, cassandra));
-
-app.route('/register').get(function(req, res, next){
-//lordstone: register with invitation code
-	if(req.session.user){
-		res.json({error: "Please logout and retry!"});
-	}else{
-		res.render("user/register");
-	}
-});
-
-app.route('/register').post(function(req, res, next){
-//lordstone: register with invitation code
-	if(req.session.user){
-		res.json({error: "Please logout and retry!"});
-	}else{
-		var formdata = "";
-		var old_user_id = req.params.user_id;
-		req.on('data', function(data){
-			formdata += data;
-		});
-		req.on('end', function(){
-			//start validating username and password
-			var formitems = querystring.parse(formdata);
-			var user_id = formitems['user_id'];
-			var password = formitems['password'];
-			var invitation_code = formitems['invitation_code'];
-			var new_user = {
-				user_id: user_id,
-				password: password,
-				invitation_code: invitation_code
-			};
-			cheuka_session.register(user_db, new_user, function(result)
-			{
-				//console.log('res:' + result);
-				if(result == 'success'){
-					req.session.user = user_id;
-					res.redirect('/');
-				}else{
-					res.json({error: "registration failed:" + result});
-				}
-			});
-		});
-	}
-});
-
-// upload interface
-
-app.route('/upload').get(function(req, res, next)
-{
-// lordstone
-	if(!req.session.user){
-		res.json({error: "Please logout and retry!"});
-		//res.redirect('/');
-	}else{
-		res.render('user/upload',
-		{
-			user: req.session.user,
-			home: false
-		});
-	}
-});
-
-/*
-app.route('/center').get(function(req, res, next)
-{
-
-	if(req.session.user){
-		res.render('user/center',
-		{
-			user: req.session.user,
-			func: 'center'
-		});
-	}else{
-		res.redirect('/');
-	}
-});
-*/
-
 app.route('/').get(function(req, res, next)
 {
-// modified by lordstone
     if (req.user)
     {
         res.redirect('/players/' + req.user.account_id);
     }
     else
     {
-        if(req.session.user){
-		// for  user page
-			res.render('home',
-			{
-				home: true,
-				user: req.session.user,
-				truncate: [2, 6],
-				match: example_match	
-			});	
-		}
-		else
-		{
-			res.render('home',
-       		{
-            	match: example_match,
-        	    truncate: [2, 6], // if tables should be truncated, pass in an array of which players to display
-            	home: true
-        	});
-		}
+        res.render('home',
+        {
+            match: example_match,
+            truncate: [2, 6], // if tables should be truncated, pass in an array of which players to display
+            home: true
+        });
     }
 });
-
 app.route('/').post(function(req, res, next)
 {
-// lordstone's
 	var formdata = "";
 	req.on('data', function(data){
 		formdata += data;
@@ -375,34 +236,18 @@ app.route('/').post(function(req, res, next)
 	req.on('end', function(){
 		//start validating username and password
 		var formitems = querystring.parse(formdata);
-		var user_id = formitems['user_id'];
-		var password = formitems['password'];
-		cheuka_session.checkUser(user_db, user_id, password, function(msg, t)
-		{ 
-			if(msg == 'success'){
-				req.session.user = t.user_id;
-				res.redirect('/');
-			}else if(msg == 'logged'){
-				res.json({error: 'User already logged in. Please log out from the previous place'});
-			}else{
-				res.json({error: 'auth failed'});
-				//res.redirect('/');
-			}
-		});
+		
+		res.send('Username'+formitems['username']+'.Password:'+formitems['password']);
+		//res.send('jiji');
 	});
-});
 
-app.get('/destroyuser', function(req, res)
-{
-	req.session = null;
-	res.redirect('/');
+
 });
 
 app.get('/request', function(req, res)
 {
     res.render('request',
     {
-	user: req.session.user,
         rc_public: rc_public
     });
 });
@@ -416,7 +261,6 @@ app.route('/status').get(function(req, res, next)
         }
         res.render("status",
         {
-	    user: req.session.user,
             result: result
         });
     });
@@ -431,7 +275,6 @@ app.use('/distributions', function(req, res, cb)
         {
             return cb(err);
         }
-	result['user']= req.session.user;
         res.render('distributions', result);
     });
 });
@@ -451,7 +294,6 @@ app.get('/picks/:n?', function(req, res, cb)
         }
         res.render('picks',
         {
-	    user: req.session.user,
             total: result.total,
             picks: result.entries,
             n: length,
@@ -477,7 +319,6 @@ app.get('/top', function(req, res, cb)
         {
             return cb(err);
         }
-	result['user'] = req.session.user;
         res.render('top', result);
     });
 });
@@ -487,7 +328,6 @@ app.get('/rankings/:hero_id?', function(req, res, cb)
     {
         res.render('heroes',
         {
-	    user: req.session.user,
             path: '/rankings',
             alpha_heroes: utility.getAlphaHeroes()
         });
@@ -503,7 +343,6 @@ app.get('/rankings/:hero_id?', function(req, res, cb)
             {
                 return cb(err);
             }
-	    result['user'] = req.session.user;
             res.render('rankings', result);
         });
     }
@@ -514,7 +353,6 @@ app.get('/benchmarks/:hero_id?', function(req, res, cb)
     {
         return res.render('heroes',
         {
-	    user: req.session.user,
             path: '/benchmarks',
             alpha_heroes: utility.getAlphaHeroes()
         });
@@ -530,7 +368,6 @@ app.get('/benchmarks/:hero_id?', function(req, res, cb)
             {
                 return cb(err);
             }
-	    result['user'] = req.session.user;
             res.render('benchmarks', result);
         });
     }
@@ -547,7 +384,6 @@ app.get('/search', function(req, res, cb)
             }
             return res.render('search',
             {
-		user: req.session.user,
                 query: req.query.q,
                 result: result
             });
@@ -555,14 +391,13 @@ app.get('/search', function(req, res, cb)
     }
     else
     {
-        res.render('search', {user: req.session.user});
+        res.render('search');
     }
 });
 app.get('/april/:year?', function(req, res, cb)
 {
     return res.render('plusplus',
     {
-	user: req.session.user,
         match: example_match,
         truncate: [2, 6]
     });
