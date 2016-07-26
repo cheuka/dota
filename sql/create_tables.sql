@@ -33,6 +33,8 @@ CREATE TABLE matches (
   pgroup json,
   --parsed data below
   chat json[],
+	upload json,
+	picks_bans json[],
   objectives json[],
   radiant_gold_adv integer[],
   radiant_xp_adv integer[],
