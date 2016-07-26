@@ -1,0 +1,59 @@
+extend /layout
+
+block head
+  //link(rel="import" href="/public/paper-fab-menu.html")
+  link(rel='stylesheet', href="/public/css/yasp_home.css")
+   
+
+if user
+  block page_content
+    #top.header.alt.vert
+      .row.text-center
+        .col-md-12
+          h2 Upload Your Personal Replay File!
+          img.img-responsive(src='../public/images/curlycue.png', style='margin: auto;')
+          br
+          br
+          //div#upload
+          input#match_id(type='hidden')
+          form#form1(method="post", name=form1, style="margin: auto;")
+            .row
+              .col-md-3
+              .col-md-3 
+                span.btn.btn-block.btn-primary.btn-file#file-select-button
+                  span#file-select-text Add Replay Files
+                  input#file-select.form-control(type='file', name='add_file', multiple=true)
+              .col-md-3
+                span.btn.btn-block.btn-warning.btn-file#upload-button(onclick='uploadSubmit()')
+                  span#file-select-text Confirm & Upload
+                  //input#file-select.btn(type='button', name='submit', onclick="requestSubmit()")
+              .col-md-3
+            br
+            .row
+              .col-md-4
+              .col-md-4
+                div#filelist_div
+                  table(style='margin:auto;')#upload_file_table              
+              .col-md-4
+           #progContainer(style="display:none")
+             img(src="/public/images/loading.gif", style="display:none")#loading
+             .progress
+               .progress-bar.progress-bar-info.progress-bar-striped.active#upload-bar
+             .progress
+               .progress-bar.progress-bar-success.progress-bar-striped.active#parse-bar
+           #messages
+      //div#upload_status
+        .row
+          h3 Upload History
+          ul#ul_files
+          li Not yet...
+
+else
+  p Please log out and retry
+
+
+    
+append footer_assets
+  script(src="/public/js/user/uploadForm.js")
+  script.
+    requestForm();

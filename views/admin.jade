@@ -1,0 +1,82 @@
+extend base_layout
+
+block head
+  //link(rel="import" href="/public/paper-fab-menu.html")
+  link(rel='stylesheet', href="/public/css/yasp_home.css")
+
+
+if admin
+  block page_content
+    #top.header.alt.vert
+      h2 Welcome, Admin!
+        h4 You can modify the user information here
+      h2 All Users are here:
+      table(style="margin: auto;")
+        title='All Users'
+        style.
+          td {
+            font: 20px arial
+            color: white 
+          }
+        thead
+          td User ID
+          td Password
+          td Invitation Code
+          td Actions
+        tbody
+        each obj in entries
+          tr
+            td=obj.user_id
+            td=obj.password
+            td=obj.invitation_code
+            td
+              a(href="/admin/edit/"+obj.user_id) Edit
+               | 
+              a(href="/admin/delete/"+obj.user_id) Delete
+      br
+      a(href="/admin/new/") New User
+      // invitation 
+      br
+
+      h2 All Invitation Codes are here:
+      table(style="margin: auto;")
+        title='All Invitation Codes'
+        style.
+          td {
+            font: 20px arial
+            color: white 
+          }
+        thead
+          td Invitation Codes
+          td Max Users
+          td Current Users
+          td Actions
+        tbody
+        each obj in invitation_entries
+          tr
+            td=obj.invitation_code
+            td=obj.max_users
+            td=obj.current_users
+            td
+              a(href="/admin/edit_inv/"+obj.invitation_code) Edit
+               | 
+              a(href="/admin/delete_inv/"+obj.invitation_code) Delete
+      br
+      a(href="/admin/new_inv/") New Invitation Code
+        
+
+
+else
+  p error. Please log out and retry
+
+
+    
+append footer_assets
+  //these scripts must go at the end (can't be bundled) since they depend on content to be loaded
+  script(src="/public/js/home/scroll.js")
+  script(src="/public/js/home/animatedNavbar.js")
+  script(src="/public/js/home/polymerFabs.js")
+  script.
+  //  var graphData = !{JSON.stringify(match.graphData)};
+  //  generateCharts(graphData);  
+
