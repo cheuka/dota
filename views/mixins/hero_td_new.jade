@@ -1,4 +1,4 @@
-mixin hero_td(player, metadata)
+mixin hero_td_new(player, metadata, uploadPlayer)
   - var hero = constants.heroes[player.hero_id]
   - var slot_color = constants.player_colors[player.player_slot]
   td(style="padding:1px")
@@ -8,8 +8,9 @@ mixin hero_td(player, metadata)
       else
         =player.hero_id
       div(class=(player.isRadiant || player.team) ? "text-success" : "text-danger")
-        if (player.personaname || player.account_id)
-          a(href='/players/#{player.account_id}')= player.personaname || player.account_id
+        if uploadPlayer.player_name
+          a(href='/players/#{uploadPlayer.steamid}' title='steam_id: #{uploadPlayer.steamid}')= uploadPlayer.player_name
+          
         else if ("team" in player)
           =player.team ? "The Radiant" : "The Dire"
         else

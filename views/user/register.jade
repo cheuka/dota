@@ -1,0 +1,55 @@
+extend /base_layout
+
+block head
+  //link(rel="import" href="/public/paper-fab-menu.html")
+  link(rel='stylesheet', href="/public/css/yasp_home.css")
+
+
+if !user && !admin
+  #top.header.alt.vert
+    block page_content
+      form#form1(method="post", name=form1, style="margin: auto;")
+        table(style="margin: auto;")
+          title Register as New User (Invitation Code Needed)
+          style.
+            td {
+              font: 20px arial
+              color: white 
+            }
+          thead
+            td Item
+            td Value
+          tbody
+            tr
+              td User_ID:
+              td
+                input(name='user_id', type=text)
+            tr
+              td Password:
+              td
+                input(name='password', type=text)
+            tr
+              td Invitation Code:
+              td
+                input(name='invitation_code', type=text)
+            tr
+              td
+                a(href="javascript:void(0)" onclick="form1.submit()") Register
+              td
+                a(href="/admin/") Cancel
+        
+
+else
+  p Please log out and retry
+
+
+    
+append footer_assets
+  //these scripts must go at the end (can't be bundled) since they depend on content to be loaded
+  script(src="/public/js/home/scroll.js")
+  script(src="/public/js/home/animatedNavbar.js")
+  script(src="/public/js/home/polymerFabs.js")
+  script.
+  //  var graphData = !{JSON.stringify(match.graphData)};
+  //  generateCharts(graphData);  
+

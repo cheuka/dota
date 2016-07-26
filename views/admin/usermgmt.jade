@@ -1,0 +1,98 @@
+extend /base_layout
+
+block head
+  //link(rel="import" href="/public/paper-fab-menu.html")
+  link(rel='stylesheet', href="/public/css/yasp_home.css")
+
+
+if admin
+  #top.header.alt.vert
+    block page_content
+      form#form1(method="post", name=form1, style="margin: auto;")
+        table(style="margin: auto;")
+          title All Users are here:
+          if mode == 'new'
+            title='New User'
+          else
+            title='Edit User'
+          style.
+            td {
+              font: 20px arial
+              color: white 
+            }
+          thead
+            td Item
+            td Value
+          tbody
+            tr
+              if mode == 'new'
+                td User ID:
+                td
+                  input(name='user_id', type=text)
+              else if mode == 'new_inv'
+                td Invitation Code:
+                td
+                  input(name='invitation_code', type=text)
+              else if mode == 'edit_inv'
+                td Invitation Code:
+                td
+                  input(name='invitation_code', type=text, value=invitation_code)
+              else
+                td User ID:
+                td
+                  input(name='user_id', type=text, value=user_id)
+            tr
+              if mode == 'new'
+                td Password:
+                td
+                  input(name='password', type=text)
+              else if mode == 'new_inv'
+                td Max Users:    
+                td
+                  input(name='max_users', type=text)
+              else if mode == 'edit_inv'
+                td Max Users:
+                td
+                  input(name='max_users', type=text, value=max_users)
+              else
+                td Password:
+                td
+                  input(name='password', type=text, value=password)
+            tr
+              if mode == 'new'
+                td Invitation Code:
+                td
+                  input(name='invitation_code', type=text)
+              else if mode == 'new_inv'
+                td Current Users:    
+                td
+                  input(name='current_users', type=text)
+              else if mode == 'edit_inv'
+                td Current Users:
+                td
+                  input(name='current_users', type=text, value=current_users)
+              else
+                td Invitation Code:
+                td
+                  input(name='invitation_code', type=text, value=invitation_code)
+            tr
+              td
+                a(href="javascript:void(0)" onclick="form1.submit()") Save Change
+              td
+                a(href="/admin/") Discard
+        
+
+else
+  p error. Please log out and retry
+
+
+    
+append footer_assets
+  //these scripts must go at the end (can't be bundled) since they depend on content to be loaded
+  script(src="/public/js/home/scroll.js")
+  script(src="/public/js/home/animatedNavbar.js")
+  script(src="/public/js/home/polymerFabs.js")
+  script.
+  //  var graphData = !{JSON.stringify(match.graphData)};
+  //  generateCharts(graphData);  
+
