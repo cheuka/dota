@@ -230,6 +230,17 @@ function insertMatch(db, redis, match, options, cb)
                     }, cb);
                 }, exit);
 
+		async.each(match.picks_bans || match.upload.picks_bans || [], function (p, cb)
+		{
+		    p.ord = p.order;
+                    p.match_id = match.match_id;
+                    upsert(trx, 'picks_bans', p,
+                    {
+			match_id: p.match_id,
+			ord: p.ord
+		    }, cb);
+		}, exit);
+
                 function exit(err)
                 {
                     if (err)
