@@ -211,15 +211,23 @@ function insertMatch(db, redis, match, options, cb)
         }
         db.transaction(function(trx)
         {
-            upsert(trx, 'matches', match,
+            async.series(
             {
-                match_id: match.match_id
-            }, function(err)
+                "m": upsertMatches,
+		"pm": upsertPlayerMatch,
+                "pb": upsertPickbans,
+            }, exit);
+
+	    function upsertMatches(cb)
             {
-                if (err)
+                upsert(trx, 'matches', match,
                 {
-                    return exit(err);
-                }
+                   match_id: match.match_id
+                }, cb);
+            } 
+
+	    function upsertPlayerMatch(cb)
+            {
                 async.each(players || [], function(pm, cb)
                 {
                     pm.match_id = match.match_id;
@@ -228,9 +236,14 @@ function insertMatch(db, redis, match, options, cb)
                         match_id: pm.match_id,
                         player_slot: pm.player_slot
                     }, cb);
-                }, exit);
+                }, cb);
+	    }
 
-		async.each(match.picks_bans || match.upload.picks_bans || [], function (p, cb)
+	    function upsertPickbans(cb)
+            {
+		if (match.picks_bans)
+                { 
+		async.each(match.picks_bans || [], function (p, cb)
 		{
 		    p.ord = p.order;
                     p.match_id = match.match_id;
@@ -239,22 +252,23 @@ function insertMatch(db, redis, match, options, cb)
 			match_id: p.match_id,
 			ord: p.ord
 		    }, cb);
-		}, exit);
+		}, cb);
+		}
+           }
 
-                function exit(err)
-                {
-                    if (err)
-                    {
-                        console.error(err);
-                        trx.rollback(err);
-                    }
-                    else
-                    {
-                        trx.commit();
-                    }
-                    cb(err);
-                }
-            });
+           function exit(err)
+           {
+               if (err)
+               {
+                   console.error(err);
+                   trx.rollback(err);
+               }
+               else
+               {
+                   trx.commit();
+               }
+               cb(err);
+	   }
         });
     }
 

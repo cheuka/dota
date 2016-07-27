@@ -45,13 +45,14 @@ function fetchProMatches(cb)
 	{
 		getData(url, function(err, data)
 		{
-			//console.error(leagueid, data.result.total_results, data.result.results_remaining);
-			async.eachSeries(data.result.matches, function(match)
+			console.error(leagueid, data.result.total_results, data.result.results_remaining);
+
+			//async.eachSeries(data.result.matches, function(match)
+			data.result.matches.forEach(function(match)
 			{
-				console.log(match.match_id);
-				//rxu, iterate all matches
-				//then insert them into db
-				var delay = 10000;
+				console.error(match.match_id);
+				//rxu, save matches to db
+				var delay = 1000;
 				var job = generateJob("api_details",
 				{
 					match_id: match.match_id
@@ -75,7 +76,7 @@ function fetchProMatches(cb)
 						{
 							skipCounts: true,
 							skipAbilityUpgrades: true,
-							skipParse: true,
+							skipParse: false,
 							attempts: 1,
 						}, function(err)
 						{
@@ -103,6 +104,6 @@ function fetchProMatches(cb)
 }
 
 module.exports = {
-fetchProMatches,
+   fetchProMatches,
 };
 
