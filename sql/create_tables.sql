@@ -19,8 +19,7 @@ CREATE TABLE matches (
   negative_votes integer,
   game_mode integer,
   engine integer,
-  picks_bans json[],
-  upload json,
+  picks_bans json,          -- lordstone: modified[],
   --radiant_team_name varchar(255),
   --dire_team_name varchar(255),
   --radiant_captain integer,
@@ -34,6 +33,8 @@ CREATE TABLE matches (
   pgroup json,
   --parsed data below
   chat json[],
+	upload json,
+	picks_bans json[],
   objectives json[],
   radiant_gold_adv integer[],
   radiant_xp_adv integer[],

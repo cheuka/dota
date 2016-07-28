@@ -1,0 +1,318 @@
+extend /layout
+include /mixins/hero_td
+include /mixins/hero_td_new
+include /mixins/data_table
+include /mixins/data_table_header
+include /mixins/hero_banpick
+
+append head
+    meta(property="og:title", content="Mock Ban-Pick: Cheuka's Dota")
+    link(rel='stylesheet', href="/public/css/yasp_home.css")
+
+if user
+  block page_content
+    #top.header.alt.vert(style='overflow-y:auto;overflow-x:hidden')
+      // main captain mode block
+      h2 Mock Ban Pick System (R)
+      h4 by Cheuka
+      img.img-responsive(src='/public/images/curlycue.png', style='margin: auto;')
+  
+      // hero slot block
+      .row(style='border: 1px black solid;')
+        // left hero slot block
+        .col-md-6
+          div(style='margin:auto;')
+            p(style='color:green;') Radiant
+            .row
+              - for (var i = 0; i < 5; i ++)
+                img.col-xs-2(id='left_hero_slot_' + i, style='border: 1px green solid; min-height: 50px; min-width:80px;') 
+
+        // left hero slot block end
+    
+        //empty
+        //.col-md-2
+
+        // right hero slot block
+        .col-md-6
+          div(style='margin:auto;')
+            p(style='color:red') Dire
+            .row  
+              - for (var i = 0; i < 5; i ++)
+                img.col-xs-2(id='right_hero_slot_' + i, style='border: 1px red solid; min-height:50px; min-width:80px;') 
+
+
+        // right hero slot block end
+ 
+
+      // hero slot block end
+    
+      // main select block
+
+      .row
+
+        // left block
+        .col-md-6(style='border: 2px grey solid;')
+      
+          // search block
+          .row(style='border: 1px solid black;')
+          
+            // hero filter block
+            .col-md-5
+              - hero_options = ['Attack', 'Gank', 'Assist']
+              label(for='hero_filter') Filter your hero:
+              select(style='color:black')#hero_filter
+                each hero_option, i in hero_options
+                  option(value=i) #{hero_option}
+            // hero filter block end
+
+            //empty
+            .col-md-2
+  
+            // hero search block
+            .col-md-5
+              input#hero_search(placeholder='search for hero')
+  
+            // hero search block end
+       
+          // search block end
+
+          // hero block
+          div
+
+            // strength hero block
+            .row
+          
+              // radiant strength hero block
+              .col-md-6
+                  p Radiant: Strength
+                  +hero_banpick_table(1, 20)
+              // radiant strength hero block end
+
+              // dire strength hero block
+              .col-md-6
+                  p Dire: Strength
+                  +hero_banpick_table(58, 73)
+              // dire strength hero block end
+
+            // strength hero block end
+
+            // agility hero block
+            .row
+              // radiant agility hero block
+              .col-md-6
+                  p Agility:
+                  +hero_banpick_table(21, 38)
+              // radiant agility hero block end
+
+              // dire agility hero block
+              .col-md-6
+                  p Agility:
+                  +hero_banpick_table(74, 99)
+              // dire agility hero block end
+
+            // agility hero block end
+
+            // intelligence hero block
+            .row
+
+              // radiant intelligence hero block
+              .col-md-6
+                  p Intelligence:
+                  +hero_banpick_table(39, 57)
+              // radiant intelligence hero block end
+
+              // dire intelligence hero block
+              .col-md-6
+                  p Intelligence:
+                  +hero_banpick_table(100, 113)
+              // dire intelligence hero block end
+
+            // intelligence hero block end
+
+          // hero block end
+
+        // left block end
+
+        // right block
+        .col-md-6(style='border: 2px yellow solid;')
+      
+          // control block
+          div(style='height: 500px;')
+        
+            // team name block
+            .row
+     
+              // left team name block
+              .col-md-6
+                h4#left_team_label Radiant Team
+              // left team name block end
+
+              // right team name block
+              .col-md-6
+                h4#right_team_label Dire Team
+              // right team name block end
+
+            // team name block end
+
+            // main status block
+            .row
+              h3#main_status Status
+            // main status block end
+
+            // time block
+            .row
+          
+              //left time block
+              .col-md-3
+                p Radiant Time:
+                p#timer_0 00:00
+              //left time block end
+  
+              //left reserve time block
+              .col-md-3
+                p Reserve Time:
+                p#timer_2 02:10
+              //left reserve time block end
+              
+              //right time block
+              .col-md-3
+                p Dire Time:
+                p#timer_1 00:00
+              //right time block end
+
+              //right reserve time block
+              .col-md-3
+                p Reserve Time:
+                p#timer_3 02:10
+              //right reserve time block end
+ 
+            // time block end
+
+            // ban pick block
+            .row
+
+              // left ban pick block
+              .col-md-6
+           
+                .row
+
+                  // left ban block
+                  .col-md-4 
+                    p(style='margin:auto;') Ban
+                    br
+                    - for(var i = 0; i < 5; i ++)
+                      .row(style='margin:auto;')
+                        img(style='height:36px; width:60px; border: 1px solid white;', id='left_ban_' + i)
+                  // left ban block end
+
+                  // left pick block
+                  .col-md-8
+                    p(style='margin:auto;') Pick
+                    br
+                    .row
+                      .col-xs-6 
+                        img(style='height: 36px; width:60px; border: 1px solid white;')#left_pick_0
+                      .col-xs-6 
+                        img(style='height: 36px; width:60px; border: 1px solid white;')#left_pick_1
+                    br
+                    .row
+                      .col-xs-6 
+                        img(style='height: 36px; width:60px; border: 1px solid white;')#left_pick_2
+                      .col-xs-6 
+                        img(style='height: 36px; width:60px; border: 1px solid white;')#left_pick_3
+                    br
+                    .row
+                      img(style='margin:auto; height: 36px; width:60px; border: 1px solid white;')#left_pick_4
+ 
+                  // left pick block end
+
+              // left ban pick block end
+
+              // right ban pick block
+              .col-md-6
+           
+                .row
+
+                  // right ban block
+                  .col-md-4
+                    p(style='margin:auto;') Ban
+                    br
+                    - for(var i = 0; i < 5; i ++)
+                      .row(style='margin:auto;')
+                        img(style='height: 36px; width:60px; border: 1px solid white;', id='right_ban_' + i)
+ 
+                  // right ban block end
+
+                  // right pick block
+                  .col-md-8
+                    p(style='margin:auto;') Pick
+                    br
+                    .row
+                      .col-xs-6 
+                        img(style='height: 36px; width:60px; border: 1px solid white;')#right_pick_0
+                      .col-xs-6 
+                        img(style='height: 36px; width:60px; border: 1px solid white;')#right_pick_1
+                    br
+                    .row
+                      .col-xs-6 
+                        img(style='height: 36px; width:60px; border: 1px solid white;')#right_pick_2
+                      .col-xs-6 
+                        img(style='height: 36px; width:60px; border: 1px solid white;')#right_pick_3
+                    br
+                    .row
+                      img(style='margin:auto; height: 36px; width:60px; border: 1px solid white;')#right_pick_4
+ 
+                  // right pick block end
+
+              // right ban pick block end
+
+            // ban pick block end
+      
+            br 
+            br
+
+            // main control block
+            .row
+              h3#hero_name Not Selected
+            .row
+              img(style='margin:auto; height: 48px; width:100px; border: 1px solid yellow;')#selected_hero
+         
+            br 
+
+            .row
+              .col-xs-6
+                button#button1.btn-lg(onclick='button1_click()', disabled='true', style='color: red;').submit_button Start
+              .col-xs-6
+                button#button2.btn-lg(onclick='button2_click()', disabled, style='color: blue;').submit_button Cancel
+
+
+
+
+          // control block end
+
+          // chat block
+          .row
+
+          // chat block end
+
+        // right block end
+
+      // main select block end
+
+      // main captain mode block end
+
+      // log block 
+      .row
+
+
+      // log block end
+
+
+else
+  h2 Please log in to use all functionality
+
+
+append footer_assets
+  script(type="text/javascript", src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5452f1e51eac0fc5", async="async")
+  script(type="text/javascript", src="../public/js/user/banpick.js")
+

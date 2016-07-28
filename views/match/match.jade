@@ -1,5 +1,6 @@
 extend /layout
 include /mixins/hero_td
+include /mixins/hero_td_new
 include /mixins/data_table
 include /mixins/data_table_header
 
@@ -25,6 +26,7 @@ block content
             //th: abbr(title=constants.tooltips.status) Status
             th Mode
             th Region
+            th End Time
             th Duration
             th Radiant Team
             th Dire Team
@@ -36,6 +38,9 @@ block content
             //td= constants.parse_status[match.parse_status]
             td= constants.game_mode[match.game_mode] ? constants.game_mode[match.game_mode].name : match.game_mode
             td= constants.region[match.region] ? constants.region[match.region] : match.region
+            if match.upload
+              if match.upload.end_time
+                td: abbr(title=moment.unix(match.upload.end_time).fromNow())= moment.unix(match.upload.end_time).format('YYYY-MM-DD HH:mm:ss')
             td= moment().startOf('day').seconds(match.duration).format("H:mm:ss")
             if match.upload
               td= match.upload.radiant_team_name

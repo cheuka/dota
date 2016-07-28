@@ -37,6 +37,12 @@ var computeMatchData = compute.computeMatchData;
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+
+//lordstone:
+
+var cheuka_session = require("../util/cheukaSession");
+var user_db = require("../store/user_db");
+
 app.use(bodyParser.json());
 app.get('/', function(req, res)
 {
@@ -88,12 +94,16 @@ pQueue.process(1, function(job, cb)
                 parsed_data.match_id = match.match_id;
                 parsed_data.pgroup = match.pgroup;
                 parsed_data.radiant_win = match.radiant_win;
-                parsed_data.start_time = match.start_time;
+                //parsed_data.start_time = match.start_time;
                 parsed_data.duration = match.duration;
                 parsed_data.replay_blob_key = match.replay_blob_key;
                 parsed_data.parse_status = 2;
+                //lordstone: added user_id and is_public
+                parsed_data.user_id = match.user_id;
+								parsed_data.is_public = match.is_public;
                 if (match.replay_blob_key)
                 {
+										redis.del('upload_blob:' + match.replay_blob_key);
                     insertUploadedParse(parsed_data, cb);
                 }
                 else
@@ -127,9 +137,15 @@ function insertUploadedParse(match, cb)
     console.log('saving uploaded parse');
     //save uploaded replay parse in redis as a cached match
     match.match_id = match.upload.match_id;
+    // lordstone: save user_id
+    // match.user_id = match.upload.user_id;    
+
     match.game_mode = match.upload.game_mode;
     match.radiant_win = match.upload.radiant_win;
     match.duration = match.upload.duration;
+		// lordstone: save picks_bans:
+		//match.picks_bans = match.upload.picks_bans;
+
     match.players.forEach(function(p, i)
     {
         utility.mergeObjects(p, match.upload.player_map[p.player_slot]);
@@ -140,6 +156,10 @@ function insertUploadedParse(match, cb)
     });
     computeMatchData(match);
     renderMatch(match);
+    
+    //lordstone: modify user_db, keep match private
+    cheuka_session.saveMatchToUser(user_db, match.user_id, match.match_id, match.is_public);
+    
     benchmarkMatch(redis, match, function(err)
     {
         if (err)
@@ -238,7 +258,6 @@ function runParse(match, job, cb)
         {
             console.log('received epilogue');
             incomplete = false;
-//	    require('fs').writeFileSync('./epilogue.json',JSON.stringify(JSON.parse(e.key)));	
         }
         entries.push(e);
     });
@@ -274,18 +293,6 @@ function runParse(match, job, cb)
                 var teamfights = processTeamfights(res.tf_data, meta);
                 var upload = processUploadProps(res.uploadProps, meta);
                 var ap = processAllPlayers(res.int_data);
-
-		
-		//rxu, add team and personal info
-		for (var i = 0; i < parsed_data.players.length; ++i)
-		{
-			parsed_data.players[i].account_id = upload.player_info[i].steamid;
-			parsed_data.players[i].personalname = upload.player_info[i].player_name;
-			parsed_data.players[i].team = upload.player_info[i].game_team;
-			parsed_data.players[i].isRadiant = upload.player_info[i].game_team === 2;
-		}
-		
-
                 parsed_data.teamfights = teamfights;
                 parsed_data.radiant_gold_adv = ap.radiant_gold_adv;
                 parsed_data.radiant_xp_adv = ap.radiant_xp_adv;

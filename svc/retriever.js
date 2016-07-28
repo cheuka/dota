@@ -37,8 +37,6 @@ app.get('/', function(req, res, next)
     var keys = Object.keys(steamObj);
     if (keys.length == 0) return next("No accounts ready");
     var r = keys[Math.floor((Math.random() * keys.length))];
-
-
     if (req.query.mmstats)
     {
         getMMStats(r, function(err, data)
@@ -249,18 +247,6 @@ function getGCReplayUrl(idx, match_id, cb)
         //console.log(err, matchData);
         cb(err, matchData);
     });
-
-/*
-    Dota2.requestMatches(
-    {
-        team_id : '2163',
-        matches_requested : '2'
-    }, function(err, response)
-    {
-	var fs = require('fs');	
-//	fs.writeFileSync('debugMatches.json', JSON.stringify(response));
-    });
-*/
 }
 
 function selfDestruct()
