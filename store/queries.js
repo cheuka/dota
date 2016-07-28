@@ -214,11 +214,11 @@ function insertMatch(db, redis, match, options, cb)
             async.series(
             {
                 "m": upsertMatches,
-		"pm": upsertPlayerMatch,
+                "pm": upsertPlayerMatch,
                 "pb": upsertPickbans,
             }, exit);
 
-	    function upsertMatches(cb)
+            function upsertMatches(cb)
             {
                 upsert(trx, 'matches', match,
                 {
@@ -226,7 +226,7 @@ function insertMatch(db, redis, match, options, cb)
                 }, cb);
             } 
 
-	    function upsertPlayerMatch(cb)
+            function upsertPlayerMatch(cb)
             {
                 async.each(players || [], function(pm, cb)
                 {
@@ -237,23 +237,23 @@ function insertMatch(db, redis, match, options, cb)
                         player_slot: pm.player_slot
                     }, cb);
                 }, cb);
-	    }
+            }
 
-	    function upsertPickbans(cb)
+            function upsertPickbans(cb)
             {
-		if (match.picks_bans)
+                if (match.picks_bans)
                 { 
-		async.each(match.picks_bans || [], function (p, cb)
-		{
-		    p.ord = p.order;
-                    p.match_id = match.match_id;
-                    upsert(trx, 'picks_bans', p,
+                    async.each(match.picks_bans || [], function (p, cb)
                     {
-			match_id: p.match_id,
-			ord: p.ord
-		    }, cb);
-		}, cb);
-		}
+                        p.ord = p.order;
+                                p.match_id = match.match_id;
+                                upsert(trx, 'picks_bans', p,
+                                {
+                        match_id: p.match_id,
+                        ord: p.ord
+                        }, cb);
+                    }, cb);
+                }
            }
 
            function exit(err)
@@ -268,7 +268,7 @@ function insertMatch(db, redis, match, options, cb)
                    trx.commit();
                }
                cb(err);
-	   }
+            }
         });
     }
 

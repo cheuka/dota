@@ -14,93 +14,92 @@ fetchProMatches(function(err){});
 
 function fetchProMatches(cb)
 {
-	getData(league_url, function(err, data)
-	{
-		if (err)
-		{
-			cb(err);
-		}
+    getData(league_url, function(err, data)
+    {
+        if (err)
+        {
+            cb(err);
+        }
 
+        var league_ids = data.result.leagues.map(function(l)
+        {
+            return l.leagueid;
+        });
 
-		var league_ids = data.result.leagues.map(function(l)
-		{
-			return l.leagueid;
-		});
+        //iterate through leagueids and use getmatchhistory to retrieve matches for each
+        async.eachSeries(league_ids, function(leagueid, cb)
+        {
+            var url = generateJob("api_history",
+            {
+                leagueid: leagueid
+            }).url;
+            getPage(url, leagueid, cb);
+        }, function(err)
+        {
+            cb(err);
+        });
+    });
 
-		//iterate through leagueids and use getmatchhistory to retrieve matches for each
-		async.eachSeries(league_ids, function(leagueid, cb)
-		{
-			var url = generateJob("api_history",
-			{
-				leagueid: leagueid
-			}).url;
-			getPage(url, leagueid, cb);
-		}, function(err)
-		{
-			cb(err);
-		});
-	});
+    function getPage(url, leagueid, cb)
+    {
+        getData(url, function(err, data)
+        {
+            console.error(leagueid, data.result.total_results, data.result.results_remaining);
 
-	function getPage(url, leagueid, cb)
-	{
-		getData(url, function(err, data)
-		{
-			console.error(leagueid, data.result.total_results, data.result.results_remaining);
+            //async.eachSeries(data.result.matches, function(match)
+            data.result.matches.forEach(function(match)
+            {
+                console.error(match.match_id);
+                //rxu, save matches to db
+                var delay = 1000;
+                var job = generateJob("api_details",
+                {
+                    match_id: match.match_id
+                });
 
-			//async.eachSeries(data.result.matches, function(match)
-			data.result.matches.forEach(function(match)
-			{
-				console.error(match.match_id);
-				//rxu, save matches to db
-				var delay = 1000;
-				var job = generateJob("api_details",
-				{
-					match_id: match.match_id
-				});
+                getData(
+                {
+                    url: job.url,
+                    delay: delay
+                }, function(err, body)
+                {
+                    if (err)
+                    {
+                        cb(err);
+                    }
+                    if (body.result)
+                    {
+                        var match = body.result;
 
-				getData(
-				{
-					url: job.url,
-					delay: delay
-				}, function(err, body)
-				{
-					if (err)
-					{
-						cb(err);
-					}
-					if (body.result)
-					{
-						var match = body.result;
-
-						insertMatch(db, redis, match,
-						{
-							skipCounts: true,
-							skipAbilityUpgrades: true,
-							skipParse: false,
-							attempts: 1,
-						}, function(err)
-						{
-							console.error(err);
-						});
-					}
-				});
-			});
-			
-			if (data.result.results_remaining)
-			{
-				var url2 = generateJob("api_history",
-				{
-					leagueid: leagueid,
-					start_at_match_id: data.result.matches[data.result.matches.length - 1].match_id - 1,
-				}).url;
-				getPage(url2, leagueid, cb);
-			}
-			else
-			{
-				cb(err);
-			}
-		});
-	}
+                        insertMatch(db, redis, match,
+                        {
+                            skipCounts: true,
+                            skipAbilityUpgrades: true,
+                            skipParse: false,
+                            attempts: 1,
+                        }, function(err)
+                        {
+                            console.error(err);
+                        });
+                    }
+                });
+            });
+            
+            if (data.result.results_remaining)
+            {
+                var url2 = generateJob("api_history",
+                {
+                    leagueid: leagueid,
+                    start_at_match_id: data.result.matches[data.result.matches.length - 1].match_id - 1,
+                }).url;
+                getPage(url2, leagueid, cb);
+            }
+            else
+            {
+                cb(err);
+            }
+        });
+    }
 }
 
 module.exports = {
