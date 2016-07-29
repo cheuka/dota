@@ -5,7 +5,7 @@ CREATE TABLE my_users (
 	invitation_code varchar(30) not null,
 	password varchar(30) not null,
 	matches json,
-	is_logged boolean default false not null
+	log_token varchar(30)
 );
 
 CREATE TABLE my_invitation_codes (
@@ -28,6 +28,8 @@ CREATE TABLE my_match_list (
 	users_allowed json,
 	is_public boolean default false
 );
+
+
     
     
     

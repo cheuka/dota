@@ -1,7 +1,7 @@
 var user_mgmt = require('../store/userMgmt');
 var config = require('../config');
 
-function checkUser(db, user_id, password, cb)
+function checkUser(db, redis, user_id, password, cb)
 { 
 	if(user_id == config.CHEUKA_ADMIN && password == config.CHEUKA_ADMIN_PASSWORD)
 	{
@@ -12,17 +12,18 @@ function checkUser(db, user_id, password, cb)
 			if(msg == 'failed'){
 				console.log('log in failed, reason:' + param);
 				return cb('failed', null);
-			}else if(msg == 'logged'){
-				return cb('logged', null);
 			}else if(msg == 'success'){
+				redis.set('user_auth:' + user_id, param.log_token);
+				console.log('successfully wrote to redis:' + 'user_auth:' + user_id, param.log_token);
 				return cb('success', param);
 			}
 		});
 	}
 }
 
-function logoutUser(db, user_id, cb){
+function logoutUser(db, redis, user_id, cb){
 	user_mgmt.logoutUser(db, user_id, function(){
+		redis.del('user_auth:' + user_id);
 		return cb();
 	});
 }
@@ -173,6 +174,21 @@ function deleteUserMatch(db, user_db, user_id, match_id, cb){
 	});
 }
 
+function userAuth(redis, user_id, log_token, cb){
+	var redis_token = redis.get('user_auth:' + user_id, function(err, results){
+		console.log('DEBUG:userAuth:redis_token:' + results);
+		console.log('DEBUG:userAuth:log_token:' + log_token);
+		if(results == null){
+			return cb(false);
+		}else{
+			if(results === log_token){
+				return cb(true);
+			}
+			return cb(false);
+		}
+	});
+}
+
 module.exports = {
 	findAll: findAll,
 	findUser: findUser,
@@ -191,5 +207,6 @@ module.exports = {
 	saveMatchToUser: saveMatchToUser,
 	getMatchList: getMatchList,
 	getMatchData: getMatchData,
-	deleteUserMatch: deleteUserMatch
+	deleteUserMatch: deleteUserMatch,
+	userAuth: userAuth
 };
