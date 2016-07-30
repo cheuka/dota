@@ -94,7 +94,7 @@ module.exports = function(db, redis, cassandra)
         var match_id = req.params.match_id;
         buildMatch(
         {
-	    user: user_id,
+        user: user_id,
             db: db,
             redis: redis,
             cassandra: cassandra,
@@ -193,96 +193,84 @@ module.exports = function(db, redis, cassandra)
         });
     });
 
-// lordstone: upload_files: copied from /request_job
-// upload files: start
-
-api.post('/upload_files', multer.array("replay_blob", 20), function(req, res, next)
-  {
-            if(!req.session.user){
-                res.send('Please log in and use this function');
-                return;
-            }
-            var match = [] ;
-						console.log('DEBUG: upload ispublic:' + req.body.is_public);
-						console.log('DEBUG: ispublic:' + req.body.is_public['is_public']);
-						var is_public = JSON.parse(req.body.is_public);
-						console.log('DEBUG: obj:' + JSON.stringify(is_public));
-						is_public = is_public['is_public'];
-            var user_id = req.session.user; // read the user_id
-            if (req.files.length > 0)
+    // lordstone: upload_files: copied from /request_job
+    // upload files: start
+    api.post('/upload_files', multer.array("replay_blob", 20), function(req, res, next)
+    {
+        if(!req.session.user){
+            res.send('Please log in and use this function');
+            return;
+        }
+        var match = [] ;
+        console.log('DEBUG: upload ispublic:' + req.body.is_public);
+        console.log('DEBUG: ispublic:' + req.body.is_public['is_public']);
+        var is_public = JSON.parse(req.body.is_public);
+        console.log('DEBUG: obj:' + JSON.stringify(is_public));
+        is_public = is_public['is_public'];
+        var user_id = req.session.user; // read the user_id
+        if (req.files.length > 0)
+        {
+            const hash = crypto.createHash('md5');
+            for(var i = 0; i < req.files.length; i ++)
             {
-                const hash = crypto.createHash('md5');
-                for(var i = 0; i < req.files.length; i ++)
-                {
-                    console.log('i file:' + req.files[i]);
-                    //var key = req.files[i].name + Date.now();
-	        			    var key = Math.random().toString(16).slice(2);
-  	            //hash.update(req.files[i].buffer);
-      	            //var key = hash.digest('hex');
-                    //console.log('i:' + i + '.key:' + key);
-        	    			redis.setex(new Buffer('upload_blob:' + key), 60 * 60, req.files[i].buffer);
-                    match[i] = {
-            	  	      replay_blob_key: key,
-												user_id: user_id,
-												is_public: is_public[i]
-              	    };
-										console.log('DEBUG: single is public:' + is_public[i]);
-                } //  end for each file in files
-            }
-            else 
+                console.log('i file:' + req.files[i]);
+                //var key = req.files[i].name + Date.now();
+                var key = Math.random().toString(16).slice(2);
+                //hash.update(req.files[i].buffer);
+                //var key = hash.digest('hex');
+                //console.log('i:' + i + '.key:' + key);
+                redis.setex(new Buffer('upload_blob:' + key), 60 * 60, req.files[i].buffer);
+                match[i] = {
+                    replay_blob_key: key,
+                    user_id: user_id,
+                    is_public: is_public[i]
+                };
+                console.log('DEBUG: single is public:' + is_public[i]);
+            } //  end for each file in files
+        }
+        else 
+        {
+            res.json(
             {
-                res.json(
+                error: "Invalid input."
+            });
+        }
+        if (match.length > 0)
+        {
+            var jobs = [];
+            for(var i = 0; i < match.length; i ++)
+            {
+                console.log('match array:'+ i +':' + match[i]);
+                queue.addToQueue(rQueue, match[i],
                 {
-                    error: "Invalid input."
+                    attempts: 1
+                }, function(err, job)
+                {
+                    var curJob = {
+                        error: err,
+                        job:
+                        {
+                            jobId: job.jobId,
+                            data: job.data
+                        }
+                    };
+                    jobs[i] = curJob;        
                 });
-            }
-            if (match.length > 0)
+            } // end for each match
+            res.json(jobs);
+        }
+        else
+        {
+            res.json(
             {
-                var jobs = [];
-                for(var i = 0; i < match.length; i ++)
-                {
-     	          console.log('match array:'+ i +':' + match[i]);
-      	          queue.addToQueue(rQueue, match[i],
-        	  {
-          	      attempts: 1
-            	  }, function(err, job)
-              	  {
-                      var curJob = {
-                          error: err,
-                          job:
-                          {
-                              jobId: job.jobId,
-                              data: job.data
-                          }
-                      };
-                      jobs[i] = curJob;
-                      /*
-                	    res.json(
-                  	  {
-                    	    error: err,
-                      	  job:
-                        	{
-                          	  jobId: job.jobId,
-                            	data: job.data
-              	          }
-                	    });
-                      */
-               	  });
-                } // end for each match
-                res.json(jobs);
-            }
-            else
-            {
-                res.json(
-                {
-                    error: "Invalid input."
-                });
-            }
-  }); //end of api upload files
-// end of post method
-// start of the get method
+                error: "Invalid input."
+            });
+        }
+    }); //end of api upload files
+    // end of post method
 
- api.get('/upload_files', function(req, res, cb)
+    // start of the get method
+    api.get('/upload_files', function(req, res, cb)
     {
         rQueue.getJob(req.query.id).then(function(job)
         {
@@ -308,69 +296,68 @@ api.post('/upload_files', multer.array("replay_blob", 20), function(req, res, ne
             }
         }).catch(cb);
     });
-
-
-// End of upload_files
+    // End of upload_files
 
     api.post('/request_job', multer.single("replay_blob"), function(req, res, next)
     {
-            if(!req.session.user){
-                res.send('Please log in and use this function');
-                return;
-            }
-            var match_id = Number(req.body.match_id);
-	    console.log('match_id:' + match_id);
-            var match;
-            var user_id = req.session.user; // read the user_id
-            if (req.file)
+        if(!req.session.user){
+            res.send('Please log in and use this function');
+            return;
+        }
+        var match_id = Number(req.body.match_id);
+        console.log('match_id:' + match_id);
+        var match;
+        var user_id = req.session.user; // read the user_id
+        if (req.file)
+        {
+            //console.log('req.file:' + req.file.);
+            //var key = req.file.name + Date.now();
+            // var key = Math.random().toString(16).slice(2);
+            const hash = crypto.createHash('md5');
+            hash.update(req.file.buffer);
+            var key = hash.digest('hex');
+            console.log('upload key:'+key);
+            redis.setex(new Buffer('upload_blob:' + key), 60 * 60, req.file.buffer);
+            match = {
+                replay_blob_key: key,
+                user_id: user_id,
+                is_public: false
+            };
+        }
+        else if (match_id && !Number.isNaN(match_id))
+        {
+            match = {
+                match_id: match_id,
+            };
+        }
+        if (match)
+        {
+            console.log(match);
+            queue.addToQueue(rQueue, match,
             {
-                //console.log('req.file:' + req.file.);
-                //var key = req.file.name + Date.now();
-                // var key = Math.random().toString(16).slice(2);
-                const hash = crypto.createHash('md5');
-                hash.update(req.file.buffer);
-                var key = hash.digest('hex');
-                console.log('upload key:'+key);
-                redis.setex(new Buffer('upload_blob:' + key), 60 * 60, req.file.buffer);
-                match = {
-                    replay_blob_key: key,
-                    user_id: user_id,
-										is_public: false
-                };
-            }
-            else if (match_id && !Number.isNaN(match_id))
-            {
-                match = {
-                    match_id: match_id,
-                };
-            }
-            if (match)
-            {
-                console.log(match);
-                queue.addToQueue(rQueue, match,
-                {
-                    attempts: 1
-                }, function(err, job)
-                {
-                    res.json(
-                    {
-                        error: err,
-                        job:
-                        {
-                            jobId: job.jobId,
-                            data: job.data
-                        }
-                    });
-                });
-            }
-            else
+                attempts: 1
+            }, function(err, job)
             {
                 res.json(
                 {
-                    error: "Invalid input."
+                    error: err,
+                    job:
+                    {
+                        jobId: job.jobId,
+                        data: job.data
+                    }
                 });
-            }
+            });
+        }
+        else
+        {
+            res.json(
+            {
+                error: "Invalid input."
+            });
+        }
     });
+    
     api.get('/request_job', function(req, res, cb)
     {
         rQueue.getJob(req.query.id).then(function(job)
@@ -397,5 +384,6 @@ api.post('/upload_files', multer.array("replay_blob", 20), function(req, res, ne
             }
         }).catch(cb);
     });
+    
     return api;
 };
