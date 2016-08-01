@@ -87,14 +87,13 @@ module.exports = function(db, redis, cassandra)
         res.json(constants.abilities[req.query.name]);
     });
 
-// modified by lordstone
     api.get('/matches/:match_id/:info?', function(req, res, cb)
     {
         var user_id = req.session.user;
         var match_id = req.params.match_id;
         buildMatch(
         {
-        user: user_id,
+            user: user_id,
             db: db,
             redis: redis,
             cassandra: cassandra,
@@ -254,7 +253,7 @@ module.exports = function(db, redis, cassandra)
                             data: job.data
                         }
                     };
-                    jobs[i] = curJob;        
+                    jobs[i] = curJob;
                 });
             } // end for each match
             res.json(jobs);
@@ -266,7 +265,7 @@ module.exports = function(db, redis, cassandra)
                 error: "Invalid input."
             });
         }
-    }); //end of api upload files
+    }); 
     // end of post method
 
     // start of the get method
@@ -296,7 +295,7 @@ module.exports = function(db, redis, cassandra)
             }
         }).catch(cb);
     });
-    // End of upload_files
+    //end of api upload files
 
     api.post('/request_job', multer.single("replay_blob"), function(req, res, next)
     {
@@ -304,6 +303,7 @@ module.exports = function(db, redis, cassandra)
             res.send('Please log in and use this function');
             return;
         }
+
         var match_id = Number(req.body.match_id);
         console.log('match_id:' + match_id);
         var match;
@@ -312,7 +312,7 @@ module.exports = function(db, redis, cassandra)
         {
             //console.log('req.file:' + req.file.);
             //var key = req.file.name + Date.now();
-            // var key = Math.random().toString(16).slice(2);
+            //var key = Math.random().toString(16).slice(2);
             const hash = crypto.createHash('md5');
             hash.update(req.file.buffer);
             var key = hash.digest('hex');

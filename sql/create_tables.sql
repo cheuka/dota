@@ -175,3 +175,12 @@ CREATE TABLE notable_players (
   is_pro boolean,
   locked_until integer
 );
+
+CREATE TABLE picks_bans (
+  match_id bigint REFERENCES matches(match_id) ON DELETE CASCADE,
+  is_pick boolean,
+  hero_id int,
+  team smallint,
+  ord smallint,
+  PRIMARY KEY (match_id, ord)
+);
