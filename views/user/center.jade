@@ -34,7 +34,7 @@ if user
                        abbr(title=moment.unix(obj.upload.end_time).fromNow())= moment.unix(obj.upload.end_time).format('YYYY-MM-DD HH:mm:ss')
 
 
-              .col-md-7
+              .col-md-6
                  if obj.upload
                    if obj.upload.picks_bans
                      table
@@ -96,8 +96,13 @@ if user
                    else
                      h3 This match has no Picks/Bans
                        
-              .col-md-2
-                a(href="/center/delete/" + obj.match_id) Delete
+              .col-md-3
+                //
+                  p Comments:
+                  textarea(id='comment'+obj.match_id, style='max-width: 150px;', placeholder='Enter your comments here')
+                  button save
+                  button clear
+                //a(href="/center/delete/" + obj.match_id) Delete
                    
 else
   p Please log out and retry

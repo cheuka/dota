@@ -11,21 +11,67 @@ append head
 
 if user
   block page_content
-    #top.header.alt.vert(style='overflow-y:auto;overflow-x:hidden')
+    #top.header.alt.vert(style='padding-top: 0; overflow-y:auto;overflow-x:hidden')
       // main captain mode block
-      h2 Mock Ban Pick System (R)
-      h4 by Cheuka
-      img.img-responsive(src='/public/images/curlycue.png', style='margin: auto;')
+
+      // title block
+      .row()
+        
+        // tabs block
+        .col-md-6(style='border: 1px white solid;')
+          ul(class='nav nav-tabs', role='tablist')
+            li(role='presentation', class='active') 
+              a(href='#heroes', aria-controls='heroes', role='tab', data-toggle='tab') Heroes
+            li(role='presentation') 
+              a(href='#tops', aria-controls='tops', role = 'tab', data-toggle='tab') Tops
+            li(role='presentation') 
+              a(href='#bp2', aria-controls='bp2', role = 'tab', data-toggle='tab') BP2
+            li(role='presentation') 
+              a(href='#options', aria-controls='options', role = 'tab', data-toggle='tab') Options
+        // tabs block end
+
+        // sequence block 
+        .col-md-6
+          .row(style='min-height: 45px')
+            .col-md-6(style='border: 1px white solid;min-height: 45px')
+              //.radio-inline
+              input(type='radio', name='radiant_or_dire', value='radiant', onclick='clickRadioRadiantDire()', checked, disabled='true') 
+              span.submit_button(style='font-size: 20px;', id='radiant_or_dire_helper_0') Radiant
+              //.radio-inline
+              input(type='radio', name='radiant_or_dire', value='dire', onclick='clickRadioRadiantDire()',disabled='true') 
+              span(style='font-size: 20px;', id='radiant_or_dire_helper_1') Dire 
+            .col-md-6(style='border: 1px white solid;min-height: 45px')
+              //.radio-inline
+              input(type='radio', name='first_pick', value='first_pick', onclick='clickRadioFirstPick()', checked, disabled='true')
+              span.submit_button(style='font-size: 20px;', id='first_pick_helper_0') First Pick
+              //.radio-inline
+              input(type='radio', name='first_pick', value='second_pick', onclick='clickRadioFirstPick()',disabled='true')
+              span(style='font-size: 20px;', id='first_pick_helper_1') Second Pick
+ 
+            // p User side:
+              select(name='user_side')
+                option(selected) Radiant
+                option Dire
+            // p First Pick:
+              select(name='first_pick')
+                option(selected) First pick
+                option Second pick
+              button(name='confirm_sequence') OK
+         
+        // sequence block end
+      // h4 Mock Ban Pick System (R)
+      // h4 by Cheuka
+      // img.img-responsive(src='/public/images/curlycue.png', style='margin: auto;')
   
       // hero slot block
-      .row(style='border: 1px black solid;')
-        // left hero slot block
-        .col-md-6
-          div(style='margin:auto;')
-            p(style='color:green;') Radiant
-            .row
-              - for (var i = 0; i < 5; i ++)
-                img.col-xs-2(id='left_hero_slot_' + i, style='border: 1px green solid; min-height: 50px; min-width:80px;') 
+        .row(style='border: 1px black solid;')
+      // left hero slot block
+          .col-md-6
+            div(style='margin:auto;')
+              p(style='color:green;') Radiant
+              .row
+                - for (var i = 0; i < 5; i ++)
+                  img.col-xs-2(id='left_hero_slot_' + i, style='border: 1px green solid; min-height: 50px; min-width:80px;') 
 
         // left hero slot block end
     
@@ -33,12 +79,12 @@ if user
         //.col-md-2
 
         // right hero slot block
-        .col-md-6
-          div(style='margin:auto;')
-            p(style='color:red') Dire
-            .row  
-              - for (var i = 0; i < 5; i ++)
-                img.col-xs-2(id='right_hero_slot_' + i, style='border: 1px red solid; min-height:50px; min-width:80px;') 
+          .col-md-6
+            div(style='margin:auto;')
+              p(style='color:red') Dire
+              .row  
+                - for (var i = 0; i < 5; i ++)
+                  img.col-xs-2(id='right_hero_slot_' + i, style='border: 1px red solid; min-height:50px; min-width:80px;') 
 
 
         // right hero slot block end
@@ -51,86 +97,67 @@ if user
       .row
 
         // left block
-        .col-md-6(style='border: 2px grey solid;')
+        .col-md-6(style='border: 1px white solid;')
       
-          // search block
-          .row(style='border: 1px solid black;')
-          
-            // hero filter block
-            .col-md-5
-              - hero_options = ['Attack', 'Gank', 'Assist']
-              label(for='hero_filter') Filter your hero:
-              select(style='color:black')#hero_filter
-                each hero_option, i in hero_options
-                  option(value=i) #{hero_option}
-            // hero filter block end
+          .tab-content
+            .tab-pane(role='tabpanel', id='heroes', class='active')
+              // hero block
+              // strength hero block
+              .row
+            
+                // radiant strength hero block
+                .col-md-6
+                    p Radiant: Strength
+                    +hero_banpick_table(1, 20)
+                // radiant strength hero block end
 
-            //empty
-            .col-md-2
-  
-            // hero search block
-            .col-md-5
-              input#hero_search(placeholder='search for hero')
-  
-            // hero search block end
-       
-          // search block end
+                // dire strength hero block
+                .col-md-6
+                    p Dire: Strength
+                    +hero_banpick_table(58, 73)
+                // dire strength hero block end
 
-          // hero block
-          div
+              // strength hero block end
 
-            // strength hero block
-            .row
-          
-              // radiant strength hero block
-              .col-md-6
-                  p Radiant: Strength
-                  +hero_banpick_table(1, 20)
-              // radiant strength hero block end
+              // agility hero block
+              .row
+                // radiant agility hero block
+                .col-md-6
+                    p Agility:
+                    +hero_banpick_table(21, 38)
+                // radiant agility hero block end
 
-              // dire strength hero block
-              .col-md-6
-                  p Dire: Strength
-                  +hero_banpick_table(58, 73)
-              // dire strength hero block end
+                // dire agility hero block
+                .col-md-6
+                    p Agility:
+                    +hero_banpick_table(74, 99)
+                // dire agility hero block end
 
-            // strength hero block end
+              // agility hero block end
 
-            // agility hero block
-            .row
-              // radiant agility hero block
-              .col-md-6
-                  p Agility:
-                  +hero_banpick_table(21, 38)
-              // radiant agility hero block end
+              // intelligence hero block
+              .row
 
-              // dire agility hero block
-              .col-md-6
-                  p Agility:
-                  +hero_banpick_table(74, 99)
-              // dire agility hero block end
+                // radiant intelligence hero block
+                .col-md-6
+                    p Intelligence:
+                    +hero_banpick_table(39, 57)
+                // radiant intelligence hero block end
 
-            // agility hero block end
+                // dire intelligence hero block
+                .col-md-6
+                    p Intelligence:
+                    +hero_banpick_table(100, 113)
+                // dire intelligence hero block end
+              // intelligence hero block end
+            // hero block end
 
-            // intelligence hero block
-            .row
-
-              // radiant intelligence hero block
-              .col-md-6
-                  p Intelligence:
-                  +hero_banpick_table(39, 57)
-              // radiant intelligence hero block end
-
-              // dire intelligence hero block
-              .col-md-6
-                  p Intelligence:
-                  +hero_banpick_table(100, 113)
-              // dire intelligence hero block end
-
-            // intelligence hero block end
-
-          // hero block end
-
+            .tab-pane(role='tabpanel', id='tops')
+              p tops
+            .tab-pane(role='tabpanel', id='bp2')
+              p bp2
+            .tab-pane(role='tabpanel', id='options')
+              p options
         // left block end
 
         // right block

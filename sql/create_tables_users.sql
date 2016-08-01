@@ -4,8 +4,7 @@ CREATE TABLE my_users (
 	user_id varchar(30) PRIMARY KEY,
 	invitation_code varchar(30) not null,
 	password varchar(30) not null,
-	matches json,
-	is_logged boolean default false not null
+	matches json
 );
 
 CREATE TABLE my_invitation_codes (
@@ -27,6 +26,13 @@ CREATE TABLE my_match_list (
 --	owner_id varchar(30) REFERENCES my_users(user_id),
 	users_allowed json,
 	is_public boolean default false
+);
+
+CREATE TABLE user_match_list (
+-- need constraint and reference
+	user_id varchar(30) PRIMARY KEY,
+	match_id bigint PRIMARY KEY,
+	comments varchar(300)
 );
     
     

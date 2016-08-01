@@ -179,10 +179,11 @@ app.use(function getMetadata(req, res, cb)
     });
 });
 
-app.use(function userAuth(req, res, next)
+
+app.use(function sessionAuth(req, res, next)
 {
 	// lordstone: if not logged in, not allowed
-	if(!req.session.user)
+	if(!req.session || !req.session.user)
 	{
 		if(req.url=='/'|| req.url=='/register')
 		{
@@ -190,12 +191,24 @@ app.use(function userAuth(req, res, next)
 		}
 		else
 		{
-        	res.redirect('/');				
+     	res.redirect('/');
 		}
-	}else if(req.session.user){
-		next();
+	}else{
+		var user_id = req.session.user;
+		var log_token = req.session.log_token ? req.session.log_token : null;
+		cheuka_session.userAuth(redis, user_id, log_token, function(result){
+			if(result === true){
+				console.log('DEBUG:check successfully');
+				next();
+			}else{
+				console.log('DEBUG:result is no true');
+				req.session = null;
+				res.redirect('/');
+			}
+		});
 	}
 });
+
 
 //START service/admin routes
 app.get('/robots.txt', function(req, res)
@@ -232,7 +245,7 @@ app.route('/logout').get(function(req, res)
 {
     req.logout();
 		if(req.session.user){
-			cheuka_session.logoutUser(user_db, req.session.user, function()
+			cheuka_session.logoutUser(user_db, redis, req.session.user, function()
 			{
     		req.session = null;
 				res.redirect('/');
@@ -317,23 +330,6 @@ app.route('/upload').get(function(req, res, next)
 		});
 	}
 });
-
-/*
-app.route('/center').get(function(req, res, next)
-{
-
-	if(req.session.user){
-		res.render('user/center',
-		{
-			user: req.session.user,
-			func: 'center'
-		});
-	}else{
-		res.redirect('/');
-	}
-});
-*/
-
 app.route('/').get(function(req, res, next)
 {
 // modified by lordstone
@@ -343,25 +339,25 @@ app.route('/').get(function(req, res, next)
     }
     else
     {
-        if(req.session.user){
+        if(req.session && req.session.user){
 		// for  user page
-			res.render('home',
-			{
-				home: true,
-				user: req.session.user,
-				truncate: [2, 6],
-				match: example_match	
-			});	
-		}
-		else
-		{
-			res.render('home',
+					res.render('home',
+					{
+						home: true,
+						user: req.session.user,
+						truncate: [2, 6],
+						match: example_match	
+					});	
+				}
+				else
+				{
+					res.render('home',
        		{
             	match: example_match,
         	    truncate: [2, 6], // if tables should be truncated, pass in an array of which players to display
             	home: true
         	});
-		}
+				}
     }
 });
 
@@ -377,16 +373,16 @@ app.route('/').post(function(req, res, next)
 		var formitems = querystring.parse(formdata);
 		var user_id = formitems['user_id'];
 		var password = formitems['password'];
-		cheuka_session.checkUser(user_db, user_id, password, function(msg, t)
+		cheuka_session.checkUser(user_db, redis, user_id, password, function(msg, t)
 		{ 
+			console.log('DEBUG: msg:' + msg + '.t:' + JSON.stringify(t));
 			if(msg == 'success'){
+				console.log('DEBUG: logged in!!!!');
 				req.session.user = t.user_id;
+				req.session.log_token = t.log_token;
 				res.redirect('/');
-			}else if(msg == 'logged'){
-				res.json({error: 'User already logged in. Please log out from the previous place'});
 			}else{
 				res.json({error: 'auth failed'});
-				//res.redirect('/');
 			}
 		});
 	});

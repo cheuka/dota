@@ -17,7 +17,7 @@ window.requestForm = function requestForm()
         var f =  document.getElementById('file-select').files;
         var insertHTML = '<tbody>';
         for(var i = 0; i < f.length; i ++){
-            insertHTML += "<tr><td colspan = 6><p>" + f[i].name + "</p></td><td colspan=4><input type='checkbox' name='is_public'>public</td></tr>";
+            insertHTML += "<tr><td colspan = 6><p>" + f[i].name + "</p></td><td colspan=4><input type='checkbox' name='is_public' style='display:None;'></td></tr>";
         }
 				insertHTML += '</tbody>';
         $("#upload_file_table").html(insertHTML);
@@ -25,21 +25,6 @@ window.requestForm = function requestForm()
        //$("#file-select-button").toggleClass('btn-success');
     });
 }
-/*
-function removeThis(index)
-{
-	// alert('Delete:' + index);
-	
-	var f =  document.getElementById('file-select').files;
-	var fi = f[index];
-	for(i in fi){
-		alert('child:' + i);
-	}
-	
-	document.getElementById('file-select').removeChild(document.getElementById('file-select').files);
-	document.getElenebtById('upload_file_table').tbody.removeChild(index);
-}
-*/
 
 window.uploadSubmit = function submit(response)
 {
@@ -116,13 +101,7 @@ window.uploadSubmit = function submit(response)
                  document.getElementById("upload-bar").innerHTML = 'Upload Successful. Going to center...';
                  window.location.assign("/center");  
             }
-			// total uploaded
-            // var totalProg = oEvent.loaded / oEvent.total * 100;
-            // var totalProg = oEvent.loaded / oEvent.total * 100;
-            // var totalProg = (curNum / totalNum + (percentComplete / totalNum)) * 100;
-            // document.getElementById("parse-bar").style.width = totalProg + "%";
-            // document.getElementById("parse-bar").innerHTML = totalProg.toFixed(2) + "% Total Uploaded. (" + curNum + "/" + totalNum + "files uploaded)";
-        }
+       }
     }
 
     function showError(data)
@@ -145,7 +124,6 @@ window.uploadSubmit = function submit(response)
             console.log(msg);
             if (msg.state === "completed")
             {//lordstone: insert the next state logic for upload batch
-             //   window.location.assign("/matches/" + (msg.data.payload.replay_blob_key || msg.data.payload.match_id));
                  curNum += 1;
                  if(curNum >= totalNum){
                       // all finished
@@ -165,12 +143,6 @@ window.uploadSubmit = function submit(response)
             else if (msg.progress)
             {
 				document.getElementById("message").innerHTML("debug: msg.progress");
-				/*
-                var prog = msg.progress;
-                console.log(prog);
-                document.getElementById("parse-bar").style.width = prog + "%";
-                document.getElementById("parse-bar").innerHTML = prog.toFixed(2) + "% Total Uploaded";
-				*/
             }
         });
     }

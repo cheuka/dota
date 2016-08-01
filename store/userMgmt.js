@@ -1,9 +1,9 @@
 // var async = require('async');
 var config = require('../config');
 var async = require('async');
+var util = require('../util/utility');
 
-
-function logUser(db, user_id, password,  cb){
+function logUser(db, user_id, password, cb){
 	console.log("logging user");
 	db.first().from('my_users').where({
 		user_id: user_id,
@@ -15,26 +15,20 @@ function logUser(db, user_id, password,  cb){
 		if(!res){
 			return cb('failed', 'unknown error');
 		}
-			if(res.is_logged){
-					return cb('logged');
-			}else{
-					db('my_users').update({is_logged: true}).where({user_id: user_id}).asCallback(function(err1, result1){
-						if(err1){
-							console.log('update islogged error');
-							return cb('failed');
-						}else{
-							console.log('log in successfully. user_id:' + user_id);
-							return cb('success', {user_id: user_id});
-						}
-					});
-					//return cb('success', {user:id: result.user_id});
-			}
+		var randStr = util.generateRandomAlphaNum(20);
+		// console.log('DEBUG:randStr:' + randStr);
+		console.log('log in successfully. user_id:' + user_id + ', token:' + randStr);
+			return cb('success', 
+			{
+				user_id: user_id,
+				log_token: randStr
+			});
 	});	
 }
 
 function logoutUser(db, user_id, cb){
 	console.log("logging out user");
-	db('my_users').where('user_id', '=', user_id).update({is_logged: false}).asCallback(function(err){
+	db('my_users').where('user_id', '=', user_id).update({log_token: null}).asCallback(function(err){
 		if(err){
 			console.log('logout failed');
 			return cb();
@@ -160,9 +154,7 @@ function register(db, new_user, cb){
 				}else{
 					return cb(err, 'invalid invitation code');
 				} //end if
-			// end inserting
 			}); //end for each	
-			// return cb(err, 'invalid invitation code');
 		}// end if else
 	});//end callback
 }

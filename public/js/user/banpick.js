@@ -61,6 +61,10 @@ const EMPTY_BAN_HERO = -1;
 
 var user_defined_procedure;
 
+// user sequence definition
+var is_user_radiant = true;
+var is_user_first_pick = true;
+
 // time:
 var times = {
 	normalTime: 30,
@@ -112,6 +116,19 @@ var is_paused = false;
 
 var last_slot = null;
 
+function getLeftRight(input){
+	console.log('INPUT:' + input);
+	if((input >= 1 && input <= 4) && ((is_user_radiant === true && is_user_first_pick === false) || (is_user_radiant === false && is_user_first_pick === true))){
+		if(input % 2 == 0){
+			return (input - 1);
+		}else{
+			return (input + 1);
+		}
+	}else{
+		return (input);
+	}
+}
+
 function saveBanpick(){
 	// setStatus();
 }
@@ -137,6 +154,38 @@ function setTimerText(){
 }
 
 //function countDown();
+
+function clickRadioRadiantDire(){
+	// alert('Radiant or Dire');
+	var radios = document.getElementsByName('radiant_or_dire');
+	is_user_radiant = radios[0].checked;
+	if(radios[0].checked){
+		$('#radiant_or_dire_helper_0').addClass('submit_button');
+		$('#radiant_or_dire_helper_1').removeClass('submit_button');
+	}else{
+		$('#radiant_or_dire_helper_1').addClass('submit_button');
+		$('#radiant_or_dire_helper_0').removeClass('submit_button');
+	}
+	// alert(is_user_radiant);
+}
+
+function clickRadioFirstPick(){
+	// alert('First Pick');
+	var radios = document.getElementsByName('first_pick');
+	is_user_first_pick = radios[0].checked;
+	// alert(is_user_first_pick);
+}
+
+function switchRadios(radio_status){
+	var radios_1 = document.getElementsByName('radiant_or_dire');
+	var radios_2 = document.getElementsByName('first_pick');
+	for(var i = 0; i < radios_1.length; i ++){
+		radios_1[i].disabled = !radio_status;
+	}
+	for(var i = 0; i < radios_2.length; i ++){
+		radios_2[i].disabled = !radio_status;
+	}
+}
 
 function stopTimer(){
 	console.log('stopTimer');
@@ -166,7 +215,7 @@ function doBanpick(){
 	console.log('doBanpick');
 	if(selected_hero){
 				// start push into selected slot
-		switch(procedure[cur_procedure]){
+		switch(getLeftRight(procedure[cur_procedure])){
 			case (LEFT_BAN):
 				hero_slots.radiant_ban.push(selected_hero);
 				$('#left_ban_' + (hero_slots.radiant_ban.length - 1)).attr('src', $('#selected_hero').attr('src'));
@@ -204,14 +253,14 @@ function newBanpick(){
 		stopTimer();
 		timer_secs = times.normalTime + 1;
 		timer_cb = startReserve;
-		timer_index = getTimerIndex([procedure[cur_procedure]]);
+		timer_index = getTimerIndex(getLeftRight(procedure[cur_procedure]));
 		countDown();
 	}
 }
 
 function emptyBan(){
 	console.log('emptyBan');
-	switch(procedure[cur_procedure]){
+	switch(getLeftRight(procedure[cur_procedure])){
 		case(LEFT_BAN):
 			hero_slots.radiant_ban.push(EMPTY_BAN_HERO);
 		break;
@@ -235,7 +284,7 @@ function randomPick(){
 		rand_hero_id = parseInt(Math.random() * 112 + 1);
 		origin_hero = $('#hero_' + rand_hero_id);
 	}	
-	switch(procedure[cur_procedure]){
+	switch(getLeftRight(procedure[cur_procedure])){
 		case(LEFT_PICK):
 			hero_slots.radiant_pick.push(rand_hero_id);
 			$('#left_pick_' + hero_slots.radiant_pick.length-1).attr('src', origin_hero.attr('src'));
@@ -258,7 +307,7 @@ function extinguishSlot(){
 
 function igniteSlot(){
 	console.log('ignoreSlot');
-	switch(procedure[cur_procedure]){
+	switch(getLeftRight(procedure[cur_procedure])){
 		case (LEFT_BAN):
 			$('#left_ban_' + hero_slots.radiant_ban.length).addClass('submit_button');
 			last_slot = $('#left_ban_' + hero_slots.radiant_ban.length);
@@ -280,12 +329,14 @@ function igniteSlot(){
 
 function doConfirm(){
 	console.log('doConfirm');
+	/*
 	for(var i = 0; i < 5; i ++){
 		$('#left_hero_slot_' + i).attr('src', $('#left_pick_' + i).attr('src'));
 		$('#right_hero_slot_' + i).attr('src', $('#right_pick_' + i).attr('src'));
 		$('#left_hero_slot_' + i).attr('title', $('#left_pick_' + i).attr('title'));
 		$('#right_hero_slot_' + i).attr('title', $('#right_pick_' + i).attr('title'));
 	}
+	*/
 }
 
 function changeStatus(passed){
@@ -300,7 +351,7 @@ function changeStatus(passed){
 				dire_reserved_time = stopTimer();
 			}
 		}else if(passed === true){
-			switch(procedure[cur_procedure]){
+			switch(getLeftRight(procedure[cur_procedure])){
 				case(LEFT_BAN):
 				case(RIGHT_BAN):
 					emptyBan();
@@ -324,9 +375,12 @@ function changeStatus(passed){
 		if(game_mode === true) 
 			stopTimer();
 	}
-	switch(procedure[cur_procedure])
+	console.log('Code origin:' + procedure[cur_procedure]);
+	console.log('Code:' + getLeftRight(procedure[cur_procedure]));
+	switch(getLeftRight(procedure[cur_procedure]))
 	{
 		case(BP_START):
+			switchRadios(false);
 			cur_procedure += 1;
 			if(game_mode === true) {
 				newBanpick();
@@ -405,7 +459,7 @@ function doUndo(){
 	if(cur_procedure <= 1) return;
 	extinguishSlot();
 	cur_procedure -= 1;
-	switch(procedure[cur_procedure]){
+	switch(getLeftRight(procedure[cur_procedure])){
 		case (LEFT_BAN):
 			var tmp_id = hero_slots.radiant_ban[hero_slots.radiant_ban.length-1];
 			var tmp = $('#left_ban_' + (hero_slots.radiant_ban.length - 1));
@@ -519,6 +573,7 @@ function pick_hero(hero_id){
 $(document).ready(function(){
 	//set init status	
 	// alert('ready!');
+	switchRadios(true);
 	setStatus();
 	cur_procedure = 0;
 	$('#button1').attr('disabled', false);

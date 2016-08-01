@@ -757,6 +757,13 @@ function median(data)
     if (data.length % 2) return data[half];
     else return (data[half - 1] + data[half]) / 2.0;
 }
+
+function generateRandomAlphaNum(len){
+	var randStr = '';
+	for(;randStr.length<len;randStr += Math.random().toString(36).substr(2));
+	return randStr.substr(0, len);
+}
+
 module.exports = {
     tokenize: tokenize,
     generateJob: generateJob,
@@ -782,5 +789,6 @@ module.exports = {
     average: average,
     stdDev: stdDev,
     median: median,
+		generateRandomAlphaNum: generateRandomAlphaNum,
     deserialize,
 };

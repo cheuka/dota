@@ -87,33 +87,6 @@ module.exports = function(db, redis, cassandra)
         res.json(constants.abilities[req.query.name]);
     });
 
-    //lordstone: get all private matches for a user
-    /*
-    api.post('/brief_match', function(req, res, cb)
-    {
-        if(req.session.user){  
-        var user_id = req.session.user;
-        var formdata = '';
-        req.on('data', function(data){
-            formdata += data;
-        });
-        
-        req.on('end', function(){
-                var options = querystring.parse(formdata);
-                var retval = '';
-                cheuka_session.getMatchData(user_db, user_id, options, function(results)
-                {
-                    res.json(results);
-                });
-            });  // end of req.on end   
-        }else{
-            res.json({error: "No access"});
-        }
-    }
-    */
-
-
-    // modified by lordstone
     api.get('/matches/:match_id/:info?', function(req, res, cb)
     {
         var user_id = req.session.user;
@@ -273,25 +246,14 @@ module.exports = function(db, redis, cassandra)
                 }, function(err, job)
                 {
                     var curJob = {
-                      error: err,
-                      job:
-                      {
-                          jobId: job.jobId,
-                          data: job.data
-                      }
+                        error: err,
+                        job:
+                        {
+                            jobId: job.jobId,
+                            data: job.data
+                        }
                     };
                     jobs[i] = curJob;
-                    /*
-                    res.json(
-                    {
-                    error: err,
-                    job:
-                    {
-                      jobId: job.jobId,
-                        data: job.data
-                    }
-                    });
-                    */
                 });
             } // end for each match
             res.json(jobs);
@@ -305,7 +267,7 @@ module.exports = function(db, redis, cassandra)
         }
     }); 
     // end of post method
-    
+
     // start of the get method
     api.get('/upload_files', function(req, res, cb)
     {
@@ -334,14 +296,14 @@ module.exports = function(db, redis, cassandra)
         }).catch(cb);
     });
     //end of api upload files
-    
+
     api.post('/request_job', multer.single("replay_blob"), function(req, res, next)
     {
         if(!req.session.user){
             res.send('Please log in and use this function');
             return;
         }
-        
+
         var match_id = Number(req.body.match_id);
         console.log('match_id:' + match_id);
         var match;
@@ -358,7 +320,8 @@ module.exports = function(db, redis, cassandra)
             redis.setex(new Buffer('upload_blob:' + key), 60 * 60, req.file.buffer);
             match = {
                 replay_blob_key: key,
-                user_id: user_id
+                user_id: user_id,
+                is_public: false
             };
         }
         else if (match_id && !Number.isNaN(match_id))
@@ -421,5 +384,6 @@ module.exports = function(db, redis, cassandra)
             }
         }).catch(cb);
     });
+    
     return api;
 };
