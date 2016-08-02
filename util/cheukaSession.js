@@ -1,11 +1,17 @@
 var user_mgmt = require('../store/userMgmt');
 var config = require('../config');
+var util = require('../util/utility');
 
 function checkUser(db, redis, user_id, password, cb)
 { 
+	var randStr = util.generateRandomAlphaNum(20);
 	if(user_id == config.CHEUKA_ADMIN && password == config.CHEUKA_ADMIN_PASSWORD)
 	{
-		return cb('success', {user_id: 'admin'});
+		redis.set('user_auth:admin', randStr);
+		return cb('success', {
+			user_id: 'admin',
+			log_token: randStr
+		});
 	}else{
 		user_mgmt.logUser(db, user_id, password, function(msg, param)
 		{
@@ -13,9 +19,12 @@ function checkUser(db, redis, user_id, password, cb)
 				console.log('log in failed, reason:' + param);
 				return cb('failed', null);
 			}else if(msg == 'success'){
-				redis.set('user_auth:' + user_id, param.log_token);
-				console.log('successfully wrote to redis:' + 'user_auth:' + user_id, param.log_token);
-				return cb('success', param);
+				redis.set('user_auth:' + user_id, randStr);
+				console.log('successfully wrote to redis:' + 'user_auth:' + user_id, randStr);
+				return cb('success', {
+					user_id: param.user_id,
+					log_token: randStr
+				});
 			}
 		});
 	}
@@ -175,9 +184,9 @@ function deleteUserMatch(db, user_db, user_id, match_id, cb){
 }
 
 function userAuth(redis, user_id, log_token, cb){
-	var redis_token = redis.get('user_auth:' + user_id, function(err, results){
-		console.log('DEBUG:userAuth:redis_token:' + results);
-		console.log('DEBUG:userAuth:log_token:' + log_token);
+	redis.get('user_auth:' + user_id, function(err, results){
+		// console.log('DEBUG:userAuth:redis_token:' + results);
+		// console.log('DEBUG:userAuth:log_token:' + log_token);
 		if(results == null){
 			return cb(false);
 		}else{

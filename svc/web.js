@@ -198,10 +198,10 @@ app.use(function sessionAuth(req, res, next)
 		var log_token = req.session.log_token ? req.session.log_token : null;
 		cheuka_session.userAuth(redis, user_id, log_token, function(result){
 			if(result === true){
-				console.log('DEBUG:check successfully');
+				// console.log('DEBUG:check successfully');
 				next();
 			}else{
-				console.log('DEBUG:result is no true');
+				// console.log('DEBUG:result is no true');
 				req.session = null;
 				res.redirect('/');
 			}
