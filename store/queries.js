@@ -224,7 +224,7 @@ function insertMatch(db, redis, match, options, cb)
                 {
                    match_id: match.match_id
                 }, cb);
-            } 
+            }
 
             function upsertPlayerMatch(cb)
             {
@@ -242,23 +242,26 @@ function insertMatch(db, redis, match, options, cb)
             function upsertPickbans(cb)
             {
                 if (match.picks_bans)
-                { 
+                {
                     async.each(match.picks_bans || [], function (p, cb)
                     {
                         p.ord = p.order;
-                                p.match_id = match.match_id;
-                                upsert(trx, 'picks_bans', p,
-                                {
-                        match_id: p.match_id,
-                        ord: p.ord
+                        p.match_id = match.match_id;
+                        upsert(trx, 'picks_bans', p,
+                        {
+                            match_id: p.match_id,
+                            ord: p.ord
                         }, cb);
                     }, cb);
+                }
+                else
+                {
+                  cb();
                 }
            }
 
            function exit(err)
            {
-								console.log('EXIT');
                if (err)
                {
                    console.error(err);
@@ -267,11 +270,6 @@ function insertMatch(db, redis, match, options, cb)
                else
                {
                    trx.commit();
-										// lordstone: insert match to user_match_list
-										console.log('before your save');
-										cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
-										console.log('after your save');
-	
                }
                cb(err);
             }
