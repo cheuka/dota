@@ -169,8 +169,6 @@ function insertUploadedParse(match, cb)
             type: "parsed",
             cassandra: cassandra,
         }, cb);
-
-        //cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
     });
 }
 
