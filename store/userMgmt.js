@@ -5,7 +5,7 @@ var util = require('../util/utility');
 
 function logUser(db, user_id, password, cb){
 	console.log("logging user");
-	db.first().from('my_users').where({
+	db.first().from('user_list').where({
 		user_id: user_id,
 		password: password
 	}).asCallback(function(err, res){
@@ -25,7 +25,7 @@ function logUser(db, user_id, password, cb){
 
 function logoutUser(db, user_id, cb){
 	console.log("logging out user");
-	db('my_users').where('user_id', '=', user_id).update({log_token: null}).asCallback(function(err){
+	db('user_list').where('user_id', '=', user_id).update({log_token: null}).asCallback(function(err){
 		if(err){
 			console.log('logout failed');
 			return cb();
@@ -39,7 +39,7 @@ function logoutUser(db, user_id, cb){
 
 function findUser(db, user_id, cb){
 	console.log("finding user");
-	db.first().from('my_users').where('user_id', '=', user_id).asCallback(function(err, result){
+	db.first().from('user_list').where('user_id', '=', user_id).asCallback(function(err, result){
 		if(err){
 			return cb(err);
 		}
@@ -52,7 +52,7 @@ function findUser(db, user_id, cb){
 
 function findAll(db, cb){
 	console.log("listing all users");
-	db.select().table('my_users').asCallback(function(err, results){
+	db.select().table('user_list').asCallback(function(err, results){
 		//results.forEach(function(res){
 		//	console.log(res.user_id + ':' + res.password);
 		//});		
@@ -66,7 +66,7 @@ function findAll(db, cb){
 
 function newUser(db, myuser, cb){
 	console.log("new user");
-	db.table('my_users').insert({
+	db.table('user_list').insert({
 		user_id: myuser.user_id,
 		password: myuser.password,
 		invitation_code: myuser.invitation_code	
@@ -82,7 +82,7 @@ function newUser(db, myuser, cb){
 
 function deleteUser(db, user_id, cb){
 	console.log("delete user");
-	db.table('my_users').where({
+	db.table('user_list').where({
 		user_id: user_id
 	}).del().asCallback(function(err, result){
 		if(err){
@@ -96,7 +96,7 @@ function deleteUser(db, user_id, cb){
 
 function editUser(db, new_user, old_user_id, cb){
 	console.log("edit user");
-	db.table('my_users').where({
+	db.table('user_list').where({
 		user_id: old_user_id
 	}).update({
 		user_id: new_user.user_id,
@@ -114,7 +114,7 @@ function editUser(db, new_user, old_user_id, cb){
 
 function register(db, new_user, cb){
 	console.log("new register:"+new_user.invitation_code);
-	db.table('my_invitation_codes').where({
+	db.table('user_invcode_list').where({
 		invitation_code: new_user.invitation_code
 	}).select().asCallback(function(err, result)
 	{
@@ -135,7 +135,7 @@ function register(db, new_user, cb){
 					if(err1 || msg != 'success'){
 						return cb(err1, msg);
 					}else{
-						db.table('my_invitation_codes').where({invitation_code: new_user.invitation_code}).update({
+						db.table('user_invcode_list').where({invitation_code: new_user.invitation_code}).update({
 							current_users: current_users
 						}).asCallback(function(err2, update_res)
 						{
@@ -160,7 +160,7 @@ function register(db, new_user, cb){
 
 function findAll_inv(db, cb){
 	console.log("listing all invitation codes");
-	db.select().table('my_invitation_codes').asCallback(function(err, results){
+	db.select().table('user_invcode_list').asCallback(function(err, results){
 		if(err){
 			console.log('error in listing all users');
 			return cb(err, 'failed');
@@ -171,7 +171,7 @@ function findAll_inv(db, cb){
 
 function findInv(db, invitation_code, cb){
 	console.log("finding invitation code");
-	db.first().from('my_invitation_codes').where('invitation_code', '=', invitation_code).asCallback(function(err, result){
+	db.first().from('user_invcode_list').where('invitation_code', '=', invitation_code).asCallback(function(err, result){
 		if(err){
 			return cb(err);
 		}
@@ -185,7 +185,7 @@ function findInv(db, invitation_code, cb){
 
 function newInv(db, myinv, cb){
 	console.log("new invitation code");
-	db.table('my_invitation_codes').insert({
+	db.table('user_invcode_list').insert({
 		invitation_code: myinv.invitation_code,
 		max_users: myinv.max_users,
 		current_users: myinv.current_users
@@ -201,7 +201,7 @@ function newInv(db, myinv, cb){
 
 function deleteInv(db, invitation_code, cb){
 	console.log("delete invitation code");
-	db.table('my_invitation_codes').where({
+	db.table('user_invcode_list').where({
 		invitation_code: invitation_code
 	}).del().asCallback(function(err, result){
 		if(err){
@@ -215,7 +215,7 @@ function deleteInv(db, invitation_code, cb){
 
 function editInv(db, new_inv, old_invitation_code, cb){
 	console.log("edit invitation code");
-	db.table('my_invitation_codes').where({
+	db.table('user_invcode_list').where({
 		invitation_code: old_invitation_code
 	}).update({
 		invitation_code: new_inv.invitation_code,
@@ -260,7 +260,7 @@ function checkMatchId(db, user_id, match_id){
 function saveMatchToUser(db, user_id, match_id, is_public){
 	//console.log('DEBUG: Insert match_id:' + match_id + ' for user_id:' + user_id +'.');
 	console.log('DEBUG:is_public:' + is_public);
-	db.table('my_users').first('matches').where({
+	db.table('user_list').first('matches').where({
 		user_id: user_id
 	}).then(function(result){
 		//console.log('DEBUG: matches result' + JSON.stringify(result));
@@ -282,7 +282,7 @@ function saveMatchToUser(db, user_id, match_id, is_public){
 			result = result['matches'];
 		}
 		//console.log('DEBUG: saving to USERLIST stringify:' + JSON.stringify(result));
-		return db.table('my_users').where({
+		return db.table('user_list').where({
 			user_id: user_id
 		}).update({
 			matches: JSON.stringify(result)
@@ -318,7 +318,7 @@ function saveMatchToUser(db, user_id, match_id, is_public){
 						is_public: (is_public || old_public)
 					}).asCallback(function(err, result){
 						if(err){
-							console.log('update match list in user_db failed');
+							console.log('update match list in db failed');
 						}
 						return;
 					});
@@ -348,7 +348,7 @@ function saveMatchToUser(db, user_id, match_id, is_public){
 }
 
 function getMatchList(db, user_id, cb){
-	db.table('my_users').first('matches').where({
+	db.table('user_list').first('matches').where({
 		user_id: user_id
 	}).asCallback(function(err, results){
 		if(err){
@@ -362,9 +362,9 @@ function getMatchList(db, user_id, cb){
 	});
 }
 
-function getMatchData(db, user_db, user_id, cb){
-	//lordstone: notice that both user_db and db exist here
-	user_db.table('my_users').where({
+function getMatchData(db, user_id, cb){
+	//lordstone: notice that both db and db exist here
+	db.table('user_list').where({
 		user_id: user_id
 	}).first('matches').asCallback(function(err, results){
 		if(err){
@@ -410,10 +410,10 @@ function getMatchData(db, user_db, user_id, cb){
 	*/
 }
 
-function deleteUserMatch(db, user_db, user_id, match_id, cb){
+function deleteUserMatch(db, user_id, match_id, cb){
 //lordstone: logic: find user's matches, delete the match_id from user.
 // if this user is the only allowed user, delete the match from both user and yasp db
-	user_db.table('my_users').first('matches').where('user_id', user_id).asCallback(function(err, result)
+	db.table('user_list').first('matches').where('user_id', user_id).asCallback(function(err, result)
 	{
 		console.log('DEBUG: my users find user_id cb');
 		if(err){
@@ -431,7 +431,7 @@ function deleteUserMatch(db, user_db, user_id, match_id, cb){
 					console.log('DEBUG: match id matches');
 					my_matches.splice(i, 1);
 					console.log('DEBUG: after splice:' + JSON.stringify(my_matches));
-					user_db.table('my_users')
+					db.table('user_list')
 					.where('user_id', user_id)
 					.update({
 						matches: JSON.stringify(my_matches)
@@ -439,7 +439,7 @@ function deleteUserMatch(db, user_db, user_id, match_id, cb){
 					{
 						//start 
 						console.log('DEBUG: update user matches done');
-						user_db.table('my_match_list')
+						db.table('my_match_list')
 						.first('users_allowed')
 						.where('match_id', match_id)
 						.then(function(results)
@@ -454,7 +454,7 @@ function deleteUserMatch(db, user_db, user_id, match_id, cb){
 								if(users_allowed.length == 1){
 									//need to delete match in yasp
 									console.log('DEBUG: the only user : match');
-									user_db.table('my_match_list')
+									db.table('my_match_list')
 									.where('match_id', match_id)
 									.del()
 									.then(function(msg)
@@ -473,7 +473,7 @@ function deleteUserMatch(db, user_db, user_id, match_id, cb){
 									console.log('DEBUG: no need to delete match list');
 									//no need to delete match in yasp
 									users_allowed.splice(i, 1);
-	 								user_db.table('my_match_list')
+	 								db.table('my_match_list')
 									.where('match_id', match_id)
 									.update({
 										users_allowed: JSON.stringify(users_allowed)

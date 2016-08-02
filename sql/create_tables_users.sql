@@ -1,74 +1,24 @@
 -- lordstone: This is the create file for cheuka's session
 
-CREATE TABLE my_users (
+CREATE TABLE user_list (
 	user_id varchar(30) PRIMARY KEY,
-	invitation_code varchar(30) not null,
+	invitation_code varchar(30) REFERENCES user_invcode_list(invitation_code) ON DELETE CASCADE,
 	password varchar(30) not null,
-	matches json
+	matches json,
 );
 
-CREATE TABLE my_invitation_codes (
+CREATE TABLE user_invcode_list (
 	invitation_code varchar(30) PRIMARY KEY,
 	users json,
 	max_users int not null,
 	current_users int not null
 );
 
---CREATE TABLE my_dem_files (
---	match_id bigint PRIMARY KEY,
---	owner_user_id varchar(30),
---	is_public boolean not null
---);
-
-
-CREATE TABLE my_match_list (
-	match_id bigint PRIMARY KEY,
---	owner_id varchar(30) REFERENCES my_users(user_id),
-	users_allowed json,
-	is_public boolean default false
-);
-
 CREATE TABLE user_match_list (
 -- need constraint and reference
-	user_id varchar(30) PRIMARY KEY,
-	match_id bigint PRIMARY KEY,
-	comments varchar(300)
+	user_id varchar(30) REFERENCES user_list(user_id) ON DELETE CASCADE,
+	match_id bigint REFERENCES matches(match_id) ON DELETE CASCADE,
+	comments varchar(300),
+	PRIMARY KEY(user_id, match_id),
 );
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
+  

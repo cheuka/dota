@@ -172,13 +172,13 @@ function getMatchList(db, user_id, cb){
 }
 
 function getMatchData(db, user_db, user_id, cb){
-	user_mgmt.getMatchData(db, user_db, user_id, function(results){
+	user_mgmt.getMatchData(db, user_id, function(results){
 		return cb(results);
 	});
 }
 
-function deleteUserMatch(db, user_db, user_id, match_id, cb){
-	user_mgmt.deleteUserMatch(db, user_db, user_id, match_id, function(results){
+function deleteUserMatch(db, user_id, match_id, cb){
+	user_mgmt.deleteUserMatch(db, user_id, match_id, function(results){
 		return cb(results);
 	});
 }
