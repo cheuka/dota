@@ -103,7 +103,7 @@ pQueue.process(1, function(job, cb)
 
                 if (match.replay_blob_key)
                 {
-					redis.del('upload_blob:' + match.replay_blob_key);
+                    redis.del('upload_blob:' + match.replay_blob_key);
                     insertUploadedParse(parsed_data, cb);
                 }
                 else
@@ -164,12 +164,11 @@ function insertUploadedParse(match, cb)
         }
 
         redis.setex('match:' + match.replay_blob_key, 60 * 60 * 10, JSON.stringify(match));
-
-		insertMatch(db, redis, match,
-		{
-			type: "parsed",
-			cassandra: cassandra,
-		}, cb);
+        insertMatch(db, redis, match,
+        {
+            type: "parsed",
+            cassandra: cassandra,
+        }, cb);
 
         cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
     });
