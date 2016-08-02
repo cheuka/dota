@@ -1,4 +1,4 @@
-/**
+
  * This is the file for center page
  * lordstone
 */
@@ -15,7 +15,7 @@ cheuka_center.get('/', function(req, res, next)
 {
   if(req.session.user){
 		var user_id = req.session.user;
-		cheuka_session.getMatchData(db, user_db, user_id, function(results)
+		cheuka_session.getMatchData(db, user_id, function(results)
 		{
 			//console.log('DEBUG: Rendering list:' + JSON.stringify(results));
 			res.render('user/center',
@@ -30,6 +30,8 @@ cheuka_center.get('/', function(req, res, next)
   }
 
 });
+
+/*
 cheuka_center.get('/delete/:match_id', function(req, res)
 {
 	if(req.session.user){
@@ -45,7 +47,7 @@ cheuka_center.get('/delete/:match_id', function(req, res)
 	}
 
 });
-
+*/
 
 return cheuka_center;
 

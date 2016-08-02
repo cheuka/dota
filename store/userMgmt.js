@@ -182,12 +182,12 @@ function newInv(db, myinv, cb){
 }
 
 function deleteInv(db, invitation_code, cb){
-	console.log("delete invitation code");
+	// console.log("delete invitation code");
 	db.table('user_invcode_list').where({
 		invitation_code: invitation_code
 	}).del().asCallback(function(err, result){
 		if(err){
-			console.log('error in deleting invitation code');
+			console.error('error in deleting invitation code');
 			return cb(err, 'failed');
 		}else{
 			return cb(err, 'success');
@@ -196,7 +196,7 @@ function deleteInv(db, invitation_code, cb){
 }
 
 function editInv(db, new_inv, old_invitation_code, cb){
-	console.log("edit invitation code");
+	// console.log("edit invitation code");
 	db.table('user_invcode_list').where({
 		invitation_code: old_invitation_code
 	}).update({
@@ -213,142 +213,35 @@ function editInv(db, new_inv, old_invitation_code, cb){
 	});
 }
 
-function checkMatchId(db, user_id, match_id){
-	console.log('DEBUG: find the match list log');
-	db.table('my_match_list').select('users_allowed').where({
-		match_id: match_id
-	}).asCallback(function(err, result){
-		if(err){
-			console.log('error in finding that match');
-			return false;
-		}else{
-			if(!result){
-				//meaning public match
-				return true;
-			}else{
-				var user_array = result;
-				console.log('DEBUG: output user_array:'+user_array);
-				for(var i = 0; i < user_array.length; i++){
-					if(user_array[i].user_id == user_id){
-						return true;
-					}
-				}
-				return false; // user_id not in the list
-			}	
-		}
-	});
-}
-
 function saveMatchToUser(db, user_id, match_id, is_public){
 	//console.log('DEBUG: Insert match_id:' + match_id + ' for user_id:' + user_id +'.');
-	console.log('DEBUG:is_public:' + is_public);
-	db.table('user_list').first('matches').where({
-		user_id: user_id
+	db.table('user_match_list').first().where({
+		user_id: user_id,
+		match_id: match_id
 	}).then(function(result){
 		//console.log('DEBUG: matches result' + JSON.stringify(result));
-		// var match_array = result;
-		if(!result || result == undefined || !result['matches'] || result['matches'] == null){
-			// if it is an empty one
-			//console.log('DEBUG: empty match list');
-			var match_array = [{
+		if(!result || result == undefined){
+			db.table('user_match_list').insert({
+				user_id: user_id,
 				match_id: match_id
-			}];
-			// match_array = {matches: match_array};
-			result = match_array;
-		}else{
-			// if you need to push in
-			//console.log('DEBUG: not empty match list');
-			result['matches'].push({
-				match_id: match_id
-			});
-			result = result['matches'];
-		}
-		//console.log('DEBUG: saving to USERLIST stringify:' + JSON.stringify(result));
-		return db.table('user_list').where({
-			user_id: user_id
-		}).update({
-			matches: JSON.stringify(result)
-		}); 
-	}).then(function(result){
-		//console.log('DEBUG: saving to MATCHLIST results:' + JSON.stringify(result));
-		// Start updating the match list
-		db.table('my_match_list').first('users_allowed','is_public').where({
-			match_id: match_id
-		}).asCallback(function(err, result){
- 	    //console.log('DEBUG: MATCHLIST result:' + JSON.stringify(result));	
-			if(result && result != undefined){
-					var user_array = result['users_allowed'];
-					var old_public = result['is_public'];
-					var repeatedUser = false;
-					for(var i = 0; i < user_array.length; i++){
-						if(user_array[i] == user_id){
-							//console.log('DEBUG: found exising user_id in matchlist');
-							if(old_public == is_public){
-								return;
-							}
-							repeatedUser = true;
-						}
-					}
-					//console.log('DEBUG: not found existing user_id');
-					if(repeatedUser == false)
-						user_array['users_allowed'].push({user_id: user_id});
-					user_array = user_array['users_allowed'];
-					return db.table('my_match_list').where({
-						match_id: match_id
-					}).update({
-						users_allowed: JSON.stringify(user_array),
-						is_public: (is_public || old_public)
-					}).asCallback(function(err, result){
-						if(err){
-							console.log('update match list in db failed');
-						}
-						return;
-					});
-			}else{
-				// if nothing there
-				//console.log('DEBUG: adding new user_array');
-				var user_array = [{user_id: user_id}];
-				//console.log('DEBUG: user_array:' + JSON.stringify(user_array));
-				return db.table('my_match_list').insert({
-					match_id: match_id,
-					users_allowed: JSON.stringify(user_array),
-					is_public: is_public
-				}).asCallback(function(err, result){
-					if(err){
-						console.log('DEBUG:ERROR: ' + err);
-					}
+			}).asCallback(function(err, result){
+				if(err){
+					console.error(err);
 					return;
-				});
-			}
-		});
-// end of updating match list	
-	}).catch(function(e){
-		console.log('DEBUG:ERROR:Find my_user err: '+ e);
-		return;
-	});
-	// make it public
-}
-
-function getMatchList(db, user_id, cb){
-	db.table('user_list').first('matches').where({
-		user_id: user_id
-	}).asCallback(function(err, results){
-		if(err){
-			return cb(JSON.stringify({error: e}));
+				}
+				console.log('succeeded wrote');
+			});	
+		}else{
+			// do nothing unless something needed
 		}
-		//console.log('DEBUG: match result:' + JSON.stringify(results));
-		return cb(results);
-	}).catch(function(e){
-		console.log('DEBUG: getMatchList error:' + e);
-		return JSON.stringify({error: e});
 	});
 }
 
 function getMatchData(db, user_id, cb){
 	//lordstone: notice that both db and db exist here
-	db.table('user_list').where({
+	db.table('user_match_list').where({
 		user_id: user_id
-	}).first('matches').asCallback(function(err, results){
+	}).select().asCallback(function(err, results){
 		if(err){
 			return cb({error: 'error:' + err});
 		}
@@ -357,14 +250,12 @@ function getMatchData(db, user_id, cb){
 		}
 		//console.log('DEBUG:' + results + '|' + JSON.stringify(results));
 		var match_id_set = [];
-		// var res_set = [];
-		var matches = results['matches'];
 		if(!matches || !matches.length){
 			return cb(null);
 		}
 		for(var i = 0; i < matches.length; i ++){
 			//console.log('DEBUG: match:' + JSON.stringify(match_entry));
-			var match_id = matches[i]['match_id'];
+			var match_id = results[i]['match_id'];
 			//console.log('DEBUG: get match_id:' + match_id);
 			match_id_set.push(match_id);
 		}
@@ -378,20 +269,9 @@ function getMatchData(db, user_id, cb){
 		});
 	});
 
-	/*
-	if(!results.length || results.length == 0){
-    res.json({status: 'empty'});
-  }
-  for(match_obj in results){
-	  var match_id = match_obj['match_id'];
-    var match_json;
-    if(formitems['bp']){
-      var bp = cheuka_session.getBP();
-    }
-  }
-	*/
 }
 
+/*
 function deleteUserMatch(db, user_id, match_id, cb){
 //lordstone: logic: find user's matches, delete the match_id from user.
 // if this user is the only allowed user, delete the match from both user and yasp db
@@ -480,7 +360,7 @@ function deleteUserMatch(db, user_id, match_id, cb){
 		}
 	});//end cb
 }
-
+*/
 
 module.exports = {
 	logUser: logUser,
@@ -496,10 +376,8 @@ module.exports = {
 	newInv: newInv,
 	editInv: editInv,
 	deleteInv: deleteInv,
-	checkMatchId: checkMatchId,
 	saveMatchToUser: saveMatchToUser,
-	getMatchList: getMatchList,
-	getMatchData: getMatchData,
-	deleteUserMatch: deleteUserMatch
+	getMatchData: getMatchData
+	// deleteUserMatch: deleteUserMatch
 };
 
