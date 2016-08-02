@@ -170,7 +170,7 @@ function insertUploadedParse(match, cb)
             cassandra: cassandra,
         }, cb);
 
-        cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
+        //cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
     });
 }
 

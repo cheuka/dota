@@ -21,6 +21,8 @@ var deserialize = utility.deserialize;
 var columnInfo = {};
 var cassandraColumnInfo = {};
 
+var cheuka_session = require("../util/cheukaSession");
+
 function getSets(redis, cb)
 {
     async.parallel(
@@ -192,6 +194,7 @@ function insertMatch(db, redis, match, options, cb)
     async.series(
     {
         "u": upsertMatch,
+				"sum": saveUserMatch,
         "uc": upsertMatchCassandra,
         "upc": updatePlayerCaches,
         "cmc": clearMatchCache,
@@ -275,6 +278,14 @@ function insertMatch(db, redis, match, options, cb)
             }
         });
     }
+
+		function saveUserMatch(cb)
+		{
+			// lordstone: save to user_match_list
+			console.log('saving to user_match_list');
+			cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
+			return cb();
+		}
 
     function upsertMatchCassandra(cb)
     {
