@@ -15,13 +15,10 @@ function logUser(db, user_id, password, cb){
 		if(!res){
 			return cb('failed', 'unknown error');
 		}
-		var randStr = util.generateRandomAlphaNum(20);
-		// console.log('DEBUG:randStr:' + randStr);
-		console.log('log in successfully. user_id:' + user_id + ', token:' + randStr);
+		console.log('log in successfully. user_id:' + user_id);
 			return cb('success', 
 			{
-				user_id: user_id,
-				log_token: randStr
+				user_id: user_id
 			});
 	});	
 }
