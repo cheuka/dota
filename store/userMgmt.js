@@ -23,20 +23,6 @@ function logUser(db, user_id, password, cb){
 	});	
 }
 
-function logoutUser(db, user_id, cb){
-	console.log("logging out user");
-	db('user_list').where('user_id', '=', user_id).update({log_token: null}).asCallback(function(err){
-		if(err){
-			console.log('logout failed');
-			return cb();
-		}
-		// console.log('logout failed: cannot find the user');
-		return cb();
-	});	
-}
-
-
-
 function findUser(db, user_id, cb){
 	console.log("finding user");
 	db.first().from('user_list').where('user_id', '=', user_id).asCallback(function(err, result){
@@ -49,13 +35,9 @@ function findUser(db, user_id, cb){
 	});	
 }
 
-
 function findAll(db, cb){
 	console.log("listing all users");
 	db.select().table('user_list').asCallback(function(err, results){
-		//results.forEach(function(res){
-		//	console.log(res.user_id + ':' + res.password);
-		//});		
 		if(err){
 			console.log('error in listing all users');
 			return cb(err, 'failed');
@@ -65,7 +47,7 @@ function findAll(db, cb){
 }
 
 function newUser(db, myuser, cb){
-	console.log("new user");
+	// console.log("new user");
 	db.table('user_list').insert({
 		user_id: myuser.user_id,
 		password: myuser.password,
@@ -113,17 +95,17 @@ function editUser(db, new_user, old_user_id, cb){
 }
 
 function register(db, new_user, cb){
-	console.log("new register:"+new_user.invitation_code);
+	// console.log("new register:"+new_user.invitation_code);
 	db.table('user_invcode_list').where({
 		invitation_code: new_user.invitation_code
 	}).select().asCallback(function(err, result)
 	{
 		if(err){
-			console.log('error in registering');
+			console.error('error in registering');
 			return cb(err, 'failed in db phase');
 		}else{
 			if(!result){
-				console.log('empty satisfying set');
+				console.error('empty satisfying set');
 				return cb(err, 'invalid invitation code');
 			}
 			result.forEach(function(res){
@@ -132,21 +114,21 @@ function register(db, new_user, cb){
 					// matching invitation code, inserting
 					var current_users = res.current_users + 1;
 					newUser(db, new_user, function(err1, msg){
-					if(err1 || msg != 'success'){
-						return cb(err1, msg);
-					}else{
-						db.table('user_invcode_list').where({invitation_code: new_user.invitation_code}).update({
-							current_users: current_users
-						}).asCallback(function(err2, update_res)
-						{
-							if(err2){
-								return cb(err2, 'failed');
-							}else{
-								console.log('register successful');
-								return cb('', 'success');
-							}
-						});// end update
-					}	// return cb(err, 'success');
+						if(err1 || msg != 'success'){
+							return cb(err1, msg);
+						}else{
+							db.table('user_invcode_list').where({invitation_code: new_user.invitation_code}).update({
+								current_users: current_users
+							}).asCallback(function(err2, update_res)
+							{
+								if(err2){
+									return cb(err2, 'failed');
+								}else{
+									console.log('register successful');
+									return cb('', 'success');
+								}
+							});// end update
+						}	// return cb(err, 'success');
 					}); // end new user 
 				}else{
 					return cb(err, 'invalid invitation code');
@@ -159,10 +141,10 @@ function register(db, new_user, cb){
 // invitation code
 
 function findAll_inv(db, cb){
-	console.log("listing all invitation codes");
+	// console.log("listing all invitation codes");
 	db.select().table('user_invcode_list').asCallback(function(err, results){
 		if(err){
-			console.log('error in listing all users');
+			console.error('error in listing all users');
 			return cb(err, 'failed');
 		}
 		return cb(err, results);
@@ -170,7 +152,7 @@ function findAll_inv(db, cb){
 }
 
 function findInv(db, invitation_code, cb){
-	console.log("finding invitation code");
+	// console.log("finding invitation code");
 	db.first().from('user_invcode_list').where('invitation_code', '=', invitation_code).asCallback(function(err, result){
 		if(err){
 			return cb(err);
@@ -184,14 +166,14 @@ function findInv(db, invitation_code, cb){
 
 
 function newInv(db, myinv, cb){
-	console.log("new invitation code");
+	// console.log("new invitation code");
 	db.table('user_invcode_list').insert({
 		invitation_code: myinv.invitation_code,
 		max_users: myinv.max_users,
 		current_users: myinv.current_users
 	}).asCallback(function(err, result){
 		if(err){
-			console.log('error in adding new invitation code');
+			console.error('error in adding new invitation code');
 			return cb(err, 'failed');
 		}else{
 			return cb(err, 'success');
