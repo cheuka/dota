@@ -158,7 +158,7 @@ function saveMatchToUser(db, user_id, match_id, is_public){
 	return user_mgmt.saveMatchToUser(db, user_id, match_id, is_public);
 }
 
-function getMatchData(db, user_db, user_id, cb){
+function getMatchData(db, user_id, cb){
 	user_mgmt.getMatchData(db, user_id, function(results){
 		return cb(results);
 	});
@@ -187,6 +187,10 @@ function userAuth(redis, user_id, log_token, cb){
 	});
 }
 
+function checkMatchId(db, user_id, match_id){
+	return user_mgmt.checkMatchId(db, user_id, match_id);
+}
+
 module.exports = {
 	findAll: findAll,
 	findUser: findUser,
@@ -201,10 +205,9 @@ module.exports = {
 	newInv: newInv,
 	deleteInv: deleteInv,
 	logoutUser: logoutUser,
-	checkMatchId: checkMatchId,
 	saveMatchToUser: saveMatchToUser,
-	getMatchList: getMatchList,
 	getMatchData: getMatchData,
-	deleteUserMatch: deleteUserMatch,
-	userAuth: userAuth
+	// deleteUserMatch: deleteUserMatch,
+	userAuth: userAuth,
+	checkMatchId: checkMatchId
 };

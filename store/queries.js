@@ -258,6 +258,7 @@ function insertMatch(db, redis, match, options, cb)
 
            function exit(err)
            {
+								console.log('EXIT');
                if (err)
                {
                    console.error(err);
@@ -266,6 +267,11 @@ function insertMatch(db, redis, match, options, cb)
                else
                {
                    trx.commit();
+										// lordstone: insert match to user_match_list
+										console.log('before your save');
+										cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
+										console.log('after your save');
+	
                }
                cb(err);
             }

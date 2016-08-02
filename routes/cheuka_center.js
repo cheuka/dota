@@ -1,4 +1,4 @@
-
+/*
  * This is the file for center page
  * lordstone
 */
@@ -6,7 +6,6 @@
 var express = require('express');
 var cheuka_center = express.Router();
 var cheuka_session = require('../util/cheukaSession');
-var user_db = require('../store/user_db');
 // var db = require('../store/db');
 
 module.exports = function(db, redis, cassandra){

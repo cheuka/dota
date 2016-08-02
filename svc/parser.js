@@ -41,7 +41,6 @@ var app = express();
 //lordstone:
 
 var cheuka_session = require("../util/cheukaSession");
-var user_db = require("../store/user_db");
 
 app.use(bodyParser.json());
 app.get('/', function(req, res)
@@ -158,20 +157,26 @@ function insertUploadedParse(match, cb)
     renderMatch(match);
     
     //lordstone: modify user_db, keep match private
-    cheuka_session.saveMatchToUser(user_db, match.user_id, match.match_id, match.is_public);
     
     benchmarkMatch(redis, match, function(err)
     {
+				console.log('DEBUG: benchmark starts');
         if (err)
         {
             return cb(err);
         }
+				
+				console.log('DEBUG: benchmark in the middle');
         redis.setex('match:' + match.replay_blob_key, 60 * 60 * 10, JSON.stringify(match));
-	insertMatch(db, redis, match,
-	{
-		type: "parsed",
-		cassandra: cassandra,
-	}, cb);
+				
+				console.log('DEBUG: benchmark in the middle end');
+				insertMatch(db, redis, match,
+				{
+					type: "parsed",
+					cassandra: cassandra,
+				}, cb);
+			
+ //   cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
     });
 }
 

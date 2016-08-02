@@ -7,7 +7,6 @@ var express = require('express');
 var config = require('../config');
 var constants = require('../constants.js');
 var cheuka_banpick = express.Router();
-var user_db = require('../store/user_db');
 var cheuka_session = require('../util/cheukaSession');
 
 
