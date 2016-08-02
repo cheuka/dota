@@ -30,11 +30,9 @@ function checkUser(db, redis, user_id, password, cb)
 	}
 }
 
-function logoutUser(db, redis, user_id, cb){
-	user_mgmt.logoutUser(db, user_id, function(){
-		redis.del('user_auth:' + user_id);
-		return cb();
-	});
+function logoutUser(redis, user_id, cb){
+	redis.del('user_auth:' + user_id);
+	return cb();
 }
 
 function findUser(db, user_id, cb)

@@ -245,7 +245,7 @@ app.route('/logout').get(function(req, res)
 {
     req.logout();
 		if(req.session.user){
-			cheuka_session.logoutUser(db, redis, req.session.user, function()
+			cheuka_session.logoutUser(redis, req.session.user, function()
 			{
     		req.session = null;
 				res.redirect('/');
