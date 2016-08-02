@@ -39,7 +39,7 @@ var rc_public = config.RECAPTCHA_PUBLIC_KEY;
 // self-defined user-session
 // just for testing
 var cheuka_session = require('../util/cheukaSession');
-var user_db = require('../store/user_db');
+
 // cheuka route
 var cheuka_admin = require('../routes/cheuka_admin');
 var cheuka_center = require('../routes/cheuka_center');
@@ -245,7 +245,7 @@ app.route('/logout').get(function(req, res)
 {
     req.logout();
 		if(req.session.user){
-			cheuka_session.logoutUser(user_db, redis, req.session.user, function()
+			cheuka_session.logoutUser(redis, req.session.user, function()
 			{
     		req.session = null;
 				res.redirect('/');
@@ -300,7 +300,7 @@ app.route('/register').post(function(req, res, next){
 				password: password,
 				invitation_code: invitation_code
 			};
-			cheuka_session.register(user_db, new_user, function(result)
+			cheuka_session.register(db, new_user, function(result)
 			{
 				//console.log('res:' + result);
 				if(result == 'success'){
@@ -373,7 +373,7 @@ app.route('/').post(function(req, res, next)
 		var formitems = querystring.parse(formdata);
 		var user_id = formitems['user_id'];
 		var password = formitems['password'];
-		cheuka_session.checkUser(user_db, redis, user_id, password, function(msg, t)
+		cheuka_session.checkUser(db, redis, user_id, password, function(msg, t)
 		{ 
 			console.log('DEBUG: msg:' + msg + '.t:' + JSON.stringify(t));
 			if(msg == 'success'){

@@ -41,7 +41,6 @@ var app = express();
 //lordstone:
 
 var cheuka_session = require("../util/cheukaSession");
-var user_db = require("../store/user_db");
 
 app.use(bodyParser.json());
 app.get('/', function(req, res)
@@ -100,10 +99,11 @@ pQueue.process(1, function(job, cb)
                 parsed_data.parse_status = 2;
                 //lordstone: added user_id and is_public
                 parsed_data.user_id = match.user_id;
-								parsed_data.is_public = match.is_public;
+                parsed_data.is_public = match.is_public;
+
                 if (match.replay_blob_key)
                 {
-										redis.del('upload_blob:' + match.replay_blob_key);
+                    redis.del('upload_blob:' + match.replay_blob_key);
                     insertUploadedParse(parsed_data, cb);
                 }
                 else
@@ -138,13 +138,11 @@ function insertUploadedParse(match, cb)
     //save uploaded replay parse in redis as a cached match
     match.match_id = match.upload.match_id;
     // lordstone: save user_id
-    // match.user_id = match.upload.user_id;    
+    // match.user_id = match.upload.user_id;
 
     match.game_mode = match.upload.game_mode;
     match.radiant_win = match.upload.radiant_win;
     match.duration = match.upload.duration;
-		// lordstone: save picks_bans:
-		//match.picks_bans = match.upload.picks_bans;
 
     match.players.forEach(function(p, i)
     {
@@ -156,22 +154,23 @@ function insertUploadedParse(match, cb)
     });
     computeMatchData(match);
     renderMatch(match);
-    
+
     //lordstone: modify user_db, keep match private
-    cheuka_session.saveMatchToUser(user_db, match.user_id, match.match_id, match.is_public);
-    
     benchmarkMatch(redis, match, function(err)
     {
         if (err)
         {
             return cb(err);
         }
+
         redis.setex('match:' + match.replay_blob_key, 60 * 60 * 10, JSON.stringify(match));
-	insertMatch(db, redis, match,
-	{
-		type: "parsed",
-		cassandra: cassandra,
-	}, cb);
+        insertMatch(db, redis, match,
+        {
+            type: "parsed",
+            cassandra: cassandra,
+        }, cb);
+
+        cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
     });
 }
 

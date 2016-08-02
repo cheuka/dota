@@ -5,7 +5,6 @@ var matches = express.Router();
 var matchPages = constants.match_pages;
 // lordstone
 
-var user_db = require('../store/user_db');
 var cheuka_session = require('../util/cheukaSession');
 
 module.exports = function(db, redis, cassandra)
@@ -13,7 +12,7 @@ module.exports = function(db, redis, cassandra)
     matches.get('/:match_id/:info?', function(req, res, cb)
     {
 	if(req.session.user){
-        if(cheuka_session.checkMatchId(user_db, req.session.user, req.params.match_id) == false){
+        if(cheuka_session.checkMatchId(db, req.session.user, req.params.match_id) == false){
             res.send('You have no access to this match.');
             return;
         }

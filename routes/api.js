@@ -19,7 +19,6 @@ var buildStatus = require('../store/buildStatus');
 var querystring = require('querystring');
 
 var cheuka_session = require('../util/cheukaSession');
-var user_db = require('../store/user_db');
 
 const crypto = require('crypto');
 module.exports = function(db, redis, cassandra)
