@@ -15,14 +15,15 @@ module.exports = function(db, redis)
 	banpick.post('/', function(req, res, cb)
 	{
 		// res.send('Sample banpick api message');
+		console.log('DEBUG: post');
         var reqdata = "";
         req.on('data', function(data){
             reqdata += data;
         });
         req.on('end', function(){
+			console.log('DEBUG: user data:' + reqdata);
 			var user_bp = JSON.parse(reqdata);
 			// reply with dummy data:
-			console.log('DEBUG: user data:' + reqdata);
 			var dummy_data = {
 				status: 'ok',
 				list:
@@ -45,7 +46,7 @@ module.exports = function(db, redis)
 				]
 			};
 			
-			res.send(JSON.stringify(dummy_data);
+			res.send(JSON.stringify(dummy_data));
 
 		});
 	});

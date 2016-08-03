@@ -131,39 +131,39 @@ var enemy_team = '';
 
 function getCombo(){
 	var user_bp = {
-		user-team: user_team,
-		enemy-team: enemy_team,
+		user_team: user_team,
+		enemy_team: enemy_team,
 		is_user_radiant: is_user_radiant,
 		is_user_first_pick: is_user_first_pick,
 		options: 
 		{
-			order-by: CONST_MATCH_ODDS,
+			order_by: CONST_MATCH_ODDS,
 			display:
 			[
 				CONST_MATCH_ODDS,
 				CONST_WINNING_RATES	
 			],
 			length: 8,
-			max-hero: 4,
-			min-hero: 2,
+			max_hero: 4,
+			min_hero: 2,
 			asc: false 
 		},
-		fixed-heroes: {
-			user-picked: is_user_radiant ? radiant_pick : dire_pick,
-			user-banned: is_user_radiant ? radiant_ban : dire_ban,
-			enemy-picked: is_user_radiant ? dire_pick : radiant_pick,
-			enemy-banned: is_user_radiant ? dire_ban : radiant_ban
+		fixed_heroes: {
+			user_picked: is_user_radiant ? hero_slots.radiant_pick : hero_slots.dire_pick,
+			user_banned: is_user_radiant ? hero_slots.radiant_ban : hero_slots.dire_ban,
+			enemy_picked: is_user_radiant ? hero_slots.dire_pick : hero_slots.radiant_pick,
+			enemy_banned: is_user_radiant ? hero_slots.dire_ban : hero_slots.radiant_ban
 		}
 	};
 	
 	$.post(
 		'/api/banpick/',
-		user_bp,
+		JSON.stringify(user_bp),
 		function(reply){
 			console.log('Got msg from server');
 			console.log('DEBUG:' + reply);
 			var reply_obj = JSON.parse(reply);
-			if(reply_obj && reply_obj.status && reply.obj.status == 'ok' && reply_obj.list)
+			if(reply_obj && reply_obj.status && reply_obj.status == 'ok' && reply_obj.list)
 			{
 				console.log('DEBUG: status ok');
 			}else{
@@ -171,18 +171,19 @@ function getCombo(){
 				return;
 			}
 			
-		};
+		}
 	);
 }
 
 function updateWithServer(){
+	console.log('Update with server!');
 	getCombo();
 }
 
 // banpick logics
 
 function getLeftRight(input){
-	console.log('INPUT:' + input);
+	//console.log('INPUT:' + input);
 	if((input >= 1 && input <= 4) && ((is_user_radiant === true && is_user_first_pick === false) || (is_user_radiant === false && is_user_first_pick === true))){
 		if(input % 2 == 0){
 			return (input - 1);
@@ -440,8 +441,8 @@ function changeStatus(passed){
 		if(game_mode === true) 
 			stopTimer();
 	}
-	console.log('Code origin:' + procedure[cur_procedure]);
-	console.log('Code:' + getLeftRight(procedure[cur_procedure]));
+	// console.log('Code origin:' + procedure[cur_procedure]);
+	// console.log('Code:' + getLeftRight(procedure[cur_procedure]));
 	switch(getLeftRight(procedure[cur_procedure]))
 	{
 		case(BP_START):
@@ -453,11 +454,13 @@ function changeStatus(passed){
 			}
 			$('#button1').attr('disabled', true);
 			igniteSlot();
+			updateWithServer();
 		break;
 		case(LEFT_BAN):
 		case(RIGHT_BAN):
 		case(LEFT_PICK):
 		case(RIGHT_PICK):
+			updateWithServer();
 			if(passed === false) 
 				doBanpick();
 			cur_procedure += 1;
