@@ -16,7 +16,10 @@ block match_content
               th: abbr(title=tooltips.stuns) Stuns
               th: abbr(title=tooltips.time_dead) Dead
           tr.activate(data-index=i, data-type="lane_pos", class = player.isRadiant ? "radiant" : "dire")
-            +hero_td(player)
+            if match.upload
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "", match.upload.player_info[i])
+            else
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "")
             td #{constants.lane_ids[player.lane] || "-"} (#{constants.lane_role[player.lane_role] || "-"})
             //td.activate(data-index=i, data-type="obs") #{player.obs_log.length || "-"}
             //td.activate(data-index=i, data-type="sen") #{player.sen_log.length || "-"}
@@ -29,7 +32,8 @@ block match_content
       #map.table-responsive
         img.mapContainer(src=constants.map_url, alt="map")
 
-  +ad("banner2")
+  //
+    +ad("banner2")
 
   .row
     .col-md-12
@@ -44,7 +48,10 @@ block match_content
               th: abbr(title=tooltips.damage_inflictor) Damage Inflictors
 
           tr(class = player.isRadiant ? "radiant" : "dire")
-            +hero_td(player)
+            if match.upload
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "", match.upload.player_info[i])
+            else
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "")
             td.nowrap
               - player.max_hero_hit = player.max_hero_hit || {}
               - var ability = constants.abilities[player.max_hero_hit.inflictor]

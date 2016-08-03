@@ -15,7 +15,11 @@ block match_content
                   th: abbr(title=tooltips[val])= display_types[val]
               th: abbr(title=tooltips.pings) Pings (Map)
           tr(class = player.isRadiant ? "radiant" : "dire")
-            +hero_td(player)
+            if match.upload
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "", match.upload.player_info[i])
+            else
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "")
+
             - player.actions = player.actions || {}
             td.rankable #{player.actions_per_min || "-"}
             //td #{p.clicks[0] || "-"}

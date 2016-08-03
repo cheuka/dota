@@ -31,10 +31,15 @@ block match_content
              each val, key in constants.runes
                th: abbr(title=val.name)=val.short
           tr(class = player.isRadiant ? "radiant" : "dire")
-            +hero_td(player)
+            if match.upload
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "", match.upload.player_info[i])
+            else
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "")
+
             each val, key in constants.runes
               td.rankable #{player.runes && player.runes[key] ? player.runes[key] : "-"}
-      +ad("skyscraper")
+      //
+        +ad("skyscraper")
       
   .row
     .col-md-12
@@ -47,7 +52,11 @@ block match_content
              each val, key in columns
                th=val
           tr(class = player.isRadiant ? "radiant" : "dire")
-            +hero_td(player)
+            if match.upload
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "", match.upload.player_info[i])
+            else
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "")
+
             each val, key in columns
               td.rankable #{player.objective_damage ? player.objective_damage[key] || "-" : "-"}     
 

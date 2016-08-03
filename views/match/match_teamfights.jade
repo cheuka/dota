@@ -60,9 +60,13 @@ block match_content
         tr
           th Hero
           th Participation
-        each player in match.players
+        each player, i in match.players
           tr
-            +hero_td(player)
+            if match.upload
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "", match.upload.player_info[i])
+            else
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "")
+
             td.rankable
               +progress_bar((player.teamfights_participated || 0), teamfights.length)
             
