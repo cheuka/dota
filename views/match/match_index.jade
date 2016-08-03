@@ -40,7 +40,7 @@ block match_content
               th: abbr(title=tooltips.items) Items
           tr(class=player.isRadiant ? "radiant" : "dire")
             if match.upload
-              +hero_td_new(player, player.abandons ? constants.leaver_status[player.leaver_status] : "", match.upload.player_info[i])
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "", match.upload.player_info[i])
             else
               +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "")
             td

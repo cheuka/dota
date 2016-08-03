@@ -11,7 +11,10 @@ block match_content
               each val, key in player.benchmarks || {}
                 th=prettyPrint(key)
           tr(class = player.isRadiant ? "radiant" : "dire")
-            +hero_td(player)
+            if match.upload
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "", match.upload.player_info[i])
+            else
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "")
             //-
             each val, key in player.benchmarks || {}
                 td

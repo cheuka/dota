@@ -14,7 +14,11 @@ block match_content
                     i.fa.fa-fw(class=val.icon)
               th Analysis
           tr(class = player.isRadiant ? "radiant" : "dire")
-            +hero_td(player, player.desc)
+            if match.upload
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "", match.upload.player_info[i])
+            else
+              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "")
+
             //-
             each val, key in player.analysis
               if val.grade
