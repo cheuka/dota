@@ -3,6 +3,12 @@
  * by lordstone
  */
 
+// const DATA - RELATED
+// must be the same with server side
+
+const CONST_MATCH_ODDS = 0;
+const CONST_WINNING_RATES = 1;
+
 const LEFT_TIMER = 0;
 const RIGHT_TIMER = 1;
 const LEFT_RES_TIMER = 2;
@@ -115,6 +121,65 @@ var timer_index;
 var is_paused = false;
 
 var last_slot = null;
+
+// DATA-RELATED vars
+
+var user_team = '';
+var enemy_team = '';
+
+// server comm logics
+
+function getCombo(){
+	var user_bp = {
+		user-team: user_team,
+		enemy-team: enemy_team,
+		is_user_radiant: is_user_radiant,
+		is_user_first_pick: is_user_first_pick,
+		options: 
+		{
+			order-by: CONST_MATCH_ODDS,
+			display:
+			[
+				CONST_MATCH_ODDS,
+				CONST_WINNING_RATES	
+			],
+			length: 8,
+			max-hero: 4,
+			min-hero: 2,
+			asc: false 
+		},
+		fixed-heroes: {
+			user-picked: is_user_radiant ? radiant_pick : dire_pick,
+			user-banned: is_user_radiant ? radiant_ban : dire_ban,
+			enemy-picked: is_user_radiant ? dire_pick : radiant_pick,
+			enemy-banned: is_user_radiant ? dire_ban : radiant_ban
+		}
+	};
+	
+	$.post(
+		'/api/banpick/',
+		user_bp,
+		function(reply){
+			console.log('Got msg from server');
+			console.log('DEBUG:' + reply);
+			var reply_obj = JSON.parse(reply);
+			if(reply_obj && reply_obj.status && reply.obj.status == 'ok' && reply_obj.list)
+			{
+				console.log('DEBUG: status ok');
+			}else{
+				console.error('Server side bug!');
+				return;
+			}
+			
+		};
+	);
+}
+
+function updateWithServer(){
+	getCombo();
+}
+
+// banpick logics
 
 function getLeftRight(input){
 	console.log('INPUT:' + input);
