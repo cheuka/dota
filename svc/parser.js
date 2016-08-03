@@ -299,7 +299,7 @@ function runParse(match, job, cb)
                 for (var i = 0; i < parsed_data.players.length; ++i)
                 {
                     parsed_data.players[i].account_id = upload.player_info[i].steamid;
-                    parsed_data.players[i].personalname = upload.player_info[i].player_name;
+                    parsed_data.players[i].personaname = upload.player_info[i].player_name;
                     parsed_data.players[i].team = upload.player_info[i].game_team;
                     parsed_data.players[i].isRadiant = upload.player_info[i].game_team === 2;
                 }
