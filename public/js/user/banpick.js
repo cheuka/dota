@@ -572,7 +572,8 @@ function pick_hero(hero_id){
 
 $(document).ready(function(){
 	//set init status	
-	// alert('ready!');
+
+	// operations:
 	switchRadios(true);
 	setStatus();
 	cur_procedure = 0;
@@ -581,6 +582,9 @@ $(document).ready(function(){
 	if(user_defined_procedure){
 		procedure = user_defined_procedure;
 	}
+	// operations end.
+	
+	
 });
 
 

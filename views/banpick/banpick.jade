@@ -23,7 +23,7 @@ if user
             li(role='presentation', class='active') 
               a(href='#heroes', aria-controls='heroes', role='tab', data-toggle='tab') Heroes
             li(role='presentation') 
-              a(href='#tops', aria-controls='tops', role = 'tab', data-toggle='tab') Tops
+              a(href='#hero_combo', aria-controls='hero_combo', role = 'tab', data-toggle='tab') Tops
             li(role='presentation') 
               a(href='#bp2', aria-controls='bp2', role = 'tab', data-toggle='tab') BP2
             li(role='presentation') 
@@ -128,8 +128,12 @@ if user
               // intelligence hero block end
             // hero block end
 
-            .tab-pane(role='tabpanel', id='tops')
-              p tops
+            .tab-pane(role='tabpanel', id='hero_combo')
+              
+              // hero combo panel
+                p hero_combo
+              table#hero_combo_table
+
             .tab-pane(role='tabpanel', id='bp2')
               p bp2
             .tab-pane(role='tabpanel', id='options')
