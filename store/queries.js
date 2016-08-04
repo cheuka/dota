@@ -194,7 +194,7 @@ function insertMatch(db, redis, match, options, cb)
     async.series(
     {
         "u": upsertMatch,
-				"sum": saveUserMatch,
+        "sum": saveUserMatch,
         "uc": upsertMatchCassandra,
         "upc": updatePlayerCaches,
         "cmc": clearMatchCache,
