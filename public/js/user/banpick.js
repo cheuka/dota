@@ -129,6 +129,51 @@ var enemy_team = '';
 
 // server comm logics
 
+function renderComboList(mylist, container){
+	
+	// lordstone: render mylist on table container:
+	var tbody0 = $('<tbody></tbody>');
+	tbody0.appendTo(container);
+	var thead0 = $('<thead></thead>');
+	thead0.appendTo(tbody0);
+	var theadrow_0 = $('<td></td>');
+	theadrow_0.attr('colspan', '5');
+	theadrow_0.css('min-width', '200px');
+	theadrow_0.html('Hero Combo');
+	theadrow_0.appendTo(thead0);
+	var theadrow_1 = $('<td></td>');
+	theadrow_1.html('Odds');
+	theadrow_1.appendTo(thead0);
+	var theadrow_2 = $('<td></td>');
+	theadrow_2.html('Winning Rates');
+	theadrow_2.appendTo(thead0);
+	for(var i = 0; i < mylist.length; i ++){
+		var tr0 = $('<tr></tr>');
+		tr0.appendTo(tbody0);
+		var td_0 = $('<td></td>');
+		td_0.attr('colspan', '5');
+		if(!mylist[i].heroes || mylist[i].heroes.length == 0){
+			td_0.val('missing hero combo');
+		}else{
+			var heroes = '';
+			for(var j = 0; j < mylist[i].heroes.length; j++){
+				// adding heros
+				heroes += mylist[i].heroes[j].toString();
+				heroes += ', ';
+			}
+			td_0.html(heroes);
+		}
+		td_0.css('min-width', '200px');
+		td_0.appendTo(tr0);
+		var td_1 = $('<td></td>');
+		td_1.html(mylist[i].matching_odds);
+		td_1.appendTo(tr0);
+		var td_2 = $('<td></td>');
+		td_2.html(mylist[i].winning_rate);
+		td_2.appendTo(tr0);
+	}
+}
+
 function getCombo(){
 	var user_bp = {
 		user_team: user_team,
@@ -170,6 +215,12 @@ function getCombo(){
 				console.error('Server side bug!');
 				return;
 			}
+			// start rendering the new list in tops i.e. combo
+			$('#combo_helper').fadeOut();
+			$('#hero_combo_table').empty();
+			$('#hero_combo_table').fadeIn();
+			// start rendering
+			renderComboList(reply_obj.list, $('#hero_combo_table'));			
 			
 		}
 	);
@@ -177,6 +228,7 @@ function getCombo(){
 
 function updateWithServer(){
 	console.log('Update with server!');
+	$('#combo_helper').html('Waiting for server data');
 	getCombo();
 }
 
@@ -239,7 +291,15 @@ function clickRadioFirstPick(){
 	// alert('First Pick');
 	var radios = document.getElementsByName('first_pick');
 	is_user_first_pick = radios[0].checked;
-	// alert(is_user_first_pick);
+	// alert(is_user_first_pick);	
+	if(radios[0].checked){
+		$('#first_pick_helper_0').addClass('submit_button');
+		$('#first_pick_helper_1').removeClass('submit_button');
+	}else{
+		$('#first_pick_helper_1').addClass('submit_button');
+		$('#first_pick_helper_0').removeClass('submit_button');
+	}
+
 }
 
 function switchRadios(radio_status){
