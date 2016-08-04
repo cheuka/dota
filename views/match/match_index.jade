@@ -94,8 +94,8 @@ block match_content
                 tr
                   +picks_bans_row(match.picks_bans, 1)
                 
-  if match.upload
-    if match.upload.picks_bans
+  else if match.upload
+    if match.upload.picks_bans 
       .row
         .col-md-12      
             h3.inline-header Picks/Bans
