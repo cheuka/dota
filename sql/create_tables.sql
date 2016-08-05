@@ -184,3 +184,11 @@ CREATE TABLE picks_bans (
   ord smallint,
   PRIMARY KEY (match_id, ord)
 );
+
+CREATE TABLE team_match(
+	team_id bigint,
+	match_id bigint REFERENCES matches(match_id) ON DELETE CASCADE,
+	PRIMARY KEY (team_id, match_id),
+	is_radiant boolean not null,
+	is_winner boolean not null
+);
