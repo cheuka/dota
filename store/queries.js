@@ -219,6 +219,7 @@ function insertMatch(db, redis, match, options, cb)
                 "m": upsertMatches,
                 "pm": upsertPlayerMatch,
                 "pb": upsertPickbans,
+				"tm": upsertTeamMatch
             }, exit);
 
             function upsertMatches(cb)
@@ -261,6 +262,42 @@ function insertMatch(db, redis, match, options, cb)
                 {
                   cb();
                 }
+           }
+
+		   function upsertTeamMatch(cb)
+		   {
+			   async.series(
+			   {
+				   'r': addRadiant,
+				   'd': addDire,
+			   }, cb);
+			   
+			   function addRadiant(cb){
+				   var tm;
+				   tm.is_radiant = true;
+				   tm.is_winner = match.radiant_win;
+				   tm.end_time = match.end_time;
+				   tm.version = match.version || 0;
+				   upsert(trx, 'team_match', tm, 
+				   {
+					   team_id: match.radiant_team_id,
+					   match_id: match.match_id
+				   }, cb);
+			   }
+
+			   function addDire(cb){
+				   var tm;
+				   tm.is_radiant = false;
+				   tm.is_winner = !match.radiant_win;
+				   tm.end_time = match.end_time;
+				   tm.version = match.version || 0;
+				   upsert(trx, 'team_match', tm, 
+				   {
+					   team_id: match.radiant_team_id,
+					   match_id: match.match_id
+				   }, cb);
+			   }
+
            }
 
            function exit(err)

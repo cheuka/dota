@@ -22,8 +22,10 @@ function processUploadProps(entries, meta)
 		container.picks_bans = dota.picks_bans; 
 		container.player_info = dota.player_info;
 		container.game_winner = dota.game_winnner;	
+		container.radiant_team_id = dota.radiant_team_id;
 		container.radiant_team_name = dota.radiant_team_tag;
-		container.dire_team_name = dota.dire_team_tag;
+		container.dire_team_name = dota.dire_team_id;
+		container.dire_team_id = dota.dire_team_tag;
 		container.end_time = dota.end_time;
 /*
 		console.log('DEBUG: -----start iterate over dota obj');
