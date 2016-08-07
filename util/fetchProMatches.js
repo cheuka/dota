@@ -9,7 +9,13 @@ var queries = require('../store/queries');
 var insertMatch = queries.insertMatch;
 var league_url = generateJob("api_leagues", {}).url;
 
-fetchProMatches(function(err){});
+fetchProMatches(function(err)
+{
+    if (err)
+    {
+        console.log(err);
+    }   
+});
 
 
 function fetchProMatches(cb)
@@ -42,16 +48,14 @@ function fetchProMatches(cb)
 
     function getPage(url, leagueid, cb)
     {
+        // todo fetch from match seq num set in redis
+
         getData(url, function(err, data)
         {
             console.error(leagueid, data.result.total_results, data.result.results_remaining);
 
-            //async.eachSeries(data.result.matches, function(match)
-            data.result.matches.forEach(function(match)
+            async.eachSeries(data.result.matches, function(match)
             {
-                console.error(match.match_id);
-                //rxu, save matches to db
-                var delay = 1000;
                 var job = generateJob("api_details",
                 {
                     match_id: match.match_id
@@ -60,7 +64,7 @@ function fetchProMatches(cb)
                 getData(
                 {
                     url: job.url,
-                    delay: delay
+                    delay: 10000
                 }, function(err, body)
                 {
                     if (err)
@@ -73,14 +77,13 @@ function fetchProMatches(cb)
 
                         insertMatch(db, redis, match,
                         {
-                            skipCounts: true,
-                            skipAbilityUpgrades: true,
-                            skipParse: false,
+                            type: "api",
                             attempts: 1,
                         }, function(err)
                         {
                             console.error(err);
                         });
+                        redis.set('last_pro_match', match.match_seq_num);
                     }
                 });
             });

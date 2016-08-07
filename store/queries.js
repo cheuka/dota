@@ -328,13 +328,13 @@ function insertMatch(db, redis, match, options, cb)
         });
     }
 
-		function saveUserMatch(cb)
-		{
-			// lordstone: save to user_match_list
-			console.log('saving to user_match_list');
-			cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
-			return cb();
-		}
+	function saveUserMatch(cb)
+	{
+		// lordstone: save to user_match_list
+		console.log('saving to user_match_list');
+		cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
+		return cb();
+	}
 
     function upsertMatchCassandra(cb)
     {
