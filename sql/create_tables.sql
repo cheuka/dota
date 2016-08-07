@@ -34,7 +34,6 @@ CREATE TABLE matches (
   --parsed data below
   chat json[],
 	upload json,
-	picks_bans json[],
   objectives json[],
   radiant_gold_adv integer[],
   radiant_xp_adv integer[],
@@ -182,6 +181,7 @@ CREATE TABLE picks_bans (
   hero_id int,
   team smallint,
   ord smallint,
+  player_id bigint,
   PRIMARY KEY (match_id, ord)
 );
 

@@ -247,10 +247,22 @@ function insertMatch(db, redis, match, options, cb)
             {
                 if (match.picks_bans)
                 {
+                    var pick_idx = [0, 0, 0, 0, 1, 6, 7, 2, 0, 0, 0, 0, 3, 8, 4, 9, 0, 5, 0, 10];
+
+                    match.picks_bans.forEach(function(pb, i)
+                    {
+                       if (pb.is_pick && players.length > 0)
+                       {
+                            pb.player_id = players[pick_idx[i] - 1].account_id;
+                       }
+                    });
+
+
                     async.each(match.picks_bans || [], function (p, cb)
                     {
                         p.ord = p.order;
                         p.match_id = match.match_id;
+
                         upsert(trx, 'picks_bans', p,
                         {
                             match_id: p.match_id,
