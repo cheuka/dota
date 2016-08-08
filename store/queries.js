@@ -299,14 +299,17 @@ function insertMatch(db, redis, match, options, cb)
 					   is_radiant: true,
 					   is_winner: match.radiant_win,
 					   end_time: match.end_time || 0,
-					   version: match.version || 0
+					   version: match.version.toString() || '0',
+					   team_id: match.radiant_team_id || 0,
+					   match_id: match.match_id
 				   }
 				   console.log('DEBUG: Radiant:' + JSON.stringify(tm));
+					console.log('DEBUG: radiant id:' + match.radiant_team_id + '. match_id:' + match.match_id);
 				   if(match.radiant_team_id && match.match_id)
 				   {
 					   upsert(trx, 'team_match', tm, 
 					   {
-						   team_id: match.radiant_team_id,
+						   team_id: match.radiant_team_id || 0,
 						   match_id: match.match_id
 					   }, cb);
 				   }else{
@@ -320,14 +323,17 @@ function insertMatch(db, redis, match, options, cb)
 					   is_radiant: false,
 					   is_winner: !match.radiant_win,
 					   end_time: match.end_time || 0,
-					   version: match.version || 0
+					   version: match.version.toString() || '0',
+					   team_id: match.dire_team_id || 0,
+					   match_id: match.match_id
 				   }
 				   console.log('DEBUG: Dire:' + JSON.stringify(tm));
+					console.log('DEBUG: radiant id:' + match.dire_team_id);
 				   if(match.dire_team_id && match.match_id)
 				   {
 					   upsert(trx, 'team_match', tm, 
 					   {
-						   team_id: match.dire_team_id,
+						   team_id: match.dire_team_id || 0,
 						   match_id: match.match_id
 					   }, cb);
 				   }else{
