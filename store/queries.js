@@ -258,11 +258,11 @@ function insertMatch(db, redis, match, options, cb)
                     });
 
 
-                    async.each(match.picks_bans || [], function (p, cb)
+                    async.each(match.picks_bans || match.upload.picks_bans || [], function (p, cb)
                     {
                         p.ord = p.order;
                         p.match_id = match.match_id;
-
+						console.log('DEBUG: picksbans:' + JSON.stringify(p));
                         upsert(trx, 'picks_bans', p,
                         {
                             match_id: p.match_id,
@@ -286,28 +286,44 @@ function insertMatch(db, redis, match, options, cb)
 			   
 			   function addRadiant(cb){
 				   var tm;
-				   tm.is_radiant = true;
-				   tm.is_winner = match.radiant_win;
-				   tm.end_time = match.end_time;
-				   tm.version = match.version || 0;
-				   upsert(trx, 'team_match', tm, 
+				   tm = {
+					   is_radiant: true,
+					   is_winner: match.radiant_win,
+					   end_time: match.end_time || 0,
+					   version: match.version || 0
+				   }
+				   console.log('DEBUG: Radiant:' + JSON.stringify(tm));
+				   if(match.radiant_team_id && match.match_id)
 				   {
-					   team_id: match.radiant_team_id,
-					   match_id: match.match_id
-				   }, cb);
+					   upsert(trx, 'team_match', tm, 
+					   {
+						   team_id: match.radiant_team_id,
+						   match_id: match.match_id
+					   }, cb);
+				   }else{
+					   return cb();
+				   }
 			   }
 
 			   function addDire(cb){
-				   var tm;
-				   tm.is_radiant = false;
-				   tm.is_winner = !match.radiant_win;
-				   tm.end_time = match.end_time;
-				   tm.version = match.version || 0;
-				   upsert(trx, 'team_match', tm, 
+				   var tm;	
+				   tm = {
+					   is_radiant: false,
+					   is_winner: !match.radiant_win,
+					   end_time: match.end_time || 0,
+					   version: match.version || 0
+				   }
+				   console.log('DEBUG: Dire:' + JSON.stringify(tm));
+				   if(match.dire.team_id && match.match_id)
 				   {
-					   team_id: match.radiant_team_id,
-					   match_id: match.match_id
-				   }, cb);
+					   upsert(trx, 'team_match', tm, 
+					   {
+						   team_id: match.dire_team_id,
+						   match_id: match.match_id
+					   }, cb);
+				   }else{
+						return cb();
+				   }
 			   }
 
            }
