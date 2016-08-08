@@ -9,6 +9,9 @@ var queries = require('../store/queries');
 var insertMatch = queries.insertMatch;
 var league_url = generateJob("api_leagues", {}).url;
 
+var queue = require('../store/queue');
+var pQueue = queue.getQueue('parse');
+
 fetchProMatches(function(err)
 {
     if (err)
@@ -100,6 +103,45 @@ function fetchProMatches(cb)
                 cb(err);
             }
         });
+        
+
+        function waitParse(err, job)
+        {
+            if (err)
+            {
+                console.error(err.stack || err);
+                return cb(err);
+            }
+
+            if (job)
+            {
+                var poll = setInterval(function()
+                {
+                    pQueue.getJob(job.jobId).then(function(job)
+                    {
+                        job.getState().then(function(state)
+                        {
+                            console.log("waiting for parse job %s, currently in %s", job.jobId, state);
+                            if (state === "completed")
+                            {
+                                clearInterval(poll);
+                                return cb();
+                            }
+                            else if (state !== "active" && state !== "waiting")
+                            {
+                                clearInterval(poll);
+                                return cb("failed");
+                            }
+                        }).catch(cb);
+                    }).catch(cb);
+                }, 2000);
+            }
+            else
+            {
+                console.error(err);
+                cb(err);
+            }
+        }
     }
 }
 
