@@ -314,7 +314,7 @@ function insertMatch(db, redis, match, options, cb)
 					   version: match.version || 0
 				   }
 				   console.log('DEBUG: Dire:' + JSON.stringify(tm));
-				   if(match.dire.team_id && match.match_id)
+				   if(match.dire_team_id && match.match_id)
 				   {
 					   upsert(trx, 'team_match', tm, 
 					   {
