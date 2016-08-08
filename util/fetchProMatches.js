@@ -14,7 +14,7 @@ fetchProMatches(function(err)
     if (err)
     {
         console.log(err);
-    }   
+    }
 });
 
 
@@ -56,6 +56,7 @@ function fetchProMatches(cb)
 
             async.eachSeries(data.result.matches, function(match)
             {
+                console.log('match_id:' + match.match_id);
                 var job = generateJob("api_details",
                 {
                     match_id: match.match_id
@@ -79,15 +80,12 @@ function fetchProMatches(cb)
                         {
                             type: "api",
                             attempts: 1,
-                        }, function(err)
-                        {
-                            console.error(err);
-                        });
-                        redis.set('last_pro_match', match.match_seq_num);
+                        }, waitParse);
+                        //redis.set('last_pro_match', match.match_seq_num);
                     }
                 });
             });
-            
+
             if (data.result.results_remaining)
             {
                 var url2 = generateJob("api_history",
