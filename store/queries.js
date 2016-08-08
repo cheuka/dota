@@ -219,7 +219,7 @@ function insertMatch(db, redis, match, options, cb)
                 "m": upsertMatches,
                 "pm": upsertPlayerMatch,
                 "pb": upsertPickbans,
-				"tm": upsertTeamMatch
+                "tm": upsertTeamMatch
             }, exit);
 
             function upsertMatches(cb)
@@ -249,9 +249,7 @@ function insertMatch(db, redis, match, options, cb)
                 {
                     var pick_idx = [0, 0, 0, 0, 1, 6, 7, 2, 0, 0, 0, 0, 3, 8, 4, 9, 0, 5, 0, 10];
 
-					var pbs = match.picks_bans || match.upload.picks_bans;
-
-					// console.log('DEBUG: pbs:' + JSON.stringify(pbs));
+                    var pbs = match.picks_bans || match.upload.picks_bans;
 
                     pbs.forEach(function(pb, i)
                     {
@@ -271,7 +269,6 @@ function insertMatch(db, redis, match, options, cb)
                     {
                         p.ord = p.order;
                         p.match_id = match.match_id;
-						// console.log('DEBUG: picksbans:' + JSON.stringify(p));
                         upsert(trx, 'picks_bans', p,
                         {
                             match_id: p.match_id,
@@ -303,8 +300,6 @@ function insertMatch(db, redis, match, options, cb)
 					   team_id: match.radiant_team_id || 0,
 					   match_id: match.match_id
 				   }
-				   console.log('DEBUG: Radiant:' + JSON.stringify(tm));
-					console.log('DEBUG: radiant id:' + match.radiant_team_id + '. match_id:' + match.match_id);
 				   if(match.radiant_team_id && match.match_id)
 				   {
 					   upsert(trx, 'team_match', tm, 
@@ -327,8 +322,6 @@ function insertMatch(db, redis, match, options, cb)
 					   team_id: match.dire_team_id || 0,
 					   match_id: match.match_id
 				   }
-				   console.log('DEBUG: Dire:' + JSON.stringify(tm));
-					console.log('DEBUG: radiant id:' + match.dire_team_id);
 				   if(match.dire_team_id && match.match_id)
 				   {
 					   upsert(trx, 'team_match', tm, 
