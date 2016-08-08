@@ -245,24 +245,33 @@ function insertMatch(db, redis, match, options, cb)
 
             function upsertPickbans(cb)
             {
-                if (match.picks_bans)
+                if (match.picks_bans || match.upload && match.upload.picks_bans)
                 {
                     var pick_idx = [0, 0, 0, 0, 1, 6, 7, 2, 0, 0, 0, 0, 3, 8, 4, 9, 0, 5, 0, 10];
 
-                    match.picks_bans.forEach(function(pb, i)
+					var pbs = match.picks_bans || match.upload.picks_bans;
+
+					// console.log('DEBUG: pbs:' + JSON.stringify(pbs));
+
+                    pbs.forEach(function(pb, i)
                     {
-                       if (pb.is_pick && players.length > 0)
+                       if (pb.is_pick && players.length > 0 && players[pick_idx[i] - 1])
                        {
-                            pb.player_id = players[pick_idx[i] - 1].account_id;
-                       }
+                            pb.player_id = players[pick_idx[i] - 1].account_id || 0;
+                       }else{
+							pb.player_id = 0;
+					   }
+					   if (!pb.order){
+						   pb.order = i;
+					   }
                     });
 
 
-                    async.each(match.picks_bans || match.upload.picks_bans || [], function (p, cb)
+                    async.each(pbs || [], function (p, cb)
                     {
                         p.ord = p.order;
                         p.match_id = match.match_id;
-						console.log('DEBUG: picksbans:' + JSON.stringify(p));
+						// console.log('DEBUG: picksbans:' + JSON.stringify(p));
                         upsert(trx, 'picks_bans', p,
                         {
                             match_id: p.match_id,

@@ -294,7 +294,6 @@ function runParse(match, job, cb)
                 parsed_data.radiant_gold_adv = ap.radiant_gold_adv;
                 parsed_data.radiant_xp_adv = ap.radiant_xp_adv;
                 parsed_data.upload = upload;
-
                 //rxu, add team and personal info
                 for (var i = 0; i < parsed_data.players.length; ++i)
                 {
