@@ -291,20 +291,21 @@ function insertMatch(db, redis, match, options, cb)
 			   }, cb);
 			   
 			   function addRadiant(cb){
+				   var team_id = match.radiant_team_id || 0;
 				   var tm;
 				   tm = {
 					   is_radiant: true,
 					   is_winner: match.radiant_win,
 					   end_time: match.end_time || 0,
 					   version: match.version.toString() || '0',
-					   team_id: match.radiant_team_id || 0,
+					   team_id: team_id,
 					   match_id: match.match_id
 				   }
-				   if(match.radiant_team_id && match.match_id)
+				   if(team_id && match.match_id)
 				   {
 					   upsert(trx, 'team_match', tm, 
 					   {
-						   team_id: match.radiant_team_id || 0,
+						   team_id: team_id,
 						   match_id: match.match_id
 					   }, cb);
 				   }else{
@@ -313,20 +314,21 @@ function insertMatch(db, redis, match, options, cb)
 			   }
 
 			   function addDire(cb){
+				   var team_id = match.dire_team_id || 0;
 				   var tm;	
 				   tm = {
 					   is_radiant: false,
 					   is_winner: !match.radiant_win,
 					   end_time: match.end_time || 0,
 					   version: match.version.toString() || '0',
-					   team_id: match.dire_team_id || 0,
+					   team_id: team_id,
 					   match_id: match.match_id
 				   }
-				   if(match.dire_team_id && match.match_id)
+				   if(team_id && match.match_id)
 				   {
 					   upsert(trx, 'team_match', tm, 
 					   {
-						   team_id: match.dire_team_id || 0,
+						   team_id: team_id,
 						   match_id: match.match_id
 					   }, cb);
 				   }else{
