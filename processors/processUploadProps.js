@@ -21,13 +21,13 @@ function processUploadProps(entries, meta)
                 container.radiant_win = dota.game_winner === 2;
                 container.picks_bans = dota.picks_bans; 
                 container.player_info = dota.player_info;
-        		container.game_winner = dota.game_winnner;	
-				// lordstone: added team id and name
-				container.radiant_team_id = dota.radiant_team_id;
-        		container.radiant_team_name = dota.radiant_team_tag;
-				container.dire_team_name = dota.dire_team_tag;
-				container.dire_team_id = dota.dire_team_id;
-				container.end_time = dota.end_time;
+                container.game_winner = dota.game_winnner;
+                // lordstone: added team id and name
+                container.radiant_team_id = dota.radiant_team_id;
+                container.radiant_team_name = dota.radiant_team_tag;
+                container.dire_team_name = dota.dire_team_tag;
+                container.dire_team_id = dota.dire_team_id;
+                container.end_time = dota.end_time;
                 //require('fs').writeFileSync('./outputEpilogue.json', JSON.stringify(JSON.parse(e.key)));
             case 'interval':
                 if (!container.player_map[e.player_slot])
