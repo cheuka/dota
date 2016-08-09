@@ -78,7 +78,7 @@ function fetchProMatches(cb)
                     if (body.result)
                     {
                         var match = body.result;
-
+			match.parse_status = 0;
                         insertMatch(db, redis, match,
                         {
                             type: "api",
