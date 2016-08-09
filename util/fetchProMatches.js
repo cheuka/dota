@@ -57,7 +57,7 @@ function fetchProMatches(cb)
         {
             console.error(leagueid, data.result.total_results, data.result.results_remaining);
 
-            async.eachSeries(data.result.matches, function(match)
+            async.eachSeries(data.result.matches, function(match, cb2)
             {
                 console.log('match_id:' + match.match_id);
                 var job = generateJob("api_details",
@@ -73,7 +73,7 @@ function fetchProMatches(cb)
                 {
                     if (err)
                     {
-                        cb(err);
+                        cb2(err);
                     }
                     if (body.result)
                     {
@@ -83,65 +83,35 @@ function fetchProMatches(cb)
                         {
                             type: "api",
                             attempts: 1,
-                        }, waitParse);
+                        }, function(err)
+                        {
+                            if (err)
+                            {
+                                console.log(err);
+                            }
+				console.log("finish insert match");
+                            cb2(err);
+                        });
                         //redis.set('last_pro_match', match.match_seq_num);
                     }
                 });
-            });
-
-            if (data.result.results_remaining)
+            }, function (err)
             {
-                var url2 = generateJob("api_history",
+                if (data.result.results_remaining)
                 {
-                    leagueid: leagueid,
-                    start_at_match_id: data.result.matches[data.result.matches.length - 1].match_id - 1,
-                }).url;
-                getPage(url2, leagueid, cb);
-            }
-            else
-            {
-                cb(err);
-            }
-        });
-        
-
-        function waitParse(err, job)
-        {
-            if (err)
-            {
-                console.error(err.stack || err);
-                return cb(err);
-            }
-
-            if (job)
-            {
-                var poll = setInterval(function()
-                {
-                    pQueue.getJob(job.jobId).then(function(job)
+                    var url2 = generateJob("api_history",
                     {
-                        job.getState().then(function(state)
-                        {
-                            console.log("waiting for parse job %s, currently in %s", job.jobId, state);
-                            if (state === "completed")
-                            {
-                                clearInterval(poll);
-                                return cb();
-                            }
-                            else if (state !== "active" && state !== "waiting")
-                            {
-                                clearInterval(poll);
-                                return cb("failed");
-                            }
-                        }).catch(cb);
-                    }).catch(cb);
-                }, 2000);
-            }
-            else
-            {
-                console.error(err);
-                cb(err);
-            }
-        }
+                        leagueid: leagueid,
+                        start_at_match_id: data.result.matches[data.result.matches.length - 1].match_id - 1,
+                    }).url;
+                    getPage(url2, leagueid, cb);
+                }
+                else
+                {
+                    cb(err);
+                }
+            });
+        });
     }
 }
 
