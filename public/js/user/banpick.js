@@ -129,27 +129,97 @@ var enemy_team = '';
 
 // server comm logics
 
+function requestAPI(req_var, cb){
+	$.post(
+		'/api/banpick/',
+		JSON.stringify(req_var),
+		function(reply){
+			var reply_obj = JSON.parse(reply);
+			return cb(reply);
+		}
+	);
+}
+
+function renderBP2List(mylist, container){
+
+	var tbody0 = $('<tbody></tbody>');
+	var thead0 = $('<thead></thead>');
+	var theadrow_0 = $('<td></td>');
+	theadrow_0.html('Player Slot');
+	theadrow_0.appendTo(thead0);
+	var theadrow_1 = $('<td></td>');
+	theadrow_1.html('Order');
+	theadrow_1.appendTo(thead0);
+	var theadrow_2 = $('<td></td>');
+	theadrow_2.html('Hero');
+	theadrow_2.appendTo(thead0);
+	var theadrow_3 = $('<td></td>');
+	theadrow_3.html('Matches');
+	theadrow_3.appendTo(thead0);
+	var theadrow_4 = $('<td></td>');
+	theadrow_4.html('Wins');
+	theadrow_4.appendTo(thead0);
+	thead0.appendTo(tbody0);
+	
+	for(var i = 0; i < mylist.player_slots.length; i ++)
+	{
+		var tr_0 = $('<tr></tr>');
+		var td_0 = $('<td></td>');
+		
+		td_0.html('Slot:' + mylist.player_slots[i].player_slot);
+		td_0.appendTo(tr_0);
+		tr_0.appendTo(tbody0);
+
+		for(var j = 0; j < mylist.player_slots[i].orders.length; j ++)
+		{	
+			var tr_1 = $('<tr></tr>');
+			var td_1 = $('<td></td>');
+			td_1.html('order:' + mylist.player_slots[i].orders[j].order);
+			td_1.appendTo(tr_1);
+			tr_1.appendTo(tbody0);
+			
+			for(var k = 0; k < mylist.player_slots[i].orders[j].heroes.length; k ++)
+			{
+				var tr_2 = $('<tr></tr>');
+				var td_2 = $('<td></td>');
+				var td_3 = $('<td></td>');
+				var td_4 = $('<td></td>');
+				td_2.html('Hero:' + mylist.player_slots[i].orders[j].heroes[k].hero_id);
+				td_3.html(mylist.player_slots[i].orders[j].heroes[k].matches);
+				td_4.html(mylist.player_slots[i].orders[j].heroes[k].wins);
+				td_2.appendTo(tr_2);
+				td_3.appendTo(tr_2);
+				td_4.appendTo(tr_2);
+				tr_2.appendTo(tbody0);
+			
+			} // end for k			
+
+		} // end for j
+
+	} // end for i
+
+	tbody0.appendTo(container);
+}
+
 function renderComboList(mylist, container){
 	
 	// lordstone: render mylist on table container:
 	var tbody0 = $('<tbody></tbody>');
-	tbody0.appendTo(container);
 	var thead0 = $('<thead></thead>');
-	thead0.appendTo(tbody0);
 	var theadrow_0 = $('<td></td>');
 	theadrow_0.attr('colspan', '5');
 	theadrow_0.css('min-width', '200px');
 	theadrow_0.html('Hero Combo');
 	theadrow_0.appendTo(thead0);
 	var theadrow_1 = $('<td></td>');
-	theadrow_1.html('Odds');
+	theadrow_1.html('Matches');
 	theadrow_1.appendTo(thead0);
 	var theadrow_2 = $('<td></td>');
-	theadrow_2.html('Winning Rates');
+	theadrow_2.html('Wins');
 	theadrow_2.appendTo(thead0);
+	thead0.appendTo(tbody0);
 	for(var i = 0; i < mylist.length; i ++){
 		var tr0 = $('<tr></tr>');
-		tr0.appendTo(tbody0);
 		var td_0 = $('<td></td>');
 		td_0.attr('colspan', '5');
 		if(!mylist[i].heroes || mylist[i].heroes.length == 0){
@@ -171,11 +241,14 @@ function renderComboList(mylist, container){
 		var td_2 = $('<td></td>');
 		td_2.html(mylist[i].winning_rate);
 		td_2.appendTo(tr0);
+		tr0.appendTo(tbody0);
 	}
+	tbody0.appendTo(container);
 }
 
 function getCombo(){
 	var user_bp = {
+		type: "combo",
 		user_team: user_team,
 		enemy_team: enemy_team,
 		is_user_radiant: is_user_radiant,
@@ -201,12 +274,9 @@ function getCombo(){
 		}
 	};
 	
-	$.post(
-		'/api/banpick/',
-		JSON.stringify(user_bp),
-		function(reply){
-			console.log('Got msg from server');
-			console.log('DEBUG:' + reply);
+	requestAPI(user_bp, function(reply)
+		{
+			console.log('Got msg from server for combo');
 			var reply_obj = JSON.parse(reply);
 			if(reply_obj && reply_obj.status && reply_obj.status == 'ok' && reply_obj.list)
 			{
@@ -224,6 +294,42 @@ function getCombo(){
 			
 		}
 	);
+}
+
+
+function getBP2(){
+
+	var user_bp = {
+		type: "bp2",
+		user_team: user_team,
+		enemy_team: enemy_team,
+		is_user_radiant: is_user_radiant,
+		is_user_first_pick: is_user_first_pick
+	};
+	
+	requestAPI(user_bp, function(reply)
+		{
+			console.log('Got msg from server for BP2');
+			console.log('DEBUG:' + reply);
+			var reply_obj = JSON.parse(reply);
+			if(reply_obj && reply_obj.status && reply_obj.status == 'ok' && reply_obj.list)
+			{
+				console.log('DEBUG: status ok');
+			}else{
+				console.error('Server side bug!');
+				return;
+			}
+
+			// start rendering the new list in tops i.e. combo
+			$('#bp2_helper').fadeOut();
+			$('#bp2_table').empty();
+			$('#bp2_table').fadeIn();
+
+			// start rendering
+			renderBP2List(reply_obj.list, $('#bp2_table'));			
+		}
+	);
+
 }
 
 function updateWithServer(){
@@ -515,6 +621,7 @@ function changeStatus(passed){
 			$('#button1').attr('disabled', true);
 			igniteSlot();
 			updateWithServer();
+			getBP2();
 		break;
 		case(LEFT_BAN):
 		case(RIGHT_BAN):
@@ -531,7 +638,7 @@ function changeStatus(passed){
 			}else{
 				if(game_mode === true) 
 					stopTimer();
-				$('#button').attr('disabled', false);		
+				$('#button1').attr('disabled', false);		
 			}
 			igniteSlot();
 			is_radiant_turn = (procedure[cur_procedure] === LEFT_BAN || procedure[cur_procedure] === LEFT_PICK);
@@ -539,7 +646,7 @@ function changeStatus(passed){
 		case(BP_CONFIRM): // to confirm
 			cur_procedure += 1;	
 			doConfirm();
-			$('#button').attr('disabled', false);		
+			$('#button1').attr('disabled', false);		
 		break;
 		case(BP_END):  // confirmed & finished
 			// Save the BP result
@@ -711,7 +818,8 @@ $(document).ready(function(){
 		procedure = user_defined_procedure;
 	}
 	// operations end.
-	
+
+	// getBP2();
 	
 });
 

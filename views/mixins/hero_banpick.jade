@@ -1,7 +1,7 @@
 mixin hero_banpick(hero_id)
   - var hero = constants.heroes[hero_id]
   if hero
-    img.img-sm.hero_button(id='hero_' + hero_id, src=hero.img, title=hero.localized_name, onclick='pick_hero(' + hero_id + ');', style='height: 30px; width:50px;')=hero.localized_name
+    img.img-sm.hero_button(id='hero_' + hero_id, src=hero.img, title=hero.localized_name, onclick='pick_hero(' + hero_id + ');', style='height: 25px; width:40px;')=hero.localized_name
       // img.img-sm.hero_mask(id='hero_mask_' + hero_id, style='background-color: black; opacity:75%; z-index: 5; height: 24px; width:43px;', display='none')
   else
     =hero_id
@@ -12,10 +12,11 @@ mixin hero_banpick_table(start_hero_id, end_hero_id)
     tbody
       - for(var i=0; i < 6; i ++)
         tr
-          - for(var j = 0; j < 4; j ++)
-            - var num = start_hero_id + i * 4 + j
+          - for(var j = 0; j < 5; j ++)
+            - var num = start_hero_id + i * 5 + j
             - if (num == 24 || num == 108)
-              - continue;
+              - num += 1;
+              - j += 1;
             if num <= end_hero_id
               td          
                 +hero_banpick(num)
