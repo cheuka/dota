@@ -22,6 +22,14 @@ heroes.forEach(function(h)
     constants.heroes[h.id] = h;
     constants.hero_names[h.name] = h;
 });
+
+// lordstone: add banpick_heroes
+
+var banpick_heroes = constants.banpick_hero_order.heroes;
+constants.banpick_heroes = banpick_heroes;
+
+// console.log('DEBUG:' + JSON.stringify(constants.banpick_heroes));
+
 /*
 //leagues, key by id
 var leagues = JSON.parse(JSON.stringify(constants.leagues.result.leagues));
