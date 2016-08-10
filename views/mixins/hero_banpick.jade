@@ -7,18 +7,26 @@ mixin hero_banpick(hero_id)
     =hero_id
 
 
-mixin hero_banpick_table(start_hero_id, end_hero_id)
+mixin hero_banpick_table(term)
   table(style='margin:auto;')#hero_table
     tbody
       - for(var i=0; i < 6; i ++)
         tr
           - for(var j = 0; j < 5; j ++)
+<<<<<<< HEAD
             - var num = start_hero_id + i * 5 + j
             - if (num == 24 || num == 108)
               - num += 1;
               - j += 1;
             if num <= end_hero_id
+=======
+            - var num = i * 5 + j
+            - console.log('DEBUG term:' + term);
+            - console.log('DEBUG num:' + num)
+            - console.log('DEBUG hero:' + constants.banpick_heroes[term][num])
+            if num < constants.banpick_heroes[term].length
+>>>>>>> dev
               td          
-                +hero_banpick(num)
+                +hero_banpick(constants.banpick_heroes[term][num])
             else
               - break

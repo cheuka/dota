@@ -272,19 +272,19 @@ function getMatchData(db, user_id, cb){
 
 }
 
-function checkMatchId(db, user_id, match_id){
+function checkMatchId(db, user_id, match_id, cb){
 	db.table('user_match_list').select().where({
 		user_id: user_id,
 		match_id: match_id
 	}).asCallback(function(err, results){
 		if(err){
 			console.error('Check match id err:' + err);
-			return false;
+			return cb(false);
 		}
 		if(!results || results == null){
-			return false;
+			return cb(false);
 		}else{
-			return true;
+			return cb(true);
 		}
 	});
 }

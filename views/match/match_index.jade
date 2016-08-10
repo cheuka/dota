@@ -39,10 +39,7 @@ block match_content
               th: abbr(title=tooltips.hero_healing) HH
               th: abbr(title=tooltips.items) Items
           tr(class=player.isRadiant ? "radiant" : "dire")
-            if match.upload
-              +hero_td_new(player, player.abandons ? constants.leaver_status[player.leaver_status] : "", match.upload.player_info[i])
-            else
-              +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "")
+            +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "")
             td
               //img.img-sm(src=player.avatar)
               if (player.last_login)
@@ -94,8 +91,8 @@ block match_content
                 tr
                   +picks_bans_row(match.picks_bans, 1)
                 
-  if match.upload
-    if match.upload.picks_bans
+  else if match.upload
+    if match.upload.picks_bans 
       .row
         .col-md-12      
             h3.inline-header Picks/Bans

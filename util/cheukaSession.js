@@ -187,8 +187,11 @@ function userAuth(redis, user_id, log_token, cb){
 	});
 }
 
-function checkMatchId(db, user_id, match_id){
-	return user_mgmt.checkMatchId(db, user_id, match_id);
+function checkMatchId(db, user_id, match_id, cb){
+	user_mgmt.checkMatchId(db, user_id, match_id, function(result)
+	{
+		return cb(result);
+	});
 }
 
 module.exports = {

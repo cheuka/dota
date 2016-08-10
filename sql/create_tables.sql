@@ -33,8 +33,7 @@ CREATE TABLE matches (
   pgroup json,
   --parsed data below
   chat json[],
-	upload json,
-	picks_bans json[],
+  upload json,
   objectives json[],
   radiant_gold_adv integer[],
   radiant_xp_adv integer[],
@@ -182,5 +181,16 @@ CREATE TABLE picks_bans (
   hero_id int,
   team smallint,
   ord smallint,
+  player_id bigint,
   PRIMARY KEY (match_id, ord)
+);
+
+CREATE TABLE team_match(
+	team_id bigint,
+	match_id bigint REFERENCES matches(match_id) ON DELETE CASCADE,
+	PRIMARY KEY (team_id, match_id),
+	is_radiant boolean not null,
+	is_winner boolean not null,
+	version varchar(30),
+	end_time bigint
 );

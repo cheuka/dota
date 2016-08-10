@@ -16,10 +16,20 @@ constants.heroes = {};
 constants.hero_names = {};
 heroes.forEach(function(h)
 {
-    h.img = "/apps/dota2/images/heroes/" + h.name.replace("npc_dota_hero_", "") + "_full.png";
+    // h.img = "/apps/dota2/images/heroes/" + h.name.replace("npc_dota_hero_", "") + "_full.png";
+	// lordstone: localize the hero img
+	h.img = "/public/images/hero_icons/" + h.id + ".png";
     constants.heroes[h.id] = h;
     constants.hero_names[h.name] = h;
 });
+
+// lordstone: add banpick_heroes
+
+var banpick_heroes = constants.banpick_hero_order.heroes;
+constants.banpick_heroes = banpick_heroes;
+
+// console.log('DEBUG:' + JSON.stringify(constants.banpick_heroes));
+
 /*
 //leagues, key by id
 var leagues = JSON.parse(JSON.stringify(constants.leagues.result.leagues));

@@ -194,7 +194,7 @@ function insertMatch(db, redis, match, options, cb)
     async.series(
     {
         "u": upsertMatch,
-				"sum": saveUserMatch,
+        "sum": saveUserMatch,
         "uc": upsertMatchCassandra,
         "upc": updatePlayerCaches,
         "cmc": clearMatchCache,
@@ -219,6 +219,7 @@ function insertMatch(db, redis, match, options, cb)
                 "m": upsertMatches,
                 "pm": upsertPlayerMatch,
                 "pb": upsertPickbans,
+                "tm": upsertTeamMatch
             }, exit);
 
             function upsertMatches(cb)
@@ -244,9 +245,27 @@ function insertMatch(db, redis, match, options, cb)
 
             function upsertPickbans(cb)
             {
-                if (match.picks_bans)
+                if (match.picks_bans || match.upload && match.upload.picks_bans)
                 {
-                    async.each(match.picks_bans || [], function (p, cb)
+                    var pick_idx = [0, 0, 0, 0, 1, 6, 7, 2, 0, 0, 0, 0, 3, 8, 4, 9, 0, 5, 0, 10];
+
+                    var pbs = match.picks_bans || match.upload.picks_bans;
+
+                    pbs.forEach(function(pb, i)
+                    {
+                       if (pb.is_pick && players.length > 0 && players[pick_idx[i] - 1])
+                       {
+                            pb.player_id = players[pick_idx[i] - 1].account_id || 0;
+                       }else{
+							pb.player_id = 0;
+					   }
+					   if (!pb.order){
+						   pb.order = i;
+					   }
+                    });
+
+
+                    async.each(pbs || [], function (p, cb)
                     {
                         p.ord = p.order;
                         p.match_id = match.match_id;
@@ -261,6 +280,69 @@ function insertMatch(db, redis, match, options, cb)
                 {
                   cb();
                 }
+           }
+
+		   function upsertTeamMatch(cb)
+		   {
+			   async.series(
+			   {
+				   'r': addRadiant,
+				   'd': addDire,
+			   }, cb);
+
+			   function addRadiant(cb)
+			   {
+					var team_id = match.radiant_team_id || 0;
+					var mv = match.version || 0;
+					var tm;
+					tm = 
+					{
+						is_radiant: true,
+						is_winner: match.radiant_win,
+						end_time: match.end_time || 0,
+						version: mv.toString(),
+						team_id: team_id,
+						match_id: match.match_id
+					}
+					if(team_id && match.match_id)
+					{
+						upsert(trx, 'team_match', tm,
+						{
+						   team_id: team_id,
+						   match_id: match.match_id
+						}, cb);
+					} else
+					{
+						return cb();
+					}
+			   }
+
+			   function addDire(cb)
+				{
+					var team_id = match.dire_team_id || 0;
+					var mv = match.version || 0;
+					var tm;
+					tm = 
+					{
+					   is_radiant: false,
+					   is_winner: !match.radiant_win,
+					   end_time: match.end_time || 0,
+					   version: mv.toString(),
+					   team_id: team_id,
+					   match_id: match.match_id
+					}
+					if(team_id && match.match_id)
+					{
+						upsert(trx, 'team_match', tm,
+						{
+							team_id: team_id,
+							match_id: match.match_id
+						}, cb);
+					} else
+					{
+						return cb();
+					}
+				}
            }
 
            function exit(err)
@@ -278,14 +360,14 @@ function insertMatch(db, redis, match, options, cb)
             }
         });
     }
-
-		function saveUserMatch(cb)
-		{
-			// lordstone: save to user_match_list
-			console.log('saving to user_match_list');
-			cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
-			return cb();
-		}
+    
+    function saveUserMatch(cb)
+	{
+		// lordstone: save to user_match_list
+		console.log('saving to user_match_list');
+		cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
+		return cb();
+	}
 
     function upsertMatchCassandra(cb)
     {
