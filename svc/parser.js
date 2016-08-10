@@ -294,7 +294,12 @@ function runParse(match, job, cb)
                 parsed_data.radiant_gold_adv = ap.radiant_gold_adv;
                 parsed_data.radiant_xp_adv = ap.radiant_xp_adv;
                 parsed_data.upload = upload;
-
+				
+				//lordstone: adding end_time and team ids
+                parsed_data.end_time = upload.end_time;
+                parsed_data.radiant_team_id = upload.radiant_team_id;
+                parsed_data.dire_team_id = upload.dire_team_id;
+                parsed_data.radiant_win = upload.radiant_win;
                 //rxu, add team and personal info
                 for (var i = 0; i < parsed_data.players.length; ++i)
                 {
