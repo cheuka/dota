@@ -127,6 +127,18 @@ var last_slot = null;
 var user_team = '';
 var enemy_team = '';
 
+// utility
+
+function getHeroImg(hero_id){
+	var img0 = $('<img>');
+	var src_img = $('#hero_' + hero_id);
+	img0.attr('src', src_img.attr('src'));
+	img0.attr('title', src_img.attr('title'));
+	img0.attr('style', src_img.attr('style'));
+	return img0;
+}
+
+
 // server comm logics
 
 function requestAPI(req_var, cb){
@@ -167,6 +179,7 @@ function renderBP2List(mylist, container){
 		var td_0 = $('<td></td>');
 		
 		td_0.html('Slot:' + mylist.player_slots[i].player_slot);
+		td_0.attr('colspan', '5');
 		td_0.appendTo(tr_0);
 		tr_0.appendTo(tbody0);
 
@@ -175,6 +188,8 @@ function renderBP2List(mylist, container){
 			var tr_1 = $('<tr></tr>');
 			var td_1 = $('<td></td>');
 			td_1.html('order:' + mylist.player_slots[i].orders[j].order);
+			td_1.attr('colspan', '4');
+			tr_1.append($('<td></td>'));
 			td_1.appendTo(tr_1);
 			tr_1.appendTo(tbody0);
 			
@@ -184,7 +199,8 @@ function renderBP2List(mylist, container){
 				var td_2 = $('<td></td>');
 				var td_3 = $('<td></td>');
 				var td_4 = $('<td></td>');
-				td_2.html('Hero:' + mylist.player_slots[i].orders[j].heroes[k].hero_id);
+				var hero_img = getHeroImg(mylist.player_slots[i].orders[j].heroes[k].hero_id);
+				hero_img.appendTo(td_2);
 				td_3.html(mylist.player_slots[i].orders[j].heroes[k].matches);
 				td_4.html(mylist.player_slots[i].orders[j].heroes[k].wins);
 				td_2.appendTo(tr_2);
