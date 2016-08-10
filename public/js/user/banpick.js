@@ -241,13 +241,15 @@ function renderComboList(mylist, container){
 		if(!mylist[i].heroes || mylist[i].heroes.length == 0){
 			td_0.val('missing hero combo');
 		}else{
-			var heroes = '';
+			// var heroes = '';
 			for(var j = 0; j < mylist[i].heroes.length; j++){
 				// adding heros
-				heroes += mylist[i].heroes[j].toString();
-				heroes += ', ';
+				var hero_img = getHeroImg(mylist[i].heroes[j]);
+				hero_img.appendTo(td_0);
+				// heroes += mylist[i].heroes[j].toString();
+				// heroes += ', ';
 			}
-			td_0.html(heroes);
+			// td_0.html(heroes);
 		}
 		td_0.css('min-width', '200px');
 		td_0.appendTo(tr0);
