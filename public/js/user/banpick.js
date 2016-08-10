@@ -316,28 +316,41 @@ function getCombo(){
 
 function renderBP2(mylist, container){
 	
-	var svg0 = $('<svg></svg>');
-	svg0.attr('min-width', '1200px');
-	svg0.attr('min-height', '1200px');
+	// lordstone: trial of D3 drawing bp2
 	
-	const l_unit = 200;
+	var w = 500;
+	var h = 1000;
+
+	var r = 20;
+
+	var steplen = 200;
+
+	var svg = d3.select("#bp2_container")
+			.append("svg")
+			.attr('width', w)
+			.attr('height',h);
 	
-	// draw the frame
-
-	for (var i = 0; i < 5; i ++) {
-
-		var g0 = $('<g></g>');
-		g0.addClass('node');
-		g0.attr('transform', 'translate(0, ' + i * l_unit + ')');
-		var text0 = $('<text></text>');
-		text0.html('Slot ' + (i + 1));
-		text0.appendTo(g0);
-		g0.appendTo(svg0);
-	}
-
-	// end of frame
+	var axis_dataset = [1, 2, 3, 4, 5];	
+	var x_axis = svg.selectAll("g")
+		.data(axis_dataset)
+		.enter()
+		.append("g")
+		.attr("transform", function(d, i){
+			return "translate(" + i * steplen + "," + steplen + ")";
+		});
 	
-	svg0.appendTo(container);
+	x_axis.append("circle")
+		.attr("r", r)
+		.attr("stroke", "yellow")
+		.attr("fill", "blue");
+
+	x_axis.append("text")
+		.attr("text-anchor", "middle")
+		.attr("dy", "0.34em")
+		.text(function(d){
+			return 'Slot ' + d;
+		});
+
 
 }
 
