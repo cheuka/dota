@@ -314,6 +314,33 @@ function getCombo(){
 	);
 }
 
+function renderBP2(mylist, container){
+	
+	var svg0 = $('<svg></svg>');
+	svg0.attr('min-width', '1200px');
+	svg0.attr('min-height', '1200px');
+	
+	const l_unit = 200;
+	
+	// draw the frame
+
+	for (var i = 0; i < 5; i ++) {
+
+		var g0 = $('<g></g>');
+		g0.addClass('node');
+		g0.attr('transform', 'translate(0, ' + i * l_unit + ')');
+		var text0 = $('<text></text>');
+		text0.html('Slot ' + (i + 1));
+		text0.appendTo(g0);
+		g0.appendTo(svg0);
+	}
+
+	// end of frame
+	
+	svg0.appendTo(container);
+
+}
+
 
 function getBP2(){
 
@@ -328,7 +355,7 @@ function getBP2(){
 	requestAPI(user_bp, function(reply)
 		{
 			console.log('Got msg from server for BP2');
-			console.log('DEBUG:' + reply);
+			// console.log('DEBUG:' + reply);
 			var reply_obj = JSON.parse(reply);
 			if(reply_obj && reply_obj.status && reply_obj.status == 'ok' && reply_obj.list)
 			{
@@ -340,11 +367,13 @@ function getBP2(){
 
 			// start rendering the new list in tops i.e. combo
 			$('#bp2_helper').fadeOut();
-			$('#bp2_table').empty();
-			$('#bp2_table').fadeIn();
+			$('#bp2_container').empty();
+			$('#bp2_container').fadeIn();
 
 			// start rendering
-			renderBP2List(reply_obj.list, $('#bp2_table'));			
+			// renderBP2List(reply_obj.list, $('#bp2_table'));	
+
+			renderBP2(reply_obj.list, $('#bp2_container'));	
 		}
 	);
 
