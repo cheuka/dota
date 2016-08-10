@@ -3,6 +3,12 @@
  * by lordstone
  */
 
+// const DATA - RELATED
+// must be the same with server side
+
+const CONST_MATCH_ODDS = 0;
+const CONST_WINNING_RATES = 1;
+
 const LEFT_TIMER = 0;
 const RIGHT_TIMER = 1;
 const LEFT_RES_TIMER = 2;
@@ -116,8 +122,244 @@ var is_paused = false;
 
 var last_slot = null;
 
+// DATA-RELATED vars
+
+var user_team = '';
+var enemy_team = '';
+
+// utility
+
+function getHeroImg(hero_id){
+	var img0 = $('<img>');
+	var src_img = $('#hero_' + hero_id);
+	img0.attr('src', src_img.attr('src'));
+	img0.attr('title', src_img.attr('title'));
+	img0.attr('style', src_img.attr('style'));
+	return img0;
+}
+
+
+// server comm logics
+
+function requestAPI(req_var, cb){
+	$.post(
+		'/api/banpick/',
+		JSON.stringify(req_var),
+		function(reply){
+			var reply_obj = JSON.parse(reply);
+			return cb(reply);
+		}
+	);
+}
+
+function renderBP2List(mylist, container){
+
+	var tbody0 = $('<tbody></tbody>');
+	var thead0 = $('<thead></thead>');
+	var theadrow_0 = $('<td></td>');
+	theadrow_0.html('Player Slot');
+	theadrow_0.appendTo(thead0);
+	var theadrow_1 = $('<td></td>');
+	theadrow_1.html('Order');
+	theadrow_1.appendTo(thead0);
+	var theadrow_2 = $('<td></td>');
+	theadrow_2.html('Hero');
+	theadrow_2.appendTo(thead0);
+	var theadrow_3 = $('<td></td>');
+	theadrow_3.html('Matches');
+	theadrow_3.appendTo(thead0);
+	var theadrow_4 = $('<td></td>');
+	theadrow_4.html('Wins');
+	theadrow_4.appendTo(thead0);
+	thead0.appendTo(tbody0);
+	
+	for(var i = 0; i < mylist.player_slots.length; i ++)
+	{
+		var tr_0 = $('<tr></tr>');
+		var td_0 = $('<td></td>');
+		
+		td_0.html('Slot:' + mylist.player_slots[i].player_slot);
+		td_0.attr('colspan', '5');
+		td_0.appendTo(tr_0);
+		tr_0.appendTo(tbody0);
+
+		for(var j = 0; j < mylist.player_slots[i].orders.length; j ++)
+		{	
+			var tr_1 = $('<tr></tr>');
+			var td_1 = $('<td></td>');
+			td_1.html('order:' + mylist.player_slots[i].orders[j].order);
+			td_1.attr('colspan', '4');
+			tr_1.append($('<td></td>'));
+			td_1.appendTo(tr_1);
+			tr_1.appendTo(tbody0);
+			
+			for(var k = 0; k < mylist.player_slots[i].orders[j].heroes.length; k ++)
+			{
+				var tr_2 = $('<tr></tr>');
+				var td_2 = $('<td></td>');
+				var td_3 = $('<td></td>');
+				var td_4 = $('<td></td>');
+				var hero_img = getHeroImg(mylist.player_slots[i].orders[j].heroes[k].hero_id);
+				hero_img.appendTo(td_2);
+				td_3.html(mylist.player_slots[i].orders[j].heroes[k].matches);
+				td_4.html(mylist.player_slots[i].orders[j].heroes[k].wins);
+				td_2.appendTo(tr_2);
+				td_3.appendTo(tr_2);
+				td_4.appendTo(tr_2);
+				tr_2.appendTo(tbody0);
+			
+			} // end for k			
+
+		} // end for j
+
+	} // end for i
+
+	tbody0.appendTo(container);
+}
+
+function renderComboList(mylist, container){
+	
+	// lordstone: render mylist on table container:
+	var tbody0 = $('<tbody></tbody>');
+	var thead0 = $('<thead></thead>');
+	var theadrow_0 = $('<td></td>');
+	theadrow_0.attr('colspan', '5');
+	theadrow_0.css('min-width', '200px');
+	theadrow_0.html('Hero Combo');
+	theadrow_0.appendTo(thead0);
+	var theadrow_1 = $('<td></td>');
+	theadrow_1.html('Matches');
+	theadrow_1.appendTo(thead0);
+	var theadrow_2 = $('<td></td>');
+	theadrow_2.html('Wins');
+	theadrow_2.appendTo(thead0);
+	thead0.appendTo(tbody0);
+	for(var i = 0; i < mylist.length; i ++){
+		var tr0 = $('<tr></tr>');
+		var td_0 = $('<td></td>');
+		td_0.attr('colspan', '5');
+		if(!mylist[i].heroes || mylist[i].heroes.length == 0){
+			td_0.val('missing hero combo');
+		}else{
+			// var heroes = '';
+			for(var j = 0; j < mylist[i].heroes.length; j++){
+				// adding heros
+				var hero_img = getHeroImg(mylist[i].heroes[j]);
+				hero_img.appendTo(td_0);
+				// heroes += mylist[i].heroes[j].toString();
+				// heroes += ', ';
+			}
+			// td_0.html(heroes);
+		}
+		td_0.css('min-width', '200px');
+		td_0.appendTo(tr0);
+		var td_1 = $('<td></td>');
+		td_1.html(mylist[i].matching_odds);
+		td_1.appendTo(tr0);
+		var td_2 = $('<td></td>');
+		td_2.html(mylist[i].winning_rate);
+		td_2.appendTo(tr0);
+		tr0.appendTo(tbody0);
+	}
+	tbody0.appendTo(container);
+}
+
+function getCombo(){
+	var user_bp = {
+		type: "combo",
+		user_team: user_team,
+		enemy_team: enemy_team,
+		is_user_radiant: is_user_radiant,
+		is_user_first_pick: is_user_first_pick,
+		options: 
+		{
+			order_by: CONST_MATCH_ODDS,
+			display:
+			[
+				CONST_MATCH_ODDS,
+				CONST_WINNING_RATES	
+			],
+			length: 8,
+			max_hero: 4,
+			min_hero: 2,
+			asc: false 
+		},
+		fixed_heroes: {
+			user_picked: is_user_radiant ? hero_slots.radiant_pick : hero_slots.dire_pick,
+			user_banned: is_user_radiant ? hero_slots.radiant_ban : hero_slots.dire_ban,
+			enemy_picked: is_user_radiant ? hero_slots.dire_pick : hero_slots.radiant_pick,
+			enemy_banned: is_user_radiant ? hero_slots.dire_ban : hero_slots.radiant_ban
+		}
+	};
+	
+	requestAPI(user_bp, function(reply)
+		{
+			console.log('Got msg from server for combo');
+			var reply_obj = JSON.parse(reply);
+			if(reply_obj && reply_obj.status && reply_obj.status == 'ok' && reply_obj.list)
+			{
+				console.log('DEBUG: status ok');
+			}else{
+				console.error('Server side bug!');
+				return;
+			}
+			// start rendering the new list in tops i.e. combo
+			$('#combo_helper').fadeOut();
+			$('#hero_combo_table').empty();
+			$('#hero_combo_table').fadeIn();
+			// start rendering
+			renderComboList(reply_obj.list, $('#hero_combo_table'));			
+			
+		}
+	);
+}
+
+
+function getBP2(){
+
+	var user_bp = {
+		type: "bp2",
+		user_team: user_team,
+		enemy_team: enemy_team,
+		is_user_radiant: is_user_radiant,
+		is_user_first_pick: is_user_first_pick
+	};
+	
+	requestAPI(user_bp, function(reply)
+		{
+			console.log('Got msg from server for BP2');
+			console.log('DEBUG:' + reply);
+			var reply_obj = JSON.parse(reply);
+			if(reply_obj && reply_obj.status && reply_obj.status == 'ok' && reply_obj.list)
+			{
+				console.log('DEBUG: status ok');
+			}else{
+				console.error('Server side bug!');
+				return;
+			}
+
+			// start rendering the new list in tops i.e. combo
+			$('#bp2_helper').fadeOut();
+			$('#bp2_table').empty();
+			$('#bp2_table').fadeIn();
+
+			// start rendering
+			renderBP2List(reply_obj.list, $('#bp2_table'));			
+		}
+	);
+
+}
+
+function updateWithServer(){
+	console.log('Update with server!');
+	$('#combo_helper').html('Waiting for server data');
+	getCombo();
+}
+
+// banpick logics
+
 function getLeftRight(input){
-	console.log('INPUT:' + input);
+	//console.log('INPUT:' + input);
 	if((input >= 1 && input <= 4) && ((is_user_radiant === true && is_user_first_pick === false) || (is_user_radiant === false && is_user_first_pick === true))){
 		if(input % 2 == 0){
 			return (input - 1);
@@ -173,7 +415,15 @@ function clickRadioFirstPick(){
 	// alert('First Pick');
 	var radios = document.getElementsByName('first_pick');
 	is_user_first_pick = radios[0].checked;
-	// alert(is_user_first_pick);
+	// alert(is_user_first_pick);	
+	if(radios[0].checked){
+		$('#first_pick_helper_0').addClass('submit_button');
+		$('#first_pick_helper_1').removeClass('submit_button');
+	}else{
+		$('#first_pick_helper_1').addClass('submit_button');
+		$('#first_pick_helper_0').removeClass('submit_button');
+	}
+
 }
 
 function switchRadios(radio_status){
@@ -375,8 +625,8 @@ function changeStatus(passed){
 		if(game_mode === true) 
 			stopTimer();
 	}
-	console.log('Code origin:' + procedure[cur_procedure]);
-	console.log('Code:' + getLeftRight(procedure[cur_procedure]));
+	// console.log('Code origin:' + procedure[cur_procedure]);
+	// console.log('Code:' + getLeftRight(procedure[cur_procedure]));
 	switch(getLeftRight(procedure[cur_procedure]))
 	{
 		case(BP_START):
@@ -388,11 +638,14 @@ function changeStatus(passed){
 			}
 			$('#button1').attr('disabled', true);
 			igniteSlot();
+			updateWithServer();
+			getBP2();
 		break;
 		case(LEFT_BAN):
 		case(RIGHT_BAN):
 		case(LEFT_PICK):
 		case(RIGHT_PICK):
+			updateWithServer();
 			if(passed === false) 
 				doBanpick();
 			cur_procedure += 1;
@@ -403,7 +656,7 @@ function changeStatus(passed){
 			}else{
 				if(game_mode === true) 
 					stopTimer();
-				$('#button').attr('disabled', false);		
+				$('#button1').attr('disabled', false);		
 			}
 			igniteSlot();
 			is_radiant_turn = (procedure[cur_procedure] === LEFT_BAN || procedure[cur_procedure] === LEFT_PICK);
@@ -411,7 +664,7 @@ function changeStatus(passed){
 		case(BP_CONFIRM): // to confirm
 			cur_procedure += 1;	
 			doConfirm();
-			$('#button').attr('disabled', false);		
+			$('#button1').attr('disabled', false);		
 		break;
 		case(BP_END):  // confirmed & finished
 			// Save the BP result
@@ -572,7 +825,8 @@ function pick_hero(hero_id){
 
 $(document).ready(function(){
 	//set init status	
-	// alert('ready!');
+
+	// operations:
 	switchRadios(true);
 	setStatus();
 	cur_procedure = 0;
@@ -581,6 +835,10 @@ $(document).ready(function(){
 	if(user_defined_procedure){
 		procedure = user_defined_procedure;
 	}
+	// operations end.
+
+	// getBP2();
+	
 });
 
 

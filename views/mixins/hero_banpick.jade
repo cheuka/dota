@@ -14,9 +14,10 @@ mixin hero_banpick_table(term)
         tr
           - for(var j = 0; j < 5; j ++)
             - var num = i * 5 + j
-            - console.log('DEBUG term:' + term);
-            - console.log('DEBUG num:' + num)
-            - console.log('DEBUG hero:' + constants.banpick_heroes[term][num])
+            //
+              - console.log('DEBUG term:' + term);
+              - console.log('DEBUG num:' + num)
+              - console.log('DEBUG hero:' + constants.banpick_heroes[term][num])
             if num < constants.banpick_heroes[term].length
               td          
                 +hero_banpick(constants.banpick_heroes[term][num])
