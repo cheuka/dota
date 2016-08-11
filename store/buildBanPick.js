@@ -30,7 +30,7 @@ function generateBP2Result(heroes_pos)
 	};
 
 
-	for (var pos = 0; pos < heroes_pos.length; ++i)
+	for (var pos = 0; pos < heroes_pos.length; ++pos)
 	{
 		var player_slot = {
 			player_slot: pos,
