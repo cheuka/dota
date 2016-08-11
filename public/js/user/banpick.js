@@ -426,7 +426,7 @@ function renderBP2(mylist, container){
 	} // end for i
 
 	// end of process the REAL dataset
-	console.log('DEBUG json:' + JSON.stringify(dataset));
+	// console.log('DEBUG json:' + JSON.stringify(dataset));
 
 	var dps = svg.selectAll("g")
 		.data(dataset)
@@ -455,12 +455,12 @@ function renderBP2(mylist, container){
 		.attr("xlink:href", function(d){
 			return getHeroSrc(d.hero_id);
 		})
-		.attr("x", 0) // function(d){return -d.r;})
-		.attr("y", 0) // function(d){return -d.r;})	
+		.attr("x", function(d){return -d.r/2;})
+		.attr("y", function(d){return -d.r/2;})	
 		.attr("dx", function(d){return 0;})
 		.attr("dy", function(d){return 0;})
-		.attr("height", function(d){return d.r * 2;})
-		.attr("width", function(d){return d.r * 2;});
+		.attr("height", function(d){return d.r * 3;})
+		.attr("width", function(d){return d.r * 3;});
 	
 	dps.append("circle")
 		.attr("r", function(d){return d.r;})
