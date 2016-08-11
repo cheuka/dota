@@ -28,6 +28,7 @@ module.exports = function(db, redis)
 			var dummy_data = {
 				status: 'ok'
 			};
+
 			if(user_bp.type === 'combo'){
 				dummy_data = {
 					status: 'ok',
@@ -51,13 +52,48 @@ module.exports = function(db, redis)
 					]
 				};
 			}else if (user_bp.type === 'bp2'){
+
+				// For dummy data usage
+				/* 
 				console.log('DEBUG: display bp2 dummy file contents');
 				var json_obj = JSON.parse(fs.readFileSync('./bp2_dummy.json'));
-				console.log('DEBUG: bp2 json:' + JSON.stringify(json_obj));
+				//console.log('DEBUG: bp2 json:' + JSON.stringify(json_obj));
+				
 				dummy_data = {
 					status: 'ok',
 					list: json_obj
 				};
+				*/
+
+				// @todo, rxu, temporarily use this
+				// next step, we would read team id from local file from its name
+				var enemy_team_id = user_bp.enemy-team;
+
+				computeBanPickInfo(
+				{
+					db: db,
+					redis: redis,
+					enemy_team_id: enemy_team_id
+				}, function(err, result)
+				{
+					if (err)
+					{
+						console.log(err)
+						dummy_data = {
+							status: "error"
+							list: result
+						}
+					}
+					else
+					{
+						dummy_data = {
+							status: 'ok',
+							list: result
+						}
+					}
+				});
+
+
 			}
 			res.send(JSON.stringify(dummy_data));
 		});
