@@ -462,11 +462,13 @@ table {
     to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
 }
 
+/*
 .submit_button {
     -webkit-animation-name: greenPulse;
     -webkit-animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
 }
+*/
 
 .gray_img {
 		border: 2px white solid;

@@ -130,8 +130,8 @@ var last_slot = null;
 
 // DATA-RELATED vars
 
-var user_team = '';
-var enemy_team = '';
+var user_team = '0';
+var enemy_team = '0';
 
 // utility
 
@@ -153,6 +153,15 @@ function getHeroTitle(hero_id){
 	var src_img = $('#hero_' + hero_id);
 	return src_img.attr("title");
 }
+
+function home_team_sel_change(){
+	user_team = $('#home_team_sel').val();
+}
+
+function enemy_team_sel_change(){
+	enemy_team = $('#enemy_team_sel').val();
+}
+
 
 // server comm logics
 
@@ -447,9 +456,28 @@ function renderBP2(mylist, container){
 			return d.text;
 		});
 
+	dps.append("image")
+		.style('-webkit-border-radius', function(d){
+			return d.r;
+		})
+		.attr("height", function(d){
+			return d.r;
+		})
+		.attr("width", function(d){
+			return d.r;
+		})
+		.attr("xlink:href", function(d){
+			return getHeroSrc(d.hero_id);
+		})
+		.attr("x", function(d){return -d.r/2;})
+		.attr("y", function(d){return -d.r/2;});
+	
+	
+
+	/*
 	dps.append("defs")
 		.append("pattern")
-		.attr("id", function(d, i){return 'bp2_hero_' + i;})
+		.attr("id", function(d, i){return 'bp2_hero_head_' + i;})
 		// .attr("patternUnits", "userSpaceOnUse")
 		.attr("height", function(d){return d.r * 2;})
 		.attr("width", function(d){return d.r * 2;})
@@ -461,8 +489,8 @@ function renderBP2(mylist, container){
 		.attr("y", function(d){return -d.r/2;})	
 		.attr("dx", function(d){return 0;})
 		.attr("dy", function(d){return 0;})
-		.attr("height", function(d){return d.r * 3;})
-		.attr("width", function(d){return d.r * 3;});
+		.attr("height", function(d){return d.r * 4})
+		.attr("width", function(d){return d.r * 4})
 	
 	dps.append("circle")
 		.attr("r", function(d){return d.r;})
@@ -474,8 +502,9 @@ function renderBP2(mylist, container){
 		.attr("cx", 0)
 		.attr("cy", 0)
 		.attr("fill", function(d, i){
-			return ("url(#bp2_hero_" + i + ")");
+			return ("url(#bp2_hero_head_" + i + ")");
 		});
+	*/
 
 	/*
 	dps.append("image")

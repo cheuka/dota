@@ -3,6 +3,7 @@ include /mixins/hero_td
 include /mixins/data_table
 include /mixins/data_table_header
 include /mixins/hero_banpick
+include /mixins/common_teams_dropdown
 
 append head
     meta(property="og:title", content="Mock Ban-Pick: Cheuka's Dota")
@@ -17,7 +18,8 @@ if user
       .row()
         
         // tabs block
-        .col-md-6(style='border: 1px white solid;')
+        .col-md-4 
+          //(style='border: 1px white solid;')
           ul(class='nav nav-tabs', role='tablist')
             li(role='presentation', class='active') 
               a(href='#heroes', aria-controls='heroes', role='tab', data-toggle='tab') Heroes
@@ -28,9 +30,23 @@ if user
             li(role='presentation') 
               a(href='#options', aria-controls='options', role = 'tab', data-toggle='tab') Options
         // tabs block end
+        
+        // team selection block
+
+        .col-md-3 
+          //(style='border: 1px white solid;')
+          .row(style='min-height: 45px')
+            span User:
+            +common_teams_dropdown('home_team_sel')
+   
+            span Enemy:
+            +common_teams_dropdown('enemy_team_sel')
+
+
+        // team selection block end
 
         // sequence block 
-        .col-md-6
+        .col-md-5
           .row(style='min-height: 45px')
             .col-md-6(style='border: 1px white solid;min-height: 45px')
               //.radio-inline

@@ -1,0 +1,7 @@
+mixin common_teams_dropdown(sel_name)
+  select(onchange='#{sel_name}_change();', id=sel_name)
+    option(value='0', selected='true') No team
+    - for(var i = 0; i < constants.common_teams.length; i ++)
+      option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
+
+
