@@ -412,7 +412,7 @@ function renderBP2(mylist, container){
 					matches: hero.matches,
 					wins: hero.win,
 					y: ((this_player_slot + 0.5 ) * step_y),
-					x: (step_x * (this_order + 0.5 + (k / hero_num))),
+					x: (step_x * (this_order + 0.5) + step_x * (k / hero_num)),
 					r: Math.min((hero.matches / 2) * 10 + 10, 20)
 					// text: hero.hero_id
 				};
@@ -448,21 +448,19 @@ function renderBP2(mylist, container){
 	dps.append("defs")
 		.append("pattern")
 		.attr("id", function(d, i){return 'bp2_hero_' + i;})
-		.attr("patternUnits", "userSpaceOnUse")
+		// .attr("patternUnits", "userSpaceOnUse")
 		.attr("height", function(d){return d.r * 2;})
 		.attr("width", function(d){return d.r * 2;})
 		.append("image")
 		.attr("xlink:href", function(d){
 			return getHeroSrc(d.hero_id);
 		})
-		.attr("x", function(d){return 0;})
-		.attr("y", function(d){return 0;})	
+		.attr("x", 0) // function(d){return -d.r;})
+		.attr("y", 0) // function(d){return -d.r;})	
 		.attr("dx", function(d){return 0;})
 		.attr("dy", function(d){return 0;})
-
 		.attr("height", function(d){return d.r * 2;})
 		.attr("width", function(d){return d.r * 2;});
-
 	
 	dps.append("circle")
 		.attr("r", function(d){return d.r;})
