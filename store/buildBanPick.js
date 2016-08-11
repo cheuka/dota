@@ -1,4 +1,17 @@
 
+var pickOrderMap = {
+	'4': 1,
+	'7': 2,
+	'12': 3,
+	'14': 4,
+	'17': 5, // pick order of first ban team
+	'5': 1,
+	'6': 2,
+	'13':3,
+	'15': 4,
+	'19': 5  // pick order of second ban team
+};
+
 
 
 //last few bit would represent the position
@@ -8,8 +21,44 @@ function getPosition(player_slot)
 }
 
 
+//generate required response
+function generateBP2Result(heroes_pos)
+{
+	var res = {
+		type: "BP2",
+		player_slots: []
+	};
 
-function buildBanPick(option, cb)
+
+	for (var pos = 0; pos < heroes_pos.length; ++i)
+	{
+		var player_slot = {
+			player_slot: pos,
+			orders: []
+		};
+
+		for (var num = 0; num < heroes_pos[pos].length; ++num)
+		{
+			var heroes = [{
+				hero_id: heroes_pos[pos][num].hero_id,
+				matches: heroes_pos[pos][num].matches,
+				win: 100 * heroes_pos[pos][num].matches_win / matches 
+			}];
+			
+
+			player_slot.orders.push({
+				order: heroes_pos[pos][num].order,
+				heroes: hero
+			});
+		}
+	}
+
+	return res;
+}
+
+
+
+function computeBP2Info(option, cb)
 {
 	var db = options.db;
     var redis = options.redis;
@@ -17,7 +66,7 @@ function buildBanPick(option, cb)
 
 
     db.raw('select * where team_id = ?', [enemy_team_id]).asCallback(function(err, match_ids)
-    {
+	{
     	if (err)
     	{
     		return cb(err);
@@ -28,7 +77,7 @@ function buildBanPick(option, cb)
     		return cb(null, []);
     	}
 
-    	// rxu, we use 2D array to represent hero info for pick_order versus position
+    	// rxu, we use a array to represent hero info, index is position
     	// cell should be like
     	/* 
     		[
@@ -37,26 +86,25 @@ function buildBanPick(option, cb)
 	    			matches_win: 3
 	    			hero_id: 3
 	    			is_radiant: 0
+	    			order: 2, [0, 4]
 	    		},
 
 	    		{
-					// another hero info
+					// other hero info
 	    		}
+
+	    		.....
 	    	]
     	*/
-    	// row index represent order 0-4
-    	// col index represent play_slot 0-4
-    	var heroes_ord_pos = [];
+
+
+    	var heroes_pos = [];
 
     	// initialize the array
-    	for (var ordIdx = 0; ordIdx < 5; ++ordIdx)
+    	for (var pos = 0; pos < 5; ++pos)
     	{
-    		var eachOrd = [];
-    		for (var posIdx = 0; posIdx < 5; ++posIdx)
-    		{
-    			eachOrd[posIdx] = [];
-    		}
-    		heroes_ord_pos[ordIdx] = eachOrd;
+    		var eachPos = [];
+    		heroes_pos[pos] = eachPos;
     	}
 
 
@@ -72,48 +120,84 @@ function buildBanPick(option, cb)
     			var cnt_heroId;
     			// 1. query pick ban table
     			// get hero_id, account_id
+    			var hero_id;
+    			var account_id;
+    			db.raw('select hero_id, account_id, is_pick from picks_bans where match_id = ? and ord = ?', [cur_match_id], [pbIdx]).asCallback(function(err, result)
+    			{
+    				if (result && result.is_pick)
+    				{
+    					cnt_heroId = result.hero_id;
+    					account_id = result.account_id;
+    				}
+    			});
 
-
-
+    			// if not picked or error in find the player
+    			if ( !account_id )
+    				continue;
 
     			// 2. based on account_id and match_id
     			// query player_match_table
     			// get player slot info, integer type
+    			var player_slot;
+    			db.raw('select player_slot from player_matches where match_id = ? and account_id = ?', [cur_match_id], [account_id]).asCallback(function(err, result)
+    			{
+    				if (result)
+    				{
+    					player_slot = result.player_slot;
+    				}
+    			});
 
+    			if ( !player_slot)
+    				continue;
 
-
+    			// player position
+    			// 0-4
+    			var pos = getPosition(player_slot);
 
     			// 3. update the array
 				var isHeroExist = false;
-				for (var heroIdx = 0; heroIdx < heroes_ord_pos[pbIdx][position].length; ++heroIdx)
+				for (var heroIdx = 0; heroIdx < heroes_pos[pos].length; ++heroIdx)
 				{
-					if (heroes_ord_pos[pbIdx][position][heroIdx].hero_id === cnt_heroId)
+					if (heroes_pos[pos][heroIdx].hero_id === cnt_heroId)
 					{
 						// update matches 
-						//heroes_ord_pos[pbIdx][position][heroIdx]
-
+						// heroes_pos[pbIdx][position][heroIdx]
 						isHeroExist = true;
+						heroes_pos[pos][heroIdx].matches += 1;
+						heroes_pos[pos][heroIdx].matches_win += is_win ? 1 : 0;
+						heroes_pos[pos][heroIdx].order += pickOrderMap[pbIdx];
 					}
 				}
 
 				if (!isHeroExist)
 				{
-    				heroes_ord_pos[pbIdx][position].push({
+    				heroes_pos[pos].push({
     					matches: 1,
     					matches_win: is_win ? 1 : 0, 
-    					hero_id: cnt_heroId
+    					hero_id: cnt_heroId,
+    					order: pickOrderMap[pbIdx];
     				});
 				}
+    		}
+    	}
 
+    	//calculate the average order
+    	for (var pos = 0; pos < heroes_pos.length; ++pos)
+    	{
+    		for (var num = 0; num < heroes_pos[pos].length; ++num)
+    		{
+    			heroes_pos[pos][num].order = heroes_pos[pos][num].order / heroes_pos[pos][num].matches;
     		}
     	}
 
 
-    	// generate require json to frontend
-
+    	// generate required json to frontend
+    	var response = generate(heroes_pos);
+    	cb(err, JSON.stringify(response));
     });
 
+}
 
-
-
+module.exports = {
+	computeBP2Info,
 }

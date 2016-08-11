@@ -6,6 +6,9 @@ var express = require('express');
 var banpick = express.Router();
 var fs = require('fs');
 
+var buildBanPick = require('../store/buildBanPick');
+var computeBP2Info = buildBanPick.computeBP2Info;
+
 const CONST_MATCH_ODDS = 0;
 const CONST_WINNING_RATES = 1;
 
@@ -69,7 +72,7 @@ module.exports = function(db, redis)
 				// next step, we would read team id from local file from its name
 				var enemy_team_id = user_bp.enemy-team;
 
-				computeBanPickInfo(
+				computeBP2Info(
 				{
 					db: db,
 					redis: redis,
