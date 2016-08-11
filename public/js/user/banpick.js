@@ -338,13 +338,14 @@ function renderBP2(mylist, container){
 
 	var r = 20;
 
-	var step_x = w / 7;
-	var step_y = h / 7;
+	var step_x = w / 6.5;
+	var step_y = h / 6.5;
 
 	var svg = d3.select("#bp2_container")
 			.append("svg")
 			.attr('width', w)
-			.attr('height',h);
+			.attr('height',h)
+			.style('background-color:', 'gray');
 	
 	var dataset = [];
 	
@@ -403,6 +404,7 @@ function renderBP2(mylist, container){
 			for(var k = 0; k < hero_num; k ++)
 			{
 				// each hero
+				const con1 = Math.sqrt(8);
 				var hero = mylist.player_slots[i].orders[j].heroes[k];
 				var dp = {
 					type: 'dp',
@@ -413,7 +415,7 @@ function renderBP2(mylist, container){
 					wins: hero.win,
 					y: ((this_player_slot + 0.5 ) * step_y),
 					x: (step_x * (this_order + 0.5) + step_x * (k / hero_num)),
-					r: Math.min((hero.matches / 2) * 10 + 10, 20)
+					r: Math.min((Math.sqrt(hero.matches) / con1 ) * 22.5 + 7.5, 30)
 					// text: hero.hero_id
 				};
 				
@@ -438,7 +440,7 @@ function renderBP2(mylist, container){
 
 	dps.append("text")
 		.attr("text-anchor", "middle")
-		.style("fill", "white")
+		.style("fill", "black")
 		.style("font-weight", "bold")
 		.attr("dy", "0.34em")
 		.text(function(d){
@@ -465,7 +467,10 @@ function renderBP2(mylist, container){
 	dps.append("circle")
 		.attr("r", function(d){return d.r;})
 		.attr("stroke", "yellow")
-		.attr("stroke-width", "2px")
+		.attr("stroke-width", function(d){
+			var width = d.wins / 100;
+			return (width * 8) + 'px';
+		})
 		.attr("cx", 0)
 		.attr("cy", 0)
 		.attr("fill", function(d, i){
