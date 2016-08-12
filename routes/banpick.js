@@ -107,7 +107,7 @@ module.exports = function(db, redis)
 							list: result
 						}
 					}
-
+					console.log('DEBUG:' + JSON.stringify(dummy_data));
 					res.send(JSON.stringify(dummy_data));
 				});
 			}

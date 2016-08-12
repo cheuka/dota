@@ -399,7 +399,7 @@ function renderBP2(mylist, container){
 	}
 
 	// process the REAL dataset - mylist
-
+	
 	for(var i = 0; i < mylist.player_slots.length; i ++)
 	{
 		// each player slot:
@@ -438,7 +438,7 @@ function renderBP2(mylist, container){
 
 	// end of process the REAL dataset
 	// console.log('DEBUG json:' + JSON.stringify(dataset));
-
+	// TODO: lordstone: fix the rendering issue and display the return list properly
 	var dps = svg.selectAll("g")
 		.data(dataset)
 		.enter()
@@ -455,7 +455,7 @@ function renderBP2(mylist, container){
 		.text(function(d){
 			return d.text;
 		});
-
+/*
 	dps.append("image")
 		.style('-webkit-border-radius', function(d){
 			return d.r;
@@ -472,9 +472,9 @@ function renderBP2(mylist, container){
 		.attr("x", function(d){return -d.r/2;})
 		.attr("y", function(d){return -d.r/2;});
 	
-	
+*/	
 
-	/*
+
 	dps.append("defs")
 		.append("pattern")
 		.attr("id", function(d, i){return 'bp2_hero_head_' + i;})
@@ -504,7 +504,7 @@ function renderBP2(mylist, container){
 		.attr("fill", function(d, i){
 			return ("url(#bp2_hero_head_" + i + ")");
 		});
-	*/
+	
 
 	/*
 	dps.append("image")
