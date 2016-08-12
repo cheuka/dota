@@ -223,7 +223,7 @@ function computeBP2Info(options, cb)
     	// generate required json to frontend
     	var response = generateBP2Result(heroes_pos);
 		console.log('DEBUG: response:' + JSON.stringify(response));
-    	cb(err, JSON.stringify(response));
+    	cb(err, response);
     });
 
 }

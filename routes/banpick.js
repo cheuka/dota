@@ -97,10 +97,10 @@ module.exports = function(db, redis)
 							list: result
 						}
 					}
-				});
 
+					res.send(JSON.stringify(dummy_data));
+				});
 			}
-			res.send(JSON.stringify(dummy_data));
 		});
 	});
 
