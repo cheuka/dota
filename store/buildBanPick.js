@@ -13,8 +13,8 @@ var pickOrderMap = {
 };
 
 
-
-//last few bit would represent the position
+//A player's slot is8-bit unsigned integer. 
+//The first bit represent the player's team, false if Radiant and true if dire. The final three bits represent the player's position in that team, from 0-4.
 function getPosition(player_slot)
 {
 	return Number(play_slot) & 0x07;
@@ -62,9 +62,9 @@ function generateBP2Result(heroes_pos)
 
 function computeBP2Info(option, cb)
 {
-	var db = options.db;
-    var redis = options.redis;
-    var enemy_team_id = options.enemy_team_id;
+	var db = option.db;
+    var redis = option.redis;
+    var enemy_team_id = option.enemy_team_id;
 
 
     db.raw('select * where team_id = ?', [enemy_team_id]).asCallback(function(err, match_ids)
@@ -163,7 +163,7 @@ function computeBP2Info(option, cb)
 					if (heroes_pos[pos][heroIdx].hero_id === cnt_heroId)
 					{
 						// update matches 
-						// heroes_pos[pbIdx][position][heroIdx]
+						// heroes_pos[position][heroIdx]
 						isHeroExist = true;
 						heroes_pos[pos][heroIdx].matches += 1;
 						heroes_pos[pos][heroIdx].matches_win += is_win ? 1 : 0;
@@ -194,7 +194,7 @@ function computeBP2Info(option, cb)
 
 
     	// generate required json to frontend
-    	var response = generate(heroes_pos);
+    	var response = generateBP2Result(heroes_pos);
     	cb(err, JSON.stringify(response));
     });
 
