@@ -20,7 +20,6 @@ function getPosition(player_slot)
 	return Number(play_slot) & 0x07;
 }
 
-
 //generate required response
 function generateBP2Result(heroes_pos)
 {
@@ -60,14 +59,24 @@ function generateBP2Result(heroes_pos)
 }
 
 
-function computeBP2Info(option, cb)
+function computeBP2Info(options, cb)
 {
-	var db = option.db;
-    var redis = option.redis;
-    var enemy_team_id = option.enemy_team_id;
 
+	var db = options.db;
+    var redis = options.redis;
+    var enemy_team_id = Number(options.enemy_team_id);
 
-    db.raw('select * where team_id = ?', [enemy_team_id]).asCallback(function(err, match_ids)
+	if(isNaN(enemy_team_id)){
+		console.error('Team id is NaN. Aborting...');
+		return cb('Team id: NaN', null);
+	}
+		
+    db
+	// .raw('select * where team_id = ?', [enemy_team_id])
+	.table('team_match')
+	.select()
+	.where('team_id', enemy_team_id)
+	.asCallback(function(err, match_ids)
 	{
     	if (err)
     	{
@@ -124,7 +133,15 @@ function computeBP2Info(option, cb)
     			// get hero_id, account_id
     			var hero_id;
     			var account_id;
-    			db.raw('select hero_id, account_id, is_pick from picks_bans where match_id = ? and ord = ?', [cur_match_id], [pbIdx]).asCallback(function(err, result)
+    			db
+				.table('picks_bans')
+				.select('hero_id', 'account_id', 'is_pick')
+				.where({
+					match_id: cur_match_id,
+					ord: pbIdx
+				})
+				// .raw('select hero_id, account_id, is_pick from picks_bans where match_id = ? and ord = ?', [cur_match_id], [pbIdx])
+				.asCallback(function(err, result)
     			{
     				if (result && result.is_pick)
     				{
@@ -141,7 +158,15 @@ function computeBP2Info(option, cb)
     			// query player_match_table
     			// get player slot info, integer type
     			var player_slot;
-    			db.raw('select player_slot from player_matches where match_id = ? and account_id = ?', [cur_match_id], [account_id]).asCallback(function(err, result)
+    			db
+				//.raw('select player_slot from player_matches where match_id = ? and account_id = ?', [cur_match_id], [account_id])
+				.table('player_matches')
+				.select('player_slot')
+				.where({
+					match_id: cur_match_id,
+					account_id: account_id
+				})
+				.asCallback(function(err, result)
     			{
     				if (result)
     				{
@@ -177,7 +202,7 @@ function computeBP2Info(option, cb)
     					matches: 1,
     					matches_win: is_win ? 1 : 0, 
     					hero_id: cnt_heroId,
-    					order: pickOrderMap[pbIdx];
+    					order: pickOrderMap[pbIdx]
     				});
 				}
     		}
@@ -195,7 +220,8 @@ function computeBP2Info(option, cb)
 
     	// generate required json to frontend
     	var response = generateBP2Result(heroes_pos);
-    	cb(err, JSON.stringify(response));
+		console.log('DEBUG: response:' + JSON.stringify(response));
+    	cb(err, response);
     });
 
 }

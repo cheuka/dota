@@ -19,11 +19,14 @@ module.exports = function(db, redis)
 	banpick.post('/', function(req, res, cb)
 	{
 		// res.send('Sample banpick api message');
-		console.log('DEBUG: post');
+		// console.log('DEBUG: post');
+
         var reqdata = "";
+
         req.on('data', function(data){
             reqdata += data;
         });
+
         req.on('end', function(){
 			console.log('DEBUG: user data:' + reqdata);
 			var user_bp = JSON.parse(reqdata);
@@ -68,9 +71,9 @@ module.exports = function(db, redis)
 				};
 				*/
 
-				// @todo, rxu, temporarily use this
+				// @TODO, rxu, temporarily use this
 				// next step, we would read team id from local file from its name
-				var enemy_team_id = user_bp.enemy-team;
+				var enemy_team_id = user_bp.enemy_team;
 
 				computeBP2Info(
 				{
@@ -83,7 +86,7 @@ module.exports = function(db, redis)
 					{
 						console.log(err)
 						dummy_data = {
-							status: "error"
+							status: "error",
 							list: result
 						}
 					}
@@ -94,11 +97,10 @@ module.exports = function(db, redis)
 							list: result
 						}
 					}
+
+					res.send(JSON.stringify(dummy_data));
 				});
-
-
 			}
-			res.send(JSON.stringify(dummy_data));
 		});
 	});
 
@@ -110,3 +112,4 @@ module.exports = function(db, redis)
 
 	return banpick;		
 };
+
