@@ -75,7 +75,15 @@ module.exports = function(db, redis)
 
 				// @TODO, rxu, temporarily use this
 				// next step, we would read team id from local file from its name
-				var enemy_team_id = user_bp.enemy_team;
+				var enemy_team_id = Number(user_bp.enemy_team);
+
+			    if(isNaN(enemy_team_id)){
+			        console.error('Team id is NaN. Aborting...');
+			        res.send({
+						status: 'err: team id NaN'
+					});
+					return;
+			    }
 
 				computeBP2Info(
 				{

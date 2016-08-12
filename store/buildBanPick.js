@@ -66,13 +66,8 @@ function computeBP2Info(options, cb)
 {
 	var db = options.db;
     var redis = options.redis;
-    var enemy_team_id = Number(options.enemy_team_id);
-
-	if(isNaN(enemy_team_id)){
-		console.error('Team id is NaN. Aborting...');
-		return cb('Team id: NaN', null);
-	}
-		
+    var enemy_team_id = options.enemy_team_id;
+	
     db
 	// .raw('select * where team_id = ?', [enemy_team_id])
 	.table('team_match')
