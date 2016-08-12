@@ -238,7 +238,10 @@ function computeBP2Info(options, cb)
    			{
 	    		for (var num = 0; num < heroes_pos[pos].length; ++num)
    				{
-   					heroes_pos[pos][num].order = heroes_pos[pos][num].order / heroes_pos[pos][num].matches;
+   					heroes_pos[pos][num].order = 
+						parseFloat(heroes_pos[pos][num].order)
+						 / 
+						parseFloat(heroes_pos[pos][num].matches);
 	    		}
    			}
 
