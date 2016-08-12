@@ -79,7 +79,7 @@ module.exports = function(db, redis)
 
 			    if(isNaN(enemy_team_id)){
 			        console.error('Team id is NaN. Aborting...');
-			        res.send({
+			        res.json({
 						status: 'err: team id NaN'
 					});
 					return;
