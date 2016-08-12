@@ -13,15 +13,12 @@ var pickOrderMap = {
 };
 
 
-
-//last few bit would represent the position
+//A player's slot is8-bit unsigned integer. 
+//The first bit represent the player's team, false if Radiant and true if dire. The final three bits represent the player's position in that team, from 0-4.
 function getPosition(player_slot)
 {
 	return Number(play_slot) & 0x07;
 }
-
-// generate standard JSON from 
-
 
 //generate required response
 function generateBP2Result(heroes_pos)
@@ -64,6 +61,7 @@ function generateBP2Result(heroes_pos)
 
 function computeBP2Info(options, cb)
 {
+
 	var db = options.db;
     var redis = options.redis;
     var enemy_team_id = options.enemy_team_id;
@@ -82,7 +80,7 @@ function computeBP2Info(options, cb)
 
     	if (!match_ids)
     	{
-    		return cb(null, []);
+    		return cb('Empty match list!');
     	}
 
     	// rxu, we use a array to represent hero info, index is position
@@ -185,7 +183,7 @@ function computeBP2Info(options, cb)
 					if (heroes_pos[pos][heroIdx].hero_id === cnt_heroId)
 					{
 						// update matches 
-						// heroes_pos[pbIdx][position][heroIdx]
+						// heroes_pos[position][heroIdx]
 						isHeroExist = true;
 						heroes_pos[pos][heroIdx].matches += 1;
 						heroes_pos[pos][heroIdx].matches_win += is_win ? 1 : 0;

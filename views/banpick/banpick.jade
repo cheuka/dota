@@ -1,9 +1,9 @@
 extend /layout
 include /mixins/hero_td
-include /mixins/hero_td_new
 include /mixins/data_table
 include /mixins/data_table_header
 include /mixins/hero_banpick
+include /mixins/common_teams_dropdown
 
 append head
     meta(property="og:title", content="Mock Ban-Pick: Cheuka's Dota")
@@ -18,7 +18,8 @@ if user
       .row()
         
         // tabs block
-        .col-md-6(style='border: 1px white solid;')
+        .col-md-4 
+          //(style='border: 1px white solid;')
           ul(class='nav nav-tabs', role='tablist')
             li(role='presentation', class='active') 
               a(href='#heroes', aria-controls='heroes', role='tab', data-toggle='tab') Heroes
@@ -29,9 +30,23 @@ if user
             li(role='presentation') 
               a(href='#options', aria-controls='options', role = 'tab', data-toggle='tab') Options
         // tabs block end
+        
+        // team selection block
+
+        .col-md-3 
+          //(style='border: 1px white solid;')
+          .row(style='min-height: 45px')
+            span User:
+            +common_teams_dropdown('home_team_sel')
+   
+            span Enemy:
+            +common_teams_dropdown('enemy_team_sel')
+
+
+        // team selection block end
 
         // sequence block 
-        .col-md-6
+        .col-md-5
           .row(style='min-height: 45px')
             .col-md-6(style='border: 1px white solid;min-height: 45px')
               //.radio-inline
@@ -135,7 +150,9 @@ if user
 
             .tab-pane(role='tabpanel', id='bp2')
               p#bp2_helper Start Banpick and see Team Combo
-              table(style='display:none; min-height: 500px; overflow-y:scroll;')#bp2_table.table-striped
+              //
+                table(style='display:none; min-height: 500px; overflow-y:scroll;')#bp2_table.table-striped
+              #bp2_container(style='background-color: gray;')
 
             .tab-pane(role='tabpanel', id='options')
               p options
@@ -321,6 +338,7 @@ else
 
 
 append footer_assets
-  script(type="text/javascript", src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5452f1e51eac0fc5", async="async")
+  //
+    script(type="text/javascript", src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5452f1e51eac0fc5", async="async")
   script(type="text/javascript", src="../public/js/user/banpick.js")
-
+  script(type="text/javascript", src="https://d3js.org/d3.v4.min.js")
