@@ -1,16 +1,16 @@
 var async = require('async');
 
 var pickOrderMap = {
-	'4': 1,
-	'7': 2,
-	'12': 3,
-	'14': 4,
-	'17': 5, // pick order of first ban team
-	'5': 1,
-	'6': 2,
-	'13':3,
-	'15': 4,
-	'19': 5  // pick order of second ban team
+	'4': 1.0,
+	'7': 2.0,
+	'12': 3.0,
+	'14': 4.0,
+	'17': 5.0, // pick order of first ban team
+	'5': 1.0,
+	'6': 2.0,
+	'13':3.0,
+	'15': 4.0,
+	'19': 5.0  // pick order of second ban team
 };
 
 
@@ -34,24 +34,20 @@ function generateBP2Result(heroes_pos)
 	{
 		var player_slot = {
 			player_slot: pos,
-			orders: []
+			heroes: []
 		};
 
-		for (var num = 0; num < heroes_pos[pos].length; ++num)
-		{
-		    var win_ratio = 100 * heroes_pos[pos][num].matches_win / heroes_pos[pos][num].matches;
-			var heroes = [{
-				hero_id: heroes_pos[pos][num].hero_id,
-				matches: heroes_pos[pos][num].matches,
-				win: win_ratio.toFixed(0)
-			}];
-			
-
-			player_slot.orders.push({
-				order: heroes_pos[pos][num].order,
-				heroes: heroes
-			});
-		}
+	    var win_ratio = 100 * parseFloat(heroes_pos[pos][num].matches_win) / heroes_pos[pos][num].matches;
+		var heroes = [{
+			hero_id: heroes_pos[pos][num].hero_id,
+			matches: heroes_pos[pos][num].matches,
+			win: win_ratio.toFixed(0),
+			order: heroes_pos[pos][num].order
+		}];
+		
+		player_slot.push({
+			heroes: heroes
+		});
 		
 		res.player_slots.push(player_slot);
 	}
@@ -187,6 +183,7 @@ function computeBP2Info(options, cb)
     							// player position
     							// 0-4
 		    					var pos = getPosition(player_slot);
+
 		    					// 3. update the array
 								var isHeroExist = false;
 

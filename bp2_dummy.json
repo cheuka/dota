@@ -4,76 +4,48 @@
 	[
 		{
 			"player_slot": 0,
-			"orders": 
-			[
-				{
-					"order":1,
-					"heroes": 
-					[
+			"heroes": [
 						{
 							"hero_id":12,
 							"matches":2,
-							"win":50
+							"win":50,
+							"order": 1.1
 						},
 						{
 							"hero_id":16,
 							"matches":2,
-							"win":100
-						}
-					]
-				},
-				{
-					"order":2.5,
-					"heroes": 
-					[
+							"win":100,
+							"order": 1.3
+						},
 						{
 							"hero_id":21,
 							"matches":4,
-							"win":75
-						}
-					]
-				},
-				{
-					"order":2.8,
-					"heroes": 
-					[
+							"win":75,
+							"order": 2.8
+						},
 						{
 							"hero_id":13,
 							"matches":6,
-							"win":50
-						}
-					]
-				},
-				{
-					"order":4.3,
-					"heroes": 
-					[
+							"win":50,
+							"order": 3.8
+						},
 						{
 							"hero_id":14,
 							"matches":2,
-							"win":50
+							"win":50,
+							"order": 4.6
 						}
-					]
-				},
-				{
-					"order":4.6,
-					"heroes": 
-					[
 						{
 							"hero_id":15,
 							"matches":1,
-							"win":0
-						}
-					]
-				},
-				{
-					"order":4.8,
-					"heroes": 
-					[
+							"win":0,
+							"order": 4.8
+						},
 						{
 							"hero_id":11,
 							"matches":3,
-							"win":100
+							"win":100,
+							"order": 4.6
 						}
 					]
 				}

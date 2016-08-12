@@ -404,33 +404,27 @@ function renderBP2(mylist, container){
 	{
 		// each player slot:
 		var this_player_slot = mylist.player_slots[i].player_slot;
+		var hero_num = 	mylist.player_slots[i].heroes.length;
 
-		for(var j = 0; j < mylist.player_slots[i].orders.length; j ++)
+		for(var j = 0; j < hero_num; j ++)
 		{
-			// each order
-			var this_order = mylist.player_slots[i].orders[j].order;
-			var hero_num = 	mylist.player_slots[i].orders[j].heroes.length;		
-			for(var k = 0; k < hero_num; k ++)
-			{
-				// each hero
-				const con1 = Math.sqrt(4);
-				var hero = mylist.player_slots[i].orders[j].heroes[k];
-				var dp = {
-					type: 'dp',
-					order: this_order,
-					slot: this_player_slot,
-					hero_id: hero.hero_id,
-					matches: hero.matches,
-					wins: hero.win,
-					y: ((this_player_slot + 0.5 ) * step_y),
-					x: (step_x * (this_order + 0.5) + step_x * (k / hero_num)),
-					r: Math.min((Math.sqrt(hero.matches) / con1 ) * 22.5 + 7.5, 30)
-					// text: hero.hero_id
-				};
-				
-				dataset.push(dp);
-
-			} // end for k
+			// each hero
+			const con1 = Math.sqrt(4);
+			var hero = mylist.player_slots[i].heroes[j];
+			var dp = {
+				type: 'dp',
+				order: hero.order,
+				slot: this_player_slot,
+				hero_id: hero.hero_id,
+				matches: hero.matches,
+				wins: hero.win,
+				y: ((this_player_slot + 0.5 ) * step_y),
+				x: (step_x * (hero.order + 0.5)),
+				r: Math.min((Math.sqrt(hero.matches) / con1 ) * 22.5 + 7.5, 30)
+				// text: hero.hero_id
+			};
+			
+			dataset.push(dp);
 
 		} // end for j
 
