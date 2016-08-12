@@ -413,7 +413,7 @@ function renderBP2(mylist, container){
 			for(var k = 0; k < hero_num; k ++)
 			{
 				// each hero
-				const con1 = Math.sqrt(8);
+				const con1 = Math.sqrt(4);
 				var hero = mylist.player_slots[i].orders[j].heroes[k];
 				var dp = {
 					type: 'dp',
@@ -449,7 +449,7 @@ function renderBP2(mylist, container){
 
 	dps.append("text")
 		.attr("text-anchor", "middle")
-		.style("fill", "black")
+		.style("fill", "white")
 		.style("font-weight", "bold")
 		.attr("dy", "0.34em")
 		.text(function(d){
@@ -473,32 +473,37 @@ function renderBP2(mylist, container){
 		.attr("y", function(d){return -d.r/2;});
 	
 */	
-
+	//TODO: lordstone, fix the display dilemma
 
 	dps.append("defs")
 		.append("pattern")
 		.attr("id", function(d, i){return 'bp2_hero_head_' + i;})
 		// .attr("patternUnits", "userSpaceOnUse")
-		.attr("height", function(d){return d.r * 2;})
+		.attr("height", function(d){return d.r * 2.5;})
 		.attr("width", function(d){return d.r * 2;})
-		.append("image")
+		.append("image")/*
+		.attr('alt', function(d){
+			return d.text;
+		})*/
 		.attr("xlink:href", function(d){
 			return getHeroSrc(d.hero_id);
 		})
 		.attr("x", function(d){return -d.r/2;})
 		.attr("y", function(d){return -d.r/2;})	
-		.attr("dx", function(d){return 0;})
-		.attr("dy", function(d){return 0;})
-		.attr("height", function(d){return d.r * 4})
-		.attr("width", function(d){return d.r * 4})
+		//.attr("dx", function(d){return 0;})
+		//.attr("dy", function(d){return 0;})
+		.attr("height", function(d){return d.r * 3})
+		.attr("width", function(d){return d.r * 3})
 	
 	dps.append("circle")
 		.attr("r", function(d){return d.r;})
-		.attr("stroke", "yellow")
+		/*
+		.attr("stroke", "red")
 		.attr("stroke-width", function(d){
 			var width = d.wins / 100;
 			return (width * 8) + 'px';
 		})
+		*/
 		.attr("cx", 0)
 		.attr("cy", 0)
 		.attr("fill", function(d, i){

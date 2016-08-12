@@ -33,7 +33,7 @@ if user
         
         // team selection block
 
-        .col-md-3 
+        .col-md-4 
           //(style='border: 1px white solid;')
           .row(style='min-height: 45px')
             span User:
@@ -46,19 +46,21 @@ if user
         // team selection block end
 
         // sequence block 
-        .col-md-5
+        .col-md-4
           .row(style='min-height: 45px')
             .col-md-6(style='border: 1px white solid;min-height: 45px')
               //.radio-inline
               input(type='radio', name='radiant_or_dire', value='radiant', onclick='clickRadioRadiantDire()', checked, disabled='true') 
-              span.submit_button(style='font-size: 20px;', id='radiant_or_dire_helper_0') Radiant
+              span.submit_button(style='font-size: 18px;', id='radiant_or_dire_helper_0') Radiant
+              br
               //.radio-inline
               input(type='radio', name='radiant_or_dire', value='dire', onclick='clickRadioRadiantDire()',disabled='true') 
-              span(style='font-size: 20px;', id='radiant_or_dire_helper_1') Dire 
+              span(style='font-size: 18px;', id='radiant_or_dire_helper_1') Dire 
             .col-md-6(style='border: 1px white solid;min-height: 45px')
               //.radio-inline
               input(type='radio', name='first_pick', value='first_pick', onclick='clickRadioFirstPick()', checked, disabled='true')
               span.submit_button(style='font-size: 20px;', id='first_pick_helper_0') First Pick
+              br
               //.radio-inline
               input(type='radio', name='first_pick', value='second_pick', onclick='clickRadioFirstPick()',disabled='true')
               span(style='font-size: 20px;', id='first_pick_helper_1') Second Pick
@@ -152,7 +154,9 @@ if user
               p#bp2_helper Start Banpick and see Team Combo
               //
                 table(style='display:none; min-height: 500px; overflow-y:scroll;')#bp2_table.table-striped
-              #bp2_container(style='background-color: gray;')
+              #bp2_container
+              //
+                (style='background-color: gray;')
 
             .tab-pane(role='tabpanel', id='options')
               p options
