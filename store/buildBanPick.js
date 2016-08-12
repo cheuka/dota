@@ -85,7 +85,7 @@ function computeBP2Info(options, cb)
 
     	if (!match_ids)
     	{
-    		return cb(null, []);
+    		return cb('Empty match list!');
     	}
 
     	// rxu, we use a array to represent hero info, index is position

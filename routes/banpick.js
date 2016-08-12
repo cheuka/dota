@@ -57,6 +57,8 @@ module.exports = function(db, redis)
 						}
 					]
 				};
+				
+				res.send(JSON.stringify(dummy_data));
 			}else if (user_bp.type === 'bp2'){
 
 				// For dummy data usage
