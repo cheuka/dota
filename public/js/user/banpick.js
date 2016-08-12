@@ -6,6 +6,12 @@
 // const DATA - RELATED
 // must be the same with server side
 
+// utility
+
+const ROMAN_NUMBER = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
+
+// end of utility
+
 const CONST_MATCH_ODDS = 0;
 const CONST_WINNING_RATES = 1;
 
@@ -124,8 +130,8 @@ var last_slot = null;
 
 // DATA-RELATED vars
 
-var user_team = '';
-var enemy_team = '';
+var user_team = '0';
+var enemy_team = '0';
 
 // utility
 
@@ -136,6 +142,24 @@ function getHeroImg(hero_id){
 	img0.attr('title', src_img.attr('title'));
 	img0.attr('style', src_img.attr('style'));
 	return img0;
+}
+
+function getHeroSrc(hero_id){
+	var src_img = $('#hero_' + hero_id);
+	return src_img.attr("src");
+}
+
+function getHeroTitle(hero_id){
+	var src_img = $('#hero_' + hero_id);
+	return src_img.attr("title");
+}
+
+function home_team_sel_change(){
+	user_team = $('#home_team_sel').val();
+}
+
+function enemy_team_sel_change(){
+	enemy_team = $('#enemy_team_sel').val();
 }
 
 
@@ -314,6 +338,192 @@ function getCombo(){
 	);
 }
 
+function renderBP2(mylist, container){
+	
+	// lordstone: trial of D3 drawing bp2
+	
+	var w = 700;
+	var h = 600;
+
+	var r = 20;
+
+	var step_x = w / 6.5;
+	var step_y = h / 6.5;
+
+	var svg = d3.select("#bp2_container")
+			.append("svg")
+			.attr('width', w)
+			.attr('height',h)
+			.style('background-color:', 'gray');
+	
+	var dataset = [];
+	
+	// define dataset: combined with data points and axis points
+	
+	/*	
+		{
+			type: 'dp' || 'ap',
+			x: x-pos,
+			y: y-pos,
+			r: radius, // border_radius css
+			text: text,
+			stroke_width: stroke_width,
+			img: img-src,
+			img_title: image-title,
+			img_link: image link
+		}	
+	*/
+	
+	// axis
+
+	for (var i = 0; i < 5; i ++){
+
+		var y_axis = {
+			type: 'ap',
+			x: (step_x / 2),
+			y: (step_y * (0.5 + i)),
+			text: (ROMAN_NUMBER[i]),
+			r: 0
+		};
+
+		var x_axis = {
+			type: 'ap',
+			x: (step_x * (1.5 + i)),
+			y: ((step_y * 5.5)),
+			text: ('#' + (i + 1)),
+			r: 0
+		};
+
+		dataset.push(y_axis);
+		dataset.push(x_axis);
+	}
+
+	// process the REAL dataset - mylist
+
+	for(var i = 0; i < mylist.player_slots.length; i ++)
+	{
+		// each player slot:
+		var this_player_slot = mylist.player_slots[i].player_slot;
+
+		for(var j = 0; j < mylist.player_slots[i].orders.length; j ++)
+		{
+			// each order
+			var this_order = mylist.player_slots[i].orders[j].order;
+			var hero_num = 	mylist.player_slots[i].orders[j].heroes.length;		
+			for(var k = 0; k < hero_num; k ++)
+			{
+				// each hero
+				const con1 = Math.sqrt(8);
+				var hero = mylist.player_slots[i].orders[j].heroes[k];
+				var dp = {
+					type: 'dp',
+					order: this_order,
+					slot: this_player_slot,
+					hero_id: hero.hero_id,
+					matches: hero.matches,
+					wins: hero.win,
+					y: ((this_player_slot + 0.5 ) * step_y),
+					x: (step_x * (this_order + 0.5) + step_x * (k / hero_num)),
+					r: Math.min((Math.sqrt(hero.matches) / con1 ) * 22.5 + 7.5, 30)
+					// text: hero.hero_id
+				};
+				
+				dataset.push(dp);
+
+			} // end for k
+
+		} // end for j
+
+	} // end for i
+
+	// end of process the REAL dataset
+	// console.log('DEBUG json:' + JSON.stringify(dataset));
+
+	var dps = svg.selectAll("g")
+		.data(dataset)
+		.enter()
+		.append("g")
+		.attr("transform", function(d, i){
+			return "translate(" + (d.x) + "," + (d.y) + ")";
+		});
+
+	dps.append("text")
+		.attr("text-anchor", "middle")
+		.style("fill", "black")
+		.style("font-weight", "bold")
+		.attr("dy", "0.34em")
+		.text(function(d){
+			return d.text;
+		});
+
+	dps.append("image")
+		.style('-webkit-border-radius', function(d){
+			return d.r;
+		})
+		.attr("height", function(d){
+			return d.r;
+		})
+		.attr("width", function(d){
+			return d.r;
+		})
+		.attr("xlink:href", function(d){
+			return getHeroSrc(d.hero_id);
+		})
+		.attr("x", function(d){return -d.r/2;})
+		.attr("y", function(d){return -d.r/2;});
+	
+	
+
+	/*
+	dps.append("defs")
+		.append("pattern")
+		.attr("id", function(d, i){return 'bp2_hero_head_' + i;})
+		// .attr("patternUnits", "userSpaceOnUse")
+		.attr("height", function(d){return d.r * 2;})
+		.attr("width", function(d){return d.r * 2;})
+		.append("image")
+		.attr("xlink:href", function(d){
+			return getHeroSrc(d.hero_id);
+		})
+		.attr("x", function(d){return -d.r/2;})
+		.attr("y", function(d){return -d.r/2;})	
+		.attr("dx", function(d){return 0;})
+		.attr("dy", function(d){return 0;})
+		.attr("height", function(d){return d.r * 4})
+		.attr("width", function(d){return d.r * 4})
+	
+	dps.append("circle")
+		.attr("r", function(d){return d.r;})
+		.attr("stroke", "yellow")
+		.attr("stroke-width", function(d){
+			var width = d.wins / 100;
+			return (width * 8) + 'px';
+		})
+		.attr("cx", 0)
+		.attr("cy", 0)
+		.attr("fill", function(d, i){
+			return ("url(#bp2_hero_head_" + i + ")");
+		});
+	*/
+
+	/*
+	dps.append("image")
+		.attr("xlink:href", function(d){
+			return getHeroSrc(d.hero_id);
+		})
+		.attr("title", function(d){
+			return getHeroTitle(d.hero_id);
+		})
+		.attr("height", function(d){return d.r * 2;})
+		.attr("width", function(d){return d.r * 2;})
+		.attr("dx", function(d){return d.r / 2})
+		.attr("dy", function(d){return d.r / 2})
+		.attr("class", "img-sm")
+		.style("z-index", 3);
+	*/
+
+}
+
 
 function getBP2(){
 
@@ -328,7 +538,7 @@ function getBP2(){
 	requestAPI(user_bp, function(reply)
 		{
 			console.log('Got msg from server for BP2');
-			console.log('DEBUG:' + reply);
+			// console.log('DEBUG:' + reply);
 			var reply_obj = JSON.parse(reply);
 			if(reply_obj && reply_obj.status && reply_obj.status == 'ok' && reply_obj.list)
 			{
@@ -340,11 +550,13 @@ function getBP2(){
 
 			// start rendering the new list in tops i.e. combo
 			$('#bp2_helper').fadeOut();
-			$('#bp2_table').empty();
-			$('#bp2_table').fadeIn();
+			$('#bp2_container').empty();
+			$('#bp2_container').fadeIn();
 
 			// start rendering
-			renderBP2List(reply_obj.list, $('#bp2_table'));			
+			// renderBP2List(reply_obj.list, $('#bp2_table'));	
+
+			renderBP2(reply_obj.list, $('#bp2_container'));	
 		}
 	);
 
