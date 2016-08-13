@@ -1,17 +1,21 @@
 var async = require('async');
 
-var pickOrderMap = {
+var pickOrderMap = [
+{
     '4': 1.0,
     '7': 2.0,
     '12': 3.0,
     '14': 4.0,
     '17': 5.0, // pick order of first ban team
+},
+{
     '5': 1.0,
     '6': 2.0,
     '13':3.0,
     '15': 4.0,
     '19': 5.0  // pick order of second ban team
-};
+}];
+
 
 
 //A player's slot is8-bit unsigned integer. 
@@ -127,10 +131,9 @@ function computeBP2Info(options, cb)
 
             async.eachSeries(pbArray, function(pbIdx, cb)
             {
-                var cnt_heroId;
                 // 1. query pick ban table
                 // get hero_id, account_id
-                var hero_id;
+                var cnt_hero_id;
                 var account_id;
 
                 // console.log('DEBUG: cur_match_id:'+cur_match_id + ';pbIdx:' + pbIdx);
@@ -139,7 +142,7 @@ function computeBP2Info(options, cb)
                 
                 db
                 .table('picks_bans')
-                .first('hero_id', 'player_id', 'is_pick')
+                .first('hero_id', 'player_id', 'is_pick', 'team')
                 .where({
                     match_id: cur_match_id,
                     ord: pbIdx
@@ -151,13 +154,15 @@ function computeBP2Info(options, cb)
                     // lordstone: added the 3rd criterion to make sure a true bool value
                     if (result && result.is_pick && result.is_pick == true)
                     {
-                        cnt_heroId = result.hero_id;
+                        cnt_hero_id = result.hero_id;
                         account_id = result.player_id;
                         // console.log('DEBUG in!');
                         // lordstone: afterward handling
                         // if not picked or error in find the player
                         if ( !account_id || account_id == 0)
                             return cb();
+
+                        var team = result.team || 0;
 
                         // 2. based on account_id and match_id
                         // query player_match_table
@@ -191,24 +196,29 @@ function computeBP2Info(options, cb)
 
                                 for (var heroIdx = 0; heroIdx < heroes_pos[pos].length; ++heroIdx)
                                 {
-                                    if (heroes_pos[pos][heroIdx].hero_id === cnt_heroId)
+                                    if (heroes_pos[pos][heroIdx].hero_id === cnt_hero_id)
                                     {
+                                        console.log("the hero id" + cnt_hero_id + "exists at position　 " + pos);
+                                        console.log("before, order is " + heroes_pos[pos][heroIdx].order);
                                         // update matches 
                                         // heroes_pos[position][heroIdx]
                                         isHeroExist = true;
                                         heroes_pos[pos][heroIdx].matches += 1;
                                         heroes_pos[pos][heroIdx].matches_win += is_win ? 1 : 0;
-                                        heroes_pos[pos][heroIdx].order += pickOrderMap[pbIdx];
+                                        heroes_pos[pos][heroIdx].order += pickOrderMap[team % 2][pbIdx];
+                                        console.log("after, order is " + heroes_pos[pos][heroIdx].order);
                                     }
                                 }
 
+
                                 if (!isHeroExist)
                                 {
+                                    console.log("the hero id" + cnt_hero_id + "is not existing at position　 " + pos); 
                                     heroes_pos[pos].push({
                                         matches: 1,
                                         matches_win: is_win ? 1 : 0, 
-                                        hero_id: cnt_heroId,
-                                        order: pickOrderMap[pbIdx]
+                                        hero_id: cnt_hero_id,
+                                        order: pickOrderMap[team % 2][pbIdx]
                                     });
                                 }
                                 return cb(); // finished processing hero
