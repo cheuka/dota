@@ -151,18 +151,16 @@ function computeBP2Info(options, cb)
                 .asCallback(function(err, result)
                 {
                     // console.log('DEBUG res:' + JSON.stringify(result));
-                    // lordstone: added the 3rd criterion to make sure a true bool value
-                    if (result && result.is_pick && result.is_pick == true)
+                    if (result && result.is_pick === true)
                     {
                         cnt_hero_id = result.hero_id;
                         account_id = result.player_id;
                         // console.log('DEBUG in!');
                         // lordstone: afterward handling
                         // if not picked or error in find the player
-                        if ( !account_id || account_id == 0)
+                        if ( !account_id || account_id === 0)
                             return cb();
 
-                        var team = result.team || 0;
 
                         // 2. based on account_id and match_id
                         // query player_match_table
@@ -187,6 +185,8 @@ function computeBP2Info(options, cb)
                                 if ( !player_slot)
                                     return cb();
         
+                                var team = 0;
+
                                 // player position
                                 // 0-4
                                 var pos = getPosition(player_slot);
@@ -205,20 +205,20 @@ function computeBP2Info(options, cb)
                                         isHeroExist = true;
                                         heroes_pos[pos][heroIdx].matches += 1;
                                         heroes_pos[pos][heroIdx].matches_win += is_win ? 1 : 0;
-                                        heroes_pos[pos][heroIdx].order += pickOrderMap[team % 2][pbIdx];
+                                        heroes_pos[pos][heroIdx].order += pickOrderMap[team][pbIdx];
                                         console.log("after, order is " + heroes_pos[pos][heroIdx].order);
                                     }
                                 }
 
 
-                                if (!isHeroExist)
+                                if (!isHeroExist && !pickOrderMap[team][pbIdx])
                                 {
                                     console.log("the hero id" + cnt_hero_id + "is not existing at position　 " + pos); 
                                     heroes_pos[pos].push({
                                         matches: 1,
                                         matches_win: is_win ? 1 : 0, 
                                         hero_id: cnt_hero_id,
-                                        order: pickOrderMap[team % 2][pbIdx]
+                                        order: pickOrderMap[team][pbIdx]
                                     });
                                 }
                                 return cb(); // finished processing hero
