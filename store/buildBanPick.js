@@ -6,12 +6,12 @@ var pickOrderMap =
     '7': 2.0,
     '13': 3.0,
     '15': 4.0,
-    '19': 5.0, // pick order of first ban team
+    '18': 5.0, // pick order of first ban team
     '5': 1.0,
     '6': 2.0,
     '12':3.0,
     '14': 4.0,
-    '17': 5.0  // pick order of second ban team
+    '19': 5.0  // pick order of second ban team
 };
 
 
@@ -154,7 +154,7 @@ function computeBP2Info(options, cb)
 
                 for (var p = 0; p < playerinfos.length; ++p)
                 {
-                    cur_match.xpg.push(Number(playerinfos[p].xp_per_min) + Number(playerinfos[p].gold_per_min);
+                    cur_match.xpg.push(Number(playerinfos[p].xp_per_min) + Number(playerinfos[p].gold_per_min));
                     cur_match.hero_id.push(playerinfos[p].hero_id);
                 }
 
@@ -200,13 +200,20 @@ function computeBP2Info(options, cb)
                 {
                     var is_hero_exist = false;
                     var pos = cur_match.position[p];
-                    for (var hero_idx = 0; hero_idx < heroes_pos[p].length; ++hero_idx)
+
+                    //@TODO,  rxu, find picks order null, need to figure out why
+		    if (!cur_match.picks[p] && cur_match.picks[p] !== 0)
+			continue;
+
+                    for (var hero_idx = 0; hero_idx < heroes_pos[pos].length; ++hero_idx)
                     {
                         if (heroes_pos[pos][hero_idx].hero_id === cur_match.hero_id[p])
                         {
                             is_hero_exist = true;
+				
+
                             heroes_pos[pos][hero_idx].matches += 1;
-                            heroes_pos[p][hero_idx].matches_win += cur_match.is_win ? 1 : 0;
+                            heroes_pos[pos][hero_idx].matches_win += cur_match.is_win ? 1 : 0;
                             heroes_pos[pos][hero_idx].order += cur_match.picks[p];
                         }
                     }
