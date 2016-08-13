@@ -160,6 +160,18 @@ function home_team_sel_change(){
 
 function enemy_team_sel_change(){
 	enemy_team = $('#enemy_team_sel').val();
+	if(!(enemy_team == 0 || enemy_team == '0')){
+		getBP2();
+	}
+}
+
+function tabKey(key){
+	// lordstone: press button to switch tabs
+	console.log('DEBUG you pressed:' + key.keyCode);
+	var tmpint = parseInt(key.keyCode);
+	if(tmpint >= 49 && tmpint <= 52){
+		$('#mytab a:eq(' + (tmpint - 49) + ')').tab('show');
+	}
 }
 
 
@@ -245,16 +257,16 @@ function renderComboList(mylist, container){
 	
 	// lordstone: render mylist on table container:
 	var tbody0 = $('<tbody></tbody>');
-	var thead0 = $('<thead></thead>');
-	var theadrow_0 = $('<td></td>');
+	var thead0 = $('<tr></tr>');
+	var theadrow_0 = $('<th></th>');
 	theadrow_0.attr('colspan', '5');
 	theadrow_0.css('min-width', '200px');
 	theadrow_0.html('Hero Combo');
 	theadrow_0.appendTo(thead0);
-	var theadrow_1 = $('<td></td>');
+	var theadrow_1 = $('<th></th>');
 	theadrow_1.html('Matches');
 	theadrow_1.appendTo(thead0);
-	var theadrow_2 = $('<td></td>');
+	var theadrow_2 = $('<th></th>');
 	theadrow_2.html('Wins');
 	theadrow_2.appendTo(thead0);
 	thead0.appendTo(tbody0);
@@ -491,13 +503,11 @@ function renderBP2(mylist, container){
 	
 	dps.append("circle")
 		.attr("r", function(d){return d.r;})
-		/*
 		.attr("stroke", "red")
 		.attr("stroke-width", function(d){
 			var width = d.wins / 100;
 			return (width * 8) + 'px';
 		})
-		*/
 		.attr("cx", 0)
 		.attr("cy", 0)
 		.attr("fill", function(d, i){
@@ -850,7 +860,6 @@ function changeStatus(passed){
 			$('#button1').attr('disabled', true);
 			igniteSlot();
 			updateWithServer();
-			getBP2();
 		break;
 		case(LEFT_BAN):
 		case(RIGHT_BAN):
@@ -1049,6 +1058,11 @@ $(document).ready(function(){
 	// operations end.
 
 	// getBP2();
+	
+	// set tab key
+	$(document).keydown(function(event){
+		tabKey(event);
+	});
 	
 });
 

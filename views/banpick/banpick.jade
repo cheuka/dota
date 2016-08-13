@@ -20,13 +20,13 @@ if user
         // tabs block
         .col-md-4 
           //(style='border: 1px white solid;')
-          ul(class='nav nav-tabs', role='tablist')
+          ul(class='nav nav-tabs', role='tablist', id='mytab')
             li(role='presentation', class='active') 
               a(href='#heroes', aria-controls='heroes', role='tab', data-toggle='tab') Heroes
             li(role='presentation') 
-              a(href='#hero_combo', aria-controls='hero_combo', role = 'tab', data-toggle='tab') Tops
+              a(href='#hero_combo', aria-controls='hero_combo', role = 'tab', data-toggle='tab') Combo
             li(role='presentation') 
-              a(href='#bp2', aria-controls='bp2', role = 'tab', data-toggle='tab') BP2
+              a(href='#bp2', aria-controls='bp2', role = 'tab', data-toggle='tab') Enemy Heat Map
             li(role='presentation') 
               a(href='#options', aria-controls='options', role = 'tab', data-toggle='tab') Options
         // tabs block end
@@ -153,7 +153,7 @@ if user
               table(style='display:none; min-height: 200px;')#hero_combo_table.table-striped
 
             .tab-pane(role='tabpanel', id='bp2')
-              p#bp2_helper Start Banpick and see Team Combo
+              p#bp2_helper Select Enemy team and see Enemy heat map
               //
                 table(style='display:none; min-height: 500px; overflow-y:scroll;')#bp2_table.table-striped
               #bp2_container
