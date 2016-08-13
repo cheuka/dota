@@ -196,7 +196,7 @@ function computeBP2Info(options, cb)
 
                                 for (var heroIdx = 0; heroIdx < heroes_pos[pos].length; ++heroIdx)
                                 {
-                                    if (heroes_pos[pos][heroIdx].hero_id === cnt_hero_id)
+                                    if (heroes_pos[pos][heroIdx].hero_id === cnt_hero_id && pickOrderMap[team][pbIdx])
                                     {
                                         console.log("the hero id" + cnt_hero_id + "exists at position　 " + pos);
                                         console.log("before, order is " + heroes_pos[pos][heroIdx].order);
@@ -211,7 +211,7 @@ function computeBP2Info(options, cb)
                                 }
 
 
-                                if (!isHeroExist && !pickOrderMap[team][pbIdx])
+                                if (!isHeroExist && pickOrderMap[team][pbIdx])
                                 {
                                     console.log("the hero id" + cnt_hero_id + "is not existing at position　 " + pos); 
                                     heroes_pos[pos].push({
