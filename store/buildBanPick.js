@@ -4,16 +4,16 @@ var pickOrderMap = [
 {
     '4': 1.0,
     '7': 2.0,
-    '12': 3.0,
-    '14': 4.0,
-    '17': 5.0, // pick order of first ban team
+    '13': 3.0,
+    '15': 4.0,
+    '19': 5.0, // pick order of first ban team
 },
 {
     '5': 1.0,
     '6': 2.0,
-    '13':3.0,
-    '15': 4.0,
-    '19': 5.0  // pick order of second ban team
+    '12':3.0,
+    '14': 4.0,
+    '17': 5.0  // pick order of second ban team
 }];
 
 
@@ -87,7 +87,7 @@ function computeBP2Info(options, cb)
             console.log('DEBUG: EMPTY LIST in banpick');
             return cb('Empty match list!');
         }
-        // console.log('DEBUG db res:' + JSON.stringify(match_ids));
+         console.log('DEBUG db res:' + JSON.stringify(match_ids));
         // rxu, we use a array to represent hero info, index is position
         // cell should be like
         /* 
@@ -136,7 +136,7 @@ function computeBP2Info(options, cb)
                 var cnt_hero_id;
                 var account_id;
 
-                // console.log('DEBUG: cur_match_id:'+cur_match_id + ';pbIdx:' + pbIdx);
+                console.log('DEBUG: cur_match_id:'+cur_match_id + ';pbIdx:' + pbIdx);
                 
                 // lordstone: NOTE: Here the picks_bans table uses the name 'player_id' instead of 'account_id', whereas the local var here and player_matches both use account_id. Need attention on this!
                 
@@ -150,7 +150,7 @@ function computeBP2Info(options, cb)
                 // .raw('select hero_id, account_id, is_pick from picks_bans where match_id = ? and ord = ?', [cur_match_id], [pbIdx])
                 .asCallback(function(err, result)
                 {
-                    // console.log('DEBUG res:' + JSON.stringify(result));
+                    console.log('DEBUG res:' + JSON.stringify(result));
                     if (result && result.is_pick === true)
                     {
                         cnt_hero_id = result.hero_id;
@@ -158,6 +158,7 @@ function computeBP2Info(options, cb)
                         // console.log('DEBUG in!');
                         // lordstone: afterward handling
                         // if not picked or error in find the player
+			console.log('account id ' + account_id);
                         if ( !account_id || account_id === 0)
                             return cb();
 
@@ -177,12 +178,12 @@ function computeBP2Info(options, cb)
                         })
                         .asCallback(function(err, result)
                         {
-                            // console.log('DEBUG player_match:' + JSON.stringify(result));
+                            console.log('DEBUG player_match:' + JSON.stringify(result));
                             if (result)
                             {
                                 player_slot = result.player_slot;
 
-                                if ( !player_slot)
+                                if ( !player_slot && player_slot !== 0)
                                     return cb();
         
                                 var team = 0;
@@ -196,7 +197,7 @@ function computeBP2Info(options, cb)
 
                                 for (var heroIdx = 0; heroIdx < heroes_pos[pos].length; ++heroIdx)
                                 {
-                                    if (heroes_pos[pos][heroIdx].hero_id === cnt_hero_id)
+                                    if (heroes_pos[pos][heroIdx].hero_id === cnt_hero_id && pickOrderMap[team][pbIdx])
                                     {
                                         console.log("the hero id" + cnt_hero_id + "exists at position　 " + pos);
                                         console.log("before, order is " + heroes_pos[pos][heroIdx].order);
@@ -211,9 +212,9 @@ function computeBP2Info(options, cb)
                                 }
 
 
-                                if (!isHeroExist && !pickOrderMap[team][pbIdx])
+                                if (!isHeroExist && pickOrderMap[team][pbIdx])
                                 {
-                                    console.log("the hero id" + cnt_hero_id + "is not existing at position　 " + pos); 
+                                    console.log("the hero id " + cnt_hero_id + "is not existing at position　 " + pos); 
                                     heroes_pos[pos].push({
                                         matches: 1,
                                         matches_win: is_win ? 1 : 0, 
