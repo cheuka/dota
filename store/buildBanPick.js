@@ -1,20 +1,18 @@
 var async = require('async');
 
-var pickOrderMap = [
+var pickOrderMap =
 {
     '4': 1.0,
     '7': 2.0,
     '13': 3.0,
     '15': 4.0,
     '19': 5.0, // pick order of first ban team
-},
-{
     '5': 1.0,
     '6': 2.0,
     '12':3.0,
     '14': 4.0,
     '17': 5.0  // pick order of second ban team
-}];
+};
 
 
 
@@ -70,6 +68,47 @@ function computeBP2Info(options, cb)
     var enemy_team_id = options.enemy_team_id;
     // console.log('DEBUG:' + enemy_team_id);
 
+
+    // rxu, we use a array to represent hero info, index is position
+    // cell should be like
+    /* 
+        [
+            {
+                matches: 5
+                matches_win: 3
+                hero_id: 3
+                is_radiant: 0
+                order: 2, [0, 4]
+            },
+
+            {
+                // other hero info
+            }
+
+            .....
+        ]
+    */
+
+    // each match will be like 
+    //  {
+    //       match_id: xx
+    //       xpg: [xplusgold], will get the postion based on this
+    //       hero_id: []
+    //       is_win: true
+    //       pos: [0-4]
+    //  } 
+    //
+
+    var heroes_pos = [];
+    var matches = [];
+
+    // initialize the array
+    for (var pos = 0; pos < 5; ++pos)
+    {
+        var eachPos = [];
+        heroes_pos[pos] = eachPos;
+    }
+
     db
     // .raw('select * where team_id = ?', [enemy_team_id])
     .table('team_match')
@@ -84,165 +123,106 @@ function computeBP2Info(options, cb)
 
         if (!match_ids)
         {
-            console.log('DEBUG: EMPTY LIST in banpick');
             return cb('Empty match list!');
-        }
-         console.log('DEBUG db res:' + JSON.stringify(match_ids));
-        // rxu, we use a array to represent hero info, index is position
-        // cell should be like
-        /* 
-            [
-                {
-                    matches: 5
-                    matches_win: 3
-                    hero_id: 3
-                    is_radiant: 0
-                    order: 2, [0, 4]
-                },
-
-                {
-                    // other hero info
-                }
-
-                .....
-            ]
-        */
-
-        var heroes_pos = [];
-
-        // initialize the array
-        for (var pos = 0; pos < 5; ++pos)
-        {
-            var eachPos = [];
-            heroes_pos[pos] = eachPos;
         }
 
         // lordstone: use async.eachseries
-
         async.eachSeries(match_ids, function(match_i, cb)
         {
-
-        // for (var match_idx = 0; match_idx < match_ids.length; ++match_idx)
             var cur_match_id = match_i.match_id;
             var is_win = match_i.is_winner;
 
-            //for (var pbIdx = 0; pbIdx < 20; ++pbIdx)
-            var pbArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+            var cur_match = {
+                match_id: cur_match_id,
+                is_win: is_win,
+                xpg: [],
+                hero_id: [],
+                position: [0,1,2,3,4],
+                picks: [1,2,3,4,5]
+            };
 
-            async.eachSeries(pbArray, function(pbIdx, cb)
+            db
+            .table('player_matches')
+            .select('xp_per_min', 'gold_per_min', 'hero_id')
+            .where({
+                match_id: cur_match_id
+            })
+            .asCallback(function(err, playerinfos)
             {
-                // 1. query pick ban table
-                // get hero_id, account_id
-                var cnt_hero_id;
-                var account_id;
+                if (!playerinfos)
+                    return cb();
 
-                console.log('DEBUG: cur_match_id:'+cur_match_id + ';pbIdx:' + pbIdx);
-                
-                // lordstone: NOTE: Here the picks_bans table uses the name 'player_id' instead of 'account_id', whereas the local var here and player_matches both use account_id. Need attention on this!
-                
+                for (var p = 0; p < playerinfos.length; ++p)
+                {
+                    cur_match.xpg.push(Number(playerinfos[p].xp_per_min) + Number(playerinfos[p].gold_per_min);
+                    cur_match.hero_id.push(playerinfos[p].hero_id);
+                }
+
+                function cmp(a, b)
+                {
+                    return cur_match.xpg[b] - cur_match.xpg[a];
+                }
+                cur_match.position.sort(cmp);
+
                 db
                 .table('picks_bans')
-                .first('hero_id', 'player_id', 'is_pick', 'team')
+                .select('ord', 'hero_id')
                 .where({
-                    match_id: cur_match_id,
-                    ord: pbIdx
+                    match_id: cur_match_id
                 })
-                // .raw('select hero_id, account_id, is_pick from picks_bans where match_id = ? and ord = ?', [cur_match_id], [pbIdx])
-                .asCallback(function(err, result)
+                .asCallback(function(err, ords)
                 {
-                    console.log('DEBUG res:' + JSON.stringify(result));
-                    if (result && result.is_pick === true)
-                    {
-                        cnt_hero_id = result.hero_id;
-                        account_id = result.player_id;
-                        // console.log('DEBUG in!');
-                        // lordstone: afterward handling
-                        // if not picked or error in find the player
-			console.log('account id ' + account_id);
-                        if ( !account_id || account_id === 0)
-                            return cb();
-
-
-                        // 2. based on account_id and match_id
-                        // query player_match_table
-                        // get player slot info, integer type
-                        var player_slot;
-
-                        db
-                        //.raw('select player_slot from player_matches where match_id = ? and account_id = ?', [cur_match_id], [account_id])
-                        .table('player_matches')
-                        .first('player_slot')
-                        .where({
-                            match_id: cur_match_id,
-                            account_id: account_id
-                        })
-                        .asCallback(function(err, result)
-                        {
-                            console.log('DEBUG player_match:' + JSON.stringify(result));
-                            if (result)
-                            {
-                                player_slot = result.player_slot;
-
-                                if ( !player_slot && player_slot !== 0)
-                                    return cb();
-        
-                                var team = 0;
-
-                                // player position
-                                // 0-4
-                                var pos = getPosition(player_slot);
-
-                                // 3. update the array
-                                var isHeroExist = false;
-
-                                for (var heroIdx = 0; heroIdx < heroes_pos[pos].length; ++heroIdx)
-                                {
-                                    if (heroes_pos[pos][heroIdx].hero_id === cnt_hero_id && pickOrderMap[team][pbIdx])
-                                    {
-                                        console.log("the hero id" + cnt_hero_id + "exists at position　 " + pos);
-                                        console.log("before, order is " + heroes_pos[pos][heroIdx].order);
-                                        // update matches 
-                                        // heroes_pos[position][heroIdx]
-                                        isHeroExist = true;
-                                        heroes_pos[pos][heroIdx].matches += 1;
-                                        heroes_pos[pos][heroIdx].matches_win += is_win ? 1 : 0;
-                                        heroes_pos[pos][heroIdx].order += pickOrderMap[team][pbIdx];
-                                        console.log("after, order is " + heroes_pos[pos][heroIdx].order);
-                                    }
-                                }
-
-
-                                if (!isHeroExist && pickOrderMap[team][pbIdx])
-                                {
-                                    console.log("the hero id " + cnt_hero_id + "is not existing at position　 " + pos); 
-                                    heroes_pos[pos].push({
-                                        matches: 1,
-                                        matches_win: is_win ? 1 : 0, 
-                                        hero_id: cnt_hero_id,
-                                        order: pickOrderMap[team][pbIdx]
-                                    });
-                                }
-                                return cb(); // finished processing hero
-                            }else{
-                                return cb(); // no such player_match exists
-                            }// end if result
-                            
-                        });// end of db cb in player_match
-
-                    }else{
-                        // not picked
+                    if (!ords)
                         return cb();
-                    }// end of if picked
 
-                }); // end of db cb in picks_bans
+                    for (var p = 0; p < playerinfos.length; ++p)
+                    {
+                        for (var o = 0; o < ords.length; ++o)
+                        {
+                            if (playerinfos[p].hero_id === ords[o].hero_id)
+                            {
+                                cur_match.picks[p] = pickOrderMap[ords[o].ord];
+                            }
+                        }
+                    }
 
-            }, function(err){
-                return cb();                
-            }); // end of 2nd level async loop
+                    matches.push(cur_match);
+                    return cb();
+                });
+            });
 
         }, function(err){
-        
-            // lordstone: final cb
+            
+            for (var match_idx = 0; match_idx < matches.length; ++match_idx)
+            {
+                var cur_match = matches[match_idx];
+                for (var p = 0; p < 5; ++p)
+                {
+                    var is_hero_exist = false;
+                    var pos = cur_match.position[p];
+                    for (var hero_idx = 0; hero_idx < heroes_pos[p].length; ++hero_idx)
+                    {
+                        if (heroes_pos[pos][hero_idx].hero_id === cur_match.hero_id[p])
+                        {
+                            is_hero_exist = true;
+                            heroes_pos[pos][hero_idx].matches += 1;
+                            heroes_pos[p][hero_idx].matches_win += cur_match.is_win ? 1 : 0;
+                            heroes_pos[pos][hero_idx].order += cur_match.picks[p];
+                        }
+                    }
+
+                    if (!is_hero_exist)
+                    {
+                        heroes_pos[pos].push({
+                                        matches: 1,
+                                        matches_win: cur_match.is_win ? 1 : 0, 
+                                        hero_id: cur_match.hero_id[p],
+                                        order: cur_match.picks[p]
+                        });
+                    }
+                }
+            }       
+
             //calculate the average order
             for (var pos = 0; pos < heroes_pos.length; ++pos)
             {
