@@ -15,14 +15,6 @@ var pickOrderMap =
 };
 
 
-
-//A player's slot is8-bit unsigned integer. 
-//The first bit represent the player's team, false if Radiant and true if dire. The final three bits represent the player's position in that team, from 0-4.
-function getPosition(player_slot)
-{
-    return Number(player_slot) & 0x07;
-}
-
 //generate required response
 function generateBP2Result(heroes_pos)
 {
@@ -131,6 +123,7 @@ function computeBP2Info(options, cb)
         {
             var cur_match_id = match_i.match_id;
             var is_win = match_i.is_winner;
+            var is_radiant = match_i.is_radiant;
 
             var cur_match = {
                 match_id: cur_match_id,
@@ -151,10 +144,15 @@ function computeBP2Info(options, cb)
             {
                 if (!playerinfos)
                     return cb();
+		
+		var print = false;
+		var start = 0;
+                if (!is_radiant)
+                    start = 5;
 
-                for (var p = 0; p < playerinfos.length; ++p)
+                for (var p = start; p < start + 5 ; ++p)
                 {
-                    cur_match.xpg.push(Number(playerinfos[p].xp_per_min) + Number(playerinfos[p].gold_per_min));
+                    cur_match.xpg.push(playerinfos[p].xp_per_min + playerinfos[p].gold_per_min);
                     cur_match.hero_id.push(playerinfos[p].hero_id);
                 }
 
@@ -163,6 +161,12 @@ function computeBP2Info(options, cb)
                     return cur_match.xpg[b] - cur_match.xpg[a];
                 }
                 cur_match.position.sort(cmp);
+		
+		if (print)
+		{
+			console.log(cur_match.position);
+			console.log(cur_match.hero_id);
+		}
 
                 db
                 .table('picks_bans')
@@ -175,11 +179,11 @@ function computeBP2Info(options, cb)
                     if (!ords)
                         return cb();
 
-                    for (var p = 0; p < playerinfos.length; ++p)
+                    for (var p = 0; p < cur_match.hero_id.length; ++p)
                     {
                         for (var o = 0; o < ords.length; ++o)
                         {
-                            if (playerinfos[p].hero_id === ords[o].hero_id)
+                            if (cur_match.hero_id[p] === ords[o].hero_id)
                             {
                                 cur_match.picks[p] = pickOrderMap[ords[o].ord];
                             }
