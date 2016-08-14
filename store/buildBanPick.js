@@ -145,7 +145,6 @@ function computeBP2Info(options, cb)
                 if (!playerinfos)
                     return cb();
 		
-		var print = false;
 		var start = 0;
                 if (!is_radiant)
                     start = 5;
@@ -162,12 +161,6 @@ function computeBP2Info(options, cb)
                 }
                 cur_match.position.sort(cmp);
 		
-		if (print)
-		{
-			console.log(cur_match.position);
-			console.log(cur_match.hero_id);
-		}
-
                 db
                 .table('picks_bans')
                 .select('ord', 'hero_id')
