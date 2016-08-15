@@ -355,7 +355,9 @@ function renderBP2(mylist, container){
 	// lordstone: trial of D3 drawing bp2
 	
 	const MAX_R = 20;
-	const MIN_R = 5;
+	const MIN_R = 2.5;
+
+	const MARGIN_FACTOR = 0.25;
 
 	var w = 700;
 	var h = 600;
@@ -363,7 +365,7 @@ function renderBP2(mylist, container){
 	var r = 20;
 
 	var step_x = w / 6.5;
-	var step_y = h / 6.5;
+	var step_y = h / 6;
 
 	var svg = d3.select("#bp2_container")
 			.append("svg")
@@ -372,40 +374,17 @@ function renderBP2(mylist, container){
 			.style('background-color:', 'gray');
 	
 	var dataset = [];
-	
-	// define dataset: combined with data points and axis points
-	
-	/*	
-		{
-			type: 'dp' || 'ap',
-			x: x-pos,
-			y: y-pos,
-			r: radius, // border_radius css
-			text: text,
-			stroke_width: stroke_width,
-			img: img-src,
-			img_title: image-title,
-			img_link: image link
-		}	
-	*/
-	
-	// axis
-
-
-
 	// process the REAL dataset - mylist
 	
 	// var agg_y_offset = 0;
 
 	for(var i = 0; i < mylist.player_slots.length; i ++)
 	{
-
 		// y-axis at this level
-
 		var y_axis = {
 			type: 'ap',
-			x: (step_x / 2),
-			y: (step_y * (0.5 + i)),
+			x: (step_x * MARGIN_FACTOR),
+			y: (step_y * (MARGIN_FACTOR + i)),
 			text: (ROMAN_NUMBER[i]),
 			r: 0
 		};
@@ -418,51 +397,52 @@ function renderBP2(mylist, container){
 		
 		// deal with offsets
 
-		var clashSlots = new Array();
-		clashSlots[0] = new Array();
+		// var clashSlots = new Array();
+		// clashSlots[0] = new Array();
+		var last_x = -1;
+		var last_y = -1;
 
+		var last_int_order = 0;
+		// var group_num = 0;
+		// loop over every single hero in each slot
 		for(var j = 0; j < hero_num; j ++)
 		{
 			// each hero
 			const con1 = Math.sqrt(4);
 			var hero = mylist.player_slots[i].heroes[j];
-			var x =  step_x * (hero.order + 0.5);
-			var y = (this_player_slot + 0.5 ) * step_y;
+
+			var text = undefined;
+			var int_group = Math.round(hero.order);
+
+			var x =  step_x * (int_group + MARGIN_FACTOR);
+			var y = (this_player_slot + MARGIN_FACTOR) * step_y;
 				// + agg_y_offset;
 			var r = Math.min((Math.sqrt(hero.matches) / con1 ) * (MAX_R - MIN_R) + MIN_R, MAX_R)
 
-
 			// deal with clashes
-			if(j == 0){
-				// first elem
-				clashSlots[0][0] = x + r; // (pos-x + r) of first hero on each new slot row
+			if(int_group > last_int_order){
+				// first elem in int order group
+				last_x = x + r; // (pos-x + r) of first hero on each new slot row
+				last_y = y + r; // (pos-y + r) of first hero on each new slot now
+				// group_num += 1;
 			}else{
-				// detect clashes
-				var col_num = clashSlots.length;
-				var col_idx = 0; // col to be selected to insert, by default the first one
-				for (; col_idx < col_num; col_idx ++)
-				{
-					var row_num = clashSlots[col_idx].length;
-
-					// calculate min dist. between this elem and last elem in row
-					var pts_dist = (x - r) - 
-						clashSlots[col_idx][row_num - 1];
-
-					if(pts_dist >= 0){
-						// if not clashed with current row
-						col_sel = col_idx;
-						y += MAX_R * col_idx; // added offsets to current dp
-						break; // end loop
-					}
+				// continuing elem in group
+				if(last_y + r * 2 <= y + step_y){
+					// if can go down
+					y = last_y + r;
+					last_y = y + r;
+				}else if(last_x + r * 2 <= x + step_x){
+					// if cannot go down but can go right
+					x = last_x + r;
+					last_x = x + r;
+				}else{
+					// if neither can satisfy
+					r = 0; // no display hero
+					text = 'more...';
 				}
-				if(col_idx == col_num){
-					// if new col needed, add new col, increment agg_y_offset, add  to y
-					clashSlots[col_idx] = new Array();
-					// agg_y_offset += MAX_R;
-					y += MAX_R * col_idx;
-				}
-				clashSlots[col_idx].push(x + r);
+				// group_num += 1;
 			}
+			last_int_order = int_group;
 
 			// creating data point
 			var dp = {
@@ -474,8 +454,8 @@ function renderBP2(mylist, container){
 				wins: hero.win,
 				y: y,
 				x: x,
-				r: r
-				// text: hero.hero_id
+				r: r,
+				text: text
 			};
 			
 			dataset.push(dp);
@@ -490,8 +470,8 @@ function renderBP2(mylist, container){
 
 		var x_axis = {
 			type: 'ap',
-			x: (step_x * (1.5 + i)),
-			y: ((step_y * 5.5)),
+			x: (step_x * (1 + i + MARGIN_FACTOR)),
+			y: (step_y * (5 + MARGIN_FACTOR)),
 			text: ('#' + (i + 1)),
 			r: 0
 		};
