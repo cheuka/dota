@@ -354,6 +354,9 @@ function renderBP2(mylist, container){
 	
 	// lordstone: trial of D3 drawing bp2
 	
+	const MAX_R = 20;
+	const MIN_R = 5;
+
 	var w = 700;
 	var h = 600;
 
@@ -388,41 +391,81 @@ function renderBP2(mylist, container){
 	
 	// axis
 
-	for (var i = 0; i < 5; i ++){
+
+
+	// process the REAL dataset - mylist
+	
+	var agg_y_offset = 0;
+
+	for(var i = 0; i < mylist.player_slots.length; i ++)
+	{
+
+		// y-axis at this level
 
 		var y_axis = {
 			type: 'ap',
 			x: (step_x / 2),
-			y: (step_y * (0.5 + i)),
+			y: (step_y * (0.5 + i) + agg_y_offset),
 			text: (ROMAN_NUMBER[i]),
 			r: 0
 		};
-
-		var x_axis = {
-			type: 'ap',
-			x: (step_x * (1.5 + i)),
-			y: ((step_y * 5.5)),
-			text: ('#' + (i + 1)),
-			r: 0
-		};
-
+		
 		dataset.push(y_axis);
-		dataset.push(x_axis);
-	}
+		
 
-	// process the REAL dataset - mylist
-	
-	for(var i = 0; i < mylist.player_slots.length; i ++)
-	{
 		// each player slot:
 		var this_player_slot = mylist.player_slots[i].player_slot;
 		var hero_num = 	mylist.player_slots[i].heroes.length;
+		
+		// deal with offsets
+
+		var clashSlots = new Array();
+		clashSlots[0] = new Array();
 
 		for(var j = 0; j < hero_num; j ++)
 		{
 			// each hero
 			const con1 = Math.sqrt(4);
 			var hero = mylist.player_slots[i].heroes[j];
+			var x =  step_x * (hero.order + 0.5);
+			var y = (this_player_slot + 0.5 ) * step_y
+				+ agg_y_offset;
+			var r = Math.min((Math.sqrt(hero.matches) / con1 ) * (MAX_R - MIN_R) + MIN_R, MAX_R)
+
+
+			// deal with clashes
+			if(j == 0){
+				// first elem
+				clashSlots[0][0] = x + r; // (pos-x + r) of first hero on each new slot row
+			}else{
+				// detect clashes
+				var col_num = clashSlots.length;
+				var col_idx = 0; // col to be selected to insert, by default the first one
+				for (; col_idx < col_num; col_idx ++)
+				{
+					var row_num = clashSlots[col_idx].length;
+
+					// calculate min dist. between this elem and last elem in row
+					var pts_dist = (x - r) - 
+						clashSlots[col_idx][row_num - 1];
+
+					if(pts_dist >= 0){
+						// if not clashed with current row
+						col_sel = col_idx;
+						y += MAX_R * col_idx; // added offsets to current dp
+						break; // end loop
+					}
+				}
+				if(col_idx == col_num){
+					// if new col needed, add new col, increment agg_y_offset, add  to y
+					clashSlots[col_idx] = new Array();
+					agg_y_offset += MAX_R;
+					y += MAX_R * col_idx;
+				}
+				clashSlots[col_idx].push(x + r);
+			}
+
+			// creating data point
 			var dp = {
 				type: 'dp',
 				order: hero.order,
@@ -430,9 +473,9 @@ function renderBP2(mylist, container){
 				hero_id: hero.hero_id,
 				matches: hero.matches,
 				wins: hero.win,
-				y: ((this_player_slot + 0.5 ) * step_y),
-				x: (step_x * (hero.order + 0.5)),
-				r: Math.min((Math.sqrt(hero.matches) / con1 ) * 22.5 + 7.5, 30)
+				y: y,
+				x: x,
+				r: r
 				// text: hero.hero_id
 			};
 			
@@ -441,6 +484,21 @@ function renderBP2(mylist, container){
 		} // end for j
 
 	} // end for i
+
+	// x-axis added in groups with y aggregates
+
+	for (var i = 0; i < 5; i ++){
+
+		var x_axis = {
+			type: 'ap',
+			x: (step_x * (1.5 + i)),
+			y: ((step_y * 5.5) + agg_y_offset),
+			text: ('#' + (i + 1)),
+			r: 0
+		};
+
+		dataset.push(x_axis);
+	}
 
 	// end of process the REAL dataset
 	// console.log('DEBUG json:' + JSON.stringify(dataset));
@@ -503,15 +561,21 @@ function renderBP2(mylist, container){
 	
 	dps.append("circle")
 		.attr("r", function(d){return d.r;})
-		.attr("stroke", "red")
+		.attr("stroke", "white")
 		.attr("stroke-width", function(d){
-			var width = d.wins / 100;
-			return (width * 8) + 'px';
+			// var width = d.wins / 100;
+			// return (width * 8) + 'px';
+			return '0.5px;';
 		})
 		.attr("cx", 0)
 		.attr("cy", 0)
 		.attr("fill", function(d, i){
 			return ("url(#bp2_hero_head_" + i + ")");
+		})
+		// lordstone: hover effect
+		.attr("onmouseover", 'this.zIndex = "5"; console.log("over!");')
+		.attr('onmouseout', function(d){
+			return 'this.zIndex = "auto"; console.log("out!");';
 		});
 	
 

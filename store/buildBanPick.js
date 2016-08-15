@@ -35,12 +35,24 @@ function generateBP2Result(heroes_pos)
         for (var num = 0; num < heroes_pos[pos].length; ++num)
         {
             var win_ratio = 100 * heroes_pos[pos][num].matches_win / heroes_pos[pos][num].matches;
-            heroes.push({
+
+			var elem = {
                 hero_id: heroes_pos[pos][num].hero_id,
                 matches: heroes_pos[pos][num].matches,
                 win: win_ratio.toFixed(0),
                 order: heroes_pos[pos][num].order
-            });
+            };
+
+			if(num === 0){
+				heroes.push(elem);
+			}else{
+				for(var idx = 0; idx < heroes.length; idx ++){
+					if(elem.order <= heroes[idx].order){
+						heroes.splice(idx, 0, elem);
+						break;
+					}
+				}
+			}
         }
         
         player_slot.heroes = heroes;
