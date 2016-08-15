@@ -395,7 +395,7 @@ function renderBP2(mylist, container){
 
 	// process the REAL dataset - mylist
 	
-	var agg_y_offset = 0;
+	// var agg_y_offset = 0;
 
 	for(var i = 0; i < mylist.player_slots.length; i ++)
 	{
@@ -405,14 +405,13 @@ function renderBP2(mylist, container){
 		var y_axis = {
 			type: 'ap',
 			x: (step_x / 2),
-			y: (step_y * (0.5 + i) + agg_y_offset),
+			y: (step_y * (0.5 + i)),
 			text: (ROMAN_NUMBER[i]),
 			r: 0
 		};
 		
 		dataset.push(y_axis);
 		
-
 		// each player slot:
 		var this_player_slot = mylist.player_slots[i].player_slot;
 		var hero_num = 	mylist.player_slots[i].heroes.length;
@@ -428,8 +427,8 @@ function renderBP2(mylist, container){
 			const con1 = Math.sqrt(4);
 			var hero = mylist.player_slots[i].heroes[j];
 			var x =  step_x * (hero.order + 0.5);
-			var y = (this_player_slot + 0.5 ) * step_y
-				+ agg_y_offset;
+			var y = (this_player_slot + 0.5 ) * step_y;
+				// + agg_y_offset;
 			var r = Math.min((Math.sqrt(hero.matches) / con1 ) * (MAX_R - MIN_R) + MIN_R, MAX_R)
 
 
@@ -459,7 +458,7 @@ function renderBP2(mylist, container){
 				if(col_idx == col_num){
 					// if new col needed, add new col, increment agg_y_offset, add  to y
 					clashSlots[col_idx] = new Array();
-					agg_y_offset += MAX_R;
+					// agg_y_offset += MAX_R;
 					y += MAX_R * col_idx;
 				}
 				clashSlots[col_idx].push(x + r);
@@ -492,13 +491,15 @@ function renderBP2(mylist, container){
 		var x_axis = {
 			type: 'ap',
 			x: (step_x * (1.5 + i)),
-			y: ((step_y * 5.5) + agg_y_offset),
+			y: ((step_y * 5.5)),
 			text: ('#' + (i + 1)),
 			r: 0
 		};
 
 		dataset.push(x_axis);
 	}
+	
+	// svg.attr('height', Math.min(h, step_y * 6));
 
 	// end of process the REAL dataset
 	// console.log('DEBUG json:' + JSON.stringify(dataset));
