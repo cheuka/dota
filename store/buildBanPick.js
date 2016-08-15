@@ -16,10 +16,13 @@ var pickOrderMap =
 
 
 //generate required response
-function generateBP2Result(heroes_pos)
-{
+function generateBP2Result(heroes_pos, matches_num)
+{	
+	if(isNaN(matches_num))
+		matches_num = 0;
     var res = {
         type: "BP2",
+		matches_num: matches_num,
         player_slots: []
     };
 
@@ -249,7 +252,7 @@ function computeBP2Info(options, cb)
             }
 
             // generate required json to frontend
-            var response = generateBP2Result(heroes_pos);
+            var response = generateBP2Result(heroes_pos, matches.length);
             // console.log('DEBUG: response:' + JSON.stringify(response));
             return cb(err, response);
 

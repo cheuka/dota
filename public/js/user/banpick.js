@@ -478,7 +478,17 @@ function renderBP2(mylist, container){
 
 		dataset.push(x_axis);
 	}
-	
+
+	var data_info = {
+		type: 'ap',
+		x: (step_x * MARGIN_FACTOR),
+		y: (step_y * (5 + MARGIN_FACTOR)),
+		text: '(' + mylist.matches_num + ' matches)',
+		r: 0,
+		text_anchor: 'r'
+	};
+
+	dataset.push(data_info);
 	// svg.attr('height', Math.min(h, step_y * 6));
 
 	// end of process the REAL dataset
@@ -493,7 +503,13 @@ function renderBP2(mylist, container){
 		});
 
 	dps.append("text")
-		.attr("text-anchor", "middle")
+		.attr("text-anchor", function(d){
+			if(d.text_anchor == 'r'){
+				return 'right';
+			}else{
+				return 'middle';
+			}
+		})
 		.style("fill", "white")
 		.style("font-weight", "bold")
 		.attr("dy", "0.34em")
