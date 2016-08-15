@@ -145,8 +145,9 @@ function getHeroImg(hero_id){
 }
 
 function getHeroSrc(hero_id){
-	var src_img = $('#hero_' + hero_id);
-	return src_img.attr("src");
+	// var src_img = $('#hero_' + hero_id);
+	// return src_img.attr("src");
+	return ('/public/images/hero_icons/' + hero_id + '.png');
 }
 
 function getHeroTitle(hero_id){
@@ -186,71 +187,6 @@ function requestAPI(req_var, cb){
 			return cb(reply);
 		}
 	);
-}
-
-function renderBP2List(mylist, container){
-
-	var tbody0 = $('<tbody></tbody>');
-	var thead0 = $('<thead></thead>');
-	var theadrow_0 = $('<td></td>');
-	theadrow_0.html('Player Slot');
-	theadrow_0.appendTo(thead0);
-	var theadrow_1 = $('<td></td>');
-	theadrow_1.html('Order');
-	theadrow_1.appendTo(thead0);
-	var theadrow_2 = $('<td></td>');
-	theadrow_2.html('Hero');
-	theadrow_2.appendTo(thead0);
-	var theadrow_3 = $('<td></td>');
-	theadrow_3.html('Matches');
-	theadrow_3.appendTo(thead0);
-	var theadrow_4 = $('<td></td>');
-	theadrow_4.html('Wins');
-	theadrow_4.appendTo(thead0);
-	thead0.appendTo(tbody0);
-	
-	for(var i = 0; i < mylist.player_slots.length; i ++)
-	{
-		var tr_0 = $('<tr></tr>');
-		var td_0 = $('<td></td>');
-		
-		td_0.html('Slot:' + mylist.player_slots[i].player_slot);
-		td_0.attr('colspan', '5');
-		td_0.appendTo(tr_0);
-		tr_0.appendTo(tbody0);
-
-		for(var j = 0; j < mylist.player_slots[i].orders.length; j ++)
-		{	
-			var tr_1 = $('<tr></tr>');
-			var td_1 = $('<td></td>');
-			td_1.html('order:' + mylist.player_slots[i].orders[j].order);
-			td_1.attr('colspan', '4');
-			tr_1.append($('<td></td>'));
-			td_1.appendTo(tr_1);
-			tr_1.appendTo(tbody0);
-			
-			for(var k = 0; k < mylist.player_slots[i].orders[j].heroes.length; k ++)
-			{
-				var tr_2 = $('<tr></tr>');
-				var td_2 = $('<td></td>');
-				var td_3 = $('<td></td>');
-				var td_4 = $('<td></td>');
-				var hero_img = getHeroImg(mylist.player_slots[i].orders[j].heroes[k].hero_id);
-				hero_img.appendTo(td_2);
-				td_3.html(mylist.player_slots[i].orders[j].heroes[k].matches);
-				td_4.html(mylist.player_slots[i].orders[j].heroes[k].wins);
-				td_2.appendTo(tr_2);
-				td_3.appendTo(tr_2);
-				td_4.appendTo(tr_2);
-				tr_2.appendTo(tbody0);
-			
-			} // end for k			
-
-		} // end for j
-
-	} // end for i
-
-	tbody0.appendTo(container);
 }
 
 function renderComboList(mylist, container){
@@ -360,7 +296,7 @@ function renderBP2(mylist, container){
 	const MARGIN_FACTOR = 0.25;
 
 	var w = 700;
-	var h = 600;
+	var h = 560;
 
 	var r = 20;
 
@@ -451,7 +387,7 @@ function renderBP2(mylist, container){
 				slot: this_player_slot,
 				hero_id: hero.hero_id,
 				matches: hero.matches,
-				wins: hero.win,
+				win: hero.win,
 				y: y,
 				x: x,
 				r: r,
@@ -489,6 +425,7 @@ function renderBP2(mylist, container){
 	};
 
 	dataset.push(data_info);
+
 	// svg.attr('height', Math.min(h, step_y * 6));
 
 	// end of process the REAL dataset
@@ -516,24 +453,7 @@ function renderBP2(mylist, container){
 		.text(function(d){
 			return d.text;
 		});
-/*
-	dps.append("image")
-		.style('-webkit-border-radius', function(d){
-			return d.r;
-		})
-		.attr("height", function(d){
-			return d.r;
-		})
-		.attr("width", function(d){
-			return d.r;
-		})
-		.attr("xlink:href", function(d){
-			return getHeroSrc(d.hero_id);
-		})
-		.attr("x", function(d){return -d.r/2;})
-		.attr("y", function(d){return -d.r/2;});
-	
-*/	
+
 	//TODO: lordstone, fix the display dilemma
 
 	dps.append("defs")
@@ -551,17 +471,17 @@ function renderBP2(mylist, container){
 		})
 		.attr("x", function(d){return -d.r/2;})
 		.attr("y", function(d){return -d.r/2;})	
-		//.attr("dx", function(d){return 0;})
-		//.attr("dy", function(d){return 0;})
 		.attr("height", function(d){return d.r * 3})
 		.attr("width", function(d){return d.r * 3})
-	
+		.attr("title", 'jiji');
+
 	dps.append("circle")
+		.attr("id", function(d,i){
+			return 'circle_hero_' + i;
+		})
 		.attr("r", function(d){return d.r;})
 		.attr("stroke", "white")
 		.attr("stroke-width", function(d){
-			// var width = d.wins / 100;
-			// return (width * 8) + 'px';
 			return '0.5px;';
 		})
 		.attr("cx", 0)
@@ -570,28 +490,23 @@ function renderBP2(mylist, container){
 			return ("url(#bp2_hero_head_" + i + ")");
 		})
 		// lordstone: hover effect
-		.attr("onmouseover", 'this.zIndex = "5"; console.log("over!");')
-		.attr('onmouseout', function(d){
-			return 'this.zIndex = "auto"; console.log("out!");';
+		.attr("onmouseover", function(d, i){
+			var hero_details = getHeroTitle(d.hero_id) + ': ';
+			hero_details += ' Order:' + d.order + '.';
+			hero_details += ' Matches:' + d.matches + '.';
+			hero_details += ' Win:' + d.win + '%.';
+			
+			var in_text = '$("#circle_hero_' + i +'").attr("stroke", "yellow")';
+			in_text += '.attr("stroke-width", "4px");';
+			in_text += '$("#bp2_details").html("' + hero_details +'");';
+			return in_text;
+		})
+		.attr('onmouseout', function(d, i){
+			var in_text = '$("#circle_hero_' + i +'").attr("stroke", "white")';
+			in_text += '.attr("stroke-width", "0.5px");';
+			in_text += '$("#bp2_details").html("See hero details");';
+			return in_text;
 		});
-	
-
-	/*
-	dps.append("image")
-		.attr("xlink:href", function(d){
-			return getHeroSrc(d.hero_id);
-		})
-		.attr("title", function(d){
-			return getHeroTitle(d.hero_id);
-		})
-		.attr("height", function(d){return d.r * 2;})
-		.attr("width", function(d){return d.r * 2;})
-		.attr("dx", function(d){return d.r / 2})
-		.attr("dy", function(d){return d.r / 2})
-		.attr("class", "img-sm")
-		.style("z-index", 3);
-	*/
-
 }
 
 
