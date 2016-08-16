@@ -1,5 +1,5 @@
 select
-c.h1, c.h2,  count(*) from
+d.h1, d.h2,  count(*) from
 (
 	select h1, h2, m1 from (	
 		select distinct h1, h2, m1 from
@@ -20,10 +20,10 @@ c.h1, c.h2,  count(*) from
 	as c
 	where not ( h1 < h2)
 ) 
-as c
-group by (c.h1, c.h2)
+as d
+group by (d.h1, d.h2)
 order by count(*)
 desc
-limit 10
+-- limit 10
 ;
 
