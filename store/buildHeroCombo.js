@@ -1,6 +1,7 @@
 // This is to realize backend teamcombo function
 
 var async = require('async');
+var fs = require('fs');
 
 var pickOrderMap =
 {
@@ -18,22 +19,38 @@ var pickOrderMap =
 
 
 //generate required response
-function generateHeroComboResult(raw_data, matches_num)
+function generateHeroComboResult(result)
 {	
-	var res;
+	var res = [];
 	
+	for(var i = 0; i < result.length; ++ i){
 
+		var combo_size = result[i].combo_size;
+		var combo = result[i].combo;
+
+		for(var j = 0; j < combo.length; ++j){
+			
+			var matches = combo[j].count;
+			var wins = combo[j].wins;
+			var heroes = [];
+
+			for(var k = 1; k <= combo_size; ++ k){
+				heroes.push(combo[j]['h' + k]);
+			}
+
+			res.push({
+				heroes: heroes,
+				matches: matches,
+				wins: wins	
+			});
+
+		} // end for j
+
+	} //end for i
+	
     return res;
 }
 
-// process forgone heroes
-function processForgoneHeroes(container, targets)
-{
-	for(item in targets){
-		container[item] = -1; // mark all forgone heroes with -1
-	}
-	return container;
-}
 
 // push data into containers, may require recursive calls
 function pushHeroMatch(options, cb){
@@ -46,77 +63,80 @@ function pushHeroMatch(options, cb){
 	*/
 
 	var db = options.db;
-	var match_ids = options.match_ids;
+	// var matches = options.matches;
 	var team_id = options.team_id;
-	var container = options.container;
-	var calls_left = options.call_left;
+	var combo_min = options.combo_min;
+	var combo_max = options.combo_max;
 	var forgone_heroes = options.forgone_heroes;
-	
-	db
-	.table('picks_bans')
-	.select('hero_id')
-	.whereIn('match_id', match_ids)
-	.where({
-		team: team_id,
-		is_pick: 't'
-	})
-	.asCallback(function(err, result)
+
+/*
+	// match ids from matches
+	var match_ids = [];
+
+	// array-ize match_ids
+	for(var i in matches)
+		match_ids.push(matches[i].match_id);
+*/
+	// the container
+	var combo = [];
+
+	// create temp table for query
+
+	// counter array
+	var cArray = [];
+	for(var i = combo_min; i <= combo_max; ++i)
 	{
-		
-		if(err){
-			return cb(err);
-		}
-		if(!result || result.length === 0){
-			return cb(err, container);
-		}
-
-		var cur_map = {};
-
-		// cur_map = processForgoneHeroes(cur_map, forgone_heroes);
-		
-		// iterate over all candidate picks_matches
-		for(var i in result)
-		{	
+		cArray.push(i);
+	}
 	
-			var cur_hero_id = result[i].hero_id;
-			var cur_match_id = result[i].match_id;
+	console.log('DEBUG:' + JSON.stringify(cArray));
 
-			if(isNaN(cur_hero_id))
-			{
-				// skip the forgone heroes
-				continue;
-			}
-			else if(cur_hero_id in forgone_heroes)
-			{
-				// not to be inserted
-				continue;
-			}
-			else
-			{
-				if(!cur_map[cur_hero_id].matches){
-					// if a new hero
-					cur_map[cur_hero_id].matches = [];
-				}
-				cur_map[cur_hero_id].matches.push(cur_match_id);
-			}
+	async.eachSeries(cArray, function(combo_idx, cb)
+	{
+		// loop over each combo size
+
+		var find_combo = fs.readFileSync('./sql/find_combo_' + combo_idx + '.sql').toString('utf8');
+		
+		if(!find_combo || find_combo === ''){
+			return cb();
 		}
 		
-		// if this is the last level
-		var retval = [];
-		for(item in cur_map)
-		{
-			retval.push({
-				heroes: [item],
-				matches: item.matches
-			});
-			if(call_left !== 1){
-				
-				pushHeroMatch
+		// container for this combo size slot
+		var combo_slot = {};
+		
+		// console.log('DEBUG sql query:' + find_combo);
+		// console.log('DEBUG: match_ids:' + JSON.stringify(match_ids));
+		// console.log('DEBUG: team_id:' + JSON.stringify(team_id));
+		// inject sql query
 
+		db
+		.raw(find_combo, {
+			is_pick: 't',
+			// match_ids: '2431090400',
+			team_id: team_id,
+			limit: 20  // set up query res limit
+		})
+		.asCallback(function(err, rows){
+			if(err){
+				console.error('err:' + err);
 			}
-		}
-		return cb(err, retval);
-	} // end db callback
+			
+			var result = rows.rows;
+			// console.log('DEBUG result:' + JSON.stringify(result));
+
+			combo_slot.combo_size = combo_idx;
+			combo_slot.combo = result;
+			combo.push(combo_slot);
+			return cb(err);
+		});
+	
+	}, function(err){
+		// final aggregation function
+		
+		return cb(err, generateHeroComboResult(combo));
+
+	});	// end async each series
+
 }
 
 
@@ -129,7 +149,7 @@ function computeHeroComboInfo(options, cb)
     var redis = options.redis;
 
 	// all parameters from user side
-	var user_team: options.user_team;// team id
+	var user_team = options.user_team;// team id
     var enemy_team = options.enemy_team; // team id
 	var is_user_radiant = options.is_user_radiant; // bool
 	var is_user_first_pick = options.is_user_first_pick; // bool
@@ -170,14 +190,16 @@ function computeHeroComboInfo(options, cb)
 	var combos = [];
 
 	// start from all target team's matches
+/*
 	db
 	.table('team_match')
-	.select('match_id', 'end_time', 'is_winner')
+	.select('match_id', 'is_winner', 'version', 'end_time')
 	.where({
 		team_id: target_team
 	})
 	.asCallback(function(err, result)
 	{
+
 		if(err){
 			return cb(err);
 		}
@@ -186,28 +208,28 @@ function computeHeroComboInfo(options, cb)
 		if(!result || result.length === 0){
 			return cb(err, result);
 		}
-
-		// a lookup list of single hero
-		/*
-			kvmap[hero_id] = count(hero_id)
-		*/
+*/
 
 		pushHeroMatch({
 			db: db,
-			match_ids: result,
+			// matches: result,
 			team_id: target_team,
-			container: combos,
-			calls_left: combo_max,
+			combo_min: combo_min,
+			combo_max: combo_max,
 			forgone_heroes: forgone_heroes
 		}, function(err, result)
 		{
 			// deal with final results
 
+			// insert any rules in filtering and post-processing query results
+						
 
-		};
+			return cb(err, result);
 
+		});
+/*
 	});	
-			
+*/			
 	
 
 } // end of function
