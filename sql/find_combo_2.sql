@@ -1,4 +1,11 @@
-select d.h1, d.h2, count(*)  from
+select d.h1, d.h2, count(*),
+sum(
+	case is_winner 
+	when 't' then 1
+	when 'f' then 0
+	end
+) as wins 
+from
 (
 	select h1, h2, m1, is_winner from (	
 		select distinct h1, h2, m1 from
@@ -30,7 +37,7 @@ select d.h1, d.h2, count(*)  from
 	)
 	as c
 	left join team_match t on m1 = t.match_id
-	where not ( h1 < h2) and t.team_id = :team_id
+	where not (h1 < h2) and t.team_id = :team_id
 ) 
 as d
 group by (d.h1, d.h2)

@@ -8,8 +8,8 @@ var redis = require('./store/redis');
 var options = {
 	db: db,
 	redis: redis,
-	user_team: 1520578,
 	enemy_team: 2635099,
+	user_team: 1520578,
 	is_user_radiant: true,
 	is_user_first_pick: true,
 	is_picking: true,

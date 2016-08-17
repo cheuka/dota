@@ -30,17 +30,18 @@ function generateHeroComboResult(result)
 
 		for(var j = 0; j < combo.length; ++j){
 			
-			var matches = combo.count;
-
+			var matches = combo[j].count;
+			var wins = combo[j].wins;
 			var heroes = [];
 
 			for(var k = 1; k <= combo_size; ++ k){
-				heroes.push(combo['h' + k]);
+				heroes.push(combo[j]['h' + k]);
 			}
 
 			res.push({
 				heroes: heroes,
-				matches: matches 	
+				matches: matches,
+				wins: wins	
 			});
 
 		} // end for j
@@ -121,7 +122,7 @@ function pushHeroMatch(options, cb){
 			}
 			
 			var result = rows.rows;
-			console.log('DEBUG result:' + JSON.stringify(result));
+			// console.log('DEBUG result:' + JSON.stringify(result));
 
 			combo_slot.combo_size = combo_idx;
 			combo_slot.combo = result;
@@ -132,7 +133,7 @@ function pushHeroMatch(options, cb){
 	}, function(err){
 		// final aggregation function
 		
-		return cb(err, combo);
+		return cb(err, generateHeroComboResult(combo));
 
 	});	// end async each series
 
