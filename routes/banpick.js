@@ -9,6 +9,9 @@ var fs = require('fs');
 var buildBanPick = require('../store/buildBanPick');
 var computeBP2Info = buildBanPick.computeBP2Info;
 
+var buildHeroCombo = require('../store/buildHeroCombo');
+var computeHeroComboInfo = buildHeroCombo.computeHeroComboInfo;
+
 const CONST_MATCH_ODDS = 0;
 const CONST_WINNING_RATES = 1;
 
@@ -28,15 +31,17 @@ module.exports = function(db, redis)
         });
 
         req.on('end', function(){
-			console.log('DEBUG: user data:' + reqdata);
+			// console.log('DEBUG: user data:' + reqdata);
 			var user_bp = JSON.parse(reqdata);
 			// reply with dummy data:
-			var dummy_data = {
+			var return_data = {
 				status: 'ok'
 			};
 
 			if(user_bp.type === 'combo'){
-				dummy_data = {
+
+				/*
+				return_data = {
 					status: 'ok',
 					list:
 					[
@@ -57,8 +62,55 @@ module.exports = function(db, redis)
 						}
 					]
 				};
-				
-				res.send(JSON.stringify(dummy_data));
+				*/
+
+				console.log('DEBUG: user combo req data:' + reqdata);
+
+				// calling compute function
+		
+		
+				console.time('computeHeroComboInfo');
+
+				computeHeroComboInfo(
+				{
+					db: db,
+					redis: redis,
+					user_team: user_bp.user_team,
+					enemy_team: user_bp.enemy_team,
+					is_user_radiant: user_bp.is_user_radiant,
+					is_user_first_pick: user_bp.is_user_first_pick,
+					is_picking: user_bp.is_picking,
+					is_user_turn: user_bp.is_user_turn,
+					fixed_heroes: user_bp.fixed_heroes,
+					list_length: user_bp.options.list_length,
+					combo_max: user_bp.options.combo_max,
+					combo_min: user_bp.options.combo_min,
+					asc: user_bp.options.asc
+					//options: user_bp.options
+				}, function(err, result)
+				{
+					
+					console.timeEnd('computeHeroComboInfo');
+
+					if(err){
+						console.error('Error:' + err);
+						return_data = {
+							status: 'error',
+							list: err
+						};
+					}
+					else
+					{
+						return_data = {
+							status: 'ok',
+							list: result
+						};
+					}
+					res.send(JSON.stringify(return_data));
+
+				}); // end of computeHeroComboInfo
+
+
 			}else if (user_bp.type === 'bp2'){
 
 				// For dummy data usage
@@ -67,7 +119,7 @@ module.exports = function(db, redis)
 				var json_obj = JSON.parse(fs.readFileSync('./bp2_dummy.json'));
 				//console.log('DEBUG: bp2 json:' + JSON.stringify(json_obj));
 				
-				dummy_data = {
+				return_data = {
 					status: 'ok',
 					list: json_obj
 				};
@@ -94,21 +146,21 @@ module.exports = function(db, redis)
 				{
 					if (err)
 					{
-						console.log(err)
-						dummy_data = {
+						console.log(err);
+						return_data = {
 							status: "error",
 							list: result
-						}
+						};
 					}
 					else
 					{
-						dummy_data = {
+						return_data = {
 							status: 'ok',
 							list: result
-						}
+						};
 					}
-					console.log('DEBUG:' + JSON.stringify(dummy_data));
-					res.send(JSON.stringify(dummy_data));
+					// console.log('DEBUG:' + JSON.stringify(return_data));
+					res.send(JSON.stringify(return_data));
 				});
 			}
 		});

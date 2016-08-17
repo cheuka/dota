@@ -243,6 +243,10 @@ function getCombo(){
 		enemy_team: enemy_team,
 		is_user_radiant: is_user_radiant,
 		is_user_first_pick: is_user_first_pick,
+		is_picking: 
+			( procedure[cur_procedure] === LEFT_PICK ||
+			procedure[cur_procedure] === RIGHT_PICK ),
+		is_user_turn: (is_radiant_turn === is_user_radiant),
 		options: 
 		{
 			order_by: CONST_MATCH_ODDS,
@@ -251,9 +255,9 @@ function getCombo(){
 				CONST_MATCH_ODDS,
 				CONST_WINNING_RATES	
 			],
-			length: 8,
-			max_hero: 4,
-			min_hero: 2,
+			list_length: 8,
+			combo_max: 4,
+			combo_min: 2,
 			asc: false 
 		},
 		fixed_heroes: {
