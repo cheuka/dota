@@ -1,28 +1,15 @@
 var async = require('async');
 
-var pickOrderMap =
-{
-    '4': 1.0,
-    '7': 2.0,
-    '13': 3.0,
-    '15': 4.0,
-    '18': 5.0, // pick order of first ban team
-    '5': 1.0,
-    '6': 2.0,
-    '12':3.0,
-    '14': 4.0,
-    '19': 5.0  // pick order of second ban team
-};
 
 
 //generate required response
 function generateBP2Result(heroes_pos, matches_num)
-{	
-	if(isNaN(matches_num))
-		matches_num = 0;
+{   
+    if(isNaN(matches_num))
+        matches_num = 0;
     var res = {
         type: "BP2",
-		matches_num: matches_num,
+        matches_num: matches_num,
         player_slots: []
     };
 
@@ -39,23 +26,23 @@ function generateBP2Result(heroes_pos, matches_num)
         {
             var win_ratio = 100 * heroes_pos[pos][num].matches_win / heroes_pos[pos][num].matches;
 
-			var elem = {
+            var elem = {
                 hero_id: heroes_pos[pos][num].hero_id,
                 matches: heroes_pos[pos][num].matches,
                 win: win_ratio.toFixed(0),
                 order: heroes_pos[pos][num].order
             };
 
-			if(num === 0){
-				heroes.push(elem);
-			}else{
-				for(var idx = 0; idx < heroes.length; idx ++){
-					if(elem.order <= heroes[idx].order){
-						heroes.splice(idx, 0, elem);
-						break;
-					}
-				}
-			}
+            if(num === 0){
+                heroes.push(elem);
+            }else{
+                for(var idx = 0; idx < heroes.length; idx ++){
+                    if(elem.order <= heroes[idx].order){
+                        heroes.splice(idx, 0, elem);
+                        break;
+                    }
+                }
+            }
         }
         
         player_slot.heroes = heroes;
@@ -69,7 +56,6 @@ function generateBP2Result(heroes_pos, matches_num)
 
 function computeBP2Info(options, cb)
 {
-
     var db = options.db;
     var redis = options.redis;
     var enemy_team_id = options.enemy_team_id;
@@ -94,7 +80,7 @@ function computeBP2Info(options, cb)
 
             .....
         ]
-    */
+        */
 
     // each match will be like 
     //  {
@@ -133,78 +119,102 @@ function computeBP2Info(options, cb)
             return cb('Empty match list!');
         }
 
+// for debug usage
+/*
+        match_ids = [{
+            match_id: 180150706
+        }];
+*/
+
         // lordstone: use async.eachseries
         async.eachSeries(match_ids, function(match_i, cb)
         {
             var cur_match_id = match_i.match_id;
             var is_win = match_i.is_winner;
-            var is_radiant = match_i.is_radiant;
-
-            var cur_match = {
-                match_id: cur_match_id,
-                is_win: is_win,
-                xpg: [],
-                hero_id: [],
-                position: [0,1,2,3,4],
-                picks: [1,2,3,4,5]
-            };
 
             db
-            .table('player_matches')
-            .select('xp_per_min', 'gold_per_min', 'hero_id')
+            .table('matches')
+            .first('radiant_team_id', 'dire_team_id')
             .where({
                 match_id: cur_match_id
-            })
-            .asCallback(function(err, playerinfos)
+            }).asCallback(function(err, res)
             {
-                if (!playerinfos)
+                if (err)
+                    return cb(err);
+                if ( !res )
                     return cb();
-		
-		var start = 0;
-                if (!is_radiant)
-                    start = 5;
 
-                for (var p = start; p < start + 5 ; ++p)
-                {
-                    cur_match.xpg.push(playerinfos[p].xp_per_min + playerinfos[p].gold_per_min);
-                    cur_match.hero_id.push(playerinfos[p].hero_id);
-                }
+                var is_radiant = res.radiant_team_id === enemy_team_id ? true : false;
 
-                function cmp(a, b)
-                {
-                    return cur_match.xpg[b] - cur_match.xpg[a];
-                }
-                cur_match.position.sort(cmp);
-		
+                var cur_match = {
+                    match_id: cur_match_id,
+                    is_win: is_win,
+                    xpg: [],
+                    hero_id: [],
+                    position: [0,1,2,3,4],
+                    picks: [1,2,3,4,5]
+                };
+
                 db
-                .table('picks_bans')
-                .select('ord', 'hero_id')
+                .table('player_matches')
+                .select('xp_per_min', 'gold_per_min', 'hero_id')
                 .where({
                     match_id: cur_match_id
                 })
-                .asCallback(function(err, ords)
+                .asCallback(function(err, playerinfos)
                 {
-                    if (!ords)
+                    if (!playerinfos)
                         return cb();
 
-                    for (var p = 0; p < cur_match.hero_id.length; ++p)
+                    var start = 0;
+                    if (!is_radiant)
+                        start = 5;
+
+                    for (var p = start; p < start + 5 ; ++p)
                     {
-                        for (var o = 0; o < ords.length; ++o)
-                        {
-                            if (cur_match.hero_id[p] === ords[o].hero_id)
-                            {
-                                cur_match.picks[p] = pickOrderMap[ords[o].ord];
-                            }
-                        }
+                        cur_match.xpg.push(playerinfos[p].xp_per_min + playerinfos[p].gold_per_min);
+                        cur_match.hero_id.push(playerinfos[p].hero_id);
                     }
 
-                    matches.push(cur_match);
-                    return cb();
+                    function cmp(a, b)
+                    {
+                        return cur_match.xpg[b] - cur_match.xpg[a];
+                    }
+                    cur_match.position.sort(cmp);
+
+                    db
+                    .table('picks_bans')
+                    .select('ord', 'hero_id', 'is_pick')
+                    .where({
+                        match_id: cur_match_id
+                    })
+                    .asCallback(function(err, ords)
+                    {
+                        if (!ords)
+                            return cb();
+
+                        var pick_order = 1;
+                        for (var o = 0; o < ords.length; ++o)
+                        {
+                            for (var p = 0; p < cur_match.hero_id.length; ++p)
+                            {
+                                if (cur_match.hero_id[p] === ords[o].hero_id)
+                                {
+                                    cur_match.picks[p] = pick_order;
+                                    pick_order++;
+                                }
+                            }
+                        }
+
+                        matches.push(cur_match);
+                        return cb();
+                    });
                 });
+
             });
 
         }, function(err){
-            
+
             for (var match_idx = 0; match_idx < matches.length; ++match_idx)
             {
                 var cur_match = matches[match_idx];
@@ -214,15 +224,15 @@ function computeBP2Info(options, cb)
                     var pos = cur_match.position[p];
 
                     //@TODO,  rxu, find picks order null, need to figure out why
-		    if (!cur_match.picks[p] && cur_match.picks[p] !== 0)
-			continue;
+                    if (!cur_match.picks[p] && cur_match.picks[p] !== 0)
+                        continue;
 
                     for (var hero_idx = 0; hero_idx < heroes_pos[pos].length; ++hero_idx)
                     {
                         if (heroes_pos[pos][hero_idx].hero_id === cur_match.hero_id[p])
                         {
                             is_hero_exist = true;
-				
+
 
                             heroes_pos[pos][hero_idx].matches += 1;
                             heroes_pos[pos][hero_idx].matches_win += cur_match.is_win ? 1 : 0;
@@ -233,10 +243,10 @@ function computeBP2Info(options, cb)
                     if (!is_hero_exist)
                     {
                         heroes_pos[pos].push({
-                                        matches: 1,
-                                        matches_win: cur_match.is_win ? 1 : 0, 
-                                        hero_id: cur_match.hero_id[p],
-                                        order: cur_match.picks[p]
+                            matches: 1,
+                            matches_win: cur_match.is_win ? 1 : 0, 
+                            hero_id: cur_match.hero_id[p],
+                            order: cur_match.picks[p]
                         });
                     }
                 }
