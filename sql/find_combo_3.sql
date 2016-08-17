@@ -6,11 +6,13 @@ select h1, h2, h3, count(*) from
 			select distinct h1, h2, m1 from
 			(
 				select hero_id as h1, match_id as m1 from picks_bans pb1
+				where is_pick = 't'
 			)
 			as a
 			join
 			(
 				select hero_id as h2, match_id as m2 from picks_bans pb2
+				where is_pick = 't'
 			)
 			as b
 			on 
@@ -21,6 +23,7 @@ select h1, h2, h3, count(*) from
 		join
 		(
 			select hero_id as h3, match_id as m3 from picks_bans pb3
+			where is_pick = 't'
 		)
 		as d
 		on
@@ -35,6 +38,6 @@ as f
 group by (f.h1, f.h2, f.h3)
 order by count(*)
 desc
--- limit 100
+limit 25
 ;
 
