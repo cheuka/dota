@@ -121,8 +121,11 @@ function computeBP2Info(options, cb)
 
 // for debug usage
 /*
+        var len = match_ids.length;
+        var test_id = match_ids[Math.floor(Math.random()*len)].match_id;
         match_ids = [{
-            match_id: 180150706
+            //match_id: test_id
+            match_id: 130366651
         }];
 */
 
@@ -175,12 +178,11 @@ function computeBP2Info(options, cb)
                         cur_match.xpg.push(playerinfos[p].xp_per_min + playerinfos[p].gold_per_min);
                         cur_match.hero_id.push(playerinfos[p].hero_id);
                     }
-
-                    function cmp(a, b)
+                    
+                    cur_match.position.sort(function cmp(a, b)
                     {
                         return cur_match.xpg[b] - cur_match.xpg[a];
-                    }
-                    cur_match.position.sort(cmp);
+                    });
 
                     db
                     .table('picks_bans')
@@ -221,22 +223,23 @@ function computeBP2Info(options, cb)
                 for (var p = 0; p < 5; ++p)
                 {
                     var is_hero_exist = false;
-                    var pos = cur_match.position[p];
-
+                    var pos = p;
+                    // p mean position p, cur_match.position[p] match it to exactly hero position in array
+                    var hero_p = cur_match.position[p];
                     //@TODO,  rxu, find picks order null, need to figure out why
-                    if (!cur_match.picks[p] && cur_match.picks[p] !== 0)
+                    if (!cur_match.picks[hero_p] && cur_match.picks[hero_p] !== 0)
                         continue;
 
                     for (var hero_idx = 0; hero_idx < heroes_pos[pos].length; ++hero_idx)
                     {
-                        if (heroes_pos[pos][hero_idx].hero_id === cur_match.hero_id[p])
+                        if (heroes_pos[pos][hero_idx].hero_id === cur_match.hero_id[hero_p])
                         {
                             is_hero_exist = true;
 
 
                             heroes_pos[pos][hero_idx].matches += 1;
                             heroes_pos[pos][hero_idx].matches_win += cur_match.is_win ? 1 : 0;
-                            heroes_pos[pos][hero_idx].order += cur_match.picks[p];
+                            heroes_pos[pos][hero_idx].order += cur_match.picks[hero_p];
                         }
                     }
 
@@ -245,8 +248,8 @@ function computeBP2Info(options, cb)
                         heroes_pos[pos].push({
                             matches: 1,
                             matches_win: cur_match.is_win ? 1 : 0, 
-                            hero_id: cur_match.hero_id[p],
-                            order: cur_match.picks[p]
+                            hero_id: cur_match.hero_id[hero_p],
+                            order: cur_match.picks[hero_p]
                         });
                     }
                 }
