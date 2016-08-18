@@ -15,7 +15,7 @@ var options = {
 	is_picking: true,
 	is_user_turn: true,
 	list_length: 10,
-	combo_max: 3,
+	combo_max: 4,
 	combo_min: 2,
 	asc: true,
 	fixed_heroes: {
