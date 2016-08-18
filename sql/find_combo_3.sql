@@ -36,7 +36,8 @@ from
 			as b
 			on 
 			a.m1 = b.m2	and 
-			a.h1 <> b.h2	
+			a.h1 > b.h2
+			-- where not (a.h1 < b.h2)
 		)
 		as c
 		join
@@ -53,15 +54,15 @@ from
 		as d
 		on
 		c.m1 = d.m3 
-		and
-		c.h1 <> d.h3 
+		-- and	c.h1 <> d.h3 
 		and 
-		c.h2 <> d.h3
-		where not (h1 < h2)		
+		c.h2 > d.h3
+		-- where not (h1 < h2)		
 	)	
 	as e
 	left join team_match t on m1 = t.match_id
-	where not (h2 < h3) and t.team_id = :team_id
+	where -- not (h2 < h3) and 
+	t.team_id = :team_id
 ) 
 as f
 group by (f.h1, f.h2, f.h3)

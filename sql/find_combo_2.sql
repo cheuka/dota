@@ -33,11 +33,12 @@ from
 		on 
 		a.m1 = b.m2
 		and 
-		a.h1 <> b.h2
+		a.h1 > b.h2
+		-- where not (a.h1 < b.h2)
 	)
 	as c
 	left join team_match t on m1 = t.match_id
-	where not (h1 < h2) and t.team_id = :team_id
+	where t.team_id = :team_id
 ) 
 as d
 group by (d.h1, d.h2)
