@@ -373,8 +373,8 @@ function renderBP2(mylist, container){
 					last_y = y + r;
 				}else if(last_x + r * 2 <= x + step_x){
 					// if cannot go down but can go right
-					x = last_x + r;
-					last_x = x + r;
+					x = last_x + MAX_R;
+					last_x = x + MAX_R;
 				}else{
 					// if neither can satisfy
 					r = 0; // no display hero
