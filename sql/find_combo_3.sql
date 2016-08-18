@@ -20,6 +20,17 @@ from
 					select match_id from team_match
 	                where team_id = :team_id
 				)
+	            and (team % 2) in
+    	        (
+        	        select (case is_radiant
+            	            when 't' then  0
+                	        when 'f' then  1
+                    	    end) as res
+	                from team_match tt
+    	            where match_id = match_id
+        	        and team_id = :team_id
+            	)
+
 			)
 			as a
 			join
@@ -32,6 +43,17 @@ from
 					select match_id from team_match
 	                where team_id = :team_id
 				)
+	            and (team % 2) in
+    	        (
+        	        select (case is_radiant
+            	            when 't' then  0
+                	        when 'f' then  1
+                    	    end) as res
+	                from team_match tt
+    	            where match_id = match_id
+        	        and team_id = :team_id
+            	)
+
 			)
 			as b
 			on 
@@ -50,6 +72,18 @@ from
 				select match_id from team_match
                 where team_id = :team_id
 			)
+
+            and (team % 2) in
+            (
+                select (case is_radiant
+                        when 't' then  0
+                        when 'f' then  1
+                        end) as res
+                from team_match tt
+                where match_id = match_id
+                and team_id = :team_id
+            )
+
 		)
 		as d
 		on

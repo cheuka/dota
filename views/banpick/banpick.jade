@@ -150,7 +150,9 @@ if user
             .tab-pane(role='tabpanel', id='hero_combo')
               
               p#combo_helper Start Banpick and see Team Combo
-              table(style='display:none; min-height: 200px;')#hero_combo_table.table-striped
+              .row
+                .col-md-12
+                  table(style='display:none; min-height: 200px;min-width: 600px;')#hero_combo_table.table-striped
 
             .tab-pane(role='tabpanel', id='bp2')
               p#bp2_helper Select Enemy team and see Enemy heat map
