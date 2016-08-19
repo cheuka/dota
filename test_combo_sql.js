@@ -19,9 +19,9 @@ var options = {
 	is_user_first_pick: true,
 	is_picking: true,
 	is_user_turn: true,
-	list_length: 100,
+	list_length: 25,
 	combo_max: 5,
-	combo_min: 5,
+	combo_min: 2,
 	asc: true,
 	fixed_heroes: {
 		user_picked: [12],

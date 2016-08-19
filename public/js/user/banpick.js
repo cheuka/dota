@@ -265,8 +265,8 @@ function getCombo(){
 				CONST_MATCH_ODDS,
 				CONST_WINNING_RATES	
 			],
-			list_length: 8,
-			combo_max: 4,
+			list_length: 10,
+			combo_max: 5,
 			combo_min: 2,
 			asc: false 
 		},

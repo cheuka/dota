@@ -1,4 +1,3 @@
-
 select d.h1, d.h2, count(*),
 sum(
 	case is_winner 
@@ -11,25 +10,26 @@ from
 	select h1, h2, m1, is_winner from (	
 		select distinct h1, h2, m1 from
 		(
-			select hero_id as h1, 
-			match_id as m1
+			select pb1.hero_id as h1, 
+			pb1.match_id as m1
 			from picks_bans pb1
-			where is_pick = :is_pick 
-			and match_id in -- :temp_table:
+			where exists
 			(
-				select match_id from team_match 
-				where team_id = :team_id
-			)
-			and (team % 2) in
-			(
-				select (case is_radiant
-						when 't' then  0
-						when 'f' then  1
-						end) as res
+				select match_id, team_id, is_radiant
 				from team_match tt
-				where match_id = match_id
-				and team_id = :team_id
+				where
+				tt.team_id = :team_id
+				and
+				tt.is_radiant = (
+					case pb1.team % 2
+					when 1 then false
+					when 0 then true
+					end
+				)
+				and pb1.match_id = tt.match_id
+				and is_pick = :is_pick
 			)
+
 		)
 		as a
 		join
@@ -37,21 +37,21 @@ from
 			select hero_id as h2, 
 			match_id as m2
 			from picks_bans pb2
-			where is_pick = :is_pick 
-			and match_id in -- :temp_table:
+			where exists
 			(
-				select match_id from team_match 
-				where team_id = :team_id
-			)		
-			and (team % 2) in
-			(
-				select (case is_radiant
-						when 't' then  0
-						when 'f' then  1
-						end) as res
+				select match_id, team_id, is_radiant
 				from team_match tt
-				where match_id = match_id
-				and team_id = :team_id
+				where
+				tt.team_id = :team_id
+				and
+				tt.is_radiant = (
+					case pb2.team % 2
+					when 1 then false
+					when 0 then true
+					end
+				)
+				and pb2.match_id = tt.match_id
+				and is_pick = :is_pick
 			)
 
 		)

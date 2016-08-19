@@ -17,49 +17,44 @@ from
 				(
 					select hero_id as h1, match_id as m1
 					from picks_bans pb1
-					where is_pick = :is_pick
-					and match_id in
-					(
-						select match_id from team_match
-						where team_id = :team_id
-					)
-
-		            and (team % 2) in
-        		    (
-                		select (case is_radiant
-		                        when 't' then  0
-        		                when 'f' then  1
-                		        end) as res
-		                from team_match tt
-        		        where match_id = match_id
-                		and team_id = :team_id
-           			)
-
+					where exists
+		            (
+		                select match_id, team_id, is_radiant
+        		        from team_match tt
+		                where
+        		        tt.team_id = :team_id
+                		and
+		                tt.is_radiant = (
+        		            case pb1.team % 2
+                		    when 1 then false
+		                    when 0 then true
+        		            end
+                		)
+		                and pb1.match_id = tt.match_id
+        		        and is_pick = :is_pick
+		            )
 				)
 				as a
 				join
 				(
 					select hero_id as h2, match_id as m2
 					from picks_bans pb2
-					where is_pick = :is_pick
-					and match_id in
-					(
-						select match_id from team_match
-						where team_id = :team_id
-					)
-		            and (team % 2) in
-        		    (
-		                select (case is_radiant
-        		                when 't' then  0
-                		        when 'f' then  1
-                        		end) as res
+					where exists
+		            (
+        		        select match_id, team_id, is_radiant
 		                from team_match tt
-        		        where match_id = match_id
-		                and team_id = :team_id
-        		    )
-
-
-
+        		        where
+		                tt.team_id = :team_id
+        		        and
+		                tt.is_radiant = (
+        		            case pb2.team % 2
+                		    when 1 then false
+		                    when 0 then true
+        		            end
+                		)
+		                and pb2.match_id = tt.match_id
+        		        and is_pick = :is_pick
+		            )
 				)
 				as b
 				on
@@ -71,24 +66,22 @@ from
 			(
 				select hero_id as h3, match_id as m3
 				from picks_bans pb3
-				where is_pick = :is_pick
-				and match_id in
-				(
-					select match_id from team_match
-					where team_id = :team_id
-				)
-
-		            and (team % 2) in
-        		    (
-		                select (case is_radiant
-        		                when 't' then  0
-                		        when 'f' then  1
-                        		end) as res
-		                from team_match tt
-        		        where match_id = match_id
-                		and team_id = :team_id
-		            )
-
+				where exists
+		        (
+        	        select match_id, team_id, is_radiant
+	                from team_match tt
+    	            where
+        	        tt.team_id = :team_id
+            	    and
+                	tt.is_radiant = (
+	                    case pb3.team % 2
+    	                when 1 then false
+        	            when 0 then true
+            	        end
+	                )
+    	            and pb3.match_id = tt.match_id
+        	        and is_pick = :is_pick
+            	)
 			)
 			as d
 			on
@@ -101,23 +94,22 @@ from
 		(
 			select hero_id as h4, match_id as m4
 			from picks_bans pb4
-			where is_pick = :is_pick
-			and match_id in
-			(
-				select match_id from team_match
-				where team_id = :team_id
-			)
-            and (team % 2) in
+			where exists
             (
-                select (case is_radiant
-                        when 't' then  0
-                        when 'f' then  1
-                        end) as res
+                select match_id, team_id, is_radiant
                 from team_match tt
-                where match_id = match_id
-                and team_id = :team_id
+                where
+                tt.team_id = :team_id
+                and
+                tt.is_radiant = (
+                    case pb4.team % 2
+                    when 1 then false
+                    when 0 then true
+                    end
+                )
+                and pb4.match_id = tt.match_id
+                and is_pick = :is_pick
             )
-
 
 		)
 		as f
