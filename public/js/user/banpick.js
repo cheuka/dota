@@ -759,10 +759,23 @@ function randomPick(){
 	} //end switch
 	
 }
+
+
+function highlightSlot(slot){
+	slot.css('border', '3px solid gold');
+}
+
+function dehighlightSlot(slot){
+	slot.css('border', '1px solid white');
+}
+
 function extinguishSlot(){
 	console.log('extinguishSlot');
 	if(last_slot != null){
-		last_slot.removeClass('submit_button');
+		dehighlightSlot(last_slot);
+
+		// .removeClass('submit_button');
+		
 	}
 }
 
@@ -770,19 +783,30 @@ function igniteSlot(){
 	console.log('ignoreSlot');
 	switch(getLeftRight(procedure[cur_procedure])){
 		case (LEFT_BAN):
-			$('#left_ban_' + hero_slots.radiant_ban.length).addClass('submit_button');
+			highlightSlot(
+				$('#left_ban_' + hero_slots.radiant_ban.length)
+			);
+			// addClass('submit_button');
 			last_slot = $('#left_ban_' + hero_slots.radiant_ban.length);
 		break;
 		case (RIGHT_BAN):
-			$('#right_ban_' + hero_slots.dire_ban.length).addClass('submit_button');
+			highlightSlot(
+				$('#right_ban_' + hero_slots.dire_ban.length)
+			);			// .addClass('submit_button');
 			last_slot = $('#right_ban_' + hero_slots.dire_ban.length);
 		break;
 		case (LEFT_PICK):
-			$('#left_pick_' + hero_slots.radiant_pick.length).addClass('submit_button');
+			highlightSlot(
+				$('#left_pick_' + hero_slots.radiant_pick.length)
+			);
+// .addClass('submit_button');
 			last_slot = $('#left_pick_' + hero_slots.radiant_pick.length);
 		break;
 		case (RIGHT_PICK):
-			$('#right_pick_' + hero_slots.dire_pick.length).addClass('submit_button');
+			highlightSlot(
+				$('#right_pick_' + hero_slots.dire_pick.length)
+			);
+			// .addClass('submit_button');
 			last_slot = $('#right_pick_' + hero_slots.dire_pick.length);
 		break;
 	} // end switch
