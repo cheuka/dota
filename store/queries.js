@@ -247,23 +247,42 @@ function insertMatch(db, redis, match, options, cb)
             {
                 if (match.picks_bans || match.upload && match.upload.picks_bans)
                 {
-                    var pick_idx = [0, 0, 0, 0, 1, 6, 7, 2, 0, 0, 0, 0, 3, 8, 4, 9, 0, 5, 0, 10];
-
                     var pbs = match.picks_bans || match.upload.picks_bans;
 
-                    pbs.forEach(function(pb, i)
+                    if (players && players.length == 10) //rxu, we only handle 10 players case
                     {
-                       if (pb.is_pick && players.length > 0 && players[pick_idx[i] - 1])
-                       {
-                            pb.player_id = players[pick_idx[i] - 1].account_id || 0;
-                       }else{
-							pb.player_id = 0;
-					   }
-					   if (!pb.order){
-						   pb.order = i;
-					   }
-                    });
+                        // first insert radiant player id
+                        pbs.forEach(function(pb, i)
+                        {
+                            var is_radiant = pb.team_id === 0;
+                            if (pb.is_pick && is_radiant)
+                            {
+                                for (var pi = 0; pi < 5; ++pi)
+                                {
+                                    if (pb.hero_id === players[pi].hero_id)
+                                    {
+                                        pb.player_id = players[pi].account_id || 0;
+                                    }
+                                }
+                            }
+                        });
 
+                        // then insert dire player id
+                        pbs.forEach(function(pb, i)
+                        {
+                            var is_radiant = pb.team_id === 0;
+                            if (pb.is_pick && !is_radiant)
+                            {
+                                for (var pi = 5; pi < 10; ++pi)
+                                {
+                                    if (pb.hero_id === players[pi].hero_id)
+                                    {
+                                        pb.player_id = players[pi].account_id || 0;
+                                    }
+                                }
+                            }
+                        });
+                    }
 
                     async.each(pbs || [], function (p, cb)
                     {
@@ -278,7 +297,7 @@ function insertMatch(db, redis, match, options, cb)
                 }
                 else
                 {
-                  cb();
+                  return cb();
                 }
            }
 

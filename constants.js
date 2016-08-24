@@ -28,6 +28,11 @@ heroes.forEach(function(h)
 var banpick_heroes = constants.banpick_hero_order.heroes;
 constants.banpick_heroes = banpick_heroes;
 
+// lordstone: add common teams
+
+var common_teams = constants.common_teams.teams;
+constants.common_teams = common_teams;
+
 // console.log('DEBUG:' + JSON.stringify(constants.banpick_heroes));
 
 /*

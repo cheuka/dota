@@ -6,6 +6,12 @@
 // const DATA - RELATED
 // must be the same with server side
 
+// utility
+
+const ROMAN_NUMBER = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
+
+// end of utility
+
 const CONST_MATCH_ODDS = 0;
 const CONST_WINNING_RATES = 1;
 
@@ -124,8 +130,8 @@ var last_slot = null;
 
 // DATA-RELATED vars
 
-var user_team = '';
-var enemy_team = '';
+var user_team = '0';
+var enemy_team = '0';
 
 // utility
 
@@ -136,6 +142,37 @@ function getHeroImg(hero_id){
 	img0.attr('title', src_img.attr('title'));
 	img0.attr('style', src_img.attr('style'));
 	return img0;
+}
+
+function getHeroSrc(hero_id){
+	// var src_img = $('#hero_' + hero_id);
+	// return src_img.attr("src");
+	return ('/public/images/hero_icons/' + hero_id + '.png');
+}
+
+function getHeroTitle(hero_id){
+	var src_img = $('#hero_' + hero_id);
+	return src_img.attr("title");
+}
+
+function home_team_sel_change(){
+	user_team = $('#home_team_sel').val();
+}
+
+function enemy_team_sel_change(){
+	enemy_team = $('#enemy_team_sel').val();
+	if(!(enemy_team == 0 || enemy_team == '0')){
+		getBP2();
+	}
+}
+
+function tabKey(key){
+	// lordstone: press button to switch tabs
+	console.log('DEBUG you pressed:' + key.keyCode);
+	var tmpint = parseInt(key.keyCode);
+	if(tmpint >= 49 && tmpint <= 52){
+		$('#mytab a:eq(' + (tmpint - 49) + ')').tab('show');
+	}
 }
 
 
@@ -152,85 +189,20 @@ function requestAPI(req_var, cb){
 	);
 }
 
-function renderBP2List(mylist, container){
-
-	var tbody0 = $('<tbody></tbody>');
-	var thead0 = $('<thead></thead>');
-	var theadrow_0 = $('<td></td>');
-	theadrow_0.html('Player Slot');
-	theadrow_0.appendTo(thead0);
-	var theadrow_1 = $('<td></td>');
-	theadrow_1.html('Order');
-	theadrow_1.appendTo(thead0);
-	var theadrow_2 = $('<td></td>');
-	theadrow_2.html('Hero');
-	theadrow_2.appendTo(thead0);
-	var theadrow_3 = $('<td></td>');
-	theadrow_3.html('Matches');
-	theadrow_3.appendTo(thead0);
-	var theadrow_4 = $('<td></td>');
-	theadrow_4.html('Wins');
-	theadrow_4.appendTo(thead0);
-	thead0.appendTo(tbody0);
-	
-	for(var i = 0; i < mylist.player_slots.length; i ++)
-	{
-		var tr_0 = $('<tr></tr>');
-		var td_0 = $('<td></td>');
-		
-		td_0.html('Slot:' + mylist.player_slots[i].player_slot);
-		td_0.attr('colspan', '5');
-		td_0.appendTo(tr_0);
-		tr_0.appendTo(tbody0);
-
-		for(var j = 0; j < mylist.player_slots[i].orders.length; j ++)
-		{	
-			var tr_1 = $('<tr></tr>');
-			var td_1 = $('<td></td>');
-			td_1.html('order:' + mylist.player_slots[i].orders[j].order);
-			td_1.attr('colspan', '4');
-			tr_1.append($('<td></td>'));
-			td_1.appendTo(tr_1);
-			tr_1.appendTo(tbody0);
-			
-			for(var k = 0; k < mylist.player_slots[i].orders[j].heroes.length; k ++)
-			{
-				var tr_2 = $('<tr></tr>');
-				var td_2 = $('<td></td>');
-				var td_3 = $('<td></td>');
-				var td_4 = $('<td></td>');
-				var hero_img = getHeroImg(mylist.player_slots[i].orders[j].heroes[k].hero_id);
-				hero_img.appendTo(td_2);
-				td_3.html(mylist.player_slots[i].orders[j].heroes[k].matches);
-				td_4.html(mylist.player_slots[i].orders[j].heroes[k].wins);
-				td_2.appendTo(tr_2);
-				td_3.appendTo(tr_2);
-				td_4.appendTo(tr_2);
-				tr_2.appendTo(tbody0);
-			
-			} // end for k			
-
-		} // end for j
-
-	} // end for i
-
-	tbody0.appendTo(container);
-}
-
 function renderComboList(mylist, container){
 	
 	// lordstone: render mylist on table container:
 	var tbody0 = $('<tbody></tbody>');
-	var thead0 = $('<thead></thead>');
-	var theadrow_0 = $('<td></td>');
+	var thead0 = $('<tr></tr>');
+	var theadrow_0 = $('<th></th>');
 	theadrow_0.attr('colspan', '5');
 	theadrow_0.css('min-width', '200px');
 	theadrow_0.html('Hero Combo');
 	theadrow_0.appendTo(thead0);
-	var theadrow_1 = $('<td></td>');
+	var theadrow_1 = $('<th></th>');
 	theadrow_1.html('Matches');
 	theadrow_1.appendTo(thead0);
-	var theadrow_2 = $('<td></td>');
+	var theadrow_2 = $('<th></th>');
 	theadrow_2.html('Wins');
 	theadrow_2.appendTo(thead0);
 	thead0.appendTo(tbody0);
@@ -271,6 +243,10 @@ function getCombo(){
 		enemy_team: enemy_team,
 		is_user_radiant: is_user_radiant,
 		is_user_first_pick: is_user_first_pick,
+		is_picking: 
+			( procedure[cur_procedure] === LEFT_PICK ||
+			procedure[cur_procedure] === RIGHT_PICK ),
+		is_user_turn: (is_radiant_turn === is_user_radiant),
 		options: 
 		{
 			order_by: CONST_MATCH_ODDS,
@@ -279,9 +255,9 @@ function getCombo(){
 				CONST_MATCH_ODDS,
 				CONST_WINNING_RATES	
 			],
-			length: 8,
-			max_hero: 4,
-			min_hero: 2,
+			list_length: 8,
+			combo_max: 4,
+			combo_min: 2,
 			asc: false 
 		},
 		fixed_heroes: {
@@ -314,6 +290,229 @@ function getCombo(){
 	);
 }
 
+function renderBP2(mylist, container){
+	
+	// lordstone: trial of D3 drawing bp2
+	
+	const MAX_R = 20;
+	const MIN_R = 2.5;
+
+	const MARGIN_FACTOR = 0.25;
+
+	var w = 700;
+	var h = 560;
+
+	var r = 20;
+
+	var step_x = w / 6.5;
+	var step_y = h / 6;
+
+	var svg = d3.select("#bp2_container")
+			.append("svg")
+			.attr('width', w)
+			.attr('height',h)
+			.style('background-color:', 'gray');
+	
+	var dataset = [];
+	// process the REAL dataset - mylist
+	
+	// var agg_y_offset = 0;
+
+	for(var i = 0; i < mylist.player_slots.length; i ++)
+	{
+		// y-axis at this level
+		var y_axis = {
+			type: 'ap',
+			x: (step_x * MARGIN_FACTOR),
+			y: (step_y * (MARGIN_FACTOR + i)),
+			text: (ROMAN_NUMBER[i]),
+			r: 0
+		};
+		
+		dataset.push(y_axis);
+		
+		// each player slot:
+		var this_player_slot = mylist.player_slots[i].player_slot;
+		var hero_num = 	mylist.player_slots[i].heroes.length;
+		
+		// deal with offsets
+
+		// var clashSlots = new Array();
+		// clashSlots[0] = new Array();
+		var last_x = -1;
+		var last_y = -1;
+
+		var last_int_order = 0;
+		// var group_num = 0;
+		// loop over every single hero in each slot
+		for(var j = 0; j < hero_num; j ++)
+		{
+			// each hero
+			const con1 = Math.sqrt(4);
+			var hero = mylist.player_slots[i].heroes[j];
+
+			var text = undefined;
+			var int_group = Math.round(hero.order);
+
+			var x =  step_x * (int_group + MARGIN_FACTOR);
+			var y = (this_player_slot + MARGIN_FACTOR) * step_y;
+				// + agg_y_offset;
+			var r = Math.min((Math.sqrt(hero.matches) / con1 ) * (MAX_R - MIN_R) + MIN_R, MAX_R)
+
+			// deal with clashes
+			if(int_group > last_int_order){
+				// first elem in int order group
+				last_x = x + r; // (pos-x + r) of first hero on each new slot row
+				last_y = y + r; // (pos-y + r) of first hero on each new slot now
+				// group_num += 1;
+			}else{
+				// continuing elem in group
+				if(last_y + r * 2 <= y + step_y){
+					// if can go down
+					y = last_y + r;
+					last_y = y + r;
+				}else if(last_x + r * 2 <= x + step_x){
+					// if cannot go down but can go right
+					x = last_x + MAX_R;
+					last_x = x + MAX_R;
+				}else{
+					// if neither can satisfy
+					r = 0; // no display hero
+					text = 'more...';
+				}
+				// group_num += 1;
+			}
+			last_int_order = int_group;
+
+			// creating data point
+			var dp = {
+				type: 'dp',
+				order: hero.order,
+				slot: this_player_slot,
+				hero_id: hero.hero_id,
+				matches: hero.matches,
+				win: hero.win,
+				y: y,
+				x: x,
+				r: r,
+				text: text
+			};
+			
+			dataset.push(dp);
+
+		} // end for j
+
+	} // end for i
+
+	// x-axis added in groups with y aggregates
+
+	for (var i = 0; i < 5; i ++){
+
+		var x_axis = {
+			type: 'ap',
+			x: (step_x * (1 + i + MARGIN_FACTOR)),
+			y: (step_y * (5 + MARGIN_FACTOR)),
+			text: ('#' + (i + 1)),
+			r: 0
+		};
+
+		dataset.push(x_axis);
+	}
+
+	var data_info = {
+		type: 'ap',
+		x: (step_x * MARGIN_FACTOR),
+		y: (step_y * (5 + MARGIN_FACTOR)),
+		text: '(' + mylist.matches_num + ' matches)',
+		r: 0,
+		text_anchor: 'r'
+	};
+
+	dataset.push(data_info);
+
+	// svg.attr('height', Math.min(h, step_y * 6));
+
+	// end of process the REAL dataset
+	// console.log('DEBUG json:' + JSON.stringify(dataset));
+	// TODO: lordstone: fix the rendering issue and display the return list properly
+	var dps = svg.selectAll("g")
+		.data(dataset)
+		.enter()
+		.append("g")
+		.attr("transform", function(d, i){
+			return "translate(" + (d.x) + "," + (d.y) + ")";
+		});
+
+	dps.append("text")
+		.attr("text-anchor", function(d){
+			if(d.text_anchor == 'r'){
+				return 'right';
+			}else{
+				return 'middle';
+			}
+		})
+		.style("fill", "white")
+		.style("font-weight", "bold")
+		.attr("dy", "0.34em")
+		.text(function(d){
+			return d.text;
+		});
+
+	//TODO: lordstone, fix the display dilemma
+
+	dps.append("defs")
+		.append("pattern")
+		.attr("id", function(d, i){return 'bp2_hero_head_' + i;})
+		// .attr("patternUnits", "userSpaceOnUse")
+		.attr("height", function(d){return d.r * 2.5;})
+		.attr("width", function(d){return d.r * 2;})
+		.append("image")/*
+		.attr('alt', function(d){
+			return d.text;
+		})*/
+		.attr("xlink:href", function(d){
+			return getHeroSrc(d.hero_id);
+		})
+		.attr("x", function(d){return -d.r/2;})
+		.attr("y", function(d){return -d.r/2;})	
+		.attr("height", function(d){return d.r * 3})
+		.attr("width", function(d){return d.r * 3})
+		.attr("title", 'jiji');
+
+	dps.append("circle")
+		.attr("id", function(d,i){
+			return 'circle_hero_' + i;
+		})
+		.attr("r", function(d){return d.r;})
+		.attr("stroke", "white")
+		.attr("stroke-width", function(d){
+			return '0.5px;';
+		})
+		.attr("cx", 0)
+		.attr("cy", 0)
+		.attr("fill", function(d, i){
+			return ("url(#bp2_hero_head_" + i + ")");
+		})
+		// lordstone: hover effect
+		.attr("onmouseover", function(d, i){
+			var hero_details = getHeroTitle(d.hero_id) + ': ';
+			hero_details += ' Order:' + d.order + '.';
+			hero_details += ' Matches:' + d.matches + '.';
+			hero_details += ' Win:' + d.win + '%.';
+			
+			var in_text = '$("#circle_hero_' + i +'").attr("stroke", "yellow")';
+			in_text += '.attr("stroke-width", "4px");';
+			in_text += '$("#bp2_details").html("' + hero_details +'");';
+			return in_text;
+		})
+		.attr('onmouseout', function(d, i){
+			var in_text = '$("#circle_hero_' + i +'").attr("stroke", "white")';
+			in_text += '.attr("stroke-width", "0.5px");';
+			in_text += '$("#bp2_details").html("See hero details");';
+			return in_text;
+		});
+}
+
 
 function getBP2(){
 
@@ -328,7 +527,7 @@ function getBP2(){
 	requestAPI(user_bp, function(reply)
 		{
 			console.log('Got msg from server for BP2');
-			console.log('DEBUG:' + reply);
+			// console.log('DEBUG:' + reply);
 			var reply_obj = JSON.parse(reply);
 			if(reply_obj && reply_obj.status && reply_obj.status == 'ok' && reply_obj.list)
 			{
@@ -340,11 +539,13 @@ function getBP2(){
 
 			// start rendering the new list in tops i.e. combo
 			$('#bp2_helper').fadeOut();
-			$('#bp2_table').empty();
-			$('#bp2_table').fadeIn();
+			$('#bp2_container').empty();
+			$('#bp2_container').fadeIn();
 
 			// start rendering
-			renderBP2List(reply_obj.list, $('#bp2_table'));			
+			// renderBP2List(reply_obj.list, $('#bp2_table'));	
+
+			renderBP2(reply_obj.list, $('#bp2_container'));	
 		}
 	);
 
@@ -639,7 +840,6 @@ function changeStatus(passed){
 			$('#button1').attr('disabled', true);
 			igniteSlot();
 			updateWithServer();
-			getBP2();
 		break;
 		case(LEFT_BAN):
 		case(RIGHT_BAN):
@@ -838,6 +1038,11 @@ $(document).ready(function(){
 	// operations end.
 
 	// getBP2();
+	
+	// set tab key
+	$(document).keydown(function(event){
+		tabKey(event);
+	});
 	
 });
 

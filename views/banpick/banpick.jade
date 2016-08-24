@@ -1,9 +1,9 @@
 extend /layout
 include /mixins/hero_td
-include /mixins/hero_td_new
 include /mixins/data_table
 include /mixins/data_table_header
 include /mixins/hero_banpick
+include /mixins/common_teams_dropdown
 
 append head
     meta(property="og:title", content="Mock Ban-Pick: Cheuka's Dota")
@@ -18,32 +18,51 @@ if user
       .row()
         
         // tabs block
-        .col-md-6(style='border: 1px white solid;')
-          ul(class='nav nav-tabs', role='tablist')
+        .col-md-4 
+          //(style='border: 1px white solid;')
+          ul(class='nav nav-tabs', role='tablist', id='mytab')
             li(role='presentation', class='active') 
               a(href='#heroes', aria-controls='heroes', role='tab', data-toggle='tab') Heroes
             li(role='presentation') 
-              a(href='#hero_combo', aria-controls='hero_combo', role = 'tab', data-toggle='tab') Tops
+              a(href='#hero_combo', aria-controls='hero_combo', role = 'tab', data-toggle='tab') Combo
             li(role='presentation') 
-              a(href='#bp2', aria-controls='bp2', role = 'tab', data-toggle='tab') BP2
+              a(href='#bp2', aria-controls='bp2', role = 'tab', data-toggle='tab') Enemy Heat Map
             li(role='presentation') 
               a(href='#options', aria-controls='options', role = 'tab', data-toggle='tab') Options
         // tabs block end
+        
+        // team selection block
+
+        .col-md-4 
+          //(style='border: 1px white solid;')
+          .row(style='min-height: 45px')
+            span User:
+            +common_teams_dropdown('home_team_sel')
+
+            br
+
+            span Enemy:
+            +common_teams_dropdown('enemy_team_sel')
+
+
+        // team selection block end
 
         // sequence block 
-        .col-md-6
+        .col-md-4
           .row(style='min-height: 45px')
             .col-md-6(style='border: 1px white solid;min-height: 45px')
               //.radio-inline
               input(type='radio', name='radiant_or_dire', value='radiant', onclick='clickRadioRadiantDire()', checked, disabled='true') 
-              span.submit_button(style='font-size: 20px;', id='radiant_or_dire_helper_0') Radiant
+              span.submit_button(style='font-size: 18px;', id='radiant_or_dire_helper_0') Radiant
+              br
               //.radio-inline
               input(type='radio', name='radiant_or_dire', value='dire', onclick='clickRadioRadiantDire()',disabled='true') 
-              span(style='font-size: 20px;', id='radiant_or_dire_helper_1') Dire 
+              span(style='font-size: 18px;', id='radiant_or_dire_helper_1') Dire 
             .col-md-6(style='border: 1px white solid;min-height: 45px')
               //.radio-inline
               input(type='radio', name='first_pick', value='first_pick', onclick='clickRadioFirstPick()', checked, disabled='true')
               span.submit_button(style='font-size: 20px;', id='first_pick_helper_0') First Pick
+              br
               //.radio-inline
               input(type='radio', name='first_pick', value='second_pick', onclick='clickRadioFirstPick()',disabled='true')
               span(style='font-size: 20px;', id='first_pick_helper_1') Second Pick
@@ -134,8 +153,13 @@ if user
               table(style='display:none; min-height: 200px;')#hero_combo_table.table-striped
 
             .tab-pane(role='tabpanel', id='bp2')
-              p#bp2_helper Start Banpick and see Team Combo
-              table(style='display:none; min-height: 500px; overflow-y:scroll;')#bp2_table.table-striped
+              p#bp2_helper Select Enemy team and see Enemy heat map
+              //
+                table(style='display:none; min-height: 500px; overflow-y:scroll;')#bp2_table.table-striped
+              #bp2_container()
+              p#bp2_details(style='font-color: white; font-size:20px')
+              //
+                (style='background-color: gray;')
 
             .tab-pane(role='tabpanel', id='options')
               p options
@@ -321,6 +345,7 @@ else
 
 
 append footer_assets
-  script(type="text/javascript", src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5452f1e51eac0fc5", async="async")
+  //
+    script(type="text/javascript", src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5452f1e51eac0fc5", async="async")
   script(type="text/javascript", src="../public/js/user/banpick.js")
-
+  script(type="text/javascript", src="https://d3js.org/d3.v4.min.js")
