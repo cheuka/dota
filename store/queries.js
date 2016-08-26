@@ -301,67 +301,35 @@ function insertMatch(db, redis, match, options, cb)
                 }
            }
 
-		   function upsertTeamMatch(cb)
-		   {
-			   async.series(
-			   {
-				   'r': addRadiant,
-				   'd': addDire,
-			   }, cb);
-
-			   function addRadiant(cb)
-			   {
-					var team_id = match.radiant_team_id || 0;
-					var mv = match.version || 0;
-					var tm;
-					tm = 
-					{
-						is_radiant: true,
-						is_winner: match.radiant_win,
-						end_time: match.end_time || 0,
-						version: mv.toString(),
-						team_id: team_id,
-						match_id: match.match_id
-					}
-					if(team_id && match.match_id)
-					{
-						upsert(trx, 'team_match', tm,
-						{
-						   team_id: team_id,
-						   match_id: match.match_id
-						}, cb);
-					} else
-					{
-						return cb();
-					}
-			   }
-
-			   function addDire(cb)
+		function upsertTeamMatch(cb)
+		{
+			// lordstone: changed write process to cater schema change in team_match
+			var radiant_team_id = match.radiant_team_id || 0;
+			var dire_team_id = match.dire_team_id || 0;
+			var mv = match.version || 0;
+			var tm;
+			tm = 
+			{
+				is_radiant_winner: match.radiant_win,
+				end_time: match.end_time || 0,
+				version: mv.toString(),
+				dire_team_id: dire_team_id,
+				radiant_team_id: radiant_team_id,
+				match_id: match.match_id
+			}
+			if(dire_team_id && radiant_team_id && match.match_id)
+			{
+				upsert(trx, 'team_match', tm,
 				{
-					var team_id = match.dire_team_id || 0;
-					var mv = match.version || 0;
-					var tm;
-					tm = 
-					{
-					   is_radiant: false,
-					   is_winner: !match.radiant_win,
-					   end_time: match.end_time || 0,
-					   version: mv.toString(),
-					   team_id: team_id,
-					   match_id: match.match_id
-					}
-					if(team_id && match.match_id)
-					{
-						upsert(trx, 'team_match', tm,
-						{
-							team_id: team_id,
-							match_id: match.match_id
-						}, cb);
-					} else
-					{
-						return cb();
-					}
-				}
+				   dire_team_id: dire_team_id,
+				   radiant_team_id: radiant_team_id,
+				   match_id: match.match_id
+				}, cb);
+			} else
+			{
+				return cb();
+			}
+			   
            }
 
            function exit(err)
