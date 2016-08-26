@@ -192,7 +192,7 @@ CREATE TABLE team_match(
 	match_id bigint REFERENCES matches(match_id) ON DELETE CASCADE,
 	PRIMARY KEY (dire_team_id, radiant_team_id, match_id),
 	-- is_radiant boolean not null,
-	is_winner boolean not null,
+	is_radiant_winner boolean not null, -- is radiant team the winner
 	version varchar(30),
 	end_time bigint
 );
