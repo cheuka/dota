@@ -1,8 +1,13 @@
+/* lordstone:
+   this is to test find combo sql and all the logics
+*/
+
 var mytest = require('./store/buildHeroCombo');
 
 var computeHeroComboInfo = mytest.computeHeroComboInfo;
 var db = require('./store/db');
 var redis = require('./store/redis');
+
 
 // sample options
 var options = {
@@ -14,8 +19,8 @@ var options = {
 	is_user_first_pick: true,
 	is_picking: true,
 	is_user_turn: true,
-	list_length: 10,
-	combo_max: 4,
+	list_length: 25,
+	combo_max: 5,
 	combo_min: 2,
 	asc: true,
 	fixed_heroes: {
@@ -31,7 +36,7 @@ console.time('test computeHeroComboInfo');
 computeHeroComboInfo(options, function(err, result){
 	
 	console.log('Result:' + JSON.stringify(result));
-
+	console.log('\nsize:' + result.length);
 	console.timeEnd('test computeHeroComboInfo');
 
 });

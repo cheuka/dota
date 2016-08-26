@@ -201,12 +201,17 @@ function renderComboList(mylist, container){
 	theadrow_0.appendTo(thead0);
 	var theadrow_1 = $('<th></th>');
 	theadrow_1.html('Matches');
+	// theadrow_1.attr('colspan', '3');
 	theadrow_1.appendTo(thead0);
 	var theadrow_2 = $('<th></th>');
 	theadrow_2.html('Wins');
+	// theadrow_2.attr('colspan', '3');
 	theadrow_2.appendTo(thead0);
 	thead0.appendTo(tbody0);
 	for(var i = 0; i < mylist.length; i ++){
+		if(i > 19){
+			break;
+		}// protect the f/e display with limit
 		var tr0 = $('<tr></tr>');
 		var td_0 = $('<td></td>');
 		td_0.attr('colspan', '5');
@@ -220,16 +225,21 @@ function renderComboList(mylist, container){
 				hero_img.appendTo(td_0);
 				// heroes += mylist[i].heroes[j].toString();
 				// heroes += ', ';
+				if(j !== mylist[i].heroes.length - 1){
+					var plus_sign = $('<span></span>');
+					plus_sign.html(' + ');
+					plus_sign.appendTo(td_0);
+				}
 			}
 			// td_0.html(heroes);
 		}
 		td_0.css('min-width', '200px');
 		td_0.appendTo(tr0);
 		var td_1 = $('<td></td>');
-		td_1.html(mylist[i].matching_odds);
+		td_1.html(mylist[i].matches);
 		td_1.appendTo(tr0);
 		var td_2 = $('<td></td>');
-		td_2.html(mylist[i].winning_rate);
+		td_2.html(mylist[i].wins);
 		td_2.appendTo(tr0);
 		tr0.appendTo(tbody0);
 	}
@@ -255,8 +265,8 @@ function getCombo(){
 				CONST_MATCH_ODDS,
 				CONST_WINNING_RATES	
 			],
-			list_length: 8,
-			combo_max: 4,
+			list_length: 10,
+			combo_max: 5,
 			combo_min: 2,
 			asc: false 
 		},
@@ -749,10 +759,23 @@ function randomPick(){
 	} //end switch
 	
 }
+
+
+function highlightSlot(slot){
+	slot.css('border', '3px solid gold');
+}
+
+function dehighlightSlot(slot){
+	slot.css('border', '1px solid white');
+}
+
 function extinguishSlot(){
 	console.log('extinguishSlot');
 	if(last_slot != null){
-		last_slot.removeClass('submit_button');
+		dehighlightSlot(last_slot);
+
+		// .removeClass('submit_button');
+		
 	}
 }
 
@@ -760,19 +783,30 @@ function igniteSlot(){
 	console.log('ignoreSlot');
 	switch(getLeftRight(procedure[cur_procedure])){
 		case (LEFT_BAN):
-			$('#left_ban_' + hero_slots.radiant_ban.length).addClass('submit_button');
+			highlightSlot(
+				$('#left_ban_' + hero_slots.radiant_ban.length)
+			);
+			// addClass('submit_button');
 			last_slot = $('#left_ban_' + hero_slots.radiant_ban.length);
 		break;
 		case (RIGHT_BAN):
-			$('#right_ban_' + hero_slots.dire_ban.length).addClass('submit_button');
+			highlightSlot(
+				$('#right_ban_' + hero_slots.dire_ban.length)
+			);			// .addClass('submit_button');
 			last_slot = $('#right_ban_' + hero_slots.dire_ban.length);
 		break;
 		case (LEFT_PICK):
-			$('#left_pick_' + hero_slots.radiant_pick.length).addClass('submit_button');
+			highlightSlot(
+				$('#left_pick_' + hero_slots.radiant_pick.length)
+			);
+// .addClass('submit_button');
 			last_slot = $('#left_pick_' + hero_slots.radiant_pick.length);
 		break;
 		case (RIGHT_PICK):
-			$('#right_pick_' + hero_slots.dire_pick.length).addClass('submit_button');
+			highlightSlot(
+				$('#right_pick_' + hero_slots.dire_pick.length)
+			);
+			// .addClass('submit_button');
 			last_slot = $('#right_pick_' + hero_slots.dire_pick.length);
 		break;
 	} // end switch

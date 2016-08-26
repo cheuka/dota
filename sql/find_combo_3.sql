@@ -12,26 +12,47 @@ from
 		select h1, h2, h3, m1 from (	
 			select distinct h1, h2, m1 from
 			(
-				select hero_id as h1, match_id as m1 
+				select hero_id as h1, 
+				match_id as m1 
 				from picks_bans pb1
-				where is_pick = :is_pick
-				and match_id in
-				(
-					select match_id from team_match
-	                where team_id = :team_id
-				)
+				where exists
+	            (
+	                select match_id, team_id, is_radiant
+    	            from team_match tt
+        	        where
+            	    tt.team_id = :team_id
+                	and
+	                tt.is_radiant = (
+    	                case pb1.team % 2
+        	            when 1 then false
+            	        when 0 then true
+                	    end
+	                )
+    	            and pb1.match_id = tt.match_id
+        	        and is_pick = :is_pick
+            	)
 			)
 			as a
 			join
 			(
 				select hero_id as h2, match_id as m2
 				from picks_bans pb2
-				where is_pick = :is_pick
-				and match_id in
-				(
-					select match_id from team_match
-	                where team_id = :team_id
-				)
+				where exists
+		        (
+       		        select match_id, team_id, is_radiant
+	                from team_match tt
+       		        where
+	                tt.team_id = :team_id
+       		        and
+               		tt.is_radiant = (
+	                    case pb2.team % 2
+       		            when 1 then false
+               		    when 0 then true
+	                    end
+       		        )
+               		and pb2.match_id = tt.match_id
+	                and is_pick = :is_pick
+        	    )
 			)
 			as b
 			on 
@@ -44,12 +65,23 @@ from
 		(	
 			select hero_id as h3, match_id as m3
 			from picks_bans pb3
-			where is_pick = :is_pick
-			and match_id in
-			(
-				select match_id from team_match
-                where team_id = :team_id
-			)
+			where exists
+            (
+                select match_id, team_id, is_radiant
+                from team_match tt
+                where
+                tt.team_id = :team_id
+                and
+                tt.is_radiant = (
+                    case pb3.team % 2
+                    when 1 then false
+                    when 0 then true
+                    end
+                )
+                and pb3.match_id = tt.match_id
+                and is_pick = :is_pick
+            )
+
 		)
 		as d
 		on

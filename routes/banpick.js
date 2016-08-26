@@ -40,29 +40,6 @@ module.exports = function(db, redis)
 
 			if(user_bp.type === 'combo'){
 
-				/*
-				return_data = {
-					status: 'ok',
-					list:
-					[
-						{
-							heroes: [12,34],
-							matching_odds: 0.75,
-							winning_rate: 0.61
-						},
-						{
-							heroes: [14, 66],
-							matching_odds: 0.72,
-							winning_rate: 0.55
-						},
-						{
-							heroes: [22, 55, 77],
-							matching_odds: 0.71,
-							winning_rate: 0.48
-						}
-					]
-				};
-				*/
 
 				console.log('DEBUG: user combo req data:' + reqdata);
 
