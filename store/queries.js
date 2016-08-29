@@ -263,6 +263,11 @@ function insertMatch(db, redis, match, options, cb)
                                     {
                                         pb.player_id = players[pi].account_id || 0;
                                     }
+
+                                    if ( pb.order === undefined)
+                                    {
+                                        pb.order = i;
+                                    }
                                 }
                             }
                         });
@@ -278,6 +283,11 @@ function insertMatch(db, redis, match, options, cb)
                                     if (pb.hero_id === players[pi].hero_id)
                                     {
                                         pb.player_id = players[pi].account_id || 0;
+                                    }
+
+                                    if ( pb.order === undefined)
+                                    {
+                                        pb.order = i;
                                     }
                                 }
                             }
