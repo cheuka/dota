@@ -1,3 +1,8 @@
+.text-success .text-success:hover
+{
+	color: maroon;
+}
+
 h1.home {
     font-size: 50px;
 }
@@ -15,7 +20,7 @@ h1.home {
 #philosophy {
     /* background: url("../images/dota-blackwhite-copy.png") white no-repeat right; */
     padding: 5em 0;
-    color: black;
+    color: white; /* changed by lordstone */
 }
 .main {
     width: 100%;
@@ -68,15 +73,15 @@ img.grayscale {
     color: #ffffff;
 }
 .header .btn-lg:hover {
-    background-color: #BBF0FD;
-    border-color: #BBF0FD;
+    background-color: navy;
+    border-color: navy;
     color: #FFF;
 }
 .header h1 {
     font-size: 80px;
     -webkit-text-stroke: 1px rgba(f, f, f, 0.1);
-    color: #431a6d;
-    color: #fff;
+    color: black;
+    /* color: #fff; */
     margin-left: -5px;
     margin-bottom: 5px;
     text-transform: uppercase;
@@ -92,7 +97,7 @@ img.grayscale {
     /*height: calc(100% - 3em);*/
     /* subtract an amount of space for your arrow element */
     height:700px;
-    background-color: #333;
+    /* background-color: antiquewhite;*/  /* #333;*/
     width: 100%;
 }
 /* floating arrow button in the header */
@@ -104,7 +109,7 @@ img.grayscale {
     left: 50%;
     top: -5em;
     margin-left: -5em;
-    background: #BBF0FD;
+    background: navy;
     width: 10em;
     height: 10em;
     padding: 4em 2em;
@@ -143,7 +148,7 @@ img.grayscale {
     height: 0px;
     border-style: solid;
     border-width: 3em 3em 0 3em;
-    border-color: #BBF0FD transparent transparent transparent;
+    border-color: navy transparent transparent transparent;
     -webkit-transform: rotate(360deg);
     /* added for better anti-aliasing on webkit browsers */
 }
@@ -203,16 +208,17 @@ img.grayscale {
     /* background: url("../images/dotawallpaper.png"); */
     background-size: cover;
     background-position: center;
+	color: black;
 }
 .alt .lead {
-    color: #BBF0FD;
+    color: black;
 }
 .alt.affix {
     background-color: #4C06AB;
 }
 .alt li a:hover,
 .alt li.active {
-    background-color: #BBF0FD;
+    background-color: navy;
 }
 .blurb {
     padding: 120px 0;
@@ -293,10 +299,10 @@ img.grayscale {
     to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
 }
 
-/*
+
 .submit_button {
     -webkit-animation-name: greenPulse;
     -webkit-animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
 }
-*/
+

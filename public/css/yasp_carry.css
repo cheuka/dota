@@ -53,7 +53,7 @@
   font-weight: 300;
 }
 .carry-info-icon {
-  color: #0ce3ac;
+  color: black;  /* #0ce3ac; */
   margin-right: 5px;
 }
 .carry-col abbr {
