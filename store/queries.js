@@ -263,13 +263,14 @@ function insertMatch(db, redis, match, options, cb)
                                     {
                                         pb.player_id = players[pi].account_id || 0;
                                     }
-
-                                    if ( pb.order === undefined)
-                                    {
-                                        pb.order = i;
-                                    }
                                 }
                             }
+
+                            if ( pb.order === undefined)
+                            {
+                                pb.order = i;
+                            }
+
                         });
 
                         // then insert dire player id
@@ -284,12 +285,12 @@ function insertMatch(db, redis, match, options, cb)
                                     {
                                         pb.player_id = players[pi].account_id || 0;
                                     }
-
-                                    if ( pb.order === undefined)
-                                    {
-                                        pb.order = i;
-                                    }
                                 }
+                            }
+
+                            if ( pb.order === undefined)
+                            {
+                                pb.order = i;
                             }
                         });
                     }
