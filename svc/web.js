@@ -394,7 +394,7 @@ app.get('/destroyuser', function(req, res)
 	res.redirect('/');
 });
 
-app.get('/request', function(req, res)
+app.get('/fetch', function(req, res)
 {
     res.render('request',
     {
