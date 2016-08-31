@@ -71,6 +71,8 @@ const BUTTON2_TEXT_EASY = [
 
 const EMPTY_BAN_HERO = -1;
 
+const COMBO_DISPLAY_THRESHOLD = 2;
+
 var user_defined_procedure;
 
 // user sequence definition
@@ -216,7 +218,10 @@ function renderComboList(mylist, container){
 		var td_0 = $('<td></td>');
 		td_0.attr('colspan', '5');
 		if(!mylist[i].heroes || mylist[i].heroes.length == 0){
-			td_0.val('missing hero combo');
+			// lordstone: instead of display msg, skip them
+			// td_0.val('missing hero combo');
+		}else if(mylist[i].matches < COMBO_DISPLAY_THRESHOLD){
+			continue;
 		}else{
 			// var heroes = '';
 			for(var j = 0; j < mylist[i].heroes.length; j++){
