@@ -10,7 +10,7 @@ append head
     link(rel='stylesheet', href="/public/css/yasp_home.css")
 
 if user
-  block content
+  block page_content
     #top.header.alt.vert(style='padding-top: 0; overflow-y:auto;overflow-x:hidden')
       // main captain mode block
 
@@ -170,7 +170,7 @@ if user
         // left block end
 
         // right block
-        .col-md-6(style='border: 2px yellow solid;')
+        .col-md-6(style='border: none;')
       
           // control block
           div(style='height: 500px;')
