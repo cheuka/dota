@@ -42,7 +42,7 @@ function fetchProMatches(cb)
                 leagueids.push(data.result.leagues[league_idx]);
             }
 
-            if (data.result.leagues[league_idx] === last_league)
+            if (data.result.leagues[league_idx].toString() === last_league)
             {
                 lneed_fetch = true;
             }
