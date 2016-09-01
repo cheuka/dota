@@ -4,27 +4,19 @@ block content
   .row.text-center
     .col-md-12
       h1 Fetch a Match
-      //
-        img.img-responsive(src='../public/images/curlycue.png', style='margin: auto;')
       img.img-responsive(src='../public/images/cloud_deco_resized.png', style='margin: auto;')
       br
       br
       div#request
         .form-group
           .row
-            .col-md-5
-              input#match_id.form-control(type='text' name='match_id' placeholder='Match ID')
+            .col-md-4
+            .col-md-4
+              #match_id_text
+                input#match_id_0.form-control(type='text' name='match_id' placeholder='Match ID')
               ul.small.text-left
                 li Only works for public matches with replay available in client
-            .col-md-2
-              p.lead OR
-            .col-md-5
-              span.btn.btn-block.btn-primary.btn-file#file-select-button
-                span#file-select-text Select Replay File
-                input#file-select.form-control(type='file' name='replay_blob')
-              ul.small.text-left
-                li Uploads have incomplete data and eventually expire
-                li Uploads do not count toward player statistics
+            .col-md-4 
           .row
             if config.ENABLE_RECAPTCHA
               g-recaptcha#recaptcha(style="display:inline-block;", data-sitekey=rc_public, data-theme="dark", data-callback="requestSubmit")
@@ -42,15 +34,7 @@ block content
 append footer_assets
   script(src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit",async,defer)
   //script(src="/socket.io/socket.io.js")
-  script(src="/public/js/requestForm.js")
+  script(src="/public/js/fetchMatch.js")
   script.
     requestForm(); 
-    var onloadCallback = function()
-    {
-        grecaptcha.render('recaptcha',
-        {
-            sitekey: $('#recaptcha').attr('data-sitekey'),
-            theme: "dark",
-            callback: requestSubmit
-        });
-    };
+
