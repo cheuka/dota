@@ -11,12 +11,12 @@ block head
 
 if user
   block page_content
-    #top.header.alt.vert
-      h4 Control Center: All Private Matches
+    .row.text-center
+      h1 Control Center: All Matches
       //h3 控制中心：所有私有比赛
       // img.img-responsive(src='../public/images/curlycue.png', style='margin: auto;')
       br
-      div(style='overflow-y:auto; overflow-x:hidden;')#show_matches
+      .row.table-responsive(style='overflow-y:auto; overflow-x:hidden;')#show_matches
         if !match_list || !match_list.length || match_list.length == 0
           h3 No matches available. Please go to Upload page to upload some
         else
