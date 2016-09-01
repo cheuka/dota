@@ -128,6 +128,9 @@ function computeBP2Info(options, cb)
             match_id: 130366651
         }];
 */
+        // only filter out 20 matches
+        match_ids = match_ids.slice(Math.max(match_ids.length - 20, 0));
+
 
         // lordstone: use async.eachseries
         async.eachSeries(match_ids, function(match_i, cb)
