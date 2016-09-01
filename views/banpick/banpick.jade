@@ -10,7 +10,7 @@ append head
     link(rel='stylesheet', href="/public/css/yasp_home.css")
 
 if user
-  block page_content
+  block content
     #top.header.alt.vert(style='padding-top: 0; overflow-y:auto;overflow-x:hidden')
       // main captain mode block
 
@@ -27,7 +27,8 @@ if user
               a(href='#hero_combo', aria-controls='hero_combo', role = 'tab', data-toggle='tab') Combo
             li(role='presentation') 
               a(href='#bp2', aria-controls='bp2', role = 'tab', data-toggle='tab') Enemy Heat Map
-            li(role='presentation') 
+            //
+              li(role='presentation') 
               a(href='#options', aria-controls='options', role = 'tab', data-toggle='tab') Options
         // tabs block end
         
@@ -163,7 +164,8 @@ if user
               //
                 (style='background-color: gray;')
 
-            .tab-pane(role='tabpanel', id='options')
+            //
+              .tab-pane(role='tabpanel', id='options')
               p options
         // left block end
 

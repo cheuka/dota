@@ -170,7 +170,7 @@ function tabKey(key){
 	// lordstone: press button to switch tabs
 	console.log('DEBUG you pressed:' + key.keyCode);
 	var tmpint = parseInt(key.keyCode);
-	if(tmpint >= 49 && tmpint <= 52){
+	if(tmpint >= 49 && tmpint <= 51){
 		$('#mytab a:eq(' + (tmpint - 49) + ')').tab('show');
 	}
 }
