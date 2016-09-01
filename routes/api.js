@@ -201,10 +201,10 @@ module.exports = function(db, redis, cassandra)
             return;
         }
         var match = [] ;
-        console.log('DEBUG: upload ispublic:' + req.body.is_public);
-        console.log('DEBUG: ispublic:' + req.body.is_public['is_public']);
+        // console.log('DEBUG: upload ispublic:' + req.body.is_public);
+        // console.log('DEBUG: ispublic:' + req.body.is_public['is_public']);
         var is_public = JSON.parse(req.body.is_public);
-        console.log('DEBUG: obj:' + JSON.stringify(is_public));
+        // console.log('DEBUG: obj:' + JSON.stringify(is_public));
         is_public = is_public['is_public'];
         var user_id = req.session.user; // read the user_id
         if (req.files.length > 0)
