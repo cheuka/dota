@@ -27,13 +27,26 @@ function fetchProMatches(cb)
     {
         if (err)
         {
-            cb(err);
+            return cb(err);
         }
 
-        var league_ids = data.result.leagues.map(function(l)
+        var leagueids = []; // container for leagues plan to request
+
+        var lneed_fetch = false;
+        var last_league = require('fs').readFileSync('last_league.txt').toString();
+
+        for (var league_idx = 0; league_idx < data.result.leagues.length; ++league_idx)
         {
-            return l.leagueid;
-        });
+            if (lneed_fetch) // add remaining not fetched leagues
+            {
+                leagueids.push(data.result.leagues[league_idx]);
+            }
+
+            if (data.result.leagues[league_idx] === last_league)
+            {
+                lneed_fetch = true;
+            }
+        }
 
         //iterate through leagueids and use getmatchhistory to retrieve matches for each
         async.eachSeries(league_ids, function(leagueid, cb)
@@ -51,8 +64,6 @@ function fetchProMatches(cb)
 
     function getPage(url, leagueid, cb)
     {
-        // todo fetch from match seq num set in redis
-
         getData(url, function(err, data)
         {
             console.error(leagueid, data.result.total_results, data.result.results_remaining);
@@ -73,12 +84,12 @@ function fetchProMatches(cb)
                 {
                     if (err)
                     {
-                        cb2(err);
+                        return cb2(err);
                     }
                     if (body.result)
                     {
                         var match = body.result;
-			match.parse_status = 0;
+                        match.parse_status = 0;
                         insertMatch(db, redis, match,
                         {
                             type: "api",
@@ -89,10 +100,9 @@ function fetchProMatches(cb)
                             {
                                 console.log(err);
                             }
-				console.log("finish insert match");
-                            cb2(err);
+                            console.log("finish insert match");
+                            return cb2(err);
                         });
-                        //redis.set('last_pro_match', match.match_seq_num);
                     }
                 });
             }, function (err)
@@ -108,7 +118,17 @@ function fetchProMatches(cb)
                 }
                 else
                 {
-                    cb(err);
+                    if (!err)
+                    {
+                        require('fs').writeFile('last_league.txt', leagueid.toString(), function(err)
+                        {
+                            if (err)
+                            {     
+                                console.log("write last league failed!"); 
+                            }
+                        });
+                    }
+                    return cb(err);
                 }
             });
         });
