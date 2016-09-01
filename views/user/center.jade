@@ -48,7 +48,7 @@ if user
                                   if obj.upload.radiant_win == true
                                     span(style='font-size:12px; color:gold') Radiant: #{obj.upload.radiant_team_name}
                                   else
-                                    span(style='font-size:12px; color:white') Radiant: #{obj.upload.radiant_team_name}
+                                    span(style='font-size:12px; color:darkgray') Radiant: #{obj.upload.radiant_team_name}
                               if obj.upload.picks_bans
                                 - var bp_order = 0
                                 each pick in obj.upload.picks_bans
@@ -59,7 +59,7 @@ if user
                                       - var is_pick = pick.is_pick
                                       - var hero = constants.heroes[hero_id]
                                       if hero
-                                        span.img-text(class="text-success")
+                                        span.img-text(class="text-success-1")
                                           div(style='position:relative;')
                                             div(style='z-index:10; font-size:12px; font-weight: bolder; position: absolute; left:35%; top:25%; color: white;') #{bp_order}
                                             img.img-sm(src=hero.img, title=hero.localized_name, style= (is_pick ? "" : "-webkit-filter: grayscale(100%); filter: grayscale(100%);"))
@@ -72,7 +72,7 @@ if user
                                   if obj.upload.radiant_win == false
                                     span(style='font-size:12px; color:gold') Dire: #{obj.upload.dire_team_name}
                                   else
-                                    span(style='font-size:12px; color:white') Dire: #{obj.upload.dire_team_name}
+                                    span(style='font-size:12px; color:darkgray') Dire: #{obj.upload.dire_team_name}
                               if obj.upload.picks_bans
                                 - var bp_order = 0
                                 each pick in obj.upload.picks_bans

@@ -1,7 +1,8 @@
 require('../../node_modules/font-awesome/css/font-awesome.css');
 require('../../node_modules/dota2-minimap-hero-sprites/assets/stylesheets/dota2minimapheroes.css');
 require('../../node_modules/bootstrap/dist/css/bootstrap.css');
-require('../../node_modules/bootswatch/darkly/bootstrap.css');
+// lordstone: changed bootswatch style : was darkly
+require('../../node_modules/bootswatch/cosmo/bootstrap.css');
 require('../../node_modules/datatables-bootstrap3-plugin/media/css/datatables-bootstrap3.css');
 require('../../node_modules/qtip2/dist/jquery.qtip.css');
 require('../../node_modules/c3/c3.css');

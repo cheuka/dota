@@ -28,8 +28,8 @@ CREATE TABLE matches (
   --dire_logo integer,
   --radiant_team_complete integer,
   --dire_team_complete integer,
-  --radiant_team_id integer,
-  --dire_team_id integer,
+  radiant_team_id integer,
+  dire_team_id integer,
   pgroup json,
   --parsed data below
   chat json[],
@@ -184,6 +184,8 @@ CREATE TABLE picks_bans (
   player_id bigint,
   PRIMARY KEY (match_id, ord)
 );
+
+-- DROP TABLE IF EXISTS team_match;
 
 CREATE TABLE team_match(
 	team_id bigint,

@@ -3,8 +3,10 @@ extend layout
 block content
   .row.text-center
     .col-md-12
-      h1 Request a Parse
-      img.img-responsive(src='../public/images/curlycue.png', style='margin: auto;')
+      h1 Fetch a Match
+      //
+        img.img-responsive(src='../public/images/curlycue.png', style='margin: auto;')
+      img.img-responsive(src='../public/images/cloud_deco_resized.png', style='margin: auto;')
       br
       br
       div#request
@@ -27,7 +29,7 @@ block content
             if config.ENABLE_RECAPTCHA
               g-recaptcha#recaptcha(style="display:inline-block;", data-sitekey=rc_public, data-theme="dark", data-callback="requestSubmit")
             else
-              button.btn.btn-default#submit(onclick="requestSubmit()") Request Parse
+              button.btn.btn-default#submit(onclick="requestSubmit()") Fetch Match
       #progContainer(style="display:none")
         img(src="/public/images/loading.gif", style="display:none")#loading
         .progress

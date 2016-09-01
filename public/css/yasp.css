@@ -1,6 +1,15 @@
+/* by lordstone */
+
 body {
-    color: #D6D6D6;
+    color: navy; /* #D6D6D6; */
+	/* background-color: orange; */
 }
+
+.text-success-1 .text-success-1:hover
+{
+	color: maroon;
+}
+/* end by lordstone */
 
 /* ads */
 
@@ -26,7 +35,7 @@ html {
 footer {
     position: absolute;
     bottom: 0;
-    background-color: #000;
+    /* background-color: antiquewhite; */
     width: 100%;
     padding: 1.3em;
 }
@@ -230,7 +239,7 @@ div .dataTables_processing {
 }
 
 .theme-blue {
-    color: #BBF0FD;
+    color: black; /*#BBF0FD;*/
 }
 
 .panel-chart {
@@ -331,7 +340,7 @@ td.text-left {
 
 /* lighten footer of tables so radiant/dire rows are delineated from last player */
 tfoot tr {
-    background-color: #3d3d3d;
+    background-color: darkgoldenrod;
 }
 
 
@@ -442,11 +451,11 @@ table img.img-sm {
 }
 
 table {
-  background-color:#333; 
+  background-color: white; /* #333*/ 
   border:1px solid #666;
 }
 
-/* YASP April 2016 */
+/* CHEUKA DOTA AUGUST 2016 */
 
 #nav-plusplus a {
     color: yellow;
