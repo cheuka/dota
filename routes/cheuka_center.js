@@ -8,10 +8,7 @@ var async = require('async');
 
 var cheuka_center = express.Router();
 var cheuka_session = require('../util/cheukaSession');
-// var db = require('../store/db');
 
-var queue = require('../store/queue');
-var rQueue = queue.getQueue('request');
 
 module.exports = function(db, redis, cassandra){
 

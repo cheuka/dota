@@ -201,8 +201,6 @@ module.exports = function(db, redis, cassandra)
             return;
         }
         var match = [] ;
-        // console.log('DEBUG: upload ispublic:' + req.body.is_public);
-        // console.log('DEBUG: ispublic:' + req.body.is_public['is_public']);
         var is_public = JSON.parse(req.body.is_public);
         // console.log('DEBUG: obj:' + JSON.stringify(is_public));
         is_public = is_public['is_public'];
@@ -222,9 +220,11 @@ module.exports = function(db, redis, cassandra)
                 match[i] = {
                     replay_blob_key: key,
                     user_id: user_id,
-                    is_public: is_public[i]
+					file_name: req.files[i], // added filenames
+                    is_public: is_public[i],
                 };
-                console.log('DEBUG: single is public:' + is_public[i]);
+                // console.log('DEBUG: single is public:' + is_public[i]);
+				
             } //  end for each file in files
         }
         else 
@@ -234,13 +234,18 @@ module.exports = function(db, redis, cassandra)
                 error: "Invalid input."
             });
         }
+
         if (match.length > 0)
         {
             var jobs = [];
-            for(var i = 0; i < match.length; i ++)
-            {
-                console.log('match array:'+ i +':' + match[i]);
-                queue.addToQueue(rQueue, match[i],
+			var waiting_list = [];
+			
+			// lordstone: iterate over matches
+			async.eachSeries(match, function(match_i, cb)
+			{
+
+                console.log('match array:'+ i +':' + match_i);
+                queue.addToQueue(rQueue, match_i,
                 {
                     attempts: 1
                 }, function(err, job)
@@ -254,9 +259,38 @@ module.exports = function(db, redis, cassandra)
                         }
                     };
                     jobs[i] = curJob;
+
+					var d = new Date();
+					var time_stamp = d.getTime();
+					var file_name = match_i.file_name;
+					var is_public = match_i.is_public;
+					var job_id = curJob.job.jobId;
+					var status_now = 'waiting';
+
+					var waiting_match = {
+						time_stamp: time_stamp,
+						file_name: file_name,
+						is_public: is_public,
+						job_id: job_id,
+						status: status_now
+					};
+					
+					waiting_list.push(waiting_match);			
+					return cb();
+
                 });
-            } // end for each match
-            res.json(jobs);
+            }, function(err)
+			{
+				redis.get('waiting_list:' + user_id, function(err, result)
+				{
+
+					if(result){
+						waiting_list = result.concat(waiting_list);
+					}	
+					redis.set('waiting_list:' + user_id, waiting_list);
+           			res.json(jobs);
+				});			
+			} // end async each
         }
         else
         {

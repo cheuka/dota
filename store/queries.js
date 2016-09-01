@@ -195,6 +195,7 @@ function insertMatch(db, redis, match, options, cb)
     {
         "u": upsertMatch,
         "sum": saveUserMatch,
+		"urwl": updateRedisWaitingList,
         "uc": upsertMatchCassandra,
         "upc": updatePlayerCaches,
         "cmc": clearMatchCache,
@@ -394,9 +395,33 @@ function insertMatch(db, redis, match, options, cb)
     function saveUserMatch(cb)
 	{
 		// lordstone: save to user_match_list
-		console.log('saving to user_match_list');
+		// console.log('saving to user_match_list');
 		cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
 		return cb();
+	}
+
+	function updateRedisWaitingList(cb)
+	{
+		// lordstone: update the redis waiting list
+		redis.get('waiting_list:' + match.user_id, function(err, result)
+		{
+			var waiting_count = 0;
+			for(var i = 0; i < result.length; ++i)
+			{
+				var cur_match = result[i];
+				if(cur_match.match_id === match.match_id)
+				{
+					result.splice(i, 1);
+					break;
+				}
+			}
+			if(result.length === 0){
+				redis.del('waiting_list:' + match.user_id);
+			}else{
+				redis.set('waiting_list:' + match.user_id);
+			}
+			return cb();
+		});
 	}
 
     function upsertMatchCassandra(cb)
