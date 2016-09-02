@@ -43,7 +43,7 @@ module.exports = function(db, redis, cassandra){
 					console.log('DEBUG waiting list:' + result);
 					waiting_list = result;
 					return cb();
-				}
+				});
 			}
 
 			function exit(err)
@@ -51,7 +51,7 @@ module.exports = function(db, redis, cassandra){
 				res.render('user/center',
 				{
 					user: user_id,
-					match_list: results,
+					match_list: match_list,
 					waiting_list: waiting_list
 				});		
 			}

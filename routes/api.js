@@ -237,6 +237,8 @@ module.exports = function(db, redis, cassandra)
 
         if (match.length > 0)
         {
+
+			console.log('DEBUG match:' + match.length);
             var jobs = [];
 			var waiting_list = [];
 			
@@ -290,7 +292,7 @@ module.exports = function(db, redis, cassandra)
 					redis.set('waiting_list:' + user_id, waiting_list);
            			res.json(jobs);
 				});			
-			} // end async each
+			}); // end async each
         }
         else
         {

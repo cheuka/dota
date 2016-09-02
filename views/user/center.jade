@@ -17,12 +17,32 @@ if user
       // img.img-responsive(src='../public/images/curlycue.png', style='margin: auto;')
       br
       .row.table-responsive(style='overflow-y:auto; overflow-x:hidden;')#show_matches
-        if !match_list || !match_list.length || match_list.length == 0
-          h3 No matches available. Please go to Upload page to upload some
+        if ((!match_list || !match_list.length || match_list.length == 0) && (!waiting_list || !waiting_list.length || waiting_list.length == 0))
+          h3 No matches available. Please upload or fetch
         else
           table.table.table-striped
             tbody
+              //
+                First we have the waiting list
+              each obj in waiting_list
+                tr
+                  td(colspan=4)
+                    span(style='font-size: 20px') File Name: #{obj.file_name}
+                    if (obj.is_public == true)
+                      span(style='font-size: 20px') Public
+                    else
+                      span(style='font-size: 20px') Private
+                  td(colspan=4)
+                    span(style='font-size: 20px') Upload Time: #{moment.unix(obj.time_stamp).format('YYYY-MM-DD HH:mm:ss')}
+                  td(colspan=4)
+                    span(style='font-size: 20px') Status: #{obj.status}
 
+
+                  
+
+
+              // 
+                Then we have the match list
               each obj in match_list
                 tr
                   td(colspan=3)
