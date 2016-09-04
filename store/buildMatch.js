@@ -88,6 +88,8 @@ function getMatch(db, redis, match_id, options, cb)
                     return cb(err);
                 }
                 var players = result.players;
+				var upload = result.upload;
+				console.log('DEBUG upload\n:' + JSON.stringify(upload));
                 var ab_upgrades = JSON.parse(result.ab_upgrades);
                 match.replay_url = result.replay_url;
                 async.each(players, function(p, cb)

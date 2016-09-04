@@ -172,7 +172,7 @@ function tabKey(key){
 	// lordstone: press button to switch tabs
 	console.log('DEBUG you pressed:' + key.keyCode);
 	var tmpint = parseInt(key.keyCode);
-	if(tmpint >= 49 && tmpint <= 52){
+	if(tmpint >= 49 && tmpint <= 51){
 		$('#mytab a:eq(' + (tmpint - 49) + ')').tab('show');
 	}
 }
@@ -466,7 +466,7 @@ function renderBP2(mylist, container){
 				return 'middle';
 			}
 		})
-		.style("fill", "white")
+		.style("fill", "black")
 		.style("font-weight", "bold")
 		.attr("dy", "0.34em")
 		.text(function(d){
@@ -499,7 +499,7 @@ function renderBP2(mylist, container){
 			return 'circle_hero_' + i;
 		})
 		.attr("r", function(d){return d.r;})
-		.attr("stroke", "white")
+		.attr("stroke", "black")
 		.attr("stroke-width", function(d){
 			return '0.5px;';
 		})
@@ -511,7 +511,7 @@ function renderBP2(mylist, container){
 		// lordstone: hover effect
 		.attr("onmouseover", function(d, i){
 			var hero_details = getHeroTitle(d.hero_id) + ': ';
-			hero_details += ' Order:' + d.order + '.';
+			hero_details += ' Order:' + Number(d.order).toFixed(2) + '.';
 			hero_details += ' Matches:' + d.matches + '.';
 			hero_details += ' Win:' + d.win + '%.';
 			
@@ -521,7 +521,7 @@ function renderBP2(mylist, container){
 			return in_text;
 		})
 		.attr('onmouseout', function(d, i){
-			var in_text = '$("#circle_hero_' + i +'").attr("stroke", "white")';
+			var in_text = '$("#circle_hero_' + i +'").attr("stroke", "black")';
 			in_text += '.attr("stroke-width", "0.5px");';
 			in_text += '$("#bp2_details").html("See hero details");';
 			return in_text;
