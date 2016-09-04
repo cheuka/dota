@@ -33,16 +33,17 @@ function generateBP2Result(heroes_pos, matches_num)
                 order: heroes_pos[pos][num].order
             };
 
-            if(num === 0){
-                heroes.push(elem);
-            }else{
-                for(var idx = 0; idx < heroes.length; idx ++){
-                    if(elem.order <= heroes[idx].order){
-                        heroes.splice(idx, 0, elem);
-                        break;
-                    }
+            var lAppendLast = true;
+            for(var idx = 0; idx < heroes.length; idx ++){
+                if(elem.order <= heroes[idx].order){
+                    heroes.splice(idx, 0, elem);
+                    lAppendLast = false;
+                    break;
                 }
             }
+            if (lAppendLast)
+                heroes.push(elem);
+            
         }
         
         player_slot.heroes = heroes;
@@ -131,6 +132,8 @@ function computeBP2Info(options, cb)
         // only filter out 20 matches
         match_ids = match_ids.slice(Math.max(match_ids.length - 20, 0));
 
+
+        match_ids = match_ids.slice(Math.max(match_ids.length - 20, 0));
 
         // lordstone: use async.eachseries
         async.eachSeries(match_ids, function(match_i, cb)
@@ -229,6 +232,7 @@ function computeBP2Info(options, cb)
                     var pos = p;
                     // p mean position p, cur_match.position[p] match it to exactly hero position in array
                     var hero_p = cur_match.position[p];
+
                     //@TODO,  rxu, find picks order null, need to figure out why
                     if (!cur_match.picks[hero_p] && cur_match.picks[hero_p] !== 0)
                         continue;
@@ -238,7 +242,6 @@ function computeBP2Info(options, cb)
                         if (heroes_pos[pos][hero_idx].hero_id === cur_match.hero_id[hero_p])
                         {
                             is_hero_exist = true;
-
 
                             heroes_pos[pos][hero_idx].matches += 1;
                             heroes_pos[pos][hero_idx].matches_win += cur_match.is_win ? 1 : 0;
@@ -269,7 +272,7 @@ function computeBP2Info(options, cb)
 
             // generate required json to frontend
             var response = generateBP2Result(heroes_pos, matches.length);
-            // console.log('DEBUG: response:' + JSON.stringify(response));
+            //console.log('DEBUG: response:' + JSON.stringify(response));
             return cb(err, response);
 
         });  // end for first async eachSeries
