@@ -31,6 +31,14 @@
       "group": "parser",
       "exec_mode": "cluster",
       "instances": 1
+    }, 
+	{
+      "script": "svc/bzip.js",
+      "watch": false, 
+      "ignore_watch": ["node_modules", "public", "views"],
+      "group": "bzip",
+      "exec_mode": "cluster",
+      "instances": 1
     },
     {
       "script": "svc/retriever.js",
