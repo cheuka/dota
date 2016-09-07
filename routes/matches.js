@@ -38,6 +38,7 @@ module.exports = function(db, redis, cassandra)
 				if(result === false){
             		res.send('You have no access to this match.');
     	    	}else{
+					// console.log('DEBUG match:\n' + JSON.stringify(match));
 		            res.render("match/match_" + info,
         		    {		
 						user: req.session.user,
