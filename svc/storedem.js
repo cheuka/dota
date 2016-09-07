@@ -16,7 +16,10 @@ var spawn = cp.spawn;
 var queries = require('../store/queries');
 var storeDem = queries.storeDem;
 
-sQueue.process(1, processStoredem);
+if(config.ENABLE_STOREDEM === true)
+{
+	sQueue.process(1, processStoredem);
+}
 
 function processStoredem(job, cb)
 {
@@ -91,7 +94,22 @@ function processStoredem(job, cb)
 		else
 		{
 			// lordstone: if job done also for parse, del redis portion
-			redis.del('upload_blob:' + dem.replay_blob_key);
+			redis.get('upload_blob_mark:' + dem.replay_blob_key, function(result)
+			{
+				if(result && result.parse_done)
+				{
+					if(result.parse_done === true)
+					{
+						redis.del('upload_blob:' + dem.replay_blob_key);
+						redis.del('upload_blob_mark:' + dem.replay_blob_key);
+					}
+					else
+					{
+						result.storedem_done = true;
+						redis.set('upload_blob_mark:' + dem.replay_blob_key, result);
+					}
+				}
+			}
 		}
 		console.log('Store dem completed');
 		return cb();

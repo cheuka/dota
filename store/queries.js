@@ -510,7 +510,7 @@ function insertMatch(db, redis, match, options, cb)
 
     function clearMatchCache(cb)
     {
-        redis.del("match:" + match.match_id, cb);
+       	redis.del("match:" + match.match_id, cb);
     }
 
     function decideMmr(cb)

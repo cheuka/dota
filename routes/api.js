@@ -12,6 +12,7 @@ var multer = require('multer')(
 });
 var queue = require('../store/queue');
 var rQueue = queue.getQueue('request');
+var sQueue = queue.getQueue('storedem');
 var queries = require('../store/queries');
 var buildMatch = require('../store/buildMatch');
 var buildPlayer = require('../store/buildPlayer');
@@ -201,10 +202,10 @@ module.exports = function(db, redis, cassandra)
             return;
         }
         var match = [] ;
-        console.log('DEBUG: upload ispublic:' + req.body.is_public);
-        console.log('DEBUG: ispublic:' + req.body.is_public['is_public']);
+        // console.log('DEBUG: upload ispublic:' + req.body.is_public);
+        // console.log('DEBUG: ispublic:' + req.body.is_public['is_public']);
         var is_public = JSON.parse(req.body.is_public);
-        console.log('DEBUG: obj:' + JSON.stringify(is_public));
+        // console.log('DEBUG: obj:' + JSON.stringify(is_public));
         is_public = is_public['is_public'];
         var user_id = req.session.user; // read the user_id
         if (req.files.length > 0)
@@ -213,18 +214,30 @@ module.exports = function(db, redis, cassandra)
             for(var i = 0; i < req.files.length; i ++)
             {
                 console.log('i file:' + req.files[i]);
-                //var key = req.files[i].name + Date.now();
                 var key = Math.random().toString(16).slice(2);
-                //hash.update(req.files[i].buffer);
-                //var key = hash.digest('hex');
-                //console.log('i:' + i + '.key:' + key);
+				var upload_time = Math.floor(Date.now());
+				var dem_index = upload_time.toString() + key;
                 redis.setex(new Buffer('upload_blob:' + key), 60 * 60, req.files[i].buffer);
+
+				// lordstone: set up mark for this blob that both parser and zipper can make use and decide whether to delete
+				if(config.ENABLE_STOREDEM === true)
+				{
+					var mark = {
+						parse_done: false,
+						storedem_done: false
+					};
+					redis.setex(new Buffer('upload_blob_mark:' + key), 60 * 60, mark);
+				}
+
                 match[i] = {
                     replay_blob_key: key,
                     user_id: user_id,
-                    is_public: is_public[i]
+                    is_public: is_public[i],
+					file_name: req.files[i].name,
+					upload_time: upload_time,
+					dem_index: dem_index
                 };
-                console.log('DEBUG: single is public:' + is_public[i]);
+                // console.log('DEBUG: single is public:' + is_public[i]);
             } //  end for each file in files
         }
         else 
@@ -239,23 +252,57 @@ module.exports = function(db, redis, cassandra)
             var jobs = [];
             for(var i = 0; i < match.length; i ++)
             {
-                console.log('match array:'+ i +':' + match[i]);
-                queue.addToQueue(rQueue, match[i],
-                {
-                    attempts: 1
-                }, function(err, job)
-                {
-                    var curJob = {
-                        error: err,
-                        job:
-                        {
-                            jobId: job.jobId,
-                            data: job.data
-                        }
-                    };
-                    jobs[i] = curJob;
-                });
-            } // end for each match
+                // console.log('match array:'+ i +':' + match[i]);
+				
+				async.series(
+
+					"addToParseQueue": function(cb)
+					{
+		                queue.addToQueue(rQueue, match[i],
+    		            {
+        		            attempts: 1
+            		    }, function(err, job)
+                		{
+	                	    var curJob = {
+    	                	    error: err,
+        	                	job:
+	            	            {
+    	            	            jobId: job.jobId,
+        	            	        data: job.data
+	        	                }
+    	        	        };
+        	        	    jobs[i] = curJob;
+	            	    });
+					},
+	
+					// lordstone: store dem
+					"addToStoreDemQueue": function(cb)
+					{
+						if(config.ENABLE_STOREDEM)
+						{
+							var dem = {
+								user_id: match[i].user_id,
+								dem_index: match[i].dem_index,
+								is_public: match[i].is_public,
+								upload_time: match[i].upload_time,
+								replay_blob_key: match[i].replay_blob_key,
+								file_name: match[i].file_name
+							};
+		                	queue.addToQueue(sQueue, dem,
+	    		            {
+    	        		        attempts: 1
+		        	        }, function(err, job)
+        		    	    {
+								return cb();
+	            		    });
+						}
+						else
+						{
+							return cb();
+						}            
+					}
+				);
+			} // end for each match
             res.json(jobs);
         }
         else
