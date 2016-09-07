@@ -39,6 +39,7 @@ function processStoredem(job, cb)
 			dem.is_public = payload.is_public;
 			dem.upload_time = payload.upload_time;	
 			dem.replay_blob_key = payload.replay_blob_key;
+			dem.file_name = payload.file_name;
 			return cb();
 		},
 		"getDataSource": function(cb)
@@ -68,7 +69,16 @@ function processStoredem(job, cb)
 		"writeToDb": function(cb)
 		{
 			dem.blob = blob;
-			storeDem(dem, db, cb);
+			storeDem(dem, db, function(err){
+				if(err)
+				{
+					return exit(err);
+				}
+				else
+				{
+					return cb();
+				}
+			});
 		}
 	}, exit);
 
