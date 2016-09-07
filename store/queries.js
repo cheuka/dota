@@ -1032,6 +1032,35 @@ function searchPlayer(db, query, cb)
     });
 }
 
+/* lordstone: for store dem */
+
+function storeDem(dem, db, cb){
+	
+	var user_id = dem.user_id;
+	var dem_index = dem.dem_index;
+	var is_public = dem.is_public;
+	var upload_time = dem.upload_time;
+	var replay_blob_key = dem.replay_blob_key
+	var file_name = dem.file_name;
+
+	db
+	.table('dem_storage')
+	.insert({
+		user_id: user_id,
+		dem_index: dem_index,
+		is_public: is_public,
+		upload_time: upload_time,
+		file_name: file_name
+	})
+	.asCallback(function(err){
+		if (err)
+		{
+			return cb(err);
+		}
+		return cb();
+	});
+}
+
 module.exports = {
     getSets,
     insertPlayer,
@@ -1049,4 +1078,5 @@ module.exports = {
     getLeaderboard,
     mmrEstimate,
     searchPlayer,
+	storeDem,
 };

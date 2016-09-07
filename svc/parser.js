@@ -103,6 +103,7 @@ pQueue.process(1, function(job, cb)
 
                 if (match.replay_blob_key)
                 {
+					//TODO: lordstone: sync with storedem
                     redis.del('upload_blob:' + match.replay_blob_key);
                     insertUploadedParse(parsed_data, cb);
                 }

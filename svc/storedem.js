@@ -4,15 +4,88 @@
  * and processors
 **/
 var config = require('../config');
-var express = require('express');
-var app = express();
-var bzip = require('../store/bzip');
 var port = config.PORT || config.STOREDEM_PORT;
 var queue = require('../store/queue');
 var db = require('../store/db');
 var redis = require('../store/redis');
-var sQueue = queue.getQueue('savedem');
-var lQueue = queue.getQueue('loaddem');
+var sQueue = queue.getQueue('storedem');
+var cp = require('child_process');
+var progress = require('request-progress');
+var stream = require('stream');
+var spawn = cp.spawn;
+var queries = require('../store/queries');
+var storeDem = queries.storeDem;
 
+sQueue.process(1, processStoredem);
 
+function processStoredem(job, cb)
+{
+	var payload = job.data.payload;
+	var dem;
+	var timeout = setTimeout(function()
+	{
+		exit('timeout');
+	}, 300000);
+	var inStream;
+	var url;	
+	var bz;
+	var blob;
+	async.series(
+	{
+		"getDemInfo": function(cb)
+		{
+			dem.user_id = payload.user_id;
+			dem.dem_index = payload.dem_index;
+			dem.is_public = payload.is_public;
+			dem.upload_time = payload.upload_time;	
+			dem.replay_blob_key = payload.replay_blob_key;
+			return cb();
+		},
+		"getDataSource": function(cb)
+		{
+			// lordstone: use the parser module to get raw match data
+			url = "http://localhost:" + config.PARSER_PORT + "/redis/" + match.replay_blob_key;
+			return cb();
+		},
+		"setUps": function(cb)
+		{
+			bz = spawn("bzip2");
+			bz.stdin.on('error', exit);
+			bz.stdout.on('error', exit);
+			return cb();
+		},
+		"doZip": function(cb)
+		{
+			inStream = progress(request(
+			{
+				url: url
+			}));
+			inStream.pipe(bz.stdin);
+			blob = stream.PassThrough();
+			bz.stdout.pipe(blob);
+			blob.on('end', cb);
+		},
+		"writeToDb": function(cb)
+		{
+			dem.blob = blob;
+			storeDem(dem, db, cb);
+		}
+	}, exit);
+
+	function exit(err)
+	{
+		if (err)
+		{
+			return cb(err);
+		}
+		else
+		{
+			// lordstone: if job done also for parse, del redis portion
+			redis.del('upload_blob:' + dem.replay_blob_key);
+		}
+		console.log('Store dem completed');
+		return cb();
+	}
+
+}
 

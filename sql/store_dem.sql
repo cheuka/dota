@@ -7,7 +7,6 @@ CREATE TABLE dem_storage(
 	dem_index varchar(255) NOT NULL,
 	PRIMARY KEY(user_id, dem_index),
 	content bytea,  -- may be nicer to use BLOB, but ...
-	is_zipped bool NOT NULL DEFAULT FALSE,
 	is_public bool NOT NULL DEFAULT TRUE,
 	upload_time timestamp NOT NULL,
 	file_name varchar(255)
