@@ -11,17 +11,11 @@ var league_url = generateJob("api_leagues", {}).url;
 
 var queue = require('../store/queue');
 var pQueue = queue.getQueue('parse');
+var fpgQueue = queue.getQueue('fetchprogame');
 
-fetchProMatches(function(err)
-{
-    if (err)
-    {
-        console.log(err);
-    }
-});
+fpgQueue.process(1, fetchProMatches);
 
-
-function fetchProMatches(cb)
+function fetchProMatches(job, cb)
 {
     getData(league_url, function(err, data)
     {
@@ -33,7 +27,7 @@ function fetchProMatches(cb)
         var leagueids = []; // container for leagues plan to request
 
         var lneed_fetch = false;
-        var last_league = require('fs').readFileSync('last_league.txt').toString();
+        var last_league = require('fs').readFileSync('../last_league.txt').toString();
 
         for (var league_idx = 0; league_idx < data.result.leagues.length; ++league_idx)
         {
@@ -68,7 +62,7 @@ function fetchProMatches(cb)
         {
             console.error(leagueid, data.result.total_results, data.result.results_remaining);
 
-            async.eachSeries(data.result.matches, function(match, cb2)
+            async.eachSeries(data.result.matches, function(match, cb)
             {
                 console.log('match_id:' + match.match_id);
                 var job = generateJob("api_details",
@@ -84,7 +78,7 @@ function fetchProMatches(cb)
                 {
                     if (err)
                     {
-                        return cb2(err);
+                        return cb(err);
                     }
                     if (body.result)
                     {
@@ -94,16 +88,43 @@ function fetchProMatches(cb)
                         {
                             type: "api",
                             attempts: 1,
-                        }, function(err)
-                        {
-                            if (err)
-                            {
-                                console.log(err);
-                            }
-                            console.log("finish insert match");
-                            return cb2(err);
-                        });
+                        }, waitParse);
                     }
+
+                    function waitParse(err, job2)
+                    {
+                        if (err)
+                        {
+                            console.error(err.stack || err);
+                            return cb(err);
+                        }
+
+                        if (job2)
+                        {
+                            var poll = setInterval(function()
+                            {
+                                pQueue.getJob(job2.jobId).then(function(job2)
+                                {
+                                    job.progress(job2.progress());
+                                    job2.getState().then(function(state)
+                                    {
+                                        console.log("waiting for parse job %s, currently in %s", job2.jobId, state);
+                                        if (state === "completed")
+                                        {
+                                            clearInterval(poll);
+                                            return cb();
+                                        }
+                                        else if (state !== "active" && state !== "waiting")
+                                        {
+                                            clearInterval(poll);
+                                            return cb("failed");
+                                        }
+                                    }).catch(cb);
+                                }).catch(cb);
+                            }, 2000);
+                        }
+                    }
+
                 });
             }, function (err)
             {
@@ -120,7 +141,7 @@ function fetchProMatches(cb)
                 {
                     if (!err)
                     {
-                        require('fs').writeFile('last_league.txt', leagueid.toString(), function(err)
+                        require('fs').writeFile('../last_league.txt', leagueid.toString(), function(err)
                         {
                             if (err)
                             {     
@@ -134,8 +155,3 @@ function fetchProMatches(cb)
         });
     }
 }
-
-module.exports = {
-   fetchProMatches,
-};
-
