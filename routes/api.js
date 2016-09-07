@@ -222,6 +222,7 @@ module.exports = function(db, redis, cassandra)
 				// lordstone: set up mark for this blob that both parser and zipper can make use and decide whether to delete
 				if(config.ENABLE_STOREDEM === true)
 				{
+					console.log('DEBUG set up blob mark!');
 					var mark = {
 						parse_done: false,
 						storedem_done: false
@@ -250,15 +251,15 @@ module.exports = function(db, redis, cassandra)
         if (match.length > 0)
         {
             var jobs = [];
-            for(var i = 0; i < match.length; i ++)
-            {
+			// lordstone: change 'for' to async eachseries
+			async.eachSeries(match, function(match_i, cb)
+			{
                 // console.log('match array:'+ i +':' + match[i]);
-				
 				async.series(
 				{
 					"addToParseQueue": function(cb)
 					{
-		                queue.addToQueue(rQueue, match[i],
+		                queue.addToQueue(rQueue, match_i,
     		            {
         		            attempts: 1
             		    }, function(err, job)
@@ -271,7 +272,8 @@ module.exports = function(db, redis, cassandra)
         	            	        data: job.data
 	        	                }
     	        	        };
-        	        	    jobs[i] = curJob;
+        	        	    jobs.push(curJob);
+							return cb();
 	            	    });
 					},
 	
@@ -281,12 +283,12 @@ module.exports = function(db, redis, cassandra)
 						if(config.ENABLE_STOREDEM)
 						{
 							var dem = {
-								user_id: match[i].user_id,
-								dem_index: match[i].dem_index,
-								is_public: match[i].is_public,
-								upload_time: match[i].upload_time,
-								replay_blob_key: match[i].replay_blob_key,
-								file_name: match[i].file_name
+								user_id: match_i.user_id,
+								dem_index: match_i.dem_index,
+								is_public: match_i.is_public,
+								upload_time: match_i.upload_time,
+								replay_blob_key: match_i.replay_blob_key,
+								file_name: match_i.file_name
 							};
 		                	queue.addToQueue(sQueue, dem,
 	    		            {
@@ -302,8 +304,10 @@ module.exports = function(db, redis, cassandra)
 						}            
 					}
 				});
-			} // end for each match
-            res.json(jobs);
+			}, function(err){
+				console.log('Reading from upload FINISHED..');
+            	res.json(jobs);
+			});// end for each match
         }
         else
         {

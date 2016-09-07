@@ -39,7 +39,8 @@
       "group": "storedem",
       "exec_mode": "cluster",
       "instances": 1
-    },
+    }
+/*
     {
       "script": "svc/retriever.js",
       "watch": false, 
@@ -48,5 +49,6 @@
       "exec_mode": "cluster",
       "instances": 1
     }
+*/
   ]
 }

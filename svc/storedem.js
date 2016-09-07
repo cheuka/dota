@@ -34,6 +34,7 @@ function processStoredem(job, cb)
 	var url;	
 	var bz;
 	var blob;
+	console.log('sQueue process');
 	async.series(
 	{
 		"getDemInfo": function(cb)
@@ -95,17 +96,20 @@ function processStoredem(job, cb)
 		else
 		{
 			// lordstone: if job done also for parse, del redis portion
+			console.log('DEBUG: check blob mark');
 			redis.get('upload_blob_mark:' + dem.replay_blob_key, function(result)
 			{
 				if(result && result.parse_done)
 				{
 					if(result.parse_done === true)
 					{
+						console.log('Safely delete blob');
 						redis.del('upload_blob:' + dem.replay_blob_key);
 						redis.del('upload_blob_mark:' + dem.replay_blob_key);
 					}
 					else
 					{
+						console.log('blob stll in use in parse');
 						result.storedem_done = true;
 						redis.set('upload_blob_mark:' + dem.replay_blob_key, result);
 					}
