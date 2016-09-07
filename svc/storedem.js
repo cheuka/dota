@@ -1,5 +1,5 @@
 /**
- * Form a queue of waiting list for save and load dem file from
+ * Form a queue of waiting list for dem file from
  * server, with bzip2 as the tech to compress/decompress
  * and processors
 **/
@@ -18,7 +18,8 @@ var storeDem = queries.storeDem;
 
 if(config.ENABLE_STOREDEM === true)
 {
-	sQueue.process(1, processStoredem);
+	console.log('storedem');
+	sQueue.process(100, processStoredem);
 }
 
 function processStoredem(job, cb)
@@ -109,7 +110,7 @@ function processStoredem(job, cb)
 						redis.set('upload_blob_mark:' + dem.replay_blob_key, result);
 					}
 				}
-			}
+			});
 		}
 		console.log('Store dem completed');
 		return cb();

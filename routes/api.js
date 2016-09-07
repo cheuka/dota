@@ -255,7 +255,7 @@ module.exports = function(db, redis, cassandra)
                 // console.log('match array:'+ i +':' + match[i]);
 				
 				async.series(
-
+				{
 					"addToParseQueue": function(cb)
 					{
 		                queue.addToQueue(rQueue, match[i],
@@ -301,7 +301,7 @@ module.exports = function(db, redis, cassandra)
 							return cb();
 						}            
 					}
-				);
+				});
 			} // end for each match
             res.json(jobs);
         }
