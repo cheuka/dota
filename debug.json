@@ -33,10 +33,10 @@
       "instances": 1
     }, 
 	{
-      "script": "svc/bzip.js",
+      "script": "svc/storedem.js",
       "watch": false, 
       "ignore_watch": ["node_modules", "public", "views"],
-      "group": "bzip",
+      "group": "storedem",
       "exec_mode": "cluster",
       "instances": 1
     },
