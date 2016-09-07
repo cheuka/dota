@@ -32,7 +32,7 @@ var defaults = {
     "PROXY_PORT": "5300",
     "WORK_PORT": "5400",
     "SCANNER_PORT": "5500",
-	"BZIP_PORT": "5600",
+	"STOREDEM_PORT": "5600",
     "POSTGRES_URL": "postgresql://postgres:postgres@localhost/yasp", //connection string for PostgreSQL
     "POSTGRES_USER_URL": "postgresql://postgres:postgres@localhost/user_db", //connection for cheuka users
     "REDIS_URL": "redis://127.0.0.1:6379/0", //connection string for Redis
