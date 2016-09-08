@@ -160,6 +160,14 @@ function generateJob(type, payload)
                 type: type,
                 payload: payload
             };
+        },
+        "fetchprogame": function()
+        {
+            return {
+                title: [type].join(),
+                type: type,
+                payload: payload
+            };
         }
     };
     return opts[type]();

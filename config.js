@@ -11,8 +11,8 @@ var defaults = {
     "CHEUKA_ADMIN": "admin", //cheuka admin username
     "CHEUKA_ADMIN_PASSWORD": "password", // cheuka admin password
     "STEAM_API_KEY": "", //for API reqs, in worker
-    "STEAM_USER": "", //for getting replay salt/profile data, in retriever
-    "STEAM_PASS": "", //make sure to wrap in double quotes in .env if it contains special characters
+    "STEAM_USER": "cheukaa1", //for getting replay salt/profile data, in retriever
+    "STEAM_PASS": "00shidasb", //make sure to wrap in double quotes in .env if it contains special characters
     "RECAPTCHA_PUBLIC_KEY": "", //for preventing automated requests, in web
     "RECAPTCHA_SECRET_KEY": "",
     "STRIPE_SECRET": "", //for donations, in web
@@ -25,7 +25,7 @@ var defaults = {
     "ROOT_URL": "http://localhost:5000", //base url to redirect to after steam oauth login
     "WORK_URL": "http://localhost:5400", //url to request work from (for worker nodes)
     "START_SEQ_NUM": "", //truthy: use sequence number stored in redis, else: use approximate value from live API
-    "NODE_ENV": "development",
+    "NODE_ENV": "",
     "FRONTEND_PORT": "5000",
     "RETRIEVER_PORT": "5100",
     "PARSER_PORT": "5200",

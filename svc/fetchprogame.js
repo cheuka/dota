@@ -26,24 +26,33 @@ function fetchProMatches(job, cb)
 
         var leagueids = []; // container for leagues plan to request
 
-        var lneed_fetch = false;
-        var last_league = require('fs').readFileSync('../last_league.txt').toString();
+        var last_league = require('fs').readFileSync('last_league.txt').toString();
+        console.log("last_leadgue" + last_league);
 
-        for (var league_idx = 0; league_idx < data.result.leagues.length; ++league_idx)
+        if (last_league === "-1") // fetch from the begining
         {
-            if (lneed_fetch) // add remaining not fetched leagues
+            leagueids = data.result.leagues;
+        }
+        else
+        {
+            var lneed_fetch = false;
+            for (var league_idx = 0; league_idx < data.result.leagues.length; ++league_idx)
             {
-                leagueids.push(data.result.leagues[league_idx]);
-            }
+                if (lneed_fetch) // add remaining not fetched leagues
+                {
+                    leagueids.push(data.result.leagues[league_idx]);
+                }
 
-            if (data.result.leagues[league_idx].toString() === last_league)
-            {
-                lneed_fetch = true;
+                if (data.result.leagues[league_idx].leagueid.toString() === last_league)
+                {
+                    lneed_fetch = true;
+                }
             }
         }
 
+        //console.log("league_ids: " + leagueids);
         //iterate through leagueids and use getmatchhistory to retrieve matches for each
-        async.eachSeries(league_ids, function(leagueid, cb)
+        async.eachSeries(leagueids, function(leagueid, cb)
         {
             var url = generateJob("api_history",
             {
@@ -52,6 +61,7 @@ function fetchProMatches(job, cb)
             getPage(url, leagueid, cb);
         }, function(err)
         {
+            console.log(err);
             cb(err);
         });
     });
@@ -62,33 +72,37 @@ function fetchProMatches(job, cb)
         {
             console.error(leagueid, data.result.total_results, data.result.results_remaining);
 
-            async.eachSeries(data.result.matches, function(match, cb)
+            async.eachSeries(data.result.matches, function(match, cb2)
             {
                 console.log('match_id:' + match.match_id);
-                var job = generateJob("api_details",
+                var detail_job = generateJob("api_details",
                 {
                     match_id: match.match_id
                 });
 
                 getData(
                 {
-                    url: job.url,
+                    url: detail_job.url,
                     delay: 10000
                 }, function(err, body)
                 {
                     if (err)
                     {
-                        return cb(err);
+                        return cb2(err);
                     }
                     if (body.result)
                     {
                         var match = body.result;
-                        match.parse_status = 0;
+                        match.parse_status = 2; // this is to skip parse
                         insertMatch(db, redis, match,
                         {
                             type: "api",
+                            skipCacheUpdate: true,
                             attempts: 1,
-                        }, waitParse);
+                        }, function(err)
+                        {
+                            return cb2(err);
+                        });
                     }
 
                     function waitParse(err, job2)
@@ -96,7 +110,7 @@ function fetchProMatches(job, cb)
                         if (err)
                         {
                             console.error(err.stack || err);
-                            return cb(err);
+                            return cb2(err);
                         }
 
                         if (job2)
@@ -105,26 +119,24 @@ function fetchProMatches(job, cb)
                             {
                                 pQueue.getJob(job2.jobId).then(function(job2)
                                 {
-                                    job.progress(job2.progress());
                                     job2.getState().then(function(state)
                                     {
                                         console.log("waiting for parse job %s, currently in %s", job2.jobId, state);
                                         if (state === "completed")
                                         {
                                             clearInterval(poll);
-                                            return cb();
+                                            return cb2();
                                         }
                                         else if (state !== "active" && state !== "waiting")
                                         {
                                             clearInterval(poll);
-                                            return cb("failed");
+                                            return cb2();
                                         }
-                                    }).catch(cb);
-                                }).catch(cb);
+                                    });
+                                });
                             }, 2000);
                         }
                     }
-
                 });
             }, function (err)
             {
@@ -141,10 +153,11 @@ function fetchProMatches(job, cb)
                 {
                     if (!err)
                     {
-                        require('fs').writeFile('../last_league.txt', leagueid.toString(), function(err)
+                        console.log('finish one league ' + leagueid.leagueid);
+                        require('fs').writeFile('last_league.txt', leagueid.leagueid.toString(), function(err)
                         {
                             if (err)
-                            {     
+                            {
                                 console.log("write last league failed!"); 
                             }
                         });
