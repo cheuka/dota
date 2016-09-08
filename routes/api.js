@@ -252,7 +252,7 @@ module.exports = function(db, redis, cassandra)
         {
             var jobs = [];
 			// lordstone: change 'for' to async eachseries
-			async.eachSeries(match, function(match_i, cb)
+			async.eachSeries(match, function(match_i, next_match)
 			{
                 // console.log('match array:'+ i +':' + match[i]);
 				async.series(
@@ -303,6 +303,8 @@ module.exports = function(db, redis, cassandra)
 							return cb();
 						}            
 					}
+				}, function(err){
+					return next_match();
 				});
 			}, function(err){
 				console.log('Reading from upload FINISHED..');
