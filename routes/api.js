@@ -220,7 +220,7 @@ module.exports = function(db, redis, cassandra)
                 redis.setex(new Buffer('upload_blob:' + key), 60 * 60, req.files[i].buffer);
 
 				// lordstone: set up mark for this blob that both parser and zipper can make use and decide whether to delete
-				if(config.ENABLE_STOREDEM === true)
+				if(config.ENABLE_STOREDEM == true)
 				{
 					console.log('DEBUG set up blob mark!');
 					var mark = {
@@ -255,6 +255,7 @@ module.exports = function(db, redis, cassandra)
 			async.eachSeries(match, function(match_i, next_match)
 			{
                 // console.log('match array:'+ i +':' + match[i]);
+				
 				async.series(
 				{
 					"addToParseQueue": function(cb)
@@ -264,6 +265,7 @@ module.exports = function(db, redis, cassandra)
         		            attempts: 1
             		    }, function(err, job)
                 		{
+							console.log('DEBUG job:' + JSON.stringify(job));
 	                	    var curJob = {
     	                	    error: err,
         	                	job:
@@ -275,12 +277,14 @@ module.exports = function(db, redis, cassandra)
         	        	    jobs.push(curJob);
 							return cb();
 	            	    });
+
 					},
-	
+
 					// lordstone: store dem
 					"addToStoreDemQueue": function(cb)
 					{
-						if(config.ENABLE_STOREDEM)
+
+						if(config.ENABLE_STOREDEM === true)
 						{
 							var dem = {
 								user_id: match_i.user_id,
@@ -302,10 +306,12 @@ module.exports = function(db, redis, cassandra)
 						{
 							return cb();
 						}            
+
 					}
 				}, function(err){
 					return next_match();
 				});
+
 			}, function(err){
 				console.log('Reading from upload FINISHED..');
             	res.json(jobs);

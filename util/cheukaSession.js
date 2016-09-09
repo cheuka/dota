@@ -174,8 +174,6 @@ function deleteUserMatch(db, user_id, match_id, cb){
 
 function userAuth(redis, user_id, log_token, cb){
 	redis.get('user_auth:' + user_id, function(err, results){
-		// console.log('DEBUG:userAuth:redis_token:' + results);
-		// console.log('DEBUG:userAuth:log_token:' + log_token);
 		if(results == null){
 			return cb(false);
 		}else{

@@ -34,7 +34,9 @@ function getQueue(type)
 
 function addToQueue(queue, payload, options, cb)
 {
+	// lordstone: DEBUG
     var job = generateJob(queue.name, payload);
+	console.log('DEBUG:' + JSON.stringify(job));
     options.attempts = options.attempts || 15;
     options.backoff = options.backoff ||
     {
@@ -44,6 +46,7 @@ function addToQueue(queue, payload, options, cb)
     queue.add(job, options).then(function(queuejob)
     {
         console.log("created %s jobId: %s", queue.name, queuejob.jobId);
+		// console.log('DEBUG output all job info:\n' + JSON.stringify(queuejob));
         cb(null, queuejob);
     }).catch(cb);
 }

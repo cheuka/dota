@@ -214,12 +214,10 @@ function editInv(db, new_inv, old_invitation_code, cb){
 }
 
 function saveMatchToUser(db, user_id, match_id, is_public){
-	//console.log('DEBUG: Insert match_id:' + match_id + ' for user_id:' + user_id +'.');
 	db.table('user_match_list').first().where({
 		user_id: user_id,
 		match_id: match_id
 	}).then(function(result){
-		//console.log('DEBUG: matches result' + JSON.stringify(result));
 		if(!result || result == undefined){
 			db.table('user_match_list').insert({
 				user_id: user_id,
@@ -238,8 +236,6 @@ function saveMatchToUser(db, user_id, match_id, is_public){
 }
 
 function getMatchData(db, user_id, cb){
-	//lordstone: notice that both db and db exist here
-	// console.log('user_id:' + user_id);
 	db.table('user_match_list').where({
 		user_id: user_id
 	}).select().asCallback(function(err, results){
@@ -247,16 +243,12 @@ function getMatchData(db, user_id, cb){
 			console.error('get match data err:' + err);
 			return cb({error: 'error:' + err});
 		}
-		// console.log('user_match_list:' + JSON.stringify(results));
 		if(!results || results == null){
 			return cb(null);
 		}
-		//console.log('DEBUG:' + results + '|' + JSON.stringify(results));
 		var match_id_set = [];
 		for(var i = 0; i < results.length; i ++){
-			//console.log('DEBUG: match:' + JSON.stringify(match_entry));
 			var match_id = results[i]['match_id'];
-			console.log('DEBUG: get match_id:' + match_id);
 			match_id_set.push(match_id);
 		}
 		
@@ -265,7 +257,6 @@ function getMatchData(db, user_id, cb){
 			if(err){
 				return cb({error: 'error:' + err});
 			}
-			//console.log('DEBUG: found:' + JSON.stringify(results));
 			return cb(results);
 		});
 	});

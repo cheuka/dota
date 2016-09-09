@@ -16,15 +16,17 @@ var spawn = cp.spawn;
 var queries = require('../store/queries');
 var storeDem = queries.storeDem;
 
-if(config.ENABLE_STOREDEM === true)
+if(config.ENABLE_STOREDEM == true)
 {
-	console.log('storedem');
-	sQueue.process(100, processStoredem);
+	sQueue.process(processStoredem);
 }
 
-function processStoredem(job, cb)
-{
+function processStoredem(job, done)
+{	
+    console.log("storedem job: %s", job.jobId);
 	var payload = job.data.payload;
+	console.log('TEST payload:' + JSON.stringify(payload));
+	return; // for test
 	var dem;
 	var timeout = setTimeout(function()
 	{
@@ -91,12 +93,12 @@ function processStoredem(job, cb)
 	{
 		if (err)
 		{
-			return cb(err);
+			return done(err);
 		}
 		else
 		{
 			// lordstone: if job done also for parse, del redis portion
-			console.log('DEBUG: check blob mark');
+			console.log('DEBUG: check blob mark, key:' + dem.replay_blob_key);
 			redis.get('upload_blob_mark:' + dem.replay_blob_key, function(result)
 			{
 				if(result && result.parse_done)
@@ -104,7 +106,7 @@ function processStoredem(job, cb)
 					if(result.parse_done === true)
 					{
 						console.log('Safely delete blob');
-						redis.del('upload_blob:' + dem.replay_blob_key);
+						// redis.del('upload_blob:' + dem.replay_blob_key);
 						redis.del('upload_blob_mark:' + dem.replay_blob_key);
 					}
 					else
@@ -114,10 +116,10 @@ function processStoredem(job, cb)
 						redis.set('upload_blob_mark:' + dem.replay_blob_key, result);
 					}
 				}
+				console.log('Store dem completed');
+				return done();
 			});
 		}
-		console.log('Store dem completed');
-		return cb();
 	}
 
 }

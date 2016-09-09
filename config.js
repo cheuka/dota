@@ -63,7 +63,7 @@ var defaults = {
     "ENABLE_POSTGRES_MATCH_STORE_WRITE": "1", //set to enable writing match data to postgres (default on)
     "ENABLE_CASSANDRA_MATCH_STORE_READ": "", //set to enable reading match data from cassandra
     "ENABLE_CASSANDRA_MATCH_STORE_WRITE": "", //set to enable writing match data to cassandra
-	"ENABLE_STOREDEM": true,
+	"ENABLE_STOREDEM": "", //lordstone: store the dem replay to postgres
 };
 //ensure that process.env has all values in defaults, but prefer the process.env value
 for (var key in defaults)

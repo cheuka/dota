@@ -104,6 +104,7 @@ pQueue.process(1, function(job, cb)
                 if (match.replay_blob_key)
                 {
 					//TODO: lordstone: sync with storedem
+					console.log('match blob key:' + match.replay_blob_key);
 					if(config.ENABLE_STOREDEM === false)
         			{
 						console.log('No storedem. Delete directly');
@@ -118,7 +119,7 @@ pQueue.process(1, function(job, cb)
             			    {
 			                    if (result.storedem_done === true)
             			        {
-                        			redis.del("upload_blob:" + match.replay_blob_key);
+                        			// redis.del("upload_blob:" + match.replay_blob_key);
                         			redis.del("upload_blob_mark:" + match.replay_blob_key);
 			                    }
             			        else
