@@ -18,6 +18,7 @@ var storeDem = queries.storeDem;
 
 if(config.ENABLE_STOREDEM == true)
 {
+	console.log('sQueue display');
 	sQueue.process(processStoredem);
 }
 
@@ -26,7 +27,6 @@ function processStoredem(job, done)
     console.log("storedem job: %s", job.jobId);
 	var payload = job.data.payload;
 	console.log('TEST payload:' + JSON.stringify(payload));
-	return; // for test
 	var dem;
 	var timeout = setTimeout(function()
 	{

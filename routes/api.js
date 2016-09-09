@@ -213,7 +213,7 @@ module.exports = function(db, redis, cassandra)
             const hash = crypto.createHash('md5');
             for(var i = 0; i < req.files.length; i ++)
             {
-                console.log('i file:' + req.files[i]);
+                console.log('i file name:' + req.files[i].name);
                 var key = Math.random().toString(16).slice(2);
 				var upload_time = Math.floor(Date.now());
 				var dem_index = upload_time.toString() + key;
@@ -227,7 +227,8 @@ module.exports = function(db, redis, cassandra)
 						parse_done: false,
 						storedem_done: false
 					};
-					redis.setex(new Buffer('upload_blob_mark:' + key), 60 * 60, mark);
+					var mark_string = JSON.stringify(mark);
+					redis.setex('upload_blob_mark:' + key, 60 * 60, mark_string);
 				}
 
                 match[i] = {
@@ -238,7 +239,6 @@ module.exports = function(db, redis, cassandra)
 					upload_time: upload_time,
 					dem_index: dem_index
                 };
-                // console.log('DEBUG: single is public:' + is_public[i]);
             } //  end for each file in files
         }
         else 
@@ -265,26 +265,28 @@ module.exports = function(db, redis, cassandra)
         		            attempts: 1
             		    }, function(err, job)
                 		{
-							console.log('DEBUG job:' + JSON.stringify(job));
-	                	    var curJob = {
-    	                	    error: err,
-        	                	job:
-	            	            {
-    	            	            jobId: job.jobId,
-        	            	        data: job.data
-	        	                }
-    	        	        };
-        	        	    jobs.push(curJob);
+					//		console.log('DEBUG job:' + JSON.stringify(job));
+							if(job)
+							{
+	                	    	var curJob = {
+    	                		    error: err,
+        	        	        	job:
+	            		            {
+    	    	        	            jobId: job.jobId,
+        		            	        data: job.data
+		        	                }
+	    	        	        };
+        	        	    	jobs.push(curJob);
+							}
 							return cb();
 	            	    });
-
 					},
 
 					// lordstone: store dem
 					"addToStoreDemQueue": function(cb)
 					{
 
-						if(config.ENABLE_STOREDEM === true)
+						if(config.ENABLE_STOREDEM == true)
 						{
 							var dem = {
 								user_id: match_i.user_id,
@@ -294,11 +296,13 @@ module.exports = function(db, redis, cassandra)
 								replay_blob_key: match_i.replay_blob_key,
 								file_name: match_i.file_name
 							};
+							console.log('DEBUG add to sQueue:' + match_i.replay_blob_key);
 		                	queue.addToQueue(sQueue, dem,
 	    		            {
     	        		        attempts: 1
 		        	        }, function(err, job)
         		    	    {
+								console.log('DEBUG add done sQueue:' + match_i.replay_blob_key);
 								return cb();
 	            		    });
 						}

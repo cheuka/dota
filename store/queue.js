@@ -36,7 +36,6 @@ function addToQueue(queue, payload, options, cb)
 {
 	// lordstone: DEBUG
     var job = generateJob(queue.name, payload);
-	console.log('DEBUG:' + JSON.stringify(job));
     options.attempts = options.attempts || 15;
     options.backoff = options.backoff ||
     {

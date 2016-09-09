@@ -7,15 +7,16 @@ var rQueue = queue.getQueue('request');
 var generateJob = require('../util/utility').generateJob;
 
 
-doQ();
+//doQ();
 
+/*
 sQueue.process(function(job, cb)
 {
 	console.log('sQueue do work!');
 	// console.log('sQueue processing:' + JSON.stringify(job));
 	return cb('err');			
 });
-
+*/
 
 function doQ(){
 
@@ -79,8 +80,9 @@ function doQ(){
 				
 	}, 5000);
 
-
 }
+
+
 
 
 
