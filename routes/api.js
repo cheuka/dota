@@ -202,10 +202,7 @@ module.exports = function(db, redis, cassandra)
             return;
         }
         var match = [] ;
-        // console.log('DEBUG: upload ispublic:' + req.body.is_public);
-        // console.log('DEBUG: ispublic:' + req.body.is_public['is_public']);
         var is_public = JSON.parse(req.body.is_public);
-        // console.log('DEBUG: obj:' + JSON.stringify(is_public));
         is_public = is_public['is_public'];
         var user_id = req.session.user; // read the user_id
         if (req.files.length > 0)
@@ -222,7 +219,6 @@ module.exports = function(db, redis, cassandra)
 				// lordstone: set up mark for this blob that both parser and zipper can make use and decide whether to delete
 				if(config.ENABLE_STOREDEM == true)
 				{
-					console.log('DEBUG set up blob mark!');
 					var mark = {
 						parse_done: false,
 						storedem_done: false

@@ -7,7 +7,7 @@ var rQueue = queue.getQueue('request');
 var generateJob = require('../util/utility').generateJob;
 
 
-//doQ();
+doQ();
 
 /*
 sQueue.process(function(job, cb)
@@ -24,7 +24,7 @@ function doQ(){
 	{
 		var timestamp = parseInt(Date.now() / 1000);
 		console.log('storedem poll:' + timestamp);
-
+/*
 		var qname = 'storedem';
 		var payload = {
 			url: 'http://localhost:5000/redis',
@@ -44,7 +44,7 @@ function doQ(){
 			console.log('add:\n' + queuejob.jobId);
 
 		});
-
+*/
 /*
 		console.log('add new job in sQueue');
 		queue.addToQueue(sQueue, 
@@ -78,7 +78,7 @@ function doQ(){
 		});
 		
 				
-	}, 5000);
+	}, 2000);
 
 }
 
