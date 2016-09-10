@@ -113,7 +113,7 @@ pQueue.process(1, function(job, cb)
 					else
 			        {
 						console.log('check blob');
-            			redis.get('upload_blob_mark:' + match.replay_blob_key, function(result)
+            			redis.get('upload_blob_mark:' + match.replay_blob_key, function(err, result)
             			{
 							if(result){
 								result = JSON.parse(result);	
@@ -122,7 +122,7 @@ pQueue.process(1, function(job, cb)
             			    {
 			                    if (result.storedem_done === true)
             			        {
-                        			// redis.del("upload_blob:" + match.replay_blob_key);
+                        			redis.del("upload_blob:" + match.replay_blob_key);
                         			redis.del("upload_blob_mark:" + match.replay_blob_key);
 			                    }
             			        else

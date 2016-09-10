@@ -18,6 +18,9 @@ var storeDem = queries.storeDem;
 var async = require('async');
 var request = require('request');
 
+// lordstone: just for debug
+var fs = require('fs');
+
 if(config.ENABLE_STOREDEM == true)
 {
 	console.log('sQueue display');
@@ -83,7 +86,6 @@ function processStoredem(job, done)
 				exit(response.statusCode.toString());
 			}
 		}).on('error', exit);
-
 		
 		inStream.pipe(bz.stdin);
 
@@ -91,8 +93,10 @@ function processStoredem(job, done)
 		bz.stdout.pipe(midStream);
 		console.log('STOREDEM finished doZip');
 		blob = '';
+		var wfs = fs.createWriteStream('./test/storedem_test/test.txt');
 		midStream.on('data', function handleStream(e)
 		{
+			wfs.write(e);
 			blob += e;
 		})
 		.on('end', exit)
@@ -106,6 +110,8 @@ function processStoredem(job, done)
 			}
 			else
 			{
+				wfs.end();
+				console.log('STOREDEM length:' + blob.length);
 				dem.blob = blob;
 				storeDem(dem, db, function(err)
 				{
@@ -120,16 +126,16 @@ function processStoredem(job, done)
 	
 						// lordstone: if job done also for parse, del redis portion
 						console.log('DEBUG: check blob mark, key:' + dem.replay_blob_key);
-						redis.get('upload_blob_mark:' + dem.replay_blob_key, function(result)
+						redis.get('upload_blob_mark:' + dem.replay_blob_key, function(err, result)
 						{
 							console.log('STOREDEM exit result:' + result);
 							result = JSON.parse(result);
 							if(result && result.parse_done)
 							{
-								if(result.parse_done === true)
+								if(result.parse_done == true)
 								{
 									console.log('Safely delete blob');
-									// redis.del('upload_blob:' + dem.replay_blob_key);
+									redis.del('upload_blob:' + dem.replay_blob_key);
 									redis.del('upload_blob_mark:' + dem.replay_blob_key);
 								}
 								else	
