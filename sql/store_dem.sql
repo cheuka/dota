@@ -8,7 +8,7 @@ CREATE TABLE dem_storage(
 	PRIMARY KEY(user_id, dem_index),
 	content bytea,  -- may be nicer to use BLOB, but ...
 	is_public bool NOT NULL DEFAULT TRUE,
-	upload_time timestamp NOT NULL,
+	upload_time bigint NOT NULL,
 	file_name varchar(255)
 );
 	

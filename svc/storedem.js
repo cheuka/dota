@@ -16,6 +16,7 @@ var spawn = cp.spawn;
 var queries = require('../store/queries');
 var storeDem = queries.storeDem;
 var async = require('async');
+var request = require('request');
 
 if(config.ENABLE_STOREDEM == true)
 {
@@ -26,9 +27,12 @@ if(config.ENABLE_STOREDEM == true)
 function processStoredem(job, done)
 {	
     console.log("storedem job: %s", job.jobId);
+	if(!job || !job.data || !job.data.payload){
+		console.log('STOREDEM: err: missing job data payload');
+		return done('missing job context');
+	}
 	var payload = job.data.payload;
-	// console.log('TEST payload:' + JSON.stringify(payload));
-	var dem;
+	console.log('TEST payload:' + JSON.stringify(payload));
 	var timeout = setTimeout(function()
 	{
 		exit('timeout');
@@ -37,65 +41,53 @@ function processStoredem(job, done)
 	var url;	
 	var bz;
 	var blob;
-	console.log('sQueue process');
-	async.series(
+	console.log('sQueue process...');
+	
+	try{
+	console.log('start try');
+	var dem = {
+		user_id: payload.user_id,
+		dem_index: payload.dem_index,
+		is_public: payload.is_public,
+		upload_time: payload.upload_time,
+		replay_blob_key: payload.replay_blob_key,
+		file_name: payload.file_name
+	};
+	console.log('STOREDEM finished getDemInfo');
+	// lordstone: use the parser module to get raw match data
+	url = "http://localhost:" + config.PARSER_PORT + "/redis/" + dem.replay_blob_key;
+	console.log('STOREDEM finished getDataSource');
+	bz = spawn("bzip2");
+	bz.stdin.on('error', exit);
+	bz.stdout.on('error', exit);
+	console.log('STOREDEM finished setUps');
+	inStream = progress(request(
 	{
-		"getDemInfo": function(cb)
+		url: url
+	}));
+	inStream.pipe(bz.stdin);
+	blob = stream.PassThrough();
+	bz.stdout.pipe(blob);
+	console.log('STOREDEM finished doZip');
+	dem.blob = blob;
+	storeDem(dem, db, function(err){
+		if(err)
 		{
-			dem.user_id = payload.user_id;
-			dem.dem_index = payload.dem_index;
-			dem.is_public = payload.is_public;
-			dem.upload_time = payload.upload_time;	
-			dem.replay_blob_key = payload.replay_blob_key;
-			dem.file_name = payload.file_name;
-			console.log('STOREDEM finished getDemInfo');
-			return cb();
-		},
-		"getDataSource": function(cb)
-		{
-			// lordstone: use the parser module to get raw match data
-			url = "http://localhost:" + config.PARSER_PORT + "/redis/" + match.replay_blob_key;
-			console.log('STOREDEM finished getDataSource');
-			return cb();
-		},
-		"setUps": function(cb)
-		{
-			bz = spawn("bzip2");
-			bz.stdin.on('error', exit);
-			bz.stdout.on('error', exit);
-			console.log('STOREDEM finished setUps');
-			return cb();
-		},
-		"doZip": function(cb)
-		{
-			inStream = progress(request(
-			{
-				url: url
-			}));
-			inStream.pipe(bz.stdin);
-			blob = stream.PassThrough();
-			bz.stdout.pipe(blob);
-			console.log('STOREDEM finished doZip');
-			blob.on('end', cb);
-		},
-		"writeToDb": function(cb)
-		{
-			dem.blob = blob;
-			storeDem(dem, db, function(err){
-				if(err)
-				{
-					console.log('STOREDEM writetoDb err:' + err);
-					return cb(err);
-				}
-				else
-				{
-					console.log('STOREDEM finished writeToDb');
-					return cb();
-				}
-			});
+			console.log('STOREDEM writetoDb err:' + err);
+			exit(err);
 		}
-	}, 
-	function(err)
+		else
+		{
+			console.log('STOREDEM finished writeToDb');
+			exit();
+		}
+	});
+	}
+	catch(e){
+		console.error('STOREDEM ERR:' + e);
+		return done(e);
+	}
+	function exit(err)
 	{
 		if (err)
 		{
@@ -128,7 +120,7 @@ function processStoredem(job, done)
 				return done();
 			});
 		}// end function exit
-	});
+	}
 
 }
 

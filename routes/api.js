@@ -227,11 +227,13 @@ module.exports = function(db, redis, cassandra)
 					redis.setex('upload_blob_mark:' + key, 60 * 60, mark_string);
 				}
 
+				var filename = req.files[i].name || (key + '.dem');
+
                 match[i] = {
                     replay_blob_key: key,
                     user_id: user_id,
                     is_public: is_public[i],
-					file_name: req.files[i].name,
+					file_name: filename,
 					upload_time: upload_time,
 					dem_index: dem_index
                 };
