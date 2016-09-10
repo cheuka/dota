@@ -37,90 +37,123 @@ function processStoredem(job, done)
 	{
 		exit('timeout');
 	}, 300000);
-	var inStream;
-	var url;	
-	var bz;
+	var url;
 	var blob;
+	var dem;
 	console.log('sQueue process...');
 	
 	try{
-	console.log('start try');
-	var dem = {
-		user_id: payload.user_id,
-		dem_index: payload.dem_index,
-		is_public: payload.is_public,
-		upload_time: payload.upload_time,
-		replay_blob_key: payload.replay_blob_key,
-		file_name: payload.file_name
-	};
-	console.log('STOREDEM finished getDemInfo');
-	// lordstone: use the parser module to get raw match data
-	url = "http://localhost:" + config.PARSER_PORT + "/redis/" + dem.replay_blob_key;
-	console.log('STOREDEM finished getDataSource');
-	bz = spawn("bzip2");
-	bz.stdin.on('error', exit);
-	bz.stdout.on('error', exit);
-	console.log('STOREDEM finished setUps');
-	inStream = progress(request(
-	{
-		url: url
-	}));
-	inStream.pipe(bz.stdin);
-	blob = stream.PassThrough();
-	bz.stdout.pipe(blob);
-	console.log('STOREDEM finished doZip');
-	dem.blob = blob;
-	storeDem(dem, db, function(err){
-		if(err)
+
+		console.log('start try');
+		dem = {
+			user_id: payload.user_id,
+			dem_index: payload.dem_index,
+			is_public: payload.is_public,
+			upload_time: payload.upload_time,
+			replay_blob_key: payload.replay_blob_key,
+			file_name: payload.file_name
+		};
+
+		console.log('STOREDEM finished getDemInfo');
+		// lordstone: use the parser module to get raw match data
+		url = "http://localhost:" + config.PARSER_PORT + "/redis/" + dem.replay_blob_key;
+		console.log('STOREDEM finished getDataSource');
+
+		var bz = spawn("bzip2");
+		bz.stdin.on('error', exit);
+		bz.stdout.on('error', exit);
+
+		console.log('STOREDEM finished setUps');
+		var inStream = progress(request(
 		{
-			console.log('STOREDEM writetoDb err:' + err);
-			exit(err);
-		}
-		else
+			url: url
+		}));
+
+		inStream.on('progress', function(state)
 		{
-			console.log('STOREDEM finished writeToDb');
-			exit();
-		}
-	});
-	}
-	catch(e){
-		console.error('STOREDEM ERR:' + e);
-		return done(e);
-	}
-	function exit(err)
-	{
-		if (err)
-		{
-			return done(err);
-		}
-		else
-		{
-			// lordstone: if job done also for parse, del redis portion
-			console.log('DEBUG: check blob mark, key:' + dem.replay_blob_key);
-			redis.get('upload_blob_mark:' + dem.replay_blob_key, function(result)
+			console.log(JSON.stringify(
 			{
-				console.log('STOREDEM exit result:' + result);
-				result = JSON.parse(result);
-				if(result && result.parse_done)
+				url: url,
+				state: state	
+			}));
+		}).on('response', function(response)
+		{
+			if(response.statusCode !== 200)
+			{
+				exit(response.statusCode.toString());
+			}
+		}).on('error', exit);
+
+		
+		inStream.pipe(bz.stdin);
+
+		var midStream = stream.PassThrough();
+		bz.stdout.pipe(midStream);
+		console.log('STOREDEM finished doZip');
+		blob = '';
+		midStream.on('data', function handleStream(e)
+		{
+			blob += e;
+		})
+		.on('end', exit)
+		.on('error', exit);
+
+		function exit(err)
+		{
+			if (err)
+			{	
+				return done(err);
+			}
+			else
+			{
+				dem.blob = blob;
+				storeDem(dem, db, function(err)
 				{
-					if(result.parse_done === true)
+					if(err)
 					{
-						console.log('Safely delete blob');
-						// redis.del('upload_blob:' + dem.replay_blob_key);
-						redis.del('upload_blob_mark:' + dem.replay_blob_key);
+						console.log('STOREDEM writetoDb err:' + err);
+						done(err);
 					}
 					else
 					{
-						console.log('blob stll in use in parse');
-						result.storedem_done = true;
-						redis.set('upload_blob_mark:' + dem.replay_blob_key, result);
+						console.log('STOREDEM finished writeToDb');
+	
+						// lordstone: if job done also for parse, del redis portion
+						console.log('DEBUG: check blob mark, key:' + dem.replay_blob_key);
+						redis.get('upload_blob_mark:' + dem.replay_blob_key, function(result)
+						{
+							console.log('STOREDEM exit result:' + result);
+							result = JSON.parse(result);
+							if(result && result.parse_done)
+							{
+								if(result.parse_done === true)
+								{
+									console.log('Safely delete blob');
+									// redis.del('upload_blob:' + dem.replay_blob_key);
+									redis.del('upload_blob_mark:' + dem.replay_blob_key);
+								}
+								else	
+								{
+									console.log('blob still in use in parse');
+									result.storedem_done = true;
+									redis.set('upload_blob_mark:' + dem.replay_blob_key, result);
+								}
+							}
+							console.log('Store dem completed');
+							return done();
+						});
 					}
-				}
-				console.log('Store dem completed');
-				return done();
-			});
+				});
+			}
 		}// end function exit
+
+	}
+	catch(e)
+	{
+		console.error('STOREDEM ERR:' + e);
+		return done(e);
 	}
 
+	
 }
 

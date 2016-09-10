@@ -115,6 +115,9 @@ pQueue.process(1, function(job, cb)
 						console.log('check blob');
             			redis.get('upload_blob_mark:' + match.replay_blob_key, function(result)
             			{
+							if(result){
+								result = JSON.parse(result);	
+							}
 			                if(result && result.storedem_done)
             			    {
 			                    if (result.storedem_done === true)
