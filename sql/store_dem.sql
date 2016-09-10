@@ -6,7 +6,7 @@ CREATE TABLE dem_storage(
 		ON DELETE CASCADE,
 	dem_index varchar(255) NOT NULL,
 	PRIMARY KEY(user_id, dem_index),
-	content bytea,  -- may be nicer to use BLOB, but ...
+	blob bytea,  -- may be nicer to use BLOB, but ...
 	is_public bool NOT NULL DEFAULT TRUE,
 	upload_time bigint NOT NULL,
 	file_name varchar(255)

@@ -1050,7 +1050,8 @@ function storeDem(dem, db, cb){
 		dem_index: dem_index,
 		is_public: is_public,
 		upload_time: upload_time,
-		file_name: file_name
+		file_name: file_name,
+		blob: dem.blob
 	})
 	.asCallback(function(err){
 		if (err)

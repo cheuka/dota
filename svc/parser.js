@@ -112,23 +112,23 @@ pQueue.process(1, function(job, cb)
 					}
 					else
 			        {
-						console.log('check blob');
             			redis.get('upload_blob_mark:' + match.replay_blob_key, function(err, result)
             			{
-							if(result){
-								result = JSON.parse(result);	
-							}
-			                if(result && result.storedem_done)
+							console.log('check blob in parser:' + result);
+							result = JSON.parse(result);	
+			                if(result)
             			    {
-			                    if (result.storedem_done === true)
+			                    if (result.storedem_done == true)
             			        {
+									console.log('Safely delete blob');
                         			redis.del("upload_blob:" + match.replay_blob_key);
                         			redis.del("upload_blob_mark:" + match.replay_blob_key);
 			                    }
             			        else
 			                    {
+									console.log('blob still in use in storedem');
             			            result.parse_done = true;
-									redis.set('upload_blob_mark:' + match.replay_blob_key, result);
+									redis.set('upload_blob_mark:' + match.replay_blob_key, JSON.stringify(result));
             			        }
 			                }
             			    else
