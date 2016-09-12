@@ -17,6 +17,6 @@
 # Run dota
 
 - if docker service not started, ```sudo service docker start```
-- create docker container based on the image cheuka-dota:1.0,  ```sudo docker run -dit --name dota --net=host lpeter83/cheuka-dota:1.0```
+- create docker container based on the image cheuka-dota:1.0,  ```sudo docker run -v $(pwd):/usr/src/yasp -dit --name dota --net=host lpeter83/cheuka-dota:1.0```
 - enter the dota container, ```sudo docker exec -it dota bash```
-- to start dota application, just run ```pm2 start debug.json``` in the container bash env
+- to start dota application, just run ```pm2 start pm2.json``` in the container bash env
