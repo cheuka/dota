@@ -25,10 +25,12 @@ invokeInterval(function doBuildSets(cb)
     buildSets(db, redis, cb);
 }, 60 * 1000);
 
+/*
 invokeInterval(function mmStats(cb)
 {
     getMMStats(redis, cb);
 }, config.MMSTATS_DATA_INTERVAL * 60 * 1000); //Sample every 3 minutes
+*/
 invokeInterval(function buildDistributions(cb)
 {
     async.parallel(
@@ -106,7 +108,7 @@ invokeInterval(function cleanQueues(cb)
 {
     queue.cleanup(redis, cb);
 }, 60 * 60 * 1000);
-
+/*
 invokeInterval(function notablePlayers(cb)
 {
     var container = utility.generateJob("api_notable",
@@ -126,7 +128,7 @@ invokeInterval(function notablePlayers(cb)
         }, cb);
     });
 }, 10 * 60 * 1000);
-
+*/
 function invokeInterval(func, delay)
 {
     //invokes the function immediately, waits for callback, waits the delay, and then calls it again

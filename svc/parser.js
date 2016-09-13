@@ -103,7 +103,41 @@ pQueue.process(1, function(job, cb)
 
                 if (match.replay_blob_key)
                 {
-                    redis.del('upload_blob:' + match.replay_blob_key);
+					//TODO: lordstone: sync with storedem
+					console.log('match blob key:' + match.replay_blob_key);
+					if(!config.ENABLE_STOREDEM)
+        			{
+						console.log('No storedem. Delete directly');
+                    	redis.del('upload_blob:' + match.replay_blob_key);
+					}
+					else
+			        {
+            			redis.get('upload_blob_mark:' + match.replay_blob_key, function(err, result)
+            			{
+							console.log('check blob in parser:' + result);
+							result = JSON.parse(result);	
+			                if(result)
+            			    {
+			                    if (result.storedem_done == true)
+            			        {
+									console.log('Safely delete blob');
+                        			redis.del("upload_blob:" + match.replay_blob_key);
+                        			redis.del("upload_blob_mark:" + match.replay_blob_key);
+			                    }
+            			        else
+			                    {
+									console.log('blob still in use in storedem');
+            			            result.parse_done = true;
+									redis.set('upload_blob_mark:' + match.replay_blob_key, JSON.stringify(result));
+            			        }
+			                }
+            			    else
+			                {
+            			        console.error('No relevant redis record. Skipping..');
+            			    }
+			            });
+			        }	
+
                     insertUploadedParse(parsed_data, cb);
                 }
                 else
