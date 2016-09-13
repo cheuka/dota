@@ -45,6 +45,15 @@ function generateJob(type, payload)
                 payload: payload
             };
         },
+        "api_teaminfo": function()
+        {
+            return {
+                url: api_url + "/IDOTA2Match_570/GetTeamInfoByTeamID/V001/?key=" + api_key + (payload.team_id ? "&start_at_team_id=" + payload.team_id : "") + (payload.teams_requested ? "&teams_requested=" + payload.teams_requested : "&teams_requested=1"),
+                title: [type, payload.team_id].join(),
+                type: "api",
+                payload: payload
+            };
+        },
         "api_summaries": function()
         {
             return {
