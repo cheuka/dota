@@ -206,3 +206,9 @@ CREATE TABLE fetch_team_match(
   is_fetched boolean,
   is_dem_persisted boolean
 );
+
+CREATE TABLE fetch_team_league(
+  team_id bigint,
+  league_id integer,
+  is_fetched boolean
+)

@@ -261,6 +261,13 @@ function runParse(match, job, cb)
     parseStream.on('end', exit);
     parseStream.on('error', exit);
     // Pipe together the streams
+
+    // rxu, save the replay files to folder
+    var saveName = url;
+    outputFileStream = require('fs').createWriteStream('replays/'+saveName)
+    inStream.pipe(outputFileStream);
+
+
     inStream.pipe(bz.stdin);
     bz.stdout.pipe(parser.stdin);
     parser.stdout.pipe(parseStream);
