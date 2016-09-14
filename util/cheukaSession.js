@@ -192,6 +192,18 @@ function checkMatchId(db, user_id, match_id, cb){
 	});
 }
 
+function findAllUploads(db, user_id, cb)
+{
+	user_mgmt.findAllUploads(db, user_id, function(err, result)
+	{
+		if(err)
+		{
+			return cb(err);
+		}
+		return cb(null, result);
+	});
+}
+
 module.exports = {
 	findAll: findAll,
 	findUser: findUser,
@@ -210,5 +222,6 @@ module.exports = {
 	getMatchData: getMatchData,
 	// deleteUserMatch: deleteUserMatch,
 	userAuth: userAuth,
-	checkMatchId: checkMatchId
+	checkMatchId: checkMatchId,
+	findAllUploads: findAllUploads
 };

@@ -21,6 +21,7 @@ var querystring = require('querystring');
 
 var cheuka_session = require('../util/cheukaSession');
 var banpick = require('../routes/banpick');
+var dem = require('../routes/storedem');
 
 const crypto = require('crypto');
 module.exports = function(db, redis, cassandra)
@@ -449,6 +450,6 @@ module.exports = function(db, redis, cassandra)
 // lordstone: added banpick api interface:
  
 	api.use('/banpick', banpick(db, redis));
-   
+   	api.use('/dem', dem(db, redis));
     return api;
 };
