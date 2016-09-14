@@ -160,8 +160,8 @@ function doStoredem(payload, done)
 function doGetdem(payload, done)
 {
 	// store dem back to redis and inform the requesting ip
+	console.log('DEBUG start get dem job');
 	try{
-		var client_ip = payload.client_ip;
 		var params = {
 			dem_index: payload.dem_index,
 			user_id: payload.user_id
@@ -174,12 +174,16 @@ function doGetdem(payload, done)
 				console.error('doGetdem err:' + err);
 				return done(err);
 			}
-			
+			console.log('DEBUG got dem from db in svc');
+			console.log('DEBUG dem length:' + result.blob.length);
 			redis.setex(
 			'upload_blob:' + payload.dem_index + '_user:' + payload.user_id,
 			60 * 60,
-			result,
-			done);
+			result.blob,
+			function(err){
+				console.log('DEBUG stored dem result into redis');
+				done(err);
+			});
 		});	
 	}
 	catch(e)
@@ -198,7 +202,7 @@ function processStoredem(job, done)
 		return done('missing job context');
 	}
 	var payload = job.data.payload;
-	// console.log('TEST payload:' + JSON.stringify(payload));
+	console.log('TEST payload:' + JSON.stringify(payload));
 
 	var job_type = payload.job_type;
 

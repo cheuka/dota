@@ -1069,9 +1069,11 @@ function getDem(params, db, cb)
 	var dem_index = params.dem_index;
 	var user_id = params.user_id;
 
+	console.log('DEBUG get dem from db:' + dem_index);
+	console.time('fetching blob from db');
 	db
 	.table('dem_storage')
-	.first('blob', 'is_public', 'upload_time', 'file_name')
+	.first('blob')//, 'is_public', 'upload_time', 'file_name')
 	.where(
 	{
 		user_id: user_id,
@@ -1079,11 +1081,13 @@ function getDem(params, db, cb)
 	})
 	.asCallback(function(err, result)
 	{
+		console.log('DEBUG received dem from db');
+		console.timeEnd('fetching blob from db');
 		if(err)
 		{
 			return cb(err);
 		}
-		return (null, result);
+		return cb(null, result);
 	});
 }
 

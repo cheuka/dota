@@ -65,24 +65,32 @@ module.exports = function(db, redis)
 			var dem_index = req.query.dem_index;
 			var key = 'upload_blob:' + dem_index + '_user:' + user_id
 			/* lordstone: check if dem is already cached in redis */
+			console.log('DEBUG: check dem_index exists');
 			redis.exists(key, function(err, result){
 				if(err)
 				{
+					console.error('redis check dem_index failed');
 					res.send('err: cache err');
 					return;
 				}
 				if(result)
 				{
-					// if it is cached already in redis
-					res.writeHead(200, {
-						'Content-Type': 'application/zip'	
+					console.log('dem_index:' + dem_index + ' exists');
+					redis.get(key, function(err, result)
+					{
+						// if it is cached already in redis
+						res.writeHead(200, {
+							'Content-Type': 'application/x-bzip2'	
+						});
+						console.log('dem length:' + result.length);
+						res.write(result);
+						res.end();
+						redis.del(key);
 					});
-					res.write(result.blob);
-					res.end();
-					return;
 				}
 				else
 				{
+					console.log('dem_index:' + dem_index + ' does not exist');
 					// if it is not yet cached in redis
 					var payload = {
 						dem_index: dem_index,
@@ -96,16 +104,10 @@ module.exports = function(db, redis)
 					}, function(err, job)
 					{
 						console.log('DEBUG add done sQueue(get)' + dem_index);
-						res.writeHead(202, 
-							{
-								'content-type': 'text/plain',
-								'status': 'waiting to be cached'
-							});
 						res.json({
-							job: job,
+							job: JSON.stringify(job),
 							status: 'wait'
 						});
-						res.end();
 					});
 				}
 			});
