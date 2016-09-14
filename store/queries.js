@@ -1034,8 +1034,8 @@ function searchPlayer(db, query, cb)
 
 /* lordstone: for store dem */
 
-function storeDem(dem, db, cb){
-	
+function storeDem(dem, db, cb)
+{	
 	var user_id = dem.user_id;
 	var dem_index = dem.dem_index;
 	var is_public = dem.is_public;
@@ -1062,6 +1062,31 @@ function storeDem(dem, db, cb){
 	});
 }
 
+/* lordstone: for get dem */
+
+function getDem(params, db, cb)
+{
+	var dem_index = params.dem_index;
+	var user_id = params.user_id;
+
+	db
+	.table('dem_storage')
+	.first('blob', 'is_public', 'upload_time', 'file_name')
+	.where(
+	{
+		user_id: user_id,
+		dem_index: dem_index
+	})
+	.asCallback(function(err, result)
+	{
+		if(err)
+		{
+			return cb(err);
+		}
+		return (null, result);
+	});
+}
+
 module.exports = {
     getSets,
     insertPlayer,
@@ -1080,4 +1105,5 @@ module.exports = {
     mmrEstimate,
     searchPlayer,
 	storeDem,
+	getDem,
 };

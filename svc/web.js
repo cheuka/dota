@@ -574,6 +574,7 @@ app.use(function(req, res, next)
     {
         return res.redirect(config.UI_HOST + req.url);
     }
+	console.error('ERR in web');
     var err = new Error("Not Found");
     err.status = 404;
     return next(err);

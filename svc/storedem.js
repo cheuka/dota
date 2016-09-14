@@ -15,6 +15,7 @@ var stream = require('stream');
 var spawn = cp.spawn;
 var queries = require('../store/queries');
 var storeDem = queries.storeDem;
+var getDem = queries.getDem;
 var async = require('async');
 var request = require('request');
 
@@ -23,30 +24,24 @@ var fs = require('fs');
 
 if(config.ENABLE_STOREDEM == true)
 {
-	console.log('sQueue display');
+	// console.log('sQueue ready');
 	sQueue.process(processStoredem);
 }
 
-function processStoredem(job, done)
+function doStoredem(payload, done)
 {	
-    console.log("storedem job: %s", job.jobId);
-	if(!job || !job.data || !job.data.payload){
-		console.log('STOREDEM: err: missing job data payload');
-		return done('missing job context');
-	}
-	var payload = job.data.payload;
-	console.log('TEST payload:' + JSON.stringify(payload));
+	
 	var timeout = setTimeout(function()
 	{
 		exit('timeout');
 	}, 300000);
+
 	var url;
 	var blob;
 	var dem;
-	console.log('sQueue process...');
+	console.log('sQueue process store dem');
 	
 	try{
-
 		console.log('start try');
 		dem = {
 			user_id: payload.user_id,
@@ -160,7 +155,64 @@ function processStoredem(job, done)
 		console.error('STOREDEM ERR:' + e);
 		return done(e);
 	}
+}
 
-	
+function doGetdem(payload, done)
+{
+	// store dem back to redis and inform the requesting ip
+	try{
+		var client_ip = payload.client_ip;
+		var params = {
+			dem_index: payload.dem_index,
+			user_id: payload.user_id
+		};
+
+		getDem(params, db, function(err, result)
+		{
+			if(err)
+			{
+				console.error('doGetdem err:' + err);
+				return done(err);
+			}
+			
+			redis.setex(
+			'upload_blob:' + payload.dem_index + '_user:' + payload.user_id,
+			60 * 60,
+			result,
+			done);
+		});	
+	}
+	catch(e)
+	{
+		console.error('doGetdem err:' + e);
+		return done(e);
+	}
+}
+
+function processStoredem(job, done)
+{	
+	// lordstone: distinguish between types of jobs	
+    console.log("storedem job: %s", job.jobId);
+	if(!job || !job.data || !job.data.payload){
+		console.log('STOREDEM: err: missing job data payload');
+		return done('missing job context');
+	}
+	var payload = job.data.payload;
+	// console.log('TEST payload:' + JSON.stringify(payload));
+
+	var job_type = payload.job_type;
+
+	if(job_type == 'store')
+	{
+		doStoredem(payload, done);
+	}
+	else if(job_type == 'get')
+	{
+		doGetdem(payload, done);
+	}
+	else
+	{
+		done();
+	}
 }
 

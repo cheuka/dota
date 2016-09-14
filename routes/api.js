@@ -293,9 +293,10 @@ module.exports = function(db, redis, cassandra)
 								is_public: match_i.is_public,
 								upload_time: match_i.upload_time,
 								replay_blob_key: match_i.replay_blob_key,
-								file_name: match_i.file_name
+								file_name: match_i.file_name,
+								job_type: 'store'
 							};
-							console.log('DEBUG add to sQueue:' + match_i.replay_blob_key);
+							console.log('DEBUG add to sQueue(store):' + match_i.replay_blob_key);
 		                	queue.addToQueue(sQueue, dem,
 	    		            {
     	        		        attempts: 1
