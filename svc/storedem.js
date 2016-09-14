@@ -162,6 +162,9 @@ function doGetdem(payload, done)
 	// store dem back to redis and inform the requesting ip
 	console.log('DEBUG start get dem job');
 	try{
+
+		var key = 'upload_blob:' + payload.dem_index + '_user:' + payload.user_id;
+
 		var params = {
 			dem_index: payload.dem_index,
 			user_id: payload.user_id
@@ -170,25 +173,35 @@ function doGetdem(payload, done)
 		getDem(params, db, function(err, result)
 		{
 			if(err)
-			{
+			{	
+				redis.set(key + '_mark', JSON.stringify({
+					status: 'error'
+				}));
 				console.error('doGetdem err:' + err);
 				return done(err);
 			}
 			console.log('DEBUG got dem from db in svc');
 			console.log('DEBUG dem length:' + result.blob.length);
 			redis.setex(
-			'upload_blob:' + payload.dem_index + '_user:' + payload.user_id,
+			key,
 			60 * 60,
 			result.blob,
 			function(err){
 				console.log('DEBUG stored dem result into redis');
+				redis.set(key + '_mark', JSON.stringify({
+					status: 'completed'
+				}));
 				done(err);
 			});
 		});	
 	}
 	catch(e)
 	{
-		console.error('doGetdem err:' + e);
+		console.error('doGetdem err:' + e);	
+		redis.set(key + '_mark', JSON.stringify({
+			status: 'error'
+		}));
+
 		return done(e);
 	}
 }

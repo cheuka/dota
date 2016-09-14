@@ -66,7 +66,8 @@ module.exports = function(db, redis)
 			var key = 'upload_blob:' + dem_index + '_user:' + user_id
 			/* lordstone: check if dem is already cached in redis */
 			console.log('DEBUG: check dem_index exists');
-			redis.exists(key, function(err, result){
+			
+			redis.get((key + '_mark'), function(err, result){
 				if(err)
 				{
 					console.error('redis check dem_index failed');
@@ -76,22 +77,48 @@ module.exports = function(db, redis)
 				if(result)
 				{
 					console.log('dem_index:' + dem_index + ' exists');
-					redis.get(key, function(err, result)
+					var blob_mark = JSON.parse(result);
+
+					if(blob_mark.status == 'completed')
 					{
-						// if it is cached already in redis
-						res.writeHead(200, {
-							'Content-Type': 'application/x-bzip2'	
+						/* lordstone: if the backend job is completed */
+						redis.get(key, function(err, result)
+						{
+							// if it is cached already in redis
+							res.writeHead(200, {
+								'Content-Type': 'application/x-bzip2'	
+							});
+							console.log('dem length:' + result.length);
+							res.write(result);
+							res.end();
+							redis.del(key);
+							redis.del(key + '_mark');
 						});
-						console.log('dem length:' + result.length);
-						res.write(result);
-						res.end();
-						redis.del(key);
-					});
+					}else if(blob_mark.status == 'wait'){
+						/* lordstone: if the backend job is waiting */
+						res.json({
+							status: 'wait'
+						});
+					}else{
+						/* all other status is abnormal, delete the mark */
+						redis.del(key + '_mark');
+						res.json({
+							status: 'error'
+						});
+					}
 				}
 				else
 				{
 					console.log('dem_index:' + dem_index + ' does not exist');
 					// if it is not yet cached in redis
+
+					var blob_mark = {
+						status: 'wait'
+					};
+
+					/* set mark */
+					redis.set((key + '_mark'),	JSON.stringify(blob_mark));
+
 					var payload = {
 						dem_index: dem_index,
 						user_id: user_id,
