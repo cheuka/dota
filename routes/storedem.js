@@ -63,6 +63,8 @@ module.exports = function(db, redis)
 		if(req.session.user){
 			var user_id = req.session.user;
 			var dem_index = req.query.dem_index;
+			var is_sync = req.query.sync || null;
+
 			var key = 'upload_blob:' + dem_index + '_user:' + user_id
 			/* lordstone: check if dem is already cached in redis */
 			console.log('DEBUG: check dem_index exists');
@@ -82,24 +84,22 @@ module.exports = function(db, redis)
 					if(blob_mark.status == 'completed')
 					{
 						/* lordstone: if the backend job is completed */
-						redis.get(key, function(err, result)
-						{
-							// if it is cached already in redis
-							res.writeHead(200, {
-								'Content-Type': 'application/x-bzip2'	
-							});
-							console.log('dem length:' + result.length);
-							res.write(result);
-							res.end();
-							redis.del(key);
-							redis.del(key + '_mark');
-						});
-					}else if(blob_mark.status == 'wait'){
+						getDemFromRedis(res, key);
+					}
+					else if(blob_mark.status == 'wait')
+					{
 						/* lordstone: if the backend job is waiting */
-						res.json({
-							status: 'wait'
-						});
-					}else{
+						if(is_sync){
+							waitGetdem(res, key);
+						}
+						else
+						{	res.json({
+								status: 'wait'
+							});
+						}
+					}
+					else
+					{
 						/* all other status is abnormal, delete the mark */
 						redis.del(key + '_mark');
 						res.json({
@@ -131,10 +131,18 @@ module.exports = function(db, redis)
 					}, function(err, job)
 					{
 						console.log('DEBUG add done sQueue(get)' + dem_index);
-						res.json({
-							job: JSON.stringify(job),
-							status: 'wait'
-						});
+
+						if(is_sync)
+						{
+							waitGetdem(res, key);
+						}
+						else
+						{
+							res.json({
+								job: JSON.stringify(job),
+								status: 'wait'
+							});
+						}
 					});
 				}
 			});
@@ -142,6 +150,52 @@ module.exports = function(db, redis)
 			res.send('err, need to log in');
 		}
 	});
+
+	function waitGetdem(res, key)
+	{
+		var poll = setInterval(function()
+		{
+			redis.get(key + '_mark', function(err, result){
+				if(err)
+				{
+					console.error('DEBUG get sync status failed');
+					clearInterval(poll);
+					res.send('Sync job failed: redis issue');
+					return;
+				}
+				var blob_mark = JSON.parse(result);
+				if(blob_mark.status == 'completed')
+				{
+					clearInterval(poll);
+					getDemFromRedis(res, key);
+				}
+				else if(blob_mark.status == 'error')
+				{
+					console.error('DEBUG get sync status failed');
+					clearInterval(poll);
+					res.send('Sync job failed');
+					return;
+				}
+				
+			});
+		}, 2000);
+	}
+
+	function getDemFromRedis(res, key)
+	{
+		redis.get(key, function(err, result)
+		{
+			// if it is cached already in redis
+			res.writeHead(200, {
+				'Content-Type': 'application/x-bzip2'	
+			});
+			console.log('dem length:' + result.length);
+			res.write(result);
+			res.end();
+			redis.del(key);
+			redis.del(key + '_mark');
+		});
+	}
 
 	return storedem;
 };
