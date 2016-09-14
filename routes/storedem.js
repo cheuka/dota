@@ -65,6 +65,8 @@ module.exports = function(db, redis)
 			var dem_index = req.query.dem_index;
 			var is_sync = req.query.sync || null;
 
+			console.log('DEBUG is_sync:' + is_sync);
+
 			var key = 'upload_blob:' + dem_index + '_user:' + user_id
 			/* lordstone: check if dem is already cached in redis */
 			console.log('DEBUG: check dem_index exists');
