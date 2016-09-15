@@ -24,11 +24,12 @@ function fetchProMatches(job, cb)
             return cb(err);
         }
 
-        var leagueids = []; // container for leagues plan to request
+        var leagueids = [4664]; // container for leagues plan to request
 
         var last_league = require('fs').readFileSync('last_league.txt').toString();
         console.log("last_leadgue" + last_league);
 
+/*
         if (last_league === "-1") // fetch from the begining
         {
             leagueids = data.result.leagues;
@@ -48,9 +49,8 @@ function fetchProMatches(job, cb)
                     lneed_fetch = true;
                 }
             }
-        }
+*/
 
-        //console.log("league_ids: " + leagueids);
         //iterate through leagueids and use getmatchhistory to retrieve matches for each
         async.eachSeries(leagueids, function(leagueid, cb)
         {
@@ -93,16 +93,14 @@ function fetchProMatches(job, cb)
                     if (body.result)
                     {
                         var match = body.result;
-                        match.parse_status = 2; // this is to skip parse
+                        //match.parse_status = 2; // this is to skip parse
+                        match.parse_status = 0;
                         insertMatch(db, redis, match,
                         {
                             type: "api",
                             skipCacheUpdate: true,
                             attempts: 1,
-                        }, function(err)
-                        {
-                            return cb2(err);
-                        });
+                        }, waitParse);
                     }
 
                     function waitParse(err, job2)
