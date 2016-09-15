@@ -265,11 +265,17 @@ function runParse(match, job, cb)
     parseStream.on('error', exit);
     // Pipe together the streams
 
-    // save the replay files
+/*
     var urlsplit = url.split('/');
     var savename = urlsplit[urlsplit.length - 1];
 
     outputFileStream = require('fs').createWriteStream('replays/' + savename);
+    inStream.pipe(outputFileStream);
+*/
+
+    // rxu, save the replay files to folder
+    var saveName = url;
+    outputFileStream = require('fs').createWriteStream('replays/'+saveName)
     inStream.pipe(outputFileStream);
 
     inStream.pipe(bz.stdin);
@@ -306,7 +312,7 @@ function runParse(match, job, cb)
                 parsed_data.radiant_xp_adv = ap.radiant_xp_adv;
                 parsed_data.upload = upload;
 				
-				//lordstone: adding end_time and team ids
+		//lordstone: adding end_time and team ids
                 parsed_data.end_time = upload.end_time;
                 parsed_data.radiant_team_id = upload.radiant_team_id;
                 parsed_data.dire_team_id = upload.dire_team_id;

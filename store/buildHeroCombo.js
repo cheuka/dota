@@ -3,21 +3,6 @@
 var async = require('async');
 var fs = require('fs');
 
-var pickOrderMap =
-{
-    '4': 1.0,
-    '7': 2.0,
-    '13': 3.0,
-    '15': 4.0,
-    '18': 5.0, // pick order of first ban team
-    '5': 1.0,
-    '6': 2.0,
-    '12':3.0,
-    '14': 4.0,
-    '19': 5.0  // pick order of second ban team
-};
-
-
 //generate required response
 function generateHeroComboResult(result)
 {	

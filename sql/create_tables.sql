@@ -196,3 +196,20 @@ CREATE TABLE team_match(
 	version varchar(30),
 	end_time bigint
 );
+
+
+
+CREATE TABLE fetch_team_match(
+  team_id bigint,
+  match_id bigint,
+  PRIMARY KEY (team_id, match_id),
+  is_fetched boolean,
+  is_dem_persisted boolean
+);
+
+CREATE TABLE fetch_team_league(
+  team_id bigint,
+  league_id integer,
+  PRIMARY KEY (team_id, league_id),
+  is_fetched boolean
+)
