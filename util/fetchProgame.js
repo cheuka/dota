@@ -14,7 +14,7 @@ var pQueue = queue.getQueue('parse');
 module.exports = function(db, cb)
 {
 	console.log('fetch pro games by team');
-	async.eachSeries(contants.common_teams, function(team, cb)
+	async.eachSeries(constants.common_teams, function(team, cb)
 	{
 		var team_id = team.team_id;
 		var url = generateJob("api_teaminfo",
@@ -28,7 +28,7 @@ module.exports = function(db, cb)
 	    	var league_ids = [];
 	    	for (var key in team)
 	    	{
-	    		if (key.IndexOf('league_id_') != -1)
+	    		if (key.indexOf('league_id_') != -1)
 	    		{
 	    			league_ids.push(team[key]);
 	    		}
@@ -44,7 +44,8 @@ module.exports = function(db, cb)
                 })
 	            .asCallback(function(err, result)
 	            {
-	            	if (result && result[0].is_fetched)
+			console.log(result);
+	            	if (result.length > 0 && result[0].is_fetched)
 	            	{
 	            		return cb();
 	            	}
@@ -54,7 +55,7 @@ module.exports = function(db, cb)
 		                leagueid: league_id
 		            }).url;
 
-	            	getPage(url, leagueid, team_id, cb);
+	            	getPage(url, league_id, team_id, cb);
 	            });
 	    	}, function(err)
 	    	{
@@ -76,8 +77,9 @@ module.exports = function(db, cb)
 	                	'match_id': match.match_id
 	                }).asCallback(function(err, result)
 	                {
-	                	if (result && result[0].is_fetched)
+	                	if (result.length > 0 && result[0].is_fetched)
 	                	{
+					console.log('this match has been fetched');
 	                		return cb();
 	                	}
 
@@ -112,7 +114,7 @@ module.exports = function(db, cb)
 		                            attempts: 1,
 		                        }, waitParse);
 		                    }
-		                }
+		                });
 
 		                function waitParse(err, job)
 		                {
@@ -130,7 +132,7 @@ module.exports = function(db, cb)
 	                                {
 	                                	job.getState().then(function(state)
 	                                	{
-	                                		console.log("waiting for parse job %s, currently in %s", job2.jobId, state);
+	                                		console.log("waiting for parse job %s, currently in %s", job.jobId, state);
 	                                        if (state === "completed")
 	                                        {
 	                                            clearInterval(poll);
@@ -163,32 +165,32 @@ module.exports = function(db, cb)
 	    		}, function(err)
 	    		{
 	    			if (data.result.results_remaining)
-	                {
-		    			var url2 = generateJob("api_history",
-	                    {
-	                        leagueid: leagueid,
-	                        start_at_match_id: data.result.matches[data.result.matches.length - 1].match_id - 1,
-	                    }).url;
-	                    getPage(url2, leagueid, cb);
-	                }
-	                else
-	                {
-	                	//finish one league, update the database
-	                	var tl = {
-	                		team_id: team_id,
-	                		league_id: leagueid,
-	                		is_fetched: true
-	                	};
-	                	
-	                	queries.upsert(db, 'fetch_team_league', tl, 
 	                	{
-	                		team_id: tl.team_id,
-	                		league_id:  tl.league_id
-	                	}, cb);
-	                }
+		    			var url2 = generateJob("api_history",
+	                    		{
+	                        	leagueid: leagueid,
+	                        	start_at_match_id: data.result.matches[data.result.matches.length - 1].match_id - 1,
+	                    		}).url;
+	                    		getPage(url2, leagueid, cb);
+	                	}
+	                	else
+	                	{
+	                		//finish one league, update the database
+	                		var tl = {
+	                			team_id: team_id,
+	                			league_id: leagueid,
+	                			is_fetched: true
+	                		};
+	                	
+	                		queries.upsert(db, 'fetch_team_league', tl, 
+	                		{
+	                			team_id: tl.team_id,
+	                			league_id:  tl.league_id
+	                		}, cb);
+	                	}
 	    		});
-			}
-    	};
+			});
+    	}
 
 	});
 }
