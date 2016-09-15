@@ -21,7 +21,8 @@ var processParsedData = require('../processors/processParsedData');
 var processMetadata = require('../processors/processMetadata');
 var processExpand = require('../processors/processExpand');
 var startedAt = new Date();
-var request = require('request');
+//var request = require('request');
+var request = require('requestretry');
 var cp = require('child_process');
 var progress = require('request-progress');
 var stream = require('stream');
@@ -198,7 +199,8 @@ function runParse(match, job, cb)
     // Streams
     var inStream = progress(request(
     {
-        url: url
+        url: url,
+        maxAttempts: 10,
     }));
     inStream.on('progress', function(state)
     {
@@ -226,6 +228,7 @@ function runParse(match, job, cb)
     else
     {
         var str = stream.PassThrough();
+
         bz = {
             stdin: str,
             stdout: str
@@ -261,6 +264,14 @@ function runParse(match, job, cb)
     parseStream.on('end', exit);
     parseStream.on('error', exit);
     // Pipe together the streams
+
+    // save the replay files
+    var urlsplit = url.split('/');
+    var savename = urlsplit[urlsplit.length - 1];
+
+    outputFileStream = require('fs').createWriteStream('replays/' + savename);
+    inStream.pipe(outputFileStream);
+
     inStream.pipe(bz.stdin);
     bz.stdout.pipe(parser.stdin);
     parser.stdout.pipe(parseStream);
