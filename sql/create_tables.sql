@@ -210,5 +210,6 @@ CREATE TABLE fetch_team_match(
 CREATE TABLE fetch_team_league(
   team_id bigint,
   league_id integer,
+  PRIMARY KEY (team_id, league_id),
   is_fetched boolean
 )

@@ -37,17 +37,21 @@ module.exports = function(db, cb)
 	    	async.eachSeries(league_ids, function(league_id, cb)
 	    	{
 	            // first, check if this league has been fetched for the team
-	            db.table('fetch_team_league').select('is_fetched').where('team_id', team_id)
+	            db.table('fetch_team_league').select('is_fetched').where(
+                {
+	            	'team_id': team_id,
+                	'league_id': league_id
+                })
 	            .asCallback(function(err, result)
 	            {
-	            	if (result.is_fetched)
+	            	if (result && result[0].is_fetched)
 	            	{
 	            		return cb();
 	            	}
 
 	            	var url = generateJob("api_history",
 		            {
-		                leagueid: leagueid
+		                leagueid: league_id
 		            }).url;
 
 	            	getPage(url, leagueid, team_id, cb);
@@ -72,7 +76,7 @@ module.exports = function(db, cb)
 	                	'match_id': match.match_id
 	                }).asCallback(function(err, result)
 	                {
-	                	if (result.is_fetched)
+	                	if (result && result[0].is_fetched)
 	                	{
 	                		return cb();
 	                	}
@@ -95,6 +99,12 @@ module.exports = function(db, cb)
 		                    if (body.result)
 		                    {
 		                        var match = body.result;
+
+		                        if (match.radiant_team_id !== team_id && match.dire_team_id !== team_id)
+		                        {
+		                        	return cb();
+		                        }
+
 		                        match.parse_status = 0;
 		                        insertMatch(db, redis, match,
 		                        {
@@ -128,11 +138,15 @@ module.exports = function(db, cb)
 	                                            var tm = {
 	                                            	team_id: team_id,
 	                                            	match_id: match.match_id,
-	                                            	is_fetched: 't',
-	                                            	is_dem_persisted: 'f'
+	                                            	is_fetched: true,
+	                                            	is_dem_persisted: false
 	                                            };
 
-	                                            queries.upsert(db, 'fetch_team_match', tm, cb);
+	                                            queries.upsert(db, 'fetch_team_match', tm, 
+	                                            {
+	                                            	team_id: tm.team_id,
+	                                            	match_id: tm.match_id
+	                                            }, cb);
 	                                        }
 	                                        else if (state !== "active" && state !== "waiting")
 	                                        {
@@ -162,13 +176,18 @@ module.exports = function(db, cb)
 	                	//finish one league, update the database
 	                	var tl = {
 	                		team_id: team_id,
-	                		leagueid: leagueid,
-	                		is_fetched: 't'
+	                		league_id: leagueid,
+	                		is_fetched: true
 	                	};
 	                	
-	                	queries.upsert(db, 'fetch_team_league', tl, cb);
+	                	queries.upsert(db, 'fetch_team_league', tl, 
+	                	{
+	                		team_id: tl.team_id,
+	                		league_id:  tl.league_id
+	                	}, cb);
 	                }
 	    		});
+			}
     	};
 
 	});
