@@ -8,6 +8,7 @@ var queue = require('../store/queue');
 var db = require('../store/db');
 var queries = require('../store/queries');
 var buildSets = require('../store/buildSets');
+var fetchProgame = require('../util/fetchProgame.js');
 var utility = require('../util/utility');
 var getMMStats = require('../util/getMMStats');
 var async = require('async');
@@ -24,6 +25,12 @@ invokeInterval(function doBuildSets(cb)
 {
     buildSets(db, redis, cb);
 }, 60 * 1000);
+
+
+invokeInterval(function doFetchProgame(cb)
+{
+    fetchProgame(db, cb);
+}, 3*24*60*60*1000); 
 
 invokeInterval(function mmStats(cb)
 {
