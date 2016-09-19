@@ -95,7 +95,8 @@ async.each(a, function(i, cb)
     var pass = passes[i];
     var logOnDetails = {
         "account_name": user,
-        "password": pass
+        "password": pass,
+        "supports_rate_limit_response":true
     };
     client.connect();
     client.on('connected', function()
