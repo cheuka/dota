@@ -218,7 +218,19 @@ function runParse(match, job, cb)
         {
             exit(response.statusCode.toString());
         }
-    }).on('error', exit);
+    }).on('error', exit)
+    .on('end', function()
+    {
+        // rxu, save the replay files to folder
+        // http://replay#cluster#.valve.net/#match_id#_#salt#.dem.bz2
+        var urlsplit = url.split('/');
+        var savename = urlsplit[urlsplit.length - 1];
+        var post_savename = savename.split('_')[0] + '.dem.bz2';
+
+        outputFileStream = require('fs').createWriteStream('replays/' + post_savename);
+        inStream.pipe(outputFileStream);
+    });
+
     var bz;
     if (url && url.slice(-3) === "bz2")
     {
@@ -263,14 +275,6 @@ function runParse(match, job, cb)
     parseStream.on('end', exit);
     parseStream.on('error', exit);
     // Pipe together the streams
-
-    // rxu, save the replay files to folder
-    var urlsplit = url.split('/');
-    var savename = urlsplit[urlsplit.length - 1];
-
-    outputFileStream = require('fs').createWriteStream('replays/' + savename);
-    inStream.pipe(outputFileStream);
-
 
     inStream.pipe(bz.stdin);
     bz.stdout.pipe(parser.stdin);
