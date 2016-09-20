@@ -39,7 +39,16 @@
       "group": "storedem",
       "exec_mode": "cluster",
       "instances": 1
+    },	
+	{
+      "script": "svc/manta.js",
+      "watch": false, 
+      "ignore_watch": ["node_modules", "public", "views"],
+      "group": "manta",
+      "exec_mode": "cluster",
+      "instances": 1
     }
+
 /*
     {
       "script": "svc/retriever.js",
