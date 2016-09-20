@@ -1096,7 +1096,8 @@ function insertMantaMatch(db, redis, match, cb)
 	var user_id = match.user_id;
 	var is_public = match.is_public;
 	var upload_time = match.upload_time;
-	var replay_blob_key = match.replay_blob_key
+	var replay_blob_key = match.replay_blob_key;
+	var dem_index = match.dem_index;
 
 	db
 	.table('manta')
@@ -1104,6 +1105,8 @@ function insertMantaMatch(db, redis, match, cb)
 		user_id: user_id,
 		is_public: is_public,
 		upload_time: upload_time,
+		dem_index: dem_index,
+		replay_blob_key: replay_blob_ley,
 		content: JSON.stringify(match.upload)
 	})
 	.asCallback(function(err){

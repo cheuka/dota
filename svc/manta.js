@@ -26,11 +26,11 @@ var processMantaResults = require('../util/manta').processMantaResults;
 
 if(config.ENABLE_MANTA == true)
 {
-	// console.log('sQueue ready');
+	console.log('mQueue ready');
 	mQueue.process(processManta);
 }
 
-function processManta(job, cb)
+function processManta(job, done)
 {	
 	/* lordstone:
 		step 1: get all info from payload
@@ -39,17 +39,19 @@ function processManta(job, cb)
 		step 4:	process the output stream and store into variables
 		step 5: store the variables into postgres db
 	*/
+	console.log("manta job: %s", job.jobId);
 	if(!job || !job.data || !job.data.payload){
 		console.log('MANTA: err: missing job data payload');
-		return cb('missing job context');
+		return done('missing job context');
 	}
-
+	console.log('DEBUG step 1: load payload');
 	var match = job.data.payload;
 	try{
 		async.series(
 		{
 			"getDataSource": function(cb)
 			{
+				console.log('DEBUG step 2: get data source');
 				if (match.dem_index)
 				{
                 	match.url = "http://localhost:" + config.PARSER_PORT + "/redis/" + match.dem_index;
@@ -67,11 +69,14 @@ function processManta(job, cb)
 			},
 			"runParse": function(cb)
 			{
+				console.log('DEBUG step 3: run parse');
 				runParse(match, job, function(err, parsed_data)
 				{
+
 					console.log('DEBUG end of parser, storing data');
 					if (err)
 					{
+						console.error('Manta err:' + err);
 						return cb(err);
 					}
 					// process parsed_data
@@ -79,6 +84,7 @@ function processManta(job, cb)
 					parsed_data.upload_time = match.upload_time;
 					parsed_data.replay_blob_key = match.replay_blob_key;
 					parsed_data.is_public = match.is_public;
+					parsed_data.dem_index = match.dem_index;
 					if (match.replay_blob_key)
 					{
 						deleteBlobAttempt(match.replay_blob_key);
@@ -97,7 +103,8 @@ function processManta(job, cb)
 			{
 				console.error(err.stack || err);
 			}
-			return cb(err, match.match_id);
+			console.log('Manta job finished');
+			return done(err, match.match_id);
 		});
 	}
 	catch(e)
@@ -115,7 +122,7 @@ function deleteBlobAttempt(key)
 		result = JSON.parse(result);
 		if(result)
 		{
-			var on_use_count = 0;
+			var on_user_count = 0;
 			if(result.storedem)
 				on_user_count += 1;
 			if(result.parse)
@@ -129,7 +136,7 @@ function deleteBlobAttempt(key)
             else
             {
                 console.log('blob still in use in storedem');
-                result.removeChild('manta');
+                delete result['manta'];
                 redis.set('upload_blob_mark:' + key, JSON.stringify(result));
             }
         }

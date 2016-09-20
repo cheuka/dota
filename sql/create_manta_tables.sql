@@ -7,8 +7,11 @@ CREATE TABLE manta (
 		REFERENCES user_list(user_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
-	match_id bigint NOT NULL,  -- for now, not linked to the main matches table
-	PRIMARY KEY(user_id, match_id),
+	dem_index varchar(255) NOT NULL,
+	PRIMARY KEY(user_id, dem_index),
 	replay_blob_key varchar(255),
+	is_public boolean,
+	upload_time bigint,
+	match_id bigint NOT NULL,  -- for now, not linked to the main matches table
 	content json
 );

@@ -222,12 +222,12 @@ module.exports = function(db, redis, cassandra)
 				if(config.ENABLE_STOREDEM == true || config.ENABLE_MANTA == true)
 				{
 					var mark = {
-						parsing: true
+						parse: true
 					};
 					if(config.ENABLE_STOREDEM == true)
-						mark.demstoring = true;
+						mark.storedem = true;
 					if(config.ENABLE_MANTA == true)
-						mark.mantaparsing = true;
+						mark.manta = true;
 					var mark_string = JSON.stringify(mark);
 					redis.setex('upload_blob_mark:' + key, 60 * 60, mark_string);
 				}
@@ -306,24 +306,26 @@ module.exports = function(db, redis, cassandra)
 						{
 							return cb();
 						}            
-
 					},
 					"addToMantaQueue": function(cb)
 					{
+						console.log('DEBUG MANTA enable:' + config.ENABLE_MANTA);
 						if(config.ENABLE_MANTA == true)
 						{
+							console.log('Added to manta queue');
 							var manta_match = {
 								user_id: match_i.user_id,
 								is_public: match_i.is_public,
 								upload_time: match_i.upload_time,
 								replay_blob_key: match_i.replay_blob_key,
+								dem_index: match_i.dem_index,
 							};
 		                	queue.addToQueue(mQueue, manta_match,
 	    		            {
     	        		        attempts: 1
 		        	        }, function(err, job)
         		    	    {
-								console.log('DEBUG add done mQueue:' + match_i.replay_blob_key);
+								console.log('add done mQueue:' + match_i.replay_blob_key);
 								return cb();
 	            		    });
 						}

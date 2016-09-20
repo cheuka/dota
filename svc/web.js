@@ -198,10 +198,8 @@ app.use(function sessionAuth(req, res, next)
 		var log_token = req.session.log_token ? req.session.log_token : null;
 		cheuka_session.userAuth(redis, user_id, log_token, function(result){
 			if(result === true){
-				// console.log('DEBUG:check successfully');
 				next();
 			}else{
-				// console.log('DEBUG:result is no true');
 				req.session = null;
 				res.redirect('/');
 			}
@@ -302,7 +300,6 @@ app.route('/register').post(function(req, res, next){
 			};
 			cheuka_session.register(db, new_user, function(result)
 			{
-				//console.log('res:' + result);
 				if(result == 'success'){
 					req.session.user = user_id;
 					res.redirect('/');
@@ -375,9 +372,8 @@ app.route('/').post(function(req, res, next)
 		var password = formitems['password'];
 		cheuka_session.checkUser(db, redis, user_id, password, function(msg, t)
 		{ 
-			console.log('DEBUG: msg:' + msg + '.t:' + JSON.stringify(t));
 			if(msg == 'success'){
-				console.log('DEBUG: logged in!!!!');
+				console.log('user:' + user_id + ' log in');
 				req.session.user = t.user_id;
 				req.session.log_token = t.log_token;
 				res.redirect('/');

@@ -148,7 +148,7 @@ function deleteBlobAttempt(key){
 			result = JSON.parse(result);	
 			if(result)
 			{
-				var on_use_count = 0;
+				var on_user_count = 0;
 				if(result.storedem)
 					on_user_count += 1;
 				if(result.manta)
@@ -162,7 +162,7 @@ function deleteBlobAttempt(key){
 				else
 				{
 					console.log('blob still in use in storedem');
-					result.removeChild('parse');
+					delete result['parse'];
 					redis.set('upload_blob_mark:' + key, JSON.stringify(result));
 				}
 			}
