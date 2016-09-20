@@ -17,9 +17,11 @@ var storeMantaResult = queries.storeMantaResult;
 var getDem = queries.getDem;
 var async = require('async');
 var request = require('request');
-
-// lordstone: just for debug
-var fs = require('fs');
+var utility = require('../util/utility');
+var getReplayUrl = require('../util/getReplayUrl');
+var bodyParser = require('body-parser');
+var ndjson = require('ndjson');
+var insertMantaMatch = queries.insertMantaMatch;
 
 if(config.ENABLE_MANTA == true)
 {
@@ -27,208 +29,235 @@ if(config.ENABLE_MANTA == true)
 	mQueue.process(processManta);
 }
 
-function doManta(payload, done)
+function processManta(job, cb)
 {	
+	/* lordstone:
+		step 1: get all info from payload
+		step 2: fetch raw dem data from redis
+		step 3: launch the child process and set up stdin and stdout and get the output stream
+		step 4:	process the output stream and store into variables
+		step 5: store the variables into postgres db
+	*/
+	if(!job || !job.data || !job.data.payload){
+		console.log('MANTA: err: missing job data payload');
+		return cb('missing job context');
+	}
+
+	var match = job.data.payload;
+	try{
+		async.series(
+		{
+			"getDataSource": function(cb)
+			{
+				if (match.dem_index)
+				{
+                	match.url = "http://localhost:" + config.PARSER_PORT + "/redis/" + match.dem_index;
+	                cb();
+				}
+				else if (match.replay_blob_key)
+            	{
+                	match.url = "http://localhost:" + config.PARSER_PORT + "/redis/" + match.replay_blob_key;
+	                cb();
+    	        }
+        	    else
+            	{
+                	getReplayUrl(db, redis, match, cb);
+	            }
+			},
+			"runParse": function(cb)
+			{
+				runParse(match, job, function(err, parsed_data)
+				{
+					console.log('DEBUG end of parser, storing data');
+					if (err)
+					{
+						return cb(err);
+					}
+					// process parsed_data
+					parsed_data.user_id = match.user_id;
+					parsed_data.upload_time = match.upload_time;
+					parsed_data.replay_blob_key = match.replay_blob_key;
+					parsed_data.is_public = match.is_public;
+					if (match.replay_blob_key)
+					{
+						deleteBlobAttempt(match.replay_blob_key);
+						insertUploadedParse(parsed_data, cb);
+					}
+					else
+					{
+						insertStandardParse(parsed_data, cb);
+					}
+				});
+			}
 	
+		}, function(err)
+		{
+			if(err)
+			{
+				console.error(err.stack || err);
+			}
+			return cb(err, match.match_id);
+		});
+	}
+	catch(e)
+	{
+		console.error('MANTA ERR:' + e);
+		return done(e);
+	}
+}
+
+function deleteBlobAttempt(key)
+{
+	redis.get('upload_blob_mark:' + key, function(err, result)
+	{
+		console.log('check blob in parser:' + result);
+		result = JSON.parse(result);
+		if(result)
+		{
+			var on_use_count = 0;
+			if(result.storedem)
+				on_user_count += 1;
+			if(result.parse)
+				on_user_count += 1;
+			if (on_user_count === 0)
+			{
+                console.log('Safely delete blob');
+                redis.del("upload_blob:" + key);
+                redis.del("upload_blob_mark:" + key);
+            }
+            else
+            {
+                console.log('blob still in use in storedem');
+                result.removeChild('manta');
+                redis.set('upload_blob_mark:' + key, JSON.stringify(result));
+            }
+        }
+        else
+        {
+            console.log('No relevant redis record. Skipping');
+        }
+    });
+} // end of deleteAttempt
+
+function insertUploadedParse(match, cb)
+{
+	console.log('insertMatch');
+	insertMantaMatch(db, redis, match,
+	{
+		type: "parsed"
+	}, cb);
+}
+
+function insertStandardParse(match, cb)
+{
+    console.log('insertMatch');
+    insertMantaMatch(db, redis, match,
+    {
+        type: "parsed"
+    }, cb);
+}
+
+
+function runParse(match, job, cb)
+{
+	var entries = [];
+	var exited = false;
+	var incomplete = "incomplete";
 	var timeout = setTimeout(function()
 	{
 		exit('timeout');
 	}, 300000);
 
-	var url;
-	var blob;
-	var dem;
-	console.log('mQueue process manta parse');
-	
-	try{
-		console.log('start try');
-		dem = {
-			user_id: payload.user_id,
-			dem_index: payload.dem_index,
-			is_public: payload.is_public,
-			upload_time: payload.upload_time,
-			replay_blob_key: payload.replay_blob_key,
-			file_name: payload.file_name
-		};
-
-		console.log('STOREDEM finished getDemInfo');
-		// lordstone: use the parser module to get raw match data
-		url = "http://localhost:" + config.PARSER_PORT + "/redis/" + dem.replay_blob_key;
-		console.log('STOREDEM finished getDataSource');
-
-		var bz = spawn("bzip2");
-		bz.stdin.on('error', exit);
-		bz.stdout.on('error', exit);
-
-		console.log('STOREDEM finished setUps');
-		var inStream = progress(request(
+	var url = match.url;
+	var inStream = progress(request(
+	{
+		url: url
+	}));
+	inStream.on('progress', function(state)
+	{
+		console.log(JSON.stringify(
 		{
-			url: url
+			url: url,
+			state: state	
 		}));
-
-		inStream.on('progress', function(state)
+		if (job)
 		{
-			console.log(JSON.stringify(
+			job.progress(state.percentage * 100);
+		}
+	}).on('response', function(response)
+	{
+		if(response.statusCode !== 200)
+		{
+			exit(response.statusCode.toString());
+		}
+	}).on('error', exit);
+
+	var bz;
+    if (url && url.slice(-3) === "bz2")
+    {
+        bz = spawn("bunzip2");
+    }
+    else
+    {
+        var str = stream.PassThrough();
+        bz = {
+            stdin: str,
+            stdout: str
+        };
+    }
+	bz.stdin.on('error', exit);
+	bz.stdout.on('error', exit);
+
+	var manta_parser = spawn(config.MANTA_PATH);
+	manta_parser.stdin.on('error', exit);
+	manta_parser.stdout.on('error', exit);
+	manta_parser.stderr.on('data', function printStdErr(data)
+	{
+		console.log(data.toString());
+	});
+
+	var parseStream = ndjson.parse();	
+	parseStream.on('data', function handleStream(e)
+	{
+		if (e){
+			incomplete = false;
+		}
+		entries.push(e);
+	});
+	parseStream.on('end', exit)
+	parseStream.on('error', exit);
+	// pipe together the streams
+	inStream.pipe(bz.stdin);
+	bz.stdout.pipe(manta_parser.stdin);
+	manta_parser.stdout.pipe(parseStream);
+
+	function exit(err)
+	{
+		if (exited)
+		{	
+			return;
+		}
+		exited = true;
+		err = err || incomplete;
+		clearTimeout(timeout);
+		if (err)
+		{
+			return cb(err);
+		}
+		else
+		{
+			try
 			{
-				url: url,
-				state: state	
-			}));
-		}).on('response', function(response)
-		{
-			if(response.statusCode !== 200)
+				console.time('manta parse');
+				var parsed_data = processMantaResults(entries);
+				console.timeEnd('manta parse');
+				return cb(err, parsed_data);
+			}// end try
+			catch (e)
 			{
-				exit(response.statusCode.toString());
+				return cb(e);
 			}
-		}).on('error', exit);
-		
-		inStream.pipe(bz.stdin);
-
-		var midStream = stream.PassThrough();
-		bz.stdout.pipe(midStream);
-		console.log('STOREDEM finished doZip');
-		blob = '';
-		midStream.on('data', function handleStream(e)
-		{
-			// lordstone: escpaed before storing,
-			// when retrieving from db, need to be decoding
-			blob += escape(e);
-		})
-		.on('end', exit)
-		.on('error', exit);
-
-		function exit(err)
-		{
-			if (err)
-			{	
-				return done(err);
-			}
-			else
-			{
-				// wfs.end();
-				console.time('storeDem');
-				console.log('STOREDEM length:' + blob.length);
-				dem.blob = blob;
-				storeDem(dem, db, function(err)
-				{
-					if(err)
-					{
-						console.log('STOREDEM writetoDb err:' + err);
-						done(err);
-					}
-					else
-					{
-
-						console.timeEnd('storeDem');
-						console.log('STOREDEM finished writeToDb');
-						// lordstone: if job done also for parse, del redis portion
-						redis.get('upload_blob_mark:' + dem.replay_blob_key, function(err, result)
-						{
-							console.log('check blob in storedem:' + result);
-							result = JSON.parse(result);
-							if(result)
-							{
-								if(result.parse_done == true)
-								{
-									console.log('Safely delete blob');
-									redis.del('upload_blob:' + dem.replay_blob_key);
-									redis.del('upload_blob_mark:' + dem.replay_blob_key);
-								}
-								else	
-								{
-									console.log('blob still in use in parse');
-									result.storedem_done = true;
-									redis.set('upload_blob_mark:' + dem.replay_blob_key, JSON.stringify(result));
-								}
-							}
-							console.log('Store dem completed');
-							return done();
-						});
-					}
-				});
-			}
-		}// end function exit
-
-	}
-	catch(e)
-	{
-		console.error('STOREDEM ERR:' + e);
-		return done(e);
-	}
-}
-
-function doGetdem(payload, done)
-{
-	// store dem back to redis and inform the requesting ip
-	console.log('DEBUG start get dem job');
-	try{
-
-		var key = 'upload_blob:' + payload.dem_index + '_user:' + payload.user_id;
-
-		var params = {
-			dem_index: payload.dem_index,
-			user_id: payload.user_id
-		};
-
-		getDem(params, db, function(err, result)
-		{
-			if(err)
-			{	
-				redis.set(key + '_mark', JSON.stringify({
-					status: 'error'
-				}));
-				console.error('doGetdem err:' + err);
-				return done(err);
-			}
-			console.log('DEBUG got dem from db in svc');
-			console.log('DEBUG dem length:' + result.blob.length);
-			redis.setex(
-			key,
-			60 * 60,
-			result.blob,
-			function(err){
-				console.log('DEBUG stored dem result into redis');
-				redis.set(key + '_mark', JSON.stringify({
-					status: 'completed'
-				}));
-				done(err);
-			});
-		});	
-	}
-	catch(e)
-	{
-		console.error('doGetdem err:' + e);	
-		redis.set(key + '_mark', JSON.stringify({
-			status: 'error'
-		}));
-
-		return done(e);
-	}
-}
-
-function processManta(job, done)
-{	
-	// lordstone: distinguish between types of jobs	
-    console.log("storedem job: %s", job.jobId);
-	if(!job || !job.data || !job.data.payload){
-		console.log('STOREDEM: err: missing job data payload');
-		return done('missing job context');
-	}
-	var payload = job.data.payload;
-	console.log('TEST payload:' + JSON.stringify(payload));
-
-	var job_type = payload.job_type;
-
-	if(job_type == 'store')
-	{
-		doManta(payload, done);
-	}
-	else if(job_type == 'get')
-	{
-		doGetdem(payload, done);
-	}
-	else
-	{
-		done();
-	}
-}
+		} // end if err
+	}// end function exit
+} // end run Parse
 

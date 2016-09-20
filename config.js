@@ -65,6 +65,7 @@ var defaults = {
     "ENABLE_CASSANDRA_MATCH_STORE_WRITE": "", //set to enable writing match data to cassandra
 	"ENABLE_STOREDEM": "1", //lordstone: store the dem replay to postgres
 	"ENABLE_MANTA": "1", //lordstone: run the manta parser to get stream of dem and parse and store
+	"MANTA_PATH": "manta/dota-parser.dota-parser", //lordstone: set up manta parser path of the executable
 };
 //ensure that process.env has all values in defaults, but prefer the process.env value
 for (var key in defaults)

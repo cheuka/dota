@@ -128,7 +128,7 @@ function doStoredem(payload, done)
 							result = JSON.parse(result);
 							if(result)
 							{
-								if(result.parse_done == true)
+								if(!result.parse && !result.manta)
 								{
 									console.log('Safely delete blob');
 									redis.del('upload_blob:' + dem.replay_blob_key);
@@ -137,7 +137,7 @@ function doStoredem(payload, done)
 								else	
 								{
 									console.log('blob still in use in parse');
-									result.storedem_done = true;
+									result.removeChild('storedem');
 									redis.set('upload_blob_mark:' + dem.replay_blob_key, JSON.stringify(result));
 								}
 							}
