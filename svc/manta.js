@@ -22,6 +22,7 @@ var getReplayUrl = require('../util/getReplayUrl');
 var bodyParser = require('body-parser');
 var ndjson = require('ndjson');
 var insertMantaMatch = queries.insertMantaMatch;
+var processMantaResults = require('../util/manta').processMantaResults;
 
 if(config.ENABLE_MANTA == true)
 {
