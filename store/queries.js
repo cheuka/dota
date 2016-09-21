@@ -1091,6 +1091,34 @@ function getDem(params, db, cb)
 	});
 }
 
+function insertMantaMatch(db, redis, match, cb)
+{	
+	var user_id = match.user_id;
+	var is_public = match.is_public;
+	var upload_time = match.upload_time;
+	var replay_blob_key = match.replay_blob_key;
+	var dem_index = match.dem_index;
+
+	db
+	.table('manta')
+	.insert({
+		user_id: user_id,
+		is_public: is_public,
+		upload_time: upload_time,
+		dem_index: dem_index,
+		replay_blob_key: replay_blob_ley,
+		content: JSON.stringify(match.upload)
+	})
+	.asCallback(function(err){
+		if (err)
+		{
+			return cb(err);
+		}
+		return cb();
+	});
+}
+
+
 module.exports = {
     getSets,
     insertPlayer,
@@ -1110,4 +1138,5 @@ module.exports = {
     searchPlayer,
 	storeDem,
 	getDem,
+	insertMantaMatch,
 };

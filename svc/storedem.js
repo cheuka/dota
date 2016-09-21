@@ -21,7 +21,6 @@ var request = require('request');
 var pg_large = require('../store/pg_large_object');
 
 // lordstone: just for debug
-var fs = require('fs');
 
 if(config.ENABLE_STOREDEM == true)
 {
@@ -106,7 +105,6 @@ function doStoredem(payload, done)
 			}
 			else
 			{
-				// wfs.end();
 				console.time('storeDem');
 				console.log('STOREDEM length:' + blob.length);
 				dem.blob = blob;
@@ -129,7 +127,7 @@ function doStoredem(payload, done)
 							result = JSON.parse(result);
 							if(result)
 							{
-								if(result.parse_done == true)
+								if(!result.parse && !result.manta)
 								{
 									console.log('Safely delete blob');
 									redis.del('upload_blob:' + dem.replay_blob_key);
@@ -138,7 +136,7 @@ function doStoredem(payload, done)
 								else	
 								{
 									console.log('blob still in use in parse');
-									result.storedem_done = true;
+									delete result['storedem'];
 									redis.set('upload_blob_mark:' + dem.replay_blob_key, JSON.stringify(result));
 								}
 							}
@@ -184,16 +182,16 @@ function doGetdem(payload, done)
 			console.log('DEBUG got dem from db in svc');
 			console.log('DEBUG dem length:' + result.blob.length);
 			redis.setex(
-			key,
-			60 * 60,
-			result.blob,
-			function(err){
-				console.log('DEBUG stored dem result into redis');
-				redis.set(key + '_mark', JSON.stringify({
-					status: 'completed'
-				}));
-				done(err);
-			});
+				key,
+				60 * 60,
+				result.blob,
+				function(err){
+					console.log('DEBUG stored dem result into redis');
+					redis.set(key + '_mark', JSON.stringify({
+						status: 'completed'
+					}));
+					done(err);
+				});
 		});	
 	}
 	catch(e)
@@ -216,7 +214,7 @@ function processStoredem(job, done)
 		return done('missing job context');
 	}
 	var payload = job.data.payload;
-	console.log('TEST payload:' + JSON.stringify(payload));
+	// console.log('TEST payload:' + JSON.stringify(payload));
 
 	var job_type = payload.job_type;
 
