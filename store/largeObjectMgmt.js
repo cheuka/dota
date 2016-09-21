@@ -1,65 +1,91 @@
 // lordstone: the pg large utility functions
+var pg_large_man = require('pg-large-object').LargeObjectManager;
 
-function createLargeObject(db_client, man, inStream, cb)
+function createLargeObject(pg, conString,  inStream, cb)
 {
-	db_client.query('BEGIN', function(err, result)
+	pg.connect(conString, function(err, client, done)
 	{
 		if (err)
 		{
-			cb(err);
-			console.error('err in query for lo: ' + err);
-			db_client.emit('error', err);
+			console.error('pg connection failed');
+			return cb('pg failure');
 		}
-		var buffer_size = 16384;
-		man.createAndWritableStream(buffer_size, function(error, oid, stream)
+
+		var man = new pg_large_man(client); 
+
+		client.query('BEGIN', function(err, result)
 		{
 			if (err)
 			{
-				console.log('Unable to create pg_lo');
+				done(err);
+				console.error('err in query for lo: ' + err);
+				client.emit('error', err);
 				return cb(err);
 			}
-			console.log('pg_lo: generated oid: ' + oid);
-			stream.on('finish', function()
+			var buffer_size = 16384;
+			man.createAndWritableStream(buffer_size, function(error, oid, stream)
 			{
-				db_client.query('COMMIT', function()
+				if (err)
 				{
-					console.log('Finish saving it to oid: ' + oid);
-					return cb(null, oid);
+					done(err);
+					console.log('Unable to create pg_lo');
+					return cb(err);
+				}
+				console.log('pg_lo: generated oid: ' + oid);
+				stream.on('finish', function()
+				{
+					client.query('COMMIT', function()
+					{
+						console.log('Finish saving it to oid: ' + oid);
+						return cb(null, oid);
+					});
 				});
-			});
-			inStream.pipe(stream);
-		}); //  end man create
-	}); // end db_client query
+				inStream.pipe(stream);
+			}); //  end man create
+		}); // end client query
+	});
 }
 
-function readLargeObject(db_client, man, outStream, oid, cb)
+function readLargeObject(pg, conString, man, outStream, oid, cb)
 {
-	db_client.query('BEGIN', function(err, result)
+	pg.connect(conString, function(err, client, done)
 	{
 		if (err)
 		{
-			cb(err);
-			console.error('err in query for lo: ' + err);
-			db_client.emit('error', err);
+			console.error('pg connection failed');
+			return cb('pg failure');
 		}
-		var buffer_size = 16384;
-		man.openAndReadableStream(oid, buffer_size, function(error, lo_size, stream)
+
+		var man = new pg_large_man(client); 
+
+		client.query('BEGIN', function(err, result)
 		{
 			if (err)
 			{
-				console.log('Unable to read the old: ' + oid);
+				done(err);
+				console.error('err in query for lo: ' + err);
+				client.emit('error', err);
 				return cb(err);
 			}
-			console.log('pg_lo, size: ' + lo_size);
-			stream.on('end', function()
+			var buffer_size = 16384;
+			man.openAndReadableStream(oid, buffer_size, function(error, lo_size, stream)
 			{
-				console.log('Finish reading from oid: ' + oid);
-				db_client.query('COMMIT', cb);
-			});
-			stream.pipe(outStream);
-		}); //  end man create
-	}); // end db_client query
-
+				if (err)
+				{
+					done(err);
+					console.log('Unable to read the old: ' + oid);
+					return cb(err);
+				}
+				console.log('pg_lo, size: ' + lo_size);
+				stream.on('end', function()
+				{
+					console.log('Finish reading from oid: ' + oid);
+					client.query('COMMIT', cb);
+				});
+				stream.pipe(outStream);
+			}); //  end man create
+		}); // end client query
+	});
 }
 
 module.exports = {

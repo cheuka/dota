@@ -19,10 +19,9 @@ var getDem = queries.getDem;
 var async = require('async');
 var request = require('request');
 
-// lordstone: pg large object vars
-var pg_large = require('../store/pgLargeObject');
-var pg_large_man = pg_large.pg_large_man;
-var pg_large_obj = pg_large.pg_large_obj;
+var pg = require('pg');
+var pg_conString = config.POSTGRES_URL;
+
 var createLargeObject = require('../store/largeObjectMgmt').createLargeObject;
 var readLargeObject = require('../store/largeObjectMgmt').readLargeObject;
 
@@ -88,23 +87,15 @@ function doStoredem(payload, done)
 		}).on('error', exit);
 		
 		inStream.pipe(bz.stdin);
-
 		var midStream = stream.PassThrough();
 		bz.stdout.pipe(midStream);
-/* todelete
-		midStream.on('data', function handleStream(e)
-		{
-			// lordstone: escpaed before storing,
-			// when retrieving from db, need to be decoding
-			blob += escape(e);
-		})
-*/
 		midStream
 			.on('end', exit)
 			.on('error', exit);
-		
+		console.log('Storedem start create');
 		// lordstone: do the actual lo storing
-		createLargeObject(db.client, pg_large_man, midStream, exit);
+		createLargeObject(pg, pg_conString, midStream, exit);
+		console.log('Storedem finished pipings');
 
 		function exit(err, oid)
 		{
@@ -195,7 +186,7 @@ function doGetdem(payload, done)
 				return done(err);
 			}
 			var midStream = stream.PassThrough();
-			readLargeObject(db.client, man, midStream, oid, done);
+			readLargeObject(pg, pg_conString, midStream, oid, done);
 			console.log('DEBUG got dem from db in svc');
 			redis.setex(
 				key,
