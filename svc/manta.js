@@ -23,6 +23,26 @@ var bodyParser = require('body-parser');
 var ndjson = require('ndjson');
 var insertMantaMatch = queries.insertMantaMatch;
 var processMantaResults = require('../util/manta').processMantaResults;
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var fs = require('fs');
+
+app.use(bodyParser.json());
+app.get('/manta/:key', function(req, res, cb)
+{
+    redis.get(new Buffer('upload_blob:' + req.params.key), function(err, result)
+    {
+        if (err)
+        {
+            return cb(err);
+        }
+        res.send(result);
+    });
+});
+app.listen(config.MANTA_PORT);
+//END EXPRESS
+
 
 if(config.ENABLE_MANTA == true)
 {
@@ -52,14 +72,14 @@ function processManta(job, done)
 			"getDataSource": function(cb)
 			{
 				console.log('DEBUG step 2: get data source');
-				if (match.dem_index)
+				if (match.replay_blob_key)
 				{
-                	match.url = "http://localhost:" + config.PARSER_PORT + "/redis/" + match.dem_index;
+                	match.url = "http://localhost:" + config.MANTA_PORT + "/manta/" + match.replay_blob_key;
 	                cb();
 				}
-				else if (match.replay_blob_key)
+				else if (match.dem_index)
             	{
-                	match.url = "http://localhost:" + config.PARSER_PORT + "/redis/" + match.replay_blob_key;
+                	match.url = "http://localhost:" + config.MANTA_PORT + "/manta_dem/" + match.dem_index;
 	                cb();
     	        }
         	    else
@@ -101,6 +121,7 @@ function processManta(job, done)
 		{
 			if(err)
 			{
+				deleteBlobAttempt(match.replay_blob_key);
 				console.error(err.stack || err);
 			}
 			console.log('Manta job finished');
@@ -215,15 +236,17 @@ function runParse(match, job, cb)
     }
 	bz.stdin.on('error', exit);
 	bz.stdout.on('error', exit);
-
-	var manta_parser = spawn(config.MANTA_PATH);
+	var manta_parser = spawn(config.MANTA_PATH, [],
+	{
+		stdio: ['pipe', 'pipe', 'pipe'],
+		encoding: 'utf8'
+	});
 	manta_parser.stdin.on('error', exit);
 	manta_parser.stdout.on('error', exit);
 	manta_parser.stderr.on('data', function printStdErr(data)
 	{
 		console.log(data.toString());
 	});
-
 	var parseStream = ndjson.parse();	
 	parseStream.on('data', function handleStream(e)
 	{
@@ -232,18 +255,22 @@ function runParse(match, job, cb)
 		}
 		entries.push(e);
 	});
-	parseStream.on('end', exit)
+	parseStream.on('end', function()
+	{
+		console.log('Manta finished passing data');
+		exit();
+	});
 	parseStream.on('error', exit);
 	// pipe together the streams
 	inStream.pipe(bz.stdin);
-	bz.stdout.pipe(manta_parser.stdin);
 	manta_parser.stdout.pipe(parseStream);
 
 	function exit(err)
 	{
+		console.log('Manta length of entries: ' + entries.length);
 		if (exited)
 		{	
-			return;
+			return cb();
 		}
 		exited = true;
 		err = err || incomplete;

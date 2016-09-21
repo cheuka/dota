@@ -119,6 +119,7 @@ pQueue.process(1, function(job, cb)
         if (err)
         {
             console.error(err.stack || err);
+			deleteBlobAttempt(match.replay_blob_key);
             /*
             if (err !== "404")
             {
