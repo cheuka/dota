@@ -18,9 +18,14 @@ var storeDem = queries.storeDem;
 var getDem = queries.getDem;
 var async = require('async');
 var request = require('request');
-var pg_large = require('../store/pgLargeObject');
 
-// lordstone: just for debug
+// lordstone: pg large object vars
+var pg_large = require('../store/pgLargeObject');
+var pg_large_man = pg_large.pg_large_man;
+var pg_large_obj = pg_large.pg_large_obj;
+var createLargeObject = require('../store/largeObjectMgmt').createLargeObject;
+var readLargeObject = require('../store/largeObjectMgmt').readLargeObject;
+
 
 if(config.ENABLE_STOREDEM == true)
 {
@@ -86,28 +91,31 @@ function doStoredem(payload, done)
 
 		var midStream = stream.PassThrough();
 		bz.stdout.pipe(midStream);
-		console.log('STOREDEM finished doZip');
-		blob = '';
+/* todelete
 		midStream.on('data', function handleStream(e)
 		{
 			// lordstone: escpaed before storing,
 			// when retrieving from db, need to be decoding
 			blob += escape(e);
 		})
-		.on('end', exit)
-		.on('error', exit);
+*/
+		midStream
+			.on('end', exit)
+			.on('error', exit);
+		
+		// lordstone: do the actual lo storing
+		createLargeObject(db.client, pg_large_man, midStream, exit);
 
-		function exit(err)
+		function exit(err, oid)
 		{
-			if (err)
+			if (err || !oid)
 			{	
-				return done(err);
+				return done(err || 'missing oid');
 			}
 			else
 			{
+				dem.oid = oid;
 				console.time('storeDem');
-				console.log('STOREDEM length:' + blob.length);
-				dem.blob = blob;
 				storeDem(dem, db, function(err)
 				{
 					if(err)
@@ -179,12 +187,20 @@ function doGetdem(payload, done)
 				console.error('doGetdem err:' + err);
 				return done(err);
 			}
+			
+			var oid = result.oid;
+			if (!oid)
+			{
+				console.error('missing oid');
+				return done(err);
+			}
+			var midStream = stream.PassThrough();
+			readLargeObject(db.client, man, midStream, oid, done);
 			console.log('DEBUG got dem from db in svc');
-			console.log('DEBUG dem length:' + result.blob.length);
 			redis.setex(
 				key,
 				60 * 60,
-				result.blob,
+				midStream,
 				function(err){
 					console.log('DEBUG stored dem result into redis');
 					redis.set(key + '_mark', JSON.stringify({

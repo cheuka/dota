@@ -1042,6 +1042,7 @@ function storeDem(dem, db, cb)
 	var upload_time = dem.upload_time;
 	var replay_blob_key = dem.replay_blob_key
 	var file_name = dem.file_name;
+	var oid = dem.oid;
 
 	db
 	.table('dem_storage')
@@ -1051,7 +1052,7 @@ function storeDem(dem, db, cb)
 		is_public: is_public,
 		upload_time: upload_time,
 		file_name: file_name,
-		blob: dem.blob
+		oid: oid
 	})
 	.asCallback(function(err){
 		if (err)
