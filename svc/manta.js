@@ -189,110 +189,115 @@ function insertStandardParse(match, cb)
 
 function runParse(match, job, cb)
 {
-	var entries = [];
-	var exited = false;
-	var incomplete = "incomplete";
-	var timeout = setTimeout(function()
-	{
-		exit('timeout');
-	}, 300000);
-
-	var url = match.url;
-	var inStream = progress(request(
-	{
-		url: url
-	}));
-	inStream.on('progress', function(state)
-	{
-		console.log(JSON.stringify(
+	try{
+		var entries = [];
+		var exited = false;
+		var incomplete = "incomplete";
+		var timeout = setTimeout(function()
 		{
-			url: url,
-			state: state	
+			exit('timeout');
+		}, 60000);
+
+		var url = match.url;
+		var inStream = progress(request(
+		{
+			url: url
 		}));
-		if (job)
+		inStream.on('progress', function(state)
 		{
-			job.progress(state.percentage * 100);
-		}
-	}).on('response', function(response)
-	{
-		if(response.statusCode !== 200)
+			console.log(JSON.stringify(
+			{
+				url: url,
+				state: state	
+			}));
+			if (job)
+			{
+				job.progress(state.percentage * 100);
+			}
+		}).on('response', function(response)
 		{
-			exit(response.statusCode.toString());
-		}
-	}).on('error', exit);
+			if(response.statusCode !== 200)
+			{
+				exit(response.statusCode.toString());
+			}
+		}).on('error', exit);
 
-	var bz;
-    if (url && url.slice(-3) === "bz2")
-    {
-        bz = spawn("bunzip2");
-    }
-    else
-    {
-        var str = stream.PassThrough();
-        bz = {
-            stdin: str,
-            stdout: str
-        };
-    }
-	bz.stdin.on('error', exit);
-	bz.stdout.on('error', exit);
-	var manta_parser = spawn(config.MANTA_PATH, [],
-	{
-		stdio: ['pipe', 'pipe', 'pipe'],
-		encoding: 'utf8'
-	});
-	manta_parser.stdin.on('error', exit);
-	manta_parser.stdout.on('error', exit);
-	manta_parser.stderr.on('data', function printStdErr(data)
-	{
-		console.log(data.toString());
-	});
-	var parseStream = ndjson.parse();	
-	parseStream.on('data', function handleStream(e)
-	{
-		if (e){
-			incomplete = false;
-		}
-		entries.push(e);
-	});
-	parseStream.on('end', function()
-	{
-		console.log('Manta finished passing data');
-		exit();
-	});
-	parseStream.on('error', exit);
-	// pipe together the streams
-	inStream.pipe(bz.stdin);
-	manta_parser.stdout.pipe(parseStream);
+		var bz;
+    	if (url && url.slice(-3) === "bz2")
+	    {
+    	    bz = spawn("bunzip2");
+	    }
+    	else
+	    {
+    	    var str = stream.PassThrough();
+        	bz = {
+            	stdin: str,
+	            stdout: str
+    	    };
+	    }
+		bz.stdin.on('error', exit);
+		bz.stdout.on('error', exit);
 
-	function exit(err)
-	{
-		console.log('Manta length of entries: ' + entries.length);
-		if (exited)
-		{	
-			return cb();
-		}
-		exited = true;
-		err = err || incomplete;
-		clearTimeout(timeout);
-		if (err)
+		var manta_parser = spawn(config.MANTA_PATH, [],
 		{
-			return cb(err);
-		}
-		else
+			stdio: ['pipe', 'pipe', 'pipe'],
+			encoding: 'utf8'
+		});
+
+
+		manta_parser.stdin.on('error', exit);
+		manta_parser.stdout.on('error', exit);
+		manta_parser.stderr.on('data', function printStdErr(data)
 		{
-			try
+			console.log(data.toString());
+		});
+
+		var parseStream = ndjson.parse();	
+		parseStream.on('data', function handleStream(e)
+		{
+			if (e){
+				incomplete = false;
+			}
+			entries.push(e);
+		});
+		parseStream.on('end', function()
+		{
+			console.log('Manta finished passing data');
+			exit();
+		});
+		parseStream.on('error', exit);
+		// pipe together the streams
+		inStream.pipe(bz.stdin);
+		bz.stdout.pipe(manta_parser.stdin);
+		manta_parser.stdout.pipe(parseStream);
+
+		function exit(err)
+		{
+			console.log('Manta length of entries: ' + entries.length);
+			if (exited)
+			{	
+				return cb();
+			}
+			exited = true;
+			err = err || incomplete;
+			clearTimeout(timeout);
+			if (err)
+			{
+				return cb(err);
+			}
+			else
 			{
 				console.time('manta parse');
 				var parsed_data = processMantaResults(entries);
 				console.timeEnd('manta parse');
 				return cb(err, parsed_data);
-			}// end try
-			catch (e)
-			{
-				return cb(e);
-			}
-		} // end if err
-	}// end function exit
+			} // end if err
+		}// end function exit
+	}
+	catch(err)
+	{
+		console.error('runParse err: ' + err);
+		return cb(err);
+	}
 } // end run Parse
 
