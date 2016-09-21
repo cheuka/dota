@@ -18,7 +18,7 @@ var storeDem = queries.storeDem;
 var getDem = queries.getDem;
 var async = require('async');
 var request = require('request');
-var pg_large = require('../store/pg_large_object');
+var pg_large = require('../store/pgLargeObject');
 
 // lordstone: just for debug
 
