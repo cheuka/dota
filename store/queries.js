@@ -1106,7 +1106,7 @@ function insertMantaMatch(db, redis, match, cb)
 		is_public: is_public,
 		upload_time: upload_time,
 		dem_index: dem_index,
-		replay_blob_key: replay_blob_ley,
+		replay_blob_key: replay_blob_key,
 		content: JSON.stringify(match.upload)
 	})
 	.asCallback(function(err){

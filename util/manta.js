@@ -2,7 +2,7 @@
 
 function processMantaResults(e)
 {
-	var match;
+	var match = {};
 	match.upload = e;
 	return match;
 }

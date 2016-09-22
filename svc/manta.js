@@ -171,19 +171,13 @@ function deleteBlobAttempt(key)
 function insertUploadedParse(match, cb)
 {
 	console.log('insertMatch');
-	insertMantaMatch(db, redis, match,
-	{
-		type: "parsed"
-	}, cb);
+	insertMantaMatch(db, redis, match, cb);
 }
 
 function insertStandardParse(match, cb)
 {
     console.log('insertMatch');
-    insertMantaMatch(db, redis, match,
-    {
-        type: "parsed"
-    }, cb);
+    insertMantaMatch(db, redis, match, cb);
 }
 
 
