@@ -12,26 +12,26 @@ var queue = require('../store/queue');
 var pQueue = queue.getQueue('parse');
 
 
-module.exports = function(db, cb)
-{
+module.exports = function(db, cb) {
 	console.log('fetch pro games by team');
     //var common_teams = [111474];
 	//async.eachSeries(common_teams, function(team, cb)
 	//async.eachSeries(constants.common_teams, function(team, next)
-	async.forEachLimit(constants.common_teams, 10, function(team, next)
-	{
+	async.forEachLimit(constants.common_teams, 1, function(team, next) {
 		var team_id = team.team_id;
 		//var team_id = team;
 
-        db.raw('select match_id, is_fetched from fetch_team_match where team_id = ? and start_time > ? order by start_time desc', [team_id, 1470009600])
+        //db.raw('select match_id, is_fetched from fetch_team_match where team_id = ? and start_time > ? order by start_time desc', [team_id, 1470009600])
+        db.select('match_id').from('fetch_team_match').where({
+            'team_id' : team_id,
+            'is_fetched': false
+        }).where('start_time', '>', 1470009600)
+        .orderBy('start_time', 'desc')
         .asCallback(function(err, result) {
             if (!result || err)
                 return next();
  
             async.eachSeries(result, function(match, next2) {
-                if (match.is_fetched) {
-                    return next2();
-                }
                 
                 var job = generateJob("api_details",{
                     match_id: match.match_id
@@ -95,11 +95,12 @@ module.exports = function(db, cb)
                         }, 2000);
                     }
                 }
-
             }, function(err) {
                 return next(); 
-            }
+            });
         });
-	});
+	}, function(err) {
+        return cb(err);
+    });
 }
 

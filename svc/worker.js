@@ -27,10 +27,12 @@ invokeInterval(function doBuildSets(cb)
 }, 60 * 1000);
 
 
+/*
 invokeInterval(function doFetchProgame(cb)
 {
     fetchProgame(db, cb);
 }, 3*24*60*60*1000); 
+*/
 
 invokeInterval(function mmStats(cb)
 {

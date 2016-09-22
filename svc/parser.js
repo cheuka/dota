@@ -266,6 +266,8 @@ function runParse(match, job, cb)
     var post_savename = savename.split('_')[0] + '.dem.bz2';
     var ws = require('fs').createWriteStream('replays/'+post_savename);
     
+    midStream.pipe(ws);
+    /*
     midStream.on('data', function(chunk)
     {
         if (ws.write(chunk) === false)
@@ -283,6 +285,7 @@ function runParse(match, job, cb)
     {
         midStream.resume();
     });
+    */
 
     var bz;
     if (full_url && full_url.slice(-3) === "bz2")
