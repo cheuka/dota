@@ -11,186 +11,95 @@ var insertMatch = queries.insertMatch;
 var queue = require('../store/queue');
 var pQueue = queue.getQueue('parse');
 
+
 module.exports = function(db, cb)
 {
 	console.log('fetch pro games by team');
-	async.eachSeries(constants.common_teams, function(team, cb)
+    //var common_teams = [111474];
+	//async.eachSeries(common_teams, function(team, cb)
+	//async.eachSeries(constants.common_teams, function(team, next)
+	async.forEachLimit(constants.common_teams, 10, function(team, next)
 	{
 		var team_id = team.team_id;
-		var url = generateJob("api_teaminfo",
-	    {
-	        team_id: team_id
-	    }).url;
+		//var team_id = team;
 
-	    getData(url, function(err, data)
-	    {
-	    	var team = data.result.teams[0];
-	    	var league_ids = [];
-	    	for (var key in team)
-	    	{
-	    		if (key.indexOf('league_id_') != -1)
-	    		{
-	    			league_ids.push(team[key]);
-	    		}
-	    	}
+        db.raw('select match_id, is_fetched from fetch_team_match where team_id = ? and start_time > ? order by start_time desc', [team_id, 1470009600])
+        .asCallback(function(err, result) {
+            if (!result || err)
+                return next();
+ 
+            async.eachSeries(result, function(match, next2) {
+                if (match.is_fetched) {
+                    return next2();
+                }
+                
+                var job = generateJob("api_details",{
+                    match_id: match.match_id
+                });
 
-	    	async.eachSeries(league_ids, function(league_id, cb)
-	    	{
-	            // first, check if this league has been fetched for the team
-	            db.table('fetch_team_league').select('is_fetched').where(
+                getData({
+                    url: job.url,
+                    delay: 1000
+                }, function(err, body) {
+                    if (err) {
+                        console.log(err);
+                        return next2();
+                    }
+                    if (body.result) {
+                        var match = body.result;
+
+                        match.parse_status = 0;
+                        insertMatch(db, redis, match, {
+                            type: "api",
+                            attempts: 1,
+                        }, waitParse);
+                    }
+                });
+                
+                function waitParse(err, job)
                 {
-	            	'team_id': team_id,
-                	'league_id': league_id
-                })
-	            .asCallback(function(err, result)
-	            {
-			console.log(result);
-	            	if (result.length > 0 && result[0].is_fetched)
-	            	{
-	            		return cb();
-	            	}
+                    if (err)  {
+                        console.error(err.stack || err);
+                        return next2();
+                    }
 
-	            	var url = generateJob("api_history",
-		            {
-		                leagueid: league_id
-		            }).url;
+                    if (job) {
+                        var poll = setInterval(function() {
+                            pQueue.getJob(job.jobId).then(function(job) {
+                                job.getState().then(function(state) {
+                                    console.log("waiting for parse job %s, currently in %s", job.jobId, state);
+                                    if (state === "completed") {
+                                        clearInterval(poll);
 
-	            	getPage(url, league_id, team_id, cb);
-	            });
-	    	}, function(err)
-	    	{
-	    		cb(err);
-	    	});
+                                        var tm = {
+                                            team_id: team_id,
+                                            match_id: match.match_id,
+                                            is_fetched: true,
+                                        };
 
-	    });
+                                        queries.upsert(db, 'fetch_team_match', tm, {
+                                            team_id: team_id,
+                                            match_id: match.match_id
+                                        }, function(err) {
+                                            console.log(err);
+                                            return next2();
+                                        });
+                                    }
+                                    else if (state !== "active" && state !== "waiting") {
+                                        clearInterval(poll);
+                                        console.log('fetch dem failed or parse failed');
+                                        return next2();
+                                    }
+                                });
+                            });
+                        }, 2000);
+                    }
+                }
 
-	    function getPage(url, leagueid, team_id, cb)
-    	{
-    		getData(url, function(err, data)
-    		{
-    			async.eachSeries(data.result.matches, function(match, cb)
-	            {
-	                console.log('match_id:' + match.match_id);
-	                db.table('fetch_team_match').select('is_fetched').where(
-	                {
-	                	'team_id': team_id,
-	                	'match_id': match.match_id
-	                }).asCallback(function(err, result)
-	                {
-	                	if (result.length > 0 && result[0].is_fetched)
-	                	{
-					console.log('this match has been fetched');
-	                		return cb();
-	                	}
-
-	                	var job = generateJob("api_details",
-		                {
-		                    match_id: match.match_id
-		                });
-
-		                getData(
-		                {
-		                    url: job.url,
-		                    delay: 1000
-		                }, function(err, body)
-		                {
-		                	if (err)
-		                    {
-		                        return cb(err);
-		                    }
-		                    if (body.result)
-		                    {
-		                        var match = body.result;
-
-		                        if (match.radiant_team_id !== team_id && match.dire_team_id !== team_id)
-		                        {
-		                        	return cb();
-		                        }
-
-		                        match.parse_status = 0;
-		                        insertMatch(db, redis, match,
-		                        {
-		                            type: "api",
-		                            attempts: 1,
-		                        }, waitParse);
-		                    }
-		                });
-
-		                function waitParse(err, job)
-		                {
-		                	if (err)
-	                        {
-	                            console.error(err.stack || err);
-	                            return cb(err);
-	                        }
-
-	                        if (job)
-	                        {
-	                            var poll = setInterval(function()
-	                            {
-	                                pQueue.getJob(job.jobId).then(function(job)
-	                                {
-	                                	job.getState().then(function(state)
-	                                	{
-	                                		console.log("waiting for parse job %s, currently in %s", job.jobId, state);
-	                                        if (state === "completed")
-	                                        {
-	                                            clearInterval(poll);
-
-	                                            var tm = {
-	                                            	team_id: team_id,
-	                                            	match_id: match.match_id,
-	                                            	is_fetched: true,
-	                                            	is_dem_persisted: false
-	                                            };
-
-	                                            queries.upsert(db, 'fetch_team_match', tm, 
-	                                            {
-	                                            	team_id: tm.team_id,
-	                                            	match_id: tm.match_id
-	                                            }, cb);
-	                                        }
-	                                        else if (state !== "active" && state !== "waiting")
-	                                        {
-	                                            clearInterval(poll);
-	                                            return cb("failed");
-	                                        }
-	                                	});
-	                                });
-	                            }, 2000);
-	                        }
-		                }
-	                });
-
-	    		}, function(err)
-	    		{
-	    			if (data.result.results_remaining)
-	                	{
-		    			var url2 = generateJob("api_history",
-	                    		{
-	                        	leagueid: leagueid,
-	                        	start_at_match_id: data.result.matches[data.result.matches.length - 1].match_id - 1,
-	                    		}).url;
-	                    		getPage(url2, leagueid, cb);
-	                	}
-	                	else
-	                	{
-	                		//finish one league, update the database
-	                		var tl = {
-	                			team_id: team_id,
-	                			league_id: leagueid,
-	                			is_fetched: true
-	                		};
-	                	
-	                		queries.upsert(db, 'fetch_team_league', tl, 
-	                		{
-	                			team_id: tl.team_id,
-	                			league_id:  tl.league_id
-	                		}, cb);
-	                	}
-	    		});
-			});
-    	}
-
+            }, function(err) {
+                return next(); 
+            }
+        });
 	});
 }
+

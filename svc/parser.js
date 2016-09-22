@@ -40,8 +40,10 @@ var bodyParser = require('body-parser');
 var app = express();
 
 //lordstone:
-
 var cheuka_session = require("../util/cheukaSession");
+
+//var url = require('url');
+//var dns = require('dns');
 
 app.use(bodyParser.json());
 app.get('/', function(req, res)
@@ -80,6 +82,7 @@ pQueue.process(1, function(job, cb)
             }
             else
             {
+                console.log('get replay url');
                 getReplayUrl(db, redis, match, cb);
             }
         },
@@ -195,17 +198,38 @@ function runParse(match, job, cb)
     {
         exit('timeout');
     }, 300000);
-    var url = match.url;
+
+    var full_url = match.url;
     // Streams
-    var inStream = progress(request(
+    console.log('start to fetch dem');
+    
+    //resolve url first
+    //var host = url.parse(full_url).hostname;
+    //var path = url.parse(full_url).path;
+    //var port = url.parse(full_url).port;
+    //dns.resolve4(host, function(e, addresses) {
+    //    if (e) {
+    //        console.log('error: ' + e);
+    //        return cb(e);
+    //    }
+
+    //    console.log('resolved address: ' + addresses[0]);
+    //    var cur_url = 'http://' + addresses[0] + ':' + port + path;
+    //    console.log('cur ful url ' + cur_url);
+    var requestStream = request(
     {
-        url: url,
-    }));
+        url: full_url,
+    }).on('response', function(res)
+    {
+        console.log('status code = ' + res.statusCode);
+    }).on('error', exit);
+
+    var inStream = progress(requestStream);
     inStream.on('progress', function(state)
     {
         console.log(JSON.stringify(
         {
-            url: url,
+            url: full_url,
             state: state
         }));
         if (job)
@@ -219,8 +243,49 @@ function runParse(match, job, cb)
             exit(response.statusCode.toString());
         }
     }).on('error', exit);
+
+
+    var midStream = stream.PassThrough();
+
+    /*
+    var req = require('http').request(url, function(res)
+    {
+        res.pipe(midStream);
+    });
+    req.on('error', function(e)
+    {
+        console.log(e.message);
+    });*/
+    
+    inStream.pipe(midStream);
+
+    // rxu, save the replay files to folder
+    // http://replay#cluster#.valve.net/#match_id#_#salt#.dem.bz2
+    var urlsplit = full_url.split('/');
+    var savename = urlsplit[urlsplit.length - 1];
+    var post_savename = savename.split('_')[0] + '.dem.bz2';
+    var ws = require('fs').createWriteStream('replays/'+post_savename);
+    
+    midStream.on('data', function(chunk)
+    {
+        if (ws.write(chunk) === false)
+        {
+            midStream.pause();
+        }
+    })
+    .on('end', function()
+    {
+        ws.end();
+    })
+    .on('error', exit);
+
+    ws.on('drain', function()
+    {
+        midStream.resume();
+    });
+
     var bz;
-    if (url && url.slice(-3) === "bz2")
+    if (full_url && full_url.slice(-3) === "bz2")
     {
         bz = spawn("bunzip2");
     }
@@ -264,15 +329,8 @@ function runParse(match, job, cb)
     parseStream.on('error', exit);
     // Pipe together the streams
 
-    // rxu, save the replay files to folder
-    var urlsplit = url.split('/');
-    var savename = urlsplit[urlsplit.length - 1];
-
-    outputFileStream = require('fs').createWriteStream('replays/' + savename);
-    inStream.pipe(outputFileStream);
-
-
-    inStream.pipe(bz.stdin);
+    //inStream.pipe(bz.stdin);
+    midStream.pipe(bz.stdin);
     bz.stdout.pipe(parser.stdin);
     parser.stdout.pipe(parseStream);
 
@@ -306,7 +364,7 @@ function runParse(match, job, cb)
                 parsed_data.radiant_xp_adv = ap.radiant_xp_adv;
                 parsed_data.upload = upload;
 				
-		//lordstone: adding end_time and team ids
+                //lordstone: adding end_time and team ids
                 parsed_data.end_time = upload.end_time;
                 parsed_data.radiant_team_id = upload.radiant_team_id;
                 parsed_data.dire_team_id = upload.dire_team_id;

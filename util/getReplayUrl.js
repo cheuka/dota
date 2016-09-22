@@ -21,7 +21,7 @@ module.exports = function getReplayUrl(db, redis, match, cb)
         {
             return cb(err);
         }
-        /*
+       /* 
         if (replay_url)
         {
             console.log("replay %s url saved", match.match_id);
@@ -29,8 +29,8 @@ module.exports = function getReplayUrl(db, redis, match, cb)
             return cb(err);
         }
         else
-        {
         */
+        {
             var retrievers = retrieverConfig.split(",").map(function(r)
             {
                 return "http://" + r + "?key=" + secret;
@@ -52,6 +52,7 @@ module.exports = function getReplayUrl(db, redis, match, cb)
                 //remove bz2 if test
                 url = config.NODE_ENV === 'test' ? url.slice(0, -4) : url;
                 match.url = url;
+		        console.log('match url: ' + match.url);
                 //count retriever calls
                 if (body.match.replay_salt)
                 {
@@ -60,6 +61,6 @@ module.exports = function getReplayUrl(db, redis, match, cb)
                 }
                 return cb(err);
             });
-        //}
+        }
     });
 };

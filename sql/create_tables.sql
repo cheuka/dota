@@ -202,14 +202,26 @@ CREATE TABLE team_match(
 CREATE TABLE fetch_team_match(
   team_id bigint,
   match_id bigint,
+  league_id integer,
+  start_time bigint,
+  dem_url varchar(150),
   PRIMARY KEY (team_id, match_id),
   is_fetched boolean,
   is_dem_persisted boolean
 );
 
-CREATE TABLE fetch_team_league(
+CREATE TABLE fetch_match_team_league(
+  match_id bigint PRIMARY KEY,
   team_id bigint,
   league_id integer,
-  PRIMARY KEY (team_id, league_id),
-  is_fetched boolean
-)
+  is_fetched boolean,
+  is_dem_persisted boolean
+);
+
+CREATE TABLE league_info (
+    league_id integer PRIMARY KEY,
+    league_name varchar(255),
+    league_desc varchar(255),
+    league_url varchar(255)
+);
+
