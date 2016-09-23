@@ -282,11 +282,12 @@ function runParse(match, job, cb)
 
 				var params = {};
 				params.dem_index = match.dem_index;
-				params.replay_blob_key = match.replayer_blob_key;
+				params.replay_blob_key = match.replay_blob_key;
 				params.user_id = match.user_id;
 				params.is_public = match.is_public;
 				params.upload_time = match.upload_time;
 
+				// console.log('MANTA JSON:\n' + JSON.stringify(entries, null, 2));
 				var parsed_data = processMantaResults(entries, params);
 
 				console.timeEnd('manta parse');

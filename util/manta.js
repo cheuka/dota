@@ -2,10 +2,14 @@
 
 function processMantaResults(e, params)
 {
+	//console.log('e json: \n' + JSON.stringify(e, null, 2));
 	var player_matches = [];
-	for(player_match in e)
+	for(var i = 0; i < e.length; ++i)
 	{
-		player_matches.push(processMatch(player_match, params));
+		for(key in e[i])
+		{
+			player_matches.push(processMatch(e[i][key], params));
+		}
 	}
 	return player_matches;
 }

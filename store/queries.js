@@ -1124,18 +1124,18 @@ function insertMantaMatch(db, redis, match, done)
 			opponent_hero_deaths: entry.opponent_hero_deaths,
 			create_deadly_damages_per_death: entry.create_deadly_damages_per_death,
 			create_deadly_stiff_control_per_death: entry.create_deadly_stiff_control_per_death,
-			rGpm: entry.rGpm,
-			unrRpm: entry.unrRpm,
-			killHeroGold: entry.killHeroGold,
-			deadLoseGold: entry.deadLoseGold,
-			fedEnemyGold: entry.fedEnemyGold,
-			teamNubmer: entry.teamNumber,
-			isWin: (entry.isWin ? 't' : 'f'),
+			rgpm: entry.rGpm,
+			unrrpm: entry.unrRpm,
+			killherogold: entry.killHeroGold,
+			deadlosegold: entry.deadLoseGold,
+			fedenemygold: entry.fedEnemyGold,
+			teamnumber: entry.teamNumber,
+			iswin: (entry.isWin ? 't' : 'f'),
 			player_id: entry.player_id,
-			aloneKilledNum: entry.aloneKilledNum,
-			aloneBeCatchedNum: entry.aloneBeCatchedNum,
-			aloneBeKilledNum: entry.aloneBeKilledNum,
-			consumeDamage: entry.consumeDamage
+			alonekillednum: entry.aloneKilledNum,
+			alonebecatchednum: entry.aloneBeCatchedNum,
+			alonebekillednum: entry.aloneBeKilledNum,
+			consumedamage: entry.consumeDamage
 		})
 		.asCallback(function(err){
 			if (err)
