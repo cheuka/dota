@@ -133,7 +133,7 @@ function upsert(db, table, row, conflict, cb)
             return util.format("%s=%s", key, "EXCLUDED." + key);
         });
         var query = util.format("INSERT INTO %s (%s) VALUES (%s) ON CONFLICT (%s) DO UPDATE SET %s", table, Object.keys(row).join(','), values, Object.keys(conflict).join(','), update.join(','));
-        //require('fs').writeFileSync('output.json', query);
+        require('fs').writeFileSync('output.json', query);
         db.raw(query, Object.keys(row).map(function(key)
         {
             return row[key];
@@ -394,8 +394,8 @@ function insertMatch(db, redis, match, options, cb)
     function saveUserMatch(cb)
 	{
 		// lordstone: save to user_match_list
-		console.log('saving to user_match_list');
-		cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
+		//console.log('saving to user_match_list');
+		//cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
 		return cb();
 	}
 
@@ -670,6 +670,21 @@ function getMatchRating(redis, match, cb)
             return a + b;
         }, 0) / filt.length);
         cb(err, avg);
+    });
+}
+
+function getTeamFetchedMatches(db, payload, cb)
+{
+    db.table('fetch_team_match').select('*').where({
+        'team_id': payload.team_id,
+        'is_fetched': true
+    }).whereNotNull('start_time')
+    .limit(20).orderBy('start_time','desc').asCallback(function(err, result) {
+        if (err) {
+            console.log(err);
+            return cb('query failed');
+        }
+        return cb(null, result);
     });
 }
 
@@ -1039,6 +1054,7 @@ module.exports = {
     insertPlayerRating,
     insertMatchSkill,
     getDistributions,
+    getTeamFetchedMatches,
     getPicks,
     getTop,
     getHeroRankings,

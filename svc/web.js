@@ -418,6 +418,39 @@ app.route('/status').get(function(req, res, next)
     });
 });
 app.use('/matches', matches(db, redis, cassandra));
+
+app.get('/team_fetch_match/:team_id?', function(req, res, cb)
+{ 
+    console.log(req.params.team_id);
+    if (req.params.team_id) {
+        queries.getTeamFetchedMatches(db, {
+            team_id: req.params.team_id
+        }, function(err, result) {
+            if (err) {
+                return cb(err);
+            }                                              
+
+            var name;
+            for (var i = 0; i < constants.common_teams.length; ++i) {
+                if (constants.common_teams[i].team_id == req.params.team_id) {
+                   name = constants.common_teams[i].name;
+                }
+            }
+
+            console.log('name ' + name);
+            res.render('team_fetch_match', {
+                team_fetch_match: result,
+                team_name: name
+            });
+        });
+    }
+    else {
+        //res.json({"error":"please specify the team id"});
+        res.render('team_fetch_match', {
+        });
+    }
+});
+
 app.use('/players', players(db, redis, cassandra));
 app.use('/distributions', function(req, res, cb)
 {
@@ -426,8 +459,8 @@ app.use('/distributions', function(req, res, cb)
         if (err)
         {
             return cb(err);
-        }
-	result['user']= req.session.user;
+        } 
+        result['user']= req.session.user;
         res.render('distributions', result);
     });
 });
