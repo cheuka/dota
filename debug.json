@@ -6,7 +6,7 @@
       "ignore_watch": ["node_modules", "public", "views"],
       "group": "core",
       "exec_mode": "cluster",
-      "instances": 1
+      "instances": 5
     },
     {
       "script": "svc/requests.js",
@@ -30,7 +30,23 @@
       "ignore_watch": ["node_modules", "public", "views"],
       "group": "parser",
       "exec_mode": "cluster",
-      "instances": 1 
+      "instances": 1
+    }, 
+	{
+      "script": "svc/storedem.js",
+      "watch": false, 
+      "ignore_watch": ["node_modules", "public", "views"],
+      "group": "storedem",
+      "exec_mode": "cluster",
+      "instances": 1
+    },	
+	{
+      "script": "svc/manta.js",
+      "watch": false, 
+      "ignore_watch": ["node_modules", "public", "views"],
+      "group": "manta",
+      "exec_mode": "cluster",
+      "instances": 1
     },
     {
       "script": "svc/retriever.js",
@@ -39,6 +55,6 @@
       "group": "parser",
       "exec_mode": "cluster",
       "instances": 1
-    },
+    }
   ]
 }

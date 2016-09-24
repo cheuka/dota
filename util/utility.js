@@ -138,6 +138,24 @@ function generateJob(type, payload)
                 payload: payload
             };
         },
+		// lordstone: need to add this for storedem queue proc
+        "storedem": function()
+        {
+            return {
+                title: [type, payload.dem_index].join(),
+                type: type,
+                payload: payload
+            };
+        },
+        "manta": function()
+        {
+            return {
+                title: [type, payload.dem_index].join(),
+                type: type,
+                payload: payload
+            };
+        },
+
         "fullhistory": function()
         {
             return {

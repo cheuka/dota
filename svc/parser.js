@@ -107,7 +107,9 @@ pQueue.process(1, function(job, cb)
 
                 if (match.replay_blob_key)
                 {
-                    redis.del('upload_blob:' + match.replay_blob_key);
+					//TODO: lordstone: sync with storedem
+					console.log('match blob key:' + match.replay_blob_key);
+					deleteBlobAttempt(match.replay_blob_key);
                     insertUploadedParse(parsed_data, cb);
                 }
                 else
@@ -121,6 +123,7 @@ pQueue.process(1, function(job, cb)
         if (err)
         {
             console.error(err.stack || err);
+			deleteBlobAttempt(match.replay_blob_key);
             /*
             if (err !== "404")
             {
@@ -135,6 +138,46 @@ pQueue.process(1, function(job, cb)
         return cb(err, match.match_id);
     });
 });
+
+function deleteBlobAttempt(key){
+	if(!config.ENABLE_STOREDEM && !config.ENABLE_MANTA)
+    {
+		console.log('No storedem or manta. Delete directly');
+		redis.del('upload_blob:' + match.replay_blob_key);
+	}
+	else
+	{
+		redis.get('upload_blob_mark:' + key, function(err, result)
+		{
+			console.log('check blob in parser:' + result);
+			result = JSON.parse(result);	
+			if(result)
+			{
+				var on_user_count = 0;
+				if(result.storedem)
+					on_user_count += 1;
+				if(result.manta)
+					on_user_count += 1;
+				if (on_user_count === 0)
+				{			
+					console.log('Safely delete blob');
+					redis.del("upload_blob:" + key);
+					redis.del("upload_blob_mark:" + key);
+				}
+				else
+				{
+					console.log('blob still in use in storedem');
+					delete result['parse'];
+					redis.set('upload_blob_mark:' + key, JSON.stringify(result));
+				}
+			}
+			else
+			{
+				console.log('No relevant redis record. Skipping');
+			}
+		});
+	}
+} // end of deleteAttempt
 
 function insertUploadedParse(match, cb)
 {
