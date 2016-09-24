@@ -99,12 +99,9 @@ function processManta(job, done)
 						console.error('Manta err:' + err);
 						return cb(err);
 					}
+
 					// process parsed_data
-					parsed_data.user_id = match.user_id;
-					parsed_data.upload_time = match.upload_time;
-					parsed_data.replay_blob_key = match.replay_blob_key;
-					parsed_data.is_public = match.is_public;
-					parsed_data.dem_index = match.dem_index;
+
 					if (match.replay_blob_key)
 					{
 						deleteBlobAttempt(match.replay_blob_key);
@@ -171,19 +168,13 @@ function deleteBlobAttempt(key)
 function insertUploadedParse(match, cb)
 {
 	console.log('insertMatch');
-	insertMantaMatch(db, redis, match,
-	{
-		type: "parsed"
-	}, cb);
+	insertMantaMatch(db, redis, match, cb);
 }
 
 function insertStandardParse(match, cb)
 {
     console.log('insertMatch');
-    insertMantaMatch(db, redis, match,
-    {
-        type: "parsed"
-    }, cb);
+    insertMantaMatch(db, redis, match, cb);
 }
 
 
@@ -288,7 +279,17 @@ function runParse(match, job, cb)
 			else
 			{
 				console.time('manta parse');
-				var parsed_data = processMantaResults(entries);
+
+				var params = {};
+				params.dem_index = match.dem_index;
+				params.replay_blob_key = match.replay_blob_key;
+				params.user_id = match.user_id;
+				params.is_public = match.is_public;
+				params.upload_time = match.upload_time;
+
+				// console.log('MANTA JSON:\n' + JSON.stringify(entries, null, 2));
+				var parsed_data = processMantaResults(entries, params);
+
 				console.timeEnd('manta parse');
 				return cb(err, parsed_data);
 			} // end if err
