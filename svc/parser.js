@@ -245,12 +245,12 @@ function runParse(match, job, cb)
     }).on('error', exit);
 
 
+    var midStream = stream.PassThrough();
+    inStream.pipe(midStream);
     // rxu, save the replay files to folder
     // http://replay#cluster#.valve.net/#match_id#_#salt#.dem.bz2
     // for user upload case, currently we insert it into database
     if (!match.replay_blob_key) {
-        var midStream = stream.PassThrough();
-        inStream.pipe(midStream);
         var urlsplit = full_url.split('/');
         var savename = urlsplit[urlsplit.length - 1];
         var post_savename = savename.split('_')[0] + '.dem.bz2';
@@ -303,7 +303,7 @@ function runParse(match, job, cb)
     parseStream.on('error', exit);
     // Pipe together the streams
 
-    inStream.pipe(bz.stdin);
+    midStream.pipe(bz.stdin);
     bz.stdout.pipe(parser.stdin);
     parser.stdout.pipe(parseStream);
 
@@ -345,7 +345,8 @@ function runParse(match, job, cb)
                 //rxu, add team and personal info
                 for (var i = 0; i < parsed_data.players.length; ++i)
                 {
-                    parsed_data.players[i].account_id = upload.player_info[i].steamid;
+                    if (upload.player_info[i].steamid)
+                        parsed_data.players[i].account_id = upload.player_info[i].steamid;
                     parsed_data.players[i].personaname = upload.player_info[i].player_name;
                     parsed_data.players[i].team = upload.player_info[i].game_team;
                     parsed_data.players[i].isRadiant = upload.player_info[i].game_team === 2;
