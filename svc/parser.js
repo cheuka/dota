@@ -245,49 +245,18 @@ function runParse(match, job, cb)
     }).on('error', exit);
 
 
-    var midStream = stream.PassThrough();
-
-    /*
-    var req = require('http').request(url, function(res)
-    {
-        res.pipe(midStream);
-    });
-    req.on('error', function(e)
-    {
-        console.log(e.message);
-    });*/
-    
-    inStream.pipe(midStream);
-
     // rxu, save the replay files to folder
     // http://replay#cluster#.valve.net/#match_id#_#salt#.dem.bz2
     // for user upload case, currently we insert it into database
     if (!match.replay_blob_key) {
+        var midStream = stream.PassThrough();
+        inStream.pipe(midStream);
         var urlsplit = full_url.split('/');
         var savename = urlsplit[urlsplit.length - 1];
         var post_savename = savename.split('_')[0] + '.dem.bz2';
         var ws = require('fs').createWriteStream('replays/'+post_savename);
         midStream.pipe(ws);
     }
-    /*
-    midStream.on('data', function(chunk)
-    {
-        if (ws.write(chunk) === false)
-        {
-            midStream.pause();
-        }
-    })
-    .on('end', function()
-    {
-        ws.end();
-    })
-    .on('error', exit);
-
-    ws.on('drain', function()
-    {
-        midStream.resume();
-    });
-    */
 
     var bz;
     if (full_url && full_url.slice(-3) === "bz2")
