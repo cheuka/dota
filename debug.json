@@ -6,7 +6,7 @@
       "ignore_watch": ["node_modules", "public", "views"],
       "group": "core",
       "exec_mode": "cluster",
-      "instances": 5
+      "instances": 1
     },
     {
       "script": "svc/requests.js",
