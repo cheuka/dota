@@ -677,7 +677,7 @@ function getTeamFetchedMatches(db, payload, cb)
 {
     db.table('fetch_team_match').select('*').where({
         'team_id': payload.team_id,
-        'is_fetched': true
+        //'is_fetched': true
     }).whereNotNull('start_time')
     .limit(20).orderBy('start_time','desc').asCallback(function(err, result) {
         if (err) {
