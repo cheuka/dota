@@ -9,6 +9,8 @@ var db = require('../store/db');
 var queries = require('../store/queries');
 var buildSets = require('../store/buildSets');
 var fetchProgame = require('../util/fetchProgame.js');
+var buildLeague = require('../util/buildLeague.js');
+var buildLeagueInfo = require('../util/buildLeagueInfo.js');
 var utility = require('../util/utility');
 var getMMStats = require('../util/getMMStats');
 var async = require('async');
@@ -21,10 +23,11 @@ sqlq.forEach(function(f)
     sql[f.split('.')[0]] = fs.readFileSync('./sql/' + f, 'utf8');
 });
 console.log("[WORKER] starting worker");
-invokeInterval(function doBuildSets(cb)
-{
-    buildSets(db, redis, cb);
-}, 60 * 1000);
+
+//invokeInterval(function doBuildSets(cb)
+//{
+//    buildSets(db, redis, cb);
+//}, 60 * 1000);
 
 
 /*
@@ -34,6 +37,17 @@ invokeInterval(function doFetchProgame(cb)
 }, 3*24*60*60*1000); 
 */
 
+invokeInterval(function doBuildLeague(cb)
+{
+    buildLeauge(db, cb);
+}, 12*3600*1000);
+
+invokeInterval(function doBuildLeagueInfo(cb)
+{
+    buildLeaugeInfo(db, cb);
+}, 12*3600*1000);
+
+/*
 invokeInterval(function mmStats(cb)
 {
     getMMStats(redis, cb);
@@ -111,6 +125,8 @@ invokeInterval(function buildDistributions(cb)
         });
     }
 }, 60 * 60 * 1000 * 6);
+*/
+
 invokeInterval(function cleanQueues(cb)
 {
     queue.cleanup(redis, cb);
