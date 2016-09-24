@@ -10,10 +10,11 @@ var league_list = [];
 var league_obj = {};
 
 module.exports = function(db, cb) {
-    console.log('start build team match for leagues');
+    console.log('start build leagues');
 
     //constants.common_teams = [111474];
     //async.eachSeries(constants.common_teams, function(team, next) {
+    /*
     async.forEachLimit(constants.common_teams, 10, function(team, next) {
         var team_id = team.team_id;
         //var team_id = team;
@@ -38,6 +39,16 @@ module.exports = function(db, cb) {
     }, function(err) {
         getLeagueMatchPage(league_list, cb);
     });
+    */
+
+    var url = generateJob("api_leagues", {}).url;
+    getData(url, function(err, data) {
+        data.result.leagues.forEach(function(league) {
+            league_list.push(league.leagueid);
+        });
+        getLeagueMatchPage(league_list, cb);
+    });
+
 
     function getLeagueMatchPage(league_list, cb) {
         //async.eachSeries(league_list, function(leagueid, next) {
@@ -55,75 +66,59 @@ module.exports = function(db, cb) {
     function getMatchPage(league_url, leagueid, cb) {
         getData(league_url, function(err, data) {
             async.eachSeries(data.result.matches, function(match, next) {
-                var job = generateJob("api_details", {
-                    match_id: match.match_id
-                });
+                // only get match from 2016-8-1
+                if (match.start_time < 1470009600) {
+                    return next('stoped fetch old league');
+                }
 
-                getData({
-                    url: job.url,
-                    delay: 1000
-                }, function(err, body) {
+                if (leagueid == 4920) {
+                console.log('radiant id = ' + match.radiant_team_id);
+                console.log('dire id = ' + match.dire_team_id);
+                }
+                async.series({
+                    'upsertRadiant':function(done) {
+                        if (match.radiant_team_id) {
+                            var tm = {
+                                match_id: match.match_id,
+                                team_id: match.radiant_team_id,
+                                league_id: leagueid,
+                                start_time: match.start_time
+                            };
+
+                            queries.upsert(db, 'fetch_team_match', tm, {
+                                match_id: tm.match_id,
+                                team_id: tm.team_id
+                            }, function(err) {
+                                return done(err);
+                            });
+                        }
+                        else
+                            return done();
+                    },
+                    'upsertDire':function(done) {
+                        if (match.dire_team_id) {
+                            var tm = {
+                                match_id: match.match_id,
+                                team_id: match.dire_team_id,
+                                league_id: leagueid,
+                                start_time: match.start_time
+                            };
+
+                            queries.upsert(db, 'fetch_team_match', tm, {
+                                match_id: tm.match_id,
+                                team_id: tm.team_id
+                            }, function(err) {
+                                return done(err);
+                            });
+                        }
+                        else
+                            return done();
+                    }
+                },  function(err) {
                     if (err) {
                         console.log(err);
-                        return next();
                     }
-                    if (body.result) {
-                        var match = body.result;
-
-                        // only get match from 2016-8-1
-                        if (match.start_time < 1470009600) {
-                            return next('stoped fetch old league');
-                        }
-
-                        console.log('radiant id = ' + match.radiant_team_id);
-                        console.log('dire id = ' + match.dire_team_id);
-
-                        async.series({
-                            'upsertRadiant':function(done) {
-                                if (match.radiant_team_id) {
-                                    var tm = {
-                                        match_id: match.match_id,
-                                        team_id: match.radiant_team_id,
-                                        league_id: leagueid,
-                                        start_time: match.start_time
-                                    };
-
-                                    queries.upsert(db, 'fetch_team_match', tm, {
-                                        match_id: tm.match_id,
-                                        team_id: tm.team_id
-                                    }, function(err) {
-                                        return done(err);
-                                    });
-                                }
-                                else
-                                    return done();
-                            },
-                            'upsertDire':function(done) {
-                                if (match.dire_team_id) {
-                                    var tm = {
-                                        match_id: match.match_id,
-                                        team_id: match.dire_team_id,
-                                        league_id: leagueid,
-                                        start_time: match.start_time
-                                    };
-
-                                    queries.upsert(db, 'fetch_team_match', tm, {
-                                        match_id: tm.match_id,
-                                        team_id: tm.team_id
-                                    }, function(err) {
-                                        return done(err);
-                                    });
-                                }
-                                else
-                                    return done();
-                            }
-                        },  function(err) {
-                            if (err) {
-                                console.log(err);
-                            }
-                            return next(); 
-                        });
-                    }
+                    return next(); 
                 });
 	
             }, function(err) {
