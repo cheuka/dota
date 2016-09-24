@@ -1,0 +1,36 @@
+extend layout
+
+block content
+    .row
+        .col-md-12
+          h3 Team #{team_name} 
+            small Recent tournament matches
+    .row
+        .col-md-4
+            select(onchange="window.location.href='/team_fetch_match/'+value")
+                option(value='0',selected='true') Select a Team 
+                - for (var i = 0; i < constants.common_teams.length; ++i)
+                  option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
+    .row
+        .col-md-12.table-responsive
+            table.table.table-striped.table-condensed.rankable#team_fetch_match
+                thread
+                    tr
+                        th #
+                        th Match ID
+                        th League Name
+                        th Time
+                        th Replay Status
+                    tbody 
+                       each entry, i in team_fetch_match || []
+                            tr
+                                td= i+1
+                                td 
+                                  a(href='/matches/'+entry.match_id) #{entry.match_id}
+                                - var league_name = entry.league_name.substr(11)
+                                td 
+                                  a(href=''+entry.league_url) #{league_name}
+                                - var duration = new Date().getTime() - new Date(entry.start_time*1000).getTime()
+                                - var days = Math.floor(duration/(3600*24*1000)) 
+                                td #{days} days ago
+                                td= entry.is_fetched?'downloaded':'downloading'

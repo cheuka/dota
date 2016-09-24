@@ -17,13 +17,16 @@ module.exports = function(db, cb) {
     //var common_teams = [111474];
 	//async.eachSeries(common_teams, function(team, cb)
 	//async.eachSeries(constants.common_teams, function(team, next)
-	async.forEachLimit(constants.common_teams, 1, function(team, next) {
+    
+	/*
+    async.forEachLimit(constants.common_teams, 1, function(team, next) {
 		var team_id = team.team_id;
 		//var team_id = team;
+    */
 
         //db.raw('select match_id, is_fetched from fetch_team_match where team_id = ? and start_time > ? order by start_time desc', [team_id, 1470009600])
-        db.select('match_id').from('fetch_team_match').where({
-            'team_id' : team_id,
+        db.select('match_id', 'team_id').from('fetch_team_match').where({
+            //'team_id' : team_id,
             'is_fetched': false
         }).where('start_time', '>', 1470009600)
         .orderBy('start_time', 'desc')
@@ -38,15 +41,16 @@ module.exports = function(db, cb) {
                     'is_fetch': true,
                     'match_id': match.match_id
                 }).asCallback(function(err, is_fetch_match) {
+                    
                     if (is_fetch_match) {
                         var tm = {
-                            team_id: is_fetch_match.team_id,
+                            team_id: match.team_id,
                             match_id: match.match_id,
                             is_fetched: true,
                         };
 
                         queries.upsert(db, 'fetch_team_match', tm, {
-                            team_id: is_fetch_match.team_id,
+                            team_id: match.team_id,
                             match_id: match.match_id
                         }, function(err) {
                             console.log(err);
@@ -67,10 +71,10 @@ module.exports = function(db, cb) {
                             return next2();
                         }
                         if (body.result) {
-                            var match = body.result;
+                            var match2 = body.result;
 
-                            match.parse_status = 0;
-                            insertMatch(db, redis, match, {
+                            match2.parse_status = 0;
+                            insertMatch(db, redis, match2, {
                                 type: "api",
                                 attempts: 1,
                             }, waitParse);
@@ -88,18 +92,18 @@ module.exports = function(db, cb) {
                             var poll = setInterval(function() {
                                 pQueue.getJob(job.jobId).then(function(job) {
                                     job.getState().then(function(state) {
-                                        console.log("waiting for parse job %s, currently in %s", job.jobId, state);
+                                        console.log("waiting for parse job %s for %s of %s, currently in %s", job.jobId, match.match_id, match.team_id, state);
                                         if (state === "completed") {
                                             clearInterval(poll);
 
                                             var tm = {
-                                                team_id: team_id,
+                                                team_id: match.team_id,
                                                 match_id: match.match_id,
                                                 is_fetched: true,
                                             };
 
                                             queries.upsert(db, 'fetch_team_match', tm, {
-                                                team_id: team_id,
+                                                team_id: match.team_id,
                                                 match_id: match.match_id
                                             }, function(err) {
                                                 console.log(err);
@@ -121,8 +125,8 @@ module.exports = function(db, cb) {
                 return next(); 
             });
         });
-	}, function(err) {
+	/*} function(err) {
         return cb(err);
-    });
+    }); */
 }
 

@@ -678,8 +678,9 @@ function getTeamFetchedMatches(db, payload, cb)
     db.table('fetch_team_match').select('*').where({
         'team_id': payload.team_id,
         //'is_fetched': true
-    }).whereNotNull('start_time')
-    .limit(20).orderBy('start_time','desc').asCallback(function(err, result) {
+    }).leftJoin('league_info', 'fetch_team_match.league_id', 'league_info.league_id')
+    .whereNotNull('start_time')
+    .orderBy('start_time','desc').asCallback(function(err, result) {
         if (err) {
             console.log(err);
             return cb('query failed');
