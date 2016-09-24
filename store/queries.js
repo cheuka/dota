@@ -1034,14 +1034,15 @@ function searchPlayer(db, query, cb)
 
 /* lordstone: for store dem */
 
-function storeDem(dem, db, cb){
-	
+function storeDem(dem, db, cb)
+{	
 	var user_id = dem.user_id;
 	var dem_index = dem.dem_index;
 	var is_public = dem.is_public;
 	var upload_time = dem.upload_time;
 	var replay_blob_key = dem.replay_blob_key
 	var file_name = dem.file_name;
+	var oid = dem.oid;
 
 	db
 	.table('dem_storage')
@@ -1051,7 +1052,7 @@ function storeDem(dem, db, cb){
 		is_public: is_public,
 		upload_time: upload_time,
 		file_name: file_name,
-		blob: dem.blob
+		oid: oid
 	})
 	.asCallback(function(err){
 		if (err)
@@ -1061,6 +1062,63 @@ function storeDem(dem, db, cb){
 		return cb();
 	});
 }
+
+/* lordstone: for get dem */
+
+function getDem(params, db, cb)
+{
+	var dem_index = params.dem_index;
+	var user_id = params.user_id;
+
+	console.log('DEBUG get dem from db:' + dem_index);
+	console.time('fetching blob from db');
+	db
+	.table('dem_storage')
+	.first('blob')//, 'is_public', 'upload_time', 'file_name')
+	.where(
+	{
+		user_id: user_id,
+		dem_index: dem_index
+	})
+	.asCallback(function(err, result)
+	{
+		console.log('DEBUG received dem from db');
+		console.timeEnd('fetching blob from db');
+		if(err)
+		{
+			return cb(err);
+		}
+		return cb(null, result);
+	});
+}
+
+function insertMantaMatch(db, redis, match, cb)
+{	
+	var user_id = match.user_id;
+	var is_public = match.is_public;
+	var upload_time = match.upload_time;
+	var replay_blob_key = match.replay_blob_key;
+	var dem_index = match.dem_index;
+
+	db
+	.table('manta')
+	.insert({
+		user_id: user_id,
+		is_public: is_public,
+		upload_time: upload_time,
+		dem_index: dem_index,
+		replay_blob_key: replay_blob_ley,
+		content: JSON.stringify(match.upload)
+	})
+	.asCallback(function(err){
+		if (err)
+		{
+			return cb(err);
+		}
+		return cb();
+	});
+}
+
 
 module.exports = {
     getSets,
@@ -1080,4 +1138,6 @@ module.exports = {
     mmrEstimate,
     searchPlayer,
 	storeDem,
+	getDem,
+	insertMantaMatch,
 };

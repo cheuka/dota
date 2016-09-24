@@ -15,38 +15,37 @@ var stream = require('stream');
 var spawn = cp.spawn;
 var queries = require('../store/queries');
 var storeDem = queries.storeDem;
+var getDem = queries.getDem;
 var async = require('async');
 var request = require('request');
 
-// lordstone: just for debug
-var fs = require('fs');
+var pg = require('pg');
+var pg_conString = config.POSTGRES_URL;
+
+var createLargeObject = require('../store/largeObjectMgmt').createLargeObject;
+var readLargeObject = require('../store/largeObjectMgmt').readLargeObject;
+
 
 if(config.ENABLE_STOREDEM == true)
 {
-	console.log('sQueue display');
+	// console.log('sQueue ready');
 	sQueue.process(processStoredem);
 }
 
-function processStoredem(job, done)
+function doStoredem(payload, done)
 {	
-    console.log("storedem job: %s", job.jobId);
-	if(!job || !job.data || !job.data.payload){
-		console.log('STOREDEM: err: missing job data payload');
-		return done('missing job context');
-	}
-	var payload = job.data.payload;
-	console.log('TEST payload:' + JSON.stringify(payload));
+	
 	var timeout = setTimeout(function()
 	{
 		exit('timeout');
 	}, 300000);
+
 	var url;
 	var blob;
 	var dem;
-	console.log('sQueue process...');
+	console.log('sQueue process store dem');
 	
 	try{
-
 		console.log('start try');
 		dem = {
 			user_id: payload.user_id,
@@ -88,32 +87,26 @@ function processStoredem(job, done)
 		}).on('error', exit);
 		
 		inStream.pipe(bz.stdin);
-
 		var midStream = stream.PassThrough();
 		bz.stdout.pipe(midStream);
-		console.log('STOREDEM finished doZip');
-		blob = '';
-		midStream.on('data', function handleStream(e)
-		{
-			// lordstone: escpaed before storing,
-			// when retrieving from db, need to be decoding
-			blob += escape(e);
-		})
-		.on('end', exit)
-		.on('error', exit);
+		midStream
+			.on('end', exit)
+			.on('error', exit);
+		console.log('Storedem start create');
+		// lordstone: do the actual lo storing
+		createLargeObject(pg, pg_conString, midStream, exit);
+		console.log('Storedem finished pipings');
 
-		function exit(err)
+		function exit(err, oid)
 		{
-			if (err)
+			if (err || !oid)
 			{	
-				return done(err);
+				return done(err || 'missing oid');
 			}
 			else
 			{
-				// wfs.end();
+				dem.oid = oid;
 				console.time('storeDem');
-				console.log('STOREDEM length:' + blob.length);
-				dem.blob = blob;
 				storeDem(dem, db, function(err)
 				{
 					if(err)
@@ -133,7 +126,7 @@ function processStoredem(job, done)
 							result = JSON.parse(result);
 							if(result)
 							{
-								if(result.parse_done == true)
+								if(!result.parse && !result.manta)
 								{
 									console.log('Safely delete blob');
 									redis.del('upload_blob:' + dem.replay_blob_key);
@@ -142,7 +135,7 @@ function processStoredem(job, done)
 								else	
 								{
 									console.log('blob still in use in parse');
-									result.storedem_done = true;
+									delete result['storedem'];
 									redis.set('upload_blob_mark:' + dem.replay_blob_key, JSON.stringify(result));
 								}
 							}
@@ -160,7 +153,89 @@ function processStoredem(job, done)
 		console.error('STOREDEM ERR:' + e);
 		return done(e);
 	}
+}
 
-	
+function doGetdem(payload, done)
+{
+	// store dem back to redis and inform the requesting ip
+	console.log('DEBUG start get dem job');
+	try{
+
+		var key = 'upload_blob:' + payload.dem_index + '_user:' + payload.user_id;
+
+		var params = {
+			dem_index: payload.dem_index,
+			user_id: payload.user_id
+		};
+
+		getDem(params, db, function(err, result)
+		{
+			if(err)
+			{	
+				redis.set(key + '_mark', JSON.stringify({
+					status: 'error'
+				}));
+				console.error('doGetdem err:' + err);
+				return done(err);
+			}
+			
+			var oid = result.oid;
+			if (!oid)
+			{
+				console.error('missing oid');
+				return done(err);
+			}
+			var midStream = stream.PassThrough();
+			readLargeObject(pg, pg_conString, midStream, oid, done);
+			console.log('DEBUG got dem from db in svc');
+			redis.setex(
+				key,
+				60 * 60,
+				midStream,
+				function(err){
+					console.log('DEBUG stored dem result into redis');
+					redis.set(key + '_mark', JSON.stringify({
+						status: 'completed'
+					}));
+					done(err);
+				});
+		});	
+	}
+	catch(e)
+	{
+		console.error('doGetdem err:' + e);	
+		redis.set(key + '_mark', JSON.stringify({
+			status: 'error'
+		}));
+
+		return done(e);
+	}
+}
+
+function processStoredem(job, done)
+{	
+	// lordstone: distinguish between types of jobs	
+    console.log("storedem job: %s", job.jobId);
+	if(!job || !job.data || !job.data.payload){
+		console.log('STOREDEM: err: missing job data payload');
+		return done('missing job context');
+	}
+	var payload = job.data.payload;
+	// console.log('TEST payload:' + JSON.stringify(payload));
+
+	var job_type = payload.job_type;
+
+	if(job_type == 'store')
+	{
+		doStoredem(payload, done);
+	}
+	else if(job_type == 'get')
+	{
+		doGetdem(payload, done);
+	}
+	else
+	{
+		done();
+	}
 }
 

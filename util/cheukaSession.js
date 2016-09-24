@@ -16,11 +16,9 @@ function checkUser(db, redis, user_id, password, cb)
 		user_mgmt.logUser(db, user_id, password, function(msg, param)
 		{
 			if(msg == 'failed'){
-				console.log('log in failed, reason:' + param);
 				return cb('failed', null);
 			}else if(msg == 'success'){
 				redis.set('user_auth:' + user_id, randStr);
-				console.log('successfully wrote to redis:' + 'user_auth:' + user_id, randStr);
 				return cb('success', {
 					user_id: param.user_id,
 					log_token: randStr
@@ -89,7 +87,6 @@ function deleteUser(db, user_id, cb){
 
 function register(db, new_user, cb){
 	user_mgmt.register(db, new_user, function(err, msg){
-		//console.log('cheuka level');
 		if(msg == 'success'){
 			return cb('success');
 		}else{
@@ -192,6 +189,18 @@ function checkMatchId(db, user_id, match_id, cb){
 	});
 }
 
+function findAllUploads(db, user_id, cb)
+{
+	user_mgmt.findAllUploads(db, user_id, function(err, result)
+	{
+		if(err)
+		{
+			return cb(err);
+		}
+		return cb(null, result);
+	});
+}
+
 module.exports = {
 	findAll: findAll,
 	findUser: findUser,
@@ -210,5 +219,6 @@ module.exports = {
 	getMatchData: getMatchData,
 	// deleteUserMatch: deleteUserMatch,
 	userAuth: userAuth,
-	checkMatchId: checkMatchId
+	checkMatchId: checkMatchId,
+	findAllUploads: findAllUploads
 };

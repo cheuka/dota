@@ -52,7 +52,7 @@ function addToQueue(queue, payload, options, cb)
 
 function getCounts(redis, cb)
 {
-    var types = ["request", "mmr", "parse", "cache", "storedem"];
+    var types = ["request", "mmr", "parse", "cache", "storedem", "manta"];
     async.map(types, getQueueCounts, function(err, result)
     {
         var obj = {};
@@ -93,7 +93,7 @@ function getCounts(redis, cb)
 
 function cleanup(redis, cb)
 {
-    var types = ["request", "mmr", "parse", "cache", "storedem"];
+    var types = ["request", "mmr", "parse", "cache", "storedem", "manta"];
     async.each(types, function(key, cb)
     {
         var queue = getQueue(key);
