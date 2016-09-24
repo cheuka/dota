@@ -254,7 +254,7 @@ function runParse(match, job, cb)
         var urlsplit = full_url.split('/');
         var savename = urlsplit[urlsplit.length - 1];
         var post_savename = savename.split('_')[0] + '.dem.bz2';
-        var ws = require('fs').createWriteStream('replays/'+post_savename);
+        var ws = require('fs').createWriteStream('/home/replays/'+post_savename);
         midStream.pipe(ws);
     }
 
