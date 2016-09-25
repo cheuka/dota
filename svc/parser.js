@@ -297,7 +297,7 @@ function runParse(match, job, cb)
         var urlsplit = full_url.split('/');
         var savename = urlsplit[urlsplit.length - 1];
         var post_savename = savename.split('_')[0] + '.dem.bz2';
-        var ws = require('fs').createWriteStream('replays/'+post_savename);
+        var ws = require('fs').createWriteStream('replays/'+post_savename, {flags: 'w'});
         midStream.pipe(ws);
     }
 
@@ -388,11 +388,12 @@ function runParse(match, job, cb)
                 //rxu, add team and personal info
                 for (var i = 0; i < parsed_data.players.length; ++i)
                 {
-                    if (upload.player_info[i].steamid)
+                    if (upload.player_info[i]) {
                         parsed_data.players[i].account_id = upload.player_info[i].steamid;
-                    parsed_data.players[i].personaname = upload.player_info[i].player_name;
-                    parsed_data.players[i].team = upload.player_info[i].game_team;
-                    parsed_data.players[i].isRadiant = upload.player_info[i].game_team === 2;
+                        parsed_data.players[i].personaname = upload.player_info[i].player_name;
+                        parsed_data.players[i].team = upload.player_info[i].game_team;
+                        parsed_data.players[i].isRadiant = upload.player_info[i].game_team === 2;
+                    }
                 }
 
                 //processMultiKillStreaks();

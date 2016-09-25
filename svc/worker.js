@@ -39,12 +39,12 @@ invokeInterval(function doFetchProgame(cb)
 
 invokeInterval(function doBuildLeague(cb)
 {
-    buildLeauge(db, cb);
+    buildLeague(db, cb);
 }, 12*3600*1000);
 
 invokeInterval(function doBuildLeagueInfo(cb)
 {
-    buildLeaugeInfo(db, cb);
+    buildLeagueInfo(db, cb);
 }, 12*3600*1000);
 
 /*
@@ -52,7 +52,7 @@ invokeInterval(function mmStats(cb)
 {
     getMMStats(redis, cb);
 }, config.MMSTATS_DATA_INTERVAL * 60 * 1000); //Sample every 3 minutes
-*/
+
 invokeInterval(function buildDistributions(cb)
 {
     async.parallel(

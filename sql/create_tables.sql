@@ -210,6 +210,7 @@ CREATE TABLE fetch_team_match(
   is_dem_persisted boolean
 );
 
+/*
 CREATE TABLE fetch_match_team_league(
   match_id bigint PRIMARY KEY,
   team_id bigint,
@@ -217,6 +218,7 @@ CREATE TABLE fetch_match_team_league(
   is_fetched boolean,
   is_dem_persisted boolean
 );
+*/
 
 CREATE TABLE league_info (
     league_id integer PRIMARY KEY,

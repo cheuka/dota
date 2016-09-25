@@ -32,13 +32,26 @@ module.exports = function(db, cb) {
         .orderBy('start_time', 'desc')
         .asCallback(function(err, result) {
             if (!result || err)
-                return next();
+                return cb();
  
             async.eachSeries(result, function(match, next2) {
+
+                var is_team_interested = false;
+                for (var i = 0; i < constants.common_teams.length; ++i) {
+                    if (constants.common_teams[i].team_id == match.team_id) {
+                        is_team_interested = true;
+                        break;
+                    }
+                }
+
+                if (!is_team_interested) {
+                    return next2();
+                }
+
                 //rxu, if we have download the match for another team, we do not
-                //need to download again
+                //need to download it again
                 db.select('team_id').from('fetch_team_match').where({
-                    'is_fetch': true,
+                    'is_fetched': true,
                     'match_id': match.match_id
                 }).asCallback(function(err, is_fetch_match) {
                     
@@ -68,7 +81,7 @@ module.exports = function(db, cb) {
                     }, function(err, body) {
                         if (err) {
                             console.log(err);
-                            return next2();
+                            //return next2();
                         }
                         if (body.result) {
                             var match2 = body.result;
@@ -80,12 +93,12 @@ module.exports = function(db, cb) {
                             }, waitParse);
                         }
                     });
-                    
+
                     function waitParse(err, job)
                     {
                         if (err)  {
                             console.error(err.stack || err);
-                            return next2();
+                            //return next2();
                         }
 
                         if (job) {
@@ -120,10 +133,8 @@ module.exports = function(db, cb) {
                             }, 2000);
                         }
                     }
-                });
-            }, function(err) {
-                return next(); 
-            });
+               });
+            }, cb);
         });
 	/*} function(err) {
         return cb(err);
