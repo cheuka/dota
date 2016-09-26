@@ -67,14 +67,15 @@ module.exports = function(db, cb) {
         getData(league_url, function(err, data) {
             async.eachSeries(data.result.matches, function(match, next) {
                 // only get match from 2016-8-1
-                if (match.start_time < 1470009600) {
+                //if (match.start_time < 1470009600) {
+                if (match.start_time < 1474128000) {
                     return next('stoped fetch old league');
                 }
 
-                if (leagueid == 4920) {
-                console.log('radiant id = ' + match.radiant_team_id);
-                console.log('dire id = ' + match.dire_team_id);
-                }
+                //if (leagueid == 4920) {
+                    console.log('radiant id = ' + match.radiant_team_id);
+                    console.log('dire id = ' + match.dire_team_id);
+                //}
                 async.series({
                     'upsertRadiant':function(done) {
                         if (match.radiant_team_id) {

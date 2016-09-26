@@ -29,23 +29,21 @@ console.log("[WORKER] starting worker");
 //    buildSets(db, redis, cb);
 //}, 60 * 1000);
 
-
-/*
 invokeInterval(function doFetchProgame(cb)
 {
     fetchProgame(db, cb);
-}, 3*24*60*60*1000); 
-*/
+}, 2*60*60*1000); 
+
 
 invokeInterval(function doBuildLeague(cb)
 {
     buildLeague(db, cb);
-}, 12*3600*1000);
+}, 3600*1000);
 
 invokeInterval(function doBuildLeagueInfo(cb)
 {
     buildLeagueInfo(db, cb);
-}, 12*3600*1000);
+}, 3600*1000);
 
 /*
 invokeInterval(function mmStats(cb)
