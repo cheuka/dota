@@ -159,6 +159,54 @@
         {
 			"name": "DuoBao",
 			"team_id": 2208748
+		},
+		{
+			"name": "BAKE",
+			"team_id": 3258149
+		},
+		{
+			"name": "EHOME.X",
+			"team_id": 1272244
+		},
+		{
+			"name": "MAX.X",
+			"team_id": 3329320
+		},
+		{
+			"name": "MAX.Y",
+			"team_id": 2854942
+		},
+		{
+			"name": "New Gate",
+			"team_id": 2582875
+		},
+		{
+			"name": "Rampage Gaming",
+			"team_id": 3336725
+		},
+		{
+			"name": "Rampage Gaming Young",
+			"team_id": 3341531
+		},
+		{
+			"name": "VG.P",
+			"team_id": 2833354
+		},
+		{
+			"name": "Wings.R",
+			"team_id": 3343967
+		},
+		{
+			"name": "Rock",
+			"team_id": -1
+		},
+		{
+			"name": "TP",
+			"team_id": -1
+		},
+		{
+			"name": "K.O.K",
+			"team_id": -1
 		}
 	]
 }

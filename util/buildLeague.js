@@ -5,6 +5,7 @@ var generateJob = utility.generateJob;
 var db = require('../store/db');
 var constants = require('../constants');
 var queries = require('../store/queries');
+var moment = require('moment');
 
 var league_list = [];
 var league_obj = {};
@@ -68,8 +69,11 @@ module.exports = function(db, cb) {
             async.eachSeries(data.result.matches, function(match, next) {
                 // only get match from 2016-8-1
                 //if (match.start_time < 1470009600) {
-                if (match.start_time < 1474128000) {
-                    return next('stoped fetch old league');
+
+                //var st = Math.max(1474128000, moment(new Date()).unix() - 200*24*3600*1000);
+                var st = moment(new Date()).unix() - 200*24*3600*1000;
+                if (match.start_time < st) {
+                    return next('stoped fetch league 20 days ago');
                 }
 
                 //if (leagueid == 4920) {

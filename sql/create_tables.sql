@@ -38,7 +38,8 @@ CREATE TABLE matches (
   radiant_gold_adv integer[],
   radiant_xp_adv integer[],
   teamfights json[],
-  version integer
+  version integer,
+  is_manta_parsed boolean
   );
 
 CREATE TABLE player_matches (
@@ -207,18 +208,9 @@ CREATE TABLE fetch_team_match(
   dem_url varchar(150),
   PRIMARY KEY (team_id, match_id),
   is_fetched boolean,
-  is_dem_persisted boolean
+  is_dem_persisted boolean,
+  is_manta_parsed boolean
 );
-
-/*
-CREATE TABLE fetch_match_team_league(
-  match_id bigint PRIMARY KEY,
-  team_id bigint,
-  league_id integer,
-  is_fetched boolean,
-  is_dem_persisted boolean
-);
-*/
 
 CREATE TABLE league_info (
     league_id integer PRIMARY KEY,
@@ -226,4 +218,3 @@ CREATE TABLE league_info (
     league_desc varchar(255),
     league_url varchar(255)
 );
-
