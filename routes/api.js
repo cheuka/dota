@@ -13,6 +13,7 @@ var multer = require('multer')(
 var queue = require('../store/queue');
 var rQueue = queue.getQueue('request');
 var sQueue = queue.getQueue('storedem');
+var mQueue = queue.getQueue('manta');
 var queries = require('../store/queries');
 var buildMatch = require('../store/buildMatch');
 var buildPlayer = require('../store/buildPlayer');
@@ -21,6 +22,7 @@ var querystring = require('querystring');
 
 var cheuka_session = require('../util/cheukaSession');
 var banpick = require('../routes/banpick');
+var dem = require('../routes/storedem');
 
 const crypto = require('crypto');
 module.exports = function(db, redis, cassandra)
@@ -217,16 +219,18 @@ module.exports = function(db, redis, cassandra)
                 redis.setex(new Buffer('upload_blob:' + key), 60 * 60, req.files[i].buffer);
 
 				// lordstone: set up mark for this blob that both parser and zipper can make use and decide whether to delete
-				if(config.ENABLE_STOREDEM == true)
+				if(config.ENABLE_STOREDEM == true || config.ENABLE_MANTA == true)
 				{
 					var mark = {
-						parse_done: false,
-						storedem_done: false
+						parse: true
 					};
+					if(config.ENABLE_STOREDEM == true)
+						mark.storedem = true;
+					if(config.ENABLE_MANTA == true)
+						mark.manta = true;
 					var mark_string = JSON.stringify(mark);
 					redis.setex('upload_blob_mark:' + key, 60 * 60, mark_string);
 				}
-
 				var filename = req.files[i].name || (key + '.dem');
 
                 match[i] = {
@@ -252,8 +256,6 @@ module.exports = function(db, redis, cassandra)
 			// lordstone: change 'for' to async eachseries
 			async.eachSeries(match, function(match_i, next_match)
 			{
-                // console.log('match array:'+ i +':' + match[i]);
-				
 				async.series(
 				{
 					"addToParseQueue": function(cb)
@@ -263,7 +265,6 @@ module.exports = function(db, redis, cassandra)
         		            attempts: 1
             		    }, function(err, job)
                 		{
-					//		console.log('DEBUG job:' + JSON.stringify(job));
 							if(job)
 							{
 	                	    	var curJob = {
@@ -279,11 +280,8 @@ module.exports = function(db, redis, cassandra)
 							return cb();
 	            	    });
 					},
-
-					// lordstone: store dem
 					"addToStoreDemQueue": function(cb)
 					{
-
 						if(config.ENABLE_STOREDEM == true)
 						{
 							var dem = {
@@ -292,9 +290,9 @@ module.exports = function(db, redis, cassandra)
 								is_public: match_i.is_public,
 								upload_time: match_i.upload_time,
 								replay_blob_key: match_i.replay_blob_key,
-								file_name: match_i.file_name
+								file_name: match_i.file_name,
+								job_type: 'store'
 							};
-							console.log('DEBUG add to sQueue:' + match_i.replay_blob_key);
 		                	queue.addToQueue(sQueue, dem,
 	    		            {
     	        		        attempts: 1
@@ -308,7 +306,33 @@ module.exports = function(db, redis, cassandra)
 						{
 							return cb();
 						}            
-
+					},
+					"addToMantaQueue": function(cb)
+					{
+						console.log('DEBUG MANTA enable:' + config.ENABLE_MANTA);
+						if(config.ENABLE_MANTA == true)
+						{
+							console.log('Added to manta queue');
+							var manta_match = {
+								user_id: match_i.user_id,
+								is_public: match_i.is_public,
+								upload_time: match_i.upload_time,
+								replay_blob_key: match_i.replay_blob_key,
+								dem_index: match_i.dem_index,
+							};
+		                	queue.addToQueue(mQueue, manta_match,
+	    		            {
+    	        		        attempts: 1
+		        	        }, function(err, job)
+        		    	    {
+								console.log('add done mQueue:' + match_i.replay_blob_key);
+								return cb();
+	            		    });
+						}
+						else
+						{
+							return cb();
+						}            
 					}
 				}, function(err){
 					return next_match();
@@ -449,6 +473,6 @@ module.exports = function(db, redis, cassandra)
 // lordstone: added banpick api interface:
  
 	api.use('/banpick', banpick(db, redis));
-   
+   	api.use('/dem', dem(db, redis));
     return api;
 };

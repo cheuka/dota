@@ -371,6 +371,21 @@ function deleteUserMatch(db, user_id, match_id, cb){
 }
 */
 
+function findAllUploads(db, user_id, cb)
+{
+	db.table('dem_storage')
+	.select('user_id', 'dem_index', 'is_public', 'upload_time', 'file_name')
+	.where('user_id', user_id)
+	.asCallback(function(err, results)
+	{
+		if(err)
+		{
+			return cb(err);
+		}
+		return cb(null, results);
+	});
+}
+
 module.exports = {
 	logUser: logUser,
 	findAll: findAll,
@@ -386,7 +401,8 @@ module.exports = {
 	deleteInv: deleteInv,
 	saveMatchToUser: saveMatchToUser,
 	getMatchData: getMatchData,
-	checkMatchId: checkMatchId
+	checkMatchId: checkMatchId,
 	// deleteUserMatch: deleteUserMatch
+	findAllUploads: findAllUploads
 };
 

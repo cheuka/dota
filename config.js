@@ -32,7 +32,7 @@ var defaults = {
     "PROXY_PORT": "5300",
     "WORK_PORT": "5400",
     "SCANNER_PORT": "5500",
-	"STOREDEM_PORT": "5600",
+	"MANTA_PORT": "5600",
     "POSTGRES_URL": "postgresql://postgres:postgres@localhost/yasp", //connection string for PostgreSQL
     "POSTGRES_USER_URL": "postgresql://postgres:postgres@localhost/user_db", //connection for cheuka users
     "REDIS_URL": "redis://127.0.0.1:6379/0", //connection string for Redis
@@ -63,7 +63,9 @@ var defaults = {
     "ENABLE_POSTGRES_MATCH_STORE_WRITE": "1", //set to enable writing match data to postgres (default on)
     "ENABLE_CASSANDRA_MATCH_STORE_READ": "", //set to enable reading match data from cassandra
     "ENABLE_CASSANDRA_MATCH_STORE_WRITE": "", //set to enable writing match data to cassandra
-	"ENABLE_STOREDEM": "1", //lordstone: store the dem replay to postgres
+	"ENABLE_STOREDEM": "", //lordstone: store the dem replay to postgres
+	"ENABLE_MANTA": "1", //lordstone: run the manta parser to get stream of dem and parse and store
+	"MANTA_PATH": "manta/dota-parser_no_zip.dota-parser_no_zip", //lordstone: set up manta parser path of the executable
 };
 //ensure that process.env has all values in defaults, but prefer the process.env value
 for (var key in defaults)

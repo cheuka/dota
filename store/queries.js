@@ -1034,14 +1034,15 @@ function searchPlayer(db, query, cb)
 
 /* lordstone: for store dem */
 
-function storeDem(dem, db, cb){
-	
+function storeDem(dem, db, cb)
+{	
 	var user_id = dem.user_id;
 	var dem_index = dem.dem_index;
 	var is_public = dem.is_public;
 	var upload_time = dem.upload_time;
 	var replay_blob_key = dem.replay_blob_key
 	var file_name = dem.file_name;
+	var oid = dem.oid;
 
 	db
 	.table('dem_storage')
@@ -1051,7 +1052,7 @@ function storeDem(dem, db, cb){
 		is_public: is_public,
 		upload_time: upload_time,
 		file_name: file_name,
-		blob: dem.blob
+		oid: oid
 	})
 	.asCallback(function(err){
 		if (err)
@@ -1061,6 +1062,92 @@ function storeDem(dem, db, cb){
 		return cb();
 	});
 }
+
+/* lordstone: for get dem */
+
+function getDem(params, db, cb)
+{
+	var dem_index = params.dem_index;
+	var user_id = params.user_id;
+
+	console.log('DEBUG get dem from db:' + dem_index);
+	console.time('fetching blob from db');
+	db
+	.table('dem_storage')
+	.first('blob')//, 'is_public', 'upload_time', 'file_name')
+	.where(
+	{
+		user_id: user_id,
+		dem_index: dem_index
+	})
+	.asCallback(function(err, result)
+	{
+		console.log('DEBUG received dem from db');
+		console.timeEnd('fetching blob from db');
+		if(err)
+		{
+			return cb(err);
+		}
+		return cb(null, result);
+	});
+}
+
+function insertMantaMatch(db, redis, match, done)
+{	
+
+	async.eachSeries(match, function(entry, cb){
+
+		var user_id = entry.user_id;
+		var is_public = entry.is_public;
+		var upload_time = entry.upload_time;
+		var replay_blob_key = entry.replay_blob_key;
+		var dem_index = entry.dem_index;
+		var steamid = entry.steamid;
+		var match_id = entry.match_id;
+		
+		db
+		.table('manta')
+		.insert({
+			steamid: steamid,
+			match_id: match_id,
+			user_id: user_id,
+			is_public: is_public,
+			upload_time: upload_time,
+			dem_index: dem_index,
+			replay_blob_key: replay_blob_key,
+			player_name: entry.player_name,
+			hero_id: entry.hero_id,
+			hero_name: entry.hero_name,
+			create_total_damages: entry.create_total_damages,
+			create_deadly_damages: entry.create_deadly_damages,
+			create_total_stiff_control: entry.create_total_stiff_control,
+			create_deadly_stiff_control: entry.create_deadly_stiff_control,
+			opponent_hero_deaths: entry.opponent_hero_deaths,
+			create_deadly_damages_per_death: entry.create_deadly_damages_per_death,
+			create_deadly_stiff_control_per_death: entry.create_deadly_stiff_control_per_death,
+			rgpm: entry.rGpm,
+			unrrpm: entry.unrRpm,
+			killherogold: entry.killHeroGold,
+			deadlosegold: entry.deadLoseGold,
+			fedenemygold: entry.fedEnemyGold,
+			teamnumber: entry.teamNumber,
+			iswin: (entry.isWin ? 't' : 'f'),
+			player_id: entry.player_id,
+			alonekillednum: entry.aloneKilledNum,
+			alonebecatchednum: entry.aloneBeCatchedNum,
+			alonebekillednum: entry.aloneBeKilledNum,
+			consumedamage: entry.consumeDamage
+		})
+		.asCallback(function(err){
+			if (err)
+			{
+				return cb(err);
+			}
+			return cb();
+		});
+	}, done);
+}
+
 
 module.exports = {
     getSets,
@@ -1080,4 +1167,6 @@ module.exports = {
     mmrEstimate,
     searchPlayer,
 	storeDem,
+	getDem,
+	insertMantaMatch,
 };

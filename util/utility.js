@@ -135,7 +135,14 @@ function generateJob(type, payload)
             return {
                 title: [type, payload.dem_index].join(),
                 type: type,
-                // url: payload.url,
+                payload: payload
+            };
+        },
+        "manta": function()
+        {
+            return {
+                title: [type, payload.dem_index].join(),
+                type: type,
                 payload: payload
             };
         },
