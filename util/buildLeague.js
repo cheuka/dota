@@ -42,6 +42,7 @@ module.exports = function(db, cb) {
     });
     */
 
+/*
     var url = generateJob("api_leagues", {}).url;
     getData(url, function(err, data) {
         data.result.leagues.forEach(function(league) {
@@ -49,36 +50,40 @@ module.exports = function(db, cb) {
         });
         getLeagueMatchPage(league_list, cb);
     });
+*/
+    var st = moment(new Date()).unix() - 24*3600*1000;
+    db.select('league_id').from('league_info').where('start_time', '>', st)
+    .orderBy('start_time', 'desc').asCallback(function(err, league) {
+        console.log('league length ->' + league.length);
+        async.forEachLimit(league, 1, function(league_i, next) {
 
-
-    function getLeagueMatchPage(league_list, cb) {
-        //async.eachSeries(league_list, function(leagueid, next) {
-        async.forEachLimit(league_list, 10, function(leagueid, next) {
+            console.log('league id ->' + league_i.league_id);
              var url = generateJob("api_history", {
-                leagueid: leagueid
+                leagueid: league_i.league_id
             }).url;
 
-            getMatchPage(url, leagueid, next); 
+            getMatchPage(url, league_i.league_id, next);
         }, function(err) {
-            return cb()
+            return cb();
         });
-    }
+
+    });
+
+
 
     function getMatchPage(league_url, leagueid, cb) {
         getData(league_url, function(err, data) {
             async.eachSeries(data.result.matches, function(match, next) {
                 // only get match from 2016-8-1
                 //if (match.start_time < 1470009600) {
-
-                //var st = Math.max(1474128000, moment(new Date()).unix() - 200*24*3600*1000);
-                var st = moment(new Date()).unix() - 200*24*3600*1000;
-                if (match.start_time < st) {
-                    return next('stoped fetch league 20 days ago');
+                var st2 = moment(new Date()).unix() - 100*24*3600*1000;
+                if (match.start_time < st2) {
+                    return next('stoped fetch league 100 days ago');
                 }
 
                 //if (leagueid == 4920) {
-                    console.log('radiant id = ' + match.radiant_team_id);
-                    console.log('dire id = ' + match.dire_team_id);
+                console.log('radiant id = ' + match.radiant_team_id);
+                console.log('dire id = ' + match.dire_team_id);
                 //}
                 async.series({
                     'upsertRadiant':function(done) {

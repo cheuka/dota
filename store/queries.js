@@ -675,16 +675,18 @@ function getMatchRating(redis, match, cb)
 
 function getTeamFetchedMatches(db, payload, cb)
 {
-    db.table('fetch_team_match').select('*').where({
+    db.table('fetch_team_match').select(['fetch_team_match.*', 'league_info.league_url', 'league_info.league_name']).where({
         'team_id': payload.team_id,
         //'is_fetched': true
     }).leftJoin('league_info', 'fetch_team_match.league_id', 'league_info.league_id')
-    .whereNotNull('start_time')
-    .orderBy('start_time','desc').asCallback(function(err, result) {
+    .whereNotNull('fetch_team_match.start_time')
+    .where('fetch_team_match.start_time', '>', 1470009600)
+    .orderByRaw('fetch_team_match.start_time desc').asCallback(function(err, result) {
         if (err) {
             console.log(err);
             return cb('query failed');
         }
+        //console.log(JSON.stringify(result));
         return cb(null, result);
     });
 }

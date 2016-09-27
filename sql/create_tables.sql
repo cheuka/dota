@@ -216,5 +216,6 @@ CREATE TABLE league_info (
     league_id integer PRIMARY KEY,
     league_name varchar(255),
     league_desc varchar(255),
-    league_url varchar(255)
+    league_url varchar(255),
+    start_time bigint
 );
