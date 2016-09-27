@@ -583,6 +583,13 @@ app.get('/search', function(req, res, cb)
         res.render('search', {user: req.session.user});
     }
 });
+app.get('/players_ranking', function(req, res, cb)
+{ 
+    console.log('player_ranking');
+    //res.json({"error":"please specify the team id"});
+    res.render('players_ranking', {
+    });
+});
 app.get('/april/:year?', function(req, res, cb)
 {
     return res.render('plusplus',

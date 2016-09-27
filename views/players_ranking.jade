@@ -1,0 +1,145 @@
+extend layout
+
+block head
+    style.
+        lis{
+            float:left;
+            list-style:none;
+            margin:20px;
+            width:250px;
+            height:60px;
+            background:rgba(128,128,128,0.5);
+            text-align:center;
+            font-size:2em
+            color:rgb(192,192,192);
+            vertical-align:middle;
+            line-height:60px;
+        }
+
+        .same_line{
+            float:left;
+            margin-left:20px;
+            margin-top:auto;
+            margin-bottom:auto;
+        }
+
+        .row{
+            margin-top:40px;
+
+        }
+
+
+    script.
+        function toComprehensive(){
+            $('#comprehensive').show();
+            $('#single_player').hide();
+        }
+    
+
+        function toSinglePlayer(){
+            $('#comprehensive').hide();
+            $('#single_player').show();
+
+        }
+
+
+
+block content
+    .row
+        ul.tab
+            lis(onclick='toComprehensive()') 综合分析
+            lis(onclick='toSinglePlayer()') 单独分析
+    #comprehensive
+        .row
+            h4.same_line 时间筛选
+            input(type='date', value='2016-04-21')#com_start_time.same_line
+            h4.same_line to
+            input(type='date')#com_end_time.same_line
+        .row
+            h4.same_line 联赛筛选
+            select()#league_select.same_line
+                option(value='0',selected='true') 所有联赛
+        .row
+            h4.same_line 场次筛选
+            select()#league_select.same_line
+                option(value='1',selected='true') >=1场比赛
+        //选手名称 场次 输出 胜率 消耗 回复 控制 参团率 抓人 落单被抓 CNE URGPM GPM 买眼 反眼 控符 AP
+        .row
+            .col-md-12.table-responsive
+                table.table.table-striped.table-condensed.rankable#team_fetch_match
+                    thread
+                        tr
+                            th #
+                            th 选手名称
+                            th 场次
+                            th 输出
+                            th 胜率
+                            th 消耗
+                            th 回复
+                            th 控制
+                            th 参团率
+                            th 抓人
+                            th 落单被抓
+                            th CNE
+                            th URGPM
+                            th GPM
+                            th 买眼
+                            th 反眼
+                            th 控符
+                            th APM
+                        each entry, i in data || []
+                            tr
+                                td= i+1
+                                td #{entry.player_name}
+                                td #{entry.create_total_damages}
+                                td #{entry.hero_name}
+                                td #{entry.consumedamage}
+                                td #{entry.create_deadly_stiff_control}
+                                td #{entry.hero_name}
+                                td #{entry.hero_name}
+                                td #{entry.create_deadly_stiff_control}
+                                td #{entry.rgpm}
+                                td #{entry.unrrpm}
+                                td #{entry.killherogold}
+                                td #{entry.deadlosegold}
+
+    #single_player
+        .row
+            h4.same_line 选择战队
+            select()#league_select.same_line
+                option(value='0',selected='true') 所有联赛
+            h4.same_line 选手
+            select()#league_select.same_line
+                option(value='0',selected='true') 所有联赛
+        .row
+            h4.same_line 时间筛选
+            input(type='date', value='2016-04-21')#sin_start_time.same_line
+            h4.same_line to
+            input(type='date')#sin_end_time.same_line
+        .row
+            .col-md-12.table-responsive
+                table.table.table-striped.table-condensed.rankable#team_fetch_match
+                    thread
+                        tr
+                            th #
+                            th 英雄名称
+                            th 场次
+                            th 输出
+                            th 胜率
+                            th 消耗
+                            th 回复
+                            th 控制
+                            th 参团率
+                            th 抓人
+                            th 落单被抓
+                            th CNE
+                            th URGPM
+                            th GPM
+                            th 买眼
+                            th 反眼
+                            th 控符
+                            th APM
+
+    script.
+        document.getElementById('com_end_time').valueAsDate = new Date();
+        document.getElementById('sin_end_time').valueAsDate = new Date();
