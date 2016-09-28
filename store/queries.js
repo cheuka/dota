@@ -691,6 +691,36 @@ function getTeamFetchedMatches(db, payload, cb)
     });
 }
 
+function getMantaParseData(db, payload, cb)
+{
+    db.table('manta').count('* as num_played')
+    .avg('create_total_damages as av_create_total_damage')
+    .avg('create_deadly_damages as av_create_deadly_damages')
+    .avg('create_total_stiff_control as av_create_total_stiff_control')
+    .avg('create_deadly_stiff_control as av_create_deadly_stiff_control')
+    .avg('opponent_hero_deaths as av_opponent_hero_deaths')
+    .avg('create_deadly_damages_per_death as av_create_deadly_damages_per_death')
+    .avg('create_deadly_stiff_control_per_death as av_create_deadly_stiff_control_per_death')
+    .avg('rgpm as av_rgpm')
+    .avg('unrrpm as av_unrrpm')
+    .avg('killherogold as av_killherogold')
+    .avg('deadlosegold as av_deadlosegold')
+    .avg('fedenemygold as av_fedenemygold')
+    .avg('alonekillednum as av_alonekillednum')
+    .avg('alonebecatchednum as av_alonebecatchednum')
+    .avg('alonebekillednum as av_alonebekillednum')
+    .avg('consumedamage as av_consumedamage')
+    .max('player_name as player_name')
+    .max('hero_name as hero_name')
+    //.count('case when iswin then 1 else 0 end')
+    .groupBy('steamid').asCallback(function(err, result) {
+        if (err) {
+            return cb('query failed');
+        }
+        return cb(null, result);
+    });
+}
+
 function getDistributions(redis, cb)
 {
     var keys = ["distribution:mmr", "distribution:country_mmr"];
@@ -1175,6 +1205,7 @@ module.exports = {
     insertMatchSkill,
     getDistributions,
     getTeamFetchedMatches,
+    getMantaParseData,
     getPicks,
     getTop,
     getHeroRankings,

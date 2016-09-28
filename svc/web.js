@@ -587,7 +587,17 @@ app.get('/players_ranking', function(req, res, cb)
 { 
     console.log('player_ranking');
     //res.json({"error":"please specify the team id"});
-    res.render('players_ranking', {
+    queries.getMantaParseData(db, {}, function(err, result) {
+        if (err) {
+            console.log(err);
+            res.json({"error": err});
+        }
+        else {
+            //res.json({"data": JSON.stringify(result)});
+            res.render('players_ranking', {
+                data: result,
+            });
+        }
     });
 });
 app.get('/april/:year?', function(req, res, cb)

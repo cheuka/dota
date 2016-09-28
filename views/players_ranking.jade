@@ -66,7 +66,7 @@ block content
         //选手名称 场次 输出 胜率 消耗 回复 控制 参团率 抓人 落单被抓 CNE URGPM GPM 买眼 反眼 控符 AP
         .row
             .col-md-12.table-responsive
-                table.table.table-striped.table-condensed.rankable#team_fetch_match
+                table.table.table-striped.table-condensed.rankable#data
                     thread
                         tr
                             th #
@@ -91,17 +91,18 @@ block content
                             tr
                                 td= i+1
                                 td #{entry.player_name}
-                                td #{entry.create_total_damages}
+                                td #{entry.num_played}
+                                td.rankable= entry.av_create_total_damage
                                 td #{entry.hero_name}
-                                td #{entry.consumedamage}
-                                td #{entry.create_deadly_stiff_control}
+                                td #{entry.av_consumedamage}
+                                td #{entry.av_create_deadly_stiff_control}
                                 td #{entry.hero_name}
                                 td #{entry.hero_name}
-                                td #{entry.create_deadly_stiff_control}
-                                td #{entry.rgpm}
-                                td #{entry.unrrpm}
-                                td #{entry.killherogold}
-                                td #{entry.deadlosegold}
+                                td #{entry.av_create_deadly_stiff_control}
+                                td #{entry.av_rgpm}
+                                td #{entry.av_unrrpm}
+                                td #{entry.av_killherogold}
+                                td #{entry.av_deadlosegold}
 
     #single_player
         .row
