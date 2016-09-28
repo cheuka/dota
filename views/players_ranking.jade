@@ -33,7 +33,7 @@ block head
 
         var xmlHttp;
         function getLeagueInfo(){
-            xmlHttp = GetXmlHttpObject();
+            var xmlHttp = GetXmlHttpObject();
             if(xmlHttp == null){
                 return;	
             }
@@ -230,3 +230,40 @@ block content
         document.getElementById('sin_end_time').valueAsDate = new Date();
         toComprehensive()
         getLeagueInfo()
+        var table = document.getElementById("data");
+        var table_th = document.getElementsByTagName("th");
+        var table_tbody = table.getElementsByTagName("tbody")[0];
+        var table_tr = table_tbody.getElementsByTagName("tr");
+        function bind_click(_i) {
+            table_th[_i].onclick = function () {
+                var temp_arr = [];
+                var temp_tr_arr = [];
+                for (j = 0; j < table_tr.length; j++) {
+                    temp_arr.push(table_tr[j].getElementsByTagName("td")[_i].innerHTML);
+                    temp_tr_arr.push(table_tr[j].cloneNode(true));
+                }
+                ;
+                var tr_length = table_tr.length
+                for (x = 0; x < tr_length; x++) {
+                    table_tbody.removeChild(table_tbody.getElementsByTagName("tr")[0]);
+                }
+                var temp = parseInt(temp_arr[0]) || temp_arr[0];
+                if (typeof(temp) == 'number') {
+                    temp_arr.sort(function (a, b) {
+                        return b - a;
+                    });
+                } else {
+                    temp_arr.sort();
+                }
+                for (k = 0; k < temp_arr.length; k++) {
+                    for (vv = 0; vv < temp_tr_arr.length; vv++) {
+                        if (temp_arr[k] == temp_tr_arr[vv].getElementsByTagName("td")[_i].innerHTML) {
+                            table_tbody.appendChild(temp_tr_arr[vv]);
+                        }
+                    }
+                }
+            }
+        }
+        for (i = 0; i < table_th.length; i++) {
+            bind_click(i);
+        }
