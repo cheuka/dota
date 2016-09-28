@@ -1,0 +1,38 @@
+extend match
+
+block match_content
+  .row
+    .col-md-12
+      h2 Graphs
+      h3 Radiant Advantage
+      #chart-diff
+      h3 Gold
+      #chart-gold
+
+  //
+	+ad("banner3")
+
+append footer_assets
+  scripts.
+    var graphData = !{JSON.stringify(match.graphData)};
+    generateCharts(graphData);
+
+    var data = !{JSON.stringify(match.incomeData)};
+    c3.generate({
+        bindto: "#chart-diff",
+        data: {
+            columns: data.goldDiff           
+        }
+    });
+
+    c3.generate({
+	bindto: "#chart-gold",
+	data: {
+	    columns: data.gold
+	}
+});
+
+  //-
+    <link href="public/css/c3.min.css" rel="stylesheet" type="text/css">
+    <script src="public/js/c3.min.js"></script>
+
