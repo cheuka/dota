@@ -38,7 +38,8 @@ CREATE TABLE matches (
   radiant_gold_adv integer[],
   radiant_xp_adv integer[],
   teamfights json[],
-  version integer
+  version integer,
+  is_manta_parsed boolean
   );
 
 CREATE TABLE player_matches (
@@ -195,4 +196,26 @@ CREATE TABLE team_match(
 	is_winner boolean not null,
 	version varchar(30),
 	end_time bigint
+);
+
+
+
+CREATE TABLE fetch_team_match(
+  team_id bigint,
+  match_id bigint,
+  league_id integer,
+  start_time bigint,
+  dem_url varchar(150),
+  PRIMARY KEY (team_id, match_id),
+  is_fetched boolean,
+  is_dem_persisted boolean,
+  is_manta_parsed boolean
+);
+
+CREATE TABLE league_info (
+    league_id integer PRIMARY KEY,
+    league_name varchar(255),
+    league_desc varchar(255),
+    league_url varchar(255),
+    start_time bigint
 );

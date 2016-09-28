@@ -22,6 +22,7 @@ var processMetadata = require('../processors/processMetadata');
 var processExpand = require('../processors/processExpand');
 var startedAt = new Date();
 var request = require('request');
+//var request = require('requestretry');
 var cp = require('child_process');
 var progress = require('request-progress');
 var stream = require('stream');
@@ -39,8 +40,10 @@ var bodyParser = require('body-parser');
 var app = express();
 
 //lordstone:
-
 var cheuka_session = require("../util/cheukaSession");
+
+//var url = require('url');
+//var dns = require('dns');
 
 app.use(bodyParser.json());
 app.get('/', function(req, res)
@@ -79,6 +82,7 @@ pQueue.process(1, function(job, cb)
             }
             else
             {
+                console.log('get replay url');
                 getReplayUrl(db, redis, match, cb);
             }
         },
@@ -237,17 +241,38 @@ function runParse(match, job, cb)
     {
         exit('timeout');
     }, 300000);
-    var url = match.url;
+
+    var full_url = match.url;
     // Streams
-    var inStream = progress(request(
+    console.log('start to fetch dem');
+    
+    //resolve url first
+    //var host = url.parse(full_url).hostname;
+    //var path = url.parse(full_url).path;
+    //var port = url.parse(full_url).port;
+    //dns.resolve4(host, function(e, addresses) {
+    //    if (e) {
+    //        console.log('error: ' + e);
+    //        return cb(e);
+    //    }
+
+    //    console.log('resolved address: ' + addresses[0]);
+    //    var cur_url = 'http://' + addresses[0] + ':' + port + path;
+    //    console.log('cur ful url ' + cur_url);
+    var requestStream = request(
     {
-        url: url
-    }));
+        url: full_url,
+    }).on('response', function(res)
+    {
+        console.log('status code = ' + res.statusCode);
+    }).on('error', exit);
+
+    var inStream = progress(requestStream);
     inStream.on('progress', function(state)
     {
         console.log(JSON.stringify(
         {
-            url: url,
+            url: full_url,
             state: state
         }));
         if (job)
@@ -261,14 +286,30 @@ function runParse(match, job, cb)
             exit(response.statusCode.toString());
         }
     }).on('error', exit);
+
+
+    var midStream = stream.PassThrough();
+    inStream.pipe(midStream);
+    // rxu, save the replay files to folder
+    // http://replay#cluster#.valve.net/#match_id#_#salt#.dem.bz2
+    // for user upload case, currently we insert it into database
+    if (!match.replay_blob_key) {
+        var urlsplit = full_url.split('/');
+        var savename = urlsplit[urlsplit.length - 1];
+        var post_savename = savename.split('_')[0] + '.dem.bz2';
+        var ws = require('fs').createWriteStream('replays/'+post_savename, {flags: 'w'});
+        midStream.pipe(ws);
+    }
+
     var bz;
-    if (url && url.slice(-3) === "bz2")
+    if (full_url && full_url.slice(-3) === "bz2")
     {
         bz = spawn("bunzip2");
     }
     else
     {
         var str = stream.PassThrough();
+
         bz = {
             stdin: str,
             stdout: str
@@ -304,7 +345,8 @@ function runParse(match, job, cb)
     parseStream.on('end', exit);
     parseStream.on('error', exit);
     // Pipe together the streams
-    inStream.pipe(bz.stdin);
+
+    midStream.pipe(bz.stdin);
     bz.stdout.pipe(parser.stdin);
     parser.stdout.pipe(parseStream);
 
@@ -338,7 +380,7 @@ function runParse(match, job, cb)
                 parsed_data.radiant_xp_adv = ap.radiant_xp_adv;
                 parsed_data.upload = upload;
 				
-				//lordstone: adding end_time and team ids
+                //lordstone: adding end_time and team ids
                 parsed_data.end_time = upload.end_time;
                 parsed_data.radiant_team_id = upload.radiant_team_id;
                 parsed_data.dire_team_id = upload.dire_team_id;
@@ -346,10 +388,12 @@ function runParse(match, job, cb)
                 //rxu, add team and personal info
                 for (var i = 0; i < parsed_data.players.length; ++i)
                 {
-                    parsed_data.players[i].account_id = upload.player_info[i].steamid;
-                    parsed_data.players[i].personaname = upload.player_info[i].player_name;
-                    parsed_data.players[i].team = upload.player_info[i].game_team;
-                    parsed_data.players[i].isRadiant = upload.player_info[i].game_team === 2;
+                    if (upload && upload.player_info[i]) {
+                        parsed_data.players[i].account_id = upload.player_info[i].steamid;
+                        parsed_data.players[i].personaname = upload.player_info[i].player_name;
+                        parsed_data.players[i].team = upload.player_info[i].game_team;
+                        parsed_data.players[i].isRadiant = upload.player_info[i].game_team === 2;
+                    }
                 }
 
                 //processMultiKillStreaks();

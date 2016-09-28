@@ -8,6 +8,9 @@ var queue = require('../store/queue');
 var db = require('../store/db');
 var queries = require('../store/queries');
 var buildSets = require('../store/buildSets');
+var fetchProgame = require('../util/fetchProgame.js');
+var buildLeague = require('../util/buildLeague.js');
+var buildLeagueInfo = require('../util/buildLeagueInfo.js');
 var utility = require('../util/utility');
 var getMMStats = require('../util/getMMStats');
 var async = require('async');
@@ -20,17 +23,34 @@ sqlq.forEach(function(f)
     sql[f.split('.')[0]] = fs.readFileSync('./sql/' + f, 'utf8');
 });
 console.log("[WORKER] starting worker");
-invokeInterval(function doBuildSets(cb)
+
+//invokeInterval(function doBuildSets(cb)
+//{
+//    buildSets(db, redis, cb);
+//}, 60 * 1000);
+
+invokeInterval(function doFetchProgame(cb)
 {
-    buildSets(db, redis, cb);
-}, 60 * 1000);
+    fetchProgame(db, cb);
+}, 2*60*60*1000); 
+
+
+invokeInterval(function doBuildLeague(cb)
+{
+    buildLeague(db, cb);
+}, 3600*1000);
+
+invokeInterval(function doBuildLeagueInfo(cb)
+{
+    buildLeagueInfo(db, cb);
+}, 3600*1000);
 
 /*
 invokeInterval(function mmStats(cb)
 {
     getMMStats(redis, cb);
 }, config.MMSTATS_DATA_INTERVAL * 60 * 1000); //Sample every 3 minutes
-*/
+
 invokeInterval(function buildDistributions(cb)
 {
     async.parallel(
@@ -104,6 +124,8 @@ invokeInterval(function buildDistributions(cb)
         });
     }
 }, 60 * 60 * 1000 * 6);
+*/
+
 invokeInterval(function cleanQueues(cb)
 {
     queue.cleanup(redis, cb);

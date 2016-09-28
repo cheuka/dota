@@ -6,7 +6,15 @@
       "ignore_watch": ["node_modules", "public", "views"],
       "group": "core",
       "exec_mode": "cluster",
-      "instances": 5
+      "instances": 1
+    },
+    {
+      "script": "svc/schedule.js",
+      "watch": false,
+      "ignore_watch": ["node_modules", "public", "views"],
+      "group": "core",
+      "exec_mode": "cluster",
+      "instances": 1
     },
     {
       "script": "svc/requests.js",
@@ -47,9 +55,7 @@
       "group": "manta",
       "exec_mode": "cluster",
       "instances": 1
-    }
-
-/*
+    },
     {
       "script": "svc/retriever.js",
       "watch": false, 
@@ -58,6 +64,5 @@
       "exec_mode": "cluster",
       "instances": 1
     }
-*/
   ]
 }

@@ -132,10 +132,6 @@ function computeBP2Info(options, cb)
         // only filter out 20 matches
         match_ids = match_ids.slice(Math.max(match_ids.length - 20, 0));
 
-
-        match_ids = match_ids.slice(Math.max(match_ids.length - 20, 0));
-
-        // lordstone: use async.eachseries
         async.eachSeries(match_ids, function(match_i, cb)
         {
             var cur_match_id = match_i.match_id;

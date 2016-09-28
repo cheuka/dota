@@ -133,7 +133,7 @@ function upsert(db, table, row, conflict, cb)
             return util.format("%s=%s", key, "EXCLUDED." + key);
         });
         var query = util.format("INSERT INTO %s (%s) VALUES (%s) ON CONFLICT (%s) DO UPDATE SET %s", table, Object.keys(row).join(','), values, Object.keys(conflict).join(','), update.join(','));
-        //require('fs').writeFileSync('output.json', query);
+        require('fs').writeFileSync('output.json', query);
         db.raw(query, Object.keys(row).map(function(key)
         {
             return row[key];
@@ -394,8 +394,8 @@ function insertMatch(db, redis, match, options, cb)
     function saveUserMatch(cb)
 	{
 		// lordstone: save to user_match_list
-		console.log('saving to user_match_list');
-		cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
+		//console.log('saving to user_match_list');
+		//cheuka_session.saveMatchToUser(db, match.user_id, match.match_id, match.is_public);
 		return cb();
 	}
 
@@ -670,6 +670,73 @@ function getMatchRating(redis, match, cb)
             return a + b;
         }, 0) / filt.length);
         cb(err, avg);
+    });
+}
+
+function getTeamFetchedMatches(db, payload, cb)
+{
+    db.table('fetch_team_match').select(['fetch_team_match.*', 'league_info.league_url', 'league_info.league_name']).where({
+        'team_id': payload.team_id,
+        //'is_fetched': true
+    }).leftJoin('league_info', 'fetch_team_match.league_id', 'league_info.league_id')
+    .whereNotNull('fetch_team_match.start_time')
+    .where('fetch_team_match.start_time', '>', 1470009600)
+    .orderByRaw('fetch_team_match.start_time desc').asCallback(function(err, result) {
+        if (err) {
+            console.log(err);
+            return cb('query failed');
+        }
+        //console.log(JSON.stringify(result));
+        return cb(null, result);
+    });
+}
+
+function getMantaParseData(db, payload, cb)
+{
+ 
+    db.table('manta').count('* as num_played')
+    .avg('healing as av_healing')
+    .avg('teamfight_participate_ratio as tf_ratio')
+    .avg('create_total_damages as av_create_total_damage')
+    .avg('create_deadly_damages as av_create_deadly_damages')
+    .avg('create_total_stiff_control as av_create_total_stiff_control')
+    .avg('create_deadly_stiff_control as av_create_deadly_stiff_control')
+    .avg('opponent_hero_deaths as av_opponent_hero_deaths')
+    .avg('create_deadly_damages_per_death as av_create_deadly_damages_per_death')
+    .avg('create_deadly_stiff_control_per_death as av_create_deadly_stiff_control_per_death')
+    .avg('rgpm as av_rgpm')
+    .avg('unrrpm as av_unrrpm')
+    .avg('killherogold as av_killherogold')
+    .avg('deadlosegold as av_deadlosegold')
+    .avg('fedenemygold as av_fedenemygold')
+    .avg('alonekillednum as av_alonekillednum')
+    .avg('alonebecatchednum as av_alonebecatchednum')
+    .avg('alonebekillednum as av_alonebekillednum')
+    .avg('consumedamage as av_consumedamage')
+    .avg('vision_bought as av_vision_bought')
+    .avg('vision_kill as av_vision_kill')
+    .avg('runes as av_runes')
+    .avg('apm as av_apm')
+    .max('player_name as player_name')
+    .select(db.raw('count (case when iswin then 1 end) as win_times'))
+    .groupBy('steamid').asCallback(function(err, result) {
+        if (err) {
+            return cb('query failed');
+        }
+        return cb(null, result);
+    });
+}
+
+function getLeagueList(db, payload, cb)
+{
+    db.raw(`
+    SELECT * from league_info
+    `).asCallback(function(err, result){
+        if (err)
+        {
+            return cb(err);
+        }
+        return cb(null, result)
     });
 }
 
@@ -1156,6 +1223,9 @@ module.exports = {
     insertPlayerRating,
     insertMatchSkill,
     getDistributions,
+    getTeamFetchedMatches,
+    getMantaParseData,
+    getLeagueList,
     getPicks,
     getTop,
     getHeroRankings,
