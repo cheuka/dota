@@ -33,7 +33,7 @@ block head
 
         var xmlHttp;
         function getLeagueInfo(){
-            xmlHttp = GetXmlHttpObject();
+            var xmlHttp = GetXmlHttpObject();
             if(xmlHttp == null){
                 return;	
             }
@@ -146,7 +146,7 @@ block content
                             th 选手名称
                             th 场次
                             th 输出
-                            th 胜率
+                            th 胜率 %
                             th 消耗
                             th 回复
                             th 控制
@@ -161,30 +161,37 @@ block content
                             th 控符
                             th APM
                     tbody
-                        tr
-                            td 2
-                        tr
-                            td 4
-                        tr
-                            td 3
-                        tr
-                            td 1
+                        //tr
+                        //    td 2
+                        //tr
+                        //    td 4
+                        //tr
+                        //    td 3
+                        //tr
+                        //    td 1
                         each entry, i in data || []
                             tr
                                 td= i+1
                                 td #{entry.player_name}
                                 td #{entry.num_played}
-                                td.rankable= entry.av_create_total_damage
-                                td #{entry.hero_name}
-                                td #{entry.av_consumedamage}
-                                td #{entry.av_create_deadly_stiff_control}
-                                td #{entry.hero_name}
-                                td #{entry.hero_name}
-                                td #{entry.av_create_deadly_stiff_control}
-                                td #{entry.av_rgpm}
-                                td #{entry.av_unrrpm}
-                                td #{entry.av_killherogold}
-                                td #{entry.av_deadlosegold}
+                                td #{Math.round(entry.av_create_total_damage)}
+                                td #{Math.round(100*entry.win_times/entry.num_played)}
+                                td #{Math.round(entry.av_consumedamage)}
+                                td #{Math.round(entry.av_healing)}
+                                td #{Math.round(entry.av_create_deadly_stiff_control)}
+                                td #{Math.round(entry.tf_ratio)}
+                                td #{Math.round(entry.av_alonekillednum)}
+                                td #{Math.round(entry.av_alonebecatchednum)}
+                                td
+                                td #{Math.round(entry.av_unrrpm)}
+                                td #{Math.round(entry.av_rgpm)}
+                                td #{Math.round(entry.av_vision_bought)}
+                                td #{Math.round(entry.av_vision_kill)}
+                                td #{Math.round(entry.av_runes)}
+                                td #{Math.round(entry.av_apm)}
+
+
+
 
     #single_player
         .row
@@ -230,3 +237,40 @@ block content
         document.getElementById('sin_end_time').valueAsDate = new Date();
         toComprehensive()
         getLeagueInfo()
+        var table = document.getElementById("data");
+        var table_th = document.getElementsByTagName("th");
+        var table_tbody = table.getElementsByTagName("tbody")[0];
+        var table_tr = table_tbody.getElementsByTagName("tr");
+        function bind_click(_i) {
+            table_th[_i].onclick = function () {
+                var temp_arr = [];
+                var temp_tr_arr = [];
+                for (j = 0; j < table_tr.length; j++) {
+                    temp_arr.push(table_tr[j].getElementsByTagName("td")[_i].innerHTML);
+                    temp_tr_arr.push(table_tr[j].cloneNode(true));
+                }
+                ;
+                var tr_length = table_tr.length
+                for (x = 0; x < tr_length; x++) {
+                    table_tbody.removeChild(table_tbody.getElementsByTagName("tr")[0]);
+                }
+                var temp = parseInt(temp_arr[0]) || temp_arr[0];
+                if (typeof(temp) == 'number') {
+                    temp_arr.sort(function (a, b) {
+                        return b - a;
+                    });
+                } else {
+                    temp_arr.sort();
+                }
+                for (k = 0; k < temp_arr.length; k++) {
+                    for (vv = 0; vv < temp_tr_arr.length; vv++) {
+                        if (temp_arr[k] == temp_tr_arr[vv].getElementsByTagName("td")[_i].innerHTML) {
+                            table_tbody.appendChild(temp_tr_arr[vv]);
+                        }
+                    }
+                }
+            }
+        }
+        for (i = 0; i < table_th.length; i++) {
+            bind_click(i);
+        }
