@@ -1,0 +1,118 @@
+extend /layout
+include /mixins/hero_td
+include /mixins/data_table
+include /mixins/data_table_header
+include /mixins/picks_bans
+
+block head
+  //link(rel="import" href="/public/paper-fab-menu.html")
+  link(rel='stylesheet', href="/public/css/yasp_home.css")
+   
+
+if user
+  block content
+    .row
+      span 战队选择：
+      span 
+      // TODO: lordstone continue with center. too sleepy....
+    .row.text-center
+      h1 Control Center: All Matches
+      br
+      .row.table-responsive(style='overflow-y:auto; overflow-x:hidden;')#show_matches
+        if !match_list || !match_list.length || match_list.length == 0
+          h3 No matches available. Please go to Upload page to upload some
+        else
+          table.table.table-striped
+            tbody
+
+              each obj in match_list
+                tr
+                  td(colspan=3)
+                    a(style='font-size: 20px' href="/matches/"+ obj.match_id) Match ID: #{obj.match_id}
+                    - var duration_min = parseInt(obj.upload.duration / 60)
+                    - var duration_sec = obj.upload.duration % 60
+                    p 
+                      span #{duration_min} ' #{duration_sec} ''
+                      if obj.upload
+                        if obj.upload.end_time
+                          span(style='color:yellow;')  || 
+                          span  
+                            abbr(title=moment.unix(obj.upload.end_time).fromNow())= moment.unix(obj.upload.end_time).format('YYYY-MM-DD HH:mm:ss')
+
+                  td(colspan=6)
+                    if obj.upload
+                      if obj.upload.picks_bans
+                        table(style='border: 0; background-color: transparent;')
+                          tbody
+                            tr
+                              td(style='min-width: 200px')
+                                p
+                                  if obj.upload.radiant_win == true
+                                    span(style='font-size:12px; color:gold') Radiant: #{obj.upload.radiant_team_name}
+                                  else
+                                    span(style='font-size:12px; color:darkgray') Radiant: #{obj.upload.radiant_team_name}
+                              if obj.upload.picks_bans
+                                - var bp_order = 0
+                                each pick in obj.upload.picks_bans
+                                  - bp_order += 1
+                                  if pick.team == 2 || pick.team == 0
+                                    td
+                                      - var hero_id = pick.hero_id
+                                      - var is_pick = pick.is_pick
+                                      - var hero = constants.heroes[hero_id]
+                                      if hero
+                                        span.img-text(class="text-success-1")
+                                          div(style='position:relative;')
+                                            div(style='z-index:10; font-size:12px; font-weight: bolder; position: absolute; left:35%; top:25%; color: white;') #{bp_order}
+                                            img.img-sm(src=hero.img, title=hero.localized_name, style= (is_pick ? "" : "-webkit-filter: grayscale(100%); filter: grayscale(100%);"))
+
+                                      else
+                                        = hero_id
+                            tr
+                              td(style='min-width: 200px;')
+                                p
+                                  if obj.upload.radiant_win == false
+                                    span(style='font-size:12px; color:gold') Dire: #{obj.upload.dire_team_name}
+                                  else
+                                    span(style='font-size:12px; color:darkgray') Dire: #{obj.upload.dire_team_name}
+                              if obj.upload.picks_bans
+                                - var bp_order = 0
+                                each pick in obj.upload.picks_bans
+                                  - bp_order += 1
+                                  if pick.team == 3 || pick.team == 1
+                                    td
+                                      - var hero_id = pick.hero_id
+                                      - var is_pick = pick.is_pick
+                                      - var hero = constants.heroes[hero_id]
+                                      if hero
+                                        span.img-text(class="text-danger")
+                                          div(style='position:relative;')
+                                            div(style='z-index:10; font-size:12px; font-weight:bolder; position: absolute; left:35%; top:25%; color:white;') #{bp_order} 
+                                            img.img-sm(src=hero.img, title=hero.localized_name, style= (is_pick ? "" : "-webkit-filter: grayscale(100%); filter: grayscale(100%);"))
+                                          // div #{(is_pick ? "Pick" : "Ban")}
+                                      else
+                                        = hero_id
+ 
+                      else
+                        h3 This match has no Picks/Bans
+                       
+                  td(colspan=3)
+                    p functions
+                //
+                  p Comments:
+                  textarea(id='comment'+obj.match_id, style='max-width: 150px;', placeholder='Enter your comments here')
+                  button save
+                  button clear
+                //a(href="/center/delete/" + obj.match_id) Delete
+                   
+else
+  p Please log out and retry
+
+
+   
+append footer_assets
+  script(src="/public/js/home/scroll.js")
+  script(src="/public/js/home/animatedNavbar.js")
+  script(src="/public/js/home/polymerFabs.js")
+  //script(src="/public/js/user/center.js")
+

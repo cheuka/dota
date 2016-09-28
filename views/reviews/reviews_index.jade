@@ -1,0 +1,140 @@
+extend match
+
+mixin picks_bans_row(picks_bans, team_int)
+  each pick in picks_bans
+    td(style="padding: 3px;")
+      //p team: #{JSON.stringify(pick.team)}
+      if pick.team === team_int
+        - var hero_id = pick.hero_id
+        - var is_pick = pick.is_pick
+        - var hero = constants.heroes[hero_id]
+        if hero
+          span.img-text(class=pick.team ? "text-danger" : "text-success")
+            img.img-sm(src=hero.img, title=hero.localized_name, style= (is_pick ? "" : "-webkit-filter: grayscale(100%); filter: grayscale(100%);"))
+            div #{(is_pick ? "Pick" : "Ban")} 
+        else
+          = hero_id
+
+block match_content
+  .row
+    .col-md-12
+      +data_table({id:"index",summable:true, heading: "Overview"})
+        each player, i in match.players
+          +data_table_header(i, match)
+            tr
+              th: abbr(title=tooltips.hero_id) Hero
+              th
+              th: abbr(title=tooltips.mmr) MMR
+              th: abbr(title=tooltips.level) LV
+              th: abbr(title=tooltips.kills) K
+              th: abbr(title=tooltips.deaths) D
+              th: abbr(title=tooltips.assists) A
+              th: abbr(title=tooltips.last_hits) LH
+              th: abbr(title=tooltips.denies) DN
+              th: abbr(title=tooltips.total_gold) GOLD
+              th: abbr(title=tooltips.gold_per_min) GPM
+              th: abbr(title=tooltips.xp_per_min) XPM
+              th: abbr(title=tooltips.hero_damage) HD
+              th: abbr(title=tooltips.tower_damage) TD
+              th: abbr(title=tooltips.hero_healing) HH
+              th: abbr(title=tooltips.items) Items
+          tr(class=player.isRadiant ? "radiant" : "dire")
+            +hero_td(player, player.abandons ? constants.leaver_status[player.leaver_status] : "")
+            td
+              //img.img-sm(src=player.avatar)
+              if (player.last_login)
+                img.user(src=constants.ICON_PATH, title="This user is registered!")
+            td.text-muted.small=player.solo_competitive_rank
+            td.rankable= player.level
+            td.rankable= player.kills
+            td.rankable.negative= player.deaths
+            td.rankable= player.assists
+            td.rankable= player.last_hits
+            td.rankable= player.denies
+            td.rankable.format= player.total_gold
+            td.rankable= player.gold_per_min
+            td.rankable= player.xp_per_min
+            if player.damage_inflictor_arr
+                - var totalhd = 0
+                each item in player.damage_inflictor_arr
+                    - totalhd += item.val
+                td.rankable.format= totalhd 
+            else
+                td.rankable.format= player.hero_damage
+            td.rankable.format= player.tower_damage
+            td.rankable.format= player.hero_healing
+            - var item_keys = {"item_0":1, "item_1":1, "item_2":1, "item_3":1, "item_4":1, "item_5":1}
+            td.text-left
+              each val, key in player
+                if key in item_keys && val
+                  - var item = constants.items[constants.item_ids[val]]
+                  if item
+                    img.img-sm.item(src=item.img, title=constants.item_ids[val])
+              if (player.hero_id === 80 && player.additional_units)
+                br
+                each val, key in player.additional_units[0]
+                  if key in item_keys && val
+                    - var item = constants.items[constants.item_ids[val]]                             
+                    if item
+                      img.img-sm.item(src=item.img, title=constants.item_ids[val])
+
+
+  if match.picks_bans
+    .row
+      .col-md-12      
+          h3.inline-header Picks/Bans
+          #picks-bans.table-responsive.collapse.in
+            table.table.table-hover
+              tbody
+                tr
+                  +picks_bans_row(match.picks_bans, 0)
+                tr
+                  +picks_bans_row(match.picks_bans, 1)
+                
+  else if match.upload
+    if match.upload.picks_bans 
+      .row
+        .col-md-12      
+            h3.inline-header Picks/Bans
+            #picks-bans.table-responsive.collapse.in
+              table.table.table-hover
+                tbody
+                  tr
+                    +picks_bans_row(match.upload.picks_bans, 2)
+                  tr
+                    +picks_bans_row(match.upload.picks_bans, 3)
+  //+ad("banner2")
+  
+  .row
+    .col-md-8
+      +data_table({id:"skills", heading: "Skill Builds"})
+        if match.players[0].ability_upgrades_arr
+          each player, i in match.players
+            +data_table_header(i, match)
+              tr
+                th Hero
+                - for (var lv = 1; lv < 26; lv++)
+                  th(style="padding:0px")= lv
+            tr
+              +hero_td(player)
+              each ability_id in player.ability_upgrades_arr || []
+                td(style="padding:0px;")
+                  span.img-text
+                    - var abilityData = constants.abilities[constants.ability_ids[ability_id]]
+                    if abilityData
+                      img.img-sm.ability(src=abilityData.img, title=constants.ability_ids[ability_id])
+                    else
+                      =ability_id
+        else
+          h3.text-center: small
+            | Ability upgrade data has expired for this match. <br>
+            | Use the request form to reload data.
+
+    .col-md-4
+      h3 Buildings
+      #map.mapContainer(data-radiant-win=match.radiant_win ? "1" : "0", data-tower-radiant=match.tower_status_radiant, data-tower-dire=match.tower_status_dire, data-barracks-radiant=match.barracks_status_radiant, data-barracks-dire=match.barracks_status_dire)
+        img.map(src=constants.map_url, alt="map")
+  
+append footer_assets
+  script.
+    buildMap();
