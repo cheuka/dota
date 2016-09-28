@@ -30,6 +30,55 @@ block head
 
 
     script.
+
+        var xmlHttp;
+        function getLeagueInfo(){
+            xmlHttp = GetXmlHttpObject();
+            if(xmlHttp == null){
+                return;	
+            }
+		
+            var httpUrl = "./players_league";
+            xmlHttp.onreadystatechange = subScriberListResult;
+            xmlHttp.open("GET", httpUrl, true);
+            xmlHttp.send(null);
+        }
+
+        function GetXmlHttpObject(){
+            var xmlHttp=null;
+            try{
+                // Firefox, Opera 8.0+, Safari
+                xmlHttp=new XMLHttpRequest();
+            }catch (e){
+             //Internet Explorer
+                try{
+                    xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+                }catch (e){
+                    xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+            return xmlHttp;
+        }
+
+        function subScriberListResult(){ 
+            if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+                if(xmlHttp.responseText.length > 0){
+                    parseLeague(xmlHttp.responseText);
+                } 
+            }
+        }
+
+        function parseLeague(responseText){
+            var jsonOb = JSON.parse(responseText);
+            var dataOb = jsonOb.data;
+            var rowsOb = JSON.parse(dataOb).rows;
+            var length = rowsOb.length;
+            for(var i = 0; i < length; i++){
+                var league = rowsOb[i]
+                $('#league_select').append("<option value='" + league.league_id + "'>" + league.league_name + "</option>");
+            }
+        }
+
         function toComprehensive(){
             $('#comprehensive').show();
             $('#single_player').hide();
@@ -42,7 +91,26 @@ block head
 
         }
 
+        function selectCompreData(){
+            var start_time = $('#com_start_time').val();
+            var end_time = $('#com_end_time').val();
+            var league_name = $('#league_select').val();
+            var game_times = $('#game_times').val();
+            alert('select compre data' + start_time + ',' + end_time + ',' + league_name  + ',' + game_times)
+        }
 
+        function selectSingleData(playerId){
+
+
+        }
+
+        function selectPlayerFromTeam(teamName){
+           alert(teamName);
+        }
+
+        function getLeagueList(){
+
+        }
 
 block content
     .row
@@ -57,17 +125,22 @@ block content
             input(type='date')#com_end_time.same_line
         .row
             h4.same_line 联赛筛选
-            select()#league_select.same_line
+            select(onchange='selectCompreData()')#league_select.same_line
                 option(value='0',selected='true') 所有联赛
         .row
             h4.same_line 场次筛选
-            select()#league_select.same_line
+            select(onchange='selectCompreData()')#game_times.same_line
                 option(value='1',selected='true') >=1场比赛
+                option(value='3') >=3场比赛
+                option(value='5') >=5场比赛
+                option(value='10') >=10场比赛
+                option(value='20') >=20场比赛
+                option(value='50') >=50场比赛
         //选手名称 场次 输出 胜率 消耗 回复 控制 参团率 抓人 落单被抓 CNE URGPM GPM 买眼 反眼 控符 AP
         .row
             .col-md-12.table-responsive
                 table.table.table-striped.table-condensed.rankable#data
-                    thread
+                    thead
                         tr
                             th #
                             th 选手名称
@@ -87,6 +160,15 @@ block content
                             th 反眼
                             th 控符
                             th APM
+                    tbody
+                        tr
+                            td 2
+                        tr
+                            td 4
+                        tr
+                            td 3
+                        tr
+                            td 1
                         each entry, i in data || []
                             tr
                                 td= i+1
@@ -107,11 +189,13 @@ block content
     #single_player
         .row
             h4.same_line 选择战队
-            select()#league_select.same_line
-                option(value='0',selected='true') 所有联赛
+            select(onchange='selectPlayerFromTeam(value)')#league_select.same_line
+                option(value='0',selected='true') Select a Team 
+                - for (var i = 0; i < constants.common_teams.length; ++i)
+                  option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
             h4.same_line 选手
-            select()#league_select.same_line
-                option(value='0',selected='true') 所有联赛
+            select(onchange='selectSingleData(value)')#league_select.same_line
+                option(value='0',selected='true') 选手名称
         .row
             h4.same_line 时间筛选
             input(type='date', value='2016-04-21')#sin_start_time.same_line
@@ -144,3 +228,5 @@ block content
     script.
         document.getElementById('com_end_time').valueAsDate = new Date();
         document.getElementById('sin_end_time').valueAsDate = new Date();
+        toComprehensive()
+        getLeagueInfo()

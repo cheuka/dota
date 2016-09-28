@@ -721,6 +721,19 @@ function getMantaParseData(db, payload, cb)
     });
 }
 
+function getLeagueList(db, payload, cb)
+{
+    db.raw(`
+    SELECT * from league_info
+    `).asCallback(function(err, result){
+        if (err)
+        {
+            return cb(err);
+        }
+        return cb(null, result)
+    });
+}
+
 function getDistributions(redis, cb)
 {
     var keys = ["distribution:mmr", "distribution:country_mmr"];
@@ -1206,6 +1219,7 @@ module.exports = {
     getDistributions,
     getTeamFetchedMatches,
     getMantaParseData,
+    getLeagueList,
     getPicks,
     getTop,
     getHeroRankings,

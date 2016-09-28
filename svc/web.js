@@ -587,16 +587,35 @@ app.get('/players_ranking', function(req, res, cb)
 { 
     console.log('player_ranking');
     //res.json({"error":"please specify the team id"});
-    queries.getMantaParseData(db, {}, function(err, result) {
-        if (err) {
-            console.log(err);
-            res.json({"error": err});
-        }
-        else {
+    //queries.getMantaParseData(db, {}, function(err, result) {
+        //if (err) {
+           // console.log(err);
+            //res.json({"error": err});
+        //}
+        //else {
             //res.json({"data": JSON.stringify(result)});
             res.render('players_ranking', {
-                data: result,
+                //data: result,
             });
+        //}
+    //});
+});
+app.get('/players_ranking_data', function(req, res, cb)
+{ 
+    console.log('player_ranking_data');
+    //res.json({"error":"please specify the team id"});
+    res.json({"ranking" : "ranking"})
+});
+app.get('/players_league', function(req, res, cb)
+{ 
+    console.log('players_league');
+    queries.getLeagueList(db, {}, function(err, result) {
+        if (err) {
+           console.log(err);
+           res.json({"error": "error"});
+        }
+        else {
+           res.json({"data": JSON.stringify(result)});
         }
     });
 });
