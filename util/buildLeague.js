@@ -52,12 +52,13 @@ module.exports = function(db, cb) {
     });
 */
     var st = moment(new Date()).unix() - 24*3600*1000;
-    db.select('league_id').from('league_info').where('start_time', '>', st)
-    .orderBy('start_time', 'desc').asCallback(function(err, league) {
+    db.select('league_id','league_name').from('league_info').where('start_time', '>', st)
+    .orderBy('start_time', 'desc').limit(100).asCallback(function(err, league) {
         console.log('league length ->' + league.length);
         async.forEachLimit(league, 1, function(league_i, next) {
 
             console.log('league id ->' + league_i.league_id);
+            console.log('league name ->' + league_i.league_name);
              var url = generateJob("api_history", {
                 leagueid: league_i.league_id
             }).url;
@@ -82,8 +83,8 @@ module.exports = function(db, cb) {
                 }
 
                 //if (leagueid == 4920) {
-                console.log('radiant id = ' + match.radiant_team_id);
-                console.log('dire id = ' + match.dire_team_id);
+                //console.log('radiant id = ' + match.radiant_team_id);
+                //console.log('dire id = ' + match.dire_team_id);
                 //}
                 async.series({
                     'upsertRadiant':function(done) {

@@ -18,48 +18,52 @@ module.exports = function(db, cb) {
                 leagueid: league.leagueid
             }).url;
 
-            getData(url2, function(err, data) {
-            	if (err) {
-            		return next();
-            	}
-
-            	var st = [];
-            	data.result.matches.forEach(function(match) {
-            		st.push(match.start_time);
-            	});
-
-            	/*
-            	var st_median;
-            	if (st.length > 0) 
-            		st_median = Math.round(median(st));
-            	else
-            		st_median = 0;
-            	*/
-
-            	var st_max = 0;
-            	for (var st_i in st) {
-            		st_max = Math.max(st_max, st[st_i]);
-            	}
-            	console.log('st_max ' + st_max);
-
-            	queries.upsert(db, 'league_info', {
-	                league_id: league.leagueid,
-	                league_name: league.name,
-	                league_desc: league.description,
-	                league_url: league.tournament_url,
-	                start_time: st_max
-	            }, {
-	                league_id: league.leagueid
-	            }, function (err) {
-	                if (err) {
-	                    console.log(err);
-	                }
-	                return next();
-	            });
+            var st_max = 0;
+            updateLatestMatchTime(league, url2, st_max, function(err) {
+                return next();
             });
+
         }, function(err) {
             console.log('finished');
-            return cb(err);
         });
+
+        function updateLatestMatchTime(league, url, mx, cb) {
+            getData(url, function(err, data) {
+                if (err) {
+                    return cb(err);
+                }
+
+                var st = [];
+                data.result.matches.forEach(function(m) {
+                    st.push(m.start_time);
+                });
+
+                for (var i in st) {
+                    mx = Math.max(mx, st[i]);
+                }
+
+                if (data.result.results_remaining) {
+                    var url2 = generateJob("api_history", {
+                        leagueid: league.leagueid,
+                        start_at_match_id: data.result.matches[data.result.matches.length - 1].match_id - 1,
+                    }).url;
+                    updateLatestMatchTime(league, url2, mx, cb);
+                }
+                else {
+                    console.log('maxtime' + mx);
+                    queries.upsert(db, 'league_info', {
+                        league_id: league.leagueid,
+                        league_name: league.name,
+                        league_desc: league.description,
+                        league_url: league.tournament_url,
+                        start_time: mx
+                    }, {
+                        league_id: league.leagueid
+                    }, function(err) {
+                        return cb();
+                    });
+                }
+            });
+        }
     });
 }
