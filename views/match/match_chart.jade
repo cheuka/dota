@@ -8,6 +8,7 @@ block match_content
       #chart-diff
       h3 Gold
       #chart-gold
+
   .modal.fade#themodal(role='dialog')
     .modal-dialog
       .modal-content
@@ -85,7 +86,8 @@ block match_content
                       //=key
 
         .modal-footer
-          
+          br
+
 
 
 
@@ -103,7 +105,13 @@ append footer_assets
     c3.generate({
         bindto: "#chart-diff",
         data: {
-            columns: data.goldDiff           
+            columns: data.goldDiff,
+            onclick: function(d, element)
+            {
+               // lordstone: add in modal process logics
+               $('#themodal')
+               $('#themodal').modal();
+            }
         }
     });
 

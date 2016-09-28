@@ -8,7 +8,7 @@
       "exec_mode": "cluster",
       "instances": 1
     },
-    {
+/*    {
       "script": "svc/schedule.js",
       "watch": false,
       "ignore_watch": ["node_modules", "public", "views"],
@@ -16,7 +16,7 @@
       "exec_mode": "cluster",
       "instances": 1
     },
-    {
+*/    {
       "script": "svc/requests.js",
       "watch": false,
       "ignore_watch": ["node_modules", "public", "views"],
