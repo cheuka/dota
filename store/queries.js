@@ -693,7 +693,10 @@ function getTeamFetchedMatches(db, payload, cb)
 
 function getMantaParseData(db, payload, cb)
 {
+ 
     db.table('manta').count('* as num_played')
+    .avg('healing as av_healing')
+    .avg('teamfight_participate_ratio as tf_ratio')
     .avg('create_total_damages as av_create_total_damage')
     .avg('create_deadly_damages as av_create_deadly_damages')
     .avg('create_total_stiff_control as av_create_total_stiff_control')
@@ -710,9 +713,12 @@ function getMantaParseData(db, payload, cb)
     .avg('alonebecatchednum as av_alonebecatchednum')
     .avg('alonebekillednum as av_alonebekillednum')
     .avg('consumedamage as av_consumedamage')
+    .avg('vision_bought as av_vision_bought')
+    .avg('vision_kill as av_vision_kill')
+    .avg('runes as av_runes')
+    .avg('apm as av_apm')
     .max('player_name as player_name')
-    .max('hero_name as hero_name')
-    //.count('case when iswin then 1 else 0 end')
+    .select(db.raw('count (case when iswin then 1 end) as win_times'))
     .groupBy('steamid').asCallback(function(err, result) {
         if (err) {
             return cb('query failed');
