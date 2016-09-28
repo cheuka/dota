@@ -4,7 +4,7 @@ var db = require('../store/db');
 
 var rule = new schedule.RecurrenceRule();
 rule.hour = 21;  // beijing time 5am
-rule.minute = 22;
+rule.minute = 30;
 
 var j = schedule.scheduleJob(rule, function() {
         console.log('start manta parse match');

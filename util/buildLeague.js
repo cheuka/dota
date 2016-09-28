@@ -11,7 +11,13 @@ var league_list = [];
 var league_obj = {};
 
 module.exports = function(db, cb) {
+
     console.log('start build leagues');
+
+    var timeout = setTimeout(function() {
+        console.log('exit');
+        process.exit(-1);
+    }, 3500*1000);
 
     //constants.common_teams = [111474];
     //async.eachSeries(constants.common_teams, function(team, next) {
