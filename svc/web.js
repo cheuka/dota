@@ -573,7 +573,7 @@ app.get('/search', function(req, res, cb)
             }
             return res.render('search',
             {
-		user: req.session.user,
+				user: req.session.user,
                 query: req.query.q,
                 result: result
             });
