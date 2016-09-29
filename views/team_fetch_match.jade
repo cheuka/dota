@@ -25,19 +25,22 @@ if user
                         th League Name
                         th Time
                         th Replay Status
+                        th Actions
                     tbody 
                        each entry, i in team_fetch_match || []
                             tr
                                 td= i+1
                                 td 
                                   a(href='/matches/'+entry.match_id) #{entry.match_id}
-                                - var league_name = entry.league_name.substr(11)
+                                - var league_name = (entry.league_name && entry.league_name.length >= 11) ? entry.league_name.substr(11) : ''
                                 td 
                                   a(href=''+entry.league_url) #{league_name}
                                 - var duration = new Date().getTime() - new Date(entry.start_time*1000).getTime()
                                 - var days = Math.floor(duration/(3600*24*1000)) 
                                 td #{days} days ago
                                 td= entry.is_fetched?'downloaded':'downloading'
+                                td 
+                                  a(href='/battle_reviews/' + entry.match_id) Battle Reviews
 
 else
   p Please log out and retry

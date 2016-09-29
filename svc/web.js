@@ -426,7 +426,7 @@ app.get('/team_fetch_match/:team_id?', function(req, res, cb)
             if (err) {
                 return cb(err);
             }                                              
-
+			console.log('DEBUG: find result: ' + JSON.stringify(result));
             var name;
             for (var i = 0; i < constants.common_teams.length; ++i) {
                 if (constants.common_teams[i].team_id == req.params.team_id) {
@@ -449,6 +449,33 @@ app.get('/team_fetch_match/:team_id?', function(req, res, cb)
 			user: req.session.user,
         });
     }
+});
+
+// lordstone: the customized page for match
+
+// TODO: to make a new routing file later as for refactoring
+
+
+app.use('/battle_reviews/:match_id?', function(req, res, cb)
+{
+	console.log('DEBUG find');
+	var match_id = req.params.match_id;
+	if(!match_id){
+		res.send('Please enter the match id');
+		return;
+	}
+	buildMatch({
+		db: db,
+		redis: redis,
+		match_id: match_id
+	}, function(err, match)
+	{
+		res.render('battle_reviews.jade', 
+		{
+			user: req.session.user,
+			match: match
+		});
+	});
 });
 
 app.use('/players', players(db, redis, cassandra));

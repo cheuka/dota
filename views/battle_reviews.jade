@@ -1,6 +1,7 @@
-extend match
 
-block match_content
+extend layout
+
+block content
   .row
     .col-md-12
       h2 Graphs
@@ -89,17 +90,11 @@ block match_content
           br
 
 
-
-
-
-
-  //
-	+ad("banner3")
-
 append footer_assets
   scripts.
-    var graphData = !{JSON.stringify(match.graphData)};
-    generateCharts(graphData);
+    //
+      var graphData = !{JSON.stringify(match.graphData)};
+      generateCharts(graphData);
 
     var data = !{JSON.stringify(match.incomeData)};
     c3.generate({
@@ -116,11 +111,11 @@ append footer_assets
     });
 
     c3.generate({
-	bindto: "#chart-gold",
-	data: {
-	    columns: data.gold
-	}
-});
+      bindto: "#chart-gold",
+      data: {
+        columns: data.gold
+      }
+    });
 
   //-
     <link href="public/css/c3.min.css" rel="stylesheet" type="text/css">
