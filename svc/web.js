@@ -436,6 +436,8 @@ app.get('/team_fetch_match/:team_id?', function(req, res, cb)
 
             console.log('name ' + name);
             res.render('team_fetch_match', {
+				user: req.session.user,
+				home: false,
                 team_fetch_match: result,
                 team_name: name
             });
@@ -444,6 +446,7 @@ app.get('/team_fetch_match/:team_id?', function(req, res, cb)
     else {
         //res.json({"error":"please specify the team id"});
         res.render('team_fetch_match', {
+			user: req.session.user,
         });
     }
 });

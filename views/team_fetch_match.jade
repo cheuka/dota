@@ -1,6 +1,10 @@
 extend layout
 
-block content
+block head
+  link(rel='stylesheet', href="/public/css/yasp_home.css")
+
+if user
+  block content
     .row
         .col-md-12
           h3 Team #{team_name} 
@@ -34,3 +38,7 @@ block content
                                 - var days = Math.floor(duration/(3600*24*1000)) 
                                 td #{days} days ago
                                 td= entry.is_fetched?'downloaded':'downloading'
+
+else
+  p Please log out and retry
+
