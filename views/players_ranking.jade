@@ -2,18 +2,24 @@ extend layout
 
 block head
     style.
+        #nav ul{text-align:left;border-bottom:1px solid #ccc; list-style-type:none;padding:10px 10px;}
+        #nav ul li{display:inline;}
+        #nav ul li a{font-weight:bold;border:1px solid #ccc; text-decoration:none;padding:10px 20px;border-bottom:none;margin-right:5px;margin-bottom:1px;background-color:#eee}
+        #nav ul li a.current{background-color:#fff;border-bottom:1px solid #fff;}
+        #nav ul li a:hover{color:#000;background-color:#eee;}
+
         lis{
             float:left;
             list-style:none;
-            margin:20px;
-            width:250px;
-            height:60px;
+            margin:10px;
+            width:150px;
+            height:30px;
             background:rgba(128,128,128,0.5);
             text-align:center;
-            font-size:2em
+            font-size:1em
             color:rgb(192,192,192);
             vertical-align:middle;
-            line-height:60px;
+            line-height:30px;
         }
 
         .same_line{
@@ -113,10 +119,17 @@ block head
         }
 
 block content
+    div#nav
+      ul
+        li 
+          a(href='/team_fetch_match') TEAM REVIEW
+        li 
+          a(href='/players_ranking') Player Analysis
+
     .row
-        ul.tab
-            lis(onclick='toComprehensive()') 综合分析
-            lis(onclick='toSinglePlayer()') 单独分析
+      ul.tab
+          lis(onclick='toComprehensive()') 综合分析
+          lis(onclick='toSinglePlayer()') 单独分析
     #comprehensive
         .row
             h4.same_line 时间筛选
