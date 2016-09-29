@@ -10,19 +10,13 @@ block head
   link(rel='stylesheet', href="/public/css/yasp_home.css")
 
 block content
+  - var teamfights = match.teamfights || []
   .row
     .col-md-12
       h2 Graphs
       h3 Radiant Advantage
       #chart-diff
-      h3 Gold
-      #chart-gold
 
-  .row
-    .col-md-12
-      h3 Teamfights
-
-  - var teamfights = match.teamfights || []
 
   // start of yasp display
 
@@ -157,7 +151,6 @@ block content
   // end of yasp display
 
 
-
 append footer_assets
   script.
     //
@@ -165,27 +158,26 @@ append footer_assets
       generateCharts(graphData);
 
     var data = !{JSON.stringify(match.incomeData)};
-    c3.generate({
-        bindto: "#chart-diff",
-        data: {
-            columns: data.goldDiff,
-            /*
-            onclick: function(d, element)
-            {
-               // lordstone: add in modal process logics
-               $('#themodal')
-               $('#themodal').modal();
-            }
-            */
-        }
-    });
+    var indexs = ['index'];
+    var start_time = ['start_time'];
+    var lengths = ['length'];
+    var r_part = ['radiant participations'];
+    var d_part = ['dire participations'];
+    
 
-    c3.generate({
-      bindto: "#chart-gold",
-      data: {
-        columns: data.gold
-      }
-    });
+   
+    for (var ind = 1; ind <= teamfights.length; ++ind)
+    {
+        var entry = teamfights[ind];
+        indexs.push(ind);
+        lengths.push(moment().startOf('day').seconds(entry.end-entry.start).format("m:ss"));
+        start_time.push(entry.start);
+        r_part.push(entry.radiant_participation);
+        d_part.push(entry.dire_participation);
+    }
+    
+    console.log(indexs);
+
 
     var all_icons = $("#map i");
     $("#teamfights tr").click(function(event) {
