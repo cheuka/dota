@@ -17,13 +17,13 @@ if user
     div#nav
       ul
         li 
-          a(href='/team_fetch_match') TEAM REVIEW
+          a(href='/team_fetch_match') 战队分析
         li 
-          a(href='/players_ranking') Player Analysis
+          a(href='/players_ranking') 选手分析
     .row
         .col-md-12
           h3 Team #{team_name} 
-            small Recent tournament matches
+            small 近期比赛列表
     .row
         .col-md-4
             select(onchange="window.location.href='/team_fetch_match/'+value")
