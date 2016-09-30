@@ -388,7 +388,7 @@ function runParse(match, job, cb)
                 //rxu, add team and personal info
                 for (var i = 0; i < parsed_data.players.length; ++i)
                 {
-                    if (upload && upload.player_info[i]) {
+                    if (upload && upload.player_info && upload.player_info[i]) {
                         parsed_data.players[i].account_id = upload.player_info[i].steamid;
                         parsed_data.players[i].personaname = upload.player_info[i].player_name;
                         parsed_data.players[i].team = upload.player_info[i].game_team;
