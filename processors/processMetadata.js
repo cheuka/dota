@@ -49,6 +49,7 @@ function processMetadata(entries)
         "player_slot": function(e)
         {
             //map slot number (0-9) to playerslot (0-4, 128-132)
+            //console.log('e.key -> e.value = ' + e.key + '-> ' + e.value);
             slot_to_playerslot[e.key] = e.value;
         }
     };

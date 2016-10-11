@@ -618,82 +618,23 @@ app.get('/search', function(req, res, cb)
 
 
 
-app.get('/players_ranking', function(req, res, cb)
+app.get('/players_ranking/:league_id?', function(req, res, cb)
 { 
     console.log('player_ranking');
-
-    /*
-    db.table('manta').max('match_id as match_id').groupBy('steamid').asCallback(function(err, matchs) {
-        //res.json({"match_ids": JSON.stringify(matchs)});
-        async.forEachLimit(matchs, 10, function(mi, next) {
-                buildMatch( {
-                    db: db,
-                    redis: redis,
-                    match_id: mi.match_id
-                }, function(err, match) {
-                    //res.json({"data": JSON.stringify(match.players)});
-
-                    if (err) 
-                        return next();
-
-                    console.log('match id ' + match.match_id);
-
-                    async.each(match.players, function(p, next2) {
-
-                        var runes_total = 0;
-                        for (var key in constants.runes) {                         
-                            runes_total += p.runes[key] ? Number(p.runes[key]) : 0;
-                        }
-
-                        var entry = {
-                            user_id: "-1",
-                            match_id: match.match_id,
-                            steamid: p.account_id,
-                            healing: p.hero_healing,
-                            teamfight_participate_ratio: Math.round(100*p.teamfights_participated/match.teamfights.length),
-                            vision_bought: p.purchase_ward_observer ? Number(p.purchase_ward_observer) : 0
-                             + p.purchase_ward_sentry ? Number(p.purchase_ward_sentry) : 0, 
-                            vision_killed: p.observer_kills ? Number(p.observer_kills) : 0
-                             + p.sentry_kills ? Number(p.sentry_kills) : 0, 
-                            apm: p.actions_per_min,
-                            runes: runes_total
-                        };
-
-                        console.log(JSON.stringify(entry));
-                        
-                        
-                        queries.upsert(db, 'manta', entry, {
-                            user_id: "-1",
-                            match_id: match.match_id,
-                            steamid: p.account_id
-                        }, function(err) {
-                            if (err)
-                                console.log(err);
-                            return next2();
-                        });
-                        
-                    }, function(err) {
-                        return next();
-                    });        
-                });
-        }, function(err) {
-            console.log('finished');
-            return cb();
-        } );
-    });
-    */
-
     
-    queries.getMantaParseData(db, {}, function(err, result) {
+    queries.getMantaParseData(db, {
+        league_id: req.params.league_id,
+        test: true
+    }, function(err, result) {
         //if (err) {
            // console.log(err);
             //res.json({"error": err});
         //}
         //else {
-            //res.json({"data": JSON.stringify(result)});
-            res.render('players_ranking', {
-                data: result,
-            });
+            res.json({"data": JSON.stringify(result)});
+            // res.render('players_ranking', {
+            //     data: result,
+            // });
         //}
     });
     

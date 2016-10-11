@@ -51,7 +51,7 @@ block head
         }
 
         function GetXmlHttpObject(){
-            var xmlHttp=null;
+            xmlHttp=null;
             try{
                 // Firefox, Opera 8.0+, Safari
                 xmlHttp=new XMLHttpRequest();
@@ -81,7 +81,7 @@ block head
             var length = rowsOb.length;
             for(var i = 0; i < length; i++){
                 var league = rowsOb[i]
-                $('#league_select').append("<option value='" + league.league_id + "'>" + league.league_name + "</option>");
+                $('#league_select').append("<option value='" + league.league_id + "'>" + league.league_name.substr(11) + "</option>");
             }
         }
 
@@ -100,9 +100,10 @@ block head
         function selectCompreData(){
             var start_time = $('#com_start_time').val();
             var end_time = $('#com_end_time').val();
-            var league_name = $('#league_select').val();
+            var league_id = $('#league_select').val();
             var game_times = $('#game_times').val();
-            alert('select compre data' + start_time + ',' + end_time + ',' + league_name  + ',' + game_times)
+            //alert('select compre data' + start_time + ',' + end_time + ',' + league_name  + ',' + game_times)
+            window.location.href='/players_ranking/'+league_id;
         }
 
         function selectSingleData(playerId){
@@ -156,6 +157,7 @@ block content
                     thead
                         tr
                             th #
+                            th match_id
                             th 选手名称
                             th 场次
                             th 输出
@@ -185,6 +187,7 @@ block content
                         each entry, i in data || []
                             tr
                                 td= i+1
+                                td #{entry.match_id}
                                 td #{entry.player_name}
                                 td #{entry.num_played}
                                 td #{Math.round(entry.av_create_total_damage)}

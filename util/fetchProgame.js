@@ -35,7 +35,7 @@ module.exports = function(db, cb) {
                     break;
                 }
             }
-
+            
             if (!is_team_interested) {
                 return next2();
             }

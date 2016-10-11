@@ -169,8 +169,12 @@
 			"team_id": 2634810
 		},
 		{
+			"name": "EHOME.K",
+			"team_id": 2626685
+		},
+		{
 			"name": "Bheart",
-			"team_id": 3328913
+			"team_id": 1983234
 		},
 		{
 			"name": "EHOME.X",
@@ -178,7 +182,7 @@
 		},
 		{
 			"name": "MAX.X",
-			"team_id": 3329320
+			"team_id": 3213075
 		},
 		{
 			"name": "MAX.Y",
@@ -206,7 +210,7 @@
 		},
 		{
 			"name": "Rock",
-			"team_id": -1
+			"team_id": 2909240
 		},
 		{
 			"name": "TP",

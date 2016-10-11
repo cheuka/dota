@@ -218,6 +218,7 @@ function insertMatch(db, redis, match, options, cb)
             {
                 "m": upsertMatches,
                 "pm": upsertPlayerMatch,
+                "p": upsertPlayer,
                 "pb": upsertPickbans,
                 "tm": upsertTeamMatch
             }, exit);
@@ -232,14 +233,65 @@ function insertMatch(db, redis, match, options, cb)
 
             function upsertPlayerMatch(cb)
             {
+                // rxu, add teamfights ratio info into player_matches
+                if (match.teamfights) {                
+                    match.teamfights.forEach(function(tf) {
+                        players.forEach(function(p, i) {
+                            var tfplayer = tf.players[p.player_slot % (128-5)];
+                            tf.participate = tfplayer.deaths > 0 || tfplayer.damage > 0 || tfplayer.healing > 0;
+                            if (!p.tf_participate) {
+                                p.tf_participate = 0;
+                            }
+                            p.tf_participate += tf.participate ? 1:0;
+                        });
+                    });
+                }
+
+
                 async.each(players || [], function(pm, cb)
                 {
+                    // rxu, also add runes, vision info
+                    if (pm.runes) {
+                        pm.runes_total = 0;
+                        for (var key in constants.runes) {
+                            pm.runes_total += pm.runes[key] ? Number(pm.runes[key]) : 0;
+                        }
+
+                        pm.vision_bought = pm.purchase_ward_observer ? Number(pm.purchase_ward_observer) : 0
+                                     + pm.purchase_ward_sentry ? Number(pm.purchase_ward_sentry) : 0; 
+                        pm.vision_killed = pm.observer_kills ? Number(pm.observer_kills) : 0
+                         + pm.sentry_kills ? Number(pm.sentry_kills) : 0;
+
+                        pm.purchase_dust = pm.purchase.dust ? Number(pm.purchase.dust) : 0;
+                    }
+
                     pm.match_id = match.match_id;
+                    if (pm.tf_participate) {
+                        pm.tf_ratio = Math.round(100 * pm.tf_participate / match.teamfights.length);
+                    }
+                    
                     upsert(trx, 'player_matches', pm,
                     {
                         match_id: pm.match_id,
                         player_slot: pm.player_slot
                     }, cb);
+                }, cb);
+            }
+
+            function upsertPlayer(cb)
+            {
+                async.each(players || [], function(p, cb)
+                {
+                    if (p.steamid) {
+                        upsert(trx, 'player_info', p,
+                        {
+                            steamid: p.steamid
+                        }, cb);   
+                    }
+                    else {
+                        cb();
+                    }
+
                 }, cb);
             }
 
@@ -314,11 +366,11 @@ function insertMatch(db, redis, match, options, cb)
 
 		   function upsertTeamMatch(cb)
 		   {
-			   async.series(
-			   {
-				   'r': addRadiant,
-				   'd': addDire,
-			   }, cb);
+                async.series(
+               {
+                   'r': addRadiant,
+                   'd': addDire,
+               }, cb);
 
 			   function addRadiant(cb)
 			   {
@@ -555,6 +607,7 @@ function insertMatch(db, redis, match, options, cb)
                 duration: match.duration,
                 replay_blob_key: match.replay_blob_key,
                 pgroup: match.pgroup,
+                downloaded: match.downloaded
             },
             {
                 lifo: options.lifo,
@@ -694,43 +747,125 @@ function getTeamFetchedMatches(db, payload, cb)
 function getMantaParseData(db, payload, cb)
 {
  
-    db.table('manta').count('* as num_played')
-    .avg('healing as av_healing')
-    .avg('teamfight_participate_ratio as tf_ratio')
-    .avg('create_total_damages as av_create_total_damage')
-    .avg('create_deadly_damages as av_create_deadly_damages')
-    .avg('create_total_stiff_control as av_create_total_stiff_control')
-    .avg('create_deadly_stiff_control as av_create_deadly_stiff_control')
-    .avg('opponent_hero_deaths as av_opponent_hero_deaths')
-    .avg('create_deadly_damages_per_death as av_create_deadly_damages_per_death')
-    .avg('create_deadly_stiff_control_per_death as av_create_deadly_stiff_control_per_death')
-    .avg('rgpm as av_rgpm')
-    .avg('unrrpm as av_unrrpm')
-    .avg('killherogold as av_killherogold')
-    .avg('deadlosegold as av_deadlosegold')
-    .avg('fedenemygold as av_fedenemygold')
-    .avg('alonekillednum as av_alonekillednum')
-    .avg('alonebecatchednum as av_alonebecatchednum')
-    .avg('alonebekillednum as av_alonebekillednum')
-    .avg('consumedamage as av_consumedamage')
-    .avg('vision_bought as av_vision_bought')
-    .avg('vision_kill as av_vision_kill')
-    .avg('runes as av_runes')
-    .avg('apm as av_apm')
-    .max('player_name as player_name')
-    .select(db.raw('count (case when iswin then 1 end) as win_times'))
-    .groupBy('steamid').asCallback(function(err, result) {
-        if (err) {
-            return cb('query failed');
+    if (payload.league_id) {
+        if (payload.test === true) {
+            db.table('player_matches')
+            .select('player_matches.match_id')
+            .select('hero_healing as av_healing')
+            .select('tf_ratio as tf_ratio')
+            .select('iswin')
+            .select('create_total_damages as av_create_total_damage')
+            .select('create_deadly_damages as av_create_deadly_damages')
+            .select('create_total_stiff_control as av_create_total_stiff_control')
+            .select('create_deadly_stiff_control as av_create_deadly_stiff_control')
+            .select('opponent_hero_deaths as av_opponent_hero_deaths')
+            .select('create_deadly_damages_per_death as av_create_deadly_damages_per_death')
+            .select('create_deadly_stiff_control_per_death as av_create_deadly_stiff_control_per_death')
+            .select('rgpm as av_rgpm')
+            .select('unrrpm as av_unrrpm')
+            .select('killherogold as av_killherogold')
+            .select('deadlosegold as av_deadlosegold')
+            .select('fedenemygold as av_fedenemygold')
+            .select('alonekillednum as av_alonekillednum')
+            .select('alonebecatchednum as av_alonebecatchednum')
+            .select('alonebekillednum as av_alonebekillednum')
+            .select('consumedamage as av_consumedamage')
+            .select('teamnumber')
+            .select('vision_bought as av_vision_bought')
+            .select('vision_killed as av_vision_killed')
+            .select('runes_total as av_runes')
+            .select('purchase_dust')
+            //.select('apm as av_apm')
+            .select('player_info.personaname as player_name')
+            .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+            //.leftJoin('matches', 'player_matches.match_id', 'matches.match_id')
+            //.where('matches.leagueid', payload.league_id)   
+            .where('player_matches.match_id', payload.league_id)
+            .asCallback(function(err, result) {
+                console.log(err);
+                if (err) {
+                    return cb(err);
+                }
+                else {
+                    return cb(null, result);
+                }
+            });
         }
-        return cb(null, result);
-    });
+        else {
+            db.table('player_matches').count('* as num_played')
+            .avg('healing as av_healing')
+            .avg('teamfight_participate_ratio as tf_ratio')
+            .avg('create_total_damages as av_create_total_damage')
+            .avg('create_deadly_damages as av_create_deadly_damages')
+            .avg('create_total_stiff_control as av_create_total_stiff_control')
+            .avg('create_deadly_stiff_control as av_create_deadly_stiff_control')
+            .avg('opponent_hero_deaths as av_opponent_hero_deaths')
+            .avg('create_deadly_damages_per_death as av_create_deadly_damages_per_death')
+            .avg('create_deadly_stiff_control_per_death as av_create_deadly_stiff_control_per_death')
+            .avg('rgpm as av_rgpm')
+            .avg('unrrpm as av_unrrpm')
+            .avg('killherogold as av_killherogold')
+            .avg('deadlosegold as av_deadlosegold')
+            .avg('fedenemygold as av_fedenemygold')
+            .avg('alonekillednum as av_alonekillednum')
+            .avg('alonebecatchednum as av_alonebecatchednum')
+            .avg('alonebekillednum as av_alonebekillednum')
+            .avg('consumedamage as av_consumedamage')
+            .avg('vision_bought as av_vision_bought')
+            .avg('vision_kill as av_vision_kill')
+            .avg('runes as av_runes')
+            .avg('apm as av_apm')
+            .max('player_name as player_name')
+            .select(db.raw('count (case when iswin then 1 end) as win_times'))
+            .leftJoin('matches', 'manta.match_id', 'matches.match_id')
+            .where('matches.leagueid', payload.league_id)
+            .groupBy('steamid').asCallback(function(err, result) {
+                if (err) {
+                    return cb('query failed');
+                }
+                return cb(null, result);
+            });
+        }
+    }
+    else {
+        db.table('manta').count('* as num_played')
+        .avg('healing as av_healing')
+        .avg('teamfight_participate_ratio as tf_ratio')
+        .avg('create_total_damages as av_create_total_damage')
+        .avg('create_deadly_damages as av_create_deadly_damages')
+        .avg('create_total_stiff_control as av_create_total_stiff_control')
+        .avg('create_deadly_stiff_control as av_create_deadly_stiff_control')
+        .avg('opponent_hero_deaths as av_opponent_hero_deaths')
+        .avg('create_deadly_damages_per_death as av_create_deadly_damages_per_death')
+        .avg('create_deadly_stiff_control_per_death as av_create_deadly_stiff_control_per_death')
+        .avg('rgpm as av_rgpm')
+        .avg('unrrpm as av_unrrpm')
+        .avg('killherogold as av_killherogold')
+        .avg('deadlosegold as av_deadlosegold')
+        .avg('fedenemygold as av_fedenemygold')
+        .avg('alonekillednum as av_alonekillednum')
+        .avg('alonebecatchednum as av_alonebecatchednum')
+        .avg('alonebekillednum as av_alonebekillednum')
+        .avg('consumedamage as av_consumedamage')
+        .avg('vision_bought as av_vision_bought')
+        .avg('vision_kill as av_vision_kill')
+        .avg('runes as av_runes')
+        .avg('apm as av_apm')
+        .max('player_name as player_name')
+        .select(db.raw('count (case when iswin then 1 end) as win_times'))
+        .groupBy('steamid').asCallback(function(err, result) {
+            if (err) {
+                return cb('query failed');
+            }
+            return cb(null, result);
+        });
+    }
 }
 
 function getLeagueList(db, payload, cb)
 {
     db.raw(`
-    SELECT * from league_info
+    SELECT * from league_info order by start_time desc
     `).asCallback(function(err, result){
         if (err)
         {
@@ -1215,6 +1350,41 @@ function insertMantaMatch(db, redis, match, done)
 	}, done);
 }
 
+function insertMantaMatch2(db, redis, player_match, cb)
+{   
+    async.each(player_match || [], function(entry, cb){
+        var m_entry = {
+            steamid: entry.steamid,
+            match_id: entry.match_id,
+            hero_id: entry.hero_id,
+            create_total_damages: entry.create_total_damages,
+            create_deadly_damages: entry.create_deadly_damages,
+            create_total_stiff_control: entry.create_total_stiff_control,
+            create_deadly_stiff_control: entry.create_deadly_stiff_control,
+            opponent_hero_deaths: entry.opponent_hero_deaths,
+            create_deadly_damages_per_death: entry.create_deadly_damages_per_death,
+            create_deadly_stiff_control_per_death: entry.create_deadly_stiff_control_per_death,
+            rgpm: entry.rGpm,
+            unrrpm: entry.unrRpm,
+            killherogold: entry.killHeroGold,
+            deadlosegold: entry.deadLoseGold,
+            fedenemygold: entry.fedEnemyGold,
+            teamnumber: entry.teamNumber,
+            iswin: entry.iswin,
+            player_id: entry.player_id,
+            alonekillednum: entry.aloneKilledNum,
+            alonebecatchednum: entry.aloneBeCatchedNum,
+            alonebekillednum: entry.aloneBeKilledNum,
+            consumedamage: entry.consumeDamage,
+            player_slot: entry.player_id >= 5 ? entry.player_id + 128 - 5 : entry.player_id
+        }
+        console.log('player_slot : ' + m_entry.player_slot + '  player_id : ' + entry.player_id);
+        upsert(db, 'player_matches', m_entry, {
+            player_slot: m_entry.player_slot,
+            match_id: m_entry.match_id,
+        }, cb);
+    }, cb);
+}
 
 module.exports = {
     getSets,
@@ -1239,4 +1409,5 @@ module.exports = {
 	storeDem,
 	getDem,
 	insertMantaMatch,
+    insertMantaMatch2
 };

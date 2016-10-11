@@ -18,6 +18,8 @@ function processMatch(e, params)
 {
 	var player_match = {};
 
+	//console.log(JSON.stringify(e));
+
 	player_match.match_id = e.match_id || -1, // missing player_match id
 	player_match.steamid = e.steamid || -1, // missing steamid
 
@@ -30,25 +32,25 @@ function processMatch(e, params)
 	player_match.player_name = e.player_name || '';
 	player_match.hero_id = e.hero_id || -1;
 	player_match.hero_name = e.hero_name || '';
-	player_match.create_total_damages = e.create_total_damages || -1;
-	player_match.create_deadly_damages = e.create_deadly_damages || -1;
-	player_match.create_total_stiff_control = e.create_total_stiff_control || -1;
-	player_match.create_deadly_stiff_control = e.create_deadly_stiff_control || -1;
-	player_match.opponent_hero_deaths = e.opponent_hero_deaths || -1;
-	player_match.create_deadly_damages_per_death = e.create_deadly_damages_per_death || -1;
-	player_match.create_deadly_stiff_control_per_death =e.create_deadly_stiff_control_per_death || -1 ;
-	player_match.rGpm = e.rGpm || -1;
-	player_match.unrRpm = e.unrRpm || -1;
-	player_match.killHeroGold = e.killHeroGold || -1;
-	player_match.deadLoseGold = e.deadLoseGold || -1;
-	player_match.fedEnemyGold = e.fedEnemyGold || -1;
+	player_match.create_total_damages = e.create_total_damages || 0;
+	player_match.create_deadly_damages = e.create_deadly_damages || 0;
+	player_match.create_total_stiff_control = e.create_total_stiff_control || 0;
+	player_match.create_deadly_stiff_control = e.create_deadly_stiff_control || 0;
+	player_match.opponent_hero_deaths = e.opponent_hero_deaths || 0;
+	player_match.create_deadly_damages_per_death = e.create_deadly_damages_per_death || 0;
+	player_match.create_deadly_stiff_control_per_death =e.create_deadly_stiff_control_per_death || 0 ;
+	player_match.rGpm = e.rGpm || 0;
+	player_match.unrRpm = e.unrRpm || 0;
+	player_match.killHeroGold = e.killHeroGold || 0;
+	player_match.deadLoseGold = e.deadLoseGold || 0;
+	player_match.fedEnemyGold = e.fedEnemyGold || 0;
 	player_match.teamNumber = e.teamNumber || -1;
-	player_match.isWin = e.isWin || false;
-	player_match.player_id = e.player_id || -1;
-	player_match.aloneKilledNum = e.aloneKilledNum || -1;
-	player_match.aloneBeCatchedNum  = e.aloneBeCatchedNum || -1;
-	player_match.aloneBeKilledNum = e.aloneBeKilledNum || -1;
-	player_match.consumeDamage = e.consumeDamage || -1;
+	player_match.iswin = e.isWin || false;
+	player_match.player_id = e.player_id || 0;
+	player_match.aloneKilledNum = e.aloneKilledNum || 0;
+	player_match.aloneBeCatchedNum  = e.aloneBeCatchedNum || 0;
+	player_match.aloneBeKilledNum = e.aloneBeKilledNum || 0;
+	player_match.consumeDamage = e.consumeDamage || 0;
 
 	return player_match;
 }

@@ -6,7 +6,6 @@ var ndjson = require('ndjson');
 var stream = require('stream');
 var spawn = cp.spawn;
 var queries = require('../store/queries');
-var storeMantaResult = queries.storeMantaResult;
 var async = require('async');
 var insertMantaMatch = queries.insertMantaMatch;
 var processMantaResults = require('../util/manta').processMantaResults;
