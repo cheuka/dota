@@ -22,6 +22,7 @@ var processMetadata = require('../processors/processMetadata');
 var processExpand = require('../processors/processExpand');
 var startedAt = new Date();
 var request = require('request');
+//var request = require('requestretry');
 var cp = require('child_process');
 var progress = require('request-progress');
 var stream = require('stream');
@@ -39,8 +40,11 @@ var bodyParser = require('body-parser');
 var app = express();
 
 //lordstone:
-
 var cheuka_session = require("../util/cheukaSession");
+var insertMantaMatch2 = queries.insertMantaMatch2;
+var processMantaResults = require('../util/manta').processMantaResults;
+//var url = require('url');
+//var dns = require('dns');
 
 app.use(bodyParser.json());
 app.get('/', function(req, res)
@@ -77,14 +81,19 @@ pQueue.process(1, function(job, cb)
                 match.url = "http://localhost:" + config.PARSER_PORT + "/redis/" + match.replay_blob_key;
                 cb();
             }
+            else if (match.downloaded)
+            {
+                cb();
+            }
             else
             {
+                console.log('get replay url');
                 getReplayUrl(db, redis, match, cb);
             }
         },
         "runParse": function(cb)
         {
-            runParse(match, job, function(err, parsed_data)
+            runParse(match, job, function(err, parsed_data, parsed_data2)
             {
                 if (err)
                 {
@@ -110,7 +119,14 @@ pQueue.process(1, function(job, cb)
                 }
                 else
                 {
-                    insertStandardParse(parsed_data, cb);
+                    //return cb();
+                    
+                    insertStandardParse(parsed_data, function(err) {
+                        console.log('start insert match result of manta');
+                        //console.log(JSON.stringify(parsed_data2));
+                        insertMantaMatch2(db, redis, parsed_data2, cb);
+                    });
+                    
                 }
             });
         },
@@ -231,44 +247,94 @@ function runParse(match, job, cb)
     // Parse state
     // Array buffer to store the events
     var entries = [];
+    var entries_m = [];
     var incomplete = "incomplete";
     var exited = false;
+    var post_savename;
+
     var timeout = setTimeout(function()
     {
         exit('timeout');
     }, 300000);
-    var url = match.url;
+
+    var full_url = match.url;
     // Streams
-    var inStream = progress(request(
-    {
-        url: url
-    }));
-    inStream.on('progress', function(state)
-    {
-        console.log(JSON.stringify(
+    console.log('start to fetch dem');
+    
+    //resolve url first
+    //var host = url.parse(full_url).hostname;
+    //var path = url.parse(full_url).path;
+    //var port = url.parse(full_url).port;
+    //dns.resolve4(host, function(e, addresses) {
+    //    if (e) {
+    //        console.log('error: ' + e);
+    //        return cb(e);
+    //    }
+
+    //    console.log('resolved address: ' + addresses[0]);
+    //    var cur_url = 'http://' + addresses[0] + ':' + port + path;
+    //    console.log('cur ful url ' + cur_url);
+
+    var inStream;
+    var requestStream;
+    var match = job.data.payload;
+    console.log('local_parse ' + match.downloaded);
+    if (match.downloaded) {
+        full_url = 'replays/'+match.match_id+'.dem.bz2';
+        inStream = require('fs').createReadStream(full_url);
+    }
+    else {
+        requestStream = request(
         {
-            url: url,
-            state: state
-        }));
-        if (job)
+            url: full_url,
+        }).on('response', function(res)
         {
-            job.progress(state.percentage * 100);
-        }
-    }).on('response', function(response)
-    {
-        if (response.statusCode !== 200)
+            console.log('status code = ' + res.statusCode);
+        }).on('error', exit);
+
+        inStream = progress(requestStream);
+        inStream.on('progress', function(state)
         {
-            exit(response.statusCode.toString());
-        }
-    }).on('error', exit);
+            console.log(JSON.stringify(
+            {
+                url: full_url,
+                state: state
+            }));
+            if (job)
+            {
+                job.progress(state.percentage * 100);
+            }
+        }).on('response', function(response)
+        {
+            if (response.statusCode !== 200)
+            {
+                exit(response.statusCode.toString());
+            }
+        }).on('error', exit);
+    }
+
+    var midStream = stream.PassThrough();
+    inStream.pipe(midStream);
+    // rxu, save the replay files to folder
+    // http://replay#cluster#.valve.net/#match_id#_#salt#.dem.bz2
+    // for user upload case, currently we insert it into database
+    if (!match.replay_blob_key && !match.downloaded) {
+        var urlsplit = full_url.split('/');
+        var savename = urlsplit[urlsplit.length - 1];
+        post_savename = savename.split('_')[0] + '.dem.bz2';
+        var ws = require('fs').createWriteStream('replays/'+post_savename, {flags: 'w'});
+        midStream.pipe(ws);
+    }
+
     var bz;
-    if (url && url.slice(-3) === "bz2")
+    if (full_url && full_url.slice(-3) === "bz2")
     {
         bz = spawn("bunzip2");
     }
     else
     {
         var str = stream.PassThrough();
+
         bz = {
             stdin: str,
             stdout: str
@@ -276,6 +342,8 @@ function runParse(match, job, cb)
     }
     bz.stdin.on('error', exit);
     bz.stdout.on('error', exit);
+
+
     var parser = spawn("java", [
         "-jar",
         "-Xmx64m",
@@ -291,6 +359,8 @@ function runParse(match, job, cb)
     {
         console.log(data.toString());
     });
+
+
     var parseStream = ndjson.parse();
     parseStream.on('data', function handleStream(e)
     {
@@ -301,15 +371,75 @@ function runParse(match, job, cb)
         }
         entries.push(e);
     });
-    parseStream.on('end', exit);
+
+    
+    //after parse finish, we go to manta parse stage
+    parseStream.on('end', runMantaParse);
+    //parseStream.on('end', exit);
     parseStream.on('error', exit);
     // Pipe together the streams
-    inStream.pipe(bz.stdin);
+
+    midStream.pipe(bz.stdin);
     bz.stdout.pipe(parser.stdin);
     parser.stdout.pipe(parseStream);
 
+    function runMantaParse(err)
+    {
+        if (err)
+        {
+            return cb(err);
+        }
+
+        console.log('start run manta parser');
+
+        // manta parser
+        var manta_parser = spawn(config.MANTA_PATH, [], {
+            stdio: ['pipe', 'pipe', 'pipe'],
+            encoding: 'utf8'
+        });
+
+        manta_parser.stdin.on('error', exit);
+        manta_parser.stdout.on('error', exit);
+        manta_parser.stderr.on('data', function printStdErr(data)
+        {
+            console.log(data.toString());
+        });
+
+        var parseStream2 = ndjson.parse();
+        parseStream2.on('data', function handleStream(e)
+        {
+            if (e)
+            {
+                console.log('manta parser success!')
+                incomplete = false;
+            }
+            entries_m.push(e);
+        });
+        parseStream2.on('end', exit);
+        parseStream2.on('error', exit);
+        
+        var path;
+        if (!post_savename && !match.downloaded) {
+            return exit();
+        }
+        else {
+            if (match.downloaded) {
+                path = full_url;
+            }
+            else {
+                path = 'replays/'+post_savename;
+            }
+        }
+        var rs = require('fs').createReadStream(path);
+        var mbz = spawn('bunzip2');
+        rs.pipe(mbz.stdin);
+        mbz.stdout.pipe(manta_parser.stdin);
+        manta_parser.stdout.pipe(parseStream2);
+    }
+
     function exit(err)
     {
+        console.log('-------------- exit from parser stage-------------------');
         if (exited)
         {
             return;
@@ -338,24 +468,38 @@ function runParse(match, job, cb)
                 parsed_data.radiant_xp_adv = ap.radiant_xp_adv;
                 parsed_data.upload = upload;
 				
-				//lordstone: adding end_time and team ids
+                //lordstone: adding end_time and team ids
                 parsed_data.end_time = upload.end_time;
                 parsed_data.radiant_team_id = upload.radiant_team_id;
                 parsed_data.dire_team_id = upload.dire_team_id;
                 parsed_data.radiant_win = upload.radiant_win;
+                
                 //rxu, add team and personal info
                 for (var i = 0; i < parsed_data.players.length; ++i)
                 {
-                    parsed_data.players[i].account_id = upload.player_info[i].steamid;
-                    parsed_data.players[i].personaname = upload.player_info[i].player_name;
-                    parsed_data.players[i].team = upload.player_info[i].game_team;
-                    parsed_data.players[i].isRadiant = upload.player_info[i].game_team === 2;
+                    computeMatchData(parsed_data.players[i]);
+                    if (upload && upload.player_info && upload.player_info[i]) {
+                        parsed_data.players[i].steamid = upload.player_info[i].steamid;
+                        parsed_data.players[i].personaname = upload.player_info[i].player_name;
+                        //parsed_data.players[i].team = upload.player_info[i].game_team;
+                        //parsed_data.players[i].isRadiant = upload.player_info[i].game_team === 2;
+                    }
                 }
+                
 
                 //processMultiKillStreaks();
                 //processReduce(res.expanded);
                 console.timeEnd(message);
-                return cb(err, parsed_data);
+
+                var params = {};
+                params.dem_index = '';
+                params.replay_blob_key = '';
+                params.user_id = '-1';  // admin user
+                params.is_public = true;
+                params.upload_time = -1;
+
+                var parsed_data2 = processMantaResults(entries_m, params);
+                return cb(err, parsed_data, parsed_data2);
             }
             catch (e)
             {

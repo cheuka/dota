@@ -39,8 +39,17 @@ function generateJob(type, payload)
         "api_history": function()
         {
             return {
-                url: api_url + "/IDOTA2Match_570/GetMatchHistory/V001/?key=" + api_key + (payload.account_id ? "&account_id=" + payload.account_id : "") + (payload.matches_requested ? "&matches_requested=" + payload.matches_requested : "") + (payload.hero_id ? "&hero_id=" + payload.hero_id : "") + (payload.leagueid ? "&league_id=" + payload.leagueid : "") + (payload.start_at_match_id ? "&start_at_match_id="+payload.start_at_match_id : ""),
+                url: api_url + "/IDOTA2Match_570/GetMatchHistory/V001/?key=" + api_key + (payload.account_id ? "&account_id=" + payload.account_id : "") + (payload.matches_requested ? "&matches_requested=" + payload.matches_requested : "") + (payload.hero_id ? "&hero_id=" + payload.hero_id : "") + (payload.leagueid ? "&league_id=" + payload.leagueid : "") + (payload.start_at_match_id ? "&start_at_match_id="+payload.start_at_match_id : "") + (payload.date_min?"&date_min="+payload.date_min:""),
                 title: [type, payload.account_id].join(),
+                type: "api",
+                payload: payload
+            };
+        },
+        "api_teaminfo": function()
+        {
+            return {
+                url: api_url + "/IDOTA2Match_570/GetTeamInfoByTeamID/V001/?key=" + api_key + (payload.team_id ? "&start_at_team_id=" + payload.team_id : "") + (payload.teams_requested ? "&teams_requested=" + payload.teams_requested : "&teams_requested=1"),
+                title: [type, payload.team_id].join(),
                 type: "api",
                 payload: payload
             };
@@ -175,6 +184,14 @@ function generateJob(type, payload)
         {
             return {
                 title: [type, payload.account_id, payload.hero_id].join(),
+                type: type,
+                payload: payload
+            };
+        },
+        "fetchprogame": function()
+        {
+            return {
+                title: [type].join(),
                 type: type,
                 payload: payload
             };

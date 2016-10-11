@@ -1,0 +1,59 @@
+extend layout
+
+block head
+
+  style.
+    #nav ul{text-align:left;border-bottom:1px solid #ccc; 
+    list-style-type:none;padding:10px 10px;}
+    #nav ul li{display:inline;}
+    #nav ul li a{font-weight:bold;border:1px solid #ccc; text-decoration:none;padding:10px 20px;border-bottom:none;margin-right:5px;margin-bottom:1px;background-color:#eee}
+    #nav ul li a.current{background-color:#fff;border-bottom:1px solid #fff;}
+    #nav ul li a:hover{color:#000;background-color:#eee;}
+
+  link(rel='stylesheet', href="/public/css/yasp_home.css")
+
+if user
+  block content
+    div#nav
+      ul
+        li 
+          a(href='/team_fetch_match') 战队分析
+        li 
+          a(href='/players_ranking') 选手分析
+    .row
+        .col-md-12
+          h3 Team #{team_name} 
+            small 近期比赛列表
+    .row
+        .col-md-4
+            select(onchange="window.location.href='/team_fetch_match/'+value")
+                option(value='0',selected='true') Select a Team 
+                - for (var i = 0; i < constants.common_teams.length; ++i)
+                  option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
+    .row
+        .col-md-12.table-responsive
+            table.table.table-striped.table-condensed.rankable#team_fetch_match
+                thread
+                    tr
+                        th #
+                        th Match ID
+                        th League Name
+                        th Time
+                        th Replay Status
+                    tbody 
+                       each entry, i in team_fetch_match || []
+                            tr
+                                td= i+1
+                                td 
+                                  a(href='/battle_reviews/' + entry.match_id) #{entry.match_id}
+                                - var league_name = (entry.league_name && entry.league_name.length >= 11) ? entry.league_name.substr(11) : ''
+                                td 
+                                  a(href=''+entry.league_url) #{league_name}
+                                - var duration = new Date().getTime() - new Date(entry.start_time*1000).getTime()
+                                - var days = Math.floor(duration/(3600*24*1000)) 
+                                td #{days} days ago
+                                td= entry.is_fetched?'downloaded':'downloading'
+
+else
+  p Please log out and retry
+

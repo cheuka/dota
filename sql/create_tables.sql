@@ -38,12 +38,14 @@ CREATE TABLE matches (
   radiant_gold_adv integer[],
   radiant_xp_adv integer[],
   teamfights json[],
-  version integer
+  version integer,
+  is_manta_parsed boolean
   );
 
 CREATE TABLE player_matches (
   PRIMARY KEY(match_id, player_slot),
   match_id bigint REFERENCES matches(match_id) ON DELETE CASCADE,
+  steamid bigint,
   account_id bigint,
   player_slot integer,
   hero_id integer,
@@ -100,12 +102,42 @@ CREATE TABLE player_matches (
   killed_by json,
   kill_streaks json,
   multi_kills json,
-  life_state json
+  life_state json,
+  --manta result
+  create_total_damages integer,
+  create_deadly_damages integer,
+  create_total_stiff_control integer,
+  create_deadly_stiff_control real,
+  opponent_hero_deaths integer,
+  create_deadly_damages_per_death real,
+  create_deadly_stiff_control_per_death real,
+  rGpm integer,
+  unrRpm integer,
+  killHeroGold integer,
+  deadLoseGold integer,
+  fedEnemyGold integer,
+  teamNumber integer,
+  iswin boolean,
+  player_id bigint, 
+  aloneKilledNum integer,
+  aloneBeCatchedNum integer,
+  aloneBeKilledNum integer,
+  consumeDamage integer
+  tf_ratio integer,
+  vision_bought integer,
+  vision_killed integer,
+  runes_total integer,
+  purchase_dust integer
   --disabled due to incompatibility
   --kill_streaks_log json[][], --an array of kill streak values
   --multi_kill_id_vals integer[] --an array of multi kill values (the length of each multi kill)
 );
-CREATE INDEX on player_matches(account_id) WHERE account_id IS NOT NULL;
+--CREATE INDEX on player_matches(account_id) WHERE account_id IS NOT NULL;
+
+CREATE TABLE player_info (
+  steamid bigint PRIMARY KEY,
+  personaname varchar(255)
+);
 
 CREATE TABLE players (
   account_id bigint PRIMARY KEY,
@@ -195,4 +227,26 @@ CREATE TABLE team_match(
 	is_winner boolean not null,
 	version varchar(30),
 	end_time bigint
+);
+
+
+
+CREATE TABLE fetch_team_match(
+  team_id bigint,
+  match_id bigint,
+  league_id integer,
+  start_time bigint,
+  dem_url varchar(150),
+  PRIMARY KEY (team_id, match_id),
+  is_fetched boolean,
+  is_dem_persisted boolean,
+  is_manta_parsed boolean
+);
+
+CREATE TABLE league_info (
+    league_id integer PRIMARY KEY,
+    league_name varchar(255),
+    league_desc varchar(255),
+    league_url varchar(255),
+    start_time bigint
 );

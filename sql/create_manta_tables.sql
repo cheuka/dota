@@ -36,5 +36,10 @@ CREATE TABLE manta (
 	aloneKilledNum integer,
 	aloneBeCatchedNum integer,
 	aloneBeKilledNum integer,
-	consumeDamage integer
+	consumeDamage integer,
+	healing integer,
+	vision_bought integer,
+	vision_kill integer,
+	apm integer,
+	runes integer
 );

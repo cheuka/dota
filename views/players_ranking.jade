@@ -1,0 +1,292 @@
+extend layout
+
+block head
+    style.
+        #nav ul{text-align:left;border-bottom:1px solid #ccc; list-style-type:none;padding:10px 10px;}
+        #nav ul li{display:inline;}
+        #nav ul li a{font-weight:bold;border:1px solid #ccc; text-decoration:none;padding:10px 20px;border-bottom:none;margin-right:5px;margin-bottom:1px;background-color:#eee}
+        #nav ul li a.current{background-color:#fff;border-bottom:1px solid #fff;}
+        #nav ul li a:hover{color:#000;background-color:#eee;}
+
+        lis{
+            float:left;
+            list-style:none;
+            margin:10px;
+            width:150px;
+            height:30px;
+            background:rgba(128,128,128,0.5);
+            text-align:center;
+            font-size:1em
+            color:rgb(192,192,192);
+            vertical-align:middle;
+            line-height:30px;
+        }
+
+        .same_line{
+            float:left;
+            margin-left:20px;
+            margin-top:auto;
+            margin-bottom:auto;
+        }
+
+        .row{
+            margin-top:40px;
+
+        }
+
+
+    script.
+
+        var xmlHttp;
+        function getLeagueInfo(){
+            var xmlHttp = GetXmlHttpObject();
+            if(xmlHttp == null){
+                return;	
+            }
+		
+            var httpUrl = "./players_league";
+            xmlHttp.onreadystatechange = subScriberListResult;
+            xmlHttp.open("GET", httpUrl, true);
+            xmlHttp.send(null);
+        }
+
+        function GetXmlHttpObject(){
+            xmlHttp=null;
+            try{
+                // Firefox, Opera 8.0+, Safari
+                xmlHttp=new XMLHttpRequest();
+            }catch (e){
+             //Internet Explorer
+                try{
+                    xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+                }catch (e){
+                    xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+            return xmlHttp;
+        }
+
+        function subScriberListResult(){ 
+            if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+                if(xmlHttp.responseText.length > 0){
+                    parseLeague(xmlHttp.responseText);
+                } 
+            }
+        }
+
+        function parseLeague(responseText){
+            var jsonOb = JSON.parse(responseText);
+            var dataOb = jsonOb.data;
+            var rowsOb = JSON.parse(dataOb).rows;
+            var length = rowsOb.length;
+            for(var i = 0; i < length; i++){
+                var league = rowsOb[i]
+                $('#league_select').append("<option value='" + league.league_id + "'>" + league.league_name.substr(11) + "</option>");
+            }
+        }
+
+        function toComprehensive(){
+            $('#comprehensive').show();
+            $('#single_player').hide();
+        }
+    
+
+        function toSinglePlayer(){
+            $('#comprehensive').hide();
+            $('#single_player').show();
+
+        }
+
+        function selectCompreData(){
+            var start_time = $('#com_start_time').val();
+            var end_time = $('#com_end_time').val();
+            var league_id = $('#league_select').val();
+            var game_times = $('#game_times').val();
+            //alert('select compre data' + start_time + ',' + end_time + ',' + league_name  + ',' + game_times)
+            window.location.href='/players_ranking/'+league_id;
+        }
+
+        function selectSingleData(playerId){
+
+
+        }
+
+        function selectPlayerFromTeam(teamName){
+           alert(teamName);
+        }
+
+        function getLeagueList(){
+
+        }
+
+block content
+    div#nav
+      ul
+        li 
+          a(href='/team_fetch_match') 战队分析
+        li 
+          a(href='/players_ranking') 选手分析
+
+    .row
+      ul.tab
+          lis(onclick='toComprehensive()') 综合分析
+          lis(onclick='toSinglePlayer()') 单独分析
+    #comprehensive
+        .row
+            h4.same_line 时间筛选
+            input(type='date', value='2016-04-21')#com_start_time.same_line
+            h4.same_line to
+            input(type='date')#com_end_time.same_line
+        .row
+            h4.same_line 联赛筛选
+            select(onchange='selectCompreData()')#league_select.same_line
+                option(value='0',selected='true') 所有联赛
+        .row
+            h4.same_line 场次筛选
+            select(onchange='selectCompreData()')#game_times.same_line
+                option(value='1',selected='true') >=1场比赛
+                option(value='3') >=3场比赛
+                option(value='5') >=5场比赛
+                option(value='10') >=10场比赛
+                option(value='20') >=20场比赛
+                option(value='50') >=50场比赛
+        //选手名称 场次 输出 胜率 消耗 回复 控制 参团率 抓人 落单被抓 CNE URGPM GPM 买眼 反眼 控符 AP
+        .row
+            .col-md-12.table-responsive
+                table.table.table-striped.table-condensed.rankable#data
+                    thead
+                        tr
+                            th #
+                            th match_id
+                            th 选手名称
+                            th 场次
+                            th 输出
+                            th 胜率 %
+                            th 消耗
+                            th 回复
+                            th 控制
+                            th 参团率
+                            th 抓人
+                            th 落单被抓
+                            th CNE
+                            th URGPM
+                            th GPM
+                            th 买眼
+                            th 反眼
+                            th 控符
+                            th APM
+                    tbody
+                        //tr
+                        //    td 2
+                        //tr
+                        //    td 4
+                        //tr
+                        //    td 3
+                        //tr
+                        //    td 1
+                        each entry, i in data || []
+                            tr
+                                td= i+1
+                                td #{entry.match_id}
+                                td #{entry.player_name}
+                                td #{entry.num_played}
+                                td #{Math.round(entry.av_create_total_damage)}
+                                td #{Math.round(100*entry.win_times/entry.num_played)}
+                                td #{Math.round(entry.av_consumedamage)}
+                                td #{Math.round(entry.av_healing)}
+                                td #{Math.round(entry.av_create_deadly_stiff_control)}
+                                td #{Math.round(entry.tf_ratio)}
+                                td #{Math.round(entry.av_alonekillednum)}
+                                td #{Math.round(entry.av_alonebecatchednum)}
+                                td #{Math.round(entry.av_killherogold - entry.av_fedenemygold)}
+                                td #{Math.round(entry.av_unrrpm)}
+                                td #{Math.round(entry.av_rgpm)}
+                                td #{Math.round(entry.av_vision_bought)}
+                                td #{Math.round(entry.av_vision_kill)}
+                                td #{Math.round(entry.av_runes)}
+                                td #{Math.round(entry.av_apm)}
+
+
+
+
+    #single_player
+        .row
+            h4.same_line 选择战队
+            select(onchange='selectPlayerFromTeam(value)')#league_select.same_line
+                option(value='0',selected='true') Select a Team 
+                - for (var i = 0; i < constants.common_teams.length; ++i)
+                  option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
+            h4.same_line 选手
+            select(onchange='selectSingleData(value)')#league_select.same_line
+                option(value='0',selected='true') 选手名称
+        .row
+            h4.same_line 时间筛选
+            input(type='date', value='2016-04-21')#sin_start_time.same_line
+            h4.same_line to
+            input(type='date')#sin_end_time.same_line
+        .row
+            .col-md-12.table-responsive
+                table.table.table-striped.table-condensed.rankable#team_fetch_match
+                    thread
+                        tr
+                            th #
+                            th 英雄名称
+                            th 场次
+                            th 输出
+                            th 胜率
+                            th 消耗
+                            th 回复
+                            th 控制
+                            th 参团率
+                            th 抓人
+                            th 落单被抓
+                            th CNE
+                            th URGPM
+                            th GPM
+                            th 买眼
+                            th 反眼
+                            th 控符
+                            th APM
+
+    script.
+        document.getElementById('com_end_time').valueAsDate = new Date();
+        document.getElementById('sin_end_time').valueAsDate = new Date();
+        toComprehensive()
+        getLeagueInfo()
+        var table = document.getElementById("data");
+        var table_th = document.getElementsByTagName("th");
+        var table_tbody = table.getElementsByTagName("tbody")[0];
+        var table_tr = table_tbody.getElementsByTagName("tr");
+        function bind_click(_i) {
+            table_th[_i].onclick = function () {
+                var temp_arr = [];
+                var temp_tr_arr = [];
+                for (j = 0; j < table_tr.length; j++) {
+                    temp_arr.push(table_tr[j].getElementsByTagName("td")[_i].innerHTML);
+                    temp_tr_arr.push(table_tr[j].cloneNode(true));
+                }
+                ;
+                var tr_length = table_tr.length
+                for (x = 0; x < tr_length; x++) {
+                    table_tbody.removeChild(table_tbody.getElementsByTagName("tr")[0]);
+                }
+                var temp = parseInt(temp_arr[0]) || temp_arr[0];
+                if (typeof(temp) == 'number') {
+                    temp_arr.sort(function (a, b) {
+                        return b - a;
+                    });
+                } else {
+                    temp_arr.sort();
+                }
+                for (k = 0; k < temp_arr.length; k++) {
+                    for (vv = 0; vv < temp_tr_arr.length; vv++) {
+                        if (temp_arr[k] == temp_tr_arr[vv].getElementsByTagName("td")[_i].innerHTML) {
+                            table_tbody.appendChild(temp_tr_arr[vv]);
+                        }
+                    }
+                }
+            }
+        }
+        for (i = 0; i < table_th.length; i++) {
+            bind_click(i);
+        }

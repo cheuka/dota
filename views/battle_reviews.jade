@@ -1,0 +1,210 @@
+include mixins/data_table
+include mixins/data_table_header
+include mixins/hero_td
+include mixins/progress_bar
+
+
+extend layout
+
+block head
+  link(rel='stylesheet', href="/public/css/yasp_home.css")
+
+block content
+  - var teamfights = match.teamfights || []
+  .row
+    .col-md-12
+      h2 Graphs
+      h3 Radiant Advantage
+      #chart-diff
+
+
+  // start of yasp display
+
+
+  .row
+    .col-md-4
+      h3 Fights
+        small Click a row to display
+      table.table.table-condensed.table-hover
+        thead
+          tr
+            th #
+            th Start
+            th Length
+            th: abbr(title=tooltips.teamfight_participation) Style
+            th: abbr(title=tooltips.teamfight_score) Score
+            th: abbr(title=tooltips.teamfight_radiant_gold_adv) Gold
+            th: abbr(title=tooltips.teamfight_radiant_xp_adv) XP
+            th
+        tbody#teamfights
+          - var i = 0
+          each entry, ind in teamfights
+            - i = i + 1
+            tr(target=ind)
+              td=i
+              //td= moment().startOf('day').seconds(entry.start).format("mm:ss")
+              td.format-seconds(data-format-seconds=entry.start)
+              td= moment().startOf('day').seconds(entry.end-entry.start).format("m:ss")
+              td
+                span.text-success #{entry.radiant_participation}
+                span="v"
+                span.text-danger #{entry.dire_participation}
+              td
+                span(class=entry.radiant_deaths>entry.dire_deaths ? "" : "text-success") #{entry.dire_deaths}
+
+                span="-"
+                span(class=entry.radiant_deaths>entry.dire_deaths ? "text-danger" : "") #{entry.radiant_deaths}
+              td(class=entry.radiant_gold_delta>0?"text-success":"text-danger")=entry.radiant_gold_delta
+              td(class=entry.radiant_xp_delta>0?"text-success":"text-danger")=entry.radiant_xp_delta
+              td
+                i.fa
+
+      h3.inline-header Death Map
+      button.btn.btn-xs.btn-dark.toggle-button#show_all Show All Deaths
+      #map.mapContainer
+        img.map(src=constants.map_url, alt="map")
+        .icons
+          each entry, ind in teamfights
+            each death in entry.posData
+              i(fight=ind, class="small-hero-icon d2mh hero-"+death.hero_id style="position: absolute; top: "+death.y/1.27+"%; left: "+death.x/1.27+"%;")
+
+      h3 Participation
+      table.table-condensed.rankable
+        tr
+          th Hero
+          th Participation
+        each player in match.players
+          tr
+            +hero_td(player)
+            td.rankable
+              +progress_bar((player.teamfights_participated || 0), teamfights.length)
+
+    .col-md-8
+      each entry, ind in teamfights
+        +data_table({id:"recap-"+ind, summable: true, heading:"Recap", rankable: true})
+          each player, num in entry.players
+            +data_table_header(num, entry)
+              tr
+                th Hero
+                th Joined
+                th Death
+                th Buyback
+                th Level
+                th Damage
+                th Healing
+                th Gold
+                th XP
+                th Skills
+                th Items
+                th Kills
+            tr(class=player.isRadiant ? "radiant" : "dire")
+              +hero_td(player)
+              td
+                if player.participate
+                  i.fa.fa-check(style="font-size:28px;")
+              td
+                if player.deaths
+                  i.fa.fa-times(style="font-size:28px;")
+              td
+                if player.buybacks
+                  i.fa.fs-usd(style="font-size:28px;")
+              td(style="white-space: nowrap;")
+                if player.level_start !== player.level_end
+                  | #{player.level_start}<i class="fa fa-long-arrow-right"></i>#{player.level_end}
+                else
+                  | #{player.level_start}
+              //td=player.deaths
+              //td=player.buybacks
+              td.rankable=player.damage
+              td.rankable=player.healing
+              td.rankable=player.gold_delta
+              td.rankable=player.xp_delta
+              td
+                each val, key in player.ability_uses || {}
+                  - var ability = constants.abilities[key]
+                  span.img-text
+                    if ability
+                      img.img-sm.ability(src=ability.img, title=key)
+                    else
+                      //=key
+                    div #{val}
+              td
+                each val, key in player.item_uses || {}
+                  - var item = constants.items[key]
+                  span.img-text
+                    if item
+                      img.img-sm.item(src=item.img, title=key)
+                      div #{val}
+                    else
+                      =key
+              td
+                each val, key in player.killed || {}
+                  - var hero = constants.hero_names[key]
+                  span.img-text
+                    if hero
+                      img.img-sm(src=hero.img, title=hero.localized_name)
+                      div #{val}
+
+
+
+
+  // end of yasp display
+
+
+append footer_assets
+  script.
+    //
+      var graphData = !{JSON.stringify(match.graphData)};
+      generateCharts(graphData);
+
+    var data = !{JSON.stringify(match.incomeData)};
+    var indexs = ['index'];
+    var start_time = ['start_time'];
+    var lengths = ['length'];
+    var r_part = ['radiant participations'];
+    var d_part = ['dire participations'];
+    
+
+   
+    for (var ind = 1; ind <= teamfights.length; ++ind)
+    {
+        var entry = teamfights[ind];
+        indexs.push(ind);
+        lengths.push(moment().startOf('day').seconds(entry.end-entry.start).format("m:ss"));
+        start_time.push(entry.start);
+        r_part.push(entry.radiant_participation);
+        d_part.push(entry.dire_participation);
+    }
+    
+    console.log(indexs);
+
+
+    var all_icons = $("#map i");
+    $("#teamfights tr").click(function(event) {
+      var show =$(this).attr("target");
+      location.hash = show;
+      $(this).addClass("glow");
+      $(this).siblings().removeClass("glow");
+      $(this).siblings().find("i").removeClass("fa-eye");
+      $(this).find("i").addClass("fa-eye");
+      var table = $("#recap-" + show);
+      var icons = $("i[fight='" + show + "']")
+      table.show('slow');
+      table.siblings().hide('slow');
+      all_icons.hide();
+      icons.show();
+    })
+    $("#show_all").click(function(event) {
+      all_icons.show();
+    });
+    var hash = location.hash ? location.hash.substring(1) : 0;
+    $("table tr[target='"+hash+"']").trigger("click");
+
+
+
+
+
+  //-
+    <link href="public/css/c3.min.css" rel="stylesheet" type="text/css">
+    <script src="public/js/c3.min.js"></script>
+

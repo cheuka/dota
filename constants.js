@@ -16,9 +16,9 @@ constants.heroes = {};
 constants.hero_names = {};
 heroes.forEach(function(h)
 {
-    // h.img = "/apps/dota2/images/heroes/" + h.name.replace("npc_dota_hero_", "") + "_full.png";
+    h.img = "/apps/dota2/images/heroes/" + h.name.replace("npc_dota_hero_", "") + "_full.png";
 	// lordstone: localize the hero img
-	h.img = "/public/images/hero_icons/" + h.id + ".png";
+  	//h.img = "/public/images/hero_icons/" + h.id + ".png";
     constants.heroes[h.id] = h;
     constants.hero_names[h.name] = h;
 });
