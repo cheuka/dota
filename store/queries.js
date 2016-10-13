@@ -263,6 +263,19 @@ function insertMatch(db, redis, match, options, cb)
                          + pm.sentry_kills ? Number(pm.sentry_kills) : 0;
 
                         pm.purchase_dust = pm.purchase.dust ? Number(pm.purchase.dust) : 0;
+
+                        if (pm.item_uses_arr) {
+                            var power_treads = pm.item_uses_arr.filter(function(a) {
+                                return a && a.name == "power_treads";
+                            });
+                            pm.power_treads_usetimes = power_treads.length > 0 ? power_treads[0].val : 0;
+                            pm.power_treads_buytime = pm.purchase_time["power_treads"] ? pm.purchase_time["power_treads"] : 0;
+                        }
+                    
+                        //console.log('power treads ' + pm.power_treads_usetimes);
+                        //console.log('power_treads buy time ' + pm.power_treads_buytime);
+                        //console.log('apm ' + pm.actions_per_min);
+                        pm.apm = pm.actions_per_min;
                     }
 
                     pm.match_id = match.match_id;
@@ -748,89 +761,9 @@ function getMantaParseData(db, payload, cb)
 {
  
     if (payload.league_id) {
-        if (payload.test === true) {
-            db.table('player_matches')
-            .select('player_matches.match_id')
-            .select('hero_healing as av_healing')
-            .select('tf_ratio as tf_ratio')
-            .select('iswin')
-            .select('create_total_damages as av_create_total_damage')
-            .select('create_deadly_damages as av_create_deadly_damages')
-            .select('create_total_stiff_control as av_create_total_stiff_control')
-            .select('create_deadly_stiff_control as av_create_deadly_stiff_control')
-            .select('opponent_hero_deaths as av_opponent_hero_deaths')
-            .select('create_deadly_damages_per_death as av_create_deadly_damages_per_death')
-            .select('create_deadly_stiff_control_per_death as av_create_deadly_stiff_control_per_death')
-            .select('rgpm as av_rgpm')
-            .select('unrrpm as av_unrrpm')
-            .select('killherogold as av_killherogold')
-            .select('deadlosegold as av_deadlosegold')
-            .select('fedenemygold as av_fedenemygold')
-            .select('alonekillednum as av_alonekillednum')
-            .select('alonebecatchednum as av_alonebecatchednum')
-            .select('alonebekillednum as av_alonebekillednum')
-            .select('consumedamage as av_consumedamage')
-            .select('teamnumber')
-            .select('vision_bought as av_vision_bought')
-            .select('vision_killed as av_vision_killed')
-            .select('runes_total as av_runes')
-            .select('purchase_dust')
-            //.select('apm as av_apm')
-            .select('player_info.personaname as player_name')
-            .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
-            //.leftJoin('matches', 'player_matches.match_id', 'matches.match_id')
-            //.where('matches.leagueid', payload.league_id)   
-            .where('player_matches.match_id', payload.league_id)
-            .asCallback(function(err, result) {
-                console.log(err);
-                if (err) {
-                    return cb(err);
-                }
-                else {
-                    return cb(null, result);
-                }
-            });
-        }
-        else {
-            db.table('player_matches').count('* as num_played')
-            .avg('healing as av_healing')
-            .avg('teamfight_participate_ratio as tf_ratio')
-            .avg('create_total_damages as av_create_total_damage')
-            .avg('create_deadly_damages as av_create_deadly_damages')
-            .avg('create_total_stiff_control as av_create_total_stiff_control')
-            .avg('create_deadly_stiff_control as av_create_deadly_stiff_control')
-            .avg('opponent_hero_deaths as av_opponent_hero_deaths')
-            .avg('create_deadly_damages_per_death as av_create_deadly_damages_per_death')
-            .avg('create_deadly_stiff_control_per_death as av_create_deadly_stiff_control_per_death')
-            .avg('rgpm as av_rgpm')
-            .avg('unrrpm as av_unrrpm')
-            .avg('killherogold as av_killherogold')
-            .avg('deadlosegold as av_deadlosegold')
-            .avg('fedenemygold as av_fedenemygold')
-            .avg('alonekillednum as av_alonekillednum')
-            .avg('alonebecatchednum as av_alonebecatchednum')
-            .avg('alonebekillednum as av_alonebekillednum')
-            .avg('consumedamage as av_consumedamage')
-            .avg('vision_bought as av_vision_bought')
-            .avg('vision_kill as av_vision_kill')
-            .avg('runes as av_runes')
-            .avg('apm as av_apm')
-            .max('player_name as player_name')
-            .select(db.raw('count (case when iswin then 1 end) as win_times'))
-            .leftJoin('matches', 'manta.match_id', 'matches.match_id')
-            .where('matches.leagueid', payload.league_id)
-            .groupBy('steamid').asCallback(function(err, result) {
-                if (err) {
-                    return cb('query failed');
-                }
-                return cb(null, result);
-            });
-        }
-    }
-    else {
-        db.table('manta').count('* as num_played')
-        .avg('healing as av_healing')
-        .avg('teamfight_participate_ratio as tf_ratio')
+        db.table('player_matches').count('* as num_played')
+        .avg('hero_healing as av_healing')
+        .avg('tf_ratio as tf_ratio')
         .avg('create_total_damages as av_create_total_damage')
         .avg('create_deadly_damages as av_create_deadly_damages')
         .avg('create_total_stiff_control as av_create_total_stiff_control')
@@ -848,12 +781,62 @@ function getMantaParseData(db, payload, cb)
         .avg('alonebekillednum as av_alonebekillednum')
         .avg('consumedamage as av_consumedamage')
         .avg('vision_bought as av_vision_bought')
-        .avg('vision_kill as av_vision_kill')
-        .avg('runes as av_runes')
+        .avg('vision_killed as av_vision_kill')
+        .avg('runes_total as av_runes')
+        .avg('purchase_dust')
         .avg('apm as av_apm')
-        .max('player_name as player_name')
+        .sum('power_treads_usetimes as sum_power_treads_usetimes')
+        .select(db.raw('count (case when power_treads_buytime > 0 then 1 end) as power_treads_buytimes'))
+        .select(db.raw('sum( cast(?? as float) * 60 / cast(?? - ?? as float)) as sum_pt_uspermin',["power_treads_usetimes", "duration", "power_treads_buytime"]))
         .select(db.raw('count (case when iswin then 1 end) as win_times'))
-        .groupBy('steamid').asCallback(function(err, result) {
+        .select(db.raw('max (coalesce(player_info.personaname, ?)) as player_name', 'anonymous'))
+        .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+        .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
+        .where('create_total_damages', '>', '0')
+        .where('matches.leagueid', payload.league_id)
+        .groupBy('player_matches.account_id').asCallback(function(err, result) {
+            console.log(err);
+            if (err) {
+                return cb('query failed');
+            }
+            return cb(null, result);
+        }); 
+    }
+    else {
+        db.table('player_matches').count('* as num_played')
+        .avg('hero_healing as av_healing')
+        .avg('tf_ratio as tf_ratio')
+        .avg('create_total_damages as av_create_total_damage')
+        .avg('create_deadly_damages as av_create_deadly_damages')
+        .avg('create_total_stiff_control as av_create_total_stiff_control')
+        .avg('create_deadly_stiff_control as av_create_deadly_stiff_control')
+        .avg('opponent_hero_deaths as av_opponent_hero_deaths')
+        .avg('create_deadly_damages_per_death as av_create_deadly_damages_per_death')
+        .avg('create_deadly_stiff_control_per_death as av_create_deadly_stiff_control_per_death')
+        .avg('rgpm as av_rgpm')
+        .avg('unrrpm as av_unrrpm')
+        .avg('killherogold as av_killherogold')
+        .avg('deadlosegold as av_deadlosegold')
+        .avg('fedenemygold as av_fedenemygold')
+        .avg('alonekillednum as av_alonekillednum')
+        .avg('alonebecatchednum as av_alonebecatchednum')
+        .avg('alonebekillednum as av_alonebekillednum')
+        .avg('consumedamage as av_consumedamage')
+        .avg('vision_bought as av_vision_bought')
+        .avg('vision_killed as av_vision_kill')
+        .avg('runes_total as av_runes')
+        .avg('purchase_dust')
+        .avg('apm as av_apm')
+        .sum('power_treads_usetimes as sum_power_treads_usetimes')
+        .select(db.raw('count (case when power_treads_buytime > 0 then 1 end) as power_treads_buytimes'))
+        .select(db.raw('sum( cast(?? as float) * 60 / cast(?? - ?? as float)) as sum_pt_uspermin',["power_treads_usetimes", "duration", "power_treads_buytime"]))
+        .select(db.raw('count (case when iswin then 1 end) as win_times'))
+        .select(db.raw('max (coalesce(player_info.personaname, ?)) as player_name', 'anonymous'))
+        .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+        .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
+        .where('create_total_damages', '>', '0')
+        .groupBy('player_matches.account_id').asCallback(function(err, result) {
+            console.log(err);
             if (err) {
                 return cb('query failed');
             }
@@ -864,9 +847,11 @@ function getMantaParseData(db, payload, cb)
 
 function getLeagueList(db, payload, cb)
 {
-    db.raw(`
-    SELECT * from league_info order by start_time desc
-    `).asCallback(function(err, result){
+    // db.raw(`
+    // SELECT * from league_info order by start_time desc
+    // `)
+    db.table('league_info').select('*').orderBy('start_time', 'desc')
+    .asCallback(function(err, result){
         if (err)
         {
             return cb(err);

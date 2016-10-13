@@ -624,18 +624,21 @@ app.get('/players_ranking/:league_id?', function(req, res, cb)
     
     queries.getMantaParseData(db, {
         league_id: req.params.league_id,
-        test: true
     }, function(err, result) {
-        //if (err) {
-           // console.log(err);
-            //res.json({"error": err});
-        //}
-        //else {
-            res.json({"data": JSON.stringify(result)});
-            // res.render('players_ranking', {
-            //     data: result,
-            // });
-        //}
+        if (req.params.league_id) {
+            // var res2 = {
+            //     data: result
+            // }
+            // res.json(JSON.stringify(res2));
+            res.render('players_ranking', {
+                data: result,
+            });
+        }
+        else {
+            res.render('players_ranking', {
+                data: result,
+            });
+        }
     });
     
     
@@ -655,7 +658,7 @@ app.get('/players_league', function(req, res, cb)
            res.json({"error": "error"});
         }
         else {
-           res.json({"data": JSON.stringify(result)});
+           res.json(JSON.stringify(result));
         }
     });
 });

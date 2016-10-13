@@ -31,58 +31,24 @@ block head
 
         .row{
             margin-top:40px;
-
         }
-
 
     script.
 
-        var xmlHttp;
         function getLeagueInfo(){
-            var xmlHttp = GetXmlHttpObject();
-            if(xmlHttp == null){
-                return;	
-            }
-		
-            var httpUrl = "./players_league";
-            xmlHttp.onreadystatechange = subScriberListResult;
-            xmlHttp.open("GET", httpUrl, true);
-            xmlHttp.send(null);
+            $.getJSON('/players_league', function(response) {
+                parseLeague(response);
+            });
         }
 
-        function GetXmlHttpObject(){
-            xmlHttp=null;
-            try{
-                // Firefox, Opera 8.0+, Safari
-                xmlHttp=new XMLHttpRequest();
-            }catch (e){
-             //Internet Explorer
-                try{
-                    xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
-                }catch (e){
-                    xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-            }
-            return xmlHttp;
-        }
-
-        function subScriberListResult(){ 
-            if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
-                if(xmlHttp.responseText.length > 0){
-                    parseLeague(xmlHttp.responseText);
-                } 
-            }
-        }
-
-        function parseLeague(responseText){
-            var jsonOb = JSON.parse(responseText);
-            var dataOb = jsonOb.data;
-            var rowsOb = JSON.parse(dataOb).rows;
-            var length = rowsOb.length;
-            for(var i = 0; i < length; i++){
-                var league = rowsOb[i]
+        function parseLeague(response){
+            var leagues = JSON.parse(response);
+            for(var i = 0; i < leagues.length; i++){
+                var league = leagues[i]
                 $('#league_select').append("<option value='" + league.league_id + "'>" + league.league_name.substr(11) + "</option>");
             }
+            var selectedLeague = sessionStorage.getItem("selectedLeague");
+            $('#league_select').val(selectedLeague).selected = true;
         }
 
         function toComprehensive(){
@@ -97,26 +63,60 @@ block head
 
         }
 
+        function filterMatchData() {
+            var game_times = $('#game_times').val();
+            var table = $('#data').DataTable();
+            var rows = table.rows().data().filter(function(row) {
+                return Number(row[1]) >= Number(game_times);
+            });
+
+            table.destroy();
+            var new_table = $('#data').DataTable({
+                data: rows,
+                info: false,
+                paging: true,
+                pageLength: 20,
+                lengthChange: false,
+                searching: false,
+                responsive: true,
+                'bAutoWidth': true
+            });
+        }
+
         function selectCompreData(){
             var start_time = $('#com_start_time').val();
             var end_time = $('#com_end_time').val();
             var league_id = $('#league_select').val();
-            var game_times = $('#game_times').val();
-            //alert('select compre data' + start_time + ',' + end_time + ',' + league_name  + ',' + game_times)
-            window.location.href='/players_ranking/'+league_id;
+
+            if (Number(league_id) >= 0) {
+                sessionStorage.setItem("selectedLeague", league_id);
+                window.location.href='/players_ranking/'+league_id;
+
+                //- var table = $('#data').DataTable();
+                //- table.destroy();
+                //- $.getJSON('/players_ranking/'+league_id, function(response) {
+                //-     var new_table = $('#data').DataTable({
+                //-         processing: true,
+                //-         data: response.data,
+                //-         searching: false,
+                //-         //- columns: [
+                //-         //-     { data : "player_name" },
+                //-         //-     { data : "num_played"  },
+                //-         //- ]
+                //-     });
+                //- });
+            }
+            else if (Number(league_id) == -1) {
+                sessionStorage.setItem("selectedLeague", "-1");
+                window.location.href='/players_ranking';
+            }
         }
 
         function selectSingleData(playerId){
-
-
         }
 
         function selectPlayerFromTeam(teamName){
            alert(teamName);
-        }
-
-        function getLeagueList(){
-
         }
 
 block content
@@ -140,10 +140,10 @@ block content
         .row
             h4.same_line 联赛筛选
             select(onchange='selectCompreData()')#league_select.same_line
-                option(value='0',selected='true') 所有联赛
+                option(value='-1',selected='true') 所有联赛
         .row
             h4.same_line 场次筛选
-            select(onchange='selectCompreData()')#game_times.same_line
+            select(onchange='filterMatchData()')#game_times.same_line
                 option(value='1',selected='true') >=1场比赛
                 option(value='3') >=3场比赛
                 option(value='5') >=5场比赛
@@ -152,14 +152,16 @@ block content
                 option(value='50') >=50场比赛
         //选手名称 场次 输出 胜率 消耗 回复 控制 参团率 抓人 落单被抓 CNE URGPM GPM 买眼 反眼 控符 AP
         .row
-            .col-md-12.table-responsive
-                table.table.table-striped.table-condensed.rankable#data
+            .col-xs-12.table-responsive
+                table.table.table-striped.table-condensed#data
                     thead
                         tr
-                            th #
-                            th match_id
+                            //th match_id
                             th 选手名称
-                            th 场次
+                            th 场次 
+                            th 买假腿场数
+                            th 平均每场切假腿
+                            th 平均每分钟切假腿
                             th 输出
                             th 胜率 %
                             th 消耗
@@ -176,20 +178,17 @@ block content
                             th 控符
                             th APM
                     tbody
-                        //tr
-                        //    td 2
-                        //tr
-                        //    td 4
-                        //tr
-                        //    td 3
-                        //tr
-                        //    td 1
                         each entry, i in data || []
                             tr
-                                td= i+1
-                                td #{entry.match_id}
+                                //td #{entry.match_id}
                                 td #{entry.player_name}
                                 td #{entry.num_played}
+                                td #{Math.round(entry.power_treads_buytimes)}
+                                - var pt_use = entry.power_treads_buytimes > 0 ? (entry.sum_power_treads_usetimes / entry.power_treads_buytimes) : 0;
+                                td #{Math.round(pt_use)}
+                                - var pt_use_pm = entry.power_treads_buytimes > 0 ? (entry.sum_pt_uspermin / entry.power_treads_buytimes) : 0;
+                                td #{pt_use_pm.toFixed(2)}
+
                                 td #{Math.round(entry.av_create_total_damage)}
                                 td #{Math.round(100*entry.win_times/entry.num_played)}
                                 td #{Math.round(entry.av_consumedamage)}
@@ -205,7 +204,6 @@ block content
                                 td #{Math.round(entry.av_vision_kill)}
                                 td #{Math.round(entry.av_runes)}
                                 td #{Math.round(entry.av_apm)}
-
 
 
 
@@ -227,6 +225,7 @@ block content
         .row
             .col-md-12.table-responsive
                 table.table.table-striped.table-condensed.rankable#team_fetch_match
+                //+data_table({rankable: true})
                     thread
                         tr
                             th #
@@ -249,44 +248,17 @@ block content
                             th APM
 
     script.
+        $('#data').DataTable({
+            info: false,
+            paging: true,
+            pageLength: 20,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            'bAutoWidth': true,
+        });
+
         document.getElementById('com_end_time').valueAsDate = new Date();
         document.getElementById('sin_end_time').valueAsDate = new Date();
         toComprehensive()
         getLeagueInfo()
-        var table = document.getElementById("data");
-        var table_th = document.getElementsByTagName("th");
-        var table_tbody = table.getElementsByTagName("tbody")[0];
-        var table_tr = table_tbody.getElementsByTagName("tr");
-        function bind_click(_i) {
-            table_th[_i].onclick = function () {
-                var temp_arr = [];
-                var temp_tr_arr = [];
-                for (j = 0; j < table_tr.length; j++) {
-                    temp_arr.push(table_tr[j].getElementsByTagName("td")[_i].innerHTML);
-                    temp_tr_arr.push(table_tr[j].cloneNode(true));
-                }
-                ;
-                var tr_length = table_tr.length
-                for (x = 0; x < tr_length; x++) {
-                    table_tbody.removeChild(table_tbody.getElementsByTagName("tr")[0]);
-                }
-                var temp = parseInt(temp_arr[0]) || temp_arr[0];
-                if (typeof(temp) == 'number') {
-                    temp_arr.sort(function (a, b) {
-                        return b - a;
-                    });
-                } else {
-                    temp_arr.sort();
-                }
-                for (k = 0; k < temp_arr.length; k++) {
-                    for (vv = 0; vv < temp_tr_arr.length; vv++) {
-                        if (temp_arr[k] == temp_tr_arr[vv].getElementsByTagName("td")[_i].innerHTML) {
-                            table_tbody.appendChild(temp_tr_arr[vv]);
-                        }
-                    }
-                }
-            }
-        }
-        for (i = 0; i < table_th.length; i++) {
-            bind_click(i);
-        }
