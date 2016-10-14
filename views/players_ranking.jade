@@ -63,6 +63,31 @@ block head
 
         }
 
+        function showPage() {
+            $('#data').DataTable({
+                info: false,
+                paging: true,
+                pageLength: 20,
+                lengthChange: false,
+                searching: false,
+                responsive: true,
+                'bAutoWidth': true,
+            });
+
+            if (player_data) {
+                toSinglePlayer();
+                $('#single_player').DataTable({
+                    info: false,
+                    paging: true,
+                    pageLength: 20,
+                    lengthChange: false,
+                    searching: false,
+                    responsive: true,
+                    'bAutoWidth': true,
+                });
+            }
+        }
+
         function filterMatchData() {
             var game_times = $('#game_times').val();
             var table = $('#data').DataTable();
@@ -115,8 +140,18 @@ block head
         function selectSingleData(playerId){
         }
 
-        function selectPlayerFromTeam(teamName){
-           alert(teamName);
+        function selectPlayerFromTeam(teamId){
+            $.getJSON('/teamPlayers/'+teamId, function(response) {
+                parsePlayers(response);
+            });
+        }
+
+        function parsePlayers(response){
+            var players = JSON.parse(response);
+            for (var i = 0; i < players.length; ++i) {
+                var player = players[i]
+                $('#player_select').append("<option value='" + player.account_id + "'>" + player.player_name + "</option>");
+            }
         }
 
 block content
@@ -210,12 +245,12 @@ block content
     #single_player
         .row
             h4.same_line 选择战队
-            select(onchange='selectPlayerFromTeam(value)')#league_select.same_line
+            select(onchange='selectPlayerFromTeam(value)')#team_select.same_line
                 option(value='0',selected='true') Select a Team 
                 - for (var i = 0; i < constants.common_teams.length; ++i)
                   option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
             h4.same_line 选手
-            select(onchange='selectSingleData(value)')#league_select.same_line
+            select(onchange='selectSingleData(value)')#player_select.same_line
                 option(value='0',selected='true') 选手名称
         .row
             h4.same_line 时间筛选
@@ -224,11 +259,9 @@ block content
             input(type='date')#sin_end_time.same_line
         .row
             .col-md-12.table-responsive
-                table.table.table-striped.table-condensed.rankable#team_fetch_match
-                //+data_table({rankable: true})
+                table.table.table-striped.table-condensed.rankable#single_player
                     thread
                         tr
-                            th #
                             th 英雄名称
                             th 场次
                             th 输出
@@ -246,17 +279,13 @@ block content
                             th 反眼
                             th 控符
                             th APM
+                    tbody
+                        each entry, i in player_data || []
+                            tr
+                                td #{constants.hero_names[entry.hero_id]}
 
     script.
-        $('#data').DataTable({
-            info: false,
-            paging: true,
-            pageLength: 20,
-            lengthChange: false,
-            searching: false,
-            responsive: true,
-            'bAutoWidth': true,
-        });
+        showPage()
 
         document.getElementById('com_end_time').valueAsDate = new Date();
         document.getElementById('sin_end_time').valueAsDate = new Date();

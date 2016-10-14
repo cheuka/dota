@@ -794,13 +794,54 @@ function getMantaParseData(db, payload, cb)
         .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
         .where('create_total_damages', '>', '0')
         .where('matches.leagueid', payload.league_id)
-        .groupBy('player_matches.account_id').asCallback(function(err, result) {
+        .groupBy('player_matches.account_id')
+        .asCallback(function(err, result) {
             console.log(err);
             if (err) {
                 return cb('query failed');
             }
             return cb(null, result);
         }); 
+    }
+    else if (payload.player_account_id) {
+        db.table('player_matches').count('* as num_played')
+        .avg('hero_healing as av_healing')
+        .avg('tf_ratio as tf_ratio')
+        .avg('create_total_damages as av_create_total_damage')
+        .avg('create_deadly_damages as av_create_deadly_damages')
+        .avg('create_total_stiff_control as av_create_total_stiff_control')
+        .avg('create_deadly_stiff_control as av_create_deadly_stiff_control')
+        .avg('opponent_hero_deaths as av_opponent_hero_deaths')
+        .avg('create_deadly_damages_per_death as av_create_deadly_damages_per_death')
+        .avg('create_deadly_stiff_control_per_death as av_create_deadly_stiff_control_per_death')
+        .avg('rgpm as av_rgpm')
+        .avg('unrrpm as av_unrrpm')
+        .avg('killherogold as av_killherogold')
+        .avg('deadlosegold as av_deadlosegold')
+        .avg('fedenemygold as av_fedenemygold')
+        .avg('alonekillednum as av_alonekillednum')
+        .avg('alonebecatchednum as av_alonebecatchednum')
+        .avg('alonebekillednum as av_alonebekillednum')
+        .avg('consumedamage as av_consumedamage')
+        .avg('vision_bought as av_vision_bought')
+        .avg('vision_killed as av_vision_kill')
+        .avg('runes_total as av_runes')
+        .avg('purchase_dust')
+        .avg('apm as av_apm')
+        .select(db.raw('count (case when iswin then 1 end) as win_times'))
+        .select(db.raw('max (coalesce(player_info.personaname, ?)) as player_name', 'anonymous'))
+        .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+        .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
+        .where('create_total_damages', '>', '0')
+        .where('player_matches.account_id', payload.player_account_id)
+        .groupBy('player_matches.hero_id')
+        .asCallback(function(err, result) {
+            console.log(err);
+            if (err) {
+                return cb('query failed');
+            }
+            return cb(null, result);
+        });       
     }
     else {
         db.table('player_matches').count('* as num_played')
@@ -835,7 +876,8 @@ function getMantaParseData(db, payload, cb)
         .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
         .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
         .where('create_total_damages', '>', '0')
-        .groupBy('player_matches.account_id').asCallback(function(err, result) {
+        .groupBy('player_matches.account_id')
+        .asCallback(function(err, result) {
             console.log(err);
             if (err) {
                 return cb('query failed');
@@ -851,6 +893,22 @@ function getLeagueList(db, payload, cb)
     // SELECT * from league_info order by start_time desc
     // `)
     db.table('league_info').select('*').orderBy('start_time', 'desc')
+    .asCallback(function(err, result){
+        if (err)
+        {
+            return cb(err);
+        }
+        return cb(null, result)
+    });
+}
+
+function getTeamPlayers(db, payload, cb)
+{
+    var team_id = payload.team_id;
+    db.table('player_matches').select('steamid', 'account_id', 'player_info.personaname as player_name')
+    .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+    .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
+    .where('radiant_team_id', team_id).orWhere('dire_team_id', team_id)
     .asCallback(function(err, result){
         if (err)
         {
@@ -1381,6 +1439,7 @@ module.exports = {
     getTeamFetchedMatches,
     getMantaParseData,
     getLeagueList,
+    getTeamPlayers,
     getPicks,
     getTop,
     getHeroRankings,

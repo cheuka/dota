@@ -507,7 +507,7 @@ app.get('/picks/:n?', function(req, res, cb)
         }
         res.render('picks',
         {
-	    user: req.session.user,
+            user: req.session.user,
             total: result.total,
             picks: result.entries,
             n: length,
@@ -533,7 +533,7 @@ app.get('/top', function(req, res, cb)
         {
             return cb(err);
         }
-	result['user'] = req.session.user;
+        result['user'] = req.session.user;
         res.render('top', result);
     });
 });
@@ -543,7 +543,7 @@ app.get('/rankings/:hero_id?', function(req, res, cb)
     {
         res.render('heroes',
         {
-	    user: req.session.user,
+            user: req.session.user,
             path: '/rankings',
             alpha_heroes: utility.getAlphaHeroes()
         });
@@ -570,7 +570,7 @@ app.get('/benchmarks/:hero_id?', function(req, res, cb)
     {
         return res.render('heroes',
         {
-	    user: req.session.user,
+            user: req.session.user,
             path: '/benchmarks',
             alpha_heroes: utility.getAlphaHeroes()
         });
@@ -640,15 +640,24 @@ app.get('/players_ranking/:league_id?', function(req, res, cb)
             });
         }
     });
-    
-    
 });
-app.get('/players_ranking_data', function(req, res, cb)
-{ 
-    console.log('player_ranking_data');
-    //res.json({"error":"please specify the team id"});
-    res.json({"ranking" : "ranking"})
+
+app.get('/players_ranking/:account_id?', function(req, res, cb)
+{   
+    queries.getMantaParseData(db, {
+        player_account_id: req.params.account_id,
+    }, function(err, result) {
+        if (err) {
+            console.log(err);
+        }   
+        res.render('players_ranking', {
+            player_data: result,
+        });
+    });
 });
+
+
+
 app.get('/players_league', function(req, res, cb)
 { 
     console.log('players_league');
@@ -662,15 +671,27 @@ app.get('/players_league', function(req, res, cb)
         }
     });
 });
+
+app.get('/teamPlayer/:team_id?', function(req, res, cb)
+{
+    queries.getTeamPlayers(db, {
+        team_id: req.params.team_id
+    }, function(err, result) {
+        res.json(JSON.stringify(result));
+    });
+});
+
 app.get('/april/:year?', function(req, res, cb)
 {
     return res.render('plusplus',
     {
-	user: req.session.user,
+        user: req.session.user,
         match: example_match,
         truncate: [2, 6]
     });
 });
+
+
 app.use('/april/2016/hyperopia', hyperopia(db));
 app.use('/', mmstats(redis));
 //END standard routes
