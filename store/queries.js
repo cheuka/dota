@@ -759,7 +759,18 @@ function getTeamFetchedMatches(db, payload, cb)
 
 function getMantaParseData(db, payload, cb)
 {
- 
+    // define a large time range
+    var st = 0;
+    var ed = 9476438230;
+
+    if (payload.st) {
+        st = payload.st;
+    }
+
+    if (payload.ed) {
+        ed = payload.ed;
+    }
+
     if (payload.league_id) {
         db.table('player_matches').count('* as num_played')
         .avg('hero_healing as av_healing')
@@ -794,6 +805,8 @@ function getMantaParseData(db, payload, cb)
         .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
         .where('create_total_damages', '>', '0')
         .where('matches.leagueid', payload.league_id)
+        .where(db.raw('matches.start_time > ?', st))
+        .where(db.raw('matches.start_time < ?', ed))
         .groupBy('player_matches.account_id')
         .asCallback(function(err, result) {
             console.log(err);
@@ -804,7 +817,9 @@ function getMantaParseData(db, payload, cb)
         }); 
     }
     else if (payload.player_account_id) {
-        db.table('player_matches').count('* as num_played')
+        db.table('player_matches')
+        .max('hero_id as hero_id')
+        .count('* as num_played')
         .avg('hero_healing as av_healing')
         .avg('tf_ratio as tf_ratio')
         .avg('create_total_damages as av_create_total_damage')
@@ -833,7 +848,9 @@ function getMantaParseData(db, payload, cb)
         .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
         .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
         .where('create_total_damages', '>', '0')
-        .where('player_matches.account_id', payload.player_account_id)
+        .where('player_matches.account_id', '=', payload.player_account_id)
+        .where(db.raw('matches.start_time > ?', st))
+        .where(db.raw('matches.start_time < ?', ed))
         .groupBy('player_matches.hero_id')
         .asCallback(function(err, result) {
             console.log(err);
@@ -876,6 +893,8 @@ function getMantaParseData(db, payload, cb)
         .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
         .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
         .where('create_total_damages', '>', '0')
+        .where(db.raw('matches.start_time > ?', st))
+        .where(db.raw('matches.start_time < ?', ed))
         .groupBy('player_matches.account_id')
         .asCallback(function(err, result) {
             console.log(err);
@@ -889,9 +908,6 @@ function getMantaParseData(db, payload, cb)
 
 function getLeagueList(db, payload, cb)
 {
-    // db.raw(`
-    // SELECT * from league_info order by start_time desc
-    // `)
     db.table('league_info').select('*').orderBy('start_time', 'desc')
     .asCallback(function(err, result){
         if (err)
@@ -905,16 +921,29 @@ function getLeagueList(db, payload, cb)
 function getTeamPlayers(db, payload, cb)
 {
     var team_id = payload.team_id;
-    db.table('player_matches').select('steamid', 'account_id', 'player_info.personaname as player_name')
-    .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
-    .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
-    .where('radiant_team_id', team_id).orWhere('dire_team_id', team_id)
+    db.table('matches').select('match_id')
+    .where('radiant_team_id', team_id)
+    .orderBy('start_time', 'desc')
+    .limit(1)
     .asCallback(function(err, result){
-        if (err)
-        {
+        if (err) {
             return cb(err);
         }
-        return cb(null, result)
+        
+        var match_id;
+        if (result.length > 0)
+            match_id = result[0].match_id;
+        
+        db.table('player_matches').select('account_id', 'player_matches.steamid', 'player_info.personaname as player_name')
+        .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+        .where('match_id', match_id)
+        .where('player_slot', '<', 128)
+        .asCallback(function(err, result2) {
+            if (err) {
+                return cb(err);
+            }
+            return cb(null, result2)
+        })
     });
 }
 

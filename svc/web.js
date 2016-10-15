@@ -624,36 +624,45 @@ app.get('/players_ranking/:league_id?', function(req, res, cb)
     
     queries.getMantaParseData(db, {
         league_id: req.params.league_id,
+        st: req.query.st,
+        ed: req.query.ed
     }, function(err, result) {
-        if (req.params.league_id) {
-            // var res2 = {
-            //     data: result
-            // }
-            // res.json(JSON.stringify(res2));
-            res.render('players_ranking', {
-                data: result,
-            });
-        }
-        else {
-            res.render('players_ranking', {
-                data: result,
-            });
-        }
+        res.render('players_ranking', {
+            data: result,
+            league_id: req.params.league_id
+        });
     });
 });
 
-app.get('/players_ranking/:account_id?', function(req, res, cb)
+app.get('/single_player/:account_id?', function(req, res, cb)
 {   
-    queries.getMantaParseData(db, {
-        player_account_id: req.params.account_id,
-    }, function(err, result) {
-        if (err) {
-            console.log(err);
-        }   
-        res.render('players_ranking', {
-            player_data: result,
+    var player_account_id = req.params.account_id;
+    if (player_account_id) {
+       queries.getMantaParseData(db, {
+            player_account_id: player_account_id,
+            st: req.query.st,
+            ed: req.query.ed
+        }, function(err, result) {
+            if (err) {
+                console.log(err);
+            }
+            // var res2 = {
+            //     player_data: result
+            // };
+            // res.json(JSON.stringify(res2));
+            res.render('single_player_analysis', {
+                player_data: result,
+                account_id: player_account_id,
+                team_id: req.query.team_id,
+            });
+        }); 
+    }
+    else {
+        res.render('single_player_analysis', {
+                player_data: null,
         });
-    });
+    }
+    
 });
 
 
@@ -672,11 +681,12 @@ app.get('/players_league', function(req, res, cb)
     });
 });
 
-app.get('/teamPlayer/:team_id?', function(req, res, cb)
+app.get('/teamPlayers/:team_id?', function(req, res, cb)
 {
     queries.getTeamPlayers(db, {
         team_id: req.params.team_id
     }, function(err, result) {
+        console.log(err);
         res.json(JSON.stringify(result));
     });
 });
