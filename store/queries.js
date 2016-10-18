@@ -923,6 +923,7 @@ function getTeamPlayers(db, payload, cb)
     var team_id = payload.team_id;
     db.table('matches').select('match_id')
     .where('radiant_team_id', team_id)
+    .whereNotNull('start_time')
     .orderBy('start_time', 'desc')
     .limit(1)
     .asCallback(function(err, result){
@@ -933,6 +934,10 @@ function getTeamPlayers(db, payload, cb)
         var match_id;
         if (result.length > 0)
             match_id = result[0].match_id;
+        else {
+            console.log('not matched match id');
+        }
+        console.log('match id ' + match_id);
         
         db.table('player_matches').select('account_id', 'player_matches.steamid', 'player_info.personaname as player_name')
         .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
