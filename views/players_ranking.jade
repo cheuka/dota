@@ -36,6 +36,8 @@ block head
     script.
 
         var league_id_cnt="#{league_id}";
+        var st_cnt = "#{st}";
+        var ed_cnt = "#{ed}";
 
         function getLeagueInfo(cnt_league_id){
             $.getJSON('/players_league', function(response) {
@@ -45,13 +47,31 @@ block head
 
         function parseLeague(response, cnt_league_id){
             var leagues = JSON.parse(response);
-            for(var i = 0; i < leagues.length; i++){
-                var league = leagues[i]
-                $('#league_select').append("<option value='" + league.league_id + "'>" + league.league_name.substr(11) + "</option>");
+            var sorted_league = [];
+            for (var i in leagues) {
+                if (leagues[i].num_matches > 0) {
+                    sorted_league.push(leagues[i]);
+                }
+            }
+            sorted_league.sort(function(l1, l2) {
+                l2.num_matches - l1.num_matches;
+            });
+
+            for(var i = 0; i < sorted_league.length; i++){
+                var league = sorted_league[i];
+                $('#league_select').append("<option value='" + league.league_id + "'>" + league.league_name.substr(11) + " (" + league.num_matches + " matches) </option>");
             }
 
             if (league_id_cnt.length > 0) {
                 $('#league_select').val(league_id_cnt).selected=true;
+            }
+
+            if (st_cnt.length > 0) {
+                $('#com_start_time').val(moment.unix(Number(st_cnt)).format("YYYY-MM-DD"));
+            }
+
+            if (ed_cnt.length > 0) {
+                $('#com_end_time').val(moment.unix(Number(ed_cnt)).format("YYYY-MM-DD"));
             }
         }
 
@@ -60,10 +80,11 @@ block head
                 info: false,
                 paging: true,
                 pageLength: 20,
-                lengthChange: false,
+                lengthChange: true,
                 searching: false,
                 responsive: true,
-                'bAutoWidth': true,
+                'bAutoWidth': false,
+                'scrollX': true
             });
         }
 
@@ -80,10 +101,11 @@ block head
                 info: false,
                 paging: true,
                 pageLength: 20,
-                lengthChange: false,
+                lengthChange: true,
                 searching: false,
                 responsive: true,
-                'bAutoWidth': true
+                'bAutoWidth': false,
+                'scrollX': true
             });
         }
 
@@ -123,9 +145,6 @@ block head
 
 block content
 
-    script(type='text/javascript').
-        var league_id_cnt = !{JSON.stringify(league_id)}
-
     div#nav
       ul
         li 
@@ -140,9 +159,9 @@ block content
     #comprehensive
         .row
             h4.same_line 时间筛选
-            input(type='date', value='2016-04-21')#com_start_time.same_line
+            input(type='date', value='2016-04-21', onchange='selectCompreData()')#com_start_time.same_line
             h4.same_line to
-            input(type='date')#com_end_time.same_line
+            input(type='date', onchange='selectCompreData()')#com_end_time.same_line
         .row
             h4.same_line 联赛筛选
             select(onchange='selectCompreData()')#league_select.same_line
@@ -165,15 +184,15 @@ block content
                             //th match_id
                             th 选手名称
                             th 场次 
-                            th 买假腿场数
-                            th 平均每场切假腿
-                            th 平均每分钟切假腿
-                            th 输出
+                            //th 买假腿场数
+                            //th 平均每场切假腿
+                            //th 平均每分钟切假腿
                             th 胜率 %
+                            th 输出
                             th 消耗
                             th 回复
                             th 控制
-                            th 参团率
+                            th 参团率 %
                             th 抓人
                             th 落单被抓
                             th CNE
@@ -181,22 +200,21 @@ block content
                             th GPM
                             th 买眼
                             th 反眼
-                            th 控符
-                            th APM
+                            //th 控符
+                            //th APM
                     tbody
                         each entry, i in data || []
                             tr
                                 //td #{entry.match_id}
                                 td #{entry.player_name}
                                 td #{entry.num_played}
-                                td #{Math.round(entry.power_treads_buytimes)}
-                                - var pt_use = entry.power_treads_buytimes > 0 ? (entry.sum_power_treads_usetimes / entry.power_treads_buytimes) : 0;
-                                td #{Math.round(pt_use)}
-                                - var pt_use_pm = entry.power_treads_buytimes > 0 ? (entry.sum_pt_uspermin / entry.power_treads_buytimes) : 0;
-                                td #{pt_use_pm.toFixed(2)}
-
-                                td #{Math.round(entry.av_create_total_damage)}
+                                //td #{Math.round(entry.power_treads_buytimes)}
+                                //- var pt_use = entry.power_treads_buytimes > 0 ? (entry.sum_power_treads_usetimes / entry.power_treads_buytimes) : 0;
+                                //td #{Math.round(pt_use)}
+                                //- var pt_use_pm = entry.power_treads_buytimes > 0 ? (entry.sum_pt_uspermin / entry.power_treads_buytimes) : 0;
+                                //td #{pt_use_pm.toFixed(2)}
                                 td #{Math.round(100*entry.win_times/entry.num_played)}
+                                td #{Math.round(entry.av_create_total_damage)}
                                 td #{Math.round(entry.av_consumedamage)}
                                 td #{Math.round(entry.av_healing)}
                                 td #{Math.round(entry.av_create_deadly_stiff_control)}
@@ -208,8 +226,8 @@ block content
                                 td #{Math.round(entry.av_rgpm)}
                                 td #{Math.round(entry.av_vision_bought)}
                                 td #{Math.round(entry.av_vision_kill)}
-                                td #{Math.round(entry.av_runes)}
-                                td #{Math.round(entry.av_apm)}
+                                //td #{Math.round(entry.av_runes)}
+                                //td #{Math.round(entry.av_apm)}
 
     script.
         showPage()

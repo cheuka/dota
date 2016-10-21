@@ -39,6 +39,8 @@ if user
                         th Match ID
                         th League Name
                         th Time
+                        th Radiant
+                        th Dire
                         th Replay Status
                     tbody 
                        each entry, i in team_fetch_match || []
@@ -52,6 +54,8 @@ if user
                                 - var duration = new Date().getTime() - new Date(entry.start_time*1000).getTime()
                                 - var days = Math.floor(duration/(3600*24*1000)) 
                                 td #{days} days ago
+                                td
+                                td
                                 td= entry.is_fetched?'downloaded':'downloading'
 
 else

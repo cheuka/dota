@@ -10,12 +10,12 @@
     #navbar.navbar-collapse.collapse
       ul.nav.navbar-nav
         if user
-          li(id='nav-request'): a(href="/fetch") FETCH 
+          //li(id='nav-request'): a(href="/fetch") FETCH 
           //each val, key in constants.navbar_pages
            // if !val.hide || config.NODE_ENV === "development"
              // li(id='nav-#{key}'): a(href="/"+key, class=val["new-feature"] ? "new-feature" : "")=val.name
           li: a(href="/upload", class="new-feature") UPLOAD
-          li: a(href="/banpick", class="new-feature") Mock BP
+          //li: a(href="/banpick", class="new-feature") Mock BP
           li: a(href="/team_fetch_match") Team Matches
         else
           li: a Log in to view options
@@ -25,7 +25,7 @@
           if admin || user == 'admin'
             li: a(href="/admin") Admin
           else
-            li: a(href="/center") Center!
+          //li: a(href="/center") Center!
           //li: a(href="/players/"+user.account_id) #{user.account_id}
           li: a(href="/logout") Logout
         else

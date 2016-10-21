@@ -629,7 +629,9 @@ app.get('/players_ranking/:league_id?', function(req, res, cb)
     }, function(err, result) {
         res.render('players_ranking', {
             data: result,
-            league_id: req.params.league_id
+            league_id: req.params.league_id,
+            st: req.query.st,
+            ed: req.query.ed
         });
     });
 });
@@ -654,6 +656,8 @@ app.get('/single_player/:account_id?', function(req, res, cb)
                 player_data: result,
                 account_id: player_account_id,
                 team_id: req.query.team_id,
+                st: req.query.st,
+                ed: req.query.ed
             });
         }); 
     }
