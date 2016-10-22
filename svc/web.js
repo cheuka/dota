@@ -628,6 +628,8 @@ app.get('/players_ranking/:league_id?', function(req, res, cb)
         ed: req.query.ed
     }, function(err, result) {
         res.render('players_ranking', {
+            user: req.session.user,
+            home: false,
             data: result,
             league_id: req.params.league_id,
             st: req.query.st,
@@ -653,6 +655,8 @@ app.get('/single_player/:account_id?', function(req, res, cb)
             // };
             // res.json(JSON.stringify(res2));
             res.render('single_player_analysis', {
+                user: req.session.user,
+                home: false,
                 player_data: result,
                 account_id: player_account_id,
                 team_id: req.query.team_id,
@@ -663,6 +667,8 @@ app.get('/single_player/:account_id?', function(req, res, cb)
     }
     else {
         res.render('single_player_analysis', {
+                user: req.session.user,
+                home: false,
                 player_data: null,
         });
     }
