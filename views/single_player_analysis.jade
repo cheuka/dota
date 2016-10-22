@@ -67,6 +67,7 @@ block head
 
         function selectPlayerFromTeam(team_id){
             $.getJSON('/teamPlayers/'+team_id, function(response) {
+                team_id_cnt = team_id; // update current team
                 parsePlayers(response);
             });
         }
