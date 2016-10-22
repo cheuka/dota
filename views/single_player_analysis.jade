@@ -155,7 +155,7 @@ block content
                             th 落单被抓
                             th CNE
                             th URGPM
-                            th GPM
+                            th RGPM
                             th 买眼
                             th 反眼
                             //th 控符
@@ -178,13 +178,17 @@ block content
                                 td #{Math.round(entry.av_healing)}
                                 td #{Math.round(entry.av_create_deadly_stiff_control)}
                                 td #{Math.round(entry.tf_ratio)}
-                                td #{Math.round(entry.av_alonekillednum)}
-                                td #{Math.round(entry.av_alonebecatchednum)}
+                                - var av_alonekillednum2 = entry.av_alonekillednum;
+                                td #{Number(av_alonekillednum2).toFixed(1)}
+                                - var av_alonebecatchednum2 = entry.av_alonebecatchednum;
+                                td #{Number(av_alonebecatchednum2).toFixed(1)}
                                 td #{Math.round(entry.av_killherogold - entry.av_fedenemygold)}
                                 td #{Math.round(entry.av_unrrpm)}
                                 td #{Math.round(entry.av_rgpm)}
-                                td #{Math.round(entry.av_vision_bought)}
-                                td #{Math.round(entry.av_vision_kill)}
+                                - var av_vision_bought2 = entry.av_vision_bought;
+                                td #{Number(av_vision_bought2).toFixed(1)}
+                                - var av_vision_kill2 = entry.av_vision_kill;
+                                td #{Number(av_vision_kill2).toFixed(1)}
                                 //td #{Math.round(entry.av_runes)}
                                 //td #{Math.round(entry.av_apm)}
     script.
