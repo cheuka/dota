@@ -1,57 +1,34 @@
-window.generateCharts = function generateCharts(data) {
+window.generateChartsOn = function generateChartsOn(data, fights) {
     var color_array = [];
     for (var key in constants.player_colors) {
         color_array.push(constants.player_colors[key]);
     }
-    var difference = data.difference;
-    var gold = data.gold;
-    var xp = data.xp;
-    var lh = data.lh;
+
+    var fightsStart = getFightsTime(fights);
+    var fightsGold = getFightsGold(fights);
+    var difference = [data.difference[0], data.difference[2], fightsStart, fightsGold];
+
     var charts = [{
         bindTo: "#chart-diff",
         columns: difference,
-        x: 'time',
-        type: "area-spline",
+        xs: {
+            'Gold':'time',
+            'teamFightsGold':'fightsTime',
+        },
+        types: {
+            'Gold':"area-spline",
+            'teamFightsGold':'bar',
+        },
         xLabel: 'Game Time (minutes)',
         yLabel: 'Radiant Advantage'
-        }, {
-        bindTo: "#chart-gold",
-        columns: gold,
-        x: 'time',
-        type: "spline",
-        xLabel: 'Game Time (minutes)',
-        yLabel: 'Gold',
-        color: {
-            pattern: color_array
-        }
-        }, {
-        bindTo: "#chart-xp",
-        columns: xp,
-        x: 'time',
-        type: "spline",
-        xLabel: 'Game Time (minutes)',
-        yLabel: 'XP',
-        color: {
-            pattern: color_array
-        }
-        }, {
-        bindTo: "#chart-lh",
-        columns: lh,
-        x: 'time',
-        type: "spline",
-        xLabel: 'Game Time (minutes)',
-        yLabel: 'LH',
-        color: {
-            pattern: color_array
-        }
         }];
     charts.forEach(function(chart) {
         c3.generate({
             bindto: chart.bindTo,
             data: {
-                x: chart.x,
+                xs: chart.xs,
                 columns: chart.columns,
-                type: chart.type
+                types: chart.types
             },
             color: chart.color,
             axis: {
@@ -68,9 +45,10 @@ window.generateCharts = function generateCharts(data) {
                     label: chart.yLabel
                 }
             },
+            bar: { width: { ratio: 0.5 }},
             zoom:{
-                enabled: true,
-                rescale: true
+                enabled: false,
+                rescale: false
             },
             tooltip: {
                 contents: function(d, defaultTitleFormat, defaultValueFormat, color) {
@@ -83,3 +61,19 @@ window.generateCharts = function generateCharts(data) {
         });
     });
 };
+
+var getFightsTime = function (x) {
+    var times = ["fightsTime"];
+    x.forEach(function(e){
+        times.push(e.start);
+    })
+    return times;
+}
+
+var getFightsGold = function (x) {
+    var golds = ["teamFightsGold"];
+    x.forEach(function(e){
+        golds.push(e.radiant_gold_delta);
+    })
+    return golds;
+}

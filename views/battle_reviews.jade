@@ -8,6 +8,8 @@ extend layout
 
 block head
   link(rel='stylesheet', href="/public/css/yasp_home.css")
+  script(src="/public/js/generateCharts.js")
+
 
 block content
   - var teamfights = match.teamfights || []
@@ -154,8 +156,9 @@ block content
 append footer_assets
   script.
     //
-      var graphData = !{JSON.stringify(match.graphData)};
-      generateCharts(graphData);
+    var graphData = !{JSON.stringify(match.graphData)};
+    var fight = !{JSON.stringify(match.teamfights)};
+    generateChartsOn(graphData, fight);
 
     var data = !{JSON.stringify(match.incomeData)};
     var indexs = ['index'];
