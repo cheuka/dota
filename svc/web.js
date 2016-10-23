@@ -426,11 +426,28 @@ app.get('/team_fetch_match/:team_id?', function(req, res, cb)
             if (err) {
                 return cb(err);
             }                                              
-			console.log('DEBUG: find result: ' + JSON.stringify(result));
+			//console.log('DEBUG: find result: ' + JSON.stringify(result));
             var name;
             for (var i = 0; i < constants.common_teams.length; ++i) {
                 if (constants.common_teams[i].team_id == req.params.team_id) {
                    name = constants.common_teams[i].name;
+                }
+            }
+
+            // rxu, get the team name of radiant and dire
+            for (var i in result) {
+                for (var j in constants.common_teams) {
+                    if (result[i].radiant_team_id == constants.common_teams[j].team_id) {
+                        result[i].radiant_team = constants.common_teams[j].name;
+                        break;
+                    }
+                }
+
+                for (var j in constants.common_teams) {
+                    if (result[i].dire_team_id == constants.common_teams[j].team_id) {
+                        result[i].dire_team = constants.common_teams[j].name;
+                        break;
+                    }
                 }
             }
 
@@ -439,7 +456,7 @@ app.get('/team_fetch_match/:team_id?', function(req, res, cb)
 				user: req.session.user,
 				home: false,
                 team_fetch_match: result,
-                team_name: name
+                team_name: name,
             });
         });
     }
