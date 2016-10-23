@@ -151,22 +151,22 @@ block content
       ul
         li 
           a(href='/team_fetch_match') 战队分析
-        li 
-          a(href='/players_ranking') 选手分析
-
+        li.active
+          a(href='#') 选手分析
+        li
+          a(href='/hero_analysis')  英雄分析
     .row
       ul
           lis.active
             a(href='#') 综合分析
           lis
             a(href='/single_player') 单独分析
-          lis
-            a(href='/hero_analysis')  英雄分析
+
 
     #comprehensive
         .row
             h4.same_line 时间筛选
-            input(type='date', value='2016-04-21', onchange='selectCompreData()')#com_start_time.same_line
+            input(type='date', value='2016-09-18', onchange='selectCompreData()')#com_start_time.same_line
             h4.same_line to
             input(type='date', onchange='selectCompreData()')#com_end_time.same_line
         .row

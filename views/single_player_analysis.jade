@@ -98,6 +98,9 @@ block head
 
             if (team_id_cnt.length > 0) {
                 $('#team_select').val(team_id_cnt).selected = true;
+            }
+
+            if (player_id_cnt.length > 0) {
                 $('#player_select').val(player_id_cnt).selected = true;
             }
 
@@ -117,6 +120,8 @@ block content
           a(href='/team_fetch_match') 战队分析
         li 
           a(href='/players_ranking') 选手分析
+        li
+          a(href='/hero_analysis')  英雄分析  
 
     .row
         ul
@@ -124,8 +129,6 @@ block content
             a(href='/players_ranking') 综合分析
           lis.active
             a(href='#') 单独分析
-          lis
-            a(href='/hero_analysis')  英雄分析
 
     #single_player
         .row
@@ -139,7 +142,7 @@ block content
                 option(value='0',selected='true') 选手名称
         .row
             h4.same_line 时间筛选
-            input(type='date', value='2016-04-21', onchange='selectSingleData()')#sin_start_time.same_line
+            input(type='date', value='2016-09-18', onchange='selectSingleData()')#sin_start_time.same_line
             h4.same_line to
             input(type='date', onchange='selectSingleData()')#sin_end_time.same_line
         .row
@@ -170,11 +173,12 @@ block content
                                 - var hero = constants.heroes[entry.hero_id]
                                 //td #{hero.localized_name}
                                 td(style="padding:1px")
-                                    .img-text.img-text-lg(style="float:initial;")
-                                        if hero
-                                            img.img-md(src=hero.img, title="#{hero.localized_name}", style="border-left-color:#{slot_color}").player-color
-                                        else
-                                            =hero.localized_name
+                                    a(href='/hero_analysis/#{hero.id}')
+                                        .img-text.img-text-lg(style="float:initial;")
+                                            if hero
+                                                img.img-md(src=hero.img, title="#{hero.localized_name}", style="border-left-color:#{slot_color}").player-color
+                                            else
+                                                =hero.localized_name
                                 td #{entry.num_played}
                                 td #{Math.round(100*entry.win_times/entry.num_played)}
                                 td #{Math.round(entry.av_create_total_damage)}

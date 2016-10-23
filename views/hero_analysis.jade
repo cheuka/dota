@@ -8,26 +8,7 @@ block head
         #nav ul li a.current{background-color:#fff;border-bottom:1px solid #fff;}
         #nav ul li a:hover{color:#000;background-color:#eee;}
 
-        lis{
-            float:left;
-            list-style:none;
-            width:150px;
-            height:30px;
-            background:#eee;
-            text-align:center;
-            font-size:1em;
-            color:#2780e3;
-            vertical-align:middle;
-            line-height:30px;
-            margin-left:10px;
-        }
-
-        lis a{font-weight:bold;border:1px solid #ccc; text-decoration:none;background-color:#eee}
-
-        lis.active a{color:#000;background-color:#eee;}
-
-        lis a.current{background-color:#fff;border-bottom:1px solid #fff;}
-
+    
         .same_line{
             float:left;
             margin-left:20px;
@@ -81,6 +62,27 @@ block head
             });
         }
 
+        function filterMatchData() {
+            var game_times = $('#game_times').val();
+            var table = $('#hero_data').DataTable();
+            var rows = table.rows().data().filter(function(row) {
+                return Number(row[1]) >= Number(game_times);
+            });
+
+            table.destroy();
+            var new_table = $('#hero_data').DataTable({
+                data: rows,
+                info: false,
+                paging: true,
+                pageLength: 20,
+                lengthChange: true,
+                searching: false,
+                responsive: true,
+                'bAutoWidth': false,
+                'scrollX': true
+            });
+        }
+
 block content
     div#nav
       ul
@@ -88,17 +90,11 @@ block content
           a(href='/team_fetch_match') 战队分析
         li 
           a(href='/players_ranking') 选手分析
+        li.active
+          a(href='#')  英雄分析
 
-    .row
-        ul
-          lis
-            a(href='/players_ranking') 综合分析
-          lis
-            a(href='/single_player') 单独分析
-          lis.active
-            a(href='#')  英雄分析
 
-    #single_player
+    #hero
         .row
             h4.same_line 选择英雄
             select(onchange='selectHero(value)')#hero_select.same_line
@@ -107,9 +103,20 @@ block content
                   option(value=constants.heroes[key].id) #{constants.heroes[key].name.substr(14)}
         .row
             h4.same_line 时间筛选
-            input(type='date', value='2016-04-21', onchange='selectHeroData()')#sin_start_time.same_line
+            input(type='date', value='2016-09-18', onchange='selectHeroData()')#sin_start_time.same_line
             h4.same_line to
             input(type='date', onchange='selectHeroData()')#sin_end_time.same_line
+
+        .row
+            h4.same_line 场次筛选
+            select(onchange='filterMatchData()')#game_times.same_line
+                option(value='1',selected='true') >=1场比赛
+                option(value='3') >=3场比赛
+                option(value='5') >=5场比赛
+                option(value='10') >=10场比赛
+                option(value='20') >=20场比赛
+                option(value='50') >=50场比赛
+                
         .row
             .col-md-12.table-responsive
                 table.table.table-striped.table-condensed.rankable#hero_data

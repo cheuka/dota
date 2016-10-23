@@ -16,10 +16,12 @@ if user
   block content
     div#nav
       ul
-        li 
-          a(href='/team_fetch_match') 战队分析
+        li.active
+          a(href='#') 战队分析
         li 
           a(href='/players_ranking') 选手分析
+        li
+          a(href='/hero_analysis')  英雄分析
     .row
         .col-md-12
           h3 Team #{team_name} 
@@ -60,8 +62,12 @@ if user
                                   td #{days} days ago
                                 else 
                                   td A month or months ago
-                                td= entry.radiant_team ? entry.radiant_team : entry.radiant_team_id
-                                td= entry.dire_team ? entry.dire_team : entry.dire_team_id
+                                if entry.radiant_win
+                                  td(class="success")= entry.radiant_team ? entry.radiant_team : entry.radiant_team_id
+                                  td(class="danger")= entry.dire_team ? entry.dire_team : entry.dire_team_id
+                                else
+                                  td(class="danger")= entry.radiant_team ? entry.radiant_team : entry.radiant_team_id
+                                  td(class="success")= entry.dire_team ? entry.dire_team : entry.dire_team_id  
                                 td= entry.is_fetched?'downloaded':'downloading'
 
 else
