@@ -11,16 +11,22 @@ block head
         lis{
             float:left;
             list-style:none;
-            margin:10px;
             width:150px;
             height:30px;
-            background:rgba(128,128,128,0.5);
+            background:#eee;
             text-align:center;
-            font-size:1em
-            color:rgb(192,192,192);
+            font-size:1em;
+            color:#2780e3;
             vertical-align:middle;
             line-height:30px;
+            margin-left:10px;
         }
+
+        lis a{font-weight:bold;border:1px solid #ccc; text-decoration:none;background-color:#eee}
+
+        lis.active a{color:#000;background-color:#eee;}
+
+        lis a.current{background-color:#fff;border-bottom:1px solid #fff;}
 
         .same_line{
             float:left;
@@ -139,10 +145,6 @@ block head
             }
         }
 
-        function toSinglePlayer() {
-            window.location.href='/single_player';
-        }
-
 block content
 
     div#nav
@@ -153,9 +155,11 @@ block content
           a(href='/players_ranking') 选手分析
 
     .row
-      ul.tab
-          lis() 综合分析
-          lis(onclick='toSinglePlayer()') 单独分析
+      ul
+          lis.active
+            a(href='#') 综合分析
+          lis
+            a(href='/single_player') 单独分析
     #comprehensive
         .row
             h4.same_line 时间筛选
