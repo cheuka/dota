@@ -60,8 +60,8 @@ if user
                                   td #{days} days ago
                                 else 
                                   td A month or months ago
-                                td= entry.radiant_team
-                                td= entry.dire_team
+                                td= entry.radiant_team ? entry.radiant_team : entry.radiant_team_id
+                                td= entry.dire_team ? entry.dire_team : entry.dire_team_id
                                 td= entry.is_fetched?'downloaded':'downloading'
 
 else

@@ -907,6 +907,66 @@ function getMantaParseData(db, payload, cb)
     }
 }
 
+function getHeroAnalysisData(db, payload, cb)
+{
+    // define a large time range
+    var st = 0;
+    var ed = 9476438230;
+
+    if (payload.st) {
+        st = payload.st;
+    }
+
+    if (payload.ed) {
+        ed = payload.ed;
+    }
+
+    if (payload.hero_id) {
+        db.table('player_matches')
+        .select(db.raw('max (coalesce(player_info.personaname, ?)) as player_name', 'anonymous'))
+        .count('* as num_played')
+        .avg('hero_healing as av_healing')
+        .avg('tf_ratio as tf_ratio')
+        .avg('create_total_damages as av_create_total_damage')
+        .avg('create_deadly_damages as av_create_deadly_damages')
+        .avg('create_total_stiff_control as av_create_total_stiff_control')
+        .avg('create_deadly_stiff_control as av_create_deadly_stiff_control')
+        .avg('opponent_hero_deaths as av_opponent_hero_deaths')
+        .avg('create_deadly_damages_per_death as av_create_deadly_damages_per_death')
+        .avg('create_deadly_stiff_control_per_death as av_create_deadly_stiff_control_per_death')
+        .avg('rgpm as av_rgpm')
+        .avg('unrrpm as av_unrrpm')
+        .avg('killherogold as av_killherogold')
+        .avg('deadlosegold as av_deadlosegold')
+        .avg('fedenemygold as av_fedenemygold')
+        .avg('alonekillednum as av_alonekillednum')
+        .avg('alonebecatchednum as av_alonebecatchednum')
+        .avg('alonebekillednum as av_alonebekillednum')
+        .avg('consumedamage as av_consumedamage')
+        .avg('vision_bought as av_vision_bought')
+        .avg('vision_killed as av_vision_kill')
+        .avg('runes_total as av_runes')
+        .avg('purchase_dust')
+        .avg('apm as av_apm')
+        .select(db.raw('count (case when iswin then 1 end) as win_times'))
+        .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+        .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
+        .where('create_total_damages', '>', '0')
+        .where('player_matches.hero_id', '=', payload.hero_id)
+        .where(db.raw('matches.start_time > ?', st))
+        .where(db.raw('matches.start_time < ?', ed))
+        .groupBy('player_matches.account_id')
+        .asCallback(function(err, result) {
+            console.log(err);
+            if (err) {
+                return cb('query failed');
+            }
+            return cb(null, result);
+        });       
+    }
+}
+
+
 function getLeagueList(db, payload, cb)
 {
     var interested_team = [];
@@ -1495,6 +1555,7 @@ module.exports = {
     getDistributions,
     getTeamFetchedMatches,
     getMantaParseData,
+    getHeroAnalysisData,
     getLeagueList,
     getTeamPlayers,
     getPicks,

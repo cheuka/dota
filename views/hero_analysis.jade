@@ -41,13 +41,35 @@ block head
 
     script.
 
-        var team_id_cnt = "#{team_id}";
-        var player_id_cnt = "#{account_id}";
+        var hero_id_cnt = "#{hero_id}";
         var st_cnt = "#{st}";
         var ed_cnt = "#{ed}";
 
+        function selectHero(value)
+        {
+            var start_time = $('#sin_start_time').val();
+            var end_time = $('#sin_end_time').val();
+
+            var st = new Date(start_time).getTime() / 1000;
+            var ed = new Date(end_time).getTime() / 1000;
+
+            window.location.href = '/hero_analysis/'+value+'?st='+st+'&ed='+ed;
+        }
+
+        function selectHeroData()
+        {
+            var start_time = $('#sin_start_time').val();
+            var end_time = $('#sin_end_time').val();
+            var hero_id = $('#hero_select').val();
+
+            var st = new Date(start_time).getTime() / 1000;
+            var ed = new Date(end_time).getTime() / 1000;
+
+            window.location.href='/hero_analysis/'+hero_id+'?st='+st+'&ed='+ed;
+        }
+
         function showPage() {
-            $('#single_player_data').DataTable({
+            $('#hero_data').DataTable({
                 info: false,
                 paging: true,
                 pageLength: 20,
@@ -57,57 +79,6 @@ block head
                 'bAutoWidth': false,
                 'scrollX': true
             });
-        }
-
-        function selectSingleData(){
-            var player_id = $('#player_select').val();
-            var start_time = $('#sin_start_time').val();
-            var end_time = $('#sin_end_time').val();
-            var team_id = $('#team_select').val();
-
-            var st = new Date(start_time).getTime() / 1000;
-            var ed = new Date(end_time).getTime() / 1000;
-
-            window.location.href='/single_player/'+player_id+'?team_id='+team_id+'&st='+st+'&ed='+ed;
-        }
-
-        function selectPlayerFromTeam(team_id){
-            $.getJSON('/teamPlayers/'+team_id, function(response) {
-                team_id_cnt = team_id; // update current team
-                parsePlayers(response);
-            });
-        }
-
-        function getPlayers() {
-            if (team_id_cnt.length > 0) {
-                $.getJSON('/teamPlayers/'+team_id_cnt, function(response) {
-                    parsePlayers(response);
-                });
-            }
-        }
-
-        function parsePlayers(response){
-            var players = JSON.parse(response);
-            $('#player_select').empty();
-            $('#player_select').append("<option value='0'>选手名称</option>");
-            for (var i = 0; i < players.length; ++i) {
-                var player = players[i]
-                $('#player_select').append("<option value='" + player.account_id + "'>" + player.player_name + "</option>");
-            }
-            $('#player_select').trigger("chosen:updated");
-
-            if (team_id_cnt.length > 0) {
-                $('#team_select').val(team_id_cnt).selected = true;
-                $('#player_select').val(player_id_cnt).selected = true;
-            }
-
-             if (st_cnt.length > 0) {
-                $('#sin_start_time').val(moment.unix(Number(st_cnt)).format("YYYY-MM-DD"));
-            }
-
-            if (ed_cnt.length > 0) {
-                $('#sin_end_time').val(moment.unix(Number(ed_cnt)).format("YYYY-MM-DD"));
-            }
         }
 
 block content
@@ -122,32 +93,29 @@ block content
         ul
           lis
             a(href='/players_ranking') 综合分析
-          lis.active
-            a(href='#') 单独分析
           lis
-            a(href='/hero_analysis')  英雄分析
+            a(href='/single_player') 单独分析
+          lis.active
+            a(href='#')  英雄分析
 
     #single_player
         .row
-            h4.same_line 选择战队
-            select(onchange='selectPlayerFromTeam(value)')#team_select.same_line
-                option(value='0',selected='true') Select a Team 
-                - for (var i = 0; i < constants.common_teams.length; ++i)
-                  option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
-            h4.same_line 选手
-            select(onchange='selectSingleData()')#player_select.same_line
-                option(value='0',selected='true') 选手名称
+            h4.same_line 选择英雄
+            select(onchange='selectHero(value)')#hero_select.same_line
+                option(value='0',selected='true') Select a Hero
+                - for (var key in constants.heroes)
+                  option(value=constants.heroes[key].id) #{constants.heroes[key].name.substr(14)}
         .row
             h4.same_line 时间筛选
-            input(type='date', value='2016-04-21', onchange='selectSingleData()')#sin_start_time.same_line
+            input(type='date', value='2016-04-21', onchange='selectHeroData()')#sin_start_time.same_line
             h4.same_line to
-            input(type='date', onchange='selectSingleData()')#sin_end_time.same_line
+            input(type='date', onchange='selectHeroData()')#sin_end_time.same_line
         .row
             .col-md-12.table-responsive
-                table.table.table-striped.table-condensed.rankable#single_player_data
+                table.table.table-striped.table-condensed.rankable#hero_data
                     thead
                         tr
-                            th 英雄
+                            th 选手
                             th 场次
                             th 胜率 %
                             th 输出
@@ -162,19 +130,13 @@ block content
                             th RGPM
                             th 买眼
                             th 反眼
+                            th Matches
                             //th 控符
                             //th APM
                     tbody
-                        each entry, i in player_data || []
+                        each entry, i in hero_data || []
                             tr
-                                - var hero = constants.heroes[entry.hero_id]
-                                //td #{hero.localized_name}
-                                td(style="padding:1px")
-                                    .img-text.img-text-lg(style="float:initial;")
-                                        if hero
-                                            img.img-md(src=hero.img, title="#{hero.localized_name}", style="border-left-color:#{slot_color}").player-color
-                                        else
-                                            =hero.localized_name
+                                td #{entry.player_name}
                                 td #{entry.num_played}
                                 td #{Math.round(100*entry.win_times/entry.num_played)}
                                 td #{Math.round(entry.av_create_total_damage)}
@@ -193,10 +155,27 @@ block content
                                 td #{Number(av_vision_bought2).toFixed(1)}
                                 - var av_vision_kill2 = entry.av_vision_kill;
                                 td #{Number(av_vision_kill2).toFixed(1)}
+                                td Coming Soon
                                 //td #{Math.round(entry.av_runes)}
                                 //td #{Math.round(entry.av_apm)}
+
+
     script.
 
         showPage();
-        getPlayers()
-        document.getElementById('sin_end_time').valueAsDate = new Date();
+
+        $(document).ready(function() {
+            if (hero_id_cnt.length > 0)
+                $('#hero_select').val(hero_id_cnt).selected = true;
+
+            if (st_cnt.length > 0) {
+                $('#sin_start_time').val(moment.unix(Number(st_cnt)).format("YYYY-MM-DD"));
+            }
+
+            if (ed_cnt.length > 0) {
+               $('#sin_end_time').val(moment.unix(Number(ed_cnt)).format("YYYY-MM-DD"));
+            }
+        });
+
+         document.getElementById('sin_end_time').valueAsDate = new Date();
+

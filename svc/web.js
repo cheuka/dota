@@ -633,7 +633,34 @@ app.get('/search', function(req, res, cb)
 });
 
 
+app.get('/hero_analysis/:hero_id?', function(req, res, cb)
+{
+    var hero_id = req.params.hero_id;
+    if (hero_id) {
+        queries.getHeroAnalysisData(db, {
+            hero_id: hero_id,
+            st: req.query.st,
+            ed: req.query.ed
+        }, function(err, result) {
+            res.render('hero_analysis', {
+                user: req.session.user,
+                home: false,
+                hero_data: result,
+                hero_id: hero_id,
+                st: req.query.st,
+                ed: req.query.ed
+            });
+    });
 
+    }
+    else{
+        res.render('hero_analysis', {
+            user: req.session.user,
+            home: false,
+        });
+    }
+
+});
 
 app.get('/players_ranking/:league_id?', function(req, res, cb)
 { 
