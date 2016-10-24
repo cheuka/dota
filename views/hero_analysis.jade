@@ -124,18 +124,19 @@ block content
                             th 选手
                             th 场次
                             th 胜率 %
-                            th 输出
-                            th 消耗
-                            th 回复
-                            th 控制
-                            th 参团率 %
-                            th 抓人
-                            th 落单被抓
-                            th CNE
-                            th URGPM
-                            th RGPM
-                            th 买眼
-                            th 反眼
+                            th: abbr(title=tooltips.death_damage) 致死输出
+                            th: abbr(title=tooltips.consume_damage) 总消耗输出
+                            th: abbr(title=tooltips.death_control) 致死控制
+                            th: abbr(title=tooltips.tower_damage_cn) 推塔
+                            th: abbr(title=tooltips.hero_heal_cn) 回复
+                            //th 参团率 %
+                            th: abbr(title=tooltips.gank_times) gank次数
+                            th: abbr(title=tooltips.be_ganked_times) 被gank次数
+                            th: abbr(title=tooltips.combat_cne) CNE
+                            th: abbr(title=tooltips.URGPM) URGPM
+                            th: abbr(title=tooltips.RGPM) RGPM
+                            th: abbr(title=tooltips.vision_bought) 买眼
+                            th: abbr(title=tooltips.vision_kill) 反眼
                             th Win Matches
                             th Lose Matches
                             //th 控符
@@ -148,9 +149,10 @@ block content
                                 td #{Math.round(100*entry.win_times/entry.num_played)}
                                 td #{Math.round(entry.av_create_total_damage)}
                                 td #{Math.round(entry.av_consumedamage)}
-                                td #{Math.round(entry.av_healing)}
                                 td #{Math.round(entry.av_create_deadly_stiff_control)}
-                                td #{Math.round(entry.tf_ratio)}
+                                td #{Math.round(entry.av_td)}
+                                td #{Math.round(entry.av_healing)}  
+                                //td #{Math.round(entry.tf_ratio)}
                                 - var av_alonekillednum2 = entry.av_alonekillednum;
                                 td #{Number(av_alonekillednum2).toFixed(1)}
                                 - var av_alonebecatchednum2 = entry.av_alonebecatchednum;

@@ -197,8 +197,8 @@ block content
                             th 胜率 %
                             th: abbr(title=tooltips.death_damage) 致死输出
                             th: abbr(title=tooltips.consume_damage) 总消耗输出
-							th: abbr(title=tooltips.death_control) 致死控制
-							th: abbr(title=tooltips.tower_damage_cn) 推塔
+                            th: abbr(title=tooltips.death_control) 致死控制
+                            th: abbr(title=tooltips.tower_damage_cn) 推塔
                             th: abbr(title=tooltips.hero_heal_cn) 回复
                             //th 参团率 %
                             th: abbr(title=tooltips.gank_times) gank次数
@@ -224,8 +224,8 @@ block content
                                 td #{Math.round(100*entry.win_times/entry.num_played)}
                                 td #{Math.round(entry.av_create_total_damage)}
                                 td #{Math.round(entry.av_consumedamage)}
-								td #{Math.round(entry.av_create_deadly_stiff_control)}
-								td #{Math.round(entry.av_td)}
+                                td #{Math.round(entry.av_create_deadly_stiff_control)}
+                                td #{Math.round(entry.av_td)}
                                 td #{Math.round(entry.av_healing)}  
                                 //td #{Math.round(entry.tf_ratio)}
                                 - var av_alonekillednum2 = entry.av_alonekillednum;
