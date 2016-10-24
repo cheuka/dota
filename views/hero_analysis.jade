@@ -111,12 +111,11 @@ block content
             h4.same_line 场次筛选
             select(onchange='filterMatchData()')#game_times.same_line
                 option(value='1',selected='true') >=1场比赛
+                option(value='2') >=2场比赛
                 option(value='3') >=3场比赛
+                option(value='4') >=4场比赛
                 option(value='5') >=5场比赛
-                option(value='10') >=10场比赛
-                option(value='20') >=20场比赛
-                option(value='50') >=50场比赛
-                
+
         .row
             .col-md-12.table-responsive
                 table.table.table-striped.table-condensed.rankable#hero_data
@@ -137,7 +136,8 @@ block content
                             th RGPM
                             th 买眼
                             th 反眼
-                            th Matches
+                            th Win Matches
+                            th Lose Matches
                             //th 控符
                             //th APM
                     tbody
@@ -162,7 +162,21 @@ block content
                                 td #{Number(av_vision_bought2).toFixed(1)}
                                 - var av_vision_kill2 = entry.av_vision_kill;
                                 td #{Number(av_vision_kill2).toFixed(1)}
-                                td Coming Soon
+                                td(class="success")
+                                    - var win_id = entry.win_id || "";
+                                    - var win_match = win_id.split(";");
+                                    div(style="width:100%; max-height=100px; overflow=auto")
+                                      - each match in win_match
+                                        li(style="list-style-type: none;")
+                                            a(href='#')= match
+
+                                td(class="danger")
+                                    - var lose_id = entry.lose_id || "";
+                                    - var lose_match = lose_id.split(";");
+                                    div(style="width:100%; max-height=50px; overflow=auto")
+                                      - each match in lose_match
+                                        li(style="list-style-type: none;")
+                                            a(href='#')= match
                                 //td #{Math.round(entry.av_runes)}
                                 //td #{Math.round(entry.av_apm)}
 
