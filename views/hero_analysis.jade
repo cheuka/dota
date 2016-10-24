@@ -27,6 +27,7 @@ block head
         var hero_id_cnt = "#{hero_id}";
         var st_cnt = "#{st}";
         var ed_cnt = "#{ed}";
+        var table_data;
 
         function selectHero(value)
         {
@@ -62,12 +63,14 @@ block head
                 'bAutoWidth': false,
                 'scrollX': true
             });
+
+            table_data = $('#hero_data').DataTable().rows().data();
         }
 
         function filterMatchData() {
             var game_times = $('#game_times').val();
             var table = $('#hero_data').DataTable();
-            var rows = table.rows().data().filter(function(row) {
+            var rows = table_data.filter(function(row) {
                 return Number(row[1]) >= Number(game_times);
             });
 

@@ -46,6 +46,7 @@ block head
         var league_id_cnt="#{league_id}";
         var st_cnt = "#{st}";
         var ed_cnt = "#{ed}";
+        var table_data;
 
         function getLeagueInfo(cnt_league_id){
             $.getJSON('/players_league', function(response) {
@@ -94,12 +95,13 @@ block head
                 'bAutoWidth': false,
                 'scrollX': true
             });
+            table_data = $('#data').DataTable().rows().data();
         }
 
         function filterMatchData() {
             var game_times = $('#game_times').val();
             var table = $('#data').DataTable();
-            var rows = table.rows().data().filter(function(row) {
+            var rows = table_data.filter(function(row) {
                 return Number(row[1]) >= Number(game_times);
             });
 
