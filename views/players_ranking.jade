@@ -39,6 +39,8 @@ block head
             margin-top:40px;
         }
 
+        thead tr th {white-space: nowrap;}
+
     script.
 
         var league_id_cnt="#{league_id}";
@@ -222,9 +224,9 @@ block content
                                 //- var pt_use_pm = entry.power_treads_buytimes > 0 ? (entry.sum_pt_uspermin / entry.power_treads_buytimes) : 0;
                                 //td #{pt_use_pm.toFixed(2)}
                                 td #{Math.round(100*entry.win_times/entry.num_played)}
-                                td #{Math.round(entry.av_create_total_damage)}
+                                td #{Math.round(entry.av_create_deadly_damages_per_death)}
                                 td #{Math.round(entry.av_consumedamage)}
-                                td #{Math.round(entry.av_create_deadly_stiff_control)}
+                                td= Number(entry.av_create_deadly_stiff_control_per_death).toFixed(1)
                                 td #{Math.round(entry.av_td)}
                                 td #{Math.round(entry.av_healing)}  
                                 //td #{Math.round(entry.tf_ratio)}
