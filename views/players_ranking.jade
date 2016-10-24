@@ -63,7 +63,7 @@ block head
                 }
             }
             sorted_league.sort(function(l1, l2) {
-                l2.num_matches - l1.num_matches;
+                return l2.num_matches - l1.num_matches;
             });
 
             for(var i = 0; i < sorted_league.length; i++){

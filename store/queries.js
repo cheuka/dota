@@ -975,35 +975,19 @@ function getHeroAnalysisData(db, payload, cb)
 
 function getLeagueList(db, payload, cb)
 {
-    var interested_team = [];
-    for (var i in constants.common_teams) {
-        interested_team.push(constants.common_teams[i].team_id);
-    }
-
-    db.table('league_info').select('*').orderBy('start_time', 'desc')
-    .limit(100)
+    db.table('fetch_team_match')
+    .countDistinct('match_id as num_matches')
+    .max('fetch_team_match.league_id as league_id')
+    .max('league_name as league_name')
+    .innerJoin('league_info', 'league_info.league_id', 'fetch_team_match.league_id')
+    .where('is_fetched', true)
+    .groupBy('fetch_team_match.league_id')
     .asCallback(function(err, result){
-        if (err)
-        {
+        if (err) {
             return cb(err);
         }
 
-        async.forEachLimit(result, 5, function(league, next) {
-            db.table('fetch_team_match').countDistinct('match_id as num_matches')
-            .where('league_id', league.league_id)
-            //.whereIn('team_id', interested_team) slow down web
-            .asCallback(function(err, result2){
-                if (err) {
-                    console.log(err);
-                    return next();
-                }
-                //console.log(result2[0].num_matches);
-                league.num_matches = result2[0].num_matches;
-                return next();
-            });
-        }, function(err) {
-            return cb(null, result)
-        });
+        return cb(null, result);
     });
 }
 
