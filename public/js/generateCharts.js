@@ -1,26 +1,26 @@
 window.generateChartsOn = function generateChartsOn(data, fights) {
     var color_array = [];
-    for (var key in constants.player_colors) {
-        color_array.push(constants.player_colors[key]);
-    }
+    color_array.push("#aec7e8");
+    color_array.push("#FF0000");
+    color_array.push("#0000FF");
 
     var fightPoint = getFightsPoint(data.difference, fights)
     var fightsStart = getFightsTime(fights);
-    var fightsGold = getFightsGold(fights);
-    var difference = [fightPoint, data.difference[0], data.difference[2], fightsStart, fightsGold];
+    var difference = [data.difference[0], data.difference[2], fightPoint, fightsStart];
 
     var charts = [{
         bindTo: "#chart-diff",
         columns: difference,
         xs: {
             'Gold':'time',
-            'teamFightsGold':'fightsTime',
             'teamFightsTime':'fightsTime',
         },
         types: {
             'Gold':"area-spline",
-            'teamFightsGold':'bar',
             'teamFightsTime':'scatter',
+        },
+        color: {
+            pattern: color_array
         },
         xLabel: 'Game Time (minutes)',
         yLabel: 'Radiant Advantage'
@@ -48,13 +48,9 @@ window.generateChartsOn = function generateChartsOn(data, fights) {
                     label: chart.yLabel
                 }
             },
-            bar: { width: { ratio: 0.5 }},
             zoom:{
                 enabled: false,
                 rescale: false
-            },
-            point:{
-                r:8
             },
             tooltip: {
                 contents: function(d, defaultTitleFormat, defaultValueFormat, color) {
