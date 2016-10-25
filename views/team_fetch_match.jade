@@ -62,12 +62,6 @@ if user
               option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
 
     .row
-        h4.same_line 时间筛选
-        input(type='date', value='2016-09-18')#team_start_time.same_line
-        h4.same_line to
-        input(type='date')#team_end_time.same_line
-
-    .row
         ul
           lis(onclick='toBasicInfo()')
             a(href='#') 基本信息
@@ -110,7 +104,9 @@ if user
                                   td(class="danger")= entry.dire_team ? entry.dire_team : entry.dire_team_id
                                 else
                                   td(class="danger")= entry.radiant_team ? entry.radiant_team : entry.radiant_team_id
-                                  td(class="success")= entry.dire_team ? entry.dire_team : entry.dire_team_id  
+                                  //td(class="danger")= entry.radiant_team_id
+                                  td(class="success")= entry.dire_team ? entry.dire_team : entry.dire_team_id
+                                  //td(class="success")= entry.dire_team_id  
                                 td= entry.is_fetched?'downloaded':'downloading'
   append footer_assets
     script.
