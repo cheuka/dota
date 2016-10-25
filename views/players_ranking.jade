@@ -39,7 +39,9 @@ block head
             margin-top:40px;
         }
 
-        thead tr th {white-space: nowrap;}
+        thead tr th {
+            white-space: nowrap;
+        }
 
     script.
 
@@ -193,7 +195,7 @@ block content
                     thead
                         tr
                             //th match_id
-                            th 选手名称
+                            th 选手
                             th 场次 
                             //th 买假腿场数
                             //th 平均每场切假腿
@@ -218,7 +220,7 @@ block content
                         each entry, i in data || []
                             tr
                                 //td #{entry.match_id}
-                                td #{entry.player_name}
+                                td(style="min-width: 100px; word-break: break-all;") #{entry.player_name}
                                 td #{entry.num_played}
                                 //td #{Math.round(entry.power_treads_buytimes)}
                                 //- var pt_use = entry.power_treads_buytimes > 0 ? (entry.sum_power_treads_usetimes / entry.power_treads_buytimes) : 0;
