@@ -10,7 +10,38 @@ block head
     #nav ul li a.current{background-color:#fff;border-bottom:1px solid #fff;}
     #nav ul li a:hover{color:#000;background-color:#eee;}
 
+    lis{
+            float:left;
+            list-style:none;
+            width:250px;
+            height:30px;
+            background:#eee;
+            text-align:center;
+            font-size:1em;
+            color:#2780e3;
+            vertical-align:middle;
+            line-height:30px;
+            margin-left:10px;
+        }
+
+    lis a{font-weight:bold;border:1px solid #ccc; text-decoration:none;background-color:#eee}
+
+    lis.active a{color:#000;background-color:#eee;}
+
+      .same_line{
+          float:left;
+          margin-left:20px;
+          margin-top:auto;
+          margin-bottom:auto;
+      }
+
+     .row{
+            margin-top:40px;
+      }
+
   link(rel='stylesheet', href="/public/css/yasp_home.css")
+
+
 
 if user
   block content
@@ -22,16 +53,28 @@ if user
           a(href='/players_ranking') 选手分析
         li
           a(href='/hero_analysis')  英雄分析
+
     .row
-        .col-md-12
-          h3 Team #{team_name} 
-            small 近期比赛列表
+        h4.same_line  选择战队
+        select(onchange="window.location.href='/team_fetch_match/'+value")#team_select.same_line
+            option(value='0',selected='true')  Select a Team 
+            - for (var i = 0; i < constants.common_teams.length; ++i)
+              option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
+
     .row
-        .col-md-4
-            select(onchange="window.location.href='/team_fetch_match/'+value")
-                option(value='0',selected='true') Select a Team 
-                - for (var i = 0; i < constants.common_teams.length; ++i)
-                  option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
+        h4.same_line 时间筛选
+        input(type='date', value='2016-09-18')#team_start_time.same_line
+        h4.same_line to
+        input(type='date')#team_end_time.same_line
+
+    .row
+        ul
+          lis(onclick='toBasicInfo()')
+            a(href='#') 战队分析
+          lis.active
+            a(href='#') 近期比赛
+
+
     .row
         .col-md-12.table-responsive
             table.table.table-striped.table-condensed.rankable#team_fetch_match
@@ -69,6 +112,23 @@ if user
                                   td(class="danger")= entry.radiant_team ? entry.radiant_team : entry.radiant_team_id
                                   td(class="success")= entry.dire_team ? entry.dire_team : entry.dire_team_id  
                                 td= entry.is_fetched?'downloaded':'downloading'
+  append footer_assets
+    script.
+
+      var team_id_cnt = "#{team_id}";
+      function toBasicInfo() {
+        window.location.href='/team_match_info/'+team_id_cnt;
+      }
+      $(document).ready(function() {
+
+        if (team_id_cnt.length > 0) {
+            $('#team_select').val(team_id_cnt).selected = true;
+        }
+
+        document.getElementById('team_end_time').valueAsDate = new Date();
+      });
+    
+
 
 else
   p Please log out and retry
