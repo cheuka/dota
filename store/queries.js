@@ -758,6 +758,40 @@ function getTeamFetchedMatches(db, payload, cb)
     });
 }
 
+function getTeamMatchInfo(db, payload, cb)
+{
+    // define a large time range
+    var st = 0;
+    var ed = 9476438230;
+
+    if (payload.st) {
+        st = payload.st;
+    }
+
+    if (payload.ed) {
+        ed = payload.ed;
+    }
+
+    db.table('fetch_team_match').select(['fetch_team_match.*', 'league_info.league_url', 'league_info.league_name', 'matches.radiant_team_id', 'matches.dire_team_id', 'matches.radiant_win']).where({
+        'team_id': payload.team_id,
+        //'is_fetched': true
+    }).leftJoin('league_info', 'fetch_team_match.league_id', 'league_info.league_id')
+    .innerJoin('matches', 'matches.match_id', 'fetch_team_match.match_id')
+    .whereNotNull('fetch_team_match.start_time')
+    .where('fetch_team_match.start_time', '>', 1470009600)
+    .where(db.raw('matches.start_time > ?', st))
+    .where(db.raw('matches.start_time < ?', ed))
+    .orderByRaw('fetch_team_match.start_time desc').asCallback(function(err, result) {
+        if (err) {
+            console.log(err);
+            return cb('query failed');
+        }
+        //console.log(JSON.stringify(result));
+        return cb(null, result);
+    });
+}
+
+
 function getMantaParseData(db, payload, cb)
 {
     // define a large time range
@@ -975,35 +1009,19 @@ function getHeroAnalysisData(db, payload, cb)
 
 function getLeagueList(db, payload, cb)
 {
-    var interested_team = [];
-    for (var i in constants.common_teams) {
-        interested_team.push(constants.common_teams[i].team_id);
-    }
-
-    db.table('league_info').select('*').orderBy('start_time', 'desc')
-    .limit(100)
+    db.table('fetch_team_match')
+    .countDistinct('match_id as num_matches')
+    .max('fetch_team_match.league_id as league_id')
+    .max('league_name as league_name')
+    .innerJoin('league_info', 'league_info.league_id', 'fetch_team_match.league_id')
+    .where('is_fetched', true)
+    .groupBy('fetch_team_match.league_id')
     .asCallback(function(err, result){
-        if (err)
-        {
+        if (err) {
             return cb(err);
         }
 
-        async.forEachLimit(result, 5, function(league, next) {
-            db.table('fetch_team_match').countDistinct('match_id as num_matches')
-            .where('league_id', league.league_id)
-            //.whereIn('team_id', interested_team) slow down web
-            .asCallback(function(err, result2){
-                if (err) {
-                    console.log(err);
-                    return next();
-                }
-                //console.log(result2[0].num_matches);
-                league.num_matches = result2[0].num_matches;
-                return next();
-            });
-        }, function(err) {
-            return cb(null, result)
-        });
+        return cb(null, result);
     });
 }
 
@@ -1560,6 +1578,7 @@ module.exports = {
     insertMatchSkill,
     getDistributions,
     getTeamFetchedMatches,
+    getTeamMatchInfo,
     getMantaParseData,
     getHeroAnalysisData,
     getLeagueList,

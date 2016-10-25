@@ -20,7 +20,9 @@ block head
             margin-top:40px;
         }
 
-        thead tr th {white-space: nowrap;}
+        thead tr th {
+            white-space: nowrap;
+        }
 
     script.
 
@@ -142,14 +144,14 @@ block content
                             th: abbr(title=tooltips.RGPM) RGPM
                             th: abbr(title=tooltips.vision_bought) 买眼
                             th: abbr(title=tooltips.vision_kill) 反眼
-                            th Win Matches
-                            th Lose Matches
+                            th Win
+                            th Lose
                             //th 控符
                             //th APM
                     tbody
                         each entry, i in hero_data || []
                             tr
-                                td #{entry.player_name}
+                                td(style="min-width: 100px; word-break: break-all;") #{entry.player_name}
                                 td #{entry.num_played}
                                 td #{Math.round(100*entry.win_times/entry.num_played)}
                                 td #{Math.round(entry.av_create_deadly_damages_per_death)}
@@ -169,21 +171,21 @@ block content
                                 td #{Number(av_vision_bought2).toFixed(1)}
                                 - var av_vision_kill2 = entry.av_vision_kill;
                                 td #{Number(av_vision_kill2).toFixed(1)}
-                                td(class="success")
-                                    - var win_id = entry.win_id || "";
-                                    - var win_match = win_id.split(";");
-                                    div(style="width:100%; max-height=100px; overflow=auto")
-                                      - each match in win_match
-                                        li(style="list-style-type: none;")
-                                            a(href='#')= match
+                                td(class="success")= entry.win_id
+                                    //- var win_id = entry.win_id || "";
+                                    //- var win_match = win_id.split(";");
+                                    //div(style="width:100%; max-height=100px; overflow=auto")
+                                    //  - each match in win_match
+                                    //    li(style="list-style-type: none;").same_line
+                                    //        a(href='#')= match+';'
 
-                                td(class="danger")
-                                    - var lose_id = entry.lose_id || "";
-                                    - var lose_match = lose_id.split(";");
-                                    div(style="width:100%; max-height=50px; overflow=auto")
-                                      - each match in lose_match
-                                        li(style="list-style-type: none;")
-                                            a(href='#')= match
+                                td(class="danger")= entry.lose_id
+                                    //- var lose_id = entry.lose_id || "";
+                                    //- var lose_match = lose_id.split(";");
+                                    //div(style="width:100%; max-height=50px; overflow=auto")
+                                    //  - each match in lose_match
+                                    //    li(style="list-style-type: none;").same_line
+                                    //        a(href='#')= match+';'
                                 //td #{Math.round(entry.av_runes)}
                                 //td #{Math.round(entry.av_apm)}
 

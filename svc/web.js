@@ -457,6 +457,7 @@ app.get('/team_fetch_match/:team_id?', function(req, res, cb)
 				home: false,
                 team_fetch_match: result,
                 team_name: name,
+                team_id: req.params.team_id
             });
         });
     }
@@ -467,6 +468,39 @@ app.get('/team_fetch_match/:team_id?', function(req, res, cb)
         });
     }
 });
+
+app.get('/team_match_info/:team_id?', function(req, res, cb)
+{ 
+    console.log(req.params.team_id);
+    if (req.params.team_id) {
+        queries.getTeamMatchInfo(db, {
+            team_id: req.params.team_id,
+            st: req.query.st,
+            ed: req.query.ed
+        }, function(err, result) {
+            if (err) {
+                console.log(err);
+                return cb(err);
+            }
+
+            res.render('team_match_info', {
+                user: req.session.user,
+                home: false,
+                team_id: req.params.team_id,
+                team_match_info: result,
+                st: req.query.st,
+                ed: req.query.ed
+            });
+        });
+    }
+    else {
+        res.render('team_match_info', {
+            user: req.session.user,
+        });
+    }
+});
+
+
 
 // lordstone: the customized page for match
 
