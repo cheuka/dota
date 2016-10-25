@@ -760,6 +760,18 @@ function getTeamFetchedMatches(db, payload, cb)
 
 function getTeamMatchInfo(db, payload, cb)
 {
+    // define a large time range
+    var st = 0;
+    var ed = 9476438230;
+
+    if (payload.st) {
+        st = payload.st;
+    }
+
+    if (payload.ed) {
+        ed = payload.ed;
+    }
+
     db.table('fetch_team_match').select(['fetch_team_match.*', 'league_info.league_url', 'league_info.league_name', 'matches.radiant_team_id', 'matches.dire_team_id', 'matches.radiant_win']).where({
         'team_id': payload.team_id,
         //'is_fetched': true
@@ -767,6 +779,8 @@ function getTeamMatchInfo(db, payload, cb)
     .innerJoin('matches', 'matches.match_id', 'fetch_team_match.match_id')
     .whereNotNull('fetch_team_match.start_time')
     .where('fetch_team_match.start_time', '>', 1470009600)
+    .where(db.raw('matches.start_time > ?', st))
+    .where(db.raw('matches.start_time < ?', ed))
     .orderByRaw('fetch_team_match.start_time desc').asCallback(function(err, result) {
         if (err) {
             console.log(err);

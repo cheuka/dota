@@ -61,9 +61,9 @@ if user
 
     .row
         h4.same_line 时间筛选
-        input(type='date', value='2016-09-18')#team_start_time.same_line
+        input(type='date', value='2016-09-18', onchange='selectTeamDate()')#team_start_time.same_line
         h4.same_line to
-        input(type='date')#team_end_time.same_line
+        input(type='date', onchange='selectTeamDate()')#team_end_time.same_line
 
     .row
         ul
@@ -120,6 +120,9 @@ if user
   append footer_assets
     script.
       var team_id_cnt = "#{team_id}";
+      var st_cnt = "#{st}";
+      var ed_cnt = "#{ed}";
+
       function toTeamFetchPage() {
         window.location.href='/team_fetch_match/'+team_id_cnt;
       }
@@ -128,9 +131,28 @@ if user
         if (team_id_cnt.length > 0) {
             $('#team_select').val(team_id_cnt).selected = true;
         }
+
+        if (st_cnt.length > 0) {
+                $('#team_start_time').val(moment.unix(Number(st_cnt)).format("YYYY-MM-DD"));
+        }
+
+        if (ed_cnt.length > 0) {
+            $('#team_end_time').val(moment.unix(Number(ed_cnt)).format("YYYY-MM-DD"));
+        }
         
         document.getElementById('team_end_time').valueAsDate = new Date();
       });
+
+      function selectTeamDate() {
+          var start_time = $('#team_start_time').val();
+          var end_time = $('#team_end_time').val();
+          var team_id = $('#team_select').val();
+
+          var st = new Date(start_time).getTime() / 1000;
+          var ed = new Date(end_time).getTime() / 1000;
+
+          window.location.href='/team_match_info/'+team_id+'?st='+st+'&ed='+ed;
+      }
     
 
 
