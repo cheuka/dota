@@ -8,7 +8,7 @@ window.generateChartsOn = function generateChartsOn(data, fights, matchUpload) {
     var fightsStart = getFightsTime(fights);
     var difference = [data.difference[0], data.difference[2], fightPoint, fightsStart];
 
-	var c1_legend = '经济曲线 （ 天辉=' + matchUpload.radiant_team_name + ', 夜魇=' + matchUpload.dire_team_name + ')';
+	var c1_legend = '经济曲线（天辉=' + matchUpload.radiant_team_name + ', 夜魇=' + matchUpload.dire_team_name + ')';
 	var c2_legend = '团战点';
 	
     var charts = [{
