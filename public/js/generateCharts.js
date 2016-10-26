@@ -60,11 +60,32 @@ window.generateChartsOn = function generateChartsOn(data, fights, matchUpload) {
                 rescale: false
             },
             tooltip: {
-                contents: function(d, defaultTitleFormat, defaultValueFormat, color) {
-                    d.sort(function(a, b) {
-                        return b.value - a.value
-                    });
-                    return this.getTooltipContent(d, defaultTitleFormat, defaultValueFormat, color);
+                format: {
+                    title: function (d) {
+                        return moment().startOf('day').seconds(d).format("H:mm:ss");
+                    },
+                    name: function (value, ratio, id, index) {
+                        if(id == 'teamFightsTime'){
+                            if(fights[index].radiant_gold_delta > 0){
+                                return "天辉 (" + matchUpload.radiant_team_name + ") 赢团"
+                            }else{
+                                return "夜魇 (" + matchUpload.dire_team_name + ") 赢团"
+                            }
+                        }else{
+                            if(data.difference[2][index + 1] > 0){
+                                return "天辉 (" + matchUpload.radiant_team_name + ") 领先"
+                            }else{
+                                return "夜魇 (" + matchUpload.dire_team_name + ") 领先"
+                            };
+                        }
+                    },
+                    value: function (value, ratio, id, index) {
+                        if(id == 'teamFightsTime'){
+                            return Math.abs(fights[index].radiant_gold_delta);
+                        }else{
+                            return Math.abs(value);
+                        }
+                    }
                 }
             }
         });
