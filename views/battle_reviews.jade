@@ -158,7 +158,8 @@ append footer_assets
     //
     var graphData = !{JSON.stringify(match.graphData)};
     var fight = !{JSON.stringify(match.teamfights)};
-    generateChartsOn(graphData, fight);
+	var matchUpload = !{JSON.stringify(match.upload)};
+    generateChartsOn(graphData, fight, matchUpload);
 
     var data = !{JSON.stringify(match.incomeData)};
     var indexs = ['index'];
