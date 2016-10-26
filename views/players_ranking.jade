@@ -11,16 +11,22 @@ block head
         lis{
             float:left;
             list-style:none;
-            margin:10px;
             width:150px;
             height:30px;
-            background:rgba(128,128,128,0.5);
+            background:#eee;
             text-align:center;
-            font-size:1em
-            color:rgb(192,192,192);
+            font-size:1em;
+            color:#2780e3;
             vertical-align:middle;
             line-height:30px;
+            margin-left:10px;
         }
+
+        lis a{font-weight:bold;border:1px solid #ccc; text-decoration:none;background-color:#eee}
+
+        lis.active a{color:#000;background-color:#eee;}
+
+        lis a.current{background-color:#fff;border-bottom:1px solid #fff;}
 
         .same_line{
             float:left;
@@ -33,11 +39,16 @@ block head
             margin-top:40px;
         }
 
+        thead tr th {
+            white-space: nowrap;
+        }
+
     script.
 
         var league_id_cnt="#{league_id}";
         var st_cnt = "#{st}";
         var ed_cnt = "#{ed}";
+        var table_data;
 
         function getLeagueInfo(cnt_league_id){
             $.getJSON('/players_league', function(response) {
@@ -54,7 +65,7 @@ block head
                 }
             }
             sorted_league.sort(function(l1, l2) {
-                l2.num_matches - l1.num_matches;
+                return l2.num_matches - l1.num_matches;
             });
 
             for(var i = 0; i < sorted_league.length; i++){
@@ -86,12 +97,13 @@ block head
                 'bAutoWidth': false,
                 'scrollX': true
             });
+            table_data = $('#data').DataTable().rows().data();
         }
 
         function filterMatchData() {
             var game_times = $('#game_times').val();
             var table = $('#data').DataTable();
-            var rows = table.rows().data().filter(function(row) {
+            var rows = table_data.filter(function(row) {
                 return Number(row[1]) >= Number(game_times);
             });
 
@@ -139,27 +151,28 @@ block head
             }
         }
 
-        function toSinglePlayer() {
-            window.location.href='/single_player';
-        }
-
 block content
 
     div#nav
       ul
         li 
           a(href='/team_fetch_match') 战队分析
-        li 
-          a(href='/players_ranking') 选手分析
-
+        li.active
+          a(href='#') 选手分析
+        li
+          a(href='/hero_analysis')  英雄分析
     .row
-      ul.tab
-          lis() 综合分析
-          lis(onclick='toSinglePlayer()') 单独分析
+      ul
+          lis.active
+            a(href='#') 综合分析
+          lis
+            a(href='/single_player') 单独分析
+
+
     #comprehensive
         .row
             h4.same_line 时间筛选
-            input(type='date', value='2016-04-21', onchange='selectCompreData()')#com_start_time.same_line
+            input(type='date', value='2016-09-18', onchange='selectCompreData()')#com_start_time.same_line
             h4.same_line to
             input(type='date', onchange='selectCompreData()')#com_end_time.same_line
         .row
@@ -182,31 +195,32 @@ block content
                     thead
                         tr
                             //th match_id
-                            th 选手名称
+                            th 选手
                             th 场次 
                             //th 买假腿场数
                             //th 平均每场切假腿
                             //th 平均每分钟切假腿
                             th 胜率 %
-                            th 输出
-                            th 消耗
-                            th 回复
-                            th 控制
-                            th 参团率 %
-                            th 抓人
-                            th 落单被抓
-                            th CNE
-                            th URGPM
-                            th GPM
-                            th 买眼
-                            th 反眼
+                            th: abbr(title=tooltips.death_damage) 致死输出
+                            th: abbr(title=tooltips.consume_damage) 总消耗输出
+                            th: abbr(title=tooltips.death_control) 致死控制
+                            th: abbr(title=tooltips.tower_damage_cn) 推塔
+                            th: abbr(title=tooltips.hero_heal_cn) 回复
+                            //th 参团率 %
+                            th: abbr(title=tooltips.gank_times) gank次数
+                            th: abbr(title=tooltips.be_ganked_times) 被gank次数
+                            th: abbr(title=tooltips.combat_cne) CNE
+                            th: abbr(title=tooltips.URGPM) URGPM
+                            th: abbr(title=tooltips.RGPM) RGPM
+                            th: abbr(title=tooltips.vision_bought) 买眼
+                            th: abbr(title=tooltips.vision_kill) 反眼
                             //th 控符
                             //th APM
                     tbody
                         each entry, i in data || []
                             tr
                                 //td #{entry.match_id}
-                                td #{entry.player_name}
+                                td(style="min-width: 100px; word-break: break-all;") #{entry.player_name}
                                 td #{entry.num_played}
                                 //td #{Math.round(entry.power_treads_buytimes)}
                                 //- var pt_use = entry.power_treads_buytimes > 0 ? (entry.sum_power_treads_usetimes / entry.power_treads_buytimes) : 0;
@@ -214,18 +228,23 @@ block content
                                 //- var pt_use_pm = entry.power_treads_buytimes > 0 ? (entry.sum_pt_uspermin / entry.power_treads_buytimes) : 0;
                                 //td #{pt_use_pm.toFixed(2)}
                                 td #{Math.round(100*entry.win_times/entry.num_played)}
-                                td #{Math.round(entry.av_create_total_damage)}
+                                td #{Math.round(entry.av_create_deadly_damages_per_death)}
                                 td #{Math.round(entry.av_consumedamage)}
-                                td #{Math.round(entry.av_healing)}
-                                td #{Math.round(entry.av_create_deadly_stiff_control)}
-                                td #{Math.round(entry.tf_ratio)}
-                                td #{Math.round(entry.av_alonekillednum)}
-                                td #{Math.round(entry.av_alonebecatchednum)}
+                                td= Number(entry.av_create_deadly_stiff_control_per_death).toFixed(1)
+                                td #{Math.round(entry.av_td)}
+                                td #{Math.round(entry.av_healing)}  
+                                //td #{Math.round(entry.tf_ratio)}
+                                - var av_alonekillednum2 = entry.av_alonekillednum;
+                                td #{Number(av_alonekillednum2).toFixed(1)}
+                                - var av_alonebecatchednum2 = entry.av_alonebecatchednum;
+                                td #{Number(av_alonebecatchednum2).toFixed(1)}
                                 td #{Math.round(entry.av_killherogold - entry.av_fedenemygold)}
                                 td #{Math.round(entry.av_unrrpm)}
                                 td #{Math.round(entry.av_rgpm)}
-                                td #{Math.round(entry.av_vision_bought)}
-                                td #{Math.round(entry.av_vision_kill)}
+                                - var av_vision_bought2 = entry.av_vision_bought;
+                                td #{Number(av_vision_bought2).toFixed(1)}
+                                - var av_vision_kill2 = entry.av_vision_kill;
+                                td #{Number(av_vision_kill2).toFixed(1)}
                                 //td #{Math.round(entry.av_runes)}
                                 //td #{Math.round(entry.av_apm)}
 

@@ -741,10 +741,11 @@ function getMatchRating(redis, match, cb)
 
 function getTeamFetchedMatches(db, payload, cb)
 {
-    db.table('fetch_team_match').select(['fetch_team_match.*', 'league_info.league_url', 'league_info.league_name']).where({
+    db.table('fetch_team_match').select(['fetch_team_match.*', 'league_info.league_url', 'league_info.league_name', 'matches.radiant_team_id', 'matches.dire_team_id', 'matches.radiant_win']).where({
         'team_id': payload.team_id,
         //'is_fetched': true
     }).leftJoin('league_info', 'fetch_team_match.league_id', 'league_info.league_id')
+    .innerJoin('matches', 'matches.match_id', 'fetch_team_match.match_id')
     .whereNotNull('fetch_team_match.start_time')
     .where('fetch_team_match.start_time', '>', 1470009600)
     .orderByRaw('fetch_team_match.start_time desc').asCallback(function(err, result) {
@@ -756,6 +757,40 @@ function getTeamFetchedMatches(db, payload, cb)
         return cb(null, result);
     });
 }
+
+function getTeamMatchInfo(db, payload, cb)
+{
+    // define a large time range
+    var st = 0;
+    var ed = 9476438230;
+
+    if (payload.st) {
+        st = payload.st;
+    }
+
+    if (payload.ed) {
+        ed = payload.ed;
+    }
+
+    db.table('fetch_team_match').select(['fetch_team_match.*', 'league_info.league_url', 'league_info.league_name', 'matches.radiant_team_id', 'matches.dire_team_id', 'matches.radiant_win']).where({
+        'team_id': payload.team_id,
+        //'is_fetched': true
+    }).leftJoin('league_info', 'fetch_team_match.league_id', 'league_info.league_id')
+    .innerJoin('matches', 'matches.match_id', 'fetch_team_match.match_id')
+    .whereNotNull('fetch_team_match.start_time')
+    .where('fetch_team_match.start_time', '>', 1470009600)
+    .where(db.raw('matches.start_time > ?', st))
+    .where(db.raw('matches.start_time < ?', ed))
+    .orderByRaw('fetch_team_match.start_time desc').asCallback(function(err, result) {
+        if (err) {
+            console.log(err);
+            return cb('query failed');
+        }
+        //console.log(JSON.stringify(result));
+        return cb(null, result);
+    });
+}
+
 
 function getMantaParseData(db, payload, cb)
 {
@@ -774,6 +809,7 @@ function getMantaParseData(db, payload, cb)
     if (payload.league_id) {
         db.table('player_matches').count('* as num_played')
         .avg('hero_healing as av_healing')
+		.avg('tower_damage as av_td')
         .avg('tf_ratio as tf_ratio')
         .avg('create_total_damages as av_create_total_damage')
         .avg('create_deadly_damages as av_create_deadly_damages')
@@ -821,6 +857,7 @@ function getMantaParseData(db, payload, cb)
         .max('hero_id as hero_id')
         .count('* as num_played')
         .avg('hero_healing as av_healing')
+		.avg('tower_damage as av_td')
         .avg('tf_ratio as tf_ratio')
         .avg('create_total_damages as av_create_total_damage')
         .avg('create_deadly_damages as av_create_deadly_damages')
@@ -863,6 +900,7 @@ function getMantaParseData(db, payload, cb)
     else {
         db.table('player_matches').count('* as num_played')
         .avg('hero_healing as av_healing')
+		.avg('tower_damage as av_td')
         .avg('tf_ratio as tf_ratio')
         .avg('create_total_damages as av_create_total_damage')
         .avg('create_deadly_damages as av_create_deadly_damages')
@@ -906,71 +944,159 @@ function getMantaParseData(db, payload, cb)
     }
 }
 
-function getLeagueList(db, payload, cb)
+function getHeroAnalysisData(db, payload, cb)
 {
-    var interested_team = [];
-    for (var i in constants.common_teams) {
-        interested_team.push(constants.common_teams[i].team_id);
+    // define a large time range
+    var st = 0;
+    var ed = 9476438230;
+
+    if (payload.st) {
+        st = payload.st;
     }
 
-    db.table('league_info').select('*').orderBy('start_time', 'desc')
-    .limit(100)
+    if (payload.ed) {
+        ed = payload.ed;
+    }
+
+    if (payload.hero_id) {
+        db.table('player_matches')
+        .select(db.raw('max (coalesce(player_info.personaname, ?)) as player_name', 'anonymous'))
+        .count('* as num_played')
+        .avg('hero_healing as av_healing')
+		.avg('tower_damage as av_td')
+        .avg('tf_ratio as tf_ratio')
+        .avg('create_total_damages as av_create_total_damage')
+        .avg('create_deadly_damages as av_create_deadly_damages')
+        .avg('create_total_stiff_control as av_create_total_stiff_control')
+        .avg('create_deadly_stiff_control as av_create_deadly_stiff_control')
+        .avg('opponent_hero_deaths as av_opponent_hero_deaths')
+        .avg('create_deadly_damages_per_death as av_create_deadly_damages_per_death')
+        .avg('create_deadly_stiff_control_per_death as av_create_deadly_stiff_control_per_death')
+        .avg('rgpm as av_rgpm')
+        .avg('unrrpm as av_unrrpm')
+        .avg('killherogold as av_killherogold')
+        .avg('deadlosegold as av_deadlosegold')
+        .avg('fedenemygold as av_fedenemygold')
+        .avg('alonekillednum as av_alonekillednum')
+        .avg('alonebecatchednum as av_alonebecatchednum')
+        .avg('alonebekillednum as av_alonebekillednum')
+        .avg('consumedamage as av_consumedamage')
+        .avg('vision_bought as av_vision_bought')
+        .avg('vision_killed as av_vision_kill')
+        .avg('runes_total as av_runes')
+        .avg('purchase_dust')
+        .select(db.raw('string_agg( (case when iswin then ?? end)::text, ?) as win_id', ["matches.match_id", ";"]))
+        .select(db.raw('string_agg( (case when not iswin then ?? end)::text, ?) as lose_id', ["matches.match_id", ";"]))
+        //.avg('apm as av_apm')
+        .select(db.raw('count (case when iswin then 1 end) as win_times'))
+        .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+        .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
+        .where('create_total_damages', '>', '0')
+        .where('player_matches.hero_id', '=', payload.hero_id)
+        .where(db.raw('matches.start_time > ?', st))
+        .where(db.raw('matches.start_time < ?', ed))
+        .groupBy('player_matches.account_id')
+        .asCallback(function(err, result) {
+            console.log(err);
+            if (err) {
+                return cb('query failed');
+            }
+            return cb(null, result);
+        });       
+    }
+}
+
+
+function getLeagueList(db, payload, cb)
+{
+    db.table('fetch_team_match')
+    .countDistinct('match_id as num_matches')
+    .max('fetch_team_match.league_id as league_id')
+    .max('league_name as league_name')
+    .innerJoin('league_info', 'league_info.league_id', 'fetch_team_match.league_id')
+    .where('is_fetched', true)
+    .groupBy('fetch_team_match.league_id')
     .asCallback(function(err, result){
-        if (err)
-        {
+        if (err) {
             return cb(err);
         }
 
-        async.forEachLimit(result, 5, function(league, next) {
-            db.table('fetch_team_match').countDistinct('match_id as num_matches')
-            .where('league_id', league.league_id)
-            //.whereIn('team_id', interested_team) slow down web
-            .asCallback(function(err, result2){
-                if (err) {
-                    console.log(err);
-                    return next();
-                }
-                //console.log(result2[0].num_matches);
-                league.num_matches = result2[0].num_matches;
-                return next();
-            });
-        }, function(err) {
-            return cb(null, result)
-        });
+        return cb(null, result);
     });
 }
 
 function getTeamPlayers(db, payload, cb)
 {
     var team_id = payload.team_id;
-    db.table('matches').select('match_id')
-    .where('radiant_team_id', team_id)
-    .whereNotNull('start_time')
+    db.table('matches')
+    .select('match_id')
+    .select(db.raw(' (case when radiant_team_id = ? then true else false end) as is_radiant ', team_id))
+    .where(db.raw('?? = ? or ?? = ?', ["radiant_team_id", team_id, "dire_team_id", team_id]))
+    .andWhere(db.raw('start_time is not null'))
     .orderBy('start_time', 'desc')
-    .limit(1)
+    .limit(5)
     .asCallback(function(err, result){
         if (err) {
             return cb(err);
         }
         
-        var match_id;
-        if (result.length > 0)
-            match_id = result[0].match_id;
-        else {
-            console.log('not matched match id');
+        if (result.length == 0) {
+             console.log('not matched match id');
         }
-        console.log('match id ' + match_id);
-        
-        db.table('player_matches').select('account_id', 'player_matches.steamid', 'player_info.personaname as player_name')
-        .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
-        .where('match_id', match_id)
-        .where('player_slot', '<', 128)
-        .asCallback(function(err, result2) {
-            if (err) {
-                return cb(err);
+       
+        var res;
+        async.eachSeries(result, function(match, next) {
+            var match_id = match.match_id;
+            var is_radiant = match.is_radiant;
+            if (is_radiant) {
+                console.log('radiant team');
+                db.table('player_matches')
+                .select('account_id', 'player_matches.steamid', 'player_info.personaname as player_name')
+                .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+                .where('match_id', match_id)
+                .where('player_slot', '<', 128)
+                .asCallback(function(err, result2) {
+                    if (err) {
+                        return next(err);
+                    }
+
+                    if (result2.length == 0) {
+                        return next();
+                    }
+                    else {
+                        res= result2;
+                        return next('finished');
+                    }
+                });
             }
-            return cb(null, result2)
-        })
+            else {
+                console.log('dire team');
+                db.table('player_matches').select('account_id', 'player_matches.steamid', 'player_info.personaname as player_name')
+                .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+                .where('match_id', match_id)
+                .where('player_slot', '>', 127)
+                .asCallback(function(err, result2) {
+                    if (err) {
+                        return next(err);
+                    }
+
+                    if (result2.length == 0) {
+                        return next();
+                    }
+                    else {
+                        res = result2;
+                        return next('finished');
+                    }
+                });
+            }
+        }, function(err) {
+            return cb(null, res);
+        });
+
+        
+
+
+        
     });
 }
 
@@ -1493,7 +1619,9 @@ module.exports = {
     insertMatchSkill,
     getDistributions,
     getTeamFetchedMatches,
+    getTeamMatchInfo,
     getMantaParseData,
+    getHeroAnalysisData,
     getLeagueList,
     getTeamPlayers,
     getPicks,

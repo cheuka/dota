@@ -11,16 +11,22 @@ block head
         lis{
             float:left;
             list-style:none;
-            margin:10px;
             width:150px;
             height:30px;
-            background:rgba(128,128,128,0.5);
+            background:#eee;
             text-align:center;
-            font-size:1em
-            color:rgb(192,192,192);
+            font-size:1em;
+            color:#2780e3;
             vertical-align:middle;
             line-height:30px;
+            margin-left:10px;
         }
+
+        lis a{font-weight:bold;border:1px solid #ccc; text-decoration:none;background-color:#eee}
+
+        lis.active a{color:#000;background-color:#eee;}
+
+        lis a.current{background-color:#fff;border-bottom:1px solid #fff;}
 
         .same_line{
             float:left;
@@ -31,6 +37,10 @@ block head
 
         .row{
             margin-top:40px;
+        }
+
+        thead tr th {
+            white-space: nowrap;
         }
 
     script.
@@ -67,6 +77,7 @@ block head
 
         function selectPlayerFromTeam(team_id){
             $.getJSON('/teamPlayers/'+team_id, function(response) {
+                team_id_cnt = team_id; // update current team
                 parsePlayers(response);
             });
         }
@@ -91,7 +102,15 @@ block head
 
             if (team_id_cnt.length > 0) {
                 $('#team_select').val(team_id_cnt).selected = true;
-                $('#player_select').val(player_id_cnt).selected = true;
+            }
+
+            if (player_id_cnt.length > 0) {
+                $('#player_select option').each(function() {
+                    if ($(this).val() == player_id_cnt) {
+                        $('#player_select').val(player_id_cnt).selected = true;
+                        return false;
+                    }
+                });
             }
 
              if (st_cnt.length > 0) {
@@ -103,12 +122,6 @@ block head
             }
         }
 
-        function toComprehensive() {
-            window.location.href='/players_ranking';
-        }
-
-
-
 block content
     div#nav
       ul
@@ -116,11 +129,15 @@ block content
           a(href='/team_fetch_match') 战队分析
         li 
           a(href='/players_ranking') 选手分析
+        li
+          a(href='/hero_analysis')  英雄分析  
 
     .row
-      ul.tab
-          lis(onclick='toComprehensive()') 综合分析
-          lis() 单独分析
+        ul
+          lis
+            a(href='/players_ranking') 综合分析
+          lis.active
+            a(href='#') 单独分析
 
     #single_player
         .row
@@ -134,7 +151,7 @@ block content
                 option(value='0',selected='true') 选手名称
         .row
             h4.same_line 时间筛选
-            input(type='date', value='2016-04-21', onchange='selectSingleData()')#sin_start_time.same_line
+            input(type='date', value='2016-09-18', onchange='selectSingleData()')#sin_start_time.same_line
             h4.same_line to
             input(type='date', onchange='selectSingleData()')#sin_end_time.same_line
         .row
@@ -145,18 +162,19 @@ block content
                             th 英雄
                             th 场次
                             th 胜率 %
-                            th 输出
-                            th 消耗
-                            th 回复
-                            th 控制
-                            th 参团率 %
-                            th 抓人
-                            th 落单被抓
-                            th CNE
-                            th URGPM
-                            th GPM
-                            th 买眼
-                            th 反眼
+                            th: abbr(title=tooltips.death_damage) 致死输出
+                            th: abbr(title=tooltips.consume_damage) 总消耗输出
+                            th: abbr(title=tooltips.death_control) 致死控制
+                            th: abbr(title=tooltips.tower_damage_cn) 推塔
+                            th: abbr(title=tooltips.hero_heal_cn) 回复
+                            //th 参团率 %
+                            th: abbr(title=tooltips.gank_times) gank次数
+                            th: abbr(title=tooltips.be_ganked_times) 被gank次数
+                            th: abbr(title=tooltips.combat_cne) CNE
+                            th: abbr(title=tooltips.URGPM) URGPM
+                            th: abbr(title=tooltips.RGPM) RGPM
+                            th: abbr(title=tooltips.vision_bought) 买眼
+                            th: abbr(title=tooltips.vision_kill) 反眼
                             //th 控符
                             //th APM
                     tbody
@@ -165,25 +183,31 @@ block content
                                 - var hero = constants.heroes[entry.hero_id]
                                 //td #{hero.localized_name}
                                 td(style="padding:1px")
-                                    .img-text.img-text-lg(style="float:initial;")
-                                        if hero
-                                            img.img-md(src=hero.img, title="#{hero.localized_name}", style="border-left-color:#{slot_color}").player-color
-                                        else
-                                            =hero.localized_name
+                                    a(href='/hero_analysis/#{hero.id}')
+                                        .img-text.img-text-lg(style="float:initial;")
+                                            if hero
+                                                img.img-md(src=hero.img, title="#{hero.localized_name}", style="border-left-color:#{slot_color}").player-color
+                                            else
+                                                =hero.localized_name
                                 td #{entry.num_played}
                                 td #{Math.round(100*entry.win_times/entry.num_played)}
-                                td #{Math.round(entry.av_create_total_damage)}
+                                td #{Math.round(entry.av_create_deadly_damages_per_death)}
                                 td #{Math.round(entry.av_consumedamage)}
-                                td #{Math.round(entry.av_healing)}
-                                td #{Math.round(entry.av_create_deadly_stiff_control)}
-                                td #{Math.round(entry.tf_ratio)}
-                                td #{Math.round(entry.av_alonekillednum)}
-                                td #{Math.round(entry.av_alonebecatchednum)}
+                                td= Number(entry.av_create_deadly_stiff_control_per_death).toFixed(1)
+                                td #{Math.round(entry.av_td)}
+                                td #{Math.round(entry.av_healing)}  
+                                //td #{Math.round(entry.tf_ratio)}
+                                - var av_alonekillednum2 = entry.av_alonekillednum;
+                                td #{Number(av_alonekillednum2).toFixed(1)}
+                                - var av_alonebecatchednum2 = entry.av_alonebecatchednum;
+                                td #{Number(av_alonebecatchednum2).toFixed(1)}
                                 td #{Math.round(entry.av_killherogold - entry.av_fedenemygold)}
                                 td #{Math.round(entry.av_unrrpm)}
                                 td #{Math.round(entry.av_rgpm)}
-                                td #{Math.round(entry.av_vision_bought)}
-                                td #{Math.round(entry.av_vision_kill)}
+                                - var av_vision_bought2 = entry.av_vision_bought;
+                                td #{Number(av_vision_bought2).toFixed(1)}
+                                - var av_vision_kill2 = entry.av_vision_kill;
+                                td #{Number(av_vision_kill2).toFixed(1)}
                                 //td #{Math.round(entry.av_runes)}
                                 //td #{Math.round(entry.av_apm)}
     script.

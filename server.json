@@ -14,7 +14,7 @@
       "ignore_watch": ["node_modules", "public", "views"],
       "group": "web",
       "exec_mode": "cluster",
-      "instances": 1
+      "instances": 5
     },
     {
       "script": "svc/parser.js",
@@ -34,6 +34,14 @@
     },
     {
       "script": "svc/schedule_buildLeague.js",
+      "watch": false, 
+      "ignore_watch": ["node_modules", "public", "views"],
+      "group": "buildLeague",
+      "exec_mode": "cluster",
+      "instances": 1
+    },
+    {
+      "script": "svc/schedule_buildLeagueInfo.js",
       "watch": false, 
       "ignore_watch": ["node_modules", "public", "views"],
       "group": "buildLeague",

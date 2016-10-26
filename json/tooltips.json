@@ -115,5 +115,17 @@
   "win_pct_as": "Win percentage as this hero",
   "win_pct_with": "Win percentage with this player/hero",
   "win_pct_against": "Win percentage against this player/hero",
-  "subheading_ranking": "Based on wins and average visible MMR in matches played.  Rankings reset quarterly."
+  "subheading_ranking": "Based on wins and average visible MMR in matches played.  Rankings reset quarterly.",
+  "death_damage": "敌方英雄阵亡前贡献的平均致死输出，主要输出指标。支持横向比较。",
+  "consume_damage": "对敌方英雄造成的消耗输出（非致死输出）总和，次要输出指标。",
+  "death_control": "敌方英雄阵亡前贡献的平均致死控制（眩晕、沉默）。支持横向比较。",
+  "tower_damage_cn": "对敌方防御塔造成的总伤害。",
+  "hero_heal_cn": "为己方英雄治愈的血量总和。",
+  "gank_times": "成功gank敌方落单英雄的总次数。",
+  "be_ganked_times": "落单被抓总次数。",
+  "combat_cne": "战斗净收益，从战斗中获取的金钱-死亡送给敌方的金钱。",
+  "URGPM": "平均每分钟不可靠金钱（打野+补刀）。",
+  "RGPM": "平均每分钟可靠金钱",
+  "vision_bought": "购买真眼+假眼的总个数。",
+  "vision_kill": "反掉敌方真眼+假眼的总个数。"
 }

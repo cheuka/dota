@@ -17,7 +17,9 @@ module.exports = function(db, cb) {
     var timeout = setTimeout(function() {
         console.log('exit');
         process.exit(-1);
-    }, 3500*1000);
+    }, 2000*1000);
+
+    console.time('buildLeague');
 
     //constants.common_teams = [111474];
     //async.eachSeries(constants.common_teams, function(team, next) {
@@ -61,7 +63,7 @@ module.exports = function(db, cb) {
     db.select('league_id','league_name').from('league_info').where('start_time', '>', st)
     .orderBy('start_time', 'desc').limit(100).asCallback(function(err, league) {
         console.log('league length ->' + league.length);
-        async.forEachLimit(league, 1, function(league_i, next) {
+        async.forEachLimit(league, 10, function(league_i, next) {
 
             console.log('league id ->' + league_i.league_id);
             console.log('league name ->' + league_i.league_name);
@@ -71,6 +73,8 @@ module.exports = function(db, cb) {
 
             getMatchPage(url, league_i.league_id, next);
         }, function(err) {
+
+            console.timeEnd('buildLeague');
             return cb();
         });
 
@@ -152,5 +156,6 @@ module.exports = function(db, cb) {
             });
         });
     }
+
 }
  

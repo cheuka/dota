@@ -1,26 +1,29 @@
-window.generateChartsOn = function generateChartsOn(data, fights) {
+window.generateChartsOn = function generateChartsOn(data, fights, matchUpload) {
     var color_array = [];
-    for (var key in constants.player_colors) {
-        color_array.push(constants.player_colors[key]);
-    }
+    color_array.push("#aec7e8");
+    color_array.push("#FF0000");
+    color_array.push("#0000FF");
 
     var fightPoint = getFightsPoint(data.difference, fights)
     var fightsStart = getFightsTime(fights);
-    var fightsGold = getFightsGold(fights);
-    var difference = [fightPoint, data.difference[0], data.difference[2], fightsStart, fightsGold];
+    var difference = [data.difference[0], data.difference[2], fightPoint, fightsStart];
 
+	var c1_legend = '经济曲线（天辉=' + matchUpload.radiant_team_name + ', 夜魇=' + matchUpload.dire_team_name + ')';
+	var c2_legend = '团战点';
+	
     var charts = [{
         bindTo: "#chart-diff",
         columns: difference,
         xs: {
             'Gold':'time',
-            'teamFightsGold':'fightsTime',
             'teamFightsTime':'fightsTime',
         },
         types: {
             'Gold':"area-spline",
-            'teamFightsGold':'bar',
             'teamFightsTime':'scatter',
+        },
+        color: {
+            pattern: color_array
         },
         xLabel: 'Game Time (minutes)',
         yLabel: 'Radiant Advantage'
@@ -31,7 +34,11 @@ window.generateChartsOn = function generateChartsOn(data, fights) {
             data: {
                 xs: chart.xs,
                 columns: chart.columns,
-                types: chart.types
+                types: chart.types,
+                names: {
+                    'Gold': c1_legend,
+                    'teamFightsTime': c2_legend
+                }
             },
             color: chart.color,
             axis: {
@@ -48,20 +55,37 @@ window.generateChartsOn = function generateChartsOn(data, fights) {
                     label: chart.yLabel
                 }
             },
-            bar: { width: { ratio: 0.5 }},
             zoom:{
                 enabled: false,
                 rescale: false
             },
-            point:{
-                r:8
-            },
             tooltip: {
-                contents: function(d, defaultTitleFormat, defaultValueFormat, color) {
-                    d.sort(function(a, b) {
-                        return b.value - a.value
-                    });
-                    return this.getTooltipContent(d, defaultTitleFormat, defaultValueFormat, color);
+                format: {
+                    title: function (d) {
+                        return moment().startOf('day').seconds(d).format("H:mm:ss");
+                    },
+                    name: function (value, ratio, id, index) {
+                        if(id == 'teamFightsTime'){
+                            if(fights[index].radiant_gold_delta > 0){
+                                return "天辉 (" + matchUpload.radiant_team_name + ") 赢团"
+                            }else{
+                                return "夜魇 (" + matchUpload.dire_team_name + ") 赢团"
+                            }
+                        }else{
+                            if(data.difference[2][index + 1] > 0){
+                                return "天辉 (" + matchUpload.radiant_team_name + ") 领先"
+                            }else{
+                                return "夜魇 (" + matchUpload.dire_team_name + ") 领先"
+                            };
+                        }
+                    },
+                    value: function (value, ratio, id, index) {
+                        if(id == 'teamFightsTime'){
+                            return Math.abs(fights[index].radiant_gold_delta);
+                        }else{
+                            return Math.abs(value);
+                        }
+                    }
                 }
             }
         });

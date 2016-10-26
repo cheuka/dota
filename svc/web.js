@@ -426,11 +426,28 @@ app.get('/team_fetch_match/:team_id?', function(req, res, cb)
             if (err) {
                 return cb(err);
             }                                              
-			console.log('DEBUG: find result: ' + JSON.stringify(result));
+			//console.log('DEBUG: find result: ' + JSON.stringify(result));
             var name;
             for (var i = 0; i < constants.common_teams.length; ++i) {
                 if (constants.common_teams[i].team_id == req.params.team_id) {
                    name = constants.common_teams[i].name;
+                }
+            }
+
+            // rxu, get the team name of radiant and dire
+            for (var i in result) {
+                for (var j in constants.common_teams) {
+                    if (result[i].radiant_team_id == constants.common_teams[j].team_id) {
+                        result[i].radiant_team = constants.common_teams[j].name;
+                        break;
+                    }
+                }
+
+                for (var j in constants.common_teams) {
+                    if (result[i].dire_team_id == constants.common_teams[j].team_id) {
+                        result[i].dire_team = constants.common_teams[j].name;
+                        break;
+                    }
                 }
             }
 
@@ -439,7 +456,8 @@ app.get('/team_fetch_match/:team_id?', function(req, res, cb)
 				user: req.session.user,
 				home: false,
                 team_fetch_match: result,
-                team_name: name
+                team_name: name,
+                team_id: req.params.team_id
             });
         });
     }
@@ -450,6 +468,39 @@ app.get('/team_fetch_match/:team_id?', function(req, res, cb)
         });
     }
 });
+
+app.get('/team_match_info/:team_id?', function(req, res, cb)
+{ 
+    console.log(req.params.team_id);
+    if (req.params.team_id) {
+        queries.getTeamMatchInfo(db, {
+            team_id: req.params.team_id,
+            st: req.query.st,
+            ed: req.query.ed
+        }, function(err, result) {
+            if (err) {
+                console.log(err);
+                return cb(err);
+            }
+
+            res.render('team_match_info', {
+                user: req.session.user,
+                home: false,
+                team_id: req.params.team_id,
+                team_match_info: result,
+                st: req.query.st,
+                ed: req.query.ed
+            });
+        });
+    }
+    else {
+        res.render('team_match_info', {
+            user: req.session.user,
+        });
+    }
+});
+
+
 
 // lordstone: the customized page for match
 
@@ -616,7 +667,34 @@ app.get('/search', function(req, res, cb)
 });
 
 
+app.get('/hero_analysis/:hero_id?', function(req, res, cb)
+{
+    var hero_id = req.params.hero_id;
+    if (hero_id) {
+        queries.getHeroAnalysisData(db, {
+            hero_id: hero_id,
+            st: req.query.st,
+            ed: req.query.ed
+        }, function(err, result) {
+            res.render('hero_analysis', {
+                user: req.session.user,
+                home: false,
+                hero_data: result,
+                hero_id: hero_id,
+                st: req.query.st,
+                ed: req.query.ed
+            });
+    });
 
+    }
+    else{
+        res.render('hero_analysis', {
+            user: req.session.user,
+            home: false,
+        });
+    }
+
+});
 
 app.get('/players_ranking/:league_id?', function(req, res, cb)
 { 
@@ -628,6 +706,8 @@ app.get('/players_ranking/:league_id?', function(req, res, cb)
         ed: req.query.ed
     }, function(err, result) {
         res.render('players_ranking', {
+            user: req.session.user,
+            home: false,
             data: result,
             league_id: req.params.league_id,
             st: req.query.st,
@@ -653,6 +733,8 @@ app.get('/single_player/:account_id?', function(req, res, cb)
             // };
             // res.json(JSON.stringify(res2));
             res.render('single_player_analysis', {
+                user: req.session.user,
+                home: false,
                 player_data: result,
                 account_id: player_account_id,
                 team_id: req.query.team_id,
@@ -663,6 +745,8 @@ app.get('/single_player/:account_id?', function(req, res, cb)
     }
     else {
         res.render('single_player_analysis', {
+                user: req.session.user,
+                home: false,
                 player_data: null,
         });
     }

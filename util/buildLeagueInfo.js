@@ -15,10 +15,12 @@ module.exports = function(db, cb) {
     var timeout = setTimeout(function() {
         console.log('exit');
         process.exit(-1);
-    }, 3500*1000);
+    }, 3000*1000);
+
+    console.time('buildLeagueInfo');
 
     getData(url, function(err, data) {
-        async.forEachLimit(data.result.leagues, 2, function(league, next) {
+        async.forEachLimit(data.result.leagues, 5, function(league, next) {
 
         	var url2 = generateJob("api_history", {
                 leagueid: league.leagueid
@@ -31,7 +33,8 @@ module.exports = function(db, cb) {
 
         }, function(err) {
             console.log('finished');
-	    return cb();
+            console.timeEnd('buildLeagueInfo');
+            return cb();
         });
 
         function updateLatestMatchTime(league, url, mx, cb) {
