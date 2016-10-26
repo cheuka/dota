@@ -26,13 +26,13 @@ function buildMatch(options, cb)
         }
         else if (reply)
         {
-            console.log("Cache hit for match " + match_id);
+            //console.log("Cache hit for match " + match_id);
             var match = JSON.parse(reply);
             return cb(err, match);
         }
         else
         {
-            console.log("Cache miss for match " + match_id);
+            //console.log("Cache miss for match " + match_id);
             getMatch(db, redis, match_id, options, function(err, match)
             {
                 if (err)
@@ -89,7 +89,7 @@ function getMatch(db, redis, match_id, options, cb)
                 }
                 var players = result.players;
 				var upload = result.upload;
-				console.log('DEBUG upload\n:' + JSON.stringify(upload));
+				//console.log('DEBUG upload\n:' + JSON.stringify(upload));
                 var ab_upgrades = JSON.parse(result.ab_upgrades);
                 match.replay_url = result.replay_url;
                 async.each(players, function(p, cb)

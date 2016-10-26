@@ -109,7 +109,7 @@ app.use(function rateLimit(req, res, cb)
     var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || "";
     ip = ip.replace(/^.*:/, '').split(',')[0];
     var key = 'rate_limit:' + ip;
-    console.log("%s visit %s, ip %s", req.user ? req.user.account_id : "anonymous", req.path, ip);
+    console.log("%s visit %s, ip %s", req.session.user ? req.session.user : "anonymous", req.path, ip);
     redis.multi().incr(key).expire(key, 1).exec(function(err, resp)
     {
         if (err)
@@ -451,7 +451,7 @@ app.get('/team_fetch_match/:team_id?', function(req, res, cb)
                 }
             }
 
-            console.log('name ' + name);
+            //console.log('name ' + name);
             res.render('team_fetch_match', {
 				user: req.session.user,
 				home: false,
@@ -471,7 +471,7 @@ app.get('/team_fetch_match/:team_id?', function(req, res, cb)
 
 app.get('/team_match_info/:team_id?', function(req, res, cb)
 { 
-    console.log(req.params.team_id);
+    //console.log(req.params.team_id);
     if (req.params.team_id) {
         queries.getTeamMatchInfo(db, {
             team_id: req.params.team_id,
@@ -479,7 +479,7 @@ app.get('/team_match_info/:team_id?', function(req, res, cb)
             ed: req.query.ed
         }, function(err, result) {
             if (err) {
-                console.log(err);
+                console.error(err);
                 return cb(err);
             }
 
@@ -509,7 +509,6 @@ app.get('/team_match_info/:team_id?', function(req, res, cb)
 
 app.use('/battle_reviews/:match_id?', function(req, res, cb)
 {
-	console.log('DEBUG find');
 	var match_id = req.params.match_id;
 	if(!match_id){
 		res.send('Please enter the match id');
@@ -698,8 +697,6 @@ app.get('/hero_analysis/:hero_id?', function(req, res, cb)
 
 app.get('/players_ranking/:league_id?', function(req, res, cb)
 { 
-    console.log('player_ranking');
-    
     queries.getMantaParseData(db, {
         league_id: req.params.league_id,
         st: req.query.st,
@@ -726,7 +723,7 @@ app.get('/single_player/:account_id?', function(req, res, cb)
             ed: req.query.ed
         }, function(err, result) {
             if (err) {
-                console.log(err);
+                console.error(err);
             }
             // var res2 = {
             //     player_data: result
@@ -757,10 +754,9 @@ app.get('/single_player/:account_id?', function(req, res, cb)
 
 app.get('/players_league', function(req, res, cb)
 { 
-    console.log('players_league');
     queries.getLeagueList(db, {}, function(err, result) {
         if (err) {
-           console.log(err);
+           console.error(err);
            res.json({"error": "error"});
         }
         else {
@@ -774,7 +770,7 @@ app.get('/teamPlayers/:team_id?', function(req, res, cb)
     queries.getTeamPlayers(db, {
         team_id: req.params.team_id
     }, function(err, result) {
-        console.log(err);
+        console.error(err);
         res.json(JSON.stringify(result));
     });
 });
