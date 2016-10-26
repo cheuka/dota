@@ -1028,34 +1028,75 @@ function getLeagueList(db, payload, cb)
 function getTeamPlayers(db, payload, cb)
 {
     var team_id = payload.team_id;
-    db.table('matches').select('match_id')
-    .where('radiant_team_id', team_id)
-    .whereNotNull('start_time')
+    db.table('matches')
+    .select('match_id')
+    .select(db.raw(' (case when radiant_team_id = ? then true else false end) as is_radiant ', team_id))
+    .where(db.raw('?? = ? or ?? = ?', ["radiant_team_id", team_id, "dire_team_id", team_id]))
+    .andWhere(db.raw('start_time is not null'))
     .orderBy('start_time', 'desc')
-    .limit(1)
+    .limit(5)
     .asCallback(function(err, result){
         if (err) {
             return cb(err);
         }
         
-        var match_id;
-        if (result.length > 0)
-            match_id = result[0].match_id;
-        else {
-            console.log('not matched match id');
+        if (result.length == 0) {
+             console.log('not matched match id');
         }
-        console.log('match id ' + match_id);
-        
-        db.table('player_matches').select('account_id', 'player_matches.steamid', 'player_info.personaname as player_name')
-        .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
-        .where('match_id', match_id)
-        .where('player_slot', '<', 128)
-        .asCallback(function(err, result2) {
-            if (err) {
-                return cb(err);
+       
+        var res;
+        async.eachSeries(result, function(match, next) {
+            var match_id = match.match_id;
+            var is_radiant = match.is_radiant;
+            if (is_radiant) {
+                console.log('radiant team');
+                db.table('player_matches')
+                .select('account_id', 'player_matches.steamid', 'player_info.personaname as player_name')
+                .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+                .where('match_id', match_id)
+                .where('player_slot', '<', 128)
+                .asCallback(function(err, result2) {
+                    if (err) {
+                        return next(err);
+                    }
+
+                    if (result2.length == 0) {
+                        return next();
+                    }
+                    else {
+                        res= result2;
+                        return next('finished');
+                    }
+                });
             }
-            return cb(null, result2)
-        })
+            else {
+                console.log('dire team');
+                db.table('player_matches').select('account_id', 'player_matches.steamid', 'player_info.personaname as player_name')
+                .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+                .where('match_id', match_id)
+                .where('player_slot', '>', 127)
+                .asCallback(function(err, result2) {
+                    if (err) {
+                        return next(err);
+                    }
+
+                    if (result2.length == 0) {
+                        return next();
+                    }
+                    else {
+                        res = result2;
+                        return next('finished');
+                    }
+                });
+            }
+        }, function(err) {
+            return cb(null, res);
+        });
+
+        
+
+
+        
     });
 }
 

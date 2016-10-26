@@ -105,7 +105,12 @@ block head
             }
 
             if (player_id_cnt.length > 0) {
-                $('#player_select').val(player_id_cnt).selected = true;
+                $('#player_select option').each(function() {
+                    if ($(this).val() == player_id_cnt) {
+                        $('#player_select').val(player_id_cnt).selected = true;
+                        return false;
+                    }
+                });
             }
 
              if (st_cnt.length > 0) {
