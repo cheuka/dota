@@ -8,19 +8,19 @@ window.generateChartsOn = function generateChartsOn(data, fights, matchUpload) {
     var fightsStart = getFightsTime(fights);
     var difference = [data.difference[0], data.difference[2], fightPoint, fightsStart];
 
-	var c1_legend = '经济曲线 （ 天辉 = ' + matchUpload.radiant_team_name + ', 夜魇=' + matchUpload.dire_team_name + ')';
+	var c1_legend = '经济曲线 （ 天辉=' + matchUpload.radiant_team_name + ', 夜魇=' + matchUpload.dire_team_name + ')';
 	var c2_legend = '团战点';
 	
     var charts = [{
         bindTo: "#chart-diff",
         columns: difference,
         xs: {
-            c1_legend:'time',
-            c2_legend:'fightsTime',
+            'Gold':'time',
+            'teamFightsTime':'fightsTime',
         },
         types: {
-            c1_legend:"area-spline",
-            c2_legend:'scatter',
+            'Gold':"area-spline",
+            'teamFightsTime':'scatter',
         },
         color: {
             pattern: color_array
@@ -34,7 +34,11 @@ window.generateChartsOn = function generateChartsOn(data, fights, matchUpload) {
             data: {
                 xs: chart.xs,
                 columns: chart.columns,
-                types: chart.types
+                types: chart.types,
+                names: {
+                    'Gold': c1_legend,
+                    'teamFightsTime': c2_legend
+                }
             },
             color: chart.color,
             axis: {
