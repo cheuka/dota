@@ -4,7 +4,7 @@ CREATE TABLE matches (
   match_id bigint PRIMARY KEY,
   match_seq_num bigint,
   radiant_win boolean,
-  start_time integer,
+  start_time bigint,
   duration integer,
   tower_status_radiant integer,
   tower_status_dire integer,
@@ -122,7 +122,7 @@ CREATE TABLE player_matches (
   aloneKilledNum integer,
   aloneBeCatchedNum integer,
   aloneBeKilledNum integer,
-  consumeDamage integer
+  consumeDamage integer,
   tf_ratio integer,
   vision_bought integer,
   vision_killed integer,
