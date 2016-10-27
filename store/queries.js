@@ -750,7 +750,7 @@ function getTeamFetchedMatches(db, payload, cb)
     .where('fetch_team_match.start_time', '>', 1470009600)
     .orderByRaw('fetch_team_match.start_time desc').asCallback(function(err, result) {
         if (err) {
-            console.log(err);
+            console.error(err);
             return cb('query failed');
         }
         //console.log(JSON.stringify(result));
@@ -783,7 +783,7 @@ function getTeamMatchInfo(db, payload, cb)
     .where(db.raw('matches.start_time < ?', ed))
     .orderByRaw('fetch_team_match.start_time desc').asCallback(function(err, result) {
         if (err) {
-            console.log(err);
+            console.error(err);
             return cb('query failed');
         }
         //console.log(JSON.stringify(result));
@@ -845,7 +845,7 @@ function getMantaParseData(db, payload, cb)
         .where(db.raw('matches.start_time < ?', ed))
         .groupBy('player_matches.account_id')
         .asCallback(function(err, result) {
-            console.log(err);
+            console.error(err);
             if (err) {
                 return cb('query failed');
             }
@@ -890,7 +890,7 @@ function getMantaParseData(db, payload, cb)
         .where(db.raw('matches.start_time < ?', ed))
         .groupBy('player_matches.hero_id')
         .asCallback(function(err, result) {
-            console.log(err);
+            console.error(err);
             if (err) {
                 return cb('query failed');
             }
@@ -935,7 +935,7 @@ function getMantaParseData(db, payload, cb)
         .where(db.raw('matches.start_time < ?', ed))
         .groupBy('player_matches.account_id')
         .asCallback(function(err, result) {
-            console.log(err);
+            console.error(err);
             if (err) {
                 return cb('query failed');
             }
@@ -997,7 +997,7 @@ function getHeroAnalysisData(db, payload, cb)
         .where(db.raw('matches.start_time < ?', ed))
         .groupBy('player_matches.account_id')
         .asCallback(function(err, result) {
-            console.log(err);
+            console.error(err);
             if (err) {
                 return cb('query failed');
             }
@@ -1041,7 +1041,7 @@ function getTeamPlayers(db, payload, cb)
         }
         
         if (result.length == 0) {
-             console.log('not matched match id');
+             console.error('not matched match id');
         }
        
         var res;
@@ -1049,7 +1049,7 @@ function getTeamPlayers(db, payload, cb)
             var match_id = match.match_id;
             var is_radiant = match.is_radiant;
             if (is_radiant) {
-                console.log('radiant team');
+                //console.log('radiant team');
                 db.table('player_matches')
                 .select('account_id', 'player_matches.steamid', 'player_info.personaname as player_name')
                 .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
@@ -1070,7 +1070,7 @@ function getTeamPlayers(db, payload, cb)
                 });
             }
             else {
-                console.log('dire team');
+                //console.log('dire team');
                 db.table('player_matches').select('account_id', 'player_matches.steamid', 'player_info.personaname as player_name')
                 .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
                 .where('match_id', match_id)
@@ -1497,7 +1497,7 @@ function getDem(params, db, cb)
 	var dem_index = params.dem_index;
 	var user_id = params.user_id;
 
-	console.log('DEBUG get dem from db:' + dem_index);
+	//console.log('DEBUG get dem from db:' + dem_index);
 	console.time('fetching blob from db');
 	db
 	.table('dem_storage')
@@ -1509,7 +1509,7 @@ function getDem(params, db, cb)
 	})
 	.asCallback(function(err, result)
 	{
-		console.log('DEBUG received dem from db');
+		//console.log('DEBUG received dem from db');
 		console.timeEnd('fetching blob from db');
 		if(err)
 		{
@@ -1603,7 +1603,7 @@ function insertMantaMatch2(db, redis, player_match, cb)
             consumedamage: entry.consumeDamage,
             player_slot: entry.player_id >= 5 ? entry.player_id + 128 - 5 : entry.player_id
         }
-        console.log('player_slot : ' + m_entry.player_slot + '  player_id : ' + entry.player_id);
+        //console.log('player_slot : ' + m_entry.player_slot + '  player_id : ' + entry.player_id);
         upsert(db, 'player_matches', m_entry, {
             player_slot: m_entry.player_slot,
             match_id: m_entry.match_id,
