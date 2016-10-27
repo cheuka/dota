@@ -109,7 +109,8 @@ app.use(function rateLimit(req, res, cb)
     var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || "";
     ip = ip.replace(/^.*:/, '').split(',')[0];
     var key = 'rate_limit:' + ip;
-    console.log("%s visit %s, ip %s", req.session.user ? req.session.user : "anonymous", req.path, ip);
+    var now = new Date();
+    console.log("%s visit %s at time %s, ip %s", req.session.user ? req.session.user : "anonymous", req.path, now, ip);
     redis.multi().incr(key).expire(key, 1).exec(function(err, resp)
     {
         if (err)
