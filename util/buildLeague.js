@@ -63,7 +63,7 @@ module.exports = function(db, cb) {
     db.select('league_id','league_name').from('league_info').where('start_time', '>', st)
     .orderBy('start_time', 'desc').limit(100).asCallback(function(err, league) {
         console.log('league length ->' + league.length);
-        async.forEachLimit(league, 10, function(league_i, next) {
+        async.forEachLimit(league, 5, function(league_i, next) {
 
             console.log('league id ->' + league_i.league_id);
             console.log('league name ->' + league_i.league_name);

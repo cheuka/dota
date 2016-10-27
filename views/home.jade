@@ -39,10 +39,10 @@ block page_content
     
 append footer_assets
   //these scripts must go at the end (can't be bundled) since they depend on content to be loaded
-  script(src="/public/js/home/scroll.js")
-  script(src="/public/js/home/animatedNavbar.js")
-  script(src="/public/js/home/polymerFabs.js")
+  //script(src="/public/js/home/scroll.js")
+  //script(src="/public/js/home/animatedNavbar.js")
+  //script(src="/public/js/home/polymerFabs.js")
   script.
-    var graphData = !{JSON.stringify(match.graphData)};
-    generateCharts(graphData);  
+    //var graphData = !{JSON.stringify(match.graphData)};
+    //generateCharts(graphData);  
 
