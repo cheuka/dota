@@ -220,7 +220,8 @@ function insertMatch(db, redis, match, options, cb)
                 "pm": upsertPlayerMatch,
                 "p": upsertPlayer,
                 "pb": upsertPickbans,
-                "tm": upsertTeamMatch
+                "tm": upsertTeamMatch,
+                "ftm": upsertFetchTeamMatch,
             }, exit);
 
             function upsertMatches(cb)
@@ -438,6 +439,69 @@ function insertMatch(db, redis, match, options, cb)
 						return cb();
 					}
 				}
+           }
+
+           function upsertFetchTeamMatch(cb)
+           {
+                db.table('fetch_team_match').select('*')
+                .where('match_id', match.match_id)
+                .asCallback(function(err, result) {
+                    if (err || (result && result.length > 0) ) {
+                        return cb();
+                    }
+
+                    // rxu, this is for manually fetched case
+                    // if the api is not working, we have to 
+                    // download the dem ourself
+                    if (!result || result.length == 0) {
+                        async.series(
+                           {
+                               'r': upsertRadiant,
+                               'd': upsertDire,
+                           }, cb);
+
+                           function upsertRadiant(cb)
+                           {
+                                if (match.radiant_team_id) {
+                                    var tm = {
+                                        match_id: match.match_id,
+                                        team_id: match.radiant_team_id,
+                                        league_id: match.leagueid,
+                                        start_time: match.start_time
+                                    };
+
+                                    upsert(trx, 'fetch_team_match', tm, {
+                                        match_id: tm.match_id,
+                                        team_id: tm.team_id
+                                    }, cb);
+                                }
+                                else
+                                    return cb();
+                           }
+
+                           function upsertDire(cb)
+                           {
+                                if (match.dire_team_id) {
+                                    var tm = {
+                                        match_id: match.match_id,
+                                        team_id: match.dire_team_id,
+                                        league_id: match.leagueid,
+                                        start_time: match.start_time
+                                    };
+
+                                    upsert(trx, 'fetch_team_match', tm, {
+                                        match_id: tm.match_id,
+                                        team_id: tm.team_id
+                                    }, cb);
+                                }
+                                else
+                                    return cb();
+                           }
+                    }
+                    else {
+                        return cb();
+                    }
+                });
            }
 
            function exit(err)
