@@ -1124,7 +1124,7 @@ function getTeamPlayers(db, payload, cb)
                         return next(err);
                     }
 
-                    if (result2.length == 0) {
+                    if (result2.length == 0 || (result2.length > 0 && !result2[0].player_name) ) {
                         return next();
                     }
                     else {
@@ -1144,7 +1144,7 @@ function getTeamPlayers(db, payload, cb)
                         return next(err);
                     }
 
-                    if (result2.length == 0) {
+                   if (result2.length == 0 || (result2.length > 0 && !result2[0].player_name) ) {
                         return next();
                     }
                     else {
