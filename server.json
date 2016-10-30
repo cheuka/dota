@@ -41,6 +41,14 @@
       "instances": 1
     },
     {
+      "script": "svc/show_logs.js",
+      "watch": false, 
+      "ignore_watch": ["node_modules", "public", "views"],
+      "group": "buildLeague",
+      "exec_mode": "cluster",
+      "instances": 1
+    },
+    {
       "script": "svc/schedule_buildLeagueInfo.js",
       "watch": false, 
       "ignore_watch": ["node_modules", "public", "views"],
