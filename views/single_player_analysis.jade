@@ -177,6 +177,8 @@ block content
                             th: abbr(title=tooltips.vision_kill) 反眼
                             //th 控符
                             //th APM
+                            th Win
+                            th Lose
                     tbody
                         each entry, i in player_data || []
                             tr
@@ -210,6 +212,8 @@ block content
                                 td #{Number(av_vision_kill2).toFixed(1)}
                                 //td #{Math.round(entry.av_runes)}
                                 //td #{Math.round(entry.av_apm)}
+                                td(class="success")= entry.win_id
+                                td(class="danger")= entry.lose_id
     script.
 
         showPage();
