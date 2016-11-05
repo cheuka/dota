@@ -151,9 +151,9 @@ block content
                 option(value='0',selected='true') 选手名称
         .row
             h4.same_line 时间筛选
-            input(type='date', value='2016-09-18', onchange='selectSingleData()')#sin_start_time.same_line
+            input(type='text', onchange='selectSingleData()')#sin_start_time.same_line.date_picker
             h4.same_line to
-            input(type='date', onchange='selectSingleData()')#sin_end_time.same_line
+            input(type='text', onchange='selectSingleData()')#sin_end_time.same_line.date_picker
         .row
             .col-md-12.table-responsive
                 table.table.table-striped.table-condensed.rankable#single_player_data
@@ -218,4 +218,9 @@ block content
 
         showPage();
         getPlayers()
-        document.getElementById('sin_end_time').valueAsDate = new Date();
+        $(document).ready(function () {
+            $('.date_picker').datepicker();
+            $('.date_picker').datepicker('option', 'dateFormat', 'yy-mm-dd');
+            $('#sin_end_time').val(moment().format("YYYY-MM-DD"));
+            $('#sin_start_time').val("2016-09-18");
+        })
