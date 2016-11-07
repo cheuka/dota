@@ -5,16 +5,8 @@
 			"team_id": 111474
 		},
 		{
-			"name": "CDEC Gaming",
+			"name": "CDEC",
 			"team_id": 1520578
-		},
-		{
-			"name": "CDEC.Avengers",
-			"team_id": 2643401
-		},
-		{
-			"name": "CDEC.Youth",
-			"team_id": 2635099
 		},
 		{
 			"name": "compLexity Gaming",
@@ -45,12 +37,8 @@
 			"team_id": 2860081
 		},
 		{
-			"name": "FTD Club b",
-			"team_id": 2539098
-		},
-		{
 			"name": "FTD club c",
-			"team_id": 2552118
+			"team_id": 3335660
 		},
 		{
 			"name": "iG.Vitality",
@@ -213,12 +201,32 @@
 			"team_id": 2909240
 		},
 		{
-			"name": "TP",
-			"team_id": -1
+			"name": "WF",
+			"team_id": 2776208
 		},
 		{
-			"name": "K.O.K",
-			"team_id": -1
+			"name": "CG",
+			"team_id": 3258149
+		},
+		{
+			"name": "Avalon",
+			"team_id": 2414095
+		},
+		{
+			"name": "RUSH B",
+			"team_id": 3349045
+		},
+		{
+			"name": "Way",
+			"team_id": 2414475
+		},
+		{
+			"name": "AF",
+			"team_id": 2642171
+		},
+		{
+			"name": "WG",
+			"team_id": 2659468
 		}
 	]
 }
