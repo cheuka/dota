@@ -809,7 +809,7 @@ function getTeamFetchedMatches(db, payload, cb)
         'team_id': payload.team_id,
         //'is_fetched': true
     }).leftJoin('league_info', 'fetch_team_match.league_id', 'league_info.league_id')
-    .innerJoin('matches', 'matches.match_id', 'fetch_team_match.match_id')
+    .leftJoin('matches', 'matches.match_id', 'fetch_team_match.match_id')
     .whereNotNull('fetch_team_match.start_time')
     .where('fetch_team_match.start_time', '>', 1470009600)
     .orderByRaw('fetch_team_match.start_time desc').asCallback(function(err, result) {
