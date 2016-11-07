@@ -177,6 +177,14 @@ block content
                             th: abbr(title=tooltips.vision_kill) 反眼
                             //th 控符
                             //th APM
+                            if user === 'admin'
+                                th: abbr(title=tooltips.xp_t) 前六分钟经验
+                                th: abbr(title=tooltips.gold_t) 前六分钟金钱
+                                th: abbr(title=tooltips.last_hits_t) 前六分钟补刀
+                                th: abbr(title=tooltips.kill_t) 前六分钟击杀
+                                th: abbr(title=tooltips.gold_compare_enemy_t) 对线金钱
+                                th: abbr(title=tooltips.last_hits_compare_enemy_t) 对线补刀
+                                th: abbr(title=tooltips.xp_compare_enemy_t) 对线经验
                     tbody
                         each entry, i in player_data || []
                             tr
@@ -210,6 +218,14 @@ block content
                                 td #{Number(av_vision_kill2).toFixed(1)}
                                 //td #{Math.round(entry.av_runes)}
                                 //td #{Math.round(entry.av_apm)}
+                                if user === 'admin'
+                                    td #{Math.round(entry.av_xp_t)}
+                                    td #{Math.round(entry.av_gold_t)}
+                                    td #{Math.round(entry.av_lh)}
+                                    td #{Number(entry.av_kill_t).toFixed(2)}
+                                    td #{Math.round(entry.av_gold_compare_enemy_t)}
+                                    td #{Math.round(entry.av_lh_compare_enemy_t)}
+                                    td #{Math.round(entry.av_xp_compare_enemy_t)}
     script.
 
         showPage();

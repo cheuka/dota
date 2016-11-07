@@ -127,5 +127,12 @@
   "URGPM": "平均每分钟不可靠金钱（打野+补刀）。",
   "RGPM": "平均每分钟可靠金钱",
   "vision_bought": "购买真眼+假眼的总个数。",
-  "vision_kill": "反掉敌方真眼+假眼的总个数。"
+  "vision_kill": "反掉敌方真眼+假眼的总个数。",
+  "xp_t": "前六分钟经验",
+  "gold_t": "前六分钟金钱",
+  "last_hits_t": "前六分钟正补",
+  "kill_t": "前六分钟击杀",
+  "xp_compare_enemy_t": "前六分钟压制对位经验",
+  "gold_compare_enemy_t": "前六分钟压制对位金钱",
+  "last_hits_compare_enemy_t": "前六分钟压制正补"
 }
