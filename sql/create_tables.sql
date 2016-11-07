@@ -250,3 +250,11 @@ CREATE TABLE league_info (
     league_url varchar(255),
     start_time bigint
 );
+
+CREATE TABLE team_position_info(
+  team_id bigint,
+  position_id integer,
+  PRIMARY KEY (team_id, position_id),
+  account_id bigint,
+  steamid bigint,
+);
