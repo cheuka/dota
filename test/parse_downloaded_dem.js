@@ -11,10 +11,14 @@ var insertMatch = queries.insertMatch;
 var db = require('../store/db');
 var redis = require('../store/redis');
 
+
 fs.readdir('replays/', function(err, files) {
 	async.eachSeries(files, function(file, next) {
 		var match_id = file.split('.')[0];
 		console.log(match_id);
+
+		if (match_id !== "2755151842")
+			return next();
 
 		var job = generateJob("api_details",{
             match_id: match_id
@@ -31,7 +35,7 @@ fs.readdir('replays/', function(err, files) {
                 var match = body.result;
 
                 match.parse_status = 0;
-                match.downloaded = true;
+                //match.downloaded = true;
                 insertMatch(db, redis, match, {
                     type: "api",
                     attempts: 1,
@@ -62,7 +66,7 @@ fs.readdir('replays/', function(err, files) {
 
 	}, function(err) {
 		console.log('end');
-	});
+	}  );
 });
 // rs = fs.createReadStream('../replays/2678898609.dem.bz2');
 
