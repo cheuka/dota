@@ -110,9 +110,9 @@ block content
                   option(value=constants.heroes[key].id) #{constants.heroes[key].name.substr(14)}
         .row
             h4.same_line 时间筛选
-            input(type='text', onchange='selectHeroData()')#sin_start_time.same_line.date_picker
+            input(type='date', value='2016-09-18', onchange='selectHeroData()')#sin_start_time.same_line
             h4.same_line to
-            input(type='text', onchange='selectHeroData()')#sin_end_time.same_line.date_picker
+            input(type='date', onchange='selectHeroData()')#sin_end_time.same_line
 
         .row
             h4.same_line 场次筛选
@@ -195,10 +195,6 @@ block content
         showPage();
 
         $(document).ready(function() {
-            $('.date_picker').datepicker();
-            $('.date_picker').datepicker('option', 'dateFormat', 'yy-mm-dd');
-            $('#sin_end_time').val(moment().format("YYYY-MM-DD"));
-            $('#sin_start_time').val("2016-09-18");
             if (hero_id_cnt.length > 0)
                 $('#hero_select').val(hero_id_cnt).selected = true;
 
@@ -211,4 +207,5 @@ block content
             }
         });
 
+         document.getElementById('sin_end_time').valueAsDate = new Date();
 
