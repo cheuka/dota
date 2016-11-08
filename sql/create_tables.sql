@@ -257,7 +257,7 @@ CREATE TABLE team_position_info(
   position_id integer,
   PRIMARY KEY (team_id, position_id),
   account_id bigint,
-  steamid bigint,
+  steamid bigint
 );
 
 CREATE OR REPLACE FUNCTION cacuclate_kills(json[]) RETURNS integer AS $$
