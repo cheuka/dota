@@ -194,9 +194,17 @@ block content
                 table.table.table-striped.table-condensed#data
                     thead
                         tr
-                            //th match_id
                             th 选手
                             th 场次 
+                            if user === 'admin'
+                                th 位置
+                                th: abbr(title=tooltips.xp_t) 前六分钟经验
+                                th: abbr(title=tooltips.gold_t) 前六分钟金钱
+                                th: abbr(title=tooltips.last_hits_t) 前六分钟补刀
+                                th: abbr(title=tooltips.kill_t) 前六分钟击杀
+                                th: abbr(title=tooltips.gold_compare_enemy_t) 对线金钱
+                                th: abbr(title=tooltips.last_hits_compare_enemy_t) 对线补刀
+                                th: abbr(title=tooltips.xp_compare_enemy_t) 对线经验
                             //th 买假腿场数
                             //th 平均每场切假腿
                             //th 平均每分钟切假腿
@@ -216,20 +224,21 @@ block content
                             th: abbr(title=tooltips.vision_kill) 反眼
                             //th 控符
                             //th APM
-                            if user === 'admin'
-                                th: abbr(title=tooltips.xp_t) 前六分钟经验
-                                th: abbr(title=tooltips.gold_t) 前六分钟金钱
-                                th: abbr(title=tooltips.last_hits_t) 前六分钟补刀
-                                th: abbr(title=tooltips.kill_t) 前六分钟击杀
-                                th: abbr(title=tooltips.gold_compare_enemy_t) 对线金钱
-                                th: abbr(title=tooltips.last_hits_compare_enemy_t) 对线补刀
-                                th: abbr(title=tooltips.xp_compare_enemy_t) 对线经验
                     tbody
                         each entry, i in data || []
                             tr
-                                //td #{entry.match_id}
-                                td(style="min-width: 100px; word-break: break-all;") #{entry.player_name}
+                                - var player_name = entry.team_name ? '<'+entry.team_name+'>.'+entry.player_name : entry.player_name
+                                td(style="min-width: 100px; word-break: break-all;") #{player_name}
                                 td #{entry.num_played}
+                                if user === 'admin'
+                                    td= entry.position_id ? entry.position_id : 0
+                                    td #{Math.round(entry.av_xp_t)}
+                                    td #{Math.round(entry.av_gold_t)}
+                                    td #{Number(entry.av_lh).toFixed(1)}
+                                    td #{Number(entry.av_kill_t).toFixed(2)}
+                                    td #{Math.round(entry.av_gold_compare_enemy_t)}
+                                    td #{Number(entry.av_lh_compare_enemy_t).toFixed(1)}
+                                    td #{Math.round(entry.av_xp_compare_enemy_t)}
                                 //td #{Math.round(entry.power_treads_buytimes)}
                                 //- var pt_use = entry.power_treads_buytimes > 0 ? (entry.sum_power_treads_usetimes / entry.power_treads_buytimes) : 0;
                                 //td #{Math.round(pt_use)}
@@ -255,14 +264,6 @@ block content
                                 td #{Number(av_vision_kill2).toFixed(1)}
                                 //td #{Math.round(entry.av_runes)}
                                 //td #{Math.round(entry.av_apm)}
-                                if user === 'admin'
-                                    td #{Math.round(entry.av_xp_t)}
-                                    td #{Math.round(entry.av_gold_t)}
-                                    td #{Math.round(entry.av_lh)}
-                                    td #{Number(entry.av_kill_t).toFixed(2)}
-                                    td #{Math.round(entry.av_gold_compare_enemy_t)}
-                                    td #{Math.round(entry.av_lh_compare_enemy_t)}
-                                    td #{Math.round(entry.av_xp_compare_enemy_t)}
     script.
         showPage()
 

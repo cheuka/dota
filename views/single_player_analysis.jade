@@ -161,6 +161,15 @@ block content
                         tr
                             th 英雄
                             th 场次
+                            if user === 'admin'
+                                th 位置
+                                th: abbr(title=tooltips.xp_t) 前六分钟经验
+                                th: abbr(title=tooltips.gold_t) 前六分钟金钱
+                                th: abbr(title=tooltips.last_hits_t) 前六分钟补刀
+                                th: abbr(title=tooltips.kill_t) 前六分钟击杀
+                                th: abbr(title=tooltips.gold_compare_enemy_t) 对线金钱
+                                th: abbr(title=tooltips.last_hits_compare_enemy_t) 对线补刀
+                                th: abbr(title=tooltips.xp_compare_enemy_t) 对线经验
                             th 胜率 %
                             th: abbr(title=tooltips.death_damage) 致死输出
                             th: abbr(title=tooltips.consume_damage) 总消耗输出
@@ -177,15 +186,6 @@ block content
                             th: abbr(title=tooltips.vision_kill) 反眼
                             //th 控符
                             //th APM
-
-                            if user === 'admin'
-                                th: abbr(title=tooltips.xp_t) 前六分钟经验
-                                th: abbr(title=tooltips.gold_t) 前六分钟金钱
-                                th: abbr(title=tooltips.last_hits_t) 前六分钟补刀
-                                th: abbr(title=tooltips.kill_t) 前六分钟击杀
-                                th: abbr(title=tooltips.gold_compare_enemy_t) 对线金钱
-                                th: abbr(title=tooltips.last_hits_compare_enemy_t) 对线补刀
-                                th: abbr(title=tooltips.xp_compare_enemy_t) 对线经验
                             th Win
                             th Lose
                     tbody
@@ -201,6 +201,15 @@ block content
                                             else
                                                 =hero.localized_name
                                 td #{entry.num_played}
+                                if user === 'admin'
+                                    td= entry.position_id ? entry.position_id : 0
+                                    td #{Math.round(entry.av_xp_t)}
+                                    td #{Math.round(entry.av_gold_t)}
+                                    td #{Number(entry.av_lh).toFixed(1)}
+                                    td #{Number(entry.av_kill_t).toFixed(2)}
+                                    td #{Math.round(entry.av_gold_compare_enemy_t)}
+                                    td #{Number(entry.av_lh_compare_enemy_t).toFixed(1)}
+                                    td #{Math.round(entry.av_xp_compare_enemy_t)}
                                 td #{Math.round(100*entry.win_times/entry.num_played)}
                                 td #{Math.round(entry.av_create_deadly_damages_per_death)}
                                 td #{Math.round(entry.av_consumedamage)}
@@ -221,15 +230,6 @@ block content
                                 td #{Number(av_vision_kill2).toFixed(1)}
                                 //td #{Math.round(entry.av_runes)}
                                 //td #{Math.round(entry.av_apm)}
-
-                                if user === 'admin'
-                                    td #{Math.round(entry.av_xp_t)}
-                                    td #{Math.round(entry.av_gold_t)}
-                                    td #{Math.round(entry.av_lh)}
-                                    td #{Number(entry.av_kill_t).toFixed(2)}
-                                    td #{Math.round(entry.av_gold_compare_enemy_t)}
-                                    td #{Math.round(entry.av_lh_compare_enemy_t)}
-                                    td #{Math.round(entry.av_xp_compare_enemy_t)}
                                 td(class="success")= entry.win_id
                                 td(class="danger")= entry.lose_id
     script.

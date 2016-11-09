@@ -151,7 +151,8 @@ block content
                     tbody
                         each entry, i in hero_data || []
                             tr
-                                td(style="min-width: 100px; word-break: break-all;") #{entry.player_name}
+                                - var player_name = entry.team_name ? '<'+entry.team_name+'>.'+entry.player_name : entry.player_name
+                                td(style="min-width: 100px; word-break: break-all;") #{player_name}
                                 td #{entry.num_played}
                                 td #{Math.round(100*entry.win_times/entry.num_played)}
                                 td #{Math.round(entry.av_create_deadly_damages_per_death)}
