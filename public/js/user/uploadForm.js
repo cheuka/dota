@@ -98,8 +98,8 @@ window.uploadSubmit = function submit(response)
             document.getElementById("upload-bar").innerHTML = prog.toFixed(2) + "% uploaded";
             // skip the parsing phase
             if(prog >= 100){
-                 document.getElementById("upload-bar").innerHTML = 'Upload Successful. Going to center...';
-                 window.location.assign("/center");  
+                 document.getElementById("upload-bar").innerHTML = 'Upload Successful';
+                 //window.location.assign("/center");  
             }
        }
     }

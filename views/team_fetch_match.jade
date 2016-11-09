@@ -87,7 +87,7 @@ if user
                                 td= i+1
                                 td 
                                   a(href='/battle_reviews/' + entry.match_id) #{entry.match_id}
-                                - var league_name = (entry.league_name && entry.league_name.length >= 11) ? entry.league_name.substr(11) : ''
+                                - var league_name = (entry.league_name && entry.league_name.length >= 11 && entry.league_id != -1) ? entry.league_name.substr(11) : 'Private Match'
                                 td 
                                   a(href=''+entry.league_url) #{league_name}
                                 - var duration = new Date().getTime() - new Date(entry.start_time*1000).getTime()

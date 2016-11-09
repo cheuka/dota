@@ -115,12 +115,16 @@ pQueue.process(1, function(job, cb)
 					//TODO: lordstone: sync with storedem
 					console.log('match blob key:' + match.replay_blob_key);
 					deleteBlobAttempt(match.replay_blob_key);
-                    insertUploadedParse(parsed_data, cb);
+                    //insertUploadedParse(parsed_data, cb);
+                    insertUploadedParse(parsed_data, function(err) {
+                        console.log('start insert match result of manta');
+                        //console.log(JSON.stringify(parsed_data2));
+                        insertMantaMatch2(db, redis, parsed_data2, cb);
+                    });
                 }
                 else
                 {
                     //return cb();
-                    
                     insertStandardParse(parsed_data, function(err) {
                         console.log('start insert match result of manta');
                         //console.log(JSON.stringify(parsed_data2));
@@ -418,23 +422,59 @@ function runParse(match, job, cb)
         parseStream2.on('end', exit);
         parseStream2.on('error', exit);
         
-        var path;
-        if (!post_savename && !match.downloaded) {
-            return exit();
+        var rs;
+        if (match.replay_blob_key) {
+            var req = request(
+            {
+                url: full_url,
+            }).on('response', function(res)
+            {
+                console.log('status code = ' + res.statusCode);
+            }).on('error', exit);
+
+            var is = progress(req);
+            is.on('progress', function(state)
+            {
+                console.log(JSON.stringify(
+                {
+                    url: full_url,
+                    state: state
+                }));
+            }).on('response', function(response)
+            {
+                if (response.statusCode !== 200)
+                {
+                    exit(response.statusCode.toString());
+                }
+            }).on('error', exit);
+
+            rs = stream.PassThrough();
+            is.pipe(rs);
+            // user upload is .dem file
+            rs.pipe(manta_parser.stdin);
+            manta_parser.stdout.pipe(parseStream2);
         }
         else {
-            if (match.downloaded) {
-                path = full_url;
+            var path;
+            if (!post_savename && !match.downloaded) {
+                return exit();
             }
             else {
-                path = 'replays/'+post_savename;
+                if (match.downloaded) {
+                    path = full_url;
+                }
+                else {
+                    path = 'replays/'+post_savename;
+                }
             }
+            rs = require('fs').createReadStream(path);
+            var mbz = spawn('bunzip2');
+            rs.pipe(mbz.stdin);
+            mbz.stdout.pipe(manta_parser.stdin);
+            manta_parser.stdout.pipe(parseStream2);
         }
-        var rs = require('fs').createReadStream(path);
-        var mbz = spawn('bunzip2');
-        rs.pipe(mbz.stdin);
-        mbz.stdout.pipe(manta_parser.stdin);
-        manta_parser.stdout.pipe(parseStream2);
+
+        
     }
 
     function exit(err)

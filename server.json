@@ -55,6 +55,22 @@
       "group": "buildLeague",
       "exec_mode": "cluster",
       "instances": 1
+    },
+    {
+      "script": "svc/storedem.js",
+      "watch": false, 
+      "ignore_watch": ["node_modules", "public", "views"],
+      "group": "storedem",
+      "exec_mode": "cluster",
+      "instances": 1
+    },
+    {
+      "script": "svc/requests.js",
+      "watch": false, 
+      "ignore_watch": ["node_modules", "public", "views"],
+      "group": "requests",
+      "exec_mode": "cluster",
+      "instances": 1
     }
   ]
 }

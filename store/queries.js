@@ -443,64 +443,63 @@ function insertMatch(db, redis, match, options, cb)
 
            function upsertFetchTeamMatch(cb)
            {
+                console.log()
                 db.table('fetch_team_match').select('*')
                 .where('match_id', match.match_id)
                 .asCallback(function(err, result) {
-                    if (err || (result && result.length > 0) ) {
+                    if (err) {
                         return cb();
                     }
 
                     // rxu, this is for manually fetched case
                     // if the api is not working, we have to 
                     // download the dem ourself
-                    if (!result || result.length == 0) {
-                        async.series(
-                           {
-                               'r': upsertRadiant,
-                               'd': upsertDire,
-                           }, cb);
 
-                           function upsertRadiant(cb)
-                           {
-                                if (match.radiant_team_id) {
-                                    var tm = {
-                                        match_id: match.match_id,
-                                        team_id: match.radiant_team_id,
-                                        league_id: match.leagueid,
-                                        start_time: match.start_time
-                                    };
+                    // for upload case
+                    async.series(
+                       {
+                           'r': upsertRadiant,
+                           'd': upsertDire,
+                       }, cb);
 
-                                    upsert(trx, 'fetch_team_match', tm, {
-                                        match_id: tm.match_id,
-                                        team_id: tm.team_id
-                                    }, cb);
-                                }
-                                else
-                                    return cb();
-                           }
+                       function upsertRadiant(cb)
+                       {
+                            if (match.radiant_team_id) {
+                                var tm = {
+                                    match_id: match.match_id,
+                                    team_id: match.radiant_team_id,
+                                    league_id: match.leagueid ? match.leagueid : -1,
+                                    start_time: match.start_time ? match.start_time : 0
+                                };
 
-                           function upsertDire(cb)
-                           {
-                                if (match.dire_team_id) {
-                                    var tm = {
-                                        match_id: match.match_id,
-                                        team_id: match.dire_team_id,
-                                        league_id: match.leagueid,
-                                        start_time: match.start_time
-                                    };
+                                upsert(trx, 'fetch_team_match', tm, {
+                                    match_id: tm.match_id,
+                                    team_id: tm.team_id
+                                }, cb);
+                            }
+                            else
+                                return cb();
+                       }
 
-                                    upsert(trx, 'fetch_team_match', tm, {
-                                        match_id: tm.match_id,
-                                        team_id: tm.team_id
-                                    }, cb);
-                                }
-                                else
-                                    return cb();
-                           }
-                    }
-                    else {
-                        return cb();
-                    }
+                       function upsertDire(cb)
+                       {
+                            if (match.dire_team_id) {
+                                var tm = {
+                                    match_id: match.match_id,
+                                    team_id: match.dire_team_id,
+                                    league_id: match.leagueid ? match.leagueid : -1,
+                                    start_time: match.start_time ? match.start_time : 0
+                                };
+
+                                upsert(trx, 'fetch_team_match', tm, {
+                                    match_id: tm.match_id,
+                                    team_id: tm.team_id
+                                }, cb);
+                            }
+                            else
+                                return cb();
+                       }
+                   
                 });
            }
 
@@ -811,7 +810,7 @@ function getTeamFetchedMatches(db, payload, cb)
     }).leftJoin('league_info', 'fetch_team_match.league_id', 'league_info.league_id')
     .leftJoin('matches', 'matches.match_id', 'fetch_team_match.match_id')
     .whereNotNull('fetch_team_match.start_time')
-    .where('fetch_team_match.start_time', '>', 1470009600)
+    //.where('fetch_team_match.start_time', '>', 1470009600)
     .orderByRaw('fetch_team_match.start_time desc').asCallback(function(err, result) {
         if (err) {
             console.error(err);
