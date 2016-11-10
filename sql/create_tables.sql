@@ -250,3 +250,60 @@ CREATE TABLE league_info (
     league_url varchar(255),
     start_time bigint
 );
+
+
+CREATE TABLE team_position_info(
+  team_id bigint,
+  position_id integer,
+  PRIMARY KEY (team_id, position_id),
+  account_id bigint,
+  steamid bigint
+);
+
+CREATE OR REPLACE FUNCTION cacuclate_kills(json[]) RETURNS integer AS $$
+ DECLARE
+       index integer := 1;
+       time integer := 0;
+       length2 integer := array_length($1, 1);
+    BEGIN
+       while index <= length2 LOOP
+			 IF ($1[index]->>'time')::int < 600 THEN
+        time := time + 1;
+       END IF;
+
+       index := index + 1;
+			 END LOOP;
+			 RETURN time;
+    END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION cacuclate_enmy_gold(value INTEGER, match_ids BIGINT, account_ids BIGINT, indexs INTEGER) RETURNS integer AS $$
+    DECLARE
+       enemy_account BIGINT := 0;
+       enemy RECORD;
+       results INTEGER := 0;
+	   player_position INTEGER :=0;
+    BEGIN
+      SELECT position_id INTO player_position from team_position_info WHERE team_position_info.account_id=account_ids;
+      IF player_position in (1,2,3) THEN
+        SELECT gold_t[7] as gold, lh_t[7] as lh, xp_t[7] as xp INTO enemy FROM player_matches WHERE player_matches.match_id=match_ids AND player_matches.account_id <> account_ids AND player_matches.account_id IN (SELECT account_id from team_position_info WHERE team_position_info.position_id=player_position);
+
+
+		IF indexs=1 THEN
+		  results := value - enemy.gold;
+		ELSIF indexs=2  THEN
+		  results := value - enemy.lh;
+		ELSIF indexs=3 THEN
+		  results := value - enemy.xp;
+		ELSE
+		  results :=0;
+		END IF;
+	  ELSE
+	  END IF;
+
+
+
+	  RETURN results;
+    END;
+$$ LANGUAGE plpgsql;
+

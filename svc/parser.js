@@ -255,7 +255,7 @@ function runParse(match, job, cb)
     var timeout = setTimeout(function()
     {
         exit('timeout');
-    }, 300000);
+    }, 1800000);
 
     var full_url = match.url;
     // Streams

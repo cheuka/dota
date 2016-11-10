@@ -17,7 +17,7 @@ module.exports = function(db, cb) {
     var timeout = setTimeout(function() {
         console.log('exit');
         process.exit(-1);
-    }, 2000*1000);
+    }, 900*1000);
 
     console.time('buildLeague');
 

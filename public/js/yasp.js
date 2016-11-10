@@ -12,7 +12,6 @@ require('../../node_modules/select2/dist/css/select2.css');
 require('../../node_modules/select2-bootstrap-theme/dist/select2-bootstrap.css');
 require('../css/flaticon.css');
 require('../css/yasp.css');
-require('../css/jquery-ui.min.css');
 require('./ga.js');
 require('jquery');
 //require('datatables.net');
@@ -39,7 +38,6 @@ require('./util.js');
 require('./resize.js');
 require('./requestForm.js');
 require('./queryForm.js');
-require('./jquery-ui.min.js');
 window.constants = {
     player_colors: require('../../json/player_colors.json')
 };

@@ -220,7 +220,8 @@ function insertMatch(db, redis, match, options, cb)
                 "pm": upsertPlayerMatch,
                 "p": upsertPlayer,
                 "pb": upsertPickbans,
-                "tm": upsertTeamMatch
+                "tm": upsertTeamMatch,
+                "ftm": upsertFetchTeamMatch,
             }, exit);
 
             function upsertMatches(cb)
@@ -438,6 +439,69 @@ function insertMatch(db, redis, match, options, cb)
 						return cb();
 					}
 				}
+           }
+
+           function upsertFetchTeamMatch(cb)
+           {
+                db.table('fetch_team_match').select('*')
+                .where('match_id', match.match_id)
+                .asCallback(function(err, result) {
+                    if (err || (result && result.length > 0) ) {
+                        return cb();
+                    }
+
+                    // rxu, this is for manually fetched case
+                    // if the api is not working, we have to 
+                    // download the dem ourself
+                    if (!result || result.length == 0) {
+                        async.series(
+                           {
+                               'r': upsertRadiant,
+                               'd': upsertDire,
+                           }, cb);
+
+                           function upsertRadiant(cb)
+                           {
+                                if (match.radiant_team_id) {
+                                    var tm = {
+                                        match_id: match.match_id,
+                                        team_id: match.radiant_team_id,
+                                        league_id: match.leagueid,
+                                        start_time: match.start_time
+                                    };
+
+                                    upsert(trx, 'fetch_team_match', tm, {
+                                        match_id: tm.match_id,
+                                        team_id: tm.team_id
+                                    }, cb);
+                                }
+                                else
+                                    return cb();
+                           }
+
+                           function upsertDire(cb)
+                           {
+                                if (match.dire_team_id) {
+                                    var tm = {
+                                        match_id: match.match_id,
+                                        team_id: match.dire_team_id,
+                                        league_id: match.leagueid,
+                                        start_time: match.start_time
+                                    };
+
+                                    upsert(trx, 'fetch_team_match', tm, {
+                                        match_id: tm.match_id,
+                                        team_id: tm.team_id
+                                    }, cb);
+                                }
+                                else
+                                    return cb();
+                           }
+                    }
+                    else {
+                        return cb();
+                    }
+                });
            }
 
            function exit(err)
@@ -745,7 +809,7 @@ function getTeamFetchedMatches(db, payload, cb)
         'team_id': payload.team_id,
         //'is_fetched': true
     }).leftJoin('league_info', 'fetch_team_match.league_id', 'league_info.league_id')
-    .innerJoin('matches', 'matches.match_id', 'fetch_team_match.match_id')
+    .leftJoin('matches', 'matches.match_id', 'fetch_team_match.match_id')
     .whereNotNull('fetch_team_match.start_time')
     .where('fetch_team_match.start_time', '>', 1470009600)
     .orderByRaw('fetch_team_match.start_time desc').asCallback(function(err, result) {
@@ -831,13 +895,19 @@ function getMantaParseData(db, payload, cb)
         .avg('vision_killed as av_vision_kill')
         .avg('runes_total as av_runes')
         .avg('purchase_dust')
-        .avg('apm as av_apm')
+        .max('team_position_info.position_id as position_id')
+        .select(db.raw('max(case when (player_matches.teamnumber % 2) = 0 then matches.upload::json->>? else matches.upload::json->>? end) as team_name', ['radiant_team_name','dire_team_name']))
+        .avg('apm as av_apm').avg('lh_t[7] as av_lh').avg('gold_t[7] as av_gold_t').avg('xp_t[7] as av_xp_t').select(db.raw('avg(cacuclate_kills(kills_log)) as av_kill_t'))
+        .select(db.raw('avg(cacuclate_enmy_gold(gold_t[7], player_matches.match_id, player_matches.account_id,1)) as av_gold_compare_enemy_t'))
+        .select(db.raw('avg(cacuclate_enmy_gold(xp_t[7], player_matches.match_id, player_matches.account_id,3)) as av_xp_compare_enemy_t'))
+        .select(db.raw('avg(cacuclate_enmy_gold(lh_t[7], player_matches.match_id, player_matches.account_id,2)) as av_lh_compare_enemy_t'))
         .sum('power_treads_usetimes as sum_power_treads_usetimes')
         .select(db.raw('count (case when power_treads_buytime > 0 then 1 end) as power_treads_buytimes'))
         .select(db.raw('sum( cast(?? as float) * 60 / cast(?? - ?? as float)) as sum_pt_uspermin',["power_treads_usetimes", "duration", "power_treads_buytime"]))
         .select(db.raw('count (case when iswin then 1 end) as win_times'))
         .select(db.raw('max (coalesce(player_info.personaname, ?)) as player_name', 'anonymous'))
         .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+        .leftJoin('team_position_info', 'team_position_info.account_id', 'player_matches.account_id')
         .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
         .where('create_total_damages', '>', '0')
         .where('matches.leagueid', payload.league_id)
@@ -879,10 +949,17 @@ function getMantaParseData(db, payload, cb)
         .avg('vision_killed as av_vision_kill')
         .avg('runes_total as av_runes')
         .avg('purchase_dust')
-        .avg('apm as av_apm')
+        .max('team_position_info.position_id as position_id')
+        .avg('apm as av_apm').avg('lh_t[7] as av_lh').avg('gold_t[7] as av_gold_t').avg('xp_t[7] as av_xp_t').select(db.raw('avg(cacuclate_kills(kills_log)) as av_kill_t'))
+        .select(db.raw('avg(cacuclate_enmy_gold(gold_t[7], player_matches.match_id, player_matches.account_id,1)) as av_gold_compare_enemy_t'))
+        .select(db.raw('avg(cacuclate_enmy_gold(xp_t[7], player_matches.match_id, player_matches.account_id,3)) as av_xp_compare_enemy_t'))
+        .select(db.raw('avg(cacuclate_enmy_gold(lh_t[7], player_matches.match_id, player_matches.account_id,2)) as av_lh_compare_enemy_t'))
         .select(db.raw('count (case when iswin then 1 end) as win_times'))
         .select(db.raw('max (coalesce(player_info.personaname, ?)) as player_name', 'anonymous'))
+        .select(db.raw('string_agg( (case when iswin then ?? end)::text, ?) as win_id', ["matches.match_id", ";"]))
+        .select(db.raw('string_agg( (case when not iswin then ?? end)::text, ?) as lose_id', ["matches.match_id", ";"]))
         .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+        .leftJoin('team_position_info', 'team_position_info.account_id', 'player_matches.account_id')
         .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
         .where('create_total_damages', '>', '0')
         .where('player_matches.account_id', '=', payload.player_account_id)
@@ -922,13 +999,19 @@ function getMantaParseData(db, payload, cb)
         .avg('vision_killed as av_vision_kill')
         .avg('runes_total as av_runes')
         .avg('purchase_dust')
-        .avg('apm as av_apm')
+        .max('team_position_info.position_id as position_id')
+        .select(db.raw('max(case when (player_matches.teamnumber % 2) = 0 then matches.upload::json->>? else matches.upload::json->>? end) as team_name', ['radiant_team_name','dire_team_name']))
+        .avg('apm as av_apm').avg('lh_t[7] as av_lh').avg('gold_t[7] as av_gold_t').avg('xp_t[7] as av_xp_t').select(db.raw('avg(cacuclate_kills(kills_log)) as av_kill_t'))
+        .select(db.raw('avg(cacuclate_enmy_gold(gold_t[7], player_matches.match_id, player_matches.account_id,1)) as av_gold_compare_enemy_t'))
+        .select(db.raw('avg(cacuclate_enmy_gold(xp_t[7], player_matches.match_id, player_matches.account_id,3)) as av_xp_compare_enemy_t'))
+        .select(db.raw('avg(cacuclate_enmy_gold(lh_t[7], player_matches.match_id, player_matches.account_id,2)) as av_lh_compare_enemy_t'))
         .sum('power_treads_usetimes as sum_power_treads_usetimes')
         .select(db.raw('count (case when power_treads_buytime > 0 then 1 end) as power_treads_buytimes'))
         .select(db.raw('sum( cast(?? as float) * 60 / cast(?? - ?? as float)) as sum_pt_uspermin',["power_treads_usetimes", "duration", "power_treads_buytime"]))
         .select(db.raw('count (case when iswin then 1 end) as win_times'))
         .select(db.raw('max (coalesce(player_info.personaname, ?)) as player_name', 'anonymous'))
         .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+        .leftJoin('team_position_info', 'team_position_info.account_id', 'player_matches.account_id')
         .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
         .where('create_total_damages', '>', '0')
         .where(db.raw('matches.start_time > ?', st))
@@ -984,7 +1067,8 @@ function getHeroAnalysisData(db, payload, cb)
         .avg('vision_bought as av_vision_bought')
         .avg('vision_killed as av_vision_kill')
         .avg('runes_total as av_runes')
-        .avg('purchase_dust')
+        .select(db.raw('max(case when (player_matches.teamnumber % 2) = 0 then matches.upload::json->>? else matches.upload::json->>? end) as team_name', ['radiant_team_name','dire_team_name']))
+        .avg('purchase_dust').avg('lh_t[7] as av_lh').avg('gold_t[7] as av_gold_t').avg('xp_t[7] as av_xp_t').select(db.raw('avg(cacuclate_kills(kills_log)) as av_kill_t')).select(db.raw('avg(cacuclate_enmy_gold(gold_t[7], player_matches.match_id, player_matches.account_id,1)) as av_gold_compare_enemy_t'))
         .select(db.raw('string_agg( (case when iswin then ?? end)::text, ?) as win_id', ["matches.match_id", ";"]))
         .select(db.raw('string_agg( (case when not iswin then ?? end)::text, ?) as lose_id', ["matches.match_id", ";"]))
         //.avg('apm as av_apm')
@@ -1060,7 +1144,7 @@ function getTeamPlayers(db, payload, cb)
                         return next(err);
                     }
 
-                    if (result2.length == 0) {
+                    if (result2.length == 0 || (result2.length > 0 && !result2[0].player_name) ) {
                         return next();
                     }
                     else {
@@ -1080,7 +1164,7 @@ function getTeamPlayers(db, payload, cb)
                         return next(err);
                     }
 
-                    if (result2.length == 0) {
+                   if (result2.length == 0 || (result2.length > 0 && !result2[0].player_name) ) {
                         return next();
                     }
                     else {
