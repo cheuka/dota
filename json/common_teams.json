@@ -29,6 +29,10 @@
 			"team_id": 2581813
 		},
 		{
+			"name": "Faceless",
+			"team_id": 3326875
+		},
+		{
 			"name": "Fnatic",
 			"team_id": 350190
 		},
@@ -75,6 +79,10 @@
 		{
 			"name": "Newbee.Young",
 			"team_id": 1951061
+		},
+		{
+			"name": "NP",
+			"team_id": 3214108
 		},
 		{
 			"name": "No Diggity!",
@@ -223,6 +231,14 @@
 		{
 			"name": "WG",
 			"team_id": 2659468
+		},
+		{
+			"name": "Fire Dragoon",
+			"team_id": 2880140
+		},
+		{
+			"name": "90s gaming",
+			"team_id": 3325891
 		}
 	]
 }
