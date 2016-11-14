@@ -307,3 +307,63 @@ CREATE OR REPLACE FUNCTION cacuclate_enmy_gold(value INTEGER, match_ids BIGINT, 
     END;
 $$ LANGUAGE plpgsql;
 
+CREATE OR REPLACE FUNCTION cacuclate_rate(INTEGER, INTEGER, BIGINT, BIGINT, INTEGER) RETURNS FLOAT AS $$
+    DECLARE
+       value integer := 0;  
+			 users_rec RECORD;
+
+    BEGIN
+      SELECT sum(create_deadly_damages) as t1, sum(consumedamage) as t2, sum(create_deadly_stiff_control) as t3, sum(tower_damage) as t4, sum(unrrpm) as t5 INTO users_rec FROM player_matches WHERE match_id=$3 and abs(player_slot - $1) < 5;
+      IF $5=1 THEN
+        value := users_rec.t1;
+			ELSIF $5=2  THEN
+        value := users_rec.t2;
+			ELSIF $5=3 THEN
+        value := users_rec.t3;
+			ELSIF $5=4 THEN
+        value := users_rec.t4;
+			ELSIF $5=5 THEN
+        value := users_rec.t5;
+			ELSE
+        value :=0;
+			END IF;  			
+
+			IF value < 1 THEN
+        RETURN 0;
+			ELSE
+        RETURN ($2::FLOAT / value);
+			END IF;
+			
+    END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION cacuclate_rate(INTEGER, REAL, BIGINT, BIGINT, INTEGER) RETURNS REAL AS $$
+    DECLARE
+       value REAL := 0;  
+			 users_rec RECORD;
+
+    BEGIN
+      SELECT sum(create_deadly_damages) as t1, sum(consumedamage) as t2, sum(create_deadly_stiff_control) as t3, sum(tower_damage) as t4, sum(unrrpm) as t5 INTO users_rec FROM player_matches WHERE match_id=$3 and abs(player_slot - $1) < 5;
+      IF $5=1 THEN
+        value := users_rec.t1;
+			ELSIF $5=2  THEN
+        value := users_rec.t2;
+			ELSIF $5=3 THEN
+        value := users_rec.t3;
+			ELSIF $5=4 THEN
+        value := users_rec.t4;
+			ELSIF $5=5 THEN
+        value := users_rec.t5;
+			ELSE
+        value :=0;
+			END IF;  			
+
+			IF value < 1 THEN
+        RETURN 0;
+			ELSE
+        RETURN ($2 / value);
+			END IF;
+			
+    END;
+$$ LANGUAGE plpgsql;
+

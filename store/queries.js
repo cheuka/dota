@@ -834,24 +834,79 @@ function getTeamMatchInfo(db, payload, cb)
     if (payload.ed) {
         ed = payload.ed;
     }
+	
+    var teamResult = {};
+    var error = false;
+	db.table('player_matches').count('* as num_played')
+        .avg('hero_healing as av_healing')
+		.avg('tower_damage as av_td')
+        .avg('create_deadly_damages as av_create_deadly_damages')
+        .avg('create_deadly_stiff_control as av_create_deadly_stiff_control')
+        .avg('rgpm as av_rgpm')
+        .avg('unrrpm as av_unrrpm')
+        .avg('killherogold as av_killherogold')
+        .avg('fedenemygold as av_fedenemygold')
+        .select(db.raw('avg(case when iswin then create_deadly_damages end) as win_deadly_damager'))
+        .select(db.raw('avg(case when iswin then hero_healing end) as win_hero_healing'))
+        .select(db.raw('avg(case when iswin then tower_damage end) as win_tower_damage'))
+        .select(db.raw('avg(case when iswin then create_deadly_stiff_control end) as win_create_deadly_stiff_control'))
+        .select(db.raw('avg(case when iswin then unrrpm end) as win_unrrpm'))
+        .select(db.raw('avg(case when iswin then killherogold end) as win_killherogold'))
+        .select(db.raw('avg(case when iswin then fedenemygold end) as win_fedenemygold'))
 
-    db.table('fetch_team_match').select(['fetch_team_match.*', 'league_info.league_url', 'league_info.league_name', 'matches.radiant_team_id', 'matches.dire_team_id', 'matches.radiant_win']).where({
-        'team_id': payload.team_id,
-        //'is_fetched': true
-    }).leftJoin('league_info', 'fetch_team_match.league_id', 'league_info.league_id')
-    .innerJoin('matches', 'matches.match_id', 'fetch_team_match.match_id')
-    .whereNotNull('fetch_team_match.start_time')
-    .where('fetch_team_match.start_time', '>', 1470009600)
-    .where(db.raw('matches.start_time > ?', st))
-    .where(db.raw('matches.start_time < ?', ed))
-    .orderByRaw('fetch_team_match.start_time desc').asCallback(function(err, result) {
-        if (err) {
-            console.error(err);
-            return cb('query failed');
-        }
-        //console.log(JSON.stringify(result));
-        return cb(null, result);
-    });
+        .select(db.raw('avg(case when iswin then cacuclate_rate(player_slot, create_deadly_damages, player_matches.match_id, player_matches.account_id, 1) end) as win_deadly_damager_rate'))
+        .select(db.raw('avg(case when iswin then cacuclate_rate(player_slot, create_deadly_stiff_control, player_matches.match_id, player_matches.account_id, 3) end) as win_deadly_stiff_control_rate'))
+        .select(db.raw('avg(case when iswin then cacuclate_rate(player_slot, unrrpm, player_matches.match_id, player_matches.account_id, 5) end) as win_unrrpm_rate'))
+
+        .select(db.raw('avg(case when not iswin then create_deadly_damages end) as lose_deadly_damager'))
+        .select(db.raw('avg(case when not iswin then hero_healing end) as lose_hero_healing'))
+        .select(db.raw('avg(case when not iswin then tower_damage end) as lose_tower_damage'))
+        .select(db.raw('avg(case when not iswin then create_deadly_stiff_control end) as lose_create_deadly_stiff_control'))
+        .select(db.raw('avg(case when not iswin then unrrpm end) as lose_unrrpm'))
+        .select(db.raw('avg(case when not iswin then killherogold end) as lose_killherogold'))
+        .select(db.raw('avg(case when not iswin then fedenemygold end) as lose_fedenemygold'))
+
+        .select(db.raw('avg(case when not iswin then cacuclate_rate(player_slot, create_deadly_damages, player_matches.match_id, player_matches.account_id, 1) end) as lose_deadly_damager_rate'))
+        .select(db.raw('avg(case when not iswin then cacuclate_rate(player_slot, create_deadly_stiff_control, player_matches.match_id, player_matches.account_id, 3) end) as lose_deadly_stiff_control_rate'))
+        .select(db.raw('avg(case when not iswin then cacuclate_rate(player_slot, unrrpm, player_matches.match_id, player_matches.account_id, 5) end) as lose_unrrpm_rate'))
+
+        .max('team_position_info.position_id as position_id')
+        .max('team_position_info.team_id as team_id')
+
+        .select(db.raw('max (coalesce(player_info.personaname, ?)) as player_name', 'anonymous'))
+        .leftJoin('player_info', 'player_matches.steamid', 'player_info.steamid')
+        .leftJoin('team_position_info', 'team_position_info.account_id', 'player_matches.account_id')
+        .innerJoin('matches', 'matches.match_id', 'player_matches.match_id')
+        .where('create_total_damages', '>', '0')
+        .where('team_position_info.team_id', payload.team_id)
+        .where(db.raw('matches.start_time > ?', st))
+        .where(db.raw('matches.start_time < ?', ed))
+        .groupBy('player_matches.account_id')
+        .orderBy('position_id', 'asc')
+        .asCallback(function(err, result) {
+            if (err) {
+                console.error(err);
+            }
+			teamResult.player = result;
+            db.table('fetch_team_match').select(['fetch_team_match.*', 'league_info.league_url', 'league_info.league_name', 'matches.radiant_team_id', 'matches.dire_team_id', 'matches.radiant_win', 'matches.duration']).where({
+                'team_id': payload.team_id,
+                //'is_fetched': true
+            }).leftJoin('league_info', 'fetch_team_match.league_id', 'league_info.league_id')
+                .innerJoin('matches', 'matches.match_id', 'fetch_team_match.match_id')
+                .whereNotNull('fetch_team_match.start_time')
+                .where('fetch_team_match.start_time', '>', 1470009600)
+                .where(db.raw('matches.start_time > ?', st))
+                .where(db.raw('matches.start_time < ?', ed))
+                .orderByRaw('fetch_team_match.start_time desc').asCallback(function(err, result) {
+                if (err) {
+                    console.error(err);
+                    return cb('query failed');
+                }
+                //console.log(JSON.stringify(result));
+                teamResult.team = result
+                return cb(null, teamResult);
+            });
+        }); 
 }
 
 

@@ -77,6 +77,8 @@ if user
         - var win_times = 0;
         - var radiant_win_times = 0;
         - var radiant_played_times = 0;
+        - var win_duration = 0;
+        - var lose_duration = 0;
         each val in team_match_info
           if val.radiant_win && team_id == val.radiant_team_id
             - radiant_win_times += 1;
@@ -84,35 +86,56 @@ if user
             - radiant_played_times += 1;
           if val.radiant_win && team_id == val.radiant_team_id || !val.radiant_win && team_id == val.dire_team_id
             - win_times += 1;
+            - win_duration += val.duration;
+          else
+            - lose_duration += val.duration;
 
 
-        table.table.table-striped.table-condensed.rankable#team_match_info
-          thead
-            tr
-              th 比赛总场数
-              th 胜利
-              th 失败
-              th 天辉
-              th 天辉胜率 %
-              th 夜魇
-              th 夜魇胜率 %
-          tbody
-            tr
-              td= team_match_info.length
-              td= win_times
-              td= team_match_info.length - win_times
-              td= radiant_played_times
-              if radiant_played_times > 0
-                td= Math.round(100*radiant_win_times/radiant_played_times)
-              else
-                td -
-              td= team_match_info.length - radiant_played_times
-              if team_match_info.length - radiant_played_times > 0
-                td= Math.round(100*(win_times - radiant_win_times) / (team_match_info.length - radiant_played_times))
-              else
-                td -
+        h4 比赛场数: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp#{team_match_info.length}场
+        h4 膀胱偏好: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp#{win_times}场胜利平均时长#{moment().startOf('day').seconds(win_duration / win_times).format("m分ss秒")}；#{team_match_info.length - win_times}场失败平均时长#{ moment().startOf('day').seconds(lose_duration / (team_match_info.length - win_times)).format("m分ss秒")}
+        h4 阵营偏好: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp#{radiant_played_times}场天辉, 胜率#{Math.round(100*radiant_win_times/radiant_played_times)}%; #{team_match_info.length - radiant_played_times}场夜魇, 胜率#{Math.round(100*(win_times - radiant_win_times) / (team_match_info.length - radiant_played_times))}%
+        //h4 对线能力: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp#{team_match_info.length}场
       else
           h3.same_line No Team Selected!
+
+    if team_player_info
+        table.table.table-striped.table-condensed.rankable#team_play_info
+            thead
+                th 选手
+                th 占用资源
+                th 致死输出
+                th 致死控制
+                th 战斗净收益
+                th 推塔伤害
+                th 回复量
+            tbody
+                each entry in team_player_info
+                    tr
+                        td #{entry.player_name}
+                        td 
+                            div
+                                p win: #{Math.round(entry.win_unrrpm)}(#{Math.round(entry.win_unrrpm_rate * 100)}%)
+                                p lose: #{Math.round(entry.lose_unrrpm)}(#{Math.round(entry.lose_unrrpm_rate * 100)}%)
+                        td 
+                            div
+                                p win: #{Math.round(entry.win_deadly_damager)}(#{Math.round(entry.win_deadly_damager_rate * 100)}%)   
+                                p lose: #{Math.round(entry.lose_deadly_damager)}(#{Math.round(entry.lose_deadly_damager_rate * 100)}%)
+                        td 
+                            div
+                                p win: #{Math.round(entry.win_create_deadly_stiff_control)}(#{Math.round(entry.win_deadly_stiff_control_rate * 100)}%)
+                                p lose: #{Math.round(entry.lose_create_deadly_stiff_control)}(#{Math.round(entry.lose_deadly_stiff_control_rate * 100)}%)
+                        td 
+                            div
+                                p win: #{Math.round(entry.win_killherogold - entry.win_fedenemygold)}
+                                p lose: #{Math.round(entry.lose_killherogold - entry.lose_fedenemygold)}
+                        td 
+                            div
+                                p win: #{Math.round(entry.win_tower_damage)}
+                                p lose: #{Math.round(entry.lose_tower_damage)}
+                        td 
+                            div
+                                p win: #{Math.round(entry.win_hero_healing)}
+                                p lose: #{Math.round(entry.lose_hero_healing)}
 
 
 
