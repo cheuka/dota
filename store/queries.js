@@ -888,7 +888,7 @@ function getTeamMatchInfo(db, payload, cb)
                 console.error(err);
             }
 			teamResult.player = result;
-            db.table('fetch_team_match').select(['fetch_team_match.*', 'league_info.league_url', 'league_info.league_name', 'matches.radiant_team_id', 'matches.dire_team_id', 'matches.radiant_win', 'matches.duration']).where({
+            db.table('fetch_team_match').select(['fetch_team_match.*', 'league_info.league_url', 'league_info.league_name', 'matches.radiant_team_id', 'matches.dire_team_id', 'matches.radiant_win', 'matches.duration', 'matches.radiant_gold_adv[7] as gold_t']).where({
                 'team_id': payload.team_id,
                 //'is_fetched': true
             }).leftJoin('league_info', 'fetch_team_match.league_id', 'league_info.league_id')

@@ -79,22 +79,31 @@ if user
         - var radiant_played_times = 0;
         - var win_duration = 0;
         - var lose_duration = 0;
+        - var gold_adv_t_times = 0;
+        - var gold_adv_win_times = 0;
+        - var gold_dis_adv_win_times = 0;
         each val in team_match_info
           if val.radiant_win && team_id == val.radiant_team_id
             - radiant_win_times += 1;
           if team_id == val.radiant_team_id
             - radiant_played_times += 1;
-          if val.radiant_win && team_id == val.radiant_team_id || !val.radiant_win && team_id == val.dire_team_id
+          if (val.radiant_win && team_id == val.radiant_team_id) || (!val.radiant_win && team_id == val.dire_team_id)
             - win_times += 1;
             - win_duration += val.duration;
           else
             - lose_duration += val.duration;
-
+          if  (val.gold_t > 0 && team_id == val.radiant_team_id) || (val.gold_t < 0 && team_id == val.dire_team_id)
+            - gold_adv_t_times += 1;
+            if (val.radiant_win && team_id == val.radiant_team_id) || (!val.radiant_win && team_id == val.dire_team_id)
+              - gold_adv_win_times += 1;  
+          else
+            if (val.radiant_win && team_id == val.radiant_team_id) || (!val.radiant_win && team_id == val.dire_team_id)
+              - gold_dis_adv_win_times += 1;
 
         h4 比赛场数: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp#{team_match_info.length}场
         h4 膀胱偏好: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp#{win_times}场胜利平均时长#{moment().startOf('day').seconds(win_duration / win_times).format("m分ss秒")}；#{team_match_info.length - win_times}场失败平均时长#{ moment().startOf('day').seconds(lose_duration / (team_match_info.length - win_times)).format("m分ss秒")}
         h4 阵营偏好: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp#{radiant_played_times}场天辉, 胜率#{Math.round(100*radiant_win_times/radiant_played_times)}%; #{team_match_info.length - radiant_played_times}场夜魇, 胜率#{Math.round(100*(win_times - radiant_win_times) / (team_match_info.length - radiant_played_times))}%
-        //h4 对线能力: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp#{team_match_info.length}场
+        h4 对线能力: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp#{gold_adv_t_times}场对线期优势，胜率#{Math.round(100*gold_adv_win_times/gold_adv_t_times)}%；#{team_match_info.length - gold_adv_t_times}场对线期劣势，胜率#{Math.round(100*gold_dis_adv_win_times/(team_match_info.length - gold_adv_t_times))}%
       else
           h3.same_line No Team Selected!
 
@@ -102,12 +111,12 @@ if user
         table.table.table-striped.table-condensed.rankable#team_play_info
             thead
                 th 选手
-                th 占用资源
-                th 致死输出
-                th 致死控制
-                th 战斗净收益
-                th 推塔伤害
-                th 回复量
+                th: abbr(title=tooltips.URGPM) 占用资源
+                th: abbr(title=tooltips.death_damage) 致死输出
+                th: abbr(title=tooltips.death_control) 致死控制
+                th: abbr(title=tooltips.combat_cne) 战斗净收益
+                th: abbr(title=tooltips.tower_damage_cn) 推塔伤害
+                th: abbr(title=tooltips.hero_heal_cn) 回复量
             tbody
                 each entry in team_player_info
                     tr
