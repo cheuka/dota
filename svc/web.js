@@ -488,7 +488,8 @@ app.get('/team_match_info/:team_id?', function(req, res, cb)
                 user: req.session.user,
                 home: false,
                 team_id: req.params.team_id,
-                team_match_info: result,
+                team_match_info: result.team,
+                team_player_info: result.player,
                 st: req.query.st,
                 ed: req.query.ed
             });
