@@ -255,8 +255,8 @@ CREATE TABLE league_info (
 CREATE TABLE team_position_info(
   team_id bigint,
   position_id integer,
-  PRIMARY KEY (team_id, position_id),
   account_id bigint,
+  PRIMARY KEY (team_id, position_id, account_id),
   steamid bigint
 );
 
