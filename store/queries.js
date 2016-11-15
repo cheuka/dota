@@ -846,29 +846,34 @@ function getTeamMatchInfo(db, payload, cb)
         .avg('unrrpm as av_unrrpm')
         .avg('killherogold as av_killherogold')
         .avg('fedenemygold as av_fedenemygold')
-        .select(db.raw('avg(case when iswin then create_deadly_damages end) as win_deadly_damager'))
+        .avg('consumedamage as av_consumedamage')
+        .select(db.raw('avg(case when iswin then create_deadly_damages_per_death end) as win_deadly_damager'))
         .select(db.raw('avg(case when iswin then hero_healing end) as win_hero_healing'))
         .select(db.raw('avg(case when iswin then tower_damage end) as win_tower_damage'))
-        .select(db.raw('avg(case when iswin then create_deadly_stiff_control end) as win_create_deadly_stiff_control'))
+        .select(db.raw('avg(case when iswin then create_deadly_stiff_control_per_death end) as win_create_deadly_stiff_control'))
         .select(db.raw('avg(case when iswin then unrrpm end) as win_unrrpm'))
         .select(db.raw('avg(case when iswin then killherogold end) as win_killherogold'))
         .select(db.raw('avg(case when iswin then fedenemygold end) as win_fedenemygold'))
+        .select(db.raw('avg(case when iswin then consumedamage end) as win_consumedamage'))
 
         .select(db.raw('avg(case when iswin then cacuclate_rate(player_slot, create_deadly_damages, player_matches.match_id, player_matches.account_id, 1) end) as win_deadly_damager_rate'))
         .select(db.raw('avg(case when iswin then cacuclate_rate(player_slot, create_deadly_stiff_control, player_matches.match_id, player_matches.account_id, 3) end) as win_deadly_stiff_control_rate'))
         .select(db.raw('avg(case when iswin then cacuclate_rate(player_slot, unrrpm, player_matches.match_id, player_matches.account_id, 5) end) as win_unrrpm_rate'))
+        .select(db.raw('avg(case when iswin then cacuclate_rate(player_slot, consumedamage, player_matches.match_id, player_matches.account_id, 2) end) as win_consumedamage_rate'))
 
-        .select(db.raw('avg(case when not iswin then create_deadly_damages end) as lose_deadly_damager'))
+        .select(db.raw('avg(case when not iswin then create_deadly_damages_per_death end) as lose_deadly_damager'))
         .select(db.raw('avg(case when not iswin then hero_healing end) as lose_hero_healing'))
         .select(db.raw('avg(case when not iswin then tower_damage end) as lose_tower_damage'))
-        .select(db.raw('avg(case when not iswin then create_deadly_stiff_control end) as lose_create_deadly_stiff_control'))
+        .select(db.raw('avg(case when not iswin then create_deadly_stiff_control_per_death end) as lose_create_deadly_stiff_control'))
         .select(db.raw('avg(case when not iswin then unrrpm end) as lose_unrrpm'))
         .select(db.raw('avg(case when not iswin then killherogold end) as lose_killherogold'))
         .select(db.raw('avg(case when not iswin then fedenemygold end) as lose_fedenemygold'))
+        .select(db.raw('avg(case when not iswin then consumedamage end) as lose_consumedamage'))
 
         .select(db.raw('avg(case when not iswin then cacuclate_rate(player_slot, create_deadly_damages, player_matches.match_id, player_matches.account_id, 1) end) as lose_deadly_damager_rate'))
         .select(db.raw('avg(case when not iswin then cacuclate_rate(player_slot, create_deadly_stiff_control, player_matches.match_id, player_matches.account_id, 3) end) as lose_deadly_stiff_control_rate'))
         .select(db.raw('avg(case when not iswin then cacuclate_rate(player_slot, unrrpm, player_matches.match_id, player_matches.account_id, 5) end) as lose_unrrpm_rate'))
+        .select(db.raw('avg(case when not iswin then cacuclate_rate(player_slot, consumedamage, player_matches.match_id, player_matches.account_id, 2) end) as lose_consumedamage_rate'))
 
         .max('team_position_info.position_id as position_id')
         .max('team_position_info.team_id as team_id')
@@ -888,7 +893,7 @@ function getTeamMatchInfo(db, payload, cb)
                 console.error(err);
             }
 			teamResult.player = result;
-            db.table('fetch_team_match').select(['fetch_team_match.*', 'league_info.league_url', 'league_info.league_name', 'matches.radiant_team_id', 'matches.dire_team_id', 'matches.radiant_win', 'matches.duration']).where({
+            db.table('fetch_team_match').select(['fetch_team_match.*', 'league_info.league_url', 'league_info.league_name', 'matches.radiant_team_id', 'matches.dire_team_id', 'matches.radiant_win', 'matches.duration', 'matches.radiant_gold_adv[7] as gold_t']).where({
                 'team_id': payload.team_id,
                 //'is_fetched': true
             }).leftJoin('league_info', 'fetch_team_match.league_id', 'league_info.league_id')
