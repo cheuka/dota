@@ -114,6 +114,7 @@ if user
                 th: abbr(title=tooltips.URGPM) 占用资源
                 th: abbr(title=tooltips.death_damage) 致死输出
                 th: abbr(title=tooltips.death_control) 致死控制
+                th: abbr(title=tooltips.consume_damage) 消耗输出
                 th: abbr(title=tooltips.combat_cne) 战斗净收益
                 th: abbr(title=tooltips.tower_damage_cn) 推塔伤害
                 th: abbr(title=tooltips.hero_heal_cn) 回复量
@@ -123,16 +124,20 @@ if user
                         td #{entry.player_name}
                         td 
                             div
-                                p win: #{Math.round(entry.win_unrrpm)}(#{Math.round(entry.win_unrrpm_rate * 100)}%)
-                                p lose: #{Math.round(entry.lose_unrrpm)}(#{Math.round(entry.lose_unrrpm_rate * 100)}%)
+                                p win: #{Math.round(entry.win_unrrpm)}(#{Number(entry.win_unrrpm_rate * 100).toFixed(1)}%)
+                                p lose: #{Math.round(entry.lose_unrrpm)}(#{Number(entry.lose_unrrpm_rate * 100).toFixed(1)}%)
                         td 
                             div
-                                p win: #{Math.round(entry.win_deadly_damager)}(#{Math.round(entry.win_deadly_damager_rate * 100)}%)   
-                                p lose: #{Math.round(entry.lose_deadly_damager)}(#{Math.round(entry.lose_deadly_damager_rate * 100)}%)
+                                p win: #{Math.round(entry.win_deadly_damager)}(#{Number(entry.win_deadly_damager_rate * 100).toFixed(1)}%)   
+                                p lose: #{Math.round(entry.lose_deadly_damager)}(#{Number(entry.lose_deadly_damager_rate * 100).toFixed(1)}%)
                         td 
                             div
-                                p win: #{Math.round(entry.win_create_deadly_stiff_control)}(#{Math.round(entry.win_deadly_stiff_control_rate * 100)}%)
-                                p lose: #{Math.round(entry.lose_create_deadly_stiff_control)}(#{Math.round(entry.lose_deadly_stiff_control_rate * 100)}%)
+                                p win: #{Number(entry.win_create_deadly_stiff_control).toFixed(1)}(#{Number(entry.win_deadly_stiff_control_rate * 100).toFixed(1)}%)
+                                p lose: #{Number(entry.lose_create_deadly_stiff_control).toFixed(1)}(#{Number(entry.lose_deadly_stiff_control_rate * 100).toFixed(1)}%)
+                        td 
+                            div
+                                p win: #{Math.round(entry.win_consumedamage)}(#{Number(entry.win_consumedamage_rate * 100).toFixed(1)}%)
+                                p lose: #{Math.round(entry.lose_consumedamage)}(#{Number(entry.lose_consumedamage_rate * 100).toFixed(1)}%)
                         td 
                             div
                                 p win: #{Math.round(entry.win_killherogold - entry.win_fedenemygold)}
