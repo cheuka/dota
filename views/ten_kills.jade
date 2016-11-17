@@ -1,0 +1,129 @@
+extend layout
+
+block head
+
+  style.
+    #nav ul{text-align:left;border-bottom:1px solid #ccc; 
+    list-style-type:none;padding:10px 10px;}
+    #nav ul li{display:inline;}
+    #nav ul li a{font-weight:bold;border:1px solid #ccc; text-decoration:none;padding:10px 20px;border-bottom:none;margin-right:5px;margin-bottom:1px;background-color:#eee}
+    #nav ul li a.current{background-color:#fff;border-bottom:1px solid #fff;}
+    #nav ul li a:hover{color:#000;background-color:#eee;}
+
+    lis{
+            float:left;
+            list-style:none;
+            width:250px;
+            height:30px;
+            background:#eee;
+            text-align:center;
+            font-size:1em;
+            color:#2780e3;
+            vertical-align:middle;
+            line-height:30px;
+            margin-left:10px;
+        }
+
+    lis a{font-weight:bold;border:1px solid #ccc; text-decoration:none;background-color:#eee}
+
+    lis.active a{color:#000;background-color:#eee;}
+
+      .same_line{
+          float:left;
+          margin-left:20px;
+          margin-top:auto;
+          margin-bottom:auto;
+      }
+
+     .row{
+            margin-top:40px;
+      }
+
+  link(rel='stylesheet', href="/public/css/yasp_home.css")
+
+if user
+  block content
+    .row
+        h4.same_line  选择战队
+        select(onchange="window.location.href='/team_match_info/'+value")#team_select.same_line
+            option(value='0',selected='true')  Select a Team 
+            - for (var i = 0; i < constants.common_teams.length; ++i)
+              option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
+
+    .row
+        h4.same_line  选择对手
+        select(onchange="window.location.href='/team_match_info/'+value")#enemy_select.same_line
+            option(value='0',selected='true')  Select a Team 
+            - for (var i = 0; i < constants.common_teams.length; ++i)
+              option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
+
+    .row
+        h4.same_line 时间筛选
+        input(type='date', value='2016-09-18', onchange='selectTeamDate()')#team_start_time.same_line
+        h4.same_line to
+        input(type='date', onchange='selectTeamDate()')#team_end_time.same_line
+
+    .row
+        h4.same_line 十杀战绩
+
+
+    
+    table.table.table-striped.table-condensed#team_play_info
+        thead
+            th:  比赛ID
+            th:  比赛时间
+            th:  比赛结果
+            th:  对手
+
+        tbody
+  
+
+    .row
+        h4.same_line 任何想法，私信微博：
+        a(href='http://weibo.com/1677394097/profile?topnav=1&wvr=6')信仰数据
+    
+    .row
+        h4.same_line 不用微博，关注微信：
+    
+  append footer_assets
+    script.
+      var team_id_cnt = "#{team_id}";
+      var st_cnt = "#{st}";
+      var ed_cnt = "#{ed}";
+
+      function toTeamFetchPage() {
+        window.location.href='/team_fetch_match/'+team_id_cnt;
+      }
+      $(document).ready(function() {
+
+        if (team_id_cnt.length > 0) {
+            $('#team_select').val(team_id_cnt).selected = true;
+        }
+
+        if (st_cnt.length > 0) {
+                $('#team_start_time').val(moment.unix(Number(st_cnt)).format("YYYY-MM-DD"));
+        }
+
+        if (ed_cnt.length > 0) {
+            $('#team_end_time').val(moment.unix(Number(ed_cnt)).format("YYYY-MM-DD"));
+        }
+        
+        document.getElementById('team_end_time').valueAsDate = new Date();
+      });
+
+      function selectTeamDate() {
+          var start_time = $('#team_start_time').val();
+          var end_time = $('#team_end_time').val();
+          var team_id = $('#team_select').val();
+
+          var st = new Date(start_time).getTime() / 1000;
+          var ed = new Date(end_time).getTime() / 1000;
+
+          window.location.href='/team_match_info/'+team_id+'?st='+st+'&ed='+ed;
+      }
+    
+
+
+else
+  p Please log out and retry
+

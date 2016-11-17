@@ -187,7 +187,7 @@ app.use(function sessionAuth(req, res, next)
 	// lordstone: if not logged in, not allowed
 	if(!req.session || !req.session.user)
 	{
-		if(req.url=='/'|| req.url=='/register')
+		if(req.url=='/'|| req.url=='/register' || req.url=='/ten_kills')
 		{
 			next();
 		}
@@ -752,6 +752,14 @@ app.get('/single_player/:account_id?', function(req, res, cb)
     
 });
 
+app.get('/ten_kills', function(req, res, cb)
+{   
+    
+    res.render('ten_kills', {
+    });
+    
+    
+});
 
 
 app.get('/players_league', function(req, res, cb)
