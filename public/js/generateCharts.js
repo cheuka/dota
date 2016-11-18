@@ -136,3 +136,53 @@ function addTimefightsIcon(startTime) {
     svg.appendChild(svg_img);
 }
 
+windows.killWinRate = function killWinRate(rate){
+	var color_array = ["#FF0000", "#00FF00"];
+	var data1 = ['win', 20, 30];
+    var data2 = ['lose', 30, 40];
+    var xss = ['x', 'win ten kills', 'lose ten kills']
+	c3.generate({
+		bindto: '#chart_win_rate',
+		data: {
+			x: xss,
+			columns: [data1, data2, xss],
+			type: 'bar',
+			names: {
+				'data1': '赢比赛',
+				'data2': '输比赛'
+			}
+		},
+		color: color_array,
+	});
+
+    var chart = c3.generate({
+    data: {
+        columns: [
+            ['data1', 40, 20],
+            ['data2', 20, 10]
+        ],
+        names:{
+            data1: "win ten kills",
+            data2: "lose ten kills"
+        },
+        labels: true,
+        type: 'bar',
+        groups: [
+            ['data1', 'data2']
+        ]
+    },
+     axis: {
+            x: {
+                type: 'category',
+                categories: ["win game", "lose game"]
+            }
+        },
+    grid: {
+        y: {
+            lines: [{value:10}]
+        }
+    }
+
+});
+}
+
