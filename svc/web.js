@@ -785,6 +785,20 @@ app.get('/teamPlayers/:team_id?', function(req, res, cb)
     });
 });
 
+
+app.get('/tenKills', function(req, res, cb)
+{
+   queries.getTenKills(db, {
+       team_id: req.query.sid,
+       enemy_id: req.query.eid,
+       st: req.query.st,
+       ed: req.query.ed
+   }, function(err, result) {
+       console.error(err);
+       res.json(JSON.stringify(result));
+   })
+});
+
 app.get('/april/:year?', function(req, res, cb)
 {
     return res.render('plusplus',

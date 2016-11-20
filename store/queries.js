@@ -1754,6 +1754,114 @@ function insertMantaMatch2(db, redis, player_match, cb)
     }, cb);
 }
 
+
+
+function getTenKills(db, payload, cb)
+{
+    // define a large time range
+    var st = 0;
+    var ed = 9476438230;
+    var mid = -1;
+
+    if (payload.st) {
+        st = payload.st;
+    }
+
+    if (payload.ed) {
+        ed = payload.ed;
+    }
+
+    if (payload.enemy_id) {
+        mid = payload.enemy_id;
+    }
+
+
+
+    db.table('fetch_team_match')
+        .select(['fetch_team_match.*', 'matches.radiant_team_id', 'matches.dire_team_id', 'matches.radiant_win'])
+        .where({
+            'team_id': payload.team_id,
+            //'is_fetched': true
+        })
+        .leftJoin('matches', 'matches.match_id', 'fetch_team_match.match_id')
+        .whereNotNull('fetch_team_match.start_time')
+        .where(db.raw('matches.start_time > ?', st))
+        .where(db.raw('matches.start_time < ?', ed))
+        //.where('fetch_team_match.start_time', '>', 1470009600)
+        .orderByRaw('fetch_team_match.start_time desc').asCallback(function(err, result) {
+            if (err) {
+                console.error(err);
+                return cb('query failed');
+            }
+
+            var res = {
+                matches: []
+            }
+            async.eachSeries(result, function(match, next) {
+                var isRadiant = true;
+                if (match.dire_team_id === Number(payload.team_id)) {
+                    isRadiant = false;
+                }
+                //mid = -1 means no enemy team selected
+                if (Number(mid) !== -1) {
+                    var enemy = isRadiant ? match.dire_team_id : match.radiant_team_id;
+                    if (enemy != Number(mid))
+                        return next();
+                }
+
+                db.table('player_matches').select('kills_log', 'teamnumber').where({
+                        match_id: match.match_id
+                }).asCallback(function(err, result) {
+                    var radiant = [];
+                    var dire = [];
+                    if (!err && result.length > 0) {
+                        for (var i in result) {
+                            if ( (result[i].teamnumber % 2) == 0) {
+                                for (var j in result[i].kills_log)
+                                    radiant.push(result[i].kills_log[j].time);
+                            }
+                            else {
+                                for (var j in result[i].kills_log)
+                                    dire.push(result[i].kills_log[j].time);
+                            }
+                        }
+                        radiant.sort(function(a, b) {return Number(a) - Number(b);});
+                        dire.sort(function(a, b) {return Number(a) - Number(b);});
+
+                        var r_10kills_time = 10000000;
+                        var d_10kills_time = 10000000;
+                        if (radiant.length >= 10) {
+                            r_10kills_time = radiant[9];
+                        }
+                        if (dire.length >= 10) {
+                            d_10kills_time = dire[9];
+                        }
+
+                        if (r_10kills_time > d_10kills_time) {
+                            match.tenKills = 0;
+                        }
+                        else if (r_10kills_time === d_10kills_time && r_10kills_time == 10000000) {
+                            match.tenKills = -1;
+                        }
+                        else {
+                            match.tenKills = 1;
+                        }
+                        res.matches.push(match);
+                    }
+
+                    return next();
+                });
+
+
+            }, function(err) {
+                return cb(null, res);
+            });
+
+        });
+
+}
+
+
 module.exports = {
     getSets,
     insertPlayer,
@@ -1780,5 +1888,6 @@ module.exports = {
 	storeDem,
 	getDem,
 	insertMantaMatch,
-    insertMantaMatch2
+    insertMantaMatch2,
+    getTenKills
 };
