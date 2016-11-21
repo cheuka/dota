@@ -136,53 +136,45 @@ function addTimefightsIcon(startTime) {
     svg.appendChild(svg_img);
 }
 
-windows.killWinRate = function killWinRate(rate){
+window.killWinRate = function killWinRate(winTwinG, winTloseG, loseTwinG, loseTloseG){
 	var color_array = ["#FF0000", "#00FF00"];
-	var data1 = ['win', 20, 30];
-    var data2 = ['lose', 30, 40];
-    var xss = ['x', 'win ten kills', 'lose ten kills']
+    var data2 = ['lose', winTloseG, loseTloseG];
+	var data1 = ['win', winTwinG, loseTwinG];
+	var winTcount = winTwinG + winTloseG;
+    var loseTcount = loseTwinG + loseTloseG;
+    var winTwinRate = Math.round(winTwinG * 100 / winTcount);
+    var loseTwinRate = Math.round(loseTwinG * 100 / loseTcount);
 	c3.generate({
 		bindto: '#chart_win_rate',
 		data: {
-			x: xss,
-			columns: [data1, data2, xss],
+			columns: [data2, data1],
 			type: 'bar',
+            groups: [
+                ['lose', 'win']
+            ],
+            labels:true,
 			names: {
-				'data1': '赢比赛',
-				'data2': '输比赛'
+                'lose': '输比赛',
+                'win': '赢比赛'    
 			}
 		},
-		color: color_array,
-	});
-
-    var chart = c3.generate({
-    data: {
-        columns: [
-            ['data1', 40, 20],
-            ['data2', 20, 10]
-        ],
-        names:{
-            data1: "win ten kills",
-            data2: "lose ten kills"
-        },
-        labels: true,
-        type: 'bar',
-        groups: [
-            ['data1', 'data2']
-        ]
-    },
-     axis: {
+        
+        axis: {
             x: {
                 type: 'category',
-                categories: ["win game", "lose game"]
+                categories: ["赢十杀" + "  ( " +winTcount + "场,  " + winTwinRate + "%)", "输十杀" + "  ( " + loseTcount + "场,  " + loseTwinRate + "%)"]
             }
         },
-    grid: {
-        y: {
-            lines: [{value:10}]
+		color:{
+            pattern: color_array
+        },
+        grid: {
+            y: {
+                lines: [{value:10}]
+            }
         }
-    }
+	});
 
-});
+
 }
 

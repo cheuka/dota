@@ -10,7 +10,7 @@ block head
     #nav ul li a.current{background-color:#fff;border-bottom:1px solid #fff;}
     #nav ul li a:hover{color:#000;background-color:#eee;}
     #footer1 a{font-size:19px}
-    #footer1 {position: absolute; bottom: 0; clear:both;}
+    #footer1 {position: absolute; bottom: 60px; clear:both;}
 
 
     lis{
@@ -31,24 +31,86 @@ block head
 
     lis.active a{color:#000;background-color:#eee;}
 
-      .same_line{
+        .same_line{
           float:left;
           margin-left:20px;
           margin-top:auto;
           margin-bottom:auto;
-      }
+        }
 
-     .row{
-            margin-top:40px;
-      }
+        .row{
+          margin-top:20px;
+        }
 
   link(rel='stylesheet', href="/public/css/yasp_home.css")
+  script.
+        function getTenKills() {
+            var start_time = $('#team_start_time').val();
+            var end_time = $('#team_end_time').val();
+            var team_id = $('#team_select').val();
+
+            var st = new Date(start_time).getTime() / 1000;
+            var ed = new Date(end_time).getTime() / 1000;
+            $.getJSON('/tenKills?sid=' + team_id, function(response) {
+                //$('#chart_win_rate').html(response);
+                parseJson(response);
+            });
+        }
+
+        function parseJson(response) {
+            var matches = JSON.parse(response).matches;
+            var length = matches.length;
+            var winTloseG = 0;
+            var winTwinG = 0;
+            var loseTwinG = 0;
+            var loseTloseG = 0;
+            $('tbody').empty();
+            for (var i in matches){
+                var tenKillsResult = '';
+                var enemyId = (matches[i].team_id == matches[i].radiant_team_id? matches[i].dire_team_id : matches[i].radiant_team_id);
+                var enemyName = $('#team_select').find('option[value=' + enemyId + ']').text();
+                var duration = new Date().getTime() - new Date(matches[i].start_time).getTime();
+                var days = Math.floor(duration/(3600*24*1000));
+                var time = ''; 
+                if (days < 1){
+                    time = Math.floor(duration/(3600*1000)) + 'hours ago';
+                } else if (days > 0 && days < 31){
+                    time = days + 'days ago';
+                } else {
+                    time = 'A month or months ago';
+                }
+                if(matches[i].tenKills > 0){
+                    if((matches[i].team_id == matches[i].radiant_team_id && matches[i].radiant_win) || (matches[i].team_id != matches[i].radiant_team_id && !matches[i].radiant_win)) {
+                        winTwinG++;
+                        tenKillsResult = '赢十杀，赢比赛'
+                    } else {
+                        winTloseG++;
+                        tenKillsResult = '赢十杀，输比赛'
+                    }
+                }else{
+                    if((matches[i].team_id == matches[i].radiant_team_id && matches[i].radiant_win) || (matches[i].team_id != matches[i].radiant_team_id && !matches[i].radiant_win)) {
+                        loseTwinG++;
+                        tenKillsResult = '输十杀，赢比赛'
+                    } else {
+                        loseTloseG++;
+                        tenKillsResult = '输十杀，输比赛'
+                    }
+                }
+                
+                if ( i < 5){
+                    $('tbody').append("<tr><td>" + matches[i].match_id + "</td><td>" + time + "</td><td>" + tenKillsResult + "</td><td>" + enemyName + "</td></tr>");
+                }
+            }
+            killWinRate(winTwinG, winTloseG, loseTwinG, loseTloseG);
+
+        }
+    
 
 if user
   block content
     .row
         h4.same_line  选择战队
-        select(onchange="window.location.href='/team_match_info/'+value")#team_select.same_line
+        select(onchange='getTenKills()')#team_select.same_line
             option(value='0',selected='true')  Select a Team 
             - for (var i = 0; i < constants.common_teams.length; ++i)
               option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
@@ -61,10 +123,8 @@ if user
               option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
 
     .row
-        h4.same_line 时间筛选
+        h4.same_line 选择起点时间
         input(type='date', value='2016-09-18', onchange='selectTeamDate()')#team_start_time.same_line
-        h4.same_line to
-        input(type='date', onchange='selectTeamDate()')#team_end_time.same_line
 
     .row
         h4.same_line 十杀战绩
@@ -76,7 +136,7 @@ if user
 
 
     
-    table.table.table-striped.table-condensed#team_play_info
+    table.table.table-striped.table-condensed#match_info
         thead
             th:  比赛ID
             th:  比赛时间
@@ -88,50 +148,9 @@ if user
     #footer1
         .row
             h4.same_line 任何想法，私信微博：
-            a.same_line(href='http://weibo.com/1677394097/profile?topnav=1&wvr=6')信仰数据
-    
-        .row
-            h4.same_line 不用微博，关注微信：
-            img(style='width:200px; height:200px;' src='http://d2t44wh9rnwl5y.cloudfront.net/gsc/V1DYFJ/df/d1/71/dfd1718c61c24eb69a586b8a8c8788c7/images/%E5%8D%81%E6%9D%80%E7%A5%9E%E5%99%A8/u734.jpg?token=dc58c9cff406672c52bf8670ee3c6d9a')
+            a(href='http://weibo.com/1677394097/profile?topnav=1&wvr=6' style="margin-top:auto;")信仰数据
     
   append footer_assets
-    script.
-      var team_id_cnt = "#{team_id}";
-      var st_cnt = "#{st}";
-      var ed_cnt = "#{ed}";
-
-      function toTeamFetchPage() {
-        window.location.href='/team_fetch_match/'+team_id_cnt;
-      }
-      $(document).ready(function() {
-
-        if (team_id_cnt.length > 0) {
-            $('#team_select').val(team_id_cnt).selected = true;
-        }
-
-        if (st_cnt.length > 0) {
-                $('#team_start_time').val(moment.unix(Number(st_cnt)).format("YYYY-MM-DD"));
-        }
-
-        if (ed_cnt.length > 0) {
-            $('#team_end_time').val(moment.unix(Number(ed_cnt)).format("YYYY-MM-DD"));
-        }
-        
-        document.getElementById('team_end_time').valueAsDate = new Date();
-      });
-
-      function selectTeamDate() {
-          var start_time = $('#team_start_time').val();
-          var end_time = $('#team_end_time').val();
-          var team_id = $('#team_select').val();
-
-          var st = new Date(start_time).getTime() / 1000;
-          var ed = new Date(end_time).getTime() / 1000;
-
-          window.location.href='/team_match_info/'+team_id+'?st='+st+'&ed='+ed;
-      }
-    
-
 
 else
   p Please log out and retry
