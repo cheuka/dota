@@ -1,0 +1,157 @@
+extend layout
+
+block head
+
+  style.
+    #nav ul{text-align:left;border-bottom:1px solid #ccc; 
+    list-style-type:none;padding:10px 10px;}
+    #nav ul li{display:inline;}
+    #nav ul li a{font-weight:bold;border:1px solid #ccc; text-decoration:none;padding:10px 20px;border-bottom:none;margin-right:5px;margin-bottom:1px;background-color:#eee}
+    #nav ul li a.current{background-color:#fff;border-bottom:1px solid #fff;}
+    #nav ul li a:hover{color:#000;background-color:#eee;}
+    #footer1 a{font-size:19px}
+    #footer1 {position: absolute; bottom: 60px; clear:both;}
+
+
+    lis{
+            float:left;
+            list-style:none;
+            width:250px;
+            height:30px;
+            background:#eee;
+            text-align:center;
+            font-size:1em;
+            color:#2780e3;
+            vertical-align:middle;
+            line-height:30px;
+            margin-left:10px;
+        }
+
+    lis a{font-weight:bold;border:1px solid #ccc; text-decoration:none;background-color:#eee}
+
+    lis.active a{color:#000;background-color:#eee;}
+
+        .same_line{
+          float:left;
+          margin-left:20px;
+          margin-top:auto;
+          margin-bottom:auto;
+        }
+
+        .row{
+          margin-top:20px;
+        }
+
+  link(rel='stylesheet', href="/public/css/yasp_home.css")
+  script.
+        function getTenKills() {
+            var start_time = $('#team_start_time').val();
+            var end_time = $('#team_end_time').val();
+            var team_id = $('#team_select').val();
+            var enemy_id = $('#enemy_select').val();
+            var st = new Date(start_time).getTime() / 1000;
+            var ed = new Date(end_time).getTime() / 1000;
+            $.getJSON('/tenKills?sid=' + team_id, function(response) {
+                //$('#chart_win_rate').html(response);
+                parseJson(response);
+            });
+        }
+
+        function parseJson(response) {
+            var matches = JSON.parse(response).matches;
+            var length = matches.length;
+            var winTloseG = 0;
+            var winTwinG = 0;
+            var loseTwinG = 0;
+            var loseTloseG = 0;
+            $('tbody').empty();
+            for (var i in matches){
+                var tenKillsResult = '';
+                var enemyId = (matches[i].team_id == matches[i].radiant_team_id? matches[i].dire_team_id : matches[i].radiant_team_id);
+                var enemyName = $('#team_select').find('option[value=' + enemyId + ']').text();
+                var duration = new Date().getTime() - new Date(matches[i].start_time).getTime();
+                var days = Math.floor(duration/(3600*24*1000));
+                var time = ''; 
+                if (days < 1){
+                    time = Math.floor(duration/(3600*1000)) + 'hours ago';
+                } else if (days > 0 && days < 31){
+                    time = days + 'days ago';
+                } else {
+                    time = 'A month or months ago';
+                }
+                if(matches[i].tenKills > 0){
+                    if((matches[i].team_id == matches[i].radiant_team_id && matches[i].radiant_win) || (matches[i].team_id != matches[i].radiant_team_id && !matches[i].radiant_win)) {
+                        winTwinG++;
+                        tenKillsResult = '赢十杀，赢比赛'
+                    } else {
+                        winTloseG++;
+                        tenKillsResult = '赢十杀，输比赛'
+                    }
+                }else{
+                    if((matches[i].team_id == matches[i].radiant_team_id && matches[i].radiant_win) || (matches[i].team_id != matches[i].radiant_team_id && !matches[i].radiant_win)) {
+                        loseTwinG++;
+                        tenKillsResult = '输十杀，赢比赛'
+                    } else {
+                        loseTloseG++;
+                        tenKillsResult = '输十杀，输比赛'
+                    }
+                }
+                
+                if ( i < 5){
+                    $('tbody').append("<tr><td><a href = '/battle_reviews/" + matches[i].match_id + "'>" + matches[i].match_id + "<a></td><td>" + time + "</td><td>" + tenKillsResult + "</td><td>" + enemyName + "</td></tr>");
+                }
+            }
+            killWinRate(winTwinG, winTloseG, loseTwinG, loseTloseG);
+
+        }
+    
+
+if user
+  block content
+    .row
+        h4.same_line  选择战队
+        select(onchange='getTenKills()')#team_select.same_line
+            option(value='0',selected='true')  Select a Team 
+            - for (var i = 0; i < constants.common_teams.length; ++i)
+              option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
+
+    .row
+        h4.same_line  选择对手
+        select(onchange="getTenKills()")#enemy_select.same_line
+            option(value='0',selected='true')  Select a Team 
+            - for (var i = 0; i < constants.common_teams.length; ++i)
+              option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
+
+    .row
+        h4.same_line 选择起点时间
+        input(type='date', value='2016-09-18', onchange='getTenKills()')#team_start_time.same_line
+
+    .row
+        h4.same_line 十杀战绩
+
+    .row
+        h4.same_line 最近比赛
+
+    #chart_win_rate
+
+
+    
+    table.table.table-striped.table-condensed#match_info
+        thead
+            th:  比赛ID
+            th:  比赛时间
+            th:  比赛结果
+            th:  对手
+
+        tbody
+  
+    #footer1
+        .row
+            h4.same_line 任何想法，私信微博：
+            a(href='http://weibo.com/1677394097/profile?topnav=1&wvr=6' style="margin-top:auto;")信仰数据
+    
+  append footer_assets
+
+else
+  p Please log out and retry
+

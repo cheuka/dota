@@ -136,3 +136,45 @@ function addTimefightsIcon(startTime) {
     svg.appendChild(svg_img);
 }
 
+window.killWinRate = function killWinRate(winTwinG, winTloseG, loseTwinG, loseTloseG){
+	var color_array = ["#FF0000", "#00FF00"];
+    var data2 = ['lose', winTloseG, loseTloseG];
+	var data1 = ['win', winTwinG, loseTwinG];
+	var winTcount = winTwinG + winTloseG;
+    var loseTcount = loseTwinG + loseTloseG;
+    var winTwinRate = Math.round(winTwinG * 100 / winTcount);
+    var loseTwinRate = Math.round(loseTwinG * 100 / loseTcount);
+	c3.generate({
+		bindto: '#chart_win_rate',
+		data: {
+			columns: [data2, data1],
+			type: 'bar',
+            groups: [
+                ['lose', 'win']
+            ],
+            labels:true,
+			names: {
+                'lose': '输比赛',
+                'win': '赢比赛'    
+			}
+		},
+        
+        axis: {
+            x: {
+                type: 'category',
+                categories: ["赢十杀" + "  ( " +winTcount + "场,  " + winTwinRate + "%)", "输十杀" + "  ( " + loseTcount + "场,  " + loseTwinRate + "%)"]
+            }
+        },
+		color:{
+            pattern: color_array
+        },
+        grid: {
+            y: {
+                lines: [{value:10}]
+            }
+        }
+	});
+
+
+}
+

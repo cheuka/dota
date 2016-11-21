@@ -187,7 +187,7 @@ app.use(function sessionAuth(req, res, next)
 	// lordstone: if not logged in, not allowed
 	if(!req.session || !req.session.user)
 	{
-		if(req.url=='/'|| req.url=='/register')
+		if(req.url=='/'|| req.url=='/register' || req.url=='/ten_kills')
 		{
 			next();
 		}
@@ -752,6 +752,14 @@ app.get('/single_player/:account_id?', function(req, res, cb)
     
 });
 
+app.get('/ten_kills', function(req, res, cb)
+{   
+    
+    res.render('ten_kills', {
+    });
+    
+    
+});
 
 
 app.get('/players_league', function(req, res, cb)
@@ -775,6 +783,20 @@ app.get('/teamPlayers/:team_id?', function(req, res, cb)
         console.error(err);
         res.json(JSON.stringify(result));
     });
+});
+
+
+app.get('/tenKills', function(req, res, cb)
+{
+   queries.getTenKills(db, {
+       team_id: req.query.sid,
+       enemy_id: req.query.eid,
+       st: req.query.st,
+       ed: req.query.ed
+   }, function(err, result) {
+       console.error(err);
+       res.json(JSON.stringify(result));
+   })
 });
 
 app.get('/april/:year?', function(req, res, cb)
