@@ -187,7 +187,7 @@ app.use(function sessionAuth(req, res, next)
 	// lordstone: if not logged in, not allowed
 	if(!req.session || !req.session.user)
 	{
-		if(req.url=='/'|| req.url=='/register' || req.url=='/ten_kills' || req.url=='/tenKills')
+		if(req.url=='/'|| req.url=='/register' || req.url=='/ten_kills' || req.url.indexOf('/tenKills') != -1)
 		{
 			next();
 		}
