@@ -76,7 +76,7 @@ block head
                 var enemyId = (matches[i].team_id == matches[i].radiant_team_id? matches[i].dire_team_id : matches[i].radiant_team_id);
                 var enemyName = $('#team_select').find('option[value=' + enemyId + ']').text();
                 var duration = new Date().getTime() / 1000 - matches[i].start_time;
-                var days = Math.floor(duration/(3600*24*1000));
+                var days = Math.floor(duration/(3600*24));
                 var time = ''; 
                 if (days < 1){
                     time = Math.floor(duration/(3600*1000)) + 'hours ago';
