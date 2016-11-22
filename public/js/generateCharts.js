@@ -158,11 +158,16 @@ window.killWinRate = function killWinRate(winTwinG, winTloseG, loseTwinG, loseTl
                 'win': '赢比赛'    
 			}
 		},
-        
+        bar: {
+            width: {
+                ratio: 0.2 // this makes bar width 50% of length between ticks
+            }
+
+        },
         axis: {
             x: {
                 type: 'category',
-                categories: ["赢十杀" + "  ( " +winTcount + "场,  " + winTwinRate + "%)", "输十杀" + "  ( " + loseTcount + "场,  " + loseTwinRate + "%)"]
+                categories: ["赢十杀" + "  (" +winTcount + "场,  " + winTwinRate + "%)", "输十杀" + "  (" + loseTcount + "场,  " + loseTwinRate + "%)"]
             }
         },
 		color:{

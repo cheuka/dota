@@ -43,6 +43,7 @@ block head
         }
 
   link(rel='stylesheet', href="/public/css/yasp_home.css")
+  script(src="/public/js/generateCharts.js")
   script.
         function getTenKills() {
             var start_time = $('#team_start_time').val();
@@ -103,7 +104,7 @@ block head
                 }
                 
                 if ( (loseTloseG + winTloseG + winTwinG + loseTwinG) <= 5){
-                    $('tbody').append("<tr><td><a href = '/battle_reviews/" + matches[i].match_id + "'>" + matches[i].match_id + "<a></td><td>" + time + "</td><td>" + tenKillsResult + "</td><td>" + enemyName + "</td></tr>");
+                    $('tbody').append("<tr><td><a href = 'http://www.dotamax.com/match/detail/" + matches[i].match_id + "'>" + matches[i].match_id + "<a></td><td>" + time + "</td><td>" + tenKillsResult + "</td><td>" + enemyName + "</td></tr>");
                 }
             }
             killWinRate(winTwinG, winTloseG, loseTwinG, loseTloseG);
@@ -154,7 +155,7 @@ if user
   
     #footer1
         .row
-            h4.same_line 任何想法，私信微博：
+            h4.same_line 更多秘籍，私信微博：
             a(href='http://weibo.com/1677394097/profile?topnav=1&wvr=6' style="margin-top:auto;")信仰数据
     
   append footer_assets
