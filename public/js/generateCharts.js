@@ -137,13 +137,13 @@ function addTimefightsIcon(startTime) {
 }
 
 window.killWinRate = function killWinRate(winTwinG, winTloseG, loseTwinG, loseTloseG){
-	var color_array = ["#FF0000", "#00FF00"];
+	var color_array = ["#CC0000", "#008000"];
     var data2 = ['lose', winTloseG, loseTloseG];
 	var data1 = ['win', winTwinG, loseTwinG];
 	var winTcount = winTwinG + winTloseG;
     var loseTcount = loseTwinG + loseTloseG;
-    var winTwinRate = Math.round(winTwinG * 100 / winTcount);
-    var loseTwinRate = Math.round(loseTwinG * 100 / loseTcount);
+    var winTwinRate = Math.round(winTcount * 100 / (loseTcount + winTcount));
+    var loseTwinRate = Math.round(loseTcount * 100 / (loseTcount + winTcount));
 	c3.generate({
 		bindto: '#chart_win_rate',
 		data: {
