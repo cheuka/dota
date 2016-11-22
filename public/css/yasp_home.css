@@ -306,8 +306,12 @@ img.grayscale {
     -webkit-animation-iteration-count: infinite;
 }
 
-
-.c3-shapes-teamFightsTime circle{
-    r:8;
-    opacity: 1 !important;
+.c3-axis-x {
+	font-size: 20px;
+    color: #000;
 }
+
+.c3-chart-text {
+	font-size: 20px;
+}
+
