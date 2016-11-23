@@ -10,8 +10,6 @@ block head
     #nav ul li a.current{background-color:#fff;border-bottom:1px solid #fff;}
     #nav ul li a:hover{color:#000;background-color:#eee;}
     #footer1 a{font-size:19px}
-    #footer1 {position: absolute; bottom: 60px; clear:both;}
-
 
     lis{
             float:left;
@@ -79,12 +77,13 @@ block head
                 var days = Math.floor(duration/(3600*24));
                 var time = ''; 
                 if (days < 1){
-                    time = Math.floor(duration/(3600*1000)) + 'hours ago';
+                    time = Math.floor(duration/(3600)) + 'hours ago';
                 } else if (days > 0 && days < 31){
                     time = days + 'days ago';
                 } else {
                     time = 'A month or months ago';
                 }
+
                 if(matches[i].tenKills > 0){
                     if((matches[i].team_id == matches[i].radiant_team_id && matches[i].radiant_win) || (matches[i].team_id != matches[i].radiant_team_id && !matches[i].radiant_win)) {
                         winTwinG++;
@@ -103,8 +102,8 @@ block head
                     }
                 }
                 
-                if ( (loseTloseG + winTloseG + winTwinG + loseTwinG) <= 5){
-                    $('tbody').append("<tr><td><a href = 'http://www.dotamax.com/match/detail/" + matches[i].match_id + "'>" + matches[i].match_id + "<a></td><td>" + time + "</td><td>" + tenKillsResult + "</td><td>" + enemyName + "</td></tr>");
+                if ( days <= 30){
+                    $('tbody').append("<tr><td><a href = 'http://www.dotamax.com/match/detail/" + matches[i].match_id + "' target='_blank'>" + matches[i].match_id + "<a></td><td>" + time + "</td><td>" + tenKillsResult + "</td><td>" + enemyName + "</td></tr>");
                 }
             }
             killWinRate(winTwinG, winTloseG, loseTwinG, loseTloseG);
@@ -137,13 +136,14 @@ if user
 
     #chart_win_rate
 
+    #footer1
+        .row
+            h4.same_line 更多秘籍，私信微博：
+            a(href='http://weibo.com/1677394097/profile?topnav=1&wvr=6' style="margin-top:auto;")信仰数据
+
     .row
-        h4.same_line 最近比赛
-
-    
-
-
-    
+        h4.same_line 最近比赛(一个月)
+     
     table.table.table-striped.table-condensed#match_info
         thead
             th:  比赛ID
@@ -152,13 +152,12 @@ if user
             th:  对手
 
         tbody
-  
-    #footer1
-        .row
-            h4.same_line 更多秘籍，私信微博：
-            a(href='http://weibo.com/1677394097/profile?topnav=1&wvr=6' style="margin-top:auto;")信仰数据
+    
+
     
   append footer_assets
+    script.
+        $('footer').empty();
 
 else
   p Please log out and retry

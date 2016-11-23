@@ -142,8 +142,8 @@ window.killWinRate = function killWinRate(winTwinG, winTloseG, loseTwinG, loseTl
 	var data1 = ['win', winTwinG, loseTwinG];
 	var winTcount = winTwinG + winTloseG;
     var loseTcount = loseTwinG + loseTloseG;
-    var winTwinRate = Math.round(winTcount * 100 / (loseTcount + winTcount));
-    var loseTwinRate = Math.round(loseTcount * 100 / (loseTcount + winTcount));
+    var winTwinRate = Math.round(winTcount * 1000 / (loseTcount + winTcount)) / 10;
+    var loseTwinRate = Math.round(loseTcount * 1000 / (loseTcount + winTcount)) / 10;
 	c3.generate({
 		bindto: '#chart_win_rate',
 		data: {
@@ -152,7 +152,14 @@ window.killWinRate = function killWinRate(winTwinG, winTloseG, loseTwinG, loseTl
             groups: [
                 ['lose', 'win']
             ],
-            labels:true,
+            labels: {
+                format: function (value, id, index, j) { 
+				  var totalCount = index == 0? winTcount : loseTcount;
+                  var result = value + "场," +　(Math.round(value * 1000 / totalCount) / 10) + "%"
+                  return result; 
+                }
+
+            },
 			names: {
                 'lose': '输比赛',
                 'win': '赢比赛'    
