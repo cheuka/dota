@@ -306,9 +306,9 @@ img.grayscale {
     -webkit-animation-iteration-count: infinite;
 }
 
-.c3-axis-x {
+.c3-axis-x  tspan{
 	font-size: 20px;
-    color: #000;
+    fill: #000000;
 }
 
 .c3-chart-text {

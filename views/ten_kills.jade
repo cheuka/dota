@@ -47,7 +47,7 @@ block head
             var start_time = $('#team_start_time').val();
             var team_id = $('#team_select').val();
             var enemy_id = $('#enemy_select').val();
-            var st = new Date(start_time).getTime() / 1000;
+            var st = start_time * 24 * 3600;
             $.getJSON('/tenKills?sid=' + team_id, function(response) {
                 //$('#chart_win_rate').html(response);
                 parseJson(response, enemy_id, st);
@@ -55,6 +55,7 @@ block head
         }
 
         function parseJson(response, enemy_id, st) {
+            var currentTime = new Date().getTime() / 1000;
             var matches = JSON.parse(response).matches;
             var length = matches.length;
             var winTloseG = 0;
@@ -63,7 +64,8 @@ block head
             var loseTloseG = 0;
             $('tbody').empty();
             for (var i in matches){
-                if(st && st > matches[i].start_time){
+                var matchStartTime = matches[i].start_time
+                if(st && currentTime - matchStartTime > st){
                     continue;
                 }               
                 
@@ -129,7 +131,10 @@ if user
 
     .row
         h4.same_line 选择起点时间
-        input(type='date', value='2016-09-18', onchange='getTenKills()')#team_start_time.same_line
+        select(onchange="getTenKills()")#team_start_time.same_line
+            option(value=30, selected='true') 最近30天
+            option(value=15) 最近15天
+            option(value=7) 最近7天
 
     .row
         h4.same_line 十杀战绩
@@ -138,11 +143,11 @@ if user
 
     #footer1
         .row
-            h4.same_line 更多秘籍，私信微博：
+            h4.same_line 更多秘籍，关注微博：
             a(href='http://weibo.com/1677394097/profile?topnav=1&wvr=6' style="margin-top:auto;")信仰数据
 
     .row
-        h4.same_line 最近比赛(一个月)
+        h4.same_line 最近比赛 (一个月内)
      
     table.table.table-striped.table-condensed#match_info
         thead
