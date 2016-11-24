@@ -67,8 +67,10 @@ block head
                 var matchStartTime = matches[i].start_time
                 if(st && currentTime - matchStartTime > st){
                     continue;
-                }               
-                
+                }
+                if(matches[i].tenKills == -1){
+                    continue;
+                }
                 if(enemy_id != "0" && matches[i].radiant_team_id != enemy_id && matches[i].dire_team_id != enemy_id){
                     continue;
                 }               
@@ -85,8 +87,7 @@ block head
                 } else {
                     time = 'A month or months ago';
                 }
-
-                if(matches[i].tenKills > 0){
+                if((matches[i].team_id == matches[i].radiant_team_id && matches[i].tenKills > 0) || (matches[i].team_id != matches[i].radiant_team_id && matches[i].tenKills == 0)){
                     if((matches[i].team_id == matches[i].radiant_team_id && matches[i].radiant_win) || (matches[i].team_id != matches[i].radiant_team_id && !matches[i].radiant_win)) {
                         winTwinG++;
                         tenKillsResult = '赢十杀，赢比赛'
@@ -104,9 +105,9 @@ block head
                     }
                 }
                 
-                if ( days <= 30){
+                //if ( days <= 30){
                     $('tbody').append("<tr><td><a href = 'http://www.dotamax.com/match/detail/" + matches[i].match_id + "' target='_blank'>" + matches[i].match_id + "<a></td><td>" + time + "</td><td>" + tenKillsResult + "</td><td>" + enemyName + "</td></tr>");
-                }
+                //}
             }
             killWinRate(winTwinG, winTloseG, loseTwinG, loseTloseG);
 
@@ -130,7 +131,7 @@ if user
               option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
 
     .row
-        h4.same_line 选择起点时间
+        h4.same_line 选择时间
         select(onchange="getTenKills()")#team_start_time.same_line
             option(value=30, selected='true') 最近30天
             option(value=15) 最近15天

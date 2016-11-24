@@ -153,7 +153,9 @@ window.killWinRate = function killWinRate(winTwinG, winTloseG, loseTwinG, loseTl
                 ['lose', 'win']
             ],
             labels: {
-                format: function (value, id, index, j) { 
+                format: function (value, id, index, j) {
+                  if(value == 0)
+                      return "";
 				  var totalCount = index == 0? winTcount : loseTcount;
                   var result = value + "场," +　(Math.round(value * 1000 / totalCount) / 10) + "%"
                   return result; 
@@ -174,7 +176,7 @@ window.killWinRate = function killWinRate(winTwinG, winTloseG, loseTwinG, loseTl
         axis: {
             x: {
                 type: 'category',
-                categories: ["赢十杀" + "  (" +winTcount + "场,  " + winTwinRate + "%)", "输十杀" + "  (" + loseTcount + "场,  " + loseTwinRate + "%)"]
+                categories: ["赢十杀" + "  \n(" +winTcount + "场,  " + winTwinRate + "%)", "输十杀" + "  \n(" + loseTcount + "场,  " + loseTwinRate + "%)"]
             }
         },
 		color:{
