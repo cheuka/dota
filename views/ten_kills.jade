@@ -116,19 +116,21 @@ block head
 
 if user
   block content
+    - var teams = constants.common_teams;
+    - teams.sort(function(ta, tb) {return ta.name.localeCompare(tb.name);});
     .row
         h4.same_line  选择战队
         select(onchange='getTenKills()')#team_select.same_line
-            option(value='0',selected='true')  Select a Team 
-            - for (var i = 0; i < constants.common_teams.length; ++i)
-              option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
+            option(value='0',selected='true')  Select a Team
+            - for (var i = 0; i < teams.length; ++i)
+              option(value=teams[i].team_id) #{teams[i].name}
 
     .row
         h4.same_line  选择对手
         select(onchange="getTenKills()")#enemy_select.same_line
             option(value='0',selected='true')  Select a Team 
-            - for (var i = 0; i < constants.common_teams.length; ++i)
-              option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
+            - for (var i = 0; i < teams.length; ++i)
+              option(value=teams[i].team_id) #{teams[i].name}
 
     .row
         h4.same_line 选择时间
@@ -145,17 +147,17 @@ if user
     #footer1
         .row
             h4.same_line 更多秘籍，关注微博：
-            a(href='http://weibo.com/1677394097/profile?topnav=1&wvr=6' style="margin-top:auto;")信仰数据
+            a(href='http://weibo.com/1677394097/profile?topnav=1&wvr=6' style="margin-top:auto;") 信仰数据
 
     .row
         h4.same_line 最近比赛 (一个月内)
      
     table.table.table-striped.table-condensed#match_info
         thead
-            th:  比赛ID
-            th:  比赛时间
-            th:  比赛结果
-            th:  对手
+            th 比赛ID
+            th 比赛时间
+            th 比赛结果
+            th 对手
 
         tbody
     
@@ -164,7 +166,6 @@ if user
   append footer_assets
     script.
         $('footer').empty();
-
 else
   p Please log out and retry
 
