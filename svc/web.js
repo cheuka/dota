@@ -699,11 +699,13 @@ app.get('/hero_analysis/:hero_id?', function(req, res, cb)
 
 app.get('/players_ranking/:league_id?', function(req, res, cb)
 { 
+    console.time('player_ranking');
     queries.getMantaParseData(db, {
         league_id: req.params.league_id,
         st: req.query.st,
         ed: req.query.ed
     }, function(err, result) {
+        console.timeEnd('player_ranking');
         res.render('players_ranking', {
             user: req.session.user,
             home: false,
