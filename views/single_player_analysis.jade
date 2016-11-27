@@ -141,11 +141,13 @@ block content
 
     #single_player
         .row
+            - var teams = constants.common_teams;
+            - teams.sort(function(ta, tb) {return ta.name.localeCompare(tb.name);});
             h4.same_line 选择战队
             select(onchange='selectPlayerFromTeam(value)')#team_select.same_line
                 option(value='0',selected='true') Select a Team 
-                - for (var i = 0; i < constants.common_teams.length; ++i)
-                  option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
+                - for (var i = 0; i < teams.length; ++i)
+                  option(value=teams[i].team_id) #{teams[i].name}
             h4.same_line 选手
             select(onchange='selectSingleData()')#player_select.same_line
                 option(value='0',selected='true') 选手名称

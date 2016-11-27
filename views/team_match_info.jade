@@ -53,11 +53,13 @@ if user
           a(href='/hero_analysis')  英雄分析
 
     .row
+        - var teams = constants.common_teams;
+        - teams.sort(function(ta, tb) {return ta.name.localeCompare(tb.name);});
         h4.same_line  选择战队
         select(onchange="window.location.href='/team_match_info/'+value")#team_select.same_line
             option(value='0',selected='true')  Select a Team 
-            - for (var i = 0; i < constants.common_teams.length; ++i)
-              option(value=constants.common_teams[i].team_id) #{constants.common_teams[i].name}
+            - for (var i = 0; i < teams.length; ++i)
+              option(value=teams[i].team_id) #{teams[i].name}
 
     .row
         h4.same_line 时间筛选
