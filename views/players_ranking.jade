@@ -97,14 +97,16 @@ block head
                 'bAutoWidth': false,
                 'scrollX': true
             });
+
             table_data = $('#data').DataTable().rows().data();
         }
 
         function filterMatchData() {
             var game_times = $('#game_times').val();
+            var postion = $('#position').val();
             var table = $('#data').DataTable();
             var rows = table_data.filter(function(row) {
-                return Number(row[1]) >= Number(game_times);
+                return Number(row[2]) >= Number(game_times) && Number(row[1]) == Number(postion);
             });
 
             table.destroy();
@@ -119,6 +121,9 @@ block head
                 'bAutoWidth': false,
                 'scrollX': true
             });
+
+            //hide some column
+            new_table.column(1).visible(false);
         }
 
         function selectCompreData(){
@@ -182,12 +187,19 @@ block content
         .row
             h4.same_line 场次筛选
             select(onchange='filterMatchData()')#game_times.same_line
-                option(value='1',selected='true') >=1场比赛
+                option(value='1') >=1场比赛
                 option(value='3') >=3场比赛
                 option(value='5') >=5场比赛
-                option(value='10') >=10场比赛
+                option(value='10',selected='true') >=10场比赛
                 option(value='20') >=20场比赛
                 option(value='50') >=50场比赛
+        .row
+            h4.same_line 位置筛选
+            select(onchange='filterMatchData()')#position.same_line
+                option(value='1',selected='true') 1号位
+                option(value='2') 2号位
+                option(value='3') 2号位
+                option(value='45') 4、5号位
         //选手名称 场次 输出 胜率 消耗 回复 控制 参团率 抓人 落单被抓 CNE URGPM GPM 买眼 反眼 控符 AP
         .row
             .col-xs-12.table-responsive
@@ -195,6 +207,7 @@ block content
                     thead
                         tr
                             th 选手
+                            th 场上位置
                             th 场次 
                             if user === 'admin'
                                 th 位置
@@ -229,6 +242,7 @@ block content
                             tr
                                 - var player_name = entry.team_name ? '<'+entry.team_name+'>.'+entry.player_name : entry.player_name
                                 td(style="min-width: 100px; word-break: break-all;") #{player_name}
+                                td= entry.position_id
                                 td #{entry.num_played}
                                 if user === 'admin'
                                     td= entry.position_id ? entry.position_id : 0
@@ -266,6 +280,7 @@ block content
                                 //td #{Math.round(entry.av_apm)}
     script.
         showPage()
+        filterMatchData()
 
         document.getElementById('com_end_time').valueAsDate = new Date();
         getLeagueInfo()
